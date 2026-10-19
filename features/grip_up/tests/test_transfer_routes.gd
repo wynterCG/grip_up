@@ -3,12 +3,14 @@ extends SceneTree
 const Lab=preload("res://features/grip_up/scripts/grip_up_lab.gd")
 var app
 var hz:=120
+var variant:=0
 var checks:=0
 var failures:=0
 var report:={"runs":[]}
 
 func _initialize() -> void:
 	if OS.get_cmdline_user_args().has("--60hz"):hz=60
+	if OS.get_cmdline_user_args().has("--p1"):variant=1
 	Engine.physics_ticks_per_second=hz
 	run.call_deferred()
 
@@ -38,11 +40,13 @@ func basic(spacing: float) -> void:
 	app=Lab.new()
 	root.add_child(app)
 	current_scene=app
+	app.transfer_assist_enabled=variant>0
+	app._set_posture_variant(variant)
 	app.transfer_route_spacing=spacing
 	app._open_transfer_lab(4)
 	app.won=true # Keep final rating popup from interrupting evidence collection.
 	await ticks(.45)
-	var row:={"spacing":spacing,"events":[],"max_force":0.0,"max_torque":0.0,"extra_inputs":0,"transfers":0}
+	var row:={"spacing":spacing,"posture_variant":variant,"events":[],"max_force":0.0,"max_torque":0.0,"extra_inputs":0,"transfers":0}
 	app.controller.sample_ready.connect(func(_delta:float):
 		var data: Dictionary=app.controller.telemetry()
 		row.max_force=maxf(row.max_force,data.total_force)
@@ -110,6 +114,6 @@ func run() -> void:
 	check(app.controller.tuning.body_mass==12 and app.controller.tuning.total_pull_force_budget==360,"new routes preserve biped tuning")
 	app.queue_free()
 	await ticks(.05)
-	FileAccess.open("res://builds/transfer_routes_%dhz.json" % hz,FileAccess.WRITE).store_string(JSON.stringify(report,"  "))
+	FileAccess.open("res://builds/transfer_routes%s_%dhz.json" % ["_p1" if variant==1 else "",hz],FileAccess.WRITE).store_string(JSON.stringify(report,"  "))
 	print("TRANSFER ROUTES RESULTS: %d checks, %d failures" % [checks,failures])
 	quit(1 if failures else 0)

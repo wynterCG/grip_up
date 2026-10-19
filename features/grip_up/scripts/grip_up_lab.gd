@@ -71,6 +71,9 @@ var posture_policy := 1
 var posture_assist_enabled := true
 var posture_tilt_assist_enabled := true
 var supported_wasd_swing_enabled := true
+var transfer_assist_enabled := false
+var posture_variant := 0
+var posture_variant_choice: OptionButton
 var transfer_diagnostics_enabled := false
 var transfer_route_spacing := .12
 var transfer_session_id := ""
@@ -673,6 +676,9 @@ func _transfer_debug_text(data: Dictionary) -> String:
 		var hand: Dictionary=controller.hands[id]
 		var last: Dictionary=diagnostic.get("last_by_hand",{}).get(id,{})
 		out+="\n\n%s / %s | %s / %s\nShoulder %s | anchor %s\nActual %.3f / requested %.3f / planned %.3f m\nAttempt %s | distance %s | travel %s" % ["LEFT" if id==0 else "RIGHT",hand.state,last.get("stage","none"),last.get("code","none"),str(controller.get_shoulder_world(id)),str(hand.anchor_world),hand.actual_length,hand.rest_length,hand.get("planned_length",hand.rest_length),str(last.get("attempt_id","none")),"%.3f m" % last.anatomical_distance if last.has("anatomical_distance") else "unknown","%.2f s" % last.get("elapsed",0)]
+	var refinement: Dictionary=data.get("transfer_posture",{})
+	var twist: Dictionary=refinement.get("twist",{})
+	out+="\nAttitude %s | blend %.2f | relative axial error %s" % [refinement.get("status","P0"),twist.get("blend",0),"%.3f rad" % twist.axial_error if twist.has("axial_error") else "P0 reference"]
 	var motion: Dictionary=diagnostic.get("motion",{})
 	out+="\n\nHands %.1f /360 N | torque %.1f /150 Nm\nPendulum %.2f rad / %.2f rad/s | trunk twist %.2f / tilt %.2f rad\nEstimated arm/moment power %.1f / %.1f W | work %.1f / %.1f J\nRelative body energy %.2f linear / %.2f angular J" % [data.get("total_force",0),Vector3(data.get("torque",Vector3.ZERO)).length(),motion.get("pendulum_angle",0),motion.get("pendulum_angular_speed",0),motion.get("trunk_twist",0),motion.get("trunk_tilt",0),motion.get("arm_power",0),motion.get("grip_moment_power",0),motion.get("estimated_arm_work",0),motion.get("estimated_grip_moment_work",0),motion.get("relative_translation_energy",0),motion.get("relative_rotation_energy",0)]
 	if level_id==4:out+="\nTransfers %d /10 | next %02d | recoveries %d" % [transfer_progress.transfers,transfer_progress.next_contact,transfer_progress.recoveries]
@@ -691,6 +697,9 @@ func _on_transfer_event(event: Dictionary) -> void:
 	row.session_id=transfer_session_id
 	row.scene=level_id
 	row.posture_policy=posture_policy
+	row.posture_variant=posture_variant
+	row.transfer_assist_enabled=transfer_assist_enabled
+	row.transfer_posture=controller.telemetry().get("transfer_posture",{})
 	row.route=transfer_progress.diagnostics() if level_id==4 else {}
 	DirAccess.make_dir_recursive_absolute("user://transfer_sessions")
 	var path: String="user://transfer_sessions/%s.jsonl" % transfer_session_id
@@ -713,6 +722,9 @@ func _save_trial(outcome: String) -> void:
 	row.transfer_diagnostics_enabled=transfer_diagnostics_enabled
 	row.transfer_route=transfer_progress.diagnostics() if level_id==4 else {}
 	row.posture_policy=posture_policy
+	row.posture_variant=posture_variant
+	row.transfer_assist_enabled=transfer_assist_enabled
+	row.transfer_posture=controller.telemetry().get("transfer_posture",{})
 	var file := FileAccess.open("user://trials.jsonl",FileAccess.READ_WRITE if FileAccess.file_exists("user://trials.jsonl") else FileAccess.WRITE)
 	if file:
 		file.seek_end()
@@ -728,7 +740,7 @@ func _record_capture(delta: float) -> void:
 		"control_profile":input_profile,"space_comparison":experimental_launch_enabled,"input_control":router.diagnostics(),
 		"contextual_input":contextual.diagnostics() if input_profile==2 else {},
 		"aim_input_does_not_change_length":input_profile==3,
-		"transfer_session":transfer_session_id,"transfer_diagnostics":controller.transfer_diagnostics(),"transfer_route":transfer_progress.diagnostics() if level_id==4 else {},
+		"transfer_posture":contextual_data.get("transfer_posture",{}),"transfer_assist_enabled":transfer_assist_enabled,"posture_variant":posture_variant,"transfer_session":transfer_session_id,"transfer_diagnostics":controller.transfer_diagnostics(),"transfer_route":transfer_progress.diagnostics() if level_id==4 else {},
 		"posture_policy":posture_policy if input_profile==3 else -1,"posture":contextual_data.get("posture",{}),
 		"contextual_filtered":[filtered.x,filtered.y],"contextual_actuation_m_s":[actuation.x,actuation.y],
 		"camera_right":capture_trace.vector(camera.global_basis.x),"camera_forward":capture_trace.vector(Vector3.UP.cross(camera.global_basis.x).normalized()),
@@ -908,6 +920,19 @@ func _setup_ui() -> void:
 	transfer_diagnostics_toggle.button_pressed=transfer_diagnostics_enabled
 	transfer_diagnostics_toggle.toggled.connect(func(on:bool):transfer_diagnostics_enabled=on;_apply_independent_settings())
 	settings_box.add_child(transfer_diagnostics_toggle)
+	var transfer_assist_toggle:=CheckButton.new()
+	transfer_assist_toggle.text="v0.5 limited trunk refinement / opt-in, same 20 Nm budget"
+	transfer_assist_toggle.button_pressed=transfer_assist_enabled
+	transfer_assist_toggle.toggled.connect(func(on:bool):transfer_assist_enabled=on;_apply_independent_settings())
+	settings_box.add_child(transfer_assist_toggle)
+	posture_variant_choice=OptionButton.new()
+	posture_variant_choice.add_item("P0 / v0.4 suspension unchanged")
+	posture_variant_choice.add_item("P1 / Support-relative axial twist refinement")
+	posture_variant_choice.add_item("P2 / Support-aware posture (not evaluated yet)")
+	posture_variant_choice.set_item_disabled(2,true)
+	posture_variant_choice.select(posture_variant)
+	posture_variant_choice.item_selected.connect(_set_posture_variant)
+	settings_box.add_child(posture_variant_choice)
 	_button("Rate current session / also after a failed attempt",func():settings.hide();rating_panel.show(),settings_box)
 	_label("v0.4 posture comparison / same strength",18,settings_box,COLORS[0])
 	posture_choice=OptionButton.new()
@@ -1122,10 +1147,17 @@ func _apply_independent_settings() -> void:
 	if not is_instance_valid(controller):return
 	controller.independent_aim_enabled=input_profile==3
 	controller.transfer_diagnostics_enabled=transfer_diagnostics_enabled and input_profile==3
+	controller.transfer_assist_enabled=transfer_assist_enabled and input_profile==3
+	controller.set_posture_variant(posture_variant)
 	controller.posture_assist_enabled=posture_assist_enabled
 	controller.posture_tilt_assist_enabled=posture_tilt_assist_enabled
 	controller.supported_wasd_swing_enabled=supported_wasd_swing_enabled
 	controller.set_posture_policy(posture_policy)
+
+func _set_posture_variant(variant: int) -> void:
+	posture_variant=clampi(variant,0,1)
+	if is_instance_valid(posture_variant_choice):posture_variant_choice.select(posture_variant)
+	_apply_independent_settings()
 
 func _set_posture_policy(policy: int) -> void:
 	posture_policy=clampi(policy,0,2)

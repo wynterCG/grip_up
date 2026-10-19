@@ -12,6 +12,10 @@ const SupportedSwing = preload("res://features/grip_up/scripts/supported_swing.g
 const PosturePlanner = preload("res://features/grip_up/scripts/support_posture_planner.gd")
 const TargetCoordinator = preload("res://features/grip_up/scripts/arm_target_coordinator.gd")
 const TransferDiagnostics = preload("res://features/grip_up/scripts/transfer_diagnostics.gd")
+const TwistRefinement = preload("res://features/grip_up/scripts/supported_twist_refinement.gd")
+var transfer_assist_enabled := false
+var posture_variant := 0
+var _twist_refinement = TwistRefinement.new()
 var transfer_journal = TransferDiagnostics.new()
 var transfer_diagnostics_enabled := false:
 	set(value):
@@ -73,6 +77,7 @@ func configure(body: RigidBody3D, configuration: Resource = null) -> void:
 	reset_state()
 
 func reset_state() -> void:
+	_twist_refinement.reset()
 	transfer_journal.reset()
 	posture_planner.reset()
 	posture_coordinator.reset()
@@ -138,6 +143,7 @@ func set_control_profile(profile: int) -> void:
 	if next == control_profile:
 		return
 	control_profile = next
+	_twist_refinement.reset()
 	transfer_journal.reset()
 	_posture_tilt_blend = 0.0
 	_posture_tilt_torque = Vector3.ZERO
@@ -162,6 +168,10 @@ func set_posture_policy(policy: int) -> void:
 		posture_policy = next
 		_posture_signature = ""
 		posture_coordinator.reset()
+
+func set_posture_variant(variant: int) -> void:
+	# P2 remains reserved until a measured P1 comparison justifies its gate.
+	posture_variant = clampi(variant,0,2)
 
 func _update_independent_posture(attached: Array[int], delta: float) -> void:
 	if attached.is_empty() or posture_policy==0 or not posture_assist_enabled or not independent_aim_enabled or _launch_state!="IDLE":
@@ -632,12 +642,16 @@ func _compute_attitude_assist(attached: Array[int], _forces: Array[Vector3], cen
 			# Heading is undefined if either lateral axis points along the load.
 			# Fade continuously there instead of switching to another Euler axis.
 			var authority := current_right.length_squared()*target_right.length_squared()
+			var baseline_twist := Vector3.ZERO
 			if authority>0.000001:
 				var error := current_right.normalized().signed_angle_to(target_right.normalized(),axis)
 				var moment: float = error*tuning.twist_stiffness-torso.angular_velocity.dot(axis)*tuning.twist_damping
 				# Only longitudinal trunk twist is stabilized. Pendular tilt,
 				# shoulder forces and opposite support reaction remain physical.
-				assist += axis*(moment*authority*engagement)
+				baseline_twist = axis*(moment*authority*engagement)
+				assist += baseline_twist
+			if control_profile==3 and _twist_refinement.blend>0.0:
+				assist += _twist_refinement.correction(axis,current_right,baseline_twist,torso.angular_velocity,engagement,tuning)
 	return assist.limit_length(tuning.max_attitude_torque)
 
 func _physics_process(delta: float) -> void:
@@ -669,6 +683,8 @@ func _physics_process(delta: float) -> void:
 		elif not _experimental_heading_active:
 			_view_right = _swing_reference_right
 			_experimental_heading_active = true
+	if control_profile==3:
+		_twist_refinement.update(self,attached,delta,transfer_assist_enabled and posture_variant==1)
 	_contextual_actuation = Vector2.ZERO
 	if control_profile == 2:
 		if attached.is_empty():
@@ -849,6 +865,10 @@ func _physics_process(delta: float) -> void:
 		"budget_scale": scale_factor, "control_right": _view_right, "hands": hands.duplicate(true),
 		"torso_position": torso.global_position, "linear_velocity": torso.linear_velocity,
 		"angular_velocity": torso.angular_velocity, "metrics": metrics.duplicate()}
+	if control_profile==3:
+		_diagnostics["transfer_posture"] = {"enabled":transfer_assist_enabled,"variant":posture_variant,
+			"available":posture_variant in [0,1],"status":"P2_NOT_IMPLEMENTED" if posture_variant==2 else "P1" if _twist_refinement.blend>0.0 else "P0",
+			"twist":_twist_refinement.diagnostics()}
 	if _transfer_enabled():
 		transfer_journal.sample(self,delta,{"attitude":diagnostic_attitude*scale_factor,"posture_tilt":_posture_tilt_torque*scale_factor,
 			"swing":_swing_torque*scale_factor,"assist":assist*scale_factor,"shoulder_moment":moments*scale_factor,
