@@ -1,0 +1,64 @@
+{
+	"runs": [
+		{
+			"dual": false,
+			"energy_peak": 1.65068845450878,
+			"kind": "neutral",
+			"late_energy": 0.0,
+			"middle_energy": 0.0,
+			"negative_samples": 0,
+			"positive_samples": 0,
+			"retained": true,
+			"speed_peak": 0.519735276699066,
+			"work": 0.0
+		},
+		{
+			"dual": false,
+			"energy_peak": 7.8302925825119,
+			"kind": "pump",
+			"late_energy": 0.0,
+			"middle_energy": 0.0,
+			"negative_samples": 95,
+			"positive_samples": 504,
+			"retained": true,
+			"speed_peak": 1.0952056646347,
+			"work": 19.9128761522278
+		},
+		{
+			"dual": false,
+			"energy_peak": 1.14918043836951,
+			"kind": "brake",
+			"late_energy": 0.0,
+			"middle_energy": 0.0,
+			"negative_samples": 270,
+			"positive_samples": 328,
+			"retained": true,
+			"speed_peak": 0.429701536893845,
+			"work": -0.61602993971513
+		},
+		{
+			"dual": false,
+			"energy_peak": 3.81318923830986,
+			"kind": "constant",
+			"late_energy": 0.00198051737970673,
+			"middle_energy": 0.00865015364252031,
+			"negative_samples": 680,
+			"positive_samples": 747,
+			"retained": true,
+			"speed_peak": 0.769665837287903,
+			"work": 3.18206274309814
+		},
+		{
+			"dual": true,
+			"energy_peak": 0.293848987668753,
+			"kind": "constant",
+			"late_energy": 0.00232673082064139,
+			"middle_energy": 0.00601205206476152,
+			"negative_samples": 658,
+			"positive_samples": 744,
+			"retained": true,
+			"speed_peak": 0.198537051677704,
+			"work": 0.855236795053741
+		}
+	]
+}

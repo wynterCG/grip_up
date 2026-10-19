@@ -1,0 +1,58 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS wall/ceiling/overhang/corner frame is finite and tangent: (0.0, 0.0, 1.0)
+PASS wall/ceiling/overhang/corner frame is finite and tangent: (0.0, -1.0, 0.0)
+PASS wall/ceiling/overhang/corner frame is finite and tangent: (0.0, -0.707107, 0.707107)
+PASS wall/ceiling/overhang/corner frame is finite and tangent: (1.0, 0.0, 0.0)
+PASS opposing support normals use actual dominant material instead of normalizing zero
+PASS camera-only full orbit never changes existing supported movement frame
+PASS a loaded upward-bearing foot cannot rotate W into the wall; it remains recorded as an actual support
+PASS no support / enabled false produces exactly zero motor force or moment
+PASS no support / enabled true produces exactly zero motor force or moment
+PASS enabled unsupported WASD is exactly uncontrolled ballistic trajectory
+PASS distant pending hand never becomes motor authority or physical support
+PASS pending-only failure is reported separately from actual support
+PASS finite actual contact acquired for 2 hands / moving false
+PASS input/support ownership setters never write torso transforms or velocities
+PASS mixed real ground snapshot and attached grip report progressive handoff with same-tick combined torque budget
+PASS two-to-one release preserves survivor state and both velocities exactly at transition
+PASS real support loss immediately removes intent propulsion and reports recovery
+PASS finite actual contact acquired for 2 hands / moving false
+PASS four-second blocked chest request cannot accumulate arbitrary actuator error or exceed shared capacity
+PASS release of a prolonged blocked command has bounded finite target recovery, not stored climb displacement
+PASS finite actual contact acquired for 1 hands / moving false
+PASS one_neutral preserves existing force/moment and new target rate/acceleration bounds
+PASS one_neutral never replaces a player-selected material contact; overload may release
+PASS one_neutral stops target drift after finite neutral settling
+INTENT_MEASURE {"acceleration":0.0,"block_reason":"HOLD_ACHIEVED_POSTURE","caps":true,"dx":-0.16668863222003,"dy":-0.0311524868011475,"idle_drift":0.0,"label":"one_neutral","peak_assist":9.31912040710449,"peak_force":164.06022644043,"rate":0.0,"rest_delta":0.0,"state":"ATTACHED","support_dy":0.0,"support_rotation_z":0.0}
+PASS finite actual contact acquired for 1 hands / moving false
+PASS one_up preserves existing force/moment and new target rate/acceleration bounds
+PASS one_up never replaces a player-selected material contact; overload may release
+PASS one_up stops target drift after finite neutral settling
+INTENT_MEASURE {"acceleration":0.900000000000001,"block_reason":"BOUNDED_TARGET_TRACKING","caps":true,"dx":-0.225324790924788,"dy":0.0273697376251221,"idle_drift":0.0,"label":"one_up","peak_assist":12.4700183868408,"peak_force":171.303268432617,"rate":0.165000000000002,"rest_delta":-0.0526371319766767,"state":"ATTACHED","support_dy":0.0,"support_rotation_z":0.0}
+PASS one actual hand W produces measurable upward progress relative to neutral on identical gravity geometry
+PASS finite actual contact acquired for 1 hands / moving false
+PASS one_down preserves existing force/moment and new target rate/acceleration bounds
+PASS one_down never replaces a player-selected material contact; overload may release
+PASS one_down stops target drift after finite neutral settling
+INTENT_MEASURE {"acceleration":0.900000000000001,"block_reason":"NO_REAL_SUPPORT","caps":true,"dx":-0.221903573721647,"dy":-0.310102939605713,"idle_drift":0.0,"label":"one_down","peak_assist":8.68907356262207,"peak_force":159.770156860352,"rate":0.24,"rest_delta":0.0883676271438598,"state":"FREE","support_dy":0.0,"support_rotation_z":0.0}
+PASS S increases achievable arm target using gravity rather than a compression arm force
+PASS finite actual contact acquired for 2 hands / moving false
+PASS two_up preserves existing force/moment and new target rate/acceleration bounds
+PASS two_up never replaces a player-selected material contact; overload may release
+PASS two_up stops target drift after finite neutral settling
+INTENT_MEASURE {"acceleration":0.9,"block_reason":"BOUNDED_TARGET_TRACKING","caps":true,"dx":0.000485443975776434,"dy":0.103590250015259,"idle_drift":0.0,"label":"two_up","peak_assist":5.05971908569336,"peak_force":262.696548461914,"rate":0.0810068004484188,"rest_delta":-0.0470219319509595,"state":"ATTACHED","support_dy":0.0,"support_rotation_z":0.0}
+PASS two real hands improve supported geometry without duplicating total strength
+PASS finite actual contact acquired for 1 hands / moving false
+PASS one_right preserves existing force/moment and new target rate/acceleration bounds
+PASS one_right never replaces a player-selected material contact; overload may release
+PASS one_right stops target drift after finite neutral settling
+INTENT_MEASURE {"acceleration":0.838715601456635,"block_reason":"DIRECTION_UNACTUATABLE_AXIAL_SWING_ONLY","caps":true,"dx":-0.0390942580997944,"dy":-0.02681565284729,"idle_drift":0.0,"label":"one_right","peak_assist":20.0000019073486,"peak_force":199.172164916992,"rate":0.0219442331035036,"rest_delta":0.000125000042223156,"state":"ATTACHED","support_dy":0.0,"support_rotation_z":0.0}
+PASS finite actual contact acquired for 1 hands / moving true
+PASS moving_up preserves existing force/moment and new target rate/acceleration bounds
+PASS moving_up never replaces a player-selected material contact; overload may release
+PASS moving_up stops target drift after finite neutral settling
+INTENT_MEASURE {"acceleration":0.0,"block_reason":"NO_REAL_SUPPORT","caps":true,"dx":-0.600244015455246,"dy":-7.52348446846008,"idle_drift":0.0,"label":"moving_up","peak_assist":0.0,"peak_force":0.0,"rate":0.0,"rest_delta":0.0,"state":"FREE","support_dy":0.00136995315551758,"support_rotation_z":-0.200004532933235}
+PASS same support geometry on a real15kg hinge yields rotation to its actual mechanical stop
+PASS all sampled physical steps preserve zero precontact effort and shared caps
+INTENT LOCOMOTION RESULTS: 49 checks, 0 failures

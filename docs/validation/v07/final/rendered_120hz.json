@@ -1,0 +1,415 @@
+{
+	"checks": [
+		{
+			"label": "native left Step contact feetfalse",
+			"passed": true
+		},
+		{
+			"label": "native right Step contact feetfalse",
+			"passed": true
+		},
+		{
+			"label": "native W has actual upward progress feetfalse",
+			"passed": true
+		},
+		{
+			"label": "native left Step contact feettrue",
+			"passed": true
+		},
+		{
+			"label": "native right Step contact feettrue",
+			"passed": true
+		},
+		{
+			"label": "native W has actual upward progress feettrue",
+			"passed": true
+		},
+		{
+			"label": "native physical feet earn the deliberately selected higher grip",
+			"passed": true
+		},
+		{
+			"label": "native physical feet carry genuine load",
+			"passed": true
+		},
+		{
+			"label": "native feet improve actual Step progress over hands-only",
+			"passed": true
+		},
+		{
+			"label": "native Traverse starts with two real supports",
+			"passed": true
+		},
+		{
+			"label": "native MMB orbit preserves held D command direction while real support persists",
+			"passed": true
+		},
+		{
+			"label": "native traversal request produces actual lateral displacement",
+			"passed": true
+		},
+		{
+			"label": "native Hang starts from one explicit bar contact",
+			"passed": true
+		},
+		{
+			"label": "native all support budgets including ground handoff stay bounded",
+			"passed": true
+		},
+		{
+			"label": "native release removes climb actuation",
+			"passed": true
+		}
+	],
+	"complete": true,
+	"demo_frames": 186,
+	"focus_events": [],
+	"physics_hz": 120,
+	"provenance": "Godot MCP Pro scripted input; no human comfort/agency claim",
+	"snapshots": [
+		{
+			"hands": [
+				{
+					"actual": 0.383682578802109,
+					"force": 83.1519165039063,
+					"reason": "",
+					"state": "ATTACHED",
+					"target": 0.349598219412828
+				},
+				{
+					"actual": 0.355671465396881,
+					"force": 79.533805847168,
+					"reason": "",
+					"state": "ATTACHED",
+					"target": 0.325254721115829
+				}
+			],
+			"label": "v07_step_false",
+			"policy": 1,
+			"position": "(-0.006317, 1.296748, 0.260014)",
+			"posture": {},
+			"velocity": "(-0.047214, -0.013649, -0.027358)"
+		},
+		{
+			"hands": [
+				{
+					"actual": 0.285433113574982,
+					"force": 102.862533569336,
+					"reason": "",
+					"state": "ATTACHED",
+					"target": 0.243676125726982
+				},
+				{
+					"actual": 0.280742555856705,
+					"force": 73.2397994995117,
+					"reason": "",
+					"state": "ATTACHED",
+					"target": 0.25102826343895
+				}
+			],
+			"label": "v07_step_true",
+			"policy": 1,
+			"position": "(0.031631, 1.451994, 0.376192)",
+			"posture": {},
+			"velocity": "(-0.032137, -0.040653, -0.064147)"
+		},
+		{
+			"hands": [
+				{
+					"actual": 0.556307733058929,
+					"force": 0.0,
+					"reason": "",
+					"state": "ATTACHED",
+					"target": 0.589266520007537
+				},
+				{
+					"actual": 0.613514184951782,
+					"force": 65.7247772216797,
+					"reason": "",
+					"state": "ATTACHED",
+					"target": 0.586838363486738
+				}
+			],
+			"label": "v07_traverse",
+			"policy": 1,
+			"position": "(0.244615, 1.168494, 0.32287)",
+			"posture": {},
+			"velocity": "(1.960714, 0.057356, -0.464196)"
+		},
+		{
+			"hands": [
+				{
+					"actual": 0.546195089817047,
+					"force": 148.594757080078,
+					"reason": "",
+					"state": "ATTACHED",
+					"target": 0.521432568585285
+				},
+				{
+					"actual": 0.0,
+					"force": 0.0,
+					"reason": "",
+					"state": "FREE",
+					"target": 0.62
+				}
+			],
+			"label": "v07_hang",
+			"policy": 1,
+			"position": "(-0.04444, 1.18212, 0.03266)",
+			"posture": {},
+			"velocity": "(-0.828632, -0.308914, -0.601974)"
+		}
+	],
+	"steps": [
+		{
+			"feet": false,
+			"foot_load_integral": 0.0,
+			"hand_load_integral": 383.575025328,
+			"higher_caught": false,
+			"intent": {
+				"actual_com_displacement": "(-0.005924, 0.126862, -0.139758)",
+				"actual_foot_count": 0,
+				"actual_hand_ids": [
+					0,
+					1
+				],
+				"actual_height_gain": 0.126862049102783,
+				"actual_relative_velocity": "(-0.048806, -0.013046, -0.026015)",
+				"actuator_saturated": false,
+				"aim_input_does_not_change_length": true,
+				"desired_com_velocity": "(0.0, 0.25, 0.0)",
+				"enabled": true,
+				"frame": {
+					"normal": "(0.0, 0.0, 1.0)",
+					"quality": "WEIGHTED_NORMAL",
+					"right": "(1.0, 0.0, 0.0)",
+					"support_ids": [
+						145995336251,
+						145995336251
+					],
+					"up": "(0.0, 1.0, 0.0)",
+					"valid": true
+				},
+				"ground": {
+					"applied_force": "(0.0, 0.0, 0.0)",
+					"applied_torque": "(0.0, 0.0, 0.0)",
+					"authority": 0.0,
+					"grounded": false,
+					"measured_other_support_load": 122.630180358887,
+					"motor_authority": 0.0,
+					"normal": "(0.0, 1.0, 0.0)",
+					"point": "(-0.002518, 0.25, 0.291482)",
+					"point_velocity": "(0.0, 0.0, 0.0)",
+					"support_id": 0,
+					"velocity": "(0.0, 0.0, 0.0)"
+				},
+				"input_frame_id": 1,
+				"input_ramp_s": 0.12,
+				"input_timestamp": 1.33333333333333,
+				"intent_strength": 1.0,
+				"movement_block_reason": "BOUNDED_TARGET_TRACKING",
+				"movement_intent_local": "(0.0, 1.0)",
+				"movement_intent_world": "(0.0, 1.0, 0.0)",
+				"originating_support_frame": {
+					"normal": "(0.0, 0.0, 1.0)",
+					"quality": "WEIGHTED_NORMAL",
+					"right": "(1.0, 0.0, 0.0)",
+					"support_ids": [
+						145995336251,
+						145995336251
+					],
+					"up": "(0.0, 1.0, 0.0)",
+					"valid": true
+				},
+				"planned_arm_rest_lengths": {
+					"0": 0.349565089076512,
+					"1": 0.32528459190537
+				},
+				"planned_foot_action": "(1.0, 0.0)",
+				"planner_cpu_usec": 64,
+				"recommended_climb_share": 1.0,
+				"requested_input": "(0.0, 1.0)",
+				"support_mode": "CLIMB_TWO_HANDS",
+				"target_accelerations": {
+					"0": 0.042199256682338,
+					"1": -0.0236060610830166
+				},
+				"target_rates": {
+					"0": -0.00183972970026147,
+					"1": 0.0
+				},
+				"tier": 1,
+				"virtual_acceleration": "(0.18243, 0.983219, 0.0)",
+				"voluntary_reversals": 0
+			},
+			"position": "(-0.006317, 1.296748, 0.260014)",
+			"rise": 0.130056619644165
+		},
+		{
+			"feet": true,
+			"foot_load_integral": 121.454634039399,
+			"hand_load_integral": 335.268426311016,
+			"higher_caught": true,
+			"intent": {
+				"actual_com_displacement": "(0.031899, 0.282333, -0.023274)",
+				"actual_foot_count": 1,
+				"actual_hand_ids": [
+					0,
+					1
+				],
+				"actual_height_gain": 0.282333254814148,
+				"actual_relative_velocity": "(-0.02747, -0.04097, -0.066685)",
+				"actuator_saturated": false,
+				"aim_input_does_not_change_length": true,
+				"desired_com_velocity": "(0.0, 0.25, 0.0)",
+				"enabled": true,
+				"frame": {
+					"normal": "(0.0, 0.0, 1.0)",
+					"quality": "WEIGHTED_NORMAL_HAND_TANGENT_WITH_FEET",
+					"right": "(1.0, 0.0, 0.0)",
+					"support_ids": [
+						303751498076,
+						303751498076,
+						303952824671
+					],
+					"up": "(0.0, 1.0, 0.0)",
+					"valid": true
+				},
+				"ground": {
+					"applied_force": "(0.0, 0.0, 0.0)",
+					"applied_torque": "(0.0, 0.0, 0.0)",
+					"authority": 0.0,
+					"grounded": false,
+					"measured_other_support_load": 133.345073699951,
+					"motor_authority": 0.0,
+					"normal": "(0.0, 1.0, 0.0)",
+					"point": "(0.0, 0.0, 0.0)",
+					"point_velocity": "(0.0, 0.0, 0.0)",
+					"support_id": 0,
+					"velocity": "(0.0, 0.0, 0.0)"
+				},
+				"input_frame_id": 1,
+				"input_ramp_s": 0.12,
+				"input_timestamp": 1.34166666666666,
+				"intent_strength": 1.0,
+				"movement_block_reason": "BOUNDED_TARGET_TRACKING",
+				"movement_intent_local": "(0.0, 1.0)",
+				"movement_intent_world": "(0.0, 1.0, 0.0)",
+				"originating_support_frame": {
+					"normal": "(0.0, 0.0, 1.0)",
+					"quality": "WEIGHTED_NORMAL",
+					"right": "(1.0, 0.0, 0.0)",
+					"support_ids": [
+						303751498076,
+						303751498076
+					],
+					"up": "(0.0, 1.0, 0.0)",
+					"valid": true
+				},
+				"planned_arm_rest_lengths": {
+					"0": 0.243710040865019,
+					"1": 0.250942407905118
+				},
+				"planned_foot_action": "(1.0, 0.0)",
+				"planner_cpu_usec": 60,
+				"recommended_climb_share": 1.0,
+				"requested_input": "(0.0, 1.0)",
+				"support_mode": "CLIMB_HANDS_FEET",
+				"target_accelerations": {
+					"0": -0.133036430710809,
+					"1": 0.0907502819106132
+				},
+				"target_rates": {
+					"0": 0.0021902621909986,
+					"1": -0.00991412935656966
+				},
+				"tier": 1,
+				"virtual_acceleration": "(0.093992, 0.995573, 0.0)",
+				"voluntary_reversals": 0
+			},
+			"position": "(0.031631, 1.451994, 0.376192)",
+			"rise": 0.285302758216858
+		}
+	],
+	"traverse": {
+		"change": "(0.244565, 0.001802, -0.077169)",
+		"intent": {
+			"actual_com_displacement": "(0.228276, -0.001984, -0.073262)",
+			"actual_foot_count": 0,
+			"actual_hand_ids": [
+				0,
+				1
+			],
+			"actual_height_gain": -0.0019841194152832,
+			"actual_relative_velocity": "(1.930516, 0.051361, -0.477409)",
+			"actuator_saturated": false,
+			"aim_input_does_not_change_length": true,
+			"desired_com_velocity": "(0.25, 0.0, 0.0)",
+			"enabled": true,
+			"frame": {
+				"normal": "(0.0, 0.0, 1.0)",
+				"quality": "WEIGHTED_NORMAL",
+				"right": "(1.0, 0.0, 0.0)",
+				"support_ids": [
+					477462792767,
+					477462792767
+				],
+				"up": "(0.0, 1.0, 0.0)",
+				"valid": true
+			},
+			"ground": {
+				"applied_force": "(72.57255, 0.0, 62.43451)",
+				"applied_torque": "(3.535775, -24.69329, -0.716605)",
+				"authority": 0.646991191267156,
+				"grounded": true,
+				"measured_other_support_load": 41.5138359069824,
+				"motor_authority": 0.646991191267156,
+				"normal": "(0.0, 1.0, 0.0)",
+				"point": "(0.246096, 0.25, 0.307441)",
+				"point_velocity": "(0.0, 0.0, 0.0)",
+				"support_id": 477563456072,
+				"velocity": "(0.0, 0.0, 0.0)"
+			},
+			"input_frame_id": 1,
+			"input_ramp_s": 0.12,
+			"input_timestamp": 1.04166666666667,
+			"intent_strength": 1.0,
+			"movement_block_reason": "BOUNDED_TARGET_TRACKING",
+			"movement_intent_local": "(1.0, 0.0)",
+			"movement_intent_world": "(1.0, 0.0, 0.0)",
+			"originating_support_frame": {
+				"normal": "(0.0, 0.0, 1.0)",
+				"quality": "WEIGHTED_NORMAL",
+				"right": "(1.0, 0.0, 0.0)",
+				"support_ids": [
+					477462792767,
+					477462792767
+				],
+				"up": "(0.0, 1.0, 0.0)",
+				"valid": true
+			},
+			"planned_arm_rest_lengths": {
+				"0": 0.591001093387604,
+				"1": 0.589228709597412
+			},
+			"planned_foot_action": "(0.0, 0.0)",
+			"planner_cpu_usec": 59,
+			"recommended_climb_share": 0.353008808732844,
+			"requested_input": "(1.0, 0.0)",
+			"support_mode": "FOOT_TRANSITION",
+			"target_accelerations": {
+				"0": 0.9,
+				"1": 0.9
+			},
+			"target_rates": {
+				"0": 0.0521741355047567,
+				"1": 0.0453303836808283
+			},
+			"tier": 1,
+			"virtual_acceleration": "(-0.999533, -0.030548, 0.0)",
+			"voluntary_reversals": 0
+		},
+		"retained_hands": 2
+	},
+	"variants": []
+}

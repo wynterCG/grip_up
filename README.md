@@ -1,10 +1,32 @@
-# GRIP UP / physics climbing lab 0.6
+# GRIP UP / physics climbing lab 0.7 candidate
 
-Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v0.6.exe`.
+Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v0.7.exe`.
 PC mouse and keyboard. Resizable 1920x1080 reference canvas; initial window 1440x810.
 Integrated Jolt, 120 Hz. Core and complete routes also tested at 60 Hz.
 
 This is a separate prototype. The Janga object grabber and its project are unchanged.
+
+## v0.7 intent-driven body travel (opt-in candidate)
+
+In **Controls**, choose **The Step / physical feet ON** for the first comparison.
+Hold LMB/RMB on the low wall contacts. W/S requests up/down travel and A/D
+requests traverse through real supports. Mouse movement only aims. Release one
+hand, select the higher surface and keep its button held to attempt the next grip.
+The Step / hands only, The Hang, The Traverse and The Corner are separate small
+arenas. **Compare v0.6 / current arena** switches back on the same geometry.
+
+Profile4 coordinates bounded arm targets, existing foot contacts and reacted
+swing. It never applies a free body movement force, chooses a new handhold or
+uses a pending hand as support. Startup remains profile2; the new controller and
+physical feet remain OFF by default. P0 and existing physical budgets are preserved.
+
+**3348 automated checks +30 scripted native checks pass at60/120Hz.** This is
+technical feasibility evidence; the human M5 comparison remains open. Mantle
+and the new reactive challenge are conditional follow-ons and have not started.
+See [v0.7 implementation and comparison](docs/validation/v07/comparison_summary.md),
+[physics audit](docs/validation/v07/movement_controller_physics.md),
+[decision](docs/validation/v07/decision.md) and
+[human protocol](docs/validation/v07/human_playtest_protocol.md).
 
 ## v0.6 early target selection (opt-in)
 

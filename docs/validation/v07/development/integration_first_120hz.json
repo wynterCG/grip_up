@@ -1,0 +1,72 @@
+{
+	"checks": 19,
+	"failures": 1,
+	"physics_hz": 120,
+	"runs": [
+		{
+			"arena": "Step",
+			"feet": false,
+			"intent": {
+				"actual_foot_count": 0,
+				"actual_hand_ids": [
+					0,
+					1
+				],
+				"actual_relative_velocity": "(0.146537, 0.055639, -0.004974)",
+				"aim_input_does_not_change_length": true,
+				"desired_com_velocity": "(0.0, 0.25, 0.0)",
+				"enabled": true,
+				"frame": {
+					"normal": "(0.0, 0.0, 1.0)",
+					"quality": "WEIGHTED_NORMAL",
+					"right": "(1.0, 0.0, 0.0)",
+					"support_ids": [
+						79389788696,
+						79389788696
+					],
+					"up": "(0.0, 1.0, 0.0)",
+					"valid": true
+				},
+				"ground": {
+					"applied_force": "(-3.502505, 0.0, -11.50237)",
+					"applied_torque": "(2.401373, 0.348626, -0.006911)",
+					"authority": 0.0715703185723753,
+					"grounded": true,
+					"measured_other_support_load": 109.183330535889,
+					"motor_authority": 0.0715703185723753,
+					"normal": "(0.0, 1.0, 0.0)",
+					"point": "(-0.099248, 0.25, 0.485411)",
+					"point_velocity": "(0.0, 0.0, 0.0)",
+					"support": "<Freed Object>",
+					"support_id": 79490451998,
+					"velocity": "(0.0, 0.0, 0.0)"
+				},
+				"intent_strength": 1.0,
+				"movement_block_reason": "BOUNDED_TARGET_TRACKING",
+				"movement_intent_local": "(0.0, 1.0)",
+				"movement_intent_world": "(0.0, 1.0, 0.0)",
+				"planned_arm_rest_lengths": {
+					"0": 0.446413154236505,
+					"1": 0.43829590153158
+				},
+				"planned_foot_action": "(1.0, 0.0)",
+				"planner_cpu_usec": 56,
+				"recommended_climb_share": 0.928429681427625,
+				"requested_input": "(0.0, 1.0)",
+				"support_mode": "FOOT_TRANSITION",
+				"target_accelerations": {
+					"0": 0.664876165070206,
+					"1": 0.520912571375652
+				},
+				"target_rates": {
+					"0": -0.179797210118566,
+					"1": -0.194596630487021
+				},
+				"tier": 1,
+				"virtual_acceleration": "(-0.58615, 0.777445, 0.0)"
+			},
+			"position": "(-0.122555, 1.182678, 0.333925)",
+			"rise": 0.0183426141738892
+		}
+	]
+}

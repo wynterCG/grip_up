@@ -1,0 +1,58 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS finite physical grip establishes test anchor
+PASS empty pointer press records rejection without an invented material point
+PASS diagnostic-only empty press cannot change physical body state
+PASS actual out-of-reach request is a pose failure, not catch failure
+PASS cleanup manual release cannot erase rejected attempt diagnosis
+PASS new attempt clears earlier manual/rejection history
+PASS malformed surface normal is contact rejection without pose inference
+PASS real LOS obstacle is distinguished from anatomical reach
+PASS journal and explicit event snapshots are detached immutable copies
+PASS default sampled diagnostics omit the event ring
+PASS journal remains bounded while event signal preserves live delivery
+PASS finite physical grip establishes test anchor
+PASS timeout fixture starts from eligible actual geometry
+PASS observed timeout with currently visible target is transit, never retention
+PASS finite physical grip establishes test anchor
+PASS moving target is initially within real reach
+PASS moving material target leaving envelope is not called a catch overload
+PASS finite physical grip establishes test anchor
+PASS support-loss fixture begins finite transit
+PASS disappearing support has distinct event before contact
+PASS finite physical grip establishes test anchor
+PASS contact fixture reaches actual surface at finite hand speed
+PASS SUCCESS certifies contact only, with observed travel history
+PASS unknown future window and arrival prediction are explicit
+PASS actual load limit crossing records catch overload/slip without rewriting contact SUCCESS
+PASS retention failure keeps its own primary cause and measured load
+PASS finite physical grip establishes test anchor
+PASS real held-intent buffer accepts an early SOON request while actual point is out of range
+PASS early held-button release is neutral cancellation, not contact rejection
+PASS new held attempt after cancellation starts independently
+PASS actual app focus-loss reason cancels reaching without fabricated failure
+PASS cancelled pending attempts never attach later or supply hidden effort
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS two anchors on one dynamic beam report one conserved opposite assist couple
+PASS support force decomposition equals actual applied arm reaction
+PASS applied torque decomposition sums to existing shared budget telemetry
+PASS pendulum, anatomical twist, relative energy and estimated work are finite independent observations
+PASS energy accounting explicitly excludes external contacts/gravity/drag
+PASS diagnostics enabled flag cannot activate outside independent profile3
+PASS default/off gate leaves journal and telemetry inert
+PASS finite physical grip establishes test anchor
+PASS parallel horizontal request on actually rolled body logs unactuated axis once without inventing effort
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+TRANSFER EQUIVALENCE {"off_off":{"force":0.0,"length":0.0,"position":0.0,"spin":0.0,"states":true,"torque":0.0,"velocity":0.0},"off_on":{"force":0.0,"length":0.0,"position":0.0,"spin":0.0,"states":true,"torque":0.0,"velocity":0.0},"on_on":{"force":0.0,"length":0.0,"position":0.0,"spin":0.0,"states":true,"torque":0.0,"velocity":0.0}}
+PASS OFF/OFF and ON/ON control trials bound physical repeatability before comparison
+PASS flag ON/OFF preserves physical trajectories, arm targets, forces, torque and hand states within measured repeatability
+PASS diagnostics fixtures preserve finite hand motion and360N/20Nm/150Nm budgets
+TRANSFER DIAGNOSTICS RESULTS: 54 checks, 0 failures

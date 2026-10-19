@@ -1,0 +1,72 @@
+{
+	"checks": 19,
+	"failures": 1,
+	"physics_hz": 60,
+	"runs": [
+		{
+			"arena": "Step",
+			"feet": false,
+			"intent": {
+				"actual_foot_count": 0,
+				"actual_hand_ids": [
+					0,
+					1
+				],
+				"actual_relative_velocity": "(0.071381, -0.038148, 0.00372)",
+				"aim_input_does_not_change_length": true,
+				"desired_com_velocity": "(0.0, 0.25, 0.0)",
+				"enabled": true,
+				"frame": {
+					"normal": "(0.0, 0.0, 1.0)",
+					"quality": "WEIGHTED_NORMAL",
+					"right": "(1.0, 0.0, 0.0)",
+					"support_ids": [
+						77896616418,
+						77896616418
+					],
+					"up": "(0.0, 1.0, 0.0)",
+					"valid": true
+				},
+				"ground": {
+					"applied_force": "(0.0, 0.0, 0.0)",
+					"applied_torque": "(0.0, 0.0, 0.0)",
+					"authority": 0.0,
+					"grounded": false,
+					"measured_other_support_load": 119.350254058838,
+					"motor_authority": 0.0,
+					"normal": "(0.0, 1.0, 0.0)",
+					"point": "(0.016924, 0.25, 0.477925)",
+					"point_velocity": "(0.0, 0.0, 0.0)",
+					"support": null,
+					"support_id": 0,
+					"velocity": "(0.0, 0.0, 0.0)"
+				},
+				"intent_strength": 1.0,
+				"movement_block_reason": "BOUNDED_TARGET_TRACKING",
+				"movement_intent_local": "(0.0, 1.0)",
+				"movement_intent_world": "(0.0, 1.0, 0.0)",
+				"planned_arm_rest_lengths": {
+					"0": 0.421964345904591,
+					"1": 0.385839727029709
+				},
+				"planned_foot_action": "(1.0, 0.0)",
+				"planner_cpu_usec": 44,
+				"recommended_climb_share": 1.0,
+				"requested_input": "(0.0, 1.0)",
+				"support_mode": "CLIMB_TWO_HANDS",
+				"target_accelerations": {
+					"0": -0.9,
+					"1": -0.9
+				},
+				"target_rates": {
+					"0": 0.0032375713745858,
+					"1": -0.0751192825535563
+				},
+				"tier": 1,
+				"virtual_acceleration": "(-0.240455, 0.97066, 0.0)"
+			},
+			"position": "(0.008217, 1.206072, 0.328154)",
+			"rise": 0.0423245429992676
+		}
+	]
+}

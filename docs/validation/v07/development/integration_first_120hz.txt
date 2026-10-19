@@ -1,0 +1,22 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS v0.7 leaves the real startup profile and opt-in flag unchanged
+PASS explicit Step button selects experimental profile4
+PASS hold-to-grip mandatory and Space initially OFF
+PASS hands-only Step starts P0 without silently enabling feet
+PASS Step has a broad real foothold and separate higher free-surface targets
+PASS real LMB finite contact starts the Step
+PASS independent RMB adds a real second support
+PASS aiming alone never changes supporting arm targets
+FAIL W produces measured COM rise through existing attached arms
+PASS camera orbit while D remains held preserves world movement axis
+PASS open Controls removes traversal input
+PASS mouse-up releases only its hand in new profile
+PASS old independent baseline remains switchable
+PASS profile4 reuses persistent distant selection with zero force
+PASS pending-only target keeps real ground walking active
+PASS pending hand never enables climb authority
+PASS focus loss cancels persistent request in new profile
+PASS W+D in actual unsupported flight produces no climb or walk actuation
+PASS new integrated path respects hand/feet and same-tick combined ground+climb moment caps
+INTENT INTEGRATION RESULTS: 19 checks, 1 failures

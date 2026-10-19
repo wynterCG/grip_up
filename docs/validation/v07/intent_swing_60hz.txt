@@ -1,0 +1,39 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS finite physical grip establishes test anchor
+PASS profile4 neutral dualfalse retains actual support and unchanged360/20/150 caps
+PASS profile4 neutral camera orbit never rotates cached physical heading
+PASS profile4 neutral loses all propulsion on actual support release
+INTENT_SWING_MEASURE {"dual":false,"energy_peak":1.65095857717097,"kind":"neutral","late_energy":0.0,"middle_energy":0.0,"negative_samples":0,"positive_samples":0,"retained":true,"speed_peak":0.519763469696045,"work":0.0}
+PASS finite physical grip establishes test anchor
+PASS profile4 pump dualfalse retains actual support and unchanged360/20/150 caps
+PASS profile4 pump camera orbit never rotates cached physical heading
+PASS phase-aligned supported intention performs positive incremental swing work
+PASS profile4 pump loses all propulsion on actual support release
+INTENT_SWING_MEASURE {"dual":false,"energy_peak":7.77901160717011,"kind":"pump","late_energy":0.0,"middle_energy":0.0,"negative_samples":44,"positive_samples":256,"retained":true,"speed_peak":1.09314203262329,"work":20.1778476522615}
+PASS finite physical grip establishes test anchor
+PASS profile4 brake dualfalse retains actual support and unchanged360/20/150 caps
+PASS profile4 brake camera orbit never rotates cached physical heading
+PASS opposite-phase supported intention removes swing work
+PASS profile4 brake loses all propulsion on actual support release
+INTENT_SWING_MEASURE {"dual":false,"energy_peak":1.17457705363631,"kind":"brake","late_energy":0.0,"middle_energy":0.0,"negative_samples":139,"positive_samples":156,"retained":true,"speed_peak":0.436358690261841,"work":-1.33394352785932}
+PASS same geometry distinguishes deliberate pump, coast and brake rather than labels alone
+PASS finite physical grip establishes test anchor
+PASS profile4 constant dualfalse retains actual support and unchanged360/20/150 caps
+PASS profile4 constant camera orbit never rotates cached physical heading
+PASS twelve-second held intent has bounded speed and late energy instead of endless powered flight
+PASS profile4 constant loses all propulsion on actual support release
+INTENT_SWING_MEASURE {"dual":false,"energy_peak":3.73942016065121,"kind":"constant","late_energy":0.00361233222065493,"middle_energy":0.010688304901123,"negative_samples":339,"positive_samples":373,"retained":true,"speed_peak":0.763640940189362,"work":3.09658669650671}
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS profile4 constant dualtrue retains actual support and unchanged360/20/150 caps
+PASS profile4 constant camera orbit never rotates cached physical heading
+PASS twelve-second held intent has bounded speed and late energy instead of endless powered flight
+PASS profile4 constant loses all propulsion on actual support release
+INTENT_SWING_MEASURE {"dual":true,"energy_peak":0.313167870044708,"kind":"constant","late_energy":0.00243561789829982,"middle_energy":0.00613839004654437,"negative_samples":331,"positive_samples":374,"retained":true,"speed_peak":0.209287613630295,"work":0.952037211402299}
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS new intent actually exercises traction and supported moment on one shared dynamic material
+PASS profile4 shared dynamic material receives complete opposite force and bounded moment without duplicating dual reactions
+INTENT_PAIR_MEASURE {"dL":0.000000536441802978516,"dp":0.000000495113340548414,"peak_assist":10.3995676040649,"peak_force":18.9321956634521,"wrench_residual":0.000000133280039449346}
+INTENT SWING RESULTS: 30 checks, 0 failures
