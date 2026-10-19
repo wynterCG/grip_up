@@ -5,6 +5,8 @@ const Anchor = preload("res://features/grip_up/scripts/grip_anchor.gd")
 const Actuator = preload("res://features/grip_up/scripts/arm_actuator.gd")
 const CapturePredictor = preload("res://features/grip_up/scripts/grip_capture_predictor.gd")
 const CaptureEvaluator = preload("res://features/grip_up/scripts/grip_capture_evaluator.gd")
+const FootSolver = preload("res://features/grip_up/scripts/foot_contact_solver.gd")
+const FootProfile = preload("res://features/grip_up/resources/foot_tuning.gd")
 var torso: RigidBody3D
 var tuning: Resource = Tuning.new()
 var hands: Array[Dictionary] = []
@@ -24,6 +26,9 @@ var _launch_anchors: Dictionary = {}
 var simulation_time := 0.0
 var capture_predictor = CapturePredictor.new()
 var capture_evaluator = CaptureEvaluator.new()
+var feet_solver: RefCounted
+var free_foot_positions: Array[Vector3] = []
+var grounded_for_walking := false
 
 func configure(body: RigidBody3D, configuration: Resource = null) -> void:
 	torso = body
@@ -32,6 +37,10 @@ func configure(body: RigidBody3D, configuration: Resource = null) -> void:
 	reset_state()
 
 func reset_state() -> void:
+	if feet_solver!=null:
+		feet_solver.reset()
+	free_foot_positions.clear()
+	grounded_for_walking = false
 	hands.clear()
 	_contract = 0.0
 	_extend = 0.0
@@ -54,6 +63,10 @@ func reset_state() -> void:
 			"overload_time": 0.0, "slip_elapsed": 0.0, "recovery_time": 0.0,
 			"grip_limit": tuning.grip_force_limit, "reason": ""})
 	last_rejection = ""
+
+func configure_feet(hips: Array[Vector3], rest_feet: Array[Vector3], lengths: Array[float], clearances: Array[float]) -> void:
+	feet_solver = FootSolver.new()
+	feet_solver.configure(torso,FootProfile.new(),hips,rest_feet,lengths,clearances)
 
 func set_climb_intent(contract: float, extend: float, bias: float, view_right: Vector3 = Vector3.RIGHT) -> void:
 	_intent_target = Vector3(clampf(contract, 0.0, 1.0),clampf(extend, 0.0, 1.0),clampf(bias, -1.0, 1.0))
@@ -443,8 +456,27 @@ func _physics_process(delta: float) -> void:
 		sum_force += forces[id].length()
 		moments += (get_shoulder_world(id) - center).cross(forces[id])
 	var assist: Vector3 = _compute_attitude_assist(attached,forces,center,sum_force)
+	var foot_requests: Array[Dictionary] = []
+	var leg_force := 0.0
+	var leg_moment := Vector3.ZERO
+	var leg_scale := 1.0
+	var leg_budget := 0.0
+	if feet_solver!=null:
+		for id in mini(2,free_foot_positions.size()):
+			feet_solver.set_free_foot_world(id,free_foot_positions[id])
+		var climbing: bool = hands.any(func(hand):return hand.state in ["REACHING","ATTACHED","SLIPPING"])
+		var foot_stance: bool = feet_solver.feet.any(func(foot):return foot.state in ["SUPPORTING","SLIDING"]) and not grounded_for_walking
+		foot_requests = feet_solver.prepare(delta,_contract,_extend,_bias,tuning.physical_feet and (climbing or foot_stance) and _launch_state=="IDLE",climbing)
+		leg_budget = feet_solver.tuning.total_force_budget
+		for request in foot_requests:
+			leg_force += Vector3(request.force).length()
+			leg_moment += (Vector3(request.point)-center).cross(Vector3(request.force))
+		leg_scale = minf(1.0,leg_budget/maxf(leg_force,0.000001))
+		leg_moment *= leg_scale
 	# Reused magnitude-sum / resultant-torque allocation from physics_grabber.
-	var scale_factor: float = minf(1.0, minf(tuning.total_pull_force_budget / maxf(sum_force, 0.000001), tuning.max_total_torque / maxf((moments + assist).length(), 0.000001)))
+	var scale_factor: float = minf(1.0, minf(tuning.total_pull_force_budget / maxf(sum_force, 0.000001), tuning.max_total_torque / maxf((moments + leg_moment + assist).length(), 0.000001)))
+	if feet_solver!=null:
+		feet_solver.commit(leg_scale*scale_factor)
 	for id in attached:
 		var hand: Dictionary = hands[id]
 		var force: Vector3 = forces[id] * scale_factor
@@ -465,7 +497,9 @@ func _physics_process(delta: float) -> void:
 		"features":{"predictive_grip":tuning.predictive_grip,"physical_feet":tuning.physical_feet,"posture_solver":tuning.posture_solver,"directional_grip_quality":tuning.directional_grip_quality,"reactive_challenge":tuning.reactive_challenge},
 		"launch_state":_launch_state,"launch_elapsed":_launch_elapsed,"launch_charge":_launch_charge,
 		"total_force": sum_force * scale_factor, "force_budget": tuning.total_pull_force_budget,
-		"torque": (moments + assist) * scale_factor, "assist_torque": assist * scale_factor,
+		"torque": (moments + leg_moment + assist) * scale_factor, "assist_torque": assist * scale_factor,
+		"leg_force":leg_force*leg_scale*scale_factor,"leg_force_budget":leg_budget,"leg_torque":leg_moment*scale_factor,
+		"combined_force":(sum_force+leg_force*leg_scale)*scale_factor,
 		"budget_scale": scale_factor, "control_right": _view_right, "hands": hands.duplicate(true),
 		"torso_position": torso.global_position, "linear_velocity": torso.linear_velocity,
 		"angular_velocity": torso.angular_velocity, "metrics": metrics.duplicate()}

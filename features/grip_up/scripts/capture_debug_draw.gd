@@ -40,4 +40,14 @@ func update_state(controller: Node, predictions: Array[Dictionary], show_debug: 
 			var angle := float(sample)*TAU/24.0
 			var next := float(sample+1)*TAU/24.0
 			segment(shoulder+Vector3(cos(angle),sin(angle),0)*radius,shoulder+Vector3(cos(next),sin(next),0)*radius,Color(0.3,0.5,0.65))
+	if controller.feet_solver!=null and controller.tuning.physical_feet:
+		for id in controller.feet_solver.feet.size():
+			var foot: Dictionary = controller.feet_solver.feet[id]
+			var hip: Vector3 = controller.feet_solver.get_hip_world(id)
+			segment(hip,foot.ankle,Color("8bb88c"))
+			if is_instance_valid(foot.get("support")):
+				var point: Vector3 = foot.contact_point
+				var normal: Vector3 = (foot.support.global_basis.inverse().transposed()*Vector3(foot.local_normal)).normalized()
+				segment(point,point+normal*0.15,Color.LIME_GREEN)
+				segment(point,point+Vector3(foot.force)*0.003,Color.MAGENTA)
 	lines.surface_end()

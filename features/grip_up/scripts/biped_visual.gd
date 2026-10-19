@@ -49,6 +49,7 @@ func configure(body: RigidBody3D, physical_controller: Node) -> void:
 		foot_clearance.append(foot.y-(controller.tuning.foot_base_offset.y-controller.tuning.foot_base_size.y*0.5))
 		toe_offsets.append(Vector2(absf(toe.z-foot.z),foot.y-toe.y))
 	leg_motion.configure(rest_hips,rest_feet,lengths)
+	controller.configure_feet(rest_hips,rest_feet,lengths,foot_clearance)
 	leg_motion.reset(torso.global_transform,torso.linear_velocity,torso.angular_velocity)
 	for i in 4:
 		var target := Node3D.new()
@@ -142,6 +143,18 @@ func _physics_process(delta: float) -> void:
 		var toe_hit := get_world_3d().direct_space_state.intersect_ray(toe_query)
 		if not toe_hit.is_empty():
 			leg_motion.constrain_foot(i,toe_hit.position+toe_hit.normal*0.015-toe_offset,toe_hit.normal)
+	if controller.tuning.physical_feet and controller.feet_solver!=null:
+		for i in 2:
+			if controller.feet_solver.feet[i].state in ["PLANTING","SUPPORTING","SLIDING"]:
+				leg_motion.constrain_foot(i,controller.feet_solver.get_foot_world(i),Vector3.ZERO)
+				var hip: Vector3 = torso.global_transform*leg_motion.hips[i]
+				var direction: Vector3 = leg_motion.directions[i]
+				var forward: Vector3 = (-torso.global_basis.z).slide(direction)
+				if forward.length_squared()<0.001:
+					forward = torso.global_basis.x.cross(direction)
+				var pole: Vector3 = hip+direction*leg_motion.current_lengths[i]*0.5+forward.normalized()*0.48
+				leg_motion.poles[i] = leg_motion.poles[i].lerp(pole,1.0-exp(-12.0*delta))
+	controller.free_foot_positions = leg_motion.feet.duplicate()
 
 func _update_targets(delta: float = 1.0) -> void:
 	global_transform = torso.get_global_transform_interpolated()

@@ -1,14 +1,41 @@
-# GRIP UP / physics climbing lab 0.2 M1
+# GRIP UP / physics climbing lab 0.2 M2
 
-Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v0.2-M1.exe`.
+Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v0.2-M2.exe`.
 PC mouse and keyboard. Resizable 1920x1080 reference canvas; initial window 1440x810.
 Integrated Jolt, 120 Hz. Core and complete routes also tested at 60 Hz.
 
 This is a separate prototype. The Janga object grabber and its project are unchanged.
 
-## v0.2 progress: baseline protection and predictive capture
+## M2: physical feet
 
-This iteration implements M0 and M1 of `docs/specs/grip_up_v0.2.md`.
+Enable **Controls → Automatic foot contacts**, then select **04 FOOT SUPPORT**.
+Hold LMB/RMB on L/R, press W and compare the same footholds with feet OFF/ON.
+Each foot independently searches, lifts over a step, plants, supports or slides.
+It can push and transmit friction, with a shared 180 N leg budget; hands retain
+360 N and the combined climbing torque stays capped at 150 Nm. Moving supports
+receive opposite forces at actual material-local contacts. No forces before
+planting, suction, body pose writes or extra launch impulses are added.
+
+Existing planted feet can remain when hands release, while still geometrically
+valid. Hands-free feet do not acquire new contacts. The central sole landing
+hands control back to walking; normal arm launches temporarily disengage feet.
+The visual biped follows these contacts within its measured leg lengths.
+
+All **1,294 checks pass**, including the M1 suites and all three original routes
+with feet ON at 60/120 Hz. In the controlled full-biped fixture, average arm
+effort drops from approximately 141 to 43 N at 120 Hz (138 to 43 N at 60 Hz).
+Legs do measured positive upward work. Godot MCP Pro captures show the same
+support/load-reduction outcome through real held mouse input. Full results,
+screenshots, model and limits: `docs/validation/M2.md`.
+
+Both experiments default OFF for comparison. Search is local and heuristic,
+and feet are virtual contact actuators rather than a leg ragdoll. Human feel
+evaluation remains pending. M3 posture, M4 directional quality, M5 new reactive
+challenge and M6 mantle remain future work; existing camera twist is unchanged.
+
+## M1: baseline protection and predictive capture
+
+The previous milestone implements M0 and M1 of `docs/specs/grip_up_v0.2.md`.
 The immutable baseline is tagged `v0.1-baseline`; its configuration, 962 passing
 checks and representative sessions are archived in `docs/baselines/v0.1/`.
 
@@ -33,11 +60,7 @@ to 12/12 ON, with one-second retention. Adverse momentum/support cases remain
 physical failures and are reported separately. See `docs/validation/M1.md` for
 rendered evidence, timing uncertainty and the limits of this comparison.
 
-M2 physical feet, M3 support-aware posture, M4 directional grip quality, M5 the
-new reactive challenge and M6 mantle are not implemented yet. Their flags are
-OFF. In particular, the old camera-referenced twist assistance remains until M3.
-Human A/B feel evaluation is still pending; this prototype does not certify a
-completed v0.2 or a better subjective feel.
+The M1-only snapshot remains tagged `v0.2-M1`.
 
 ## Controls
 
@@ -69,7 +92,8 @@ to the original scope, free hands plus ground contact enables a separate
 third-person walking motor. WASD applies bounded ground effort; the body turns
 toward movement and the visual legs step. Any reaching/attached/slipping hand
 disables that motor, and the same inputs control climbing. There is no midair
-steering. No full ragdoll or independent foot grips have been added.
+steering. The optional M2 adds independent compressive foot contacts; no full
+ragdoll or tensile foot grips have been added.
 The biped, hold-to-grip and ground walking are the user's explicit changes to
 the v0.1 robot/toggle/no-leg-locomotion defaults.
 
@@ -95,9 +119,9 @@ leg continuously. Per-foot floor and toe queries avoid posing feet through
 nearby surfaces. Target integration runs at the fixed physics rate and its
 rendering is interpolated.
 
-This is a visual IK layer over the existing single-body contact simulation.
-Body mass, arm forces and reactions on movable grips retain their existing
-behavior. The original rigid robot-like leg pose is no longer used in the air.
+With M2 OFF this remains a visual IK layer over the existing single-body contact
+simulation. M2 consumes valid physical foot states when enabled. Body mass and
+arm tuning remain unchanged. Suspended legs keep their passive motion.
 
 Ground movement now uses the model's authored Idle/Walk animations, blended into
 physical IK when reaching starts. Ground acceleration/braking are 14/18 m/s²;
@@ -124,7 +148,7 @@ rebinding, focus loss, controls-panel cancellation and reset are supported.
 The same finite force budget and opposite reactions remain active. Height
 depends on the available arm stroke, support motion and nearby geometry.
 
-## Three experiments
+## Original three experiments
 
 1. **Static climb:** choose any wall point within reach and alternate hands to climb. The small rounded holds provide an optional route: aim at hold 01 and attach cyan. Hold W. Catch 02 with amber,
    wait until ATTACHED and let both hands stabilize. To reach 03, release only

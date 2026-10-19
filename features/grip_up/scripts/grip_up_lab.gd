@@ -10,7 +10,7 @@ const GroundLocomotion = preload("res://features/grip_up/scripts/ground_locomoti
 const CaptureTrace = preload("res://features/grip_up/scripts/capture_trace.gd")
 const GripIntentBuffer = preload("res://features/grip_up/scripts/grip_intent_buffer.gd")
 const CaptureDebugDraw = preload("res://features/grip_up/scripts/capture_debug_draw.gd")
-const LEVELS = [preload("res://features/grip_up/scenes/static_climb.tscn"), preload("res://features/grip_up/scenes/swing_and_catch.tscn"), preload("res://features/grip_up/scenes/reactive_structure.tscn")]
+const LEVELS = [preload("res://features/grip_up/scenes/static_climb.tscn"), preload("res://features/grip_up/scenes/swing_and_catch.tscn"), preload("res://features/grip_up/scenes/reactive_structure.tscn"), preload("res://features/grip_up/scenes/foot_support.tscn")]
 const COLORS = [Color("65dfcc"), Color("f0b85c")]
 var torso: RigidBody3D
 var controller: Node
@@ -57,10 +57,14 @@ var mode_buttons: Array[Button] = []
 var capture_trace = CaptureTrace.new()
 var grip_intents = GripIntentBuffer.new()
 var predictive_grip_enabled := false
+var physical_feet_enabled := false
 var capture_predictions: Array[Dictionary] = [{},{}]
 var prediction_clock := 0.0
 var prediction_label: Label
 var predictive_toggle: CheckButton
+var feet_toggle: CheckButton
+var feet_label: Label
+var feet_panel: PanelContainer
 var capture_debug: MeshInstance3D
 var prediction_support_id := 0
 var prediction_point := Vector3.INF
@@ -156,6 +160,7 @@ func load_test(index: int, use_checkpoint := false) -> void:
 	torso = RigidBody3D.new()
 	var profile := BipedProfile.new()
 	profile.predictive_grip = predictive_grip_enabled
+	profile.physical_feet = physical_feet_enabled
 	torso.name = "BipedTorso"
 	torso.mass = profile.body_mass
 	torso.continuous_cd = true
@@ -370,7 +375,7 @@ func _physics_process(delta: float) -> void:
 		if hand.state in ["ATTACHED","SLIPPING"] and hand.support == finish_support:
 			on_final_hold = true
 	var wall_top: bool = level_id==0 and torso.position.y>level.holds[-1].position.y-1.0
-	var goal: bool = (on_final_hold or wall_top) and attached > 0 and torso.linear_velocity.length() < 3.0
+	var goal: bool = level_id!=3 and (on_final_hold or wall_top) and attached > 0 and torso.linear_velocity.length() < 3.0
 	if level_id == 0:
 		goal = goal and torso.position.y > level.holds[-1].position.y - 1.0
 	elif level_id == 1:
@@ -436,6 +441,12 @@ func _process(delta: float) -> void:
 		if hand.state in ["ATTACHED","SLIPPING"]:
 			hand_labels[i].text += "\n%.2f m  /  %.0f N" % [hand.actual_length,controller.get_arm_force(i).length()]
 	status_label.text = hint if hint_time > 0 else ("WASD / Walk relative to camera. MMB / Orbit. Hold LMB / RMB on any surface to climb." if ground_motor.grounded and not ground_motor.has_climbing_intent() else "Grip anywhere within reach. W / Pull. S / Lower. Keep the other hand attached while transferring.")
+	feet_panel.visible = physical_feet_enabled and controller.feet_solver!=null
+	if feet_panel.visible:
+		feet_label.text = "FEET / AUTOMATIC"
+		for i in 2:
+			var foot: Dictionary = controller.feet_solver.feet[i]
+			feet_label.text += "\n%s / %s  %.0f N" % ["L" if i==0 else "R",foot.state,Vector3(foot.force).length()]
 	var launch: Dictionary = controller.telemetry()
 	if launch.get("launch_state")=="CHARGING":
 		status_label.text = "LAUNCH / %d%% — release %s to pull and let go." % [int(launch.get("launch_charge",0.0)*100.0),router.prompt("launch")]
@@ -449,6 +460,10 @@ func _process(delta: float) -> void:
 			var hand: Dictionary = controller.hands[i]
 			debug_label.text += "\n\n%s / %s\nAnchor: %s %s\nLength %.2f / target %.2f m  |  force %.1f / limit %.1f N\nReason: %s" % ["LEFT" if i==0 else "RIGHT",hand.state,str(hand.support),str(hand.anchor_world),hand.actual_length,hand.rest_length,controller.get_arm_force(i).length(),hand.grip_limit,hand.reason]
 		debug_label.text += "\n\nTotal %.1f / %.1f N | Torque %s\nAttempts %d / misses %d / transfers %d / slips %d\nTrial logs: user://trials.jsonl" % [trial.max_force_used,controller.tuning.total_pull_force_budget,str(controller.telemetry().get("torque",Vector3.ZERO)),trial.attempts,trial.misses,trial.transfers,trial.slips]
+		if controller.feet_solver!=null and physical_feet_enabled:
+			debug_label.text += "\nLegs %.1f / %.1f N | combined torque %.1f / %.1f Nm" % [launch.get("leg_force",0),launch.get("leg_force_budget",0),Vector3(launch.get("torque",Vector3.ZERO)).length(),controller.tuning.max_total_torque]
+			for foot in controller.feet_solver.feet:
+				debug_label.text += "\nFoot %s / N %.1f / T %.1f / %s" % [foot.state,foot.normal_force,Vector3(foot.tangent_force).length(),foot.reason]
 
 func _save_trial(outcome: String) -> void:
 	if trial.is_empty():
@@ -467,6 +482,7 @@ func _record_capture(delta: float) -> void:
 		return
 	capture_trace.sample(delta,controller,{"scene":level_id,"launch_state":controller.telemetry().get("launch_state","IDLE"),
 		"grip_buttons":[Input.is_action_pressed("grip_left"),Input.is_action_pressed("grip_right")],"capture_predictions":capture_predictions,
+		"anomalous_displacements":trial.get("large_step_events",0),
 		"grounded":ground_motor.grounded if is_instance_valid(ground_motor) else false,
 		"beam_angle":level.beam.rotation.z if is_instance_valid(level) and is_instance_valid(level.beam) else 0.0})
 
@@ -538,10 +554,10 @@ func _setup_ui() -> void:
 	branding.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	row.add_child(branding)
 	_label("GRIP UP",36,branding,Color("edf4e9"))
-	_label("PHYSICS CLIMBING LAB  /  0.2 M1",15,branding,COLORS[0])
-	for i in 3:
+	_label("PHYSICS CLIMBING LAB  /  0.2 M2",15,branding,COLORS[0])
+	for i in LEVELS.size():
 		var index := i
-		var button := _button(["01  STATIC CLIMB","02  SWING & CATCH","03  REACTIVE STRUCTURE"][i],func():load_test(index),row)
+		var button := _button(["01  STATIC CLIMB","02  SWING & CATCH","03  REACTIVE STRUCTURE","04  FOOT SUPPORT"][i],func():load_test(index),row)
 		button.toggle_mode = true
 		mode_buttons.append(button)
 	_button("Controls",func():settings.visible=not settings.visible,row)
@@ -566,6 +582,14 @@ func _setup_ui() -> void:
 	hands_panel.add_child(hands_box)
 	for i in 2:
 		hand_labels.append(_label("",19,hands_box,COLORS[i]))
+	feet_panel = _panel(hud)
+	feet_panel.set_anchors_and_offsets_preset(Control.PRESET_CENTER_RIGHT)
+	feet_panel.offset_left = -318
+	feet_panel.offset_right = -32
+	feet_panel.offset_top = 155
+	feet_panel.offset_bottom = 280
+	feet_label = _label("",17,feet_panel,Color("8bb88c"))
+	feet_panel.hide()
 	var bottom := _panel(hud)
 	bottom.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE)
 	bottom.offset_left = 32
@@ -595,6 +619,11 @@ func _setup_ui() -> void:
 	predictive_toggle.button_pressed = predictive_grip_enabled
 	predictive_toggle.toggled.connect(_set_predictive_grip)
 	settings_box.add_child(predictive_toggle)
+	feet_toggle = CheckButton.new()
+	feet_toggle.text = "Automatic foot contacts / feet push on real supports"
+	feet_toggle.button_pressed = physical_feet_enabled
+	feet_toggle.toggled.connect(_set_physical_feet)
+	settings_box.add_child(feet_toggle)
 	var record := CheckButton.new()
 	record.text = "Record capture diagnostics (JSONL)"
 	record.toggled.connect(func(on:bool):
@@ -659,3 +688,12 @@ func _set_predictive_grip(on: bool) -> void:
 			for id in 2:
 				if controller.get_hand_state(id)=="REACHING" and controller.hands[id].get("predictive_wait",false):
 					grip_intents.release(controller,id)
+
+func _set_physical_feet(on: bool) -> void:
+	physical_feet_enabled = on
+	if is_instance_valid(feet_toggle):
+		feet_toggle.set_pressed_no_signal(on)
+	if is_instance_valid(controller):
+		controller.tuning.physical_feet = on
+		if controller.feet_solver!=null:
+			controller.feet_solver.reset()

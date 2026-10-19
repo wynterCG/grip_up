@@ -1,12 +1,13 @@
 extends Node3D
 
-@export_range(0,2) var test_id := 0
+@export_range(0,3) var test_id := 0
 var spawn := Vector3(0, 1.17, 0.40)
 var holds: Array[PhysicsBody3D] = []
 var checkpoint := Vector3(-0.17, 1.81, 0.30)
 var checkpoint_enabled := false
 var beam: RigidBody3D
 var fixed_beam := false
+var footholds: Array[PhysicsBody3D] = []
 var finish_point := Vector3.ZERO
 var title := ""
 var objective := ""
@@ -19,8 +20,24 @@ func _ready() -> void:
 		_static_climb()
 	elif test_id == 1:
 		_swing()
-	else:
+	elif test_id == 2:
 		_reactive()
+	else:
+		_foot_support()
+
+func _foot_support() -> void:
+	title = "04 / FOOT SUPPORT"
+	objective = "Hold the two fixed targets. W pushes through planted feet.\nControls / Automatic foot contacts compares the same footholds ON / OFF."
+	box("Wall",Vector3(0,2.1,-0.20),Vector3(4,5,0.4),steel)
+	box("Start",Vector3(0,0.1,1.0),Vector3(6,0.3,5),Color("526a72"))
+	wall_hold(Vector3(-0.24,2.10,0.10),"L",cyan)
+	wall_hold(Vector3(0.24,2.10,0.10),"R",gold)
+	for side in [-1.0,1.0]:
+		var foot := box("Left foothold" if side<0 else "Right foothold",Vector3(side*0.31,0.51,0.12),Vector3(0.20,0.16,0.40),Color("8bb88c"))
+		footholds.append(foot)
+	label3("FEET PUSH / HANDS HOLD",Vector3(0,2.7,0.40),Color("8bb88c"),28)
+	label3("W / EXTEND LEGS    S / LOWER",Vector3(0,0.18,0.65),Color("8bb88c"),19)
+	finish_point = Vector3(0,2.1,0.10)
 
 func material(color: Color, metal := 0.0) -> StandardMaterial3D:
 	var mat := StandardMaterial3D.new()

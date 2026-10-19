@@ -26,6 +26,8 @@ func has_climbing_intent() -> bool:
 	for hand in 2:
 		if controller.get_hand_state(hand) in ["REACHING","ATTACHED","SLIPPING"]:
 			return true
+	if controller.tuning.physical_feet and controller.feet_solver!=null and not grounded:
+		return controller.feet_solver.feet.any(func(foot):return foot.state in ["SUPPORTING","SLIDING"])
 	return false
 
 func _physics_process(_delta: float) -> void:
@@ -47,6 +49,7 @@ func _physics_process(_delta: float) -> void:
 			grounded = true
 			ground_normal = hit.normal
 			support_body = hit.collider
+	controller.grounded_for_walking = grounded
 	if not grounded or has_climbing_intent():
 		return
 	var forward := -camera.global_basis.z

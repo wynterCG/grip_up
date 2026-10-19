@@ -1,6 +1,7 @@
 extends RefCounted
 ## Optional sampled JSONL instrumentation. Reading this state cannot drive physics.
 const Actuator = preload("res://features/grip_up/scripts/arm_actuator.gd")
+const Anchor = preload("res://features/grip_up/scripts/grip_anchor.gd")
 var enabled := false
 var interval := 0.05
 var path := "user://capture_frames.jsonl"
@@ -37,7 +38,8 @@ func sample(delta: float, controller: Node, extra: Dictionary = {}) -> void:
 		"total_force":data.total_force,"force_budget":data.force_budget,"torque":vector(data.torque),
 		"position":vector(controller.torso.global_position),"linear_velocity":vector(controller.torso.linear_velocity),
 		"angular_velocity":vector(controller.torso.angular_velocity),"physics_step_ms":Performance.get_monitor(Performance.TIME_PHYSICS_PROCESS)*1000.0,
-		"fps":Engine.get_frames_per_second(),"hands":[]}
+		"fps":Engine.get_frames_per_second(),"hands":[],"feet":[],
+		"leg_force":data.get("leg_force",0.0),"leg_force_budget":data.get("leg_force_budget",0.0),"combined_force":data.get("combined_force",data.total_force)}
 	for id in 2:
 		var hand: Dictionary = controller.hands[id]
 		var anchor = hand.anchor
@@ -50,6 +52,18 @@ func sample(delta: float, controller: Node, extra: Dictionary = {}) -> void:
 			"support_name":str(support.name) if support!=null else "","actual_length":controller.get_shoulder_world(id).distance_to(point),
 			"desired_length":hand.rest_length,"relative_velocity":vector(relative),"force":vector(hand.force),
 			"force_magnitude":Vector3(hand.force).length(),"grip_limit":hand.grip_limit,"reason":hand.reason,"capture":hand.get("capture",{})})
+	if controller.feet_solver!=null:
+		for id in controller.feet_solver.feet.size():
+			var foot: Dictionary = controller.feet_solver.feet[id]
+			var support = foot.get("support")
+			var valid: bool = is_instance_valid(support) and support.is_inside_tree()
+			var point: Vector3 = foot.get("contact_point",Vector3.ZERO)
+			var normal: Vector3 = (support.global_basis.inverse().transposed()*Vector3(foot.local_normal)).normalized() if valid else Vector3.ZERO
+			var velocity: Vector3 = Actuator.point_velocity(controller.torso,point)-Anchor.new(support,point,normal).point_velocity() if valid else Vector3.ZERO
+			row.feet.append({"id":id,"state":foot.state,"ankle":vector(foot.ankle),"contact_point":vector(point),"normal":vector(normal),
+				"local_point":vector(foot.get("local_point",Vector3.ZERO)),"support_id":support.get_instance_id() if valid else 0,
+				"support_name":str(support.name) if valid else "","relative_velocity":vector(velocity) if valid else [],"normal_force":foot.normal_force,
+				"tangent_force":vector(foot.tangent_force),"force":vector(foot.force),"slip":foot.slip,"reason":foot.reason})
 	row.merge(extra)
 	_file.store_line(JSON.stringify(row))
 	_file.flush()

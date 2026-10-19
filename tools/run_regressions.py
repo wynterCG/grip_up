@@ -12,17 +12,23 @@ names = ['physics','platform_probe','wall_clearance','biped_profile','playthroug
          'climb_direction','leg_motion','pendulum','free_climb','launch','full_reach','biped_asset']
 label = sys.argv[1] if len(sys.argv)>1 else 'regressions'
 selected = sys.argv[2:]
-if label == 'm1':
+if label in ['m1','m2']:
     names += ['m0_instrumentation','capture_input','capture_matrix']
+if label == 'm2':
+    names += ['foot_support','foot_integration','feet_routes','feet_swing']
 assert all(name in names for name in selected)
 dest = root/'docs'/'validation'/label
 dest.mkdir(parents=True,exist_ok=True)
 
 def run(item):
     name, slow = item
-    command = ['python',str(root/'tools'/'project.py'),'test','test_'+name]
+    aliases = {'feet_routes':'playthrough','feet_swing':'swing_playthrough'}
+    command = ['python',str(root/'tools'/'project.py'),'test','test_'+aliases.get(name,name)]
+    flags = ['--feet'] if name in aliases else []
     if slow:
-        command += ['--','--60hz']
+        flags += ['--60hz']
+    if flags:
+        command += ['--']+flags
     result = subprocess.run(command,capture_output=True,timeout=210)
     output = (result.stdout+result.stderr).decode('utf-8',errors='replace').replace('\r','').rstrip()+'\n'
     footer = re.search(r'RESULTS: (\d+) checks, (\d+) failures',output)

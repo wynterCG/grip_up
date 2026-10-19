@@ -1,0 +1,66 @@
+{
+  "complete": true,
+  "physics_hz": 60,
+  "runs": [
+    {
+      "enabled": false,
+      "feet": [
+        {
+          "ankle": "(-0.088523, 0.572245, 0.224675)",
+          "normal_force": 0.0,
+          "point": "(0.0, 0.0, 0.0)",
+          "reason": "inactive",
+          "state": "FREE",
+          "support": "",
+          "tangent_force": "(0.0, 0.0, 0.0)"
+        },
+        {
+          "ankle": "(0.088757, 0.570605, 0.222506)",
+          "normal_force": 0.0,
+          "point": "(0.0, 0.0, 0.0)",
+          "reason": "inactive",
+          "state": "FREE",
+          "support": "",
+          "tangent_force": "(0.0, 0.0, 0.0)"
+        }
+      ],
+      "hand_load": 136.511855570475,
+      "hands_after": 2,
+      "hands_before": 2,
+      "leg_load": 0.0,
+      "planted_samples": 0,
+      "position": "(-0.000419, 1.385702, 0.236874)",
+      "samples": 60
+    },
+    {
+      "enabled": true,
+      "feet": [
+        {
+          "ankle": "(-0.249027, 0.6937, 0.265866)",
+          "normal_force": 42.4916954040527,
+          "point": "(-0.249027, 0.59, 0.265866)",
+          "reason": "contact",
+          "state": "SUPPORTING",
+          "support": "Left foothold",
+          "tangent_force": "(2.305676, 0.0, 2.624332)"
+        },
+        {
+          "ankle": "(0.248973, 0.6937, 0.265841)",
+          "normal_force": 33.2875556945801,
+          "point": "(0.248973, 0.59, 0.265841)",
+          "reason": "contact",
+          "state": "SUPPORTING",
+          "support": "Right foothold",
+          "tangent_force": "(-12.87225, 0.0, -0.066963)"
+        }
+      ],
+      "hand_load": 23.0918847673883,
+      "hands_after": 2,
+      "hands_before": 2,
+      "leg_load": 103.130803044637,
+      "planted_samples": 120,
+      "position": "(-0.109284, 1.460904, 0.341001)",
+      "samples": 60
+    }
+  ]
+}

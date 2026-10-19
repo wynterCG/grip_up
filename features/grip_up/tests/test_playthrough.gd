@@ -113,6 +113,8 @@ func run() -> void:
 	app = Lab.new()
 	root.add_child(app)
 	current_scene = app
+	if OS.get_cmdline_user_args().has("--feet"):
+		app._set_physical_feet(true)
 	app.torso.contact_monitor = true
 	app.torso.max_contacts_reported = 16
 	await ticks(int(0.75 * hz))

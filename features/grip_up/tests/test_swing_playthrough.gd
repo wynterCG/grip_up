@@ -41,6 +41,8 @@ func run() -> void:
 	app = Lab.new()
 	root.add_child(app)
 	current_scene = app
+	if OS.get_cmdline_user_args().has("--feet"):
+		app._set_physical_feet(true)
 	app.load_test(1)
 	await ticks(int(0.75 * hz))
 	var hold_a: PhysicsBody3D = app.level.holds[0]
