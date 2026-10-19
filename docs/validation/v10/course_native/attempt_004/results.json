@@ -1,0 +1,10 @@
+{
+  "provenance": "Godot MCP Pro visible monitor1; automated ordinary input, not human acceptance",
+  "exercise_sha256": "0430c34b00e96831fbd854baf7e3f202d6123b4add2490c611a2ba87978dc0ed",
+  "all_passed": false,
+  "runs": [
+    {"hz":120,"checks":18,"failures":0},
+    {"hz":60,"checks":18,"failures":5}
+  ],
+  "failure": "60Hz caught the near lip while actual body was outside the top-out start envelope; extension-limit release followed. Final replay retains the lower real support until body height and shoulder reach are ready."
+}

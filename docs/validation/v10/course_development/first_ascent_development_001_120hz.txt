@@ -1,0 +1,35 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+
+
+FAIL explicit new level enables its authored vault without changing old route
+
+PASS ordinary-spawn left actual finite grip
+
+PASS ordinary-spawn right actual finite grip
+
+PASS original climb traverse suspension stages earned before top-out
+
+PASS bar finish alone never declares the new top-out
+
+ASCENT BLOCK { "label": "align left on finish bar", "hand": 0, "point": (1.6, 2.68, 0.08), "position": (1.964646, 1.90009, 0.220241), "shoulder": (1.474448, 2.167147, 0.208958), "distance": 0.54351788759232, "pending": { "active": true, "held": true, "attempt_id": 11, "target_selection_id": 11, "selected_time": 13.4333333333332, "substate": "PENDING_OBSTRUCTED", "support_id": 68081945196, "local_point": (-0.149999, -0.02, 0.12), "local_normal": (0.0, 0.0, 1.0), "target_world": (1.600001, 2.68, 0.08), "normal_world": (0.0, 0.0, 1.0), "shoulder_world": (1.474205, 2.167085, 0.208679), "hand_world": (1.493278, 2.599945, 0.151823), "hand_goal": (1.600001, 2.68, 0.125), "distance": 0.54356652498245, "reach_margin": 0.11351347501755, "pending_time": 2.99999999999983, "transition_count": 0, "blocked": true, "blocker_id": 67981281894, "world_speed": 0.0, "gesture_speed": 0.04014557227492, "transport_speed": 0.04014557227492, "world_velocity": (0.0, 0.0, 0.0), "gesture_velocity": (0.034218, -0.00844, -0.019224), "transport_velocity": (-0.034218, 0.00844, 0.019224), "target_relative_speed": 0.0, "workspace_valid": true, "endpoint_valid": true, "physical_in_reach": true, "label_in_reach": true, "physical_transition_count": 2, "phase": "APPROACH", "missed_window_count": 1, "last_window_duration": 1.07499999999994, "last_window_reason": "PATH_OBSTRUCTED", "reason": "hand_path_blocked", "contact_time": -1.0, "acquisition_load": 0.0, "motion_scope": "shoulder-frame transport plus finite relative gesture; full world sweep", "original_selection_world": (1.600001, 2.68, 0.08), "original_selection_local": (-0.149999, -0.02, 0.12), "original_selection_normal_local": (0.0, 0.0, 1.0), "original_selection_distance": 0.54620182514191, "contact_resolution_applied": false, "contact_resolution_reason": "clicked_point_already_reachable", "contact_resolution_blocker_id": 0, "selection_policy": "REACHABLE_SAME_COLLIDER_ON_REQUEST", "requested_gesture_velocity": (3.140473, 2.347412, -0.791906), "requested_gesture_speed": 4.00000333786011, "target_velocity": (0.0, 0.0, 0.0) }, "hybrid": {  } }
+
+FAIL real surface transfer / align left on finish bar
+
+FAIL one committed top-out follows actual continuous three-stage traversal
+
+FAIL original standing sole earns actual native top-platform support
+
+FAIL hands free and real ordinary walking earns30cm beyond top-out
+
+FAIL no loss of all real hand support before explicit assisted commitment
+
+PASS completed ascent returns normal dynamic and ground ownership
+
+PASS all unassisted actions respect existing hand foot and total moment caps
+
+FIRST ASCENT RESULTS: 12 checks, 6 failures
+
+ERROR: Failed to read the root certificate store.
+
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)

@@ -18,7 +18,8 @@ const ContextualInput = preload("res://features/grip_up/scripts/contextual_arm_i
 const MantleV08=preload("res://features/grip_up/scripts/mantle_support_coordinator.gd")
 const HybridMantle=preload("res://features/grip_up/scripts/hybrid_mantle_controller.gd")
 const HybridLevel=preload("res://features/grip_up/scripts/hybrid_mantle_level.gd")
-const HYBRID_SCENARIOS=["LOW","HIGH","NARROW","CEILING","OCCUPIED","DYNAMIC","DOUBLE"]
+const FirstAscentLevel=preload("res://features/grip_up/scripts/first_ascent_level.gd")
+const HYBRID_SCENARIOS=["LOW","HIGH","NARROW","CEILING","OCCUPIED","DYNAMIC","DOUBLE","FIRST_ASCENT"]
 const V08_LEVELS=[preload("res://features/grip_up/scenes/mantle_v08_low.tscn"),preload("res://features/grip_up/scenes/mantle_v08_high.tscn")]
 const LEVELS = [preload("res://features/grip_up/scenes/static_climb.tscn"), preload("res://features/grip_up/scenes/swing_and_catch.tscn"), preload("res://features/grip_up/scenes/reactive_structure.tscn"), preload("res://features/grip_up/scenes/foot_support.tscn"),preload("res://features/grip_up/scenes/transfer_lab.tscn"),preload("res://features/grip_up/scenes/swing_reach_lab.tscn"),preload("res://features/grip_up/scenes/intent_step.tscn"),preload("res://features/grip_up/scenes/intent_hang.tscn"),preload("res://features/grip_up/scenes/intent_traverse.tscn"),preload("res://features/grip_up/scenes/intent_corner.tscn"),preload("res://features/grip_up/scenes/climbing_route.tscn"),preload("res://features/grip_up/scenes/mantle.tscn")]
 const COLORS = [Color("65dfcc"), Color("f0b85c")]
@@ -265,7 +266,9 @@ func load_test(index: int, use_checkpoint := false) -> void:
 	mantle_v08=null
 	mantle_overlay=null
 	hybrid_mantle=null
-	if index>=14:
+	if index==21:
+		level=FirstAscentLevel.new()
+	elif index>=14:
 		level=HybridLevel.new()
 		level.scenario=HYBRID_SCENARIOS[index-14]
 	else:
@@ -407,7 +410,7 @@ func load_test(index: int, use_checkpoint := false) -> void:
 	stable_goal = 0
 	won = false
 	rating_panel.hide()
-	title_label.text = "CLIMB UP / "+level.scenario if level_id>=14 and contextual_vault_v10_enabled else level.title
+	title_label.text = "CLIMB UP / "+level.scenario if level_id>=14 and level_id!=21 and contextual_vault_v10_enabled else level.title
 	_update_objective()
 	beam_button.visible = index == 2
 	beam_button.text = "F  /  " + ("FIXED BEAM" if fixed_beam else "HINGED BEAM")
@@ -634,7 +637,7 @@ func _physics_process(delta: float) -> void:
 		message("Checkpoint saved on the rest ledge. R returns here.")
 	if level_id==4:
 		transfer_progress.update(controller,level.transfer_points,trial.elapsed)
-	if level_id==10:
+	if level_id in [10,21]:
 		climbing_route.update(controller,ground_motor.grounded,level.route_zones,trial.elapsed,delta)
 	var finish_support = level.holds[-1]
 	var on_final_hold := false
@@ -671,13 +674,14 @@ func _physics_process(delta: float) -> void:
 		goal=mantle_completed
 	if level_id in [12,13]:goal=mantle_v08.completed
 	if level_id>=14:goal=hybrid_mantle.completed and (level.scenario!="DOUBLE" or hybrid_mantle.commits>=2)
+	if level_id==21:goal=climbing_route.completed and hybrid_mantle.completed
 	stable_goal = stable_goal + delta if goal else 0.0
 	if stable_goal > 0.5 and not won:
 		won = true
 		trial.goal_seconds = trial.elapsed
 		_save_trial("goal")
 		if level_id>=10:
-			if level_id!=10:message("TOP-OUT COMPLETE / Actual support restored. R to retry.")
+			if level_id not in [10,21]:message("TOP-OUT COMPLETE / Actual support restored. R to retry.")
 			else:
 				message("ROUTE COMPLETE / R to try again. You kept control through the whole climb.")
 		else:
@@ -846,6 +850,14 @@ func _process(delta: float) -> void:
 			elif refusal=="TARGET_OCCUPIED":status_label.text="The landing space is blocked."
 			elif refusal=="UNSUPPORTED_DYNAMIC_PLATFORM":status_label.text="This ledge moves. Keep climbing normally here."
 		mantle_overlay.visible=debug_visible
+	if level_id==21:
+		checkpoint_label.text="ASCENT COMPLETE / R to retry" if won else "ASCENT / %d OF 4  |  R / retry"%[mini(climbing_route.stage+1,4)]
+		if won:status_label.text="You reached the upper deck. R to try a different line."
+		elif hybrid_mantle.completed and not climbing_route.completed:
+			checkpoint_label.text="TOP REACHED / ROUTE %d OF 3"%climbing_route.stage
+			status_label.text="You reached the deck by another line. R to try the marked route."
+		elif not hybrid_mantle.active() and hybrid_mantle.state!="DYNAMIC_GROUNDED":
+			status_label.text=level.route_zones[climbing_route.stage].hint if not climbing_route.completed else "FINAL WALL / Reach the broad upper edge and hold W to climb up."
 	if debug_visible:
 		debug_label.text = "PHYSICS / %d Hz  |  step %d  |  %.2f ms  |  %d fps\nBody %s  |  rotation %s\nv %s  /  spin %s" % [Engine.physics_ticks_per_second,session_ticks,Performance.get_monitor(Performance.TIME_PHYSICS_PROCESS)*1000,Engine.get_frames_per_second(),str(torso.position),str(torso.rotation),str(torso.linear_velocity),str(torso.angular_velocity)]
 		for i in 2:
@@ -946,6 +958,11 @@ func _open_hybrid_mantle(scenario:int=0,use_vault_presentation:bool=false)->void
 	_set_distant_targeting(true)
 	message("Grip near the top edge and hold W to climb up. Release the mouse buttons after you begin; walking resumes on top.")
 
+func _open_first_ascent()->void:
+	_open_hybrid_mantle(7,true)
+	_set_physical_feet(true)
+	message("Climb, cross the bars, then reach the upper deck. Choose free surfaces and keep one real hand held.")
+
 func _on_transfer_event(event: Dictionary) -> void:
 	var row: Dictionary=event.duplicate(true)
 	row.session_id=transfer_session_id
@@ -965,7 +982,7 @@ func _on_transfer_event(event: Dictionary) -> void:
 	var event_hand: int=int(event.get("hand",-1))
 	row.attempt_assessment=attempt_assessments[event_hand].duplicate(true) if event_hand in [0,1] else {}
 	row.route=transfer_progress.diagnostics() if level_id==4 else {}
-	row.climbing_route=climbing_route.diagnostics() if level_id==10 else {}
+	row.climbing_route=climbing_route.diagnostics() if level_id in [10,21] else {}
 	row.ledge_transfer=controller.telemetry().get("ledge_transfer",{})
 	row.mantle_v08=mantle_v08.data if is_instance_valid(mantle_v08) else {}
 	row.hybrid_mantle=hybrid_mantle.data if is_instance_valid(hybrid_mantle) else {}
@@ -989,7 +1006,7 @@ func _save_trial(outcome: String) -> void:
 	row.transfer_session=transfer_session_id
 	row.transfer_diagnostics_enabled=transfer_diagnostics_enabled
 	row.transfer_route=transfer_progress.diagnostics() if level_id==4 else {}
-	row.climbing_route=climbing_route.diagnostics() if level_id==10 else {}
+	row.climbing_route=climbing_route.diagnostics() if level_id in [10,21] else {}
 	row.ledge_transfer=controller.telemetry().get("ledge_transfer",{})
 	row.mantle_v08=mantle_v08.data if is_instance_valid(mantle_v08) else {}
 	row.mantle_gate={"standing":mantle_standing,"completed":mantle_completed} if level_id==11 else {}
@@ -1027,7 +1044,7 @@ func _record_capture(delta: float) -> void:
 		"aim_input_does_not_change_length":input_profile in [3,4],
 		"intent_climb_enabled":intent_climb_enabled and input_profile==4,"intent_locomotion":controller.telemetry().get("intent_locomotion",{}),
 		"transfer_posture":contextual_data.get("transfer_posture",{}),"transfer_assist_enabled":transfer_assist_enabled,"posture_variant":posture_variant,"transfer_session":transfer_session_id,"transfer_diagnostics":controller.transfer_diagnostics(),"transfer_route":transfer_progress.diagnostics() if level_id==4 else {},
-		"climbing_route":climbing_route.diagnostics() if level_id==10 else {},
+		"climbing_route":climbing_route.diagnostics() if level_id in [10,21] else {},
 		"ledge_transfer":contextual_data.get("ledge_transfer",{}),"mantle_gate":{"standing":mantle_standing,"completed":mantle_completed} if level_id==11 else {},
 		"mantle_v08":mantle_v08.data if is_instance_valid(mantle_v08) else {},
 		"hybrid_mantle":hybrid_mantle.data if is_instance_valid(hybrid_mantle) else {},
@@ -1225,6 +1242,7 @@ func _setup_ui() -> void:
 	_button("The Traverse",func():_open_intent_arena(8,false),intent_row)
 	_button("The Corner",func():_open_intent_arena(9,false),intent_row)
 	_button("PLAY / The first route",func():_open_intent_arena(10,true);_set_distant_targeting(true),settings_box)
+	_button("PLAY / The first ascent",_open_first_ascent,settings_box)
 	var ledge_row:=HBoxContainer.new()
 	settings_box.add_child(ledge_row)
 	_button("Ledge experiment / hands",func():_open_intent_arena(11,false);_set_distant_targeting(true),ledge_row)

@@ -1,0 +1,39 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+
+
+PASS explicit new level enables its authored vault without changing old route
+
+PASS ordinary-spawn left actual finite grip
+
+PASS ordinary-spawn right actual finite grip
+
+PASS original climb traverse suspension stages earned before top-out
+
+PASS bar finish alone never declares the new top-out
+
+PASS real surface transfer / align left on finish bar
+
+PASS real surface transfer / right slab approach
+
+ASCENT BLOCK { "label": "left slab approach", "hand": 0, "point": (2.12, 2.74, 0.2), "position": (2.124763, 1.885936, 0.429703), "shoulder": (1.764913, 2.292329, 0.560444), "distance": 0.6755855679512, "pending": { "active": true, "held": true, "attempt_id": 13, "target_selection_id": 13, "selected_time": 15.1499999999998, "substate": "PENDING_OUT_OF_REACH", "support_id": 90798295481, "local_point": (-1.029999, 1.315, 1.4), "local_normal": (0.0, 0.0, 1.0), "target_world": (2.120001, 2.74, 0.2), "normal_world": (0.0, 0.0, 1.0), "shoulder_world": (1.76498, 2.292425, 0.560464), "hand_world": (2.120001, 2.74, 0.245), "hand_goal": (2.120001, 2.74, 0.245), "distance": 0.67549777030945, "reach_margin": -0.01841777030945, "pending_time": 2.99999999999983, "transition_count": 0, "blocked": false, "blocker_id": 0, "world_speed": 0.0, "gesture_speed": 0.02597584947944, "transport_speed": 0.02597584947944, "world_velocity": (0.0, 0.0, 0.0), "gesture_velocity": (0.024004, -0.007582, -0.006409), "transport_velocity": (-0.024004, 0.007582, 0.006409), "target_relative_speed": 0.0, "workspace_valid": true, "endpoint_valid": true, "physical_in_reach": false, "label_in_reach": false, "physical_transition_count": 0, "phase": "APPROACH", "missed_window_count": 0, "last_window_duration": -1.0, "last_window_reason": "", "reason": "out_of_reach", "contact_time": -1.0, "acquisition_load": 0.0, "motion_scope": "shoulder-frame transport plus finite relative gesture; full world sweep", "original_selection_world": (2.120001, 2.74, 0.2), "original_selection_local": (-1.029999, 1.315, 1.4), "original_selection_normal_local": (0.0, 0.0, 1.0), "original_selection_distance": 0.78429001569748, "contact_resolution_applied": false, "contact_resolution_reason": "actual_surface_outside_reach", "contact_resolution_blocker_id": 0, "selection_policy": "REACHABLE_SAME_COLLIDER_ON_REQUEST", "requested_gesture_velocity": (0.024004, -0.007582, -0.006409), "requested_gesture_speed": 0.02597584947944, "target_velocity": (0.0, 0.0, 0.0) }, "hybrid": { "enabled": true, "state": "DYNAMIC", "progress": 0.0, "candidate": { "eligible": false, "eligibility_reason": "NO_FLAT_TOP", "candidate_timestamp": 3541 }, "commits": 0, "restores": 0, "freeze": false, "freeze_mode": 0, "motor_ownership": "DYNAMIC", "animation_complete": false, "standing_collision_clear": false, "standing_collision_clear_at_restore": false, "top_ground_valid": false, "grips_released": false, "dynamic_restored": true, "walk_distance_relative_to_support": 0.0, "mantle_complete": false, "result": "", "reason": "NO_FLAT_TOP", "body_pose": [X: (0.645302, 0.321734, -0.692872), Y: (-0.467628, 0.883565, -0.02524), Z: (0.604077, 0.340293, 0.720618), O: (2.124655, 1.885883, 0.429704)], "body_velocity": (0.013046, 0.006356, -0.000148), "animation": { "mode": "INACTIVE", "presentation_phase": "INACTIVE", "clip": "HybridMantle", "duration_s": 1.05, "progress": 0.0, "animation_time_s": 0.0, "collision_flex": 0.0, "visual_root_error": 0.00024291501904, "visual_target_recorded": false, "visual_target_measurement_scope": "STALE_OR_UNMEASURED", "visual_vs_assigned_interpolated_target_error_m": -1.0, "body_interpolation_lag_at_visual_update_m": -1.0, "interpolated_target_change_since_visual_update_m": -1.0, "hand_contact_error": [-1.0, -1.0], "physical_foot_error": [0.0, 0.0], "last_measurement": {  }, "measured_frames": 0, "hand_ik_weight": 1.0, "started_count": 0, "finished_count": 0, "reason": "NOT_STARTED", "root_motion": false, "body_authority": false, "contextual_vault_v10_enabled": true, "active_v10": false, "hand_release_window": [0.48, 0.78], "source_hand_ids": [], "anchor_support_ids": [0, 0], "anchor_local_points": [(inf, inf, inf), (inf, inf, inf)], "actual_arm_lengths_m": [0.54708084464073, 0.54708075523376], "actual_shoulder_to_palm_target_m": [-1.0, -1.0], "wrist_target_distances_m": [-1.0, -1.0], "anatomical_hand_weights": [0.0, 0.0], "release_reasons": ["NO_CONTACT", "NO_CONTACT"], "per_hand_palm_weights": [] }, "events": [] } }
+
+FAIL real surface transfer / left slab approach
+
+FAIL one committed top-out follows actual continuous three-stage traversal
+
+FAIL original standing sole earns actual native top-platform support
+
+FAIL hands free and real ordinary walking earns30cm beyond top-out
+
+FAIL no loss of all real hand support before explicit assisted commitment
+
+PASS completed ascent returns normal dynamic and ground ownership
+
+PASS all unassisted actions respect existing hand foot and total moment caps
+
+FIRST ASCENT RESULTS: 14 checks, 5 failures
+
+ERROR: Failed to read the root certificate store.
+
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)

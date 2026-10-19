@@ -6,6 +6,20 @@ Integrated Jolt, 120 Hz. Core and complete routes also tested at 60 Hz.
 
 This is a separate prototype. The Janga object grabber and its project are unchanged.
 
+## PLAY / The first ascent
+
+Controls / **PLAY / The first ascent** opens a continuous greybox: climb the
+wall, traverse the bars with real arm support, climb the final face and use W at
+its upper lip. Finish with actual dynamic walking on the deck. The guide regions
+are broad; grips remain freely selected. R retries, MMB orbits, scroll zooms.
+
+The old first route and v0.9/v1.0 comparison fixtures remain available. Only this
+new course adapts the teaching bars for clearance. The physical solver, grip
+limits and vault route are unchanged. A direct alternative line can reach the
+top; the complete marked-route badge also requires the three observed regions.
+See [level design](docs/levels/first_ascent.md) and
+[course verification](docs/validation/v10/course_report.md).
+
 ## v1.0 vault presentation experiment ? explicit A/B
 
 Choose **Controls / v1.0 / Climb Up 1.25 m**, **2.10 m**, or **Two ledges**.

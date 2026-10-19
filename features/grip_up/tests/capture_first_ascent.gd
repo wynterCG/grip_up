@@ -1,0 +1,47 @@
+extends "res://features/grip_up/tests/first_ascent_exercise.gd"
+## Rendered real-time version of the same ordinary-input exercise.
+func _ready()->void:
+	app=get_parent()
+	hz=Engine.physics_ticks_per_second
+	run.call_deferred()
+
+var seen:Array[String]=[]
+var saving:=false
+
+func _process(_delta:float)->void:
+	if not is_instance_valid(app) or not is_instance_valid(app.hybrid_mantle) or saving:return
+	var label:=""
+	if app.hybrid_mantle.active():
+		for threshold in [.27,.34,.60,.90]:
+			var key:="cross_%.2f"%threshold
+			if app.hybrid_mantle.progress>=threshold and not seen.has(key):label=key;break
+	else:
+		label="stage_%d"%app.climbing_route.stage
+	if label!="" and not seen.has(label):
+		seen.append(label)
+		save_frame(label)
+	return
+
+func save_frame(label:String)->void:
+	saving=true
+	await RenderingServer.frame_post_draw
+	get_viewport().get_texture().get_image().save_png("C:/Users/Wynter/grip_up/builds/first_ascent_%dhz_%s.png"%[hz,label])
+	saving=false
+
+func run()->void:
+	report=await exercise_first_ascent()
+	await ticks(.6)
+	check(app.won and app.climbing_route.completed and app.hybrid_mantle.completed,"rendered whole-course win follows all real stages and upper walk")
+	await save_frame("finish")
+	report.checks=checks
+	report.failures=failures
+	report.rendered=true
+	report.window_screen=get_window().current_screen
+	report.provenance="Visible native Godot ordinary in-application input; no body writes; not human playtest"
+	report.complete=true
+	FileAccess.open("C:/Users/Wynter/grip_up/builds/first_ascent_native_%dhz.json"%hz,FileAccess.WRITE).store_string(JSON.stringify(report,"\t"))
+	for action in ["contract","extend","bias_left","bias_right","grip_left","grip_right"]:Input.action_release(action)
+	print("FIRST ASCENT NATIVE RESULTS: %d checks, %d failures"%[checks,failures])
+	Engine.physics_ticks_per_second=120
+	app._open_first_ascent()
+	queue_free()

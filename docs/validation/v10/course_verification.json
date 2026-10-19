@@ -1,0 +1,44 @@
+{
+  "recorded_utc": "2026-10-19T22:59:05.510397+00:00",
+  "milestone": "First Ascent opt-in continuous gameplay greybox",
+  "engine": "Godot 4.7.2 integrated Jolt",
+  "branch": "feature/v1.0-contextual-vault",
+  "preceding_m1_commit": "d871681",
+  "source_manifest": "course_source_sha256.json",
+  "source_files": 355,
+  "C_E_sources_match": true,
+  "production_changes_from_m1": [
+    "features/grip_up/scripts/grip_up_lab.gd",
+    "features/grip_up/scripts/first_ascent_level.gd"
+  ],
+  "old_feature_files_changed_from_m1": [
+    "features/grip_up/scripts/grip_up_lab.gd"
+  ],
+  "ordinary_input_course_checks": 34,
+  "headless_receipts": "course/attempt_005",
+  "selected_regression_checks": 206,
+  "regression_receipts": "course/attempt_001",
+  "native_scripted_checks": 36,
+  "native_receipts": "course_native/attempt_005",
+  "failures_in_final_runs": 0,
+  "frequencies": [
+    120,
+    60
+  ],
+  "screen_index": 0,
+  "editor_errors": 0,
+  "smoke_frames": 3,
+  "exe_name": "GripUp-v1.0-experimental.exe",
+  "exe_sha256": "79c592e0dcaffdfe185cd9c4115a74a7f0e98f21c8f3705e4869807b11aa8293",
+  "E_build_matches": true,
+  "level": 21,
+  "menu": "Controls / PLAY / The first ascent",
+  "human_course_playtest_complete": false,
+  "default_promotion": false,
+  "limitations": [
+    "Automated success does not establish human fun or comfort",
+    "Connected bars do not require a ballistic swing",
+    "Prior failed native/development runs retained",
+    "Optional direct line can top-out without earning full marked-route badge"
+  ]
+}

@@ -1,0 +1,6606 @@
+{
+	"checks": 12,
+	"complete": true,
+	"contacts": [
+		{
+			"contact": "(-0.24, 2.43, 0.0)",
+			"duration": 0.125,
+			"hand": 0,
+			"label": "higher left wall",
+			"pending": {
+				"acquisition_load": 0.0,
+				"acquisition_load_scope": "instant contact before existing force blend",
+				"active": true,
+				"attempt_id": 3,
+				"blocked": false,
+				"blocker_id": 0,
+				"capture": {
+					"accepted": true,
+					"actual_arrival": 0.125000000000006,
+					"available_work_upper_bound": 24.0406299591065,
+					"buffered": false,
+					"contact_resolution_applied": false,
+					"contact_resolution_reason": "clicked_point_already_reachable",
+					"failure_reason": "",
+					"input_time": 4.28333333333334,
+					"load_risk": false,
+					"original_selection_local": "(-0.49, 0.38, 0.2)",
+					"original_selection_world": "(-0.24, 2.43, 0.0)",
+					"out_of_reach_selection": false,
+					"persistent_target": true,
+					"predicted_contact_time": -1.0,
+					"predicted_entry_time": -1.0,
+					"predicted_target": "(-0.24, 2.43, 0.0)",
+					"predicted_target_time": -1.0,
+					"prediction_error": -1.0,
+					"radial_speed": 0.2264743745327,
+					"reason": "contact_valid",
+					"relative_speed": 0.272913128137589,
+					"stopping_energy": 0.243985052316979
+				},
+				"contact_distance": 0.593220472335815,
+				"contact_resolution_applied": false,
+				"contact_resolution_blocker_id": 0,
+				"contact_resolution_reason": "clicked_point_already_reachable",
+				"contact_rest_length": 0.593220472335815,
+				"contact_time": 4.40833333333334,
+				"contact_validated": true,
+				"current_force": 0.0281331781297922,
+				"distance": 0.593220472335815,
+				"endpoint_valid": true,
+				"first_applied_load": 0.0281331781297922,
+				"gesture_speed": 1.79290318489075,
+				"gesture_velocity": "(0.299638, 0.245018, -1.750624)",
+				"hand_goal": "(-0.24, 2.43, 0.0)",
+				"hand_world": "(-0.24, 2.43, 0.0)",
+				"held": true,
+				"label_in_reach": true,
+				"last_window_duration": -1.0,
+				"last_window_reason": "",
+				"local_normal": "(0.0, 0.0, 1.0)",
+				"local_point": "(-0.49, 0.38, 0.2)",
+				"missed_window_count": 0,
+				"motion_scope": "shoulder-frame transport plus finite relative gesture; full world sweep",
+				"normal_world": "(0.0, 0.0, 1.0)",
+				"original_selection_distance": 0.569896578788757,
+				"original_selection_local": "(-0.49, 0.38, 0.2)",
+				"original_selection_normal_local": "(0.0, 0.0, 1.0)",
+				"original_selection_world": "(-0.24, 2.43, 0.0)",
+				"peak_blend_load": 0.0281331781297922,
+				"pending_time": 0.125000000000006,
+				"phase": "ATTACHED",
+				"physical_in_reach": true,
+				"physical_transition_count": 0,
+				"reach_margin": 0.0638595276641846,
+				"reason": "contact_valid",
+				"requested_gesture_speed": 1.79290318489075,
+				"requested_gesture_velocity": "(0.299638, 0.245018, -1.750624)",
+				"selected_time": 4.28333333333334,
+				"selection_policy": "REACHABLE_SAME_COLLIDER_ON_REQUEST",
+				"shoulder_world": "(-0.186874, 1.909007, 0.278665)",
+				"substate": "ATTACHED",
+				"support_id": 87962945928,
+				"target_relative_speed": 1.58775973320007,
+				"target_selection_id": 3,
+				"target_velocity": "(0.0, 0.0, 0.0)",
+				"target_world": "(-0.24, 2.43, 0.0)",
+				"transition_count": 0,
+				"transport_speed": 0.349589824676514,
+				"transport_velocity": "(-0.240086, -0.193405, 0.164821)",
+				"workspace_valid": true,
+				"world_speed": 1.58775973320007,
+				"world_velocity": "(0.059552, 0.051613, -1.585803)"
+			},
+			"platform_contact": false,
+			"position": "(0.068966, 1.428954, 0.412378)",
+			"selected": "(-0.24, 2.43, 0.0)",
+			"support": "Route wall",
+			"time": 3.42499999999999
+		},
+		{
+			"contact": "(0.237957, 2.578558, 0.0)",
+			"duration": 0.149999999999999,
+			"hand": 1,
+			"label": "higher right wall",
+			"pending": {
+				"acquisition_load": 0.0,
+				"acquisition_load_scope": "instant contact before existing force blend",
+				"active": true,
+				"attempt_id": 4,
+				"blocked": false,
+				"blocker_id": 0,
+				"capture": {
+					"accepted": true,
+					"actual_arrival": 0.150000000000007,
+					"available_work_upper_bound": 8.719122505188,
+					"buffered": false,
+					"contact_resolution_applied": true,
+					"contact_resolution_reason": "same_collider_current_reachable_surface",
+					"failure_reason": "",
+					"input_time": 4.65833333333335,
+					"load_risk": false,
+					"original_selection_local": "(-0.009999, 0.59, 0.2)",
+					"original_selection_world": "(0.240001, 2.64, 0.0)",
+					"out_of_reach_selection": true,
+					"persistent_target": true,
+					"predicted_contact_time": -1.0,
+					"predicted_entry_time": -1.0,
+					"predicted_target": "(0.237957, 2.578558, 0.0)",
+					"predicted_target_time": -1.0,
+					"prediction_error": -1.0,
+					"radial_speed": -0.14350962638855,
+					"reason": "contact_valid",
+					"relative_speed": 0.310638964176178,
+					"stopping_energy": 0.0
+				},
+				"contact_distance": 0.635780215263367,
+				"contact_resolution_applied": true,
+				"contact_resolution_blocker_id": 0,
+				"contact_resolution_reason": "same_collider_current_reachable_surface",
+				"contact_rest_length": 0.62,
+				"contact_time": 4.80833333333336,
+				"contact_validated": true,
+				"current_force": 0.035676334053278,
+				"distance": 0.635780215263367,
+				"endpoint_valid": true,
+				"first_applied_load": 0.035676334053278,
+				"gesture_speed": 2.27311253547668,
+				"gesture_velocity": "(-0.394408, -0.364981, -2.208681)",
+				"hand_goal": "(0.237957, 2.578558, 0.0)",
+				"hand_world": "(0.237957, 2.578558, 0.0)",
+				"held": true,
+				"label_in_reach": true,
+				"last_window_duration": -1.0,
+				"last_window_reason": "",
+				"local_normal": "(0.0, 0.0, 1.0)",
+				"local_point": "(-0.012043, 0.528558, 0.2)",
+				"missed_window_count": 0,
+				"motion_scope": "shoulder-frame transport plus finite relative gesture; full world sweep",
+				"normal_world": "(0.0, 0.0, 1.0)",
+				"original_selection_distance": 0.716349840164185,
+				"original_selection_local": "(-0.009999, 0.59, 0.2)",
+				"original_selection_normal_local": "(0.0, 0.0, 1.0)",
+				"original_selection_world": "(0.240001, 2.64, 0.0)",
+				"peak_blend_load": 0.035676334053278,
+				"pending_time": 0.150000000000007,
+				"phase": "ATTACHED",
+				"physical_in_reach": true,
+				"physical_transition_count": 0,
+				"reach_margin": 0.0212997847366333,
+				"reason": "contact_valid",
+				"requested_gesture_speed": 2.27311253547668,
+				"requested_gesture_velocity": "(-0.394408, -0.364981, -2.208681)",
+				"resolved_contact_distance": 0.657080054283142,
+				"resolved_contact_world_at_selection": "(0.237957, 2.578558, 0.0)",
+				"selected_time": 4.65833333333335,
+				"selection_policy": "REACHABLE_SAME_COLLIDER_ON_REQUEST",
+				"shoulder_world": "(0.247316, 1.974723, 0.198779)",
+				"substate": "ATTACHED",
+				"support_id": 87962945928,
+				"target_relative_speed": 1.81201457977295,
+				"target_selection_id": 4,
+				"target_velocity": "(0.0, 0.0, 0.0)",
+				"target_world": "(0.237957, 2.578558, 0.0)",
+				"transition_count": 0,
+				"transport_speed": 0.577596008777618,
+				"transport_velocity": "(0.307471, 0.280151, 0.400742)",
+				"workspace_valid": true,
+				"world_speed": 1.81201457977295,
+				"world_velocity": "(-0.086938, -0.084829, -1.807939)"
+			},
+			"platform_contact": false,
+			"position": "(0.182788, 1.465524, 0.415532)",
+			"selected": "(0.24, 2.64, 0.0)",
+			"support": "Route wall",
+			"time": 3.82499999999999
+		},
+		{
+			"contact": "(0.296435, 2.442348, 0.0)",
+			"duration": 0.175000000000009,
+			"hand": 0,
+			"label": "left crossing",
+			"pending": {
+				"acquisition_load": 0.0,
+				"acquisition_load_scope": "instant contact before existing force blend",
+				"active": true,
+				"attempt_id": 5,
+				"blocked": false,
+				"blocker_id": 0,
+				"capture": {
+					"accepted": true,
+					"actual_arrival": 0.175000000000009,
+					"available_work_upper_bound": 3.98292074203492,
+					"buffered": false,
+					"contact_resolution_applied": true,
+					"contact_resolution_reason": "same_collider_current_reachable_surface",
+					"failure_reason": "",
+					"input_time": 5.80833333333341,
+					"load_risk": false,
+					"original_selection_local": "(0.200001, 0.5, 0.2)",
+					"original_selection_world": "(0.450001, 2.55, 0.0)",
+					"out_of_reach_selection": true,
+					"persistent_target": true,
+					"predicted_contact_time": -1.0,
+					"predicted_entry_time": -1.0,
+					"predicted_target": "(0.296435, 2.442348, 0.0)",
+					"predicted_target_time": -1.0,
+					"prediction_error": -1.0,
+					"radial_speed": 0.00208397209644318,
+					"reason": "contact_valid",
+					"relative_speed": 0.202877208590508,
+					"stopping_energy": 0.0000112318211442366
+				},
+				"contact_distance": 0.648936331272125,
+				"contact_resolution_applied": true,
+				"contact_resolution_blocker_id": 0,
+				"contact_resolution_reason": "same_collider_current_reachable_surface",
+				"contact_rest_length": 0.62,
+				"contact_time": 5.98333333333342,
+				"contact_validated": true,
+				"current_force": 0.0977350175380707,
+				"distance": 0.648936331272125,
+				"endpoint_valid": true,
+				"first_applied_load": 0.0977350175380707,
+				"gesture_speed": 0.941931843757629,
+				"gesture_velocity": "(0.425971, -0.266361, -0.796766)",
+				"hand_goal": "(0.296435, 2.442348, 0.0)",
+				"hand_world": "(0.296435, 2.442348, 0.0)",
+				"held": true,
+				"label_in_reach": true,
+				"last_window_duration": -1.0,
+				"last_window_reason": "",
+				"local_normal": "(0.0, 0.0, 1.0)",
+				"local_point": "(0.046435, 0.392348, 0.2)",
+				"missed_window_count": 0,
+				"motion_scope": "shoulder-frame transport plus finite relative gesture; full world sweep",
+				"normal_world": "(0.0, 0.0, 1.0)",
+				"original_selection_distance": 0.830255746841431,
+				"original_selection_local": "(0.200001, 0.5, 0.2)",
+				"original_selection_normal_local": "(0.0, 0.0, 1.0)",
+				"original_selection_world": "(0.450001, 2.55, 0.0)",
+				"peak_blend_load": 0.0977350175380707,
+				"pending_time": 0.175000000000009,
+				"phase": "ATTACHED",
+				"physical_in_reach": true,
+				"physical_transition_count": 0,
+				"reach_margin": 0.00814366872787475,
+				"reason": "contact_valid",
+				"requested_gesture_speed": 0.941931843757629,
+				"requested_gesture_velocity": "(0.425971, -0.266361, -0.796766)",
+				"resolved_contact_distance": 0.657079935073853,
+				"resolved_contact_world_at_selection": "(0.296435, 2.442348, 0.0)",
+				"selected_time": 5.80833333333341,
+				"selection_policy": "REACHABLE_SAME_COLLIDER_ON_REQUEST",
+				"shoulder_world": "(-0.166141, 2.109094, 0.309973)",
+				"substate": "ATTACHED",
+				"support_id": 87962945928,
+				"target_relative_speed": 1.10226798057556,
+				"target_selection_id": 5,
+				"target_velocity": "(0.0, 0.0, 0.0)",
+				"target_world": "(0.296435, 2.442348, 0.0)",
+				"transition_count": 0,
+				"transport_speed": 0.517403185367584,
+				"transport_velocity": "(-0.357603, 0.219955, -0.3024)",
+				"workspace_valid": true,
+				"world_speed": 1.10226798057556,
+				"world_velocity": "(0.068368, -0.046406, -1.099167)"
+			},
+			"platform_contact": false,
+			"position": "(0.048026, 1.598748, 0.233705)",
+			"selected": "(0.45, 2.55, 0.0)",
+			"support": "Route wall",
+			"time": 5.00000000000004
+		},
+		{
+			"contact": "(0.600001, 2.6, -0.0)",
+			"duration": 0.116666666666672,
+			"hand": 1,
+			"label": "right uncovered wall edge",
+			"pending": {
+				"acquisition_load": 0.0,
+				"acquisition_load_scope": "instant contact before existing force blend",
+				"active": true,
+				"attempt_id": 6,
+				"blocked": false,
+				"blocker_id": 0,
+				"capture": {
+					"accepted": true,
+					"actual_arrival": 0.116666666666672,
+					"available_work_upper_bound": 53.8834453582764,
+					"buffered": false,
+					"contact_resolution_applied": false,
+					"contact_resolution_reason": "clicked_point_already_reachable",
+					"failure_reason": "",
+					"input_time": 6.58333333333345,
+					"load_risk": false,
+					"original_selection_local": "(0.350001, 0.55, 0.2)",
+					"original_selection_world": "(0.600001, 2.6, -0.0)",
+					"out_of_reach_selection": false,
+					"persistent_target": true,
+					"predicted_contact_time": -1.0,
+					"predicted_entry_time": -1.0,
+					"predicted_target": "(0.600001, 2.6, -0.0)",
+					"predicted_target_time": -1.0,
+					"prediction_error": -1.0,
+					"radial_speed": 0.0164617262780666,
+					"reason": "contact_valid",
+					"relative_speed": 1.16360259056091,
+					"stopping_energy": 0.00134728242420833
+				},
+				"contact_distance": 0.510323762893677,
+				"contact_resolution_applied": false,
+				"contact_resolution_blocker_id": 0,
+				"contact_resolution_reason": "clicked_point_already_reachable",
+				"contact_rest_length": 0.510323762893677,
+				"contact_time": 6.70000000000012,
+				"contact_validated": true,
+				"current_force": 0.002045514062047,
+				"distance": 0.510323762893677,
+				"endpoint_valid": true,
+				"first_applied_load": 0.002045514062047,
+				"gesture_speed": 2.82966685295105,
+				"gesture_velocity": "(-1.517758, 0.695972, -2.284523)",
+				"hand_goal": "(0.600001, 2.6, -0.0)",
+				"hand_world": "(0.600001, 2.6, -0.0)",
+				"held": true,
+				"label_in_reach": true,
+				"last_window_duration": -1.0,
+				"last_window_reason": "",
+				"local_normal": "(0.0, 0.0, 1.0)",
+				"local_point": "(0.350001, 0.55, 0.2)",
+				"missed_window_count": 0,
+				"motion_scope": "shoulder-frame transport plus finite relative gesture; full world sweep",
+				"normal_world": "(0.0, 0.0, 1.0)",
+				"original_selection_distance": 0.52532422542572,
+				"original_selection_local": "(0.350001, 0.55, 0.2)",
+				"original_selection_normal_local": "(0.0, 0.0, 1.0)",
+				"original_selection_world": "(0.600001, 2.6, -0.0)",
+				"peak_blend_load": 0.002045514062047,
+				"pending_time": 0.116666666666672,
+				"phase": "ATTACHED",
+				"physical_in_reach": true,
+				"physical_transition_count": 0,
+				"reach_margin": 0.146756237106323,
+				"reason": "contact_valid",
+				"requested_gesture_speed": 2.82966685295105,
+				"requested_gesture_velocity": "(-1.517758, 0.695972, -2.284523)",
+				"selected_time": 6.58333333333345,
+				"selection_policy": "REACHABLE_SAME_COLLIDER_ON_REQUEST",
+				"shoulder_world": "(0.364963, 2.173532, 0.152685)",
+				"substate": "ATTACHED",
+				"support_id": 87962945928,
+				"target_relative_speed": 1.93167018890381,
+				"target_selection_id": 6,
+				"target_velocity": "(0.0, 0.0, 0.0)",
+				"target_world": "(0.600001, 2.6, -0.0)",
+				"transition_count": 0,
+				"transport_speed": 1.34502828121185,
+				"transport_velocity": "(1.169028, -0.538015, 0.39117)",
+				"workspace_valid": true,
+				"world_speed": 1.93167018890381,
+				"world_velocity": "(-0.34873, 0.157957, -1.893353)"
+			},
+			"platform_contact": false,
+			"position": "(0.320216, 1.625586, 0.27138)",
+			"selected": "(0.6, 2.6, 0.0)",
+			"support": "Route wall",
+			"time": 5.71666666666674
+		},
+		{
+			"contact": "(0.689999, 2.51, 0.2)",
+			"duration": 0.191666666666676,
+			"hand": 1,
+			"label": "right around bar leading edge",
+			"pending": {
+				"acquisition_load": 0.0,
+				"acquisition_load_scope": "instant contact before existing force blend",
+				"active": true,
+				"attempt_id": 7,
+				"blocked": false,
+				"blocker_id": 0,
+				"capture": {
+					"accepted": true,
+					"actual_arrival": 0.191666666666676,
+					"available_work_upper_bound": 109.179716205597,
+					"buffered": false,
+					"contact_resolution_applied": false,
+					"contact_resolution_reason": "clicked_point_already_reachable",
+					"failure_reason": "",
+					"input_time": 7.00000000000014,
+					"load_risk": false,
+					"original_selection_local": "(-0.410001, -0.05, 0.12)",
+					"original_selection_world": "(0.689999, 2.51, 0.2)",
+					"out_of_reach_selection": false,
+					"persistent_target": true,
+					"predicted_contact_time": -1.0,
+					"predicted_entry_time": -1.0,
+					"predicted_target": "(0.689999, 2.51, 0.2)",
+					"predicted_target_time": -1.0,
+					"prediction_error": -1.0,
+					"radial_speed": -0.22651831805706,
+					"reason": "contact_valid",
+					"relative_speed": 0.429252624511719,
+					"stopping_energy": 0.0
+				},
+				"contact_distance": 0.356723010540009,
+				"contact_resolution_applied": false,
+				"contact_resolution_blocker_id": 0,
+				"contact_resolution_reason": "clicked_point_already_reachable",
+				"contact_rest_length": 0.356723010540009,
+				"contact_time": 7.19166666666681,
+				"contact_validated": true,
+				"current_force": 0.0,
+				"distance": 0.356723010540009,
+				"endpoint_valid": true,
+				"first_applied_load": 0.0,
+				"gesture_speed": 2.08997344970703,
+				"gesture_velocity": "(0.646527, -0.12291, -1.983654)",
+				"hand_goal": "(0.689999, 2.51, 0.2)",
+				"hand_world": "(0.689999, 2.51, 0.2)",
+				"held": true,
+				"label_in_reach": true,
+				"last_window_duration": -1.0,
+				"last_window_reason": "",
+				"local_normal": "(0.0, 0.0, 1.0)",
+				"local_point": "(-0.410001, -0.05, 0.12)",
+				"missed_window_count": 0,
+				"motion_scope": "shoulder-frame transport plus finite relative gesture; full world sweep",
+				"normal_world": "(0.0, 0.0, 1.0)",
+				"original_selection_distance": 0.408380538225174,
+				"original_selection_local": "(-0.410001, -0.05, 0.12)",
+				"original_selection_normal_local": "(0.0, 0.0, 1.0)",
+				"original_selection_world": "(0.689999, 2.51, 0.2)",
+				"peak_blend_load": 0.0,
+				"pending_time": 0.191666666666676,
+				"phase": "ATTACHED",
+				"physical_in_reach": true,
+				"physical_transition_count": 0,
+				"reach_margin": 0.300356989459991,
+				"reason": "contact_valid",
+				"requested_gesture_speed": 2.08997344970703,
+				"requested_gesture_velocity": "(0.646527, -0.12291, -1.983654)",
+				"selected_time": 7.00000000000014,
+				"selection_policy": "REACHABLE_SAME_COLLIDER_ON_REQUEST",
+				"shoulder_world": "(0.80431, 2.173361, 0.229309)",
+				"substate": "ATTACHED",
+				"support_id": 88365599138,
+				"target_relative_speed": 1.70761775970459,
+				"target_selection_id": 7,
+				"target_velocity": "(0.0, 0.0, 0.0)",
+				"target_world": "(0.689999, 2.51, 0.2)",
+				"transition_count": 0,
+				"transport_speed": 0.572571158409119,
+				"transport_velocity": "(-0.487404, 0.099134, 0.283633)",
+				"workspace_valid": true,
+				"world_speed": 1.70761775970459,
+				"world_velocity": "(0.159123, -0.023775, -1.700022)"
+			},
+			"platform_contact": false,
+			"position": "(0.765808, 1.622959, 0.306915)",
+			"selected": "(0.69, 2.51, 0.2)",
+			"support": "First hanging bar",
+			"time": 6.20833333333343
+		},
+		{
+			"contact": "(0.74, 2.53, 0.2)",
+			"duration": 0.258333333333319,
+			"hand": 0,
+			"label": "first bar left",
+			"pending": {
+				"acquisition_load": 0.0,
+				"acquisition_load_scope": "instant contact before existing force blend",
+				"active": true,
+				"attempt_id": 8,
+				"blocked": false,
+				"blocker_id": 0,
+				"capture": {
+					"accepted": true,
+					"actual_arrival": 0.258333333333319,
+					"available_work_upper_bound": 36.7243672370911,
+					"buffered": false,
+					"contact_resolution_applied": false,
+					"contact_resolution_reason": "clicked_point_already_reachable",
+					"failure_reason": "",
+					"input_time": 9.49166666666677,
+					"load_risk": false,
+					"original_selection_local": "(-0.36, -0.03, 0.12)",
+					"original_selection_world": "(0.74, 2.53, 0.2)",
+					"out_of_reach_selection": false,
+					"persistent_target": true,
+					"predicted_contact_time": -1.0,
+					"predicted_entry_time": -1.0,
+					"predicted_target": "(0.74, 2.53, 0.2)",
+					"predicted_target_time": -1.0,
+					"prediction_error": -1.0,
+					"radial_speed": 0.0600412935018539,
+					"reason": "contact_valid",
+					"relative_speed": 0.254500955343246,
+					"stopping_energy": 0.00917476903808872
+				},
+				"contact_distance": 0.557987868785858,
+				"contact_resolution_applied": false,
+				"contact_resolution_blocker_id": 0,
+				"contact_resolution_reason": "clicked_point_already_reachable",
+				"contact_rest_length": 0.557987868785858,
+				"contact_time": 9.75000000000009,
+				"contact_validated": true,
+				"current_force": 0.00741473538801074,
+				"distance": 0.557987868785858,
+				"endpoint_valid": true,
+				"first_applied_load": 0.00741473538801074,
+				"gesture_speed": 0.580818295478821,
+				"gesture_velocity": "(0.277047, -0.20854, -0.465946)",
+				"hand_goal": "(0.74, 2.53, 0.2)",
+				"hand_world": "(0.74, 2.53, 0.2)",
+				"held": true,
+				"label_in_reach": true,
+				"last_window_duration": -1.0,
+				"last_window_reason": "",
+				"local_normal": "(0.0, 0.0, 1.0)",
+				"local_point": "(-0.36, -0.03, 0.12)",
+				"missed_window_count": 0,
+				"motion_scope": "shoulder-frame transport plus finite relative gesture; full world sweep",
+				"normal_world": "(0.0, 0.0, 1.0)",
+				"original_selection_distance": 0.505746126174927,
+				"original_selection_local": "(-0.36, -0.03, 0.12)",
+				"original_selection_normal_local": "(0.0, 0.0, 1.0)",
+				"original_selection_world": "(0.74, 2.53, 0.2)",
+				"peak_blend_load": 0.00741473538801074,
+				"pending_time": 0.258333333333319,
+				"phase": "ATTACHED",
+				"physical_in_reach": true,
+				"physical_transition_count": 0,
+				"reach_margin": 0.0990921312141418,
+				"reason": "contact_valid",
+				"requested_gesture_speed": 0.580818295478821,
+				"requested_gesture_velocity": "(0.277047, -0.20854, -0.465946)",
+				"selected_time": 9.49166666666677,
+				"selection_policy": "REACHABLE_SAME_COLLIDER_ON_REQUEST",
+				"shoulder_world": "(0.275635, 2.22761, 0.265395)",
+				"substate": "ATTACHED",
+				"support_id": 88365599138,
+				"target_relative_speed": 0.918023526668549,
+				"target_selection_id": 8,
+				"target_velocity": "(0.0, 0.0, 0.0)",
+				"target_world": "(0.74, 2.53, 0.2)",
+				"transition_count": 0,
+				"transport_speed": 0.537480890750885,
+				"transport_velocity": "(-0.237522, 0.171833, -0.450491)",
+				"workspace_valid": true,
+				"world_speed": 0.918023526668549,
+				"world_velocity": "(0.039525, -0.036707, -0.916437)"
+			},
+			"platform_contact": false,
+			"position": "(0.581447, 1.760379, 0.282458)",
+			"selected": "(0.74, 2.53, 0.2)",
+			"support": "First hanging bar",
+			"time": 8.76666666666681
+		},
+		{
+			"contact": "(1.25, 2.55, 0.2)",
+			"duration": 0.17499999999999,
+			"hand": 1,
+			"label": "first bar right",
+			"pending": {
+				"acquisition_load": 0.0,
+				"acquisition_load_scope": "instant contact before existing force blend",
+				"active": true,
+				"attempt_id": 9,
+				"blocked": false,
+				"blocker_id": 0,
+				"capture": {
+					"accepted": true,
+					"actual_arrival": 0.17499999999999,
+					"available_work_upper_bound": 37.8291369438171,
+					"buffered": false,
+					"contact_resolution_applied": false,
+					"contact_resolution_reason": "clicked_point_already_reachable",
+					"failure_reason": "",
+					"input_time": 10.1500000000001,
+					"load_risk": false,
+					"original_selection_local": "(0.15, -0.01, 0.12)",
+					"original_selection_world": "(1.25, 2.55, 0.2)",
+					"out_of_reach_selection": false,
+					"persistent_target": true,
+					"predicted_contact_time": -1.0,
+					"predicted_entry_time": -1.0,
+					"predicted_target": "(1.25, 2.55, 0.2)",
+					"predicted_target_time": -1.0,
+					"prediction_error": -1.0,
+					"radial_speed": -0.408971011638641,
+					"reason": "contact_valid",
+					"relative_speed": 1.65461134910584,
+					"stopping_energy": 0.0
+				},
+				"contact_distance": 0.554919064044952,
+				"contact_resolution_applied": false,
+				"contact_resolution_blocker_id": 0,
+				"contact_resolution_reason": "clicked_point_already_reachable",
+				"contact_rest_length": 0.554919064044952,
+				"contact_time": 10.3250000000001,
+				"contact_validated": true,
+				"current_force": 0.0,
+				"distance": 0.554919064044952,
+				"endpoint_valid": true,
+				"first_applied_load": 0.0,
+				"gesture_speed": 2.3868989944458,
+				"gesture_velocity": "(-1.778383, 1.588669, 0.103789)",
+				"hand_goal": "(1.25, 2.55, 0.2)",
+				"hand_world": "(1.25, 2.55, 0.2)",
+				"held": true,
+				"label_in_reach": true,
+				"last_window_duration": -1.0,
+				"last_window_reason": "",
+				"local_normal": "(0.0, 0.0, 1.0)",
+				"local_point": "(0.15, -0.01, 0.12)",
+				"missed_window_count": 0,
+				"motion_scope": "shoulder-frame transport plus finite relative gesture; full world sweep",
+				"normal_world": "(0.0, 0.0, 1.0)",
+				"original_selection_distance": 0.58176451921463,
+				"original_selection_local": "(0.15, -0.01, 0.12)",
+				"original_selection_normal_local": "(0.0, 0.0, 1.0)",
+				"original_selection_world": "(1.25, 2.55, 0.2)",
+				"peak_blend_load": 0.0,
+				"pending_time": 0.17499999999999,
+				"phase": "ATTACHED",
+				"physical_in_reach": true,
+				"physical_transition_count": 0,
+				"reach_margin": 0.102160935955048,
+				"reason": "contact_valid",
+				"requested_gesture_speed": 2.3868989944458,
+				"requested_gesture_velocity": "(-1.778383, 1.588669, 0.103789)",
+				"selected_time": 10.1500000000001,
+				"selection_policy": "REACHABLE_SAME_COLLIDER_ON_REQUEST",
+				"shoulder_world": "(0.816102, 2.205702, 0.233561)",
+				"substate": "ATTACHED",
+				"support_id": 88365599138,
+				"target_relative_speed": 0.893712639808655,
+				"target_selection_id": 9,
+				"target_velocity": "(0.0, 0.0, 0.0)",
+				"target_world": "(1.25, 2.55, 0.2)",
+				"transition_count": 0,
+				"transport_speed": 2.23867917060852,
+				"transport_velocity": "(1.517358, -1.359901, -0.92735)",
+				"workspace_valid": true,
+				"world_speed": 0.893712639808655,
+				"world_velocity": "(-0.261025, 0.228767, -0.823561)"
+			},
+			"platform_contact": false,
+			"position": "(0.880584, 1.708647, 0.494475)",
+			"selected": "(1.25, 2.55, 0.2)",
+			"support": "First hanging bar",
+			"time": 9.34166666666678
+		},
+		{
+			"contact": "(1.135415, 2.517244, 0.2)",
+			"duration": 0.108333333333327,
+			"hand": 0,
+			"label": "align left bar",
+			"pending": {
+				"acquisition_load": 0.0,
+				"acquisition_load_scope": "instant contact before existing force blend",
+				"active": true,
+				"attempt_id": 10,
+				"blocked": false,
+				"blocker_id": 0,
+				"capture": {
+					"accepted": true,
+					"actual_arrival": 0.108333333333327,
+					"available_work_upper_bound": 29.7626615524292,
+					"buffered": false,
+					"contact_resolution_applied": true,
+					"contact_resolution_reason": "same_collider_current_reachable_surface",
+					"failure_reason": "",
+					"input_time": 11.325,
+					"load_risk": false,
+					"original_selection_local": "(0.05, -0.03, 0.119999)",
+					"original_selection_world": "(1.15, 2.53, 0.199999)",
+					"out_of_reach_selection": true,
+					"persistent_target": true,
+					"predicted_contact_time": -1.0,
+					"predicted_entry_time": -1.0,
+					"predicted_target": "(1.135415, 2.517244, 0.2)",
+					"predicted_target_time": -1.0,
+					"prediction_error": -1.0,
+					"radial_speed": -0.933097124099731,
+					"reason": "contact_valid",
+					"relative_speed": 1.24273943901062,
+					"stopping_energy": 0.0
+				},
+				"contact_distance": 0.577325940132141,
+				"contact_resolution_applied": true,
+				"contact_resolution_blocker_id": 0,
+				"contact_resolution_reason": "same_collider_current_reachable_surface",
+				"contact_rest_length": 0.577325940132141,
+				"contact_time": 11.4333333333333,
+				"contact_validated": true,
+				"current_force": 0.0,
+				"distance": 0.577325940132141,
+				"endpoint_valid": true,
+				"first_applied_load": 0.0,
+				"gesture_speed": 3.0592360496521,
+				"gesture_velocity": "(-2.318573, 0.479221, -1.937393)",
+				"hand_goal": "(1.135415, 2.517244, 0.2)",
+				"hand_world": "(1.135415, 2.517244, 0.2)",
+				"held": true,
+				"label_in_reach": true,
+				"last_window_duration": -1.0,
+				"last_window_reason": "",
+				"local_normal": "(0.0, 0.0, 1.0)",
+				"local_point": "(0.035415, -0.042756, 0.12)",
+				"missed_window_count": 0,
+				"motion_scope": "shoulder-frame transport plus finite relative gesture; full world sweep",
+				"normal_world": "(0.0, 0.0, 1.0)",
+				"original_selection_distance": 0.676305294036865,
+				"original_selection_local": "(0.05, -0.03, 0.119999)",
+				"original_selection_normal_local": "(0.0, 0.0, 1.0)",
+				"original_selection_world": "(1.15, 2.53, 0.199999)",
+				"peak_blend_load": 0.0,
+				"pending_time": 0.108333333333327,
+				"phase": "ATTACHED",
+				"physical_in_reach": true,
+				"physical_transition_count": 0,
+				"reach_margin": 0.0797540598678589,
+				"reason": "contact_valid",
+				"requested_gesture_speed": 3.0592360496521,
+				"requested_gesture_velocity": "(-2.318573, 0.479221, -1.937393)",
+				"resolved_contact_distance": 0.657074511051178,
+				"resolved_contact_world_at_selection": "(1.135415, 2.517244, 0.2)",
+				"selected_time": 11.325,
+				"selection_policy": "REACHABLE_SAME_COLLIDER_ON_REQUEST",
+				"shoulder_world": "(0.74573, 2.098741, 0.279409)",
+				"substate": "ATTACHED",
+				"support_id": 88365599138,
+				"target_relative_speed": 1.84934139251709,
+				"target_selection_id": 10,
+				"target_velocity": "(0.0, 0.0, 0.0)",
+				"target_world": "(1.135415, 2.517244, 0.2)",
+				"transition_count": 0,
+				"transport_speed": 1.81813335418701,
+				"transport_velocity": "(1.773462, -0.360689, 0.174195)",
+				"workspace_valid": true,
+				"world_speed": 1.84934139251709,
+				"world_velocity": "(-0.545111, 0.118532, -1.763198)"
+			},
+			"platform_contact": false,
+			"position": "(0.97429, 1.587243, 0.24401)",
+			"selected": "(1.15, 2.53, 0.2)",
+			"support": "First hanging bar",
+			"time": 10.45
+		},
+		{
+			"contact": "(1.75, 2.53, 0.2)",
+			"duration": 1.01666666666661,
+			"hand": 1,
+			"label": "finish bar right",
+			"pending": {
+				"acquisition_load": 0.0,
+				"acquisition_load_scope": "instant contact before existing force blend",
+				"active": true,
+				"attempt_id": 11,
+				"blocked": false,
+				"blocker_id": 0,
+				"capture": {
+					"accepted": true,
+					"actual_arrival": 1.01666666666661,
+					"available_work_upper_bound": 41.3830853462219,
+					"buffered": false,
+					"contact_resolution_applied": false,
+					"contact_resolution_reason": "clicked_point_already_reachable",
+					"failure_reason": "",
+					"input_time": 12.2333333333333,
+					"load_risk": false,
+					"original_selection_local": "(-0.0, -0.02, 0.12)",
+					"original_selection_world": "(1.75, 2.53, 0.2)",
+					"out_of_reach_selection": false,
+					"persistent_target": true,
+					"predicted_contact_time": -1.0,
+					"predicted_entry_time": -1.0,
+					"predicted_target": "(1.75, 2.53, 0.2)",
+					"predicted_target_time": -1.0,
+					"prediction_error": -1.0,
+					"radial_speed": 0.229082629084587,
+					"reason": "contact_valid",
+					"relative_speed": 0.372654050588608,
+					"stopping_energy": 0.304669841157213
+				},
+				"contact_distance": 0.545046985149384,
+				"contact_resolution_applied": false,
+				"contact_resolution_blocker_id": 0,
+				"contact_resolution_reason": "clicked_point_already_reachable",
+				"contact_rest_length": 0.545046985149384,
+				"contact_time": 13.2499999999999,
+				"contact_validated": true,
+				"current_force": 0.0284921079874039,
+				"distance": 0.545046985149384,
+				"endpoint_valid": true,
+				"first_applied_load": 0.0284921079874039,
+				"gesture_speed": 1.88554871082306,
+				"gesture_velocity": "(0.174294, 0.24333, -1.861641)",
+				"hand_goal": "(1.75, 2.53, 0.2)",
+				"hand_world": "(1.75, 2.53, 0.2)",
+				"held": true,
+				"label_in_reach": true,
+				"last_window_duration": -1.0,
+				"last_window_reason": "",
+				"local_normal": "(0.0, 0.0, 1.0)",
+				"local_point": "(-0.0, -0.02, 0.12)",
+				"missed_window_count": 0,
+				"motion_scope": "shoulder-frame transport plus finite relative gesture; full world sweep",
+				"normal_world": "(0.0, 0.0, 1.0)",
+				"original_selection_distance": 0.482419490814209,
+				"original_selection_local": "(-0.0, -0.02, 0.12)",
+				"original_selection_normal_local": "(0.0, 0.0, 1.0)",
+				"original_selection_world": "(1.75, 2.53, 0.2)",
+				"peak_blend_load": 0.0284921079874039,
+				"pending_time": 1.01666666666661,
+				"phase": "ATTACHED",
+				"physical_in_reach": true,
+				"physical_transition_count": 0,
+				"reach_margin": 0.112033014850616,
+				"reason": "contact_valid",
+				"requested_gesture_speed": 1.88554871082306,
+				"requested_gesture_velocity": "(0.174294, 0.24333, -1.861641)",
+				"selected_time": 12.2333333333333,
+				"selection_policy": "REACHABLE_SAME_COLLIDER_ON_REQUEST",
+				"shoulder_world": "(1.442685, 2.079868, 0.203881)",
+				"substate": "ATTACHED",
+				"support_id": 88466262442,
+				"target_relative_speed": 1.64174807071686,
+				"target_selection_id": 11,
+				"target_velocity": "(0.0, 0.0, 0.0)",
+				"target_world": "(1.75, 2.53, 0.2)",
+				"transition_count": 0,
+				"transport_speed": 0.318299770355225,
+				"transport_velocity": "(-0.12022, -0.194406, 0.221513)",
+				"workspace_valid": true,
+				"world_speed": 1.64174807071686,
+				"world_velocity": "(0.054073, 0.048923, -1.640128)"
+			},
+			"platform_contact": false,
+			"position": "(1.18797, 1.582218, 0.236057)",
+			"selected": "(1.75, 2.53, 0.2)",
+			"support": "Finish hanging bar",
+			"time": 12.2666666666666
+		}
+	],
+	"course_progress": {
+		"completed": true,
+		"elapsed": 14.0166666666665,
+		"events": [
+			{
+				"code": "ROUTE_STAGE_COMPLETE",
+				"label": "CLIMB",
+				"stage": 0,
+				"time": 4.61666666666669
+			},
+			{
+				"code": "ROUTE_STAGE_COMPLETE",
+				"label": "TRAVERSE",
+				"stage": 1,
+				"time": 7.40000000000016
+			},
+			{
+				"code": "ROUTE_STAGE_COMPLETE",
+				"label": "SUSPENSION",
+				"stage": 2,
+				"time": 14.7166666666665
+			}
+		],
+		"recoveries": 0,
+		"stage": 3,
+		"started": true
+	},
+	"failed_transfer": {},
+	"failures": 6,
+	"final_position": "(1.566474, 0.469955, -0.283049)",
+	"height_gain": -0.696743816137314,
+	"hybrid": {
+		"animation": {
+			"active_v10": false,
+			"actual_arm_lengths_m": [
+				0.547080844640732,
+				0.547080755233765
+			],
+			"actual_shoulder_to_palm_target_m": [
+				-1.0,
+				-1.0
+			],
+			"anatomical_hand_weights": [
+				0.0,
+				0.0
+			],
+			"anchor_local_points": [
+				"(inf, inf, inf)",
+				"(inf, inf, inf)"
+			],
+			"anchor_support_ids": [
+				0,
+				0
+			],
+			"animation_time_s": 0.0,
+			"body_authority": false,
+			"body_interpolation_lag_at_visual_update_m": -1.0,
+			"clip": "HybridMantle",
+			"collision_flex": 0.0,
+			"contextual_vault_v10_enabled": true,
+			"duration_s": 1.05,
+			"finished_count": 0,
+			"hand_contact_error": [
+				-1.0,
+				-1.0
+			],
+			"hand_ik_weight": 1.0,
+			"hand_release_window": [
+				0.48,
+				0.78
+			],
+			"interpolated_target_change_since_visual_update_m": -1.0,
+			"last_measurement": {},
+			"measured_frames": 0,
+			"mode": "INACTIVE",
+			"per_hand_palm_weights": [],
+			"physical_foot_error": [
+				0.0,
+				0.0
+			],
+			"presentation_phase": "INACTIVE",
+			"progress": 0.0,
+			"reason": "NOT_STARTED",
+			"release_reasons": [
+				"NO_CONTACT",
+				"NO_CONTACT"
+			],
+			"root_motion": false,
+			"source_hand_ids": [],
+			"started_count": 0,
+			"visual_root_error": 0.000453555287094787,
+			"visual_target_measurement_scope": "STALE_OR_UNMEASURED",
+			"visual_target_recorded": false,
+			"visual_vs_assigned_interpolated_target_error_m": -1.0,
+			"wrist_target_distances_m": [
+				-1.0,
+				-1.0
+			]
+		},
+		"animation_complete": false,
+		"body_pose": "[X: (0.984581, -0.043296, 0.169487), Y: (0.16977, 0.002924, -0.985479), Z: (0.042172, 0.999058, 0.010229), O: (1.566107, 0.469955, -0.283145)]",
+		"body_velocity": "(0.044182, -0.000166, 0.011346)",
+		"candidate": {
+			"candidate_timestamp": 23283,
+			"eligibility_reason": "NO_REAL_GRIP",
+			"eligible": false
+		},
+		"commits": 0,
+		"dynamic_restored": true,
+		"enabled": true,
+		"events": [],
+		"freeze": false,
+		"freeze_mode": 0,
+		"grips_released": true,
+		"mantle_complete": false,
+		"motor_ownership": "DYNAMIC",
+		"progress": 0.0,
+		"reason": "NO_REAL_GRIP",
+		"restores": 0,
+		"result": "",
+		"standing_collision_clear": false,
+		"standing_collision_clear_at_restore": false,
+		"state": "DYNAMIC",
+		"top_ground_valid": false,
+		"walk_distance_relative_to_support": 0.0
+	},
+	"initial_height": 1.16669881343842,
+	"peaks": {
+		"combined_moment": 65.0,
+		"hand_force": 323.159454345703,
+		"leg_force": 95.5971865653992
+	},
+	"physics_hz": 120,
+	"provenance": "Visible native Godot ordinary in-application input; no body writes; not human playtest",
+	"rendered": true,
+	"samples": [
+		{
+			"ground_support_id": 88063609234,
+			"grounded": true,
+			"hand_force": 7.27163029250369,
+			"hands": [
+				{
+					"force": "(-0.598883, 5.070002, -5.178117)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.000001, 0.000007, -0.000007)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(0.000006, 1.1667, 0.399977)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 0.00833333333333333,
+			"velocity": "(0.000029, -0.000023, 0.000092)"
+		},
+		{
+			"ground_support_id": 88063609234,
+			"grounded": true,
+			"hand_force": 6.50437641143799,
+			"hands": [
+				{
+					"force": "(-0.535767, 4.534208, -4.632584)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(0.000008, 1.166699, 0.399982)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 0.116666666666667,
+			"velocity": "(0.0, -0.000001, 0.000003)"
+		},
+		{
+			"ground_support_id": 88063609234,
+			"grounded": true,
+			"hand_force": 6.21400499343872,
+			"hands": [
+				{
+					"force": "(-0.511965, 4.330244, -4.427272)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(0.000008, 1.166699, 0.399984)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 0.225,
+			"velocity": "(0.000002, -0.000002, 0.000011)"
+		},
+		{
+			"ground_support_id": 88063609234,
+			"grounded": true,
+			"hand_force": 8.14650058746338,
+			"hands": [
+				{
+					"force": "(-0.669945, 5.674394, -5.806711)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(-0.000185, 1.166699, 0.399088)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 0.325,
+			"velocity": "(-0.023146, 0.000063, -0.10767)"
+		},
+		{
+			"ground_support_id": 88063609234,
+			"grounded": true,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(-0.017788, 1.166712, 0.320758)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 0.425,
+			"velocity": "(-0.313004, 0.000028, -1.347983)"
+		},
+		{
+			"ground_support_id": 88063609234,
+			"grounded": true,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(-0.051122, 1.17323, 0.239195)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 0.525000000000001,
+			"velocity": "(-0.266061, 0.00447, -0.000079)"
+		},
+		{
+			"ground_support_id": 88063609234,
+			"grounded": true,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(-0.075518, 1.172465, 0.239208)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 0.633333333333334,
+			"velocity": "(-0.194369, 0.000057, -0.000001)"
+		},
+		{
+			"ground_support_id": 88063609234,
+			"grounded": true,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 11.1882104873657,
+			"position": "(-0.094156, 1.172472, 0.239208)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 0.741666666666666,
+			"velocity": "(-0.158515, 0.000071, -0.000001)"
+		},
+		{
+			"ground_support_id": 88063609234,
+			"grounded": true,
+			"hand_force": 13.3452768325806,
+			"hands": [
+				{
+					"force": "(1.041229, 6.999637, -4.729143)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(1.651611, 4.076089, -2.006009)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 44.8668441772461,
+			"position": "(-0.110937, 1.17248, 0.239208)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 0.849999999999999,
+			"velocity": "(-0.164753, 0.000099, -0.000001)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 114.386722564697,
+			"hands": [
+				{
+					"force": "(8.771473, 44.03593, -30.08005)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(22.77289, 50.06853, -24.81141)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 78.0656051635742,
+			"position": "(-0.134603, 1.175939, 0.239342)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 0.958333333333332,
+			"velocity": "(-0.250978, 0.13117, 0.007092)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 80.509916305542,
+			"hands": [
+				{
+					"force": "(3.641469, 16.75862, -12.89175)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(23.3379, 48.44374, -24.41418)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 59.2635688781738,
+			"position": "(-0.161774, 1.204539, 0.241119)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 1.06666666666667,
+			"velocity": "(-0.248462, 0.309205, 0.021401)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 85.3731575012207,
+			"hands": [
+				{
+					"force": "(3.028055, 15.01106, -13.4593)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(25.94062, 53.50886, -26.21088)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 58.5312232971191,
+			"position": "(-0.188906, 1.233727, 0.24368)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 1.175,
+			"velocity": "(-0.251292, 0.237804, 0.024078)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 126.055271148682,
+			"hands": [
+				{
+					"force": "(3.833468, 23.08439, -23.59074)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(36.55822, 77.20048, -36.33819)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 72.2267180681229,
+			"position": "(-0.214872, 1.25764, 0.247681)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 1.28333333333333,
+			"velocity": "(-0.216985, 0.131101, 0.128434)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 104.444063186646,
+			"hands": [
+				{
+					"force": "(2.209701, 15.08698, -17.46201)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(32.37375, 67.43538, -31.74705)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 61.060230255127,
+			"position": "(-0.234876, 1.283553, 0.265141)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 1.39166666666666,
+			"velocity": "(-0.160328, 0.30978, 0.176378)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 87.1106986999512,
+			"hands": [
+				{
+					"force": "(1.474491, 11.39591, -15.48304)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(28.01323, 55.61975, -26.88012)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 57.0696907043457,
+			"position": "(-0.251634, 1.316949, 0.281943)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 1.5,
+			"velocity": "(-0.154673, 0.279694, 0.138019)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 96.9798812866211,
+			"hands": [
+				{
+					"force": "(1.416794, 12.02184, -18.86223)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(31.8541, 60.35135, -30.05562)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 60.8717803955078,
+			"position": "(-0.267962, 1.345296, 0.294569)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 1.60833333333333,
+			"velocity": "(-0.144844, 0.258194, 0.097302)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 99.8708419799805,
+			"hands": [
+				{
+					"force": "(1.238057, 11.20317, -20.40383)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(33.81008, 60.92347, -31.72949)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 42.1596450805664,
+			"position": "(-0.282322, 1.372719, 0.302645)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 1.71666666666666,
+			"velocity": "(-0.107133, 0.223045, 0.054055)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 120.293968200684,
+			"hands": [
+				{
+					"force": "(0.958234, 14.95547, -29.76195)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(37.51805, 68.99023, -37.37462)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 35.9748878479004,
+			"position": "(-0.286152, 1.389023, 0.305335)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 1.825,
+			"velocity": "(0.030136, 0.099504, -0.001451)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 120.412631988525,
+			"hands": [
+				{
+					"force": "(-0.110744, 17.50073, -36.19305)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(32.63189, 63.79325, -36.04552)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 44.8461799621582,
+			"position": "(-0.276576, 1.396556, 0.302263)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 1.93333333333333,
+			"velocity": "(0.123723, 0.049756, -0.047753)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 116.508430480957,
+			"hands": [
+				{
+					"force": "(-0.662596, 18.03249, -37.88497)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(29.13361, 58.91112, -35.18175)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 54.2518997192383,
+			"position": "(-0.263243, 1.400182, 0.29618)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 2.03333333333333,
+			"velocity": "(0.133435, 0.028335, -0.069253)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 114.628273010254,
+			"hands": [
+				{
+					"force": "(-0.34401, 18.11529, -38.4681)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(28.06251, 55.91158, -35.85776)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 59.8879089355469,
+			"position": "(-0.249786, 1.403117, 0.288018)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 2.14166666666666,
+			"velocity": "(0.115705, 0.028691, -0.079261)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 110.504264831543,
+			"hands": [
+				{
+					"force": "(0.207507, 18.15186, -39.44235)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(26.59593, 50.7312, -34.91991)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 73.7451639175415,
+			"position": "(-0.237682, 1.407505, 0.280443)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 2.24999999999999,
+			"velocity": "(0.113949, 0.057069, -0.046838)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 105.084537506104,
+			"hands": [
+				{
+					"force": "(-0.224179, 17.16303, -39.43497)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(24.49191, 46.1513, -33.5206)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 73.006908416748,
+			"position": "(-0.224194, 1.414978, 0.281365)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 2.35833333333333,
+			"velocity": "(0.132264, 0.068642, 0.058068)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 109.206008911133,
+			"hands": [
+				{
+					"force": "(-1.429401, 16.73373, -40.86157)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(24.83875, 48.19221, -35.9046)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 70.8390140533447,
+			"position": "(-0.209702, 1.421733, 0.293886)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 2.46666666666666,
+			"velocity": "(0.131653, 0.06032, 0.163962)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 103.967716217041,
+			"hands": [
+				{
+					"force": "(-2.245019, 14.36129, -37.92065)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(23.76192, 46.65485, -35.6757)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 60.0024795532227,
+			"position": "(-0.194131, 1.430368, 0.316142)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 2.57499999999999,
+			"velocity": "(0.162116, 0.091813, 0.233337)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 104.597095489502,
+			"hands": [
+				{
+					"force": "(-3.108221, 13.01318, -36.3689)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(23.60382, 48.18436, -38.16715)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 57.0531768798828,
+			"position": "(-0.173136, 1.438618, 0.34398)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 2.68333333333333,
+			"velocity": "(0.222743, 0.059644, 0.274532)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 110.249610900879,
+			"hands": [
+				{
+					"force": "(-4.358615, 13.57119, -37.87565)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(22.9138, 51.01766, -41.73116)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 55.4440908432007,
+			"position": "(-0.145365, 1.444023, 0.375136)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 2.79166666666666,
+			"velocity": "(0.283855, 0.045837, 0.294986)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 114.919883728027,
+			"hands": [
+				{
+					"force": "(-5.506821, 15.24122, -40.20835)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(21.07882, 51.89797, -44.54607)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 47.8978719711304,
+			"position": "(-0.111559, 1.448717, 0.406945)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 2.89999999999999,
+			"velocity": "(0.334696, 0.039578, 0.287785)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 125.594470977783,
+			"hands": [
+				{
+					"force": "(-6.70295, 20.191, -47.09082)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(18.97211, 51.39706, -49.6257)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 38.3223724365234,
+			"position": "(-0.073365, 1.450884, 0.433023)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 3.00833333333333,
+			"velocity": "(0.368237, 0.006162, 0.160182)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 117.92387008667,
+			"hands": [
+				{
+					"force": "(-7.415261, 24.70104, -48.98347)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(13.7318, 40.63215, -45.55166)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 48.3282165527344,
+			"position": "(-0.032848, 1.449163, 0.438319)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 3.11666666666666,
+			"velocity": "(0.373577, -0.038037, -0.034587)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 122.843673706055,
+			"hands": [
+				{
+					"force": "(-9.444509, 33.12041, -54.64189)",
+					"point": "(-0.24, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(11.06775, 35.76938, -44.62646)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 64.3811721801758,
+			"position": "(0.005977, 1.442441, 0.427563)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 3.22499999999999,
+			"velocity": "(0.34004, -0.069531, -0.144598)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 55.9714469909668,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(-0.24, 2.43, 0.0)",
+					"reason": "",
+					"state": "REACHING"
+				},
+				{
+					"force": "(10.72053, 32.54156, -44.25969)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 77.1016654968262,
+			"position": "(0.037967, 1.437212, 0.414481)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 3.33333333333332,
+			"velocity": "(0.281155, -0.063078, -0.079365)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 55.8058193922043,
+			"hands": [
+				{
+					"force": "(-0.081615, 0.774601, -0.417071)",
+					"point": "(-0.24, 2.43, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(10.59252, 35.15936, -40.84209)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 93.6882781982422,
+			"position": "(0.071754, 1.428391, 0.412637)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 3.44166666666666,
+			"velocity": "(0.334635, -0.067564, 0.031093)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 85.0497283935547,
+			"hands": [
+				{
+					"force": "(-4.299215, 32.63391, -17.94749)",
+					"point": "(-0.24, 2.43, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(7.996076, 31.62045, -34.61288)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 70.1433258056641,
+			"position": "(0.110435, 1.430508, 0.418683)",
+			"route_completed": false,
+			"stage": 0,
+			"time": 3.54999999999999,
+			"velocity": "(0.367025, 0.110915, 0.066633)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 106.950088500977,
+			"hands": [
+				{
+					"force": "(-9.920585, 59.08024, -33.17078)",
+					"point": "(-0.24, 2.43, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(4.397406, 24.82462, -29.06075)",
+					"point": "(0.240001, 2.1, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 38.3912658691406,
+			"position": "(0.148474, 1.44537, 0.42535)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 3.65833333333332,
+			"velocity": "(0.331243, 0.140249, 0.03273)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 131.971832275391,
+			"hands": [
+				{
+					"force": "(-23.56953, 113.7826, -62.56654)",
+					"point": "(-0.24, 2.43, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(0.237957, 2.578558, 0.0)",
+					"reason": "",
+					"state": "REACHING"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 12.2535810470581,
+			"position": "(0.176868, 1.457982, 0.422511)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 3.76666666666666,
+			"velocity": "(0.174451, 0.116337, -0.090384)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 104.321125030518,
+			"hands": [
+				{
+					"force": "(-20.42049, 85.2071, -45.67136)",
+					"point": "(-0.24, 2.43, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(-0.14704, 5.210044, -1.795248)",
+					"point": "(0.237957, 2.578558, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 9.04751604795456,
+			"position": "(0.181638, 1.467677, 0.409463)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 3.87499999999999,
+			"velocity": "(-0.059182, 0.018061, -0.15642)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 114.690507888794,
+			"hands": [
+				{
+					"force": "(-18.41113, 77.08341, -40.18014)",
+					"point": "(-0.24, 2.43, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(-0.763627, 24.25775, -8.856404)",
+					"point": "(0.237957, 2.578558, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 29.8695545196533,
+			"position": "(0.16476, 1.463197, 0.389612)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 3.98333333333332,
+			"velocity": "(-0.232758, -0.046567, -0.203566)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 109.74520111084,
+			"hands": [
+				{
+					"force": "(-12.33038, 58.30234, -30.04881)",
+					"point": "(-0.24, 2.43, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(-0.344018, 40.17173, -15.35)",
+					"point": "(0.237957, 2.578558, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 32.6531372070313,
+			"position": "(0.134776, 1.462825, 0.367569)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 4.08333333333333,
+			"velocity": "(-0.347816, 0.032437, -0.232342)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 116.279220581055,
+			"hands": [
+				{
+					"force": "(-6.945356, 42.86916, -22.6402)",
+					"point": "(-0.24, 2.43, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(2.268537, 62.61879, -24.56739)",
+					"point": "(0.237957, 2.578558, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 27.3349108695984,
+			"position": "(0.09649, 1.469536, 0.34324)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 4.18333333333333,
+			"velocity": "(-0.403139, 0.096341, -0.250977)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 129.211395263672,
+			"hands": [
+				{
+					"force": "(-3.68918, 37.77728, -21.39649)",
+					"point": "(-0.24, 2.43, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(7.617594, 79.46677, -31.00102)",
+					"point": "(0.237957, 2.578558, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 8.68594837188721,
+			"position": "(0.056208, 1.482528, 0.31839)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 4.28333333333334,
+			"velocity": "(-0.391195, 0.147116, -0.243923)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 141.460113525391,
+			"hands": [
+				{
+					"force": "(-1.602816, 37.69996, -23.27295)",
+					"point": "(-0.24, 2.43, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(13.42528, 89.82655, -34.41618)",
+					"point": "(0.237957, 2.578558, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 1.02506947517395,
+			"position": "(0.021218, 1.498217, 0.293764)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 4.38333333333334,
+			"velocity": "(-0.305157, 0.172113, -0.252777)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 139.516193389893,
+			"hands": [
+				{
+					"force": "(-0.618458, 34.62199, -23.27668)",
+					"point": "(-0.24, 2.43, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(16.17323, 90.13605, -34.3116)",
+					"point": "(0.237957, 2.578558, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(-0.002407, 1.516737, 0.267172)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 4.48333333333335,
+			"velocity": "(-0.174561, 0.191669, -0.275029)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 140.050357818604,
+			"hands": [
+				{
+					"force": "(-1.14166, 35.66725, -25.9885)",
+					"point": "(-0.24, 2.43, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(15.91788, 88.41317, -33.57683)",
+					"point": "(0.237957, 2.578558, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(-0.012527, 1.535594, 0.239233)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 4.58333333333335,
+			"velocity": "(-0.041432, 0.184099, -0.280415)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 151.684871673584,
+			"hands": [
+				{
+					"force": "(-3.123709, 39.98656, -31.47121)",
+					"point": "(-0.24, 2.43, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(14.53527, 92.91467, -36.01036)",
+					"point": "(0.237957, 2.578558, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 1.34822142124176,
+			"position": "(-0.010654, 1.553399, 0.219998)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 4.68333333333336,
+			"velocity": "(0.064845, 0.182398, -0.000022)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 145.294692993164,
+			"hands": [
+				{
+					"force": "(-5.136351, 38.3494, -32.13395)",
+					"point": "(-0.24, 2.43, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(11.24069, 87.86503, -34.32502)",
+					"point": "(0.237957, 2.578558, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.783177495002747,
+			"position": "(-0.000695, 1.572017, 0.2249)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 4.78333333333336,
+			"velocity": "(0.122187, 0.193806, 0.064981)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 119.852241516113,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "REACHING"
+				},
+				{
+					"force": "(12.54956, 110.9399, -43.5822)",
+					"point": "(0.237957, 2.578558, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.368811279535294,
+			"position": "(0.014089, 1.588118, 0.230813)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 4.88333333333337,
+			"velocity": "(0.186087, 0.095865, 0.049144)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 128.37109375,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "REACHING"
+				},
+				{
+					"force": "(13.80048, 120.0502, -43.32019)",
+					"point": "(0.237957, 2.578558, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 7.60961832944304,
+			"position": "(0.039631, 1.596352, 0.233569)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 4.98333333333337,
+			"velocity": "(0.314878, 0.091023, 0.009998)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 130.742677688599,
+			"hands": [
+				{
+					"force": "(14.65636, 10.97678, -10.50856)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(12.05335, 103.2252, -34.90113)",
+					"point": "(0.237957, 2.578558, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 9.88668304681778,
+			"position": "(0.077745, 1.605123, 0.234493)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 5.08333333333338,
+			"velocity": "(0.325056, 0.072802, 0.090386)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 123.175300598145,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(7.141582, 117.6252, -35.85325)",
+					"point": "(0.237957, 2.578558, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 5.65525843948126,
+			"position": "(0.107695, 1.612683, 0.246594)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 5.18333333333338,
+			"velocity": "(0.25897, 0.076947, 0.135781)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 129.621667861938,
+			"hands": [
+				{
+					"force": "(1.769334, 1.424406, -1.550889)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(5.095217, 121.6252, -35.7444)",
+					"point": "(0.237957, 2.578558, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 1.03131829202175,
+			"position": "(0.126522, 1.621462, 0.260934)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 5.28333333333339,
+			"velocity": "(0.132255, 0.091952, 0.146695)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 152.479610443115,
+			"hands": [
+				{
+					"force": "(24.71477, 19.45634, -21.75442)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(4.017321, 109.2551, -33.11931)",
+					"point": "(0.237957, 2.578558, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(0.139122, 1.632776, 0.273699)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 5.38333333333339,
+			"velocity": "(0.177731, 0.141222, 0.085897)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 143.676345825195,
+			"hands": [
+				{
+					"force": "(30.08002, 23.86122, -26.78771)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(-1.192755, 91.8151, -30.82975)",
+					"point": "(0.237957, 2.578558, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.122783586382866,
+			"position": "(0.169568, 1.647655, 0.276463)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 5.4833333333334,
+			"velocity": "(0.410093, 0.1372, -0.016807)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 148.413181304932,
+			"hands": [
+				{
+					"force": "(27.83922, 24.05643, -26.77485)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(-10.31109, 96.31647, -34.74319)",
+					"point": "(0.237957, 2.578558, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.247765958309174,
+			"position": "(0.219696, 1.658514, 0.270291)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 5.5833333333334,
+			"velocity": "(0.559011, 0.088903, -0.066762)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 75.8751449584961,
+			"hands": [
+				{
+					"force": "(41.70351, 44.64236, -44.99904)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(0.600001, 2.6, -0.0)",
+					"reason": "",
+					"state": "REACHING"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 12.1906776428223,
+			"position": "(0.28459, 1.646561, 0.269912)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 5.68333333333341,
+			"velocity": "(0.773427, -0.385976, 0.014778)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 118.877777099609,
+			"hands": [
+				{
+					"force": "(35.52402, 68.13711, -56.71399)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(6.759808, 21.19922, -7.156172)",
+					"point": "(0.600001, 2.6, -0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 27.6114461421967,
+			"position": "(0.379606, 1.585518, 0.276645)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 5.78333333333341,
+			"velocity": "(1.101227, -0.745177, 0.122024)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 255.647689819336,
+			"hands": [
+				{
+					"force": "(5.540798, 85.67333, -64.66502)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(-6.781587, 141.5468, -43.26498)",
+					"point": "(0.600001, 2.6, -0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 11.3293571472168,
+			"position": "(0.506436, 1.52979, 0.294264)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 5.88333333333342,
+			"velocity": "(1.349534, -0.227612, 0.185216)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 180.835472106934,
+			"hands": [
+				{
+					"force": "(-14.25392, 53.45359, -42.16091)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(-31.44335, 101.0085, -34.52206)",
+					"point": "(0.600001, 2.6, -0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(0.625442, 1.556719, 0.303909)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 5.98333333333342,
+			"velocity": "(0.996825, 0.579931, 0.029022)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 102.445602416992,
+			"hands": [
+				{
+					"force": "(-29.66376, 76.44679, -61.40888)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "REACHING"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(0.708265, 1.604565, 0.304747)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 6.08333333333343,
+			"velocity": "(0.718603, 0.262699, 0.013308)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 167.944931030273,
+			"hands": [
+				{
+					"force": "(-50.69206, 132.1289, -90.43098)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "REACHING"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_FLAT_TOP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(0.759131, 1.618766, 0.306587)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 6.18333333333343,
+			"velocity": "(0.298857, 0.114799, 0.015439)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 126.608909606934,
+			"hands": [
+				{
+					"force": "(-34.36703, 104.9188, -61.9739)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 4.42137479782104,
+			"position": "(0.766207, 1.63037, 0.306497)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 6.28333333333344,
+			"velocity": "(-0.085373, 0.079514, -0.016002)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 119.925437927246,
+			"hands": [
+				{
+					"force": "(-26.45802, 101.9463, -57.35012)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 13.976734161377,
+			"position": "(0.746481, 1.632141, 0.304154)",
+			"route_completed": false,
+			"stage": 1,
+			"time": 6.38333333333344,
+			"velocity": "(-0.27341, -0.022088, -0.025541)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 118.7121052742,
+			"hands": [
+				{
+					"force": "(-20.0645, 97.01234, -56.40986)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(-0.676363, 4.602409, -0.749811)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 22.6463088989258,
+			"position": "(0.713074, 1.627286, 0.302981)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 6.48333333333345,
+			"velocity": "(-0.375361, -0.061742, 0.008912)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 143.37474822998,
+			"hands": [
+				{
+					"force": "(-14.53648, 80.33991, -51.33605)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(-6.036026, 46.16737, -5.895278)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 25.0026397705078,
+			"position": "(0.67222, 1.623464, 0.308398)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 6.58333333333345,
+			"velocity": "(-0.436811, 0.020349, 0.096947)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 122.531085968018,
+			"hands": [
+				{
+					"force": "(-7.97715, 56.82605, -41.32524)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(-4.750433, 51.35938, -4.955166)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 28.673921585083,
+			"position": "(0.626055, 1.634867, 0.324179)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 6.68333333333346,
+			"velocity": "(-0.472529, 0.171227, 0.209558)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 120.919769287109,
+			"hands": [
+				{
+					"force": "(-2.604614, 56.46121, -44.23407)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(-0.035898, 48.932, -4.593886)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 18.3004015088081,
+			"position": "(0.5799, 1.651465, 0.348834)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 6.78333333333346,
+			"velocity": "(-0.441734, 0.151683, 0.263506)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 134.922832489014,
+			"hands": [
+				{
+					"force": "(3.368051, 60.82277, -47.80815)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(5.49747, 56.76208, -7.249248)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 15.3382406234741,
+			"position": "(0.540863, 1.667423, 0.37427)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 6.88333333333347,
+			"velocity": "(-0.334865, 0.176535, 0.241321)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 134.83069229126,
+			"hands": [
+				{
+					"force": "(6.510652, 59.66028, -47.84909)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(8.489186, 56.70457, -9.238747)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 8.88809013366699,
+			"position": "(0.515076, 1.686695, 0.395529)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 6.98333333333347,
+			"velocity": "(-0.192328, 0.198945, 0.181773)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 134.443859100342,
+			"hands": [
+				{
+					"force": "(6.290097, 57.84443, -48.64096)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(8.43488, 56.99163, -10.7419)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 2.93571162223816,
+			"position": "(0.50307, 1.705069, 0.408664)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 7.08333333333348,
+			"velocity": "(-0.063171, 0.163988, 0.083628)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 139.324321746826,
+			"hands": [
+				{
+					"force": "(4.060612, 59.08295, -52.42182)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(6.483554, 58.60705, -12.29932)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 6.81697815656662,
+			"position": "(0.502133, 1.719483, 0.411068)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 7.18333333333348,
+			"velocity": "(0.029394, 0.134455, -0.022455)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 140.942516326904,
+			"hands": [
+				{
+					"force": "(1.134144, 61.96067, -58.09738)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(3.75594, 54.42095, -12.64643)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 6.28923383355141,
+			"position": "(0.508, 1.731984, 0.404311)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 7.28333333333349,
+			"velocity": "(0.076631, 0.112469, -0.104445)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 147.779132843018,
+			"hands": [
+				{
+					"force": "(-0.927979, 67.49103, -65.52708)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(2.571792, 51.88681, -13.62025)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 6.22077989578247,
+			"position": "(0.516527, 1.741496, 0.389846)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 7.38333333333349,
+			"velocity": "(0.089004, 0.082716, -0.176625)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 153.914916992188,
+			"hands": [
+				{
+					"force": "(-1.493479, 71.44749, -70.51533)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(2.93027, 51.1676, -15.41264)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 6.27560710906982,
+			"position": "(0.525558, 1.749097, 0.369009)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 7.4833333333335,
+			"velocity": "(0.091777, 0.073272, -0.2327)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 160.928333282471,
+			"hands": [
+				{
+					"force": "(-1.444663, 72.70452, -72.45723)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(4.230066, 54.92387, -19.00622)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(0.53523, 1.756026, 0.342587)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 7.5833333333335,
+			"velocity": "(0.102736, 0.064388, -0.295824)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 165.703098297119,
+			"hands": [
+				{
+					"force": "(-1.816148, 72.22861, -73.05653)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(5.394011, 58.43296, -22.7949)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(0.546641, 1.762973, 0.309789)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 7.68333333333351,
+			"velocity": "(0.124896, 0.076688, -0.350685)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 163.593048095703,
+			"hands": [
+				{
+					"force": "(-3.140999, 70.75087, -73.75206)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(5.119676, 56.23439, -23.96955)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 3.52779388427734,
+			"position": "(0.560345, 1.771484, 0.273419)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 7.78333333333351,
+			"velocity": "(0.145888, 0.09096, -0.365703)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 159.786121368408,
+			"hands": [
+				{
+					"force": "(-5.241467, 72.62959, -76.83785)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(3.962128, 48.89622, -22.39112)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 2.33917331695557,
+			"position": "(0.575157, 1.779354, 0.238251)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 7.88333333333351,
+			"velocity": "(0.144959, 0.058501, -0.337115)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 172.288806915283,
+			"hands": [
+				{
+					"force": "(-7.06982, 83.87859, -86.89821)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(3.89029, 46.01131, -22.36304)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 1.35403311252594,
+			"position": "(0.586543, 1.782598, 0.220354)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 7.98333333333352,
+			"velocity": "(0.064327, 0.027681, 0.028856)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 166.603252410889,
+			"hands": [
+				{
+					"force": "(-5.256044, 81.45562, -80.91553)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(5.9798, 45.3498, -24.02676)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 2.92233368754387,
+			"position": "(0.58972, 1.785449, 0.223985)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 8.09166666666685,
+			"velocity": "(0.008792, 0.019804, 0.038334)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 164.497077941895,
+			"hands": [
+				{
+					"force": "(-4.329095, 82.96899, -81.57533)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(6.604424, 41.67295, -23.01525)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 3.89099162817001,
+			"position": "(0.588924, 1.787522, 0.22911)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 8.20000000000018,
+			"velocity": "(-0.022508, 0.019022, 0.05387)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 159.434471130371,
+			"hands": [
+				{
+					"force": "(-3.786179, 80.62324, -80.5666)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(6.529165, 39.17005, -21.99129)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 2.98636388778687,
+			"position": "(0.584265, 1.789305, 0.235169)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 8.3083333333335,
+			"velocity": "(-0.061095, 0.012986, 0.054692)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 158.824607849121,
+			"hands": [
+				{
+					"force": "(-3.268053, 78.14932, -80.1259)",
+					"point": "(0.296435, 2.442348, 0.0)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(6.817424, 40.39083, -22.73965)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 2.37764382362366,
+			"position": "(0.57567, 1.790134, 0.240407)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 8.41666666666683,
+			"velocity": "(-0.092552, 0.003205, 0.04186)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 56.0557594299316,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(0.74, 2.53, 0.2)",
+					"reason": "",
+					"state": "REACHING"
+				},
+				{
+					"force": "(7.962734, 48.58691, -26.79842)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 2.37751364707947,
+			"position": "(0.564753, 1.789465, 0.243703)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 8.52500000000016,
+			"velocity": "(-0.098691, -0.052602, 0.023242)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 133.487228393555,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(0.74, 2.53, 0.2)",
+					"reason": "",
+					"state": "REACHING"
+				},
+				{
+					"force": "(16.37477, 127.4127, -36.28659)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 31.5479354858398,
+			"position": "(0.560062, 1.762345, 0.249531)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 8.63333333333348,
+			"velocity": "(0.01687, -0.276326, 0.103966)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 116.93236541748,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(0.74, 2.53, 0.2)",
+					"reason": "",
+					"state": "REACHING"
+				},
+				{
+					"force": "(22.6721, 114.424, -8.14258)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 37.7219829559326,
+			"position": "(0.572997, 1.755864, 0.27169)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 8.74166666666681,
+			"velocity": "(0.214237, 0.108794, 0.287542)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 81.1009914875031,
+			"hands": [
+				{
+					"force": "(2.067696, 1.396467, -0.390217)",
+					"point": "(0.74, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(17.65851, 76.53569, -2.141391)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 32.1425590515137,
+			"position": "(0.60735, 1.767776, 0.313913)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 8.85000000000014,
+			"velocity": "(0.400036, 0.046743, 0.478656)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 108.680877685547,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(0.74, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(11.30797, 107.3708, -12.4571)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 24.3906650543213,
+			"position": "(0.660211, 1.765947, 0.375572)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 8.95833333333347,
+			"velocity": "(0.552922, -0.036062, 0.626826)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 137.236587524414,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(0.74, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(-12.78968, 132.1726, -34.65135)",
+					"point": "(0.689999, 2.51, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 5.2723069190979,
+			"position": "(0.722324, 1.768235, 0.439616)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 9.06666666666679,
+			"velocity": "(0.555168, 0.091422, 0.508623)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 4.91707134246826,
+			"hands": [
+				{
+					"force": "(3.264232, 3.261448, -1.698627)",
+					"point": "(0.74, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.25, 2.55, 0.2)",
+					"reason": "",
+					"state": "REACHING"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(0.772794, 1.783913, 0.475188)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 9.17500000000012,
+			"velocity": "(0.380003, 0.156817, 0.163797)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 84.4832077026367,
+			"hands": [
+				{
+					"force": "(49.22241, 62.8357, -27.68107)",
+					"point": "(0.74, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.25, 2.55, 0.2)",
+					"reason": "",
+					"state": "REACHING"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 30.0596714019775,
+			"position": "(0.825005, 1.752365, 0.488724)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 9.28333333333345,
+			"velocity": "(0.665532, -0.544259, 0.079322)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 71.6290588378906,
+			"hands": [
+				{
+					"force": "(26.06709, 63.36189, -20.89258)",
+					"point": "(0.74, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.25, 2.55, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 55.5852088928223,
+			"position": "(0.924372, 1.674736, 0.500775)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 9.39166666666677,
+			"velocity": "(1.11462, -0.856829, 0.180271)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 200.132658004761,
+			"hands": [
+				{
+					"force": "(-7.057177, 166.3572, -52.28642)",
+					"point": "(0.74, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(6.711111, 24.71005, 0.463098)",
+					"point": "(1.25, 2.55, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 7.82750701904297,
+			"position": "(1.066614, 1.584139, 0.540977)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 9.5000000000001,
+			"velocity": "(1.427939, -0.675526, 0.439133)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 281.347148895264,
+			"hands": [
+				{
+					"force": "(-113.3218, 191.2314, -63.08609)",
+					"point": "(0.74, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(-10.24633, 49.19889, -1.65968)",
+					"point": "(1.25, 2.55, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.19897, 1.581137, 0.559094)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 9.60833333333343,
+			"velocity": "(0.84824, 0.635891, -0.119639)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 57.4534378051758,
+			"hands": [
+				{
+					"force": "(-40.21811, 38.95885, -12.86891)",
+					"point": "(0.74, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.25, 2.55, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.235108, 1.671022, 0.521293)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 9.71666666666676,
+			"velocity": "(0.014481, 0.708445, -0.469199)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 99.2410888671875,
+			"hands": [
+				{
+					"force": "(-36.13094, 34.64806, -6.14093)",
+					"point": "(0.74, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(-21.7489, 43.68204, -0.971478)",
+					"point": "(1.25, 2.55, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.218544, 1.674857, 0.470192)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 9.82500000000008,
+			"velocity": "(-0.239627, -0.365749, -0.383316)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 90.9285068511963,
+			"hands": [
+				{
+					"force": "(-11.03314, 14.62934, -2.448624)",
+					"point": "(0.74, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(-23.9232, 68.2589, -4.034275)",
+					"point": "(1.25, 2.55, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.172299, 1.619775, 0.439262)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 9.93333333333341,
+			"velocity": "(-0.593066, -0.653262, -0.285558)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 228.526580810547,
+			"hands": [
+				{
+					"force": "(-29.88982, 107.8132, -19.45759)",
+					"point": "(0.74, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(-1.162756, 114.4653, -10.67024)",
+					"point": "(1.25, 2.55, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.089393, 1.54685, 0.402802)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 10.0416666666667,
+			"velocity": "(-0.917009, -0.500397, -0.411561)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 173.01099395752,
+			"hands": [
+				{
+					"force": "(7.858654, 88.19903, -17.26732)",
+					"point": "(0.74, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(30.97429, 76.38741, -7.778962)",
+					"point": "(1.25, 2.55, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(0.988628, 1.560357, 0.339949)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 10.1500000000001,
+			"velocity": "(-0.827077, 0.597144, -0.721192)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 170.059192657471,
+			"hands": [
+				{
+					"force": "(14.82763, 54.65082, -9.041909)",
+					"point": "(0.74, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(63.30533, 93.19376, -3.476777)",
+					"point": "(1.25, 2.55, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.348154067993164,
+			"position": "(0.919646, 1.612723, 0.255749)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 10.2583333333334,
+			"velocity": "(-0.419453, -0.058622, -0.756714)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 105.490997314453,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "REACHING"
+				},
+				{
+					"force": "(51.69773, 91.91544, 2.691735)",
+					"point": "(1.25, 2.55, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 15.1531610488892,
+			"position": "(0.925161, 1.602224, 0.232883)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 10.3666666666667,
+			"velocity": "(0.358183, -0.144, 0.043007)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 137.736724853516,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(29.81031, 134.4628, -1.579456)",
+					"point": "(1.25, 2.55, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 37.6237678527832,
+			"position": "(0.985852, 1.585885, 0.247837)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 10.475,
+			"velocity": "(0.702904, -0.068523, 0.238884)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 155.47297668457,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(-11.05443, 154.7038, -10.78761)",
+					"point": "(1.25, 2.55, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 38.4839553833008,
+			"position": "(1.067166, 1.596536, 0.287609)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 10.5833333333334,
+			"velocity": "(0.71504, 0.067508, 0.496633)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 103.894989013672,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(-15.54764, 101.78, -13.9025)",
+					"point": "(1.25, 2.55, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 18.4028606414795,
+			"position": "(1.13253, 1.606412, 0.353392)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 10.6916666666667,
+			"velocity": "(0.51975, 0.122089, 0.653689)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 110.703369140625,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(-7.171223, 108.5111, -20.7158)",
+					"point": "(1.25, 2.55, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 5.35712432861328,
+			"position": "(1.181685, 1.611746, 0.421516)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 10.8,
+			"velocity": "(0.408435, -0.01873, 0.58594)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 145.724021911621,
+			"hands": [
+				{
+					"force": "(27.41348, 50.98957, -21.94209)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.771293, 81.8196, -18.1574)",
+					"point": "(1.25, 2.55, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.233793, 1.626762, 0.464998)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 10.9083333333334,
+			"velocity": "(0.606354, 0.32622, 0.200707)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 104.787237167358,
+			"hands": [
+				{
+					"force": "(7.343661, 17.28057, -6.502127)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(-10.37525, 83.14542, -13.78752)",
+					"point": "(1.25, 2.55, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 1.82275772094727,
+			"position": "(1.307535, 1.655523, 0.471027)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 11.0166666666667,
+			"velocity": "(0.700741, 0.162155, -0.03695)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 135.810214996338,
+			"hands": [
+				{
+					"force": "(7.763017, 26.09716, -7.458524)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(-28.94769, 103.0839, -10.44775)",
+					"point": "(1.25, 2.55, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 1.57373058795929,
+			"position": "(1.377483, 1.671782, 0.456929)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 11.125,
+			"velocity": "(0.571159, 0.18244, -0.209098)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 115.694549560547,
+			"hands": [
+				{
+					"force": "(7.780986, 33.90418, -7.962701)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(-28.61929, 74.6355, -3.457633)",
+					"point": "(1.25, 2.55, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 18.593656539917,
+			"position": "(1.427525, 1.697126, 0.429235)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 11.2333333333333,
+			"velocity": "(0.371606, 0.263394, -0.267294)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 74.8789443969727,
+			"hands": [
+				{
+					"force": "(11.44153, 71.94617, -17.31174)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "REACHING"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 21.4947891235352,
+			"position": "(1.467419, 1.708721, 0.402457)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 11.3416666666667,
+			"velocity": "(0.417429, -0.065465, -0.234756)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 101.849922180176,
+			"hands": [
+				{
+					"force": "(-1.860709, 98.31256, -26.54402)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "REACHING"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 11.6975917816162,
+			"position": "(1.516881, 1.689798, 0.38812)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 11.45,
+			"velocity": "(0.478854, -0.251269, -0.167034)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 141.326690673828,
+			"hands": [
+				{
+					"force": "(-36.14912, 132.8134, -32.04791)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "REACHING"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.561449, 1.66406, 0.369372)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 11.5583333333333,
+			"velocity": "(0.314486, -0.188714, -0.282471)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 152.040679931641,
+			"hands": [
+				{
+					"force": "(-64.00649, 137.5848, -9.485283)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "REACHING"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.56959, 1.64939, 0.325381)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 11.6666666666666,
+			"velocity": "(-0.17887, -0.095751, -0.479621)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 82.831184387207,
+			"hands": [
+				{
+					"force": "(-32.08043, 76.09334, 6.454085)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "REACHING"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.522031, 1.635888, 0.272824)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 11.775,
+			"velocity": "(-0.609196, -0.237022, -0.468509)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 132.737335205078,
+			"hands": [
+				{
+					"force": "(-41.43484, 125.6627, 10.54749)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "REACHING"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.465927, 1.597203, 0.237727)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 11.8833333333333,
+			"velocity": "(-0.488971, -0.393805, -0.210848)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 152.223556518555,
+			"hands": [
+				{
+					"force": "(-34.47536, 148.1293, -6.41752)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "REACHING"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 17.9378757476807,
+			"position": "(1.400416, 1.567276, 0.224319)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 11.9916666666666,
+			"velocity": "(-0.708725, -0.122452, -0.054356)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 112.192153930664,
+			"hands": [
+				{
+					"force": "(-7.701186, 110.7111, -16.45663)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "REACHING"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 16.7946662902832,
+			"position": "(1.31611, 1.568631, 0.224257)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 12.1,
+			"velocity": "(-0.804181, 0.067316, 0.03475)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 115.219863891602,
+			"hands": [
+				{
+					"force": "(11.99771, 112.8972, -19.64411)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "REACHING"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 12.162428855896,
+			"position": "(1.231552, 1.57665, 0.229356)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 12.2083333333333,
+			"velocity": "(-0.735228, 0.079614, 0.057493)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 110.542899131775,
+			"hands": [
+				{
+					"force": "(20.18445, 96.36611, -15.22847)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(6.269689, 8.932288, -0.198643)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 6.81999683380127,
+			"position": "(1.16545, 1.585279, 0.241691)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 12.3166666666666,
+			"velocity": "(-0.506227, 0.062914, 0.140533)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 127.684829711914,
+			"hands": [
+				{
+					"force": "(13.48322, 71.3051, -10.51896)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(29.97598, 45.31894, -1.548283)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.100164689123631,
+			"position": "(1.129191, 1.59116, 0.257714)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 12.4249999999999,
+			"velocity": "(-0.165035, 0.053032, 0.140368)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 134.534294128418,
+			"hands": [
+				{
+					"force": "(3.873392, 65.4476, -8.259742)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(33.09584, 59.9073, -1.311913)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.734674751758575,
+			"position": "(1.134138, 1.598346, 0.268084)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 12.5333333333333,
+			"velocity": "(0.217342, 0.091263, 0.052086)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 111.269165039063,
+			"hands": [
+				{
+					"force": "(-6.263227, 68.37001, -5.44497)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(17.47324, 38.62891, 0.156072)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 3.3998863697052,
+			"position": "(1.173308, 1.611156, 0.270454)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 12.6416666666666,
+			"velocity": "(0.449456, 0.118123, 0.00576)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 115.433853149414,
+			"hands": [
+				{
+					"force": "(-15.90371, 92.50233, -4.044614)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(8.049541, 19.90623, 0.804801)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0357428379356861,
+			"position": "(1.223559, 1.618426, 0.269345)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 12.7499999999999,
+			"velocity": "(0.448298, 0.02868, -0.025069)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 166.76099395752,
+			"hands": [
+				{
+					"force": "(-21.69397, 128.6309, -7.422696)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(13.78071, 33.29623, 2.201328)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 14.9746077060699,
+			"position": "(1.269217, 1.61825, 0.269602)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 12.8583333333332,
+			"velocity": "(0.407612, -0.114073, 0.024588)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 240.26146697998,
+			"hands": [
+				{
+					"force": "(-34.43667, 177.5708, -13.25518)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(21.36043, 54.71979, 4.285603)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 12.9833717346191,
+			"position": "(1.313457, 1.611259, 0.276646)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 12.9666666666666,
+			"velocity": "(0.387801, -0.031968, 0.111273)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 271.711540222168,
+			"hands": [
+				{
+					"force": "(-42.25088, 186.4173, -18.08261)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(27.08822, 74.81216, 4.847516)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 14.114029020071,
+			"position": "(1.346264, 1.610652, 0.294586)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 13.0749999999999,
+			"velocity": "(0.225789, 0.016021, 0.213714)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 267.448333740234,
+			"hands": [
+				{
+					"force": "(-38.78331, 159.5912, -19.71893)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(33.51049, 96.32615, 2.99983)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 14.79479393363,
+			"position": "(1.362745, 1.614729, 0.323431)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 13.1833333333332,
+			"velocity": "(0.103575, 0.054414, 0.307213)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 268.413024902344,
+			"hands": [
+				{
+					"force": "(-36.51709, 144.7899, -22.42983)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(37.88336, 111.1207, -1.759723)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "START_POSE_OUTSIDE_ENVELOPE",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 13.0736122131348,
+			"position": "(1.371258, 1.622396, 0.360321)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 13.2916666666666,
+			"velocity": "(0.06697, 0.084757, 0.359841)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 266.896987915039,
+			"hands": [
+				{
+					"force": "(-37.12732, 140.2562, -24.85705)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(37.82351, 113.3823, -6.401852)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 9.04487705230713,
+			"position": "(1.378336, 1.633927, 0.398162)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 13.3999999999999,
+			"velocity": "(0.064689, 0.126946, 0.325779)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 253.610092163086,
+			"hands": [
+				{
+					"force": "(-37.62611, 133.4651, -22.83527)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(34.95882, 107.2929, -7.215895)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 4.62797212600708,
+			"position": "(1.384587, 1.649911, 0.427813)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 13.5083333333332,
+			"velocity": "(0.047879, 0.160267, 0.22411)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 251.76921081543,
+			"hands": [
+				{
+					"force": "(-38.32859, 130.6823, -18.38053)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(35.19459, 108.6295, -6.023238)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.387644, 1.666528, 0.445105)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 13.6166666666665,
+			"velocity": "(0.011081, 0.139402, 0.109612)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 266.91365814209,
+			"hands": [
+				{
+					"force": "(-39.85294, 133.835, -14.92045)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(39.19505, 120.1494, -4.907921)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.387362, 1.678557, 0.453173)",
+			"route_completed": false,
+			"stage": 2,
+			"time": 13.7249999999999,
+			"velocity": "(-0.010939, 0.082914, 0.054337)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 281.480819702148,
+			"hands": [
+				{
+					"force": "(-41.50676, 139.2239, -14.05119)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(42.24482, 128.656, -5.441703)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.385603, 1.683928, 0.458204)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 13.8333333333332,
+			"velocity": "(-0.02024, 0.022249, 0.042614)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 283.751647949219,
+			"hands": [
+				{
+					"force": "(-41.34132, 139.7072, -13.95728)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(43.08144, 130.3082, -6.283785)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.27852874994278,
+			"position": "(1.383328, 1.68508, 0.460377)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 13.9416666666665,
+			"velocity": "(-0.020715, 0.002299, 0.001517)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 286.354553222656,
+			"hands": [
+				{
+					"force": "(-41.22419, 140.4654, -13.39846)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(43.88462, 132.1143, -6.260816)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.381306, 1.684238, 0.45815)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 14.0499999999998,
+			"velocity": "(-0.016267, -0.016125, -0.038847)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 289.634384155273,
+			"hands": [
+				{
+					"force": "(-41.19969, 141.4797, -12.2205)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(44.70203, 134.4237, -5.59605)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.380011, 1.681571, 0.451916)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 14.1583333333332,
+			"velocity": "(-0.007601, -0.031238, -0.072191)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 292.738800048828,
+			"hands": [
+				{
+					"force": "(-41.27526, 142.4941, -10.54934)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(45.28827, 136.6355, -4.395741)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.379884, 1.677546, 0.442634)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 14.2666666666665,
+			"velocity": "(0.004769, -0.041396, -0.095562)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 293.84765625,
+			"hands": [
+				{
+					"force": "(-41.24105, 142.2352, -9.196251)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(45.44817, 138.162, -2.632337)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 7.38578081130981,
+			"position": "(1.381374, 1.673294, 0.432862)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 14.3749999999998,
+			"velocity": "(0.023305, -0.032269, -0.072848)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 292.992294311523,
+			"hands": [
+				{
+					"force": "(-42.04344, 143.5353, -8.74479)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(44.24579, 136.1561, -1.298818)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.385023, 1.670607, 0.427042)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 14.4833333333332,
+			"velocity": "(0.039628, -0.022861, -0.048486)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 291.283233642578,
+			"hands": [
+				{
+					"force": "(-42.50079, 143.5432, -7.572686)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(43.10708, 134.6558, -0.644245)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.389393, 1.668046, 0.421519)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 14.5916666666665,
+			"velocity": "(0.039524, -0.024028, -0.052649)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 290.27294921875,
+			"hands": [
+				{
+					"force": "(-42.77356, 143.0002, -6.640892)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(42.4099, 134.3289, 0.284429)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.393418, 1.665469, 0.415749)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 14.6999999999998,
+			"velocity": "(0.034768, -0.023321, -0.053125)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 289.522491455078,
+			"hands": [
+				{
+					"force": "(-42.72485, 141.5329, -6.044774)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(42.16562, 135.1256, 1.33279)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 12.5940504074097,
+			"position": "(1.396851, 1.663245, 0.410648)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 14.8083333333331,
+			"velocity": "(0.030402, -0.012678, -0.027656)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 285.180328369141,
+			"hands": [
+				{
+					"force": "(-42.87897, 138.7325, -9.379615)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(41.31864, 133.3949, 2.498554)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 16.7482261657715,
+			"position": "(1.401228, 1.665516, 0.417087)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 14.9166666666665,
+			"velocity": "(0.052573, 0.052874, 0.14107)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 274.703872680664,
+			"hands": [
+				{
+					"force": "(-44.53948, 140.3587, -12.76618)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(37.17873, 121.3269, -0.030782)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.406808, 1.672779, 0.435603)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 15.0249999999998,
+			"velocity": "(0.039846, 0.06795, 0.16706)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 278.003112792969,
+			"hands": [
+				{
+					"force": "(-44.49857, 138.9091, -13.98799)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(38.41047, 125.6951, -3.183035)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.408674, 1.679283, 0.450978)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 15.1333333333331,
+			"velocity": "(-0.000221, 0.052314, 0.119439)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 282.274642944336,
+			"hands": [
+				{
+					"force": "(-44.18066, 138.191, -14.6934)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(40.10563, 130.3049, -5.567072)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.407105, 1.683815, 0.460984)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 15.2416666666664,
+			"velocity": "(-0.024404, 0.032406, 0.069071)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 284.545745849609,
+			"hands": [
+				{
+					"force": "(-43.73087, 138.0839, -14.83462)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(41.25796, 132.4976, -6.915823)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.403647, 1.686079, 0.465548)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 15.3499999999998,
+			"velocity": "(-0.036999, 0.010949, 0.019354)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 288.526763916016,
+			"hands": [
+				{
+					"force": "(-43.30523, 138.6834, -14.38736)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(42.79705, 135.7512, -7.379131)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.399371, 1.686055, 0.46494)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 15.4583333333331,
+			"velocity": "(-0.039964, -0.009423, -0.026031)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 292.764892578125,
+			"hands": [
+				{
+					"force": "(-42.9385, 139.672, -13.22361)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(44.24519, 138.9988, -7.121896)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.395382, 1.683998, 0.459836)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 15.5666666666664,
+			"velocity": "(-0.032663, -0.026557, -0.06379)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 294.041137695313,
+			"hands": [
+				{
+					"force": "(-42.66201, 140.6724, -11.58201)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(44.62291, 139.4996, -6.016747)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.392538, 1.680338, 0.451171)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 15.6749999999998,
+			"velocity": "(-0.020564, -0.039258, -0.092439)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 294.769989013672,
+			"hands": [
+				{
+					"force": "(-42.50763, 141.5704, -9.735681)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(44.66184, 139.603, -4.274459)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.39106, 1.675599, 0.439969)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 15.7833333333331,
+			"velocity": "(-0.007759, -0.046785, -0.111146)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 295.1142578125,
+			"hands": [
+				{
+					"force": "(-42.45298, 142.2426, -7.776208)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(44.46082, 139.5394, -2.21013)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 3.66057443618774,
+			"position": "(1.390911, 1.670367, 0.427411)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 15.8916666666664,
+			"velocity": "(0.003881, -0.048015, -0.116334)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 293.444366455078,
+			"hands": [
+				{
+					"force": "(-42.30647, 141.4306, -7.09144)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(43.95789, 138.8598, 0.080352)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 7.11783170700073,
+			"position": "(1.392285, 1.66648, 0.418025)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 15.9999999999997,
+			"velocity": "(0.021372, -0.022909, -0.053787)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 292.233535766602,
+			"hands": [
+				{
+					"force": "(-43.05035, 142.7702, -6.750253)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(42.76035, 136.4138, 0.853486)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.39523, 1.664791, 0.414251)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 16.1083333333331,
+			"velocity": "(0.028746, -0.013375, -0.029246)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 292.132797241211,
+			"hands": [
+				{
+					"force": "(-43.18544, 142.2559, -5.86128)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(42.47735, 136.9095, 0.967675)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.398159, 1.663467, 0.411345)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 16.2166666666664,
+			"velocity": "(0.025501, -0.011103, -0.024415)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 291.90869140625,
+			"hands": [
+				{
+					"force": "(-43.30352, 141.6994, -5.352373)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(42.22252, 137.2925, 1.220191)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 1.40365421772003,
+			"position": "(1.400756, 1.66243, 0.409081)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 16.3249999999997,
+			"velocity": "(0.022719, -0.008175, -0.017634)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 289.550155639648,
+			"hands": [
+				{
+					"force": "(-42.80797, 138.3133, -6.808666)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(42.25919, 138.2772, 1.959439)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 25.898099899292,
+			"position": "(1.40355, 1.663225, 0.411539)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 16.433333333333,
+			"velocity": "(0.03354, 0.032065, 0.087087)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 283.880661010742,
+			"hands": [
+				{
+					"force": "(-44.37945, 138.9697, -12.07963)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(39.95153, 131.5622, 0.906563)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 5.66394948959351,
+			"position": "(1.408855, 1.670651, 0.430711)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 16.5416666666664,
+			"velocity": "(0.05648, 0.08829, 0.220754)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 278.102432250977,
+			"hands": [
+				{
+					"force": "(-45.3843, 139.188, -14.45092)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(37.69662, 125.4057, -3.308231)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.413637, 1.679872, 0.452822)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 16.6499999999997,
+			"velocity": "(0.028032, 0.078388, 0.181128)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 279.649337768555,
+			"hands": [
+				{
+					"force": "(-45.18456, 137.4187, -16.17819)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(38.63546, 128.2441, -6.410574)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.414422, 1.687095, 0.468916)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 16.758333333333,
+			"velocity": "(-0.008224, 0.055525, 0.119746)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 282.997848510742,
+			"hands": [
+				{
+					"force": "(-44.96449, 137.1642, -17.19033)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(39.99795, 131.4202, -8.44877)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.412137, 1.69154, 0.478176)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 16.8666666666664,
+			"velocity": "(-0.03052, 0.028604, 0.055756)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 284.816421508789,
+			"hands": [
+				{
+					"force": "(-44.30929, 136.9078, -16.72362)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(41.22771, 133.4308, -9.057293)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.407966, 1.69335, 0.480161)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 16.9749999999997,
+			"velocity": "(-0.043793, 0.007239, -0.013651)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 288.905776977539,
+			"hands": [
+				{
+					"force": "(-43.76041, 137.7537, -14.86355)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(42.949, 136.7832, -8.274536)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.403022, 1.692847, 0.475316)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 17.083333333333,
+			"velocity": "(-0.045369, -0.016137, -0.066627)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 293.350173950195,
+			"hands": [
+				{
+					"force": "(-43.49137, 139.5106, -12.91569)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(44.29503, 139.6123, -7.212158)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.398528, 1.68944, 0.466514)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 17.1916666666663,
+			"velocity": "(-0.037146, -0.041495, -0.094046)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 294.465393066406,
+			"hands": [
+				{
+					"force": "(-43.06722, 140.4663, -10.78736)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(44.67793, 140.0935, -5.542338)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.395171, 1.684256, 0.454732)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 17.2999999999997,
+			"velocity": "(-0.025337, -0.052309, -0.119576)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 295.07958984375,
+			"hands": [
+				{
+					"force": "(-42.80273, 141.4127, -8.513677)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(44.70148, 140.0888, -3.34593)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.393181, 1.67827, 0.440888)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 17.408333333333,
+			"velocity": "(-0.012417, -0.056861, -0.132893)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 295.214477539063,
+			"hands": [
+				{
+					"force": "(-42.66745, 142.178, -6.221907)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(44.43893, 139.743, -0.962786)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.392542, 1.67214, 0.426339)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 17.5166666666663,
+			"velocity": "(-0.000619, -0.055519, -0.13356)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 294.896942138672,
+			"hands": [
+				{
+					"force": "(-42.61172, 142.6089, -4.082951)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(43.99074, 139.2107, 1.327745)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.393051, 1.666446, 0.412431)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 17.6249999999996,
+			"velocity": "(0.008846, -0.049372, -0.122201)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 292.50129699707,
+			"hands": [
+				{
+					"force": "(-42.15937, 140.5903, -3.471291)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(43.59434, 138.9623, 3.613274)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 13.4023313522339,
+			"position": "(1.394746, 1.662689, 0.403153)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 17.733333333333,
+			"velocity": "(0.024244, -0.01496, -0.034542)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 288.971420288086,
+			"hands": [
+				{
+					"force": "(-43.06554, 141.4928, -4.80094)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(41.83817, 134.5816, 4.015072)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.104560732841492,
+			"position": "(1.3984, 1.663319, 0.40536)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 17.8416666666663,
+			"velocity": "(0.03773, 0.016261, 0.047568)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 288.217529296875,
+			"hands": [
+				{
+					"force": "(-43.4418, 141.0844, -5.021981)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(41.3212, 134.2726, 2.598637)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.402011, 1.665321, 0.410989)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 17.9499999999996,
+			"velocity": "(0.028555, 0.02001, 0.054654)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 288.557540893555,
+			"hands": [
+				{
+					"force": "(-43.57483, 140.1794, -5.59324)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(41.42085, 135.4568, 1.389832)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.404587, 1.667599, 0.417042)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 18.058333333333,
+			"velocity": "(0.020192, 0.021593, 0.056155)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 288.416030883789,
+			"hands": [
+				{
+					"force": "(-43.49515, 138.7368, -6.599612)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(41.64444, 136.6664, 0.480554)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 10.9424772262573,
+			"position": "(1.406444, 1.670086, 0.423392)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 18.1666666666663,
+			"velocity": "(0.016159, 0.02871, 0.071868)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 284.976196289063,
+			"hands": [
+				{
+					"force": "(-43.77293, 136.9772, -10.46564)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(41.01316, 134.6885, -0.169214)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 7.66502809524536,
+			"position": "(1.409101, 1.67591, 0.437586)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 18.2749999999996,
+			"velocity": "(0.033192, 0.07349, 0.17562)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 283.75373840332,
+			"hands": [
+				{
+					"force": "(-45.12513, 138.8294, -13.08693)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(39.79008, 131.2506, -3.307285)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.412305, 1.683739, 0.455719)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 18.3833333333329,
+			"velocity": "(0.020956, 0.066212, 0.149011)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 280.335784912109,
+			"hands": [
+				{
+					"force": "(-45.01771, 137.4737, -14.47113)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(39.16993, 129.0165, -5.814888)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.413127, 1.689794, 0.468961)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 18.4916666666663,
+			"velocity": "(-0.00426, 0.045988, 0.097831)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 282.5498046875,
+			"hands": [
+				{
+					"force": "(-44.86662, 137.2305, -15.49831)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				},
+				{
+					"force": "(40.14508, 131.1452, -7.212517)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "",
+					"state": "ATTACHED"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "TOO_NARROW",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.411393, 1.693366, 0.476327)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 18.5999999999996,
+			"velocity": "(-0.024715, 0.021546, 0.042526)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_REAL_GRIP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.407964, 1.687623, 0.478155)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 18.7083333333329,
+			"velocity": "(-0.034272, -0.321431, 0.005622)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_REAL_GRIP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.40429, 1.591604, 0.478757)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 18.8166666666662,
+			"velocity": "(-0.033609, -1.367384, 0.005513)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_REAL_GRIP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.400687, 1.383457, 0.479348)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 18.9249999999996,
+			"velocity": "(-0.03296, -2.393123, 0.005406)"
+		},
+		{
+			"ground_support_id": 88063609234,
+			"grounded": true,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_REAL_GRIP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.394357, 1.118976, 0.473923)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 19.0333333333329,
+			"velocity": "(-0.149551, -1.18376, -0.252118)"
+		},
+		{
+			"ground_support_id": 88063609234,
+			"grounded": true,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_REAL_GRIP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.387821, 1.01371, 0.420867)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 19.1416666666662,
+			"velocity": "(-0.014655, -1.038438, -0.804564)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_REAL_GRIP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.396506, 0.892267, 0.279381)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 19.2499999999995,
+			"velocity": "(0.198761, -1.312823, -1.475802)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_REAL_GRIP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.432257, 0.705008, 0.127945)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 19.3583333333329,
+			"velocity": "(0.438256, -2.094656, -1.329062)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_REAL_GRIP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.485542, 0.470085, -0.005042)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 19.4666666666662,
+			"velocity": "(0.39804, 0.010241, -0.910644)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_REAL_GRIP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.495001, 0.52458, -0.086764)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 19.5749999999995,
+			"velocity": "(0.058511, 0.240584, -0.716789)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_REAL_GRIP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.499612, 0.517364, -0.160042)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 19.6833333333329,
+			"velocity": "(0.032576, -0.327235, -0.642456)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_REAL_GRIP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.508346, 0.470497, -0.219542)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 19.7916666666662,
+			"velocity": "(0.11102, 0.014119, -0.403004)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_REAL_GRIP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.52067, 0.469935, -0.255629)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 19.8999999999995,
+			"velocity": "(0.114345, -0.000344, -0.270906)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_REAL_GRIP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.532366, 0.469922, -0.277309)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 20.0083333333328,
+			"velocity": "(0.098921, 0.000098, -0.140233)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_REAL_GRIP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.540831, 0.469954, -0.285294)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 20.1166666666662,
+			"velocity": "(0.055087, 0.000392, -0.019133)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_REAL_GRIP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.546177, 0.469982, -0.286234)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 20.2249999999995,
+			"velocity": "(0.048802, 0.000193, -0.007185)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_REAL_GRIP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.551426, 0.469983, -0.286851)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 20.3333333333328,
+			"velocity": "(0.047221, -0.00008, 0.002119)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_REAL_GRIP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.556194, 0.469973, -0.285661)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 20.4416666666661,
+			"velocity": "(0.044076, -0.000156, 0.01101)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_REAL_GRIP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.560963, 0.469966, -0.284458)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 20.5499999999995,
+			"velocity": "(0.044011, -0.000003, 0.011205)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_REAL_GRIP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.565739, 0.469956, -0.283239)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 20.6583333333328,
+			"velocity": "(0.044069, -0.000087, 0.011367)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_REAL_GRIP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.570518, 0.469946, -0.281981)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 20.7666666666661,
+			"velocity": "(0.04419, -0.00018, 0.011817)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_REAL_GRIP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.575296, 0.469934, -0.280647)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 20.8749999999995,
+			"velocity": "(0.044047, -0.000054, 0.012814)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_REAL_GRIP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.580068, 0.469917, -0.279188)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 20.9833333333328,
+			"velocity": "(0.043991, -0.000186, 0.014182)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_REAL_GRIP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.584833, 0.469891, -0.277533)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 21.0916666666661,
+			"velocity": "(0.043999, -0.000362, 0.016293)"
+		},
+		{
+			"ground_support_id": 0,
+			"grounded": false,
+			"hand_force": 0.0,
+			"hands": [
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.135415, 2.517244, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				},
+				{
+					"force": "(0.0, 0.0, 0.0)",
+					"point": "(1.75, 2.53, 0.2)",
+					"reason": "input_released",
+					"state": "FREE"
+				}
+			],
+			"hybrid_progress": 0.0,
+			"hybrid_reason": "NO_REAL_GRIP",
+			"hybrid_state": "DYNAMIC",
+			"leg_force": 0.0,
+			"position": "(1.589238, 0.469864, -0.276139)",
+			"route_completed": true,
+			"stage": 3,
+			"time": 21.1999999999994,
+			"velocity": "(0.030452, -0.000001, -0.002606)"
+		}
+	],
+	"scope": "automated actual input from ordinary floor; no character pose velocity or solver writes; no human feel claim",
+	"window_screen": 0
+}

@@ -1,0 +1,32 @@
+{
+  "recorded_utc": "2026-10-19T22:58:58.748249+00:00",
+  "provenance": "Godot MCP Pro, visible monitor1, finite ordinary in-application input; not human acceptance",
+  "exercise_sha256": "92bb1bdb7ab1b1eacacca0050eba7cc443c27dc3d7f93d506fbe5592a6b4b9b8",
+  "runs": [
+    {
+      "hz": 120,
+      "checks": 18,
+      "failures": 0,
+      "height_gain": 3.00000059604645,
+      "walk_distance": 0.306744036264718,
+      "peaks": {
+        "combined_moment": 65.7481842041016,
+        "hand_force": 318.842948913574,
+        "leg_force": 95.5996270179749
+      }
+    },
+    {
+      "hz": 60,
+      "checks": 18,
+      "failures": 0,
+      "height_gain": 3.00000774860382,
+      "walk_distance": 0.300553042441607,
+      "peaks": {
+        "combined_moment": 58.3819770812988,
+        "hand_force": 281.088039696217,
+        "leg_force": 118.336333751678
+      }
+    }
+  ],
+  "all_passed": true
+}
