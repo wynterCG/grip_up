@@ -20,6 +20,7 @@ exact-point early-target comparison. Grounded pending hands now visibly extend
 while the legs keep their ordinary gait. Physics gains and limits are unchanged.
 
 See the [v0.7.2 report](docs/validation/v072/comparison_summary.md).
+**3582 automated checks +26 scripted native checks pass at60/120Hz.**
 
 ## v0.7.1 control refinement
 

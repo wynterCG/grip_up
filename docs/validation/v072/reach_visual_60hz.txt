@@ -1,0 +1,17 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS profile3 accepts an unreachable real surface as a finite reach request
+PASS profile3 keeps grounded pending hand unladen
+PASS profile3 hand reaches its complete anatomical extension
+PASS profile3 grounded leg gait and reaching arm IK coexist
+PASS profile3 rendered arm fully extends toward the request without stretching its bones
+REACH_VISUAL_MEASURE {"bone_length":0.547080725431442,"hand_radius":0.657079994678497,"profile":3,"reach":0.65708,"visual_radius":0.54708069562912,"wrist_error":0.0630576983094215}
+PASS profile3 mouse-up restores ordinary grounded arms
+PASS profile4 accepts an unreachable real surface as a finite reach request
+PASS profile4 keeps grounded pending hand unladen
+PASS profile4 hand reaches its complete anatomical extension
+PASS profile4 grounded leg gait and reaching arm IK coexist
+PASS profile4 rendered arm fully extends toward the request without stretching its bones
+REACH_VISUAL_MEASURE {"bone_length":0.547080725431442,"hand_radius":0.657079994678497,"profile":4,"reach":0.65708,"visual_radius":0.547080755233765,"wrist_error":0.0622414723038673}
+PASS profile4 mouse-up restores ordinary grounded arms
+REACH VISUAL RESULTS: 12 checks, 0 failures

@@ -60,7 +60,7 @@ for p in [root/'builds/verification.json',final/'verification.json']:
 if version in ['v071','v072']:
     report['decision']='KEEP as control refinement candidate; new human comparison remains open; no default promotion'
     report['known_limits'].append('Continuous W can peak then oscillate or lose height; no monotonic climb guarantee')
-    report['human_feedback_received']='Designer: sim está melhor (v0.7 baseline); new refinement not yet human validated'
+    report['human_feedback_received']='Designer: muito melhor (v0.7.2 reachable contact)' if version=='v072' else 'Designer: sim está melhor (v0.7 baseline); new refinement not yet human validated'
     report['refinement_baseline_ref']='ec89ebd' if version=='v072' else 'cea4ae0'
     report['native_handoffs']={hz:run.get('second_handoff',{}) for hz,run in native.items()}
     if version=='v072':report['native_reachable_grips']={hz:run['trials'] for hz,run in native.items()}
