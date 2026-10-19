@@ -1,0 +1,26 @@
+{
+  "baseline": "dac5f6d4856efc52e09b78e17c0be99dbce152ff",
+  "engine": "4.7.2",
+  "backend": "Jolt Physics",
+  "physics_hz": 120,
+  "default_input_profile": 2,
+  "independent_aim_profile": 3,
+  "new_targeting_default": false,
+  "body_mass": 12,
+  "hand_force": 360,
+  "assist_moment": 20,
+  "total_torque": 150,
+  "anatomical_reach": 0.65708,
+  "hand_speed": 4,
+  "manifest": {
+    "project.godot": "6ae2782544aa70dfb6a099260ead68de0b0bb7007093ef846bbb2dabfc6a86c9",
+    "features/grip_up/resources/climbing_tuning.gd": "5d23a41a00fd25924431bf1c6ee8a21c39ba74f17efbfe3a1790dca2780d2308",
+    "features/grip_up/resources/biped_tuning.gd": "b8a4f1aaa01c7563144dbbc10b80046fbb4a33fedd7addf75989a028349714c3",
+    "features/grip_up/scripts/climbing_controller.gd": "894fb6590108dd1942aa70412125646e11c59a70bdcb336a4ae0210aaa42e36e",
+    "features/grip_up/scripts/grip_up_lab.gd": "dec2237fb1c2d8175c82ef2d691e4e9dc3351bda66553131d496ad0eeb3cc221",
+    "features/grip_up/scripts/grip_targeting.gd": "b624a011f4e767f613484cff50a70c02240cd6fc70ed47af0835202c8647dc5c",
+    "features/grip_up/scripts/grip_anchor.gd": "f7bf4ed23059cd4c7a2791f168c060049ea9db861afd45cb944cac5ed3f0b9a3",
+    "features/grip_up/scripts/arm_actuator.gd": "0d7cb1db9a1748e1d7c986db71ac6dd0d553f7f9fe8646afa24f20a6e66a45b7",
+    "features/grip_up/scripts/biped_visual.gd": "666e06b1b0a306853413966a57e672efc633ef92c5fcb3d41eec6b050bc688f6"
+  }
+}

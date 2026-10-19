@@ -1,0 +1,118 @@
+{
+	"baseline": "dac5f6d",
+	"checks": [
+		{
+			"label": "native baseline real left support",
+			"passed": true
+		},
+		{
+			"label": "native v0.5 rejects distant right target at mouse-down",
+			"passed": true
+		}
+	],
+	"complete": true,
+	"event": {
+		"actual_length": 0.0,
+		"anatomical_distance": 0.885574102401733,
+		"attempt_id": 2,
+		"body_pose": "[X: (0.999955, 0.000028, -0.009452), Y: (-0.000028, 1.0, 0.000014), Z: (0.009452, -0.000014, 0.999955), O: (-0.549592, 1.166692, 0.399837)]",
+		"body_spin": "(-0.000078, 0.071354, 0.000216)",
+		"body_velocity": "(0.012563, -0.000047, -0.011282)",
+		"candidate_world": "(0.349295, 2.15, 0.141824)",
+		"certainty": "observed",
+		"closed": false,
+		"code": "POSE_UNREACHABLE",
+		"contact_time": -1.0,
+		"elapsed": 0.0,
+		"force": "(0.0, 0.0, 0.0)",
+		"force_magnitude": 0.0,
+		"grip_limit": 260.0,
+		"hand": 1,
+		"hand_remaining_distance": 1.30264532566071,
+		"hand_world": "(-0.32749, 1.075798, 0.433263)",
+		"has_candidate": true,
+		"in_range_time": 0.0,
+		"input_distance": 0.885574102401733,
+		"input_hand": "(-0.32749, 1.075798, 0.433263)",
+		"input_shoulder": "(-0.357571, 1.690798, 0.41333)",
+		"input_time": 0.941666666666666,
+		"local_point": "(-0.000705, -0.05, -0.008176)",
+		"max_reach": 0.65708,
+		"minimum_remaining_hand_time": 0.325661331415176,
+		"normal": "(0.0, -1.0, 0.0)",
+		"predicted_contact_time": -1.0,
+		"prediction": "not_evaluated",
+		"primary_failure": "POSE_UNREACHABLE",
+		"radial_speed": -0.0183760486543179,
+		"reach_margin": -0.228494102401733,
+		"reason": "out_of_reach",
+		"relative_speed": 0.0283926799893379,
+		"relative_velocity": "(0.013413, -0.000005, -0.025025)",
+		"requested_hand": 1,
+		"session": 3,
+		"shoulder_world": "(-0.357571, 1.690798, 0.41333)",
+		"stage": "REQUEST",
+		"state": "FREE",
+		"step": 113,
+		"support_id": 20122005670315,
+		"support_name": "Hold_SWING",
+		"target_length": 0.62,
+		"time": 0.941666666666666,
+		"travel_distance": 0.0,
+		"window_remaining": -1.0
+	},
+	"focus_events": [],
+	"snapshots": [
+		{
+			"hands": [
+				{
+					"actual": 0.569172561168671,
+					"force": 21.4836521148682,
+					"reason": "",
+					"state": "ATTACHED",
+					"target": 0.564231897989909
+				},
+				{
+					"actual": 0.0,
+					"force": 0.0,
+					"reason": "",
+					"state": "FREE",
+					"target": 0.62
+				}
+			],
+			"label": "v06_baseline_rejection",
+			"policy": 1,
+			"position": "(-0.549592, 1.166692, 0.399837)",
+			"posture": {
+				"accelerations": {
+					"0": -1.0
+				},
+				"actual_movement": "(0.000231, -0.000003, -0.000122)",
+				"allocations": {
+					"0": 1.0
+				},
+				"body_error": "(0.212714, 0.318098, 0.080069)",
+				"braking_advance": 0.0,
+				"desired_posture": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.336983, 1.48479, 0.48)]",
+				"elapsed": 0.2,
+				"event": 1,
+				"length_errors": {
+					"0": 0.257172495126724
+				},
+				"planned_lengths": {
+					"0": 0.312000066041946
+				},
+				"rates": {
+					"0": -0.0916666666666667
+				},
+				"reason": "support_acquisition",
+				"requested_lengths": {
+					"0": 0.564231897989909
+				},
+				"state": "ACTIVE"
+			},
+			"velocity": "(0.012563, -0.000047, -0.011282)"
+		}
+	],
+	"variants": []
+}

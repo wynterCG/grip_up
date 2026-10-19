@@ -1,0 +1,149 @@
+{
+  "revision": "v0.5 transfer posture and conservative reach study",
+  "recorded_utc": "2026-10-19T15:17:37.589112+00:00",
+  "engine": "Godot4.7.2 / Jolt",
+  "default_hz": 120,
+  "automated_checks": 2740,
+  "automated_failures": 0,
+  "suite_runs": 79,
+  "native_scripted_checks": 44,
+  "native_scripted_failures": 0,
+  "native_route_transfers": {
+    "120": 10,
+    "60": 10
+  },
+  "editor_errors_or_warnings": 0,
+  "export_smoke_frames": 3,
+  "exe_name": "GripUp-v0.5.exe",
+  "exe_sha256": "0b00dc76e5e6c6a45931f73ff8cbedcfa5de344b436a88564886aaa8022b81bb",
+  "legacy_grabber_unchanged_sha256": "8ab923ac1d903e8dcc8ed2a2e4f9f8c5cec326a3217cb4a9d8f00036557e7dad",
+  "default_input_profile": 2,
+  "independent_aim_profile": 3,
+  "default_posture_policy": "B",
+  "new_flags": {
+    "transfer_assist_enabled": false,
+    "posture_variant": 0,
+    "reach_prediction_enabled": false,
+    "catch_buffer_enabled": false,
+    "catch_buffer_duration": 0.12
+  },
+  "budgets": {
+    "body_mass_kg": 12,
+    "shared_hand_force_n": 360,
+    "shared_assist_torque_nm": 20,
+    "resultant_torque_nm": 150,
+    "hand_speed_m_s": 4,
+    "anatomical_reach_m": 0.65708
+  },
+  "recoverable_refs": {
+    "v04": "d53b43d",
+    "v05_m1": "db6ea96",
+    "isolated_p1": "21d896b"
+  },
+  "observed_interactive": {
+    "provenance": "Native PID11780, M1/P0. Read-only observation after the human pilot prompt; no agent input injection during these sessions. User identity/subjective ratings not independently confirmed. Snapshot may include idle time.",
+    "sessions": {
+      "2026-10-19T14-36-29_11780_249786446": {
+        "sample_count": 7266,
+        "first_sample_time": 45.2666666666647,
+        "last_sample_time": 469.058333333071,
+        "max_transfers": 10,
+        "max_recoveries": 0,
+        "first_completion_time": 184.799999999996,
+        "max_force": 192.579620361328,
+        "route_events": [
+          {
+            "code": "ROUTE_STARTED",
+            "time": 145.266666666699
+          },
+          {
+            "code": "TRANSFER_COMPLETE",
+            "time": 149.491666666695,
+            "transfer": 1
+          },
+          {
+            "code": "TRANSFER_COMPLETE",
+            "time": 153.066666666692,
+            "transfer": 2
+          },
+          {
+            "code": "TRANSFER_COMPLETE",
+            "time": 155.933333333356,
+            "transfer": 3
+          },
+          {
+            "code": "TRANSFER_COMPLETE",
+            "time": 159.366666666686,
+            "transfer": 4
+          },
+          {
+            "code": "TRANSFER_COMPLETE",
+            "time": 163.433333333349,
+            "transfer": 5
+          },
+          {
+            "code": "TRANSFER_COMPLETE",
+            "time": 167.941666666678,
+            "transfer": 6
+          },
+          {
+            "code": "TRANSFER_COMPLETE",
+            "time": 172.416666666674,
+            "transfer": 7
+          },
+          {
+            "code": "TRANSFER_COMPLETE",
+            "time": 176.608333333337,
+            "transfer": 8
+          },
+          {
+            "code": "TRANSFER_COMPLETE",
+            "time": 180.258333333334,
+            "transfer": 9
+          },
+          {
+            "code": "TRANSFER_COMPLETE",
+            "time": 184.774999999996,
+            "transfer": 10
+          }
+        ],
+        "attempts": 48,
+        "contact_successes": 31,
+        "codes": {
+          "ATTEMPT_STARTED": 48,
+          "REQUEST_ACCEPTED": 32,
+          "SUCCESS": 31,
+          "RELEASED": 31,
+          "POSE_UNREACHABLE": 16,
+          "CANCELLED": 1
+        }
+      },
+      "2026-10-19T14-44-18_11780_718844336": {
+        "sample_count": 26414,
+        "first_sample_time": 0.0583333333333333,
+        "last_sample_time": 1540.86666667248,
+        "max_transfers": 0,
+        "max_recoveries": 0,
+        "first_completion_time": null,
+        "max_force": 186.730331420898,
+        "route_events": [],
+        "attempts": 43,
+        "contact_successes": 32,
+        "codes": {
+          "ATTEMPT_STARTED": 43,
+          "REQUEST_ACCEPTED": 33,
+          "SUCCESS": 32,
+          "POSE_UNREACHABLE": 10,
+          "RELEASED": 32,
+          "CANCELLED": 1
+        }
+      }
+    },
+    "subjective_ratings": null,
+    "three_session_two_completion_pilot": "pending; two observed sessions, one reaches10 with zero recoveries",
+    "comparison_to_p1_p2_or_buffer": "pending"
+  },
+  "decision": "KEEP diagnostics and optional P1 moving-support correction; REJECT P2 as default; REVISE before promoting assistance or buffer, human comparison pending",
+  "human_gate_complete": false,
+  "remaining_human_work": "Three-session/two-completion pilot, P0/P1/P2 and buffer comparison, agency/comfort/fatigue/retry ratings"
+}
