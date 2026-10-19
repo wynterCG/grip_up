@@ -1,0 +1,38 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS ordinary wall surface is grippable
+PASS cursor selects an arbitrary wall point, without snapping to a hold
+PASS hand reaches and attaches to the chosen wall material point
+FREE CLIMB STEP 0 point=(-0.16, 2.010764, 0.0) torso=(-0.27144, 1.296573, 0.2291)
+PASS cursor selects an arbitrary wall point, without snapping to a hold
+PASS hand reaches and attaches to the chosen wall material point
+FREE CLIMB STEP 1 point=(0.11925, 2.001178, 0.0) torso=(-0.028534, 1.369396, 0.236836)
+PASS cursor selects an arbitrary wall point, without snapping to a hold
+PASS hand reaches and attaches to the chosen wall material point
+FREE CLIMB STEP 2 point=(-0.16, 2.222995, 0.0) torso=(-0.180413, 1.498136, 0.231125)
+PASS cursor selects an arbitrary wall point, without snapping to a hold
+PASS hand reaches and attaches to the chosen wall material point
+FREE CLIMB STEP 3 point=(0.154237, 2.264868, 0.0) torso=(-0.029138, 1.597434, 0.237923)
+PASS cursor selects an arbitrary wall point, without snapping to a hold
+PASS hand reaches and attaches to the chosen wall material point
+FREE CLIMB STEP 4 point=(-0.16, 2.45162, 0.0) torso=(-0.134596, 1.726709, 0.222136)
+PASS cursor selects an arbitrary wall point, without snapping to a hold
+PASS hand reaches and attaches to the chosen wall material point
+FREE CLIMB STEP 5 point=(0.16, 2.510314, 0.0) torso=(0.004935, 1.833562, 0.230756)
+PASS cursor selects an arbitrary wall point, without snapping to a hold
+PASS hand reaches and attaches to the chosen wall material point
+FREE CLIMB STEP 6 point=(-0.16, 2.678417, 0.0) torso=(-0.098166, 1.952981, 0.234876)
+PASS cursor selects an arbitrary wall point, without snapping to a hold
+PASS hand reaches and attaches to the chosen wall material point
+FREE CLIMB STEP 7 point=(0.16, 2.754812, 0.0) torso=(0.004014, 2.067281, 0.237125)
+PASS cursor selects an arbitrary wall point, without snapping to a hold
+PASS hand reaches and attaches to the chosen wall material point
+FREE CLIMB STEP 8 point=(-0.16, 2.91062, 0.0) torso=(-0.088833, 2.197513, 0.253824)
+PASS cursor selects an arbitrary wall point, without snapping to a hold
+PASS hand reaches and attaches to the chosen wall material point
+FREE CLIMB STEP 9 point=(0.16, 3.006127, 0.0) torso=(0.043563, 2.305624, 0.220629)
+PASS free wall route can finish without touching a designated coloured hold
+PASS free surface climbing preserves continuous physical motion
+PASS explicit non-grippable geometry still opts out
+FREE CLIMB RESULTS: 24 checks, 0 failures
+

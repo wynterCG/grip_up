@@ -1,4 +1,13 @@
 extends Resource
+@export_group("v0.2 experiments")
+@export var predictive_grip: bool = false
+@export var physical_feet: bool = false
+@export var posture_solver: bool = false
+@export var directional_grip_quality: bool = false
+@export var reactive_challenge: bool = false
+@export var capture_prediction_horizon: float = 0.20
+@export var capture_intent_buffer_duration: float = 0.15
+@export_group("Existing arm controller")
 ## Same finite point-servo family as janga_proto/data/grabber_tuning.gd.
 @export var shoulder_left: Vector3 = Vector3(-0.32, 0.30, 0)
 @export var shoulder_right: Vector3 = Vector3(0.32, 0.30, 0)

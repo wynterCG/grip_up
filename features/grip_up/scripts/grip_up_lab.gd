@@ -7,6 +7,7 @@ const InputRouter = preload("res://features/grip_up/scripts/climbing_input_route
 const BipedProfile = preload("res://features/grip_up/resources/biped_tuning.gd")
 const BipedVisual = preload("res://features/grip_up/scripts/biped_visual.gd")
 const GroundLocomotion = preload("res://features/grip_up/scripts/ground_locomotion.gd")
+const CaptureTrace = preload("res://features/grip_up/scripts/capture_trace.gd")
 const LEVELS = [preload("res://features/grip_up/scenes/static_climb.tscn"), preload("res://features/grip_up/scenes/swing_and_catch.tscn"), preload("res://features/grip_up/scenes/reactive_structure.tscn")]
 const COLORS = [Color("65dfcc"), Color("f0b85c")]
 var torso: RigidBody3D
@@ -51,6 +52,7 @@ var session_ticks := 0
 var hint := ""
 var hint_time := 0.0
 var mode_buttons: Array[Button] = []
+var capture_trace = CaptureTrace.new()
 
 func _ready() -> void:
 	router.setup()
@@ -108,6 +110,7 @@ func _mesh(parent: Node3D, geometry: Mesh, color: Color, at := Vector3.ZERO) -> 
 	return mesh
 
 func load_test(index: int, use_checkpoint := false) -> void:
+	capture_trace.close()
 	for action in ["contract","extend","bias_left","bias_right","launch"]:
 		Input.action_release(action)
 	if not trial.is_empty():
@@ -179,6 +182,7 @@ func load_test(index: int, use_checkpoint := false) -> void:
 	controller.name = "ClimbingController"
 	world.add_child(controller)
 	controller.configure(torso,profile)
+	controller.sample_ready.connect(_record_capture)
 	ground_motor = GroundLocomotion.new()
 	ground_motor.name = "GroundLocomotion"
 	world.add_child(ground_motor)
@@ -404,8 +408,16 @@ func _save_trial(outcome: String) -> void:
 		file.seek_end()
 		file.store_line(JSON.stringify(row))
 
+func _record_capture(delta: float) -> void:
+	if not capture_trace.enabled:
+		return
+	capture_trace.sample(delta,controller,{"scene":level_id,"launch_state":controller.telemetry().get("launch_state","IDLE"),
+		"grounded":ground_motor.grounded if is_instance_valid(ground_motor) else false,
+		"beam_angle":level.beam.rotation.z if is_instance_valid(level) and is_instance_valid(level.beam) else 0.0})
+
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		capture_trace.close()
 		_save_trial("closed")
 
 func _label(text: String, size: int, parent: Node, color := Color("d5e5e2")) -> Label:

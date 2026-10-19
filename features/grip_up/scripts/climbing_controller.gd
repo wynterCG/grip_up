@@ -1,4 +1,5 @@
 extends Node
+signal sample_ready(delta: float)
 const Tuning = preload("res://features/grip_up/resources/climbing_tuning.gd")
 const Anchor = preload("res://features/grip_up/scripts/grip_anchor.gd")
 const Actuator = preload("res://features/grip_up/scripts/arm_actuator.gd")
@@ -18,6 +19,7 @@ var _launch_state := "IDLE"
 var _launch_elapsed := 0.0
 var _launch_charge := 0.0
 var _launch_anchors: Dictionary = {}
+var simulation_time := 0.0
 
 func configure(body: RigidBody3D, configuration: Resource = null) -> void:
 	torso = body
@@ -33,6 +35,7 @@ func reset_state() -> void:
 	_intent_target = Vector3.ZERO
 	_view_right = Vector3.RIGHT
 	_step = 0
+	simulation_time = 0.0
 	_diagnostics.clear()
 	cancel_launch()
 	metrics = {"attempts": 0, "misses": 0, "attaches": 0, "slips": 0, "releases": 0}
@@ -344,6 +347,7 @@ func _physics_process(delta: float) -> void:
 	if not is_instance_valid(torso):
 		return
 	_step += 1
+	simulation_time += delta
 	var intent_response: float = 1.0 if tuning.intent_response_time <= 0.0 else 1.0-exp(-delta/tuning.intent_response_time)
 	_contract = lerpf(_contract,_intent_target.x,intent_response)
 	_extend = lerpf(_extend,_intent_target.y,intent_response)
@@ -409,12 +413,15 @@ func _physics_process(delta: float) -> void:
 		torso.apply_torque(assist * scale_factor)
 		torso.sleeping = false
 	_diagnostics = {"step": _step, "physics_delta": delta, "attached_count": attached.size(),
+		"simulation_time":simulation_time,"input_intent":Vector3(_contract,_extend,_bias),"requested_intent":_intent_target,
+		"features":{"predictive_grip":tuning.predictive_grip,"physical_feet":tuning.physical_feet,"posture_solver":tuning.posture_solver,"directional_grip_quality":tuning.directional_grip_quality,"reactive_challenge":tuning.reactive_challenge},
 		"launch_state":_launch_state,"launch_elapsed":_launch_elapsed,"launch_charge":_launch_charge,
 		"total_force": sum_force * scale_factor, "force_budget": tuning.total_pull_force_budget,
 		"torque": (moments + assist) * scale_factor, "assist_torque": assist * scale_factor,
 		"budget_scale": scale_factor, "control_right": _view_right, "hands": hands.duplicate(true),
 		"torso_position": torso.global_position, "linear_velocity": torso.linear_velocity,
 		"angular_velocity": torso.angular_velocity, "metrics": metrics.duplicate()}
+	sample_ready.emit(delta)
 
 func _update_integrity(id: int, unweakened_force: float, delta: float) -> void:
 	var hand: Dictionary = hands[id]

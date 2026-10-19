@@ -1,0 +1,59 @@
+extends "res://features/grip_up/resources/climbing_tuning.gd"
+## Measured Quaternius mannequin, one dynamic body and virtual force arms.
+## Contact endpoint is the palm, approximately 0.11 m beyond the wrist.
+@export var body_mass: float = 12.0
+@export var body_friction: float = 0.12
+@export var use_compound_collider: bool = true
+@export var body_center_of_mass: Vector3 = Vector3.ZERO
+@export var capsule_height: float = 1.84
+@export var capsule_radius: float = 0.24
+@export var torso_capsule_height: float = 0.98
+@export var torso_capsule_radius: float = 0.22
+@export var torso_capsule_center_y: float = 0.27
+@export var head_radius: float = 0.13
+@export var head_center_y: float = 0.78
+@export var leg_capsule_height: float = 0.84
+@export var leg_capsule_radius: float = 0.15
+@export var leg_capsule_center_y: float = -0.4967
+@export var foot_base_size: Vector3 = Vector3(0.36,0.08,0.28)
+@export var foot_base_offset: Vector3 = Vector3(0,-0.8767,-0.035)
+@export var model_visual_offset: Vector3 = Vector3(0,-0.9167,-0.0501)
+@export var model_y_rotation: float = PI
+@export var skeletal_arm_length: float = 0.54708
+@export var palm_contact_offset: float = 0.11
+@export var walk_speed: float = 2.6
+@export var walk_acceleration: float = 14.0
+@export var walk_braking: float = 18.0
+@export var walk_response: float = 14.0
+@export var walk_upright_stiffness: float = 160.0
+@export var walk_turn_stiffness: float = 35.0
+@export var walk_angular_damping: float = 18.0
+@export var walk_turn_response: float = 10.0
+@export var walk_turn_damping: float = 8.0
+@export var walk_max_turn_speed: float = 7.0
+@export var walk_max_torque: float = 65.0
+
+func _init() -> void:
+	shoulder_left = Vector3(-0.1919,0.5241,0.0153)
+	shoulder_right = Vector3(0.1919,0.5241,0.0153)
+	max_arm_length = 0.62
+	max_reach_length = skeletal_arm_length+palm_contact_offset
+	min_arm_length = 0.18
+	max_elastic_extension = 0.04
+	arm_stiffness = 6000.0
+	arm_damping = 220.0
+	max_length_error = 0.12
+	contraction_speed = 0.45
+	extension_speed = 0.55
+	hand_reach_speed = 4.0
+	free_hand_rest_left = Vector3(-0.03,-0.615,0.02)
+	free_hand_rest_right = Vector3(0.03,-0.615,0.02)
+	hand_surface_approach_distance = 0.045
+	attach_distance_tolerance = 0.012
+	candidate_hold_timeout = 0.65
+	grip_blend_duration = 0.10
+	allocation_response_time = 0.14
+	intent_response_time = 0.12
+	twist_stiffness = 16.0
+	twist_damping = 3.0
+	launch_contraction_speed = 2.0

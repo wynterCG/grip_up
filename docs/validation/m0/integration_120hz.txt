@@ -1,0 +1,31 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS hold-to-grip is the default
+PASS holding actual LMB acquires left hand with default camera
+PASS holding LMB does not operate right hand
+PASS repeated press cannot toggle a held hand off
+PASS camera orbit and dolly preserve material attachment
+PASS climbing reference follows camera orbit independently of torso axes
+PASS mapped launch press starts charging while gripping
+PASS opening controls cancels charging and releasing over UI cannot launch
+PASS focus loss clears charge and held launch input
+PASS releasing LMB over GUI releases the physical hand
+PASS release during REACHING cancels the pending grip
+PASS holding both actual mouse buttons attaches independent hands
+PASS releasing LMB preserves held RMB grip
+PASS focus loss releases held grips instead of leaving a stuck button
+PASS optional toggle mode retains grip after mouse-up
+PASS optional toggle releases on second click
+PASS reset frees old physics body and grip references
+PASS reset clears arm states
+PASS checkpoint reset creates a safe landing and preserves checkpoint
+PASS fixed-vs-hinged comparison switch fixes beam
+PASS comparison preserves exact beam geometry
+PASS fixed comparison accepts identical material anchor
+PASS hinged comparison accepts identical material anchor
+PASS identical pulling input gives fixed-vs-hinged physical difference
+PASS HUD follows enlarged viewport
+PASS rebinding rejects conflicts
+PASS input prompts derive from remappable actions
+INTEGRATION RESULTS: 27 checks, 0 failures
+

@@ -1,0 +1,12 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+CLEARANCE {"accepted":true,"attached":true,"bounded":true,"contact_frames":244,"final_y":1.43602991104126,"old_shelves":true,"peak_y":1.50727832317352,"position":"(-0.709097, 1.43603, 0.205337)"}
+CLEARANCE {"accepted":true,"attached":true,"bounded":true,"contact_frames":30,"final_y":1.56211590766907,"old_shelves":false,"peak_y":1.63826203346252,"position":"(-0.746755, 1.562116, -0.066852)"}
+PASS old shelf fixture acquires a real upper anchor
+PASS new climbing hold acquires a real upper anchor
+PASS aligned old shelves reproduce torso obstruction
+PASS rounded profile reduces vertical obstruction on the same ascent input
+PASS new holds retain real torso collisions
+PASS clearance uses the unchanged shared force budget
+WALL CLEARANCE RESULTS: 6 checks, 0 failures
+

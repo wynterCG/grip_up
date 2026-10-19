@@ -35,7 +35,7 @@ if args.task == 'cleanup':
 elif args.task == 'sync':
     assert str(DEST.resolve()).lower() == r'e:\godot games\grip_up'
     DEST.mkdir(parents=True, exist_ok=True)
-    for name in ['features','tools']:
+    for name in ['features','tools','docs']:
         shutil.copytree(ROOT/name, DEST/name, dirs_exist_ok=True, ignore=shutil.ignore_patterns('__pycache__'))
     for name in ['project.godot','.gitignore','README.md','export_presets.cfg']:
         if (ROOT/name).exists(): shutil.copy2(ROOT/name, DEST/name)

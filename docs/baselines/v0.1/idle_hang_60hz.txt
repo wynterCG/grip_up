@@ -1,0 +1,23 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+IDLE STAND level=0 position=(-0.000091, 1.166681, 0.400131) rotation=(-0.000028, 0.000051, 0.000087) falls=0
+PASS idle biped stands 30 seconds before first grip in level 0 without drift or toppling
+IDLE STAND level=1 position=(-0.550091, 1.166681, 0.400131) rotation=(-0.000028, 0.000051, 0.000087) falls=0
+PASS idle biped stands 30 seconds before first grip in level 1 without drift or toppling
+IDLE STAND level=2 position=(-0.150091, 1.166681, 0.400131) rotation=(-0.000028, 0.000051, 0.000087) falls=0
+PASS idle biped stands 30 seconds before first grip in level 2 without drift or toppling
+PASS idle hang first grip acquired
+IDLE HANG dual=false level=0 start=(-0.523125, 1.371464, 0.22) end=(-0.329242, 1.345196, 0.22) states=ATTACHED/FREE rest=0.18 finalrest=0.18 peak=0.21396672725677 reason= velocity=(-0.0, 0.0, 0.0)
+PASS held grip remains attached for 10 seconds without W
+PASS stopping W holds target arm length instead of auto extending
+PASS idle hang first grip acquired
+PASS idle hang second grip acquired
+IDLE HANG dual=true level=0 start=(0.191968, 1.588872, 0.242545) end=(0.126747, 1.573822, 0.21999) states=ATTACHED/ATTACHED rest=0.18 finalrest=0.18 peak=0.22249235212803 reason= velocity=(0.0, 0.0, -0.0)
+PASS held grip remains attached for 10 seconds without W
+PASS stopping W holds target arm length instead of auto extending
+PASS idle hang first grip acquired
+IDLE HANG dual=false level=1 start=(-0.583957, 1.385644, 0.09627) end=(-0.574473, 1.383409, 0.180238) states=ATTACHED/FREE rest=0.18 finalrest=0.18 peak=0.21374420821667 reason= velocity=(-0.008078, -0.000707, -0.026071)
+PASS held grip remains attached for 10 seconds without W
+PASS stopping W holds target arm length instead of auto extending
+IDLE HANG RESULTS: 13 checks, 0 failures
+

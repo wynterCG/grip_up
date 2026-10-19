@@ -1,0 +1,94 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS physical left shoulder matches transformed skeleton upperarm root
+PASS measured upper arm plus forearm equals 0.54708m
+PASS entire attached range fits anatomical wrist chain plus palm
+PASS whole-body capsule floor matches model feet within 1cm
+BIPED MEASURE upper=0.2744402885437 lower=0.27264055609703 palm_max=0.65708084464073 shoulders=(-0.1919, 0.5241, 0.0153) / (0.1919, 0.5241, 0.0153)
+PASS biped finite grounded first reach
+BIPED GROUNDED dual=false rounded=false compound=false mu=1.0 pelvis=(-0.01097, 1.169906, 0.388843) state=ATTACHED actual=0.36383110284805 rest=0.18 peak=0.38816437125206
+PASS broad high-friction whole capsule is the obstructed control fixture
+BIPED NEXT reach=0.6689920425415
+PASS biped force/torque budget and anatomical maximum remain bounded
+PASS biped finite grounded first reach
+PASS biped second hand attaches independently
+BIPED GROUNDED dual=true rounded=false compound=false mu=1.0 pelvis=(0.000757, 1.169937, 0.388832) state=ATTACHED actual=0.37363103032112 rest=0.18 peak=0.38816905021667
+PASS broad high-friction whole capsule is the obstructed control fixture
+BIPED NEXT reach=0.6569327712059
+PASS biped force/torque budget and anatomical maximum remain bounded
+PASS biped finite grounded first reach
+PASS biped second hand attaches independently
+BIPED GROUNDED dual=true rounded=true compound=false mu=1.0 pelvis=(0.000043, 1.168785, 0.343276) state=ATTACHED actual=0.31021964550018 rest=0.18 peak=0.37258294224739
+PASS broad high-friction whole capsule is the obstructed control fixture
+BIPED NEXT reach=0.63358843326569
+PASS biped force/torque budget and anatomical maximum remain bounded
+PASS biped finite grounded first reach
+PASS biped second hand attaches independently
+BIPED GROUNDED dual=true rounded=true compound=false mu=0.12 pelvis=(-0.002503, 1.289255, 0.289488) state=ATTACHED actual=0.24621599912643 rest=0.18 peak=0.37258294224739
+PASS natural-length biped contraction lifts body against gravity
+BIPED NEXT reach=0.52711689472198
+PASS biped force/torque budget and anatomical maximum remain bounded
+PASS biped finite grounded first reach
+PASS biped second hand attaches independently
+BIPED GROUNDED dual=true rounded=false compound=false mu=0.12 pelvis=(-0.006176, 1.302842, 0.322944) state=ATTACHED actual=0.29165971279144 rest=0.18 peak=0.38816905021667
+PASS natural-length biped contraction lifts body against gravity
+BIPED NEXT reach=0.55705869197845
+PASS biped force/torque budget and anatomical maximum remain bounded
+PASS biped finite grounded first reach
+PASS biped second hand attaches independently
+BIPED GROUNDED dual=true rounded=true compound=true mu=1.0 pelvis=(0.00016, 1.180301, 0.29204) state=ATTACHED actual=0.25984016060829 rest=0.18 peak=0.37464812397957
+PASS broad high-friction whole capsule is the obstructed control fixture
+BIPED NEXT reach=0.60597479343414
+PASS biped force/torque budget and anatomical maximum remain bounded
+PASS biped finite grounded first reach
+PASS biped second hand attaches independently
+BIPED GROUNDED dual=true rounded=false compound=true mu=1.0 pelvis=(-0.00083, 1.175901, 0.339202) state=ATTACHED actual=0.32893636822701 rest=0.18 peak=0.38986456394196
+PASS broad high-friction whole capsule is the obstructed control fixture
+BIPED NEXT reach=0.62508815526962
+PASS biped force/torque budget and anatomical maximum remain bounded
+PASS biped finite grounded first reach
+BIPED GROUNDED dual=false rounded=true compound=true mu=1.0 pelvis=(-0.097131, 1.19066, 0.231278) state=ATTACHED actual=0.20401340723038 rest=0.18 peak=0.37461799383163
+PASS broad high-friction whole capsule is the obstructed control fixture
+BIPED NEXT reach=0.63264381885529
+PASS biped force/torque budget and anatomical maximum remain bounded
+PASS biped finite grounded first reach
+PASS biped second hand attaches independently
+BIPED GROUNDED dual=true rounded=true compound=true mu=0.12 pelvis=(-0.000489, 1.231254, 0.235337) state=ATTACHED actual=0.20723658800125 rest=0.18 peak=0.3745796084404
+PASS natural-length biped contraction lifts body against gravity
+BIPED NEXT reach=0.55197459459305
+PASS biped force/torque budget and anatomical maximum remain bounded
+PASS biped finite grounded first reach
+PASS biped second hand attaches independently
+BIPED GROUNDED dual=true rounded=false compound=true mu=0.12 pelvis=(0.001886, 1.215009, 0.236946) state=ATTACHED actual=0.28536805510521 rest=0.18 peak=0.38980650901794
+PASS natural-length biped contraction lifts body against gravity
+BIPED NEXT reach=0.58050316572189
+PASS biped force/torque budget and anatomical maximum remain bounded
+PASS biped finite grounded first reach
+BIPED GROUNDED dual=false rounded=true compound=true mu=0.12 pelvis=(-0.218657, 1.185739, 0.219995) state=ATTACHED actual=0.19865587353706 rest=0.18 peak=0.37465044856071
+PASS single low first hold settles at a supported near-minimum arm length
+BIPED NEXT reach=0.70183426141739
+PASS biped force/torque budget and anatomical maximum remain bounded
+PASS near-maximum natural arm reaches in finite time
+BIPED MAX blend_active=false peak=0.63244724273682 state=ATTACHED reason=
+PASS single 12kg hang including fresh blend stays within palm length
+PASS near-maximum natural arm reaches in finite time
+BIPED MAX blend_active=true peak=0.63432681560516 state=ATTACHED reason=
+PASS single 12kg hang including fresh blend stays within palm length
+PASS biped moving support uses same finite anchor API
+PASS short biped arms transmit actual opposite support reaction
+BIPED DYNAMIC support_dy=-0.03579568862915 momentum=0.00000166954533 state=ATTACHED
+PASS natural biped alternating static hold1
+BIPED STATIC hold=1 pelvis=(-0.532287, 1.381526, 0.219998) state=ATTACHED
+PASS natural biped alternating static hold2
+BIPED STATIC hold=2 pelvis=(0.198451, 1.601992, 0.248009) state=ATTACHED
+PASS natural biped alternating static hold3
+BIPED STATIC hold=3 pelvis=(-0.165962, 1.812128, 0.2944) state=ATTACHED
+PASS natural biped alternating static hold4
+BIPED STATIC hold=4 pelvis=(0.130712, 2.024434, 0.260535) state=ATTACHED
+PASS natural biped alternating static hold5
+BIPED STATIC hold=5 pelvis=(-0.150099, 2.252089, 0.289037) state=ATTACHED
+PASS natural biped alternating static hold6
+BIPED STATIC hold=6 pelvis=(0.143996, 2.473085, 0.283485) state=ATTACHED
+PASS six .22m static steps finish using anatomy-sized arms
+BIPED PROFILE RESULTS: 58 checks, 0 failures
+
