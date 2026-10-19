@@ -1,28 +1,37 @@
-# GRIP UP / physics climbing lab 0.4
+# GRIP UP / physics climbing lab 0.5
 
-Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v0.4.exe`.
+Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v0.5.exe`.
 PC mouse and keyboard. Resizable 1920x1080 reference canvas; initial window 1440x810.
 Integrated Jolt, 120 Hz. Core and complete routes also tested at 60 Hz.
 
 This is a separate prototype. The Janga object grabber and its project are unchanged.
 
-## v0.5 transfer study / M0?M1
+## v0.5 transfer, posture and reach study
 
-**Controls ? 05 / Ten transfers** opens independent aim with optional diagnostics.
-The new flat-wall route has eleven painted guides for ten alternating transfers;
-its spacing is configurable. Any wall surface remains grippable. A separate
-**06 / Swing-required route** keeps deliberately out-of-static-reach captures
-out of the basic transfer test. These scenes add no strength or grip snapping.
+**Controls / 05 / Ten transfers** opens independent aim with per-attempt
+geometry/transit/retention diagnostics. Eleven painted guides support ten
+alternating transfers; every wall surface remains grippable. **06 / Swing-required
+route** separately tests out-of-static-reach catches. Hold LMB/RMB; aiming never
+changes arm length. WASD walks or requests supported swing. R retries; Tab shows
+actual reach, path, force, twist/pendulum and measured swing work.
 
-Tab shows actual shoulder spheres, finite hand travel, pose/transit/retention
-reasons, pendulum/twist and estimated work. Each attempt has its own immutable
-snapshots in per-session JSONL under `user://transfer_sessions/`. Controls also
-allows ratings after a failed session. The old v0.4 profile remains available.
+Compare P0 (v0.4 suspension), P1 (material-relative axial twist) and P2 (tilt
+research). The new refinement checkbox is OFF and P0 is selected by default.
+P1 improves rotating-support twist in the measured fixture. P2 is more upright
+but can shorten capture windows, so it is **rejected as a default improvement**.
+The separate reach advisory and held catch buffer are also OFF by default.
+The advisory never authorizes a grip. The optional buffer remembers one point
+for120ms while held (configurable100?150ms), requiring actual finite contact.
+All variants retain the same360N/20Nm/150Nm budgets and anatomical reach.
 
-M1 diagnoses before assisting:2,148 checks pass, and native MCP Pro captures
-complete ten transfers at60/120Hz with P0 and explicit timing. No new posture
-algorithm has been introduced at this milestone. Human sessions are pending;
-see [M1 report](docs/validation/V05_M1.md) and [physics audit](docs/validation/V05_PHYSICS_AUDIT.md).
+Attempts and optional ratings are stored under `user://transfer_sessions/` in
+separate session files. The old v0.4 profile and startup comparison profile2
+remain available. One native interactive P0 sequence reaches ten transfers
+with zero recoveries; comparative comfort/agency ratings and the full human
+pilot are still pending. Automated passes do not establish better game feel.
+See the [v0.5 decision and evidence](docs/validation/V05.md),
+[M2 comparison](docs/validation/V05_M2.md), [swing report](docs/validation/V05_M3.md),
+and [reach/buffer report](docs/validation/V05_M4.md).
 
 ## v0.4 independent aim (opt-in experiment)
 

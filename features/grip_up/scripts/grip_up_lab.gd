@@ -12,6 +12,7 @@ const GripIntentBuffer = preload("res://features/grip_up/scripts/grip_intent_buf
 const CaptureDebugDraw = preload("res://features/grip_up/scripts/capture_debug_draw.gd")
 const GripFeedback = preload("res://features/grip_up/scripts/grip_feedback.gd")
 const TransferProgress = preload("res://features/grip_up/scripts/transfer_route_progress.gd")
+const ReachAssessment = preload("res://features/grip_up/scripts/reach_assessment.gd")
 const ContextualInput = preload("res://features/grip_up/scripts/contextual_arm_input.gd")
 const LEVELS = [preload("res://features/grip_up/scenes/static_climb.tscn"), preload("res://features/grip_up/scenes/swing_and_catch.tscn"), preload("res://features/grip_up/scenes/reactive_structure.tscn"), preload("res://features/grip_up/scenes/foot_support.tscn"),preload("res://features/grip_up/scenes/transfer_lab.tscn"),preload("res://features/grip_up/scenes/swing_reach_lab.tscn")]
 const COLORS = [Color("65dfcc"), Color("f0b85c")]
@@ -60,6 +61,12 @@ var mode_buttons: Array[Button] = []
 var capture_trace = CaptureTrace.new()
 var grip_intents = GripIntentBuffer.new()
 var predictive_grip_enabled := false
+var reach_prediction_enabled := false
+var catch_buffer_enabled := false
+var catch_buffer_duration := .12
+var reach_assessor = ReachAssessment.new()
+var reach_advice: Array[Dictionary] = [{},{}]
+var attempt_assessments: Array[Dictionary] = [{},{}]
 var physical_feet_enabled := false
 var input_profile := 2
 var contextual = ContextualInput.new()
@@ -200,6 +207,8 @@ func load_test(index: int, use_checkpoint := false) -> void:
 	orbiting = false
 	grip_intents = GripIntentBuffer.new()
 	capture_predictions = [{},{}]
+	reach_advice = [{},{}]
+	attempt_assessments = [{},{}]
 	prediction_clock = 0.0
 	prediction_support_id = 0
 	prediction_point = Vector3.INF
@@ -233,7 +242,8 @@ func load_test(index: int, use_checkpoint := false) -> void:
 		_mesh(world,stripe,Color("29404a"),Vector3(i*1.5,-2.843,0))
 	torso = RigidBody3D.new()
 	var profile := BipedProfile.new()
-	profile.predictive_grip = predictive_grip_enabled
+	profile.predictive_grip = _capture_buffer_active()
+	if input_profile==3 and catch_buffer_enabled:profile.capture_intent_buffer_duration=catch_buffer_duration
 	profile.physical_feet = physical_feet_enabled
 	profile.arm_drag_sensitivity_m_per_px = arm_drag_sensitivity
 	profile.arm_target_max_rate_m_s = arm_target_rate
@@ -432,13 +442,16 @@ func request_hand(hand: int) -> bool:
 		message(("Left" if hand==0 else "Right") + " hand released")
 		return true
 	trial.attempts += 1
+	attempt_assessments[hand]={}
 	var hit: Dictionary = contextual.candidate(hand,controller,camera) if input_profile==2 else targeting.candidate(camera,pointer,torso)
 	if hit.is_empty():
 		controller.record_unselected_attempt(hand,"no_surface")
 		trial.misses += 1
 		message("Aim at a solid surface within arm's reach. Hold LMB / RMB to grip that exact point.")
 		return false
-	var ok: bool = grip_intents.press(controller,hand,hit.collider,hit.position,hit.normal) if predictive_grip_enabled and hold_mode else controller.request_grip(hand,hit.collider,hit.position,hit.normal)
+	if input_profile==3 and (reach_prediction_enabled or catch_buffer_enabled):
+		attempt_assessments[hand]=reach_assessor.evaluate(controller,hand,hit.collider,hit.position,hit.normal).duplicate(true)
+	var ok: bool = grip_intents.press(controller,hand,hit.collider,hit.position,hit.normal) if _capture_buffer_active() and hold_mode else controller.request_grip(hand,hit.collider,hit.position,hit.normal)
 	if not ok:
 		trial.misses += 1
 		message(_capture_reason(controller.last_rejection))
@@ -460,7 +473,7 @@ func _physics_process(delta: float) -> void:
 		router.reset_control_input("UI")
 		controller.clear_drag_requests()
 		contextual.clear_motion()
-	if predictive_grip_enabled:
+	if _capture_buffer_active():
 		for hand in 2:
 			if not Input.is_action_pressed("grip_left" if hand==0 else "grip_right"):
 				grip_intents.release(controller,hand)
@@ -569,25 +582,30 @@ func _process(delta: float) -> void:
 	prediction_clock -= delta
 	if not candidate.is_empty() and (candidate.collider.get_instance_id()!=prediction_support_id or Vector3(candidate.position).distance_to(prediction_point)>0.02):
 		prediction_clock = 0.0
-	if predictive_grip_enabled and not candidate.is_empty() and prediction_clock<=0.0:
+	if (predictive_grip_enabled or (input_profile==3 and reach_prediction_enabled)) and not candidate.is_empty() and prediction_clock<=0.0:
 		for id in 2:
 			var prediction_hit: Dictionary=contextual.candidate(id,controller,camera) if input_profile==2 else candidate
 			capture_predictions[id] = controller.capture_predictor.evaluate(controller,id,prediction_hit.collider,prediction_hit.position,prediction_hit.normal) if not prediction_hit.is_empty() else {}
+			reach_advice[id]=reach_assessor.evaluate(controller,id,prediction_hit.collider,prediction_hit.position,prediction_hit.normal) if input_profile==3 and reach_prediction_enabled and not prediction_hit.is_empty() else {}
 		prediction_clock = 0.05
 		prediction_support_id = candidate.collider.get_instance_id()
 		prediction_point = candidate.position
 	if candidate.is_empty():
 		capture_predictions = [{},{}]
-	capture_debug.update_state(controller,capture_predictions,debug_visible)
+		reach_advice = [{},{}]
+	capture_debug.update_state(controller,reach_advice if input_profile==3 and reach_prediction_enabled else capture_predictions,debug_visible)
 	prediction_label.visible = predictive_grip_enabled and not settings.visible and not candidate.is_empty()
 	target_marker.visible = not candidate.is_empty() and not settings.visible
 	if target_marker.visible:
 		target_marker.global_position = candidate.position + candidate.normal * 0.025
 		var reachable := false
+		var selectable_hands:=0
 		for i in 2:
+			if input_profile==3 and controller.get_hand_state(i) not in ["FREE","RELEASED"]:continue
+			selectable_hands+=1
 			if controller.get_shoulder_world(i).distance_to(candidate.position) <= controller.get_max_reach():
 				reachable = true
-			target_marker.material_override.albedo_color = Color("b1f5d8") if reachable else Color("e66d68")
+		target_marker.material_override.albedo_color = Color("8b9297") if input_profile==3 and selectable_hands==0 else Color("b1f5d8") if reachable else Color("e66d68")
 		if predictive_grip_enabled:
 			var status := "UNAVAILABLE"
 			var eta := -1.0
@@ -608,6 +626,16 @@ func _process(delta: float) -> void:
 				var distance: float=controller.get_shoulder_world(id).distance_to(candidate.position)
 				hints.append(("L" if id==0 else "R")+" / "+("IN RANGE" if distance<=controller.get_max_reach() else "NEEDS SWING")+" %.3f m" % distance)
 		prediction_label.text="GEOMETRY ONLY / "+" | ".join(hints)
+	if input_profile==3 and reach_prediction_enabled and not candidate.is_empty() and not settings.visible:
+		prediction_label.visible=true
+		var advice_hints: Array[String]=[]
+		for id in 2:
+			if controller.get_hand_state(id) not in ["FREE","RELEASED"]:continue
+			var advice: Dictionary=reach_advice[id]
+			var category: String=advice.get("classification","UNAVAILABLE")
+			if category=="UNSAFE CATCH":category+=" (estimate)"
+			advice_hints.append(("L" if id==0 else "R")+" / "+category)
+		prediction_label.text="ADVISORY / "+" | ".join(advice_hints)
 	for i in 2:
 		var end: Vector3 = biped.palms[i]
 		hand_meshes[i].global_position = end
@@ -682,6 +710,7 @@ func _transfer_debug_text(data: Dictionary) -> String:
 	var motion: Dictionary=diagnostic.get("motion",{})
 	out+="\n\nHands %.1f /360 N | torque %.1f /150 Nm\nPendulum %.2f rad / %.2f rad/s | trunk twist %.2f / tilt %.2f rad\nEstimated arm/moment power %.1f / %.1f W | work %.1f / %.1f J\nRelative body energy %.2f linear / %.2f angular J" % [data.get("total_force",0),Vector3(data.get("torque",Vector3.ZERO)).length(),motion.get("pendulum_angle",0),motion.get("pendulum_angular_speed",0),motion.get("trunk_twist",0),motion.get("trunk_tilt",0),motion.get("arm_power",0),motion.get("grip_moment_power",0),motion.get("estimated_arm_work",0),motion.get("estimated_grip_moment_work",0),motion.get("relative_translation_energy",0),motion.get("relative_rotation_energy",0)]
 	if level_id==4:out+="\nTransfers %d /10 | next %02d | recoveries %d" % [transfer_progress.transfers,transfer_progress.next_contact,transfer_progress.recoveries]
+	out+="\nSwing %s | incremental %.2f W / %.2f J" % [motion.get("swing_phase","NEUTRAL"),motion.get("swing_power",0),motion.get("estimated_swing_work",0)]
 	return out
 
 func _open_transfer_lab(index: int) -> void:
@@ -700,6 +729,11 @@ func _on_transfer_event(event: Dictionary) -> void:
 	row.posture_variant=posture_variant
 	row.transfer_assist_enabled=transfer_assist_enabled
 	row.transfer_posture=controller.telemetry().get("transfer_posture",{})
+	row.reach_prediction_enabled=reach_prediction_enabled
+	row.catch_buffer_enabled=catch_buffer_enabled
+	row.catch_buffer_duration=catch_buffer_duration
+	var event_hand: int=int(event.get("hand",-1))
+	row.attempt_assessment=attempt_assessments[event_hand].duplicate(true) if event_hand in [0,1] else {}
 	row.route=transfer_progress.diagnostics() if level_id==4 else {}
 	DirAccess.make_dir_recursive_absolute("user://transfer_sessions")
 	var path: String="user://transfer_sessions/%s.jsonl" % transfer_session_id
@@ -725,7 +759,14 @@ func _save_trial(outcome: String) -> void:
 	row.posture_variant=posture_variant
 	row.transfer_assist_enabled=transfer_assist_enabled
 	row.transfer_posture=controller.telemetry().get("transfer_posture",{})
-	var file := FileAccess.open("user://trials.jsonl",FileAccess.READ_WRITE if FileAccess.file_exists("user://trials.jsonl") else FileAccess.WRITE)
+	row.reach_prediction_enabled=reach_prediction_enabled
+	row.catch_buffer_enabled=catch_buffer_enabled
+	row.catch_buffer_duration=catch_buffer_duration
+	var summary_path: String="user://trials.jsonl"
+	if input_profile==3 and transfer_diagnostics_enabled:
+		DirAccess.make_dir_recursive_absolute("user://transfer_sessions")
+		summary_path="user://transfer_sessions/%s_summary.jsonl" % transfer_session_id
+	var file := FileAccess.open(summary_path,FileAccess.READ_WRITE if FileAccess.file_exists(summary_path) else FileAccess.WRITE)
 	if file:
 		file.seek_end()
 		file.store_line(JSON.stringify(row))
@@ -747,6 +788,7 @@ func _record_capture(delta: float) -> void:
 		"swing_requested":capture_trace.vector(controller.telemetry().get("swing_requested",Vector3.ZERO)),
 		"swing_torque":capture_trace.vector(controller.telemetry().get("swing_torque",Vector3.ZERO)),
 		"grip_buttons":[Input.is_action_pressed("grip_left"),Input.is_action_pressed("grip_right")],"capture_predictions":capture_predictions,
+		"reach_prediction_enabled":reach_prediction_enabled,"catch_buffer_enabled":catch_buffer_enabled,"catch_buffer_duration":catch_buffer_duration,"reach_advice":reach_advice,"attempt_assessments":attempt_assessments,
 		"anomalous_displacements":trial.get("large_step_events",0),
 		"grounded":ground_motor.grounded if is_instance_valid(ground_motor) else false,
 		"beam_angle":level.beam.rotation.z if is_instance_valid(level) and is_instance_valid(level.beam) else 0.0})
@@ -928,8 +970,8 @@ func _setup_ui() -> void:
 	posture_variant_choice=OptionButton.new()
 	posture_variant_choice.add_item("P0 / v0.4 suspension unchanged")
 	posture_variant_choice.add_item("P1 / Support-relative axial twist refinement")
-	posture_variant_choice.add_item("P2 / Support-aware posture (not evaluated yet)")
-	posture_variant_choice.set_item_disabled(2,true)
+	posture_variant_choice.add_item("P2 / Tilt study (REJECT as default / opt-in)")
+	posture_variant_choice.set_item_disabled(2,false)
 	posture_variant_choice.select(posture_variant)
 	posture_variant_choice.item_selected.connect(_set_posture_variant)
 	settings_box.add_child(posture_variant_choice)
@@ -1014,6 +1056,26 @@ func _setup_ui() -> void:
 	predictive_toggle.button_pressed = predictive_grip_enabled
 	predictive_toggle.toggled.connect(_set_predictive_grip)
 	settings_box.add_child(predictive_toggle)
+	var advice_toggle:=CheckButton.new()
+	advice_toggle.text="v0.5 reach advisory / estimates only, no automatic grip"
+	advice_toggle.button_pressed=reach_prediction_enabled
+	advice_toggle.toggled.connect(func(on:bool):reach_prediction_enabled=on;reach_advice=[{},{}];prediction_clock=0)
+	settings_box.add_child(advice_toggle)
+	var buffer_toggle:=CheckButton.new()
+	buffer_toggle.text="v0.5 held catch buffer / independent aim only, opt-in"
+	buffer_toggle.button_pressed=catch_buffer_enabled
+	buffer_toggle.toggled.connect(_set_catch_buffer)
+	settings_box.add_child(buffer_toggle)
+	var buffer_row:=HBoxContainer.new()
+	settings_box.add_child(buffer_row)
+	_label("Held intent duration / seconds",17,buffer_row)
+	var buffer_duration:=SpinBox.new()
+	buffer_duration.min_value=.10
+	buffer_duration.max_value=.15
+	buffer_duration.step=.01
+	buffer_duration.value=catch_buffer_duration
+	buffer_duration.value_changed.connect(func(value:float):catch_buffer_duration=clampf(value,.10,.15);_apply_capture_settings())
+	buffer_row.add_child(buffer_duration)
 	feet_toggle = CheckButton.new()
 	feet_toggle.text = "Automatic foot contacts / feet push on real supports"
 	feet_toggle.button_pressed = physical_feet_enabled
@@ -1153,9 +1215,10 @@ func _apply_independent_settings() -> void:
 	controller.posture_tilt_assist_enabled=posture_tilt_assist_enabled
 	controller.supported_wasd_swing_enabled=supported_wasd_swing_enabled
 	controller.set_posture_policy(posture_policy)
+	_apply_capture_settings()
 
 func _set_posture_variant(variant: int) -> void:
-	posture_variant=clampi(variant,0,1)
+	posture_variant=clampi(variant,0,2)
 	if is_instance_valid(posture_variant_choice):posture_variant_choice.select(posture_variant)
 	_apply_independent_settings()
 
@@ -1190,9 +1253,20 @@ func _set_predictive_grip(on: bool) -> void:
 	if is_instance_valid(predictive_toggle):
 		predictive_toggle.set_pressed_no_signal(on)
 	prediction_clock = 0.0
+	_apply_capture_settings()
+
+func _capture_buffer_active() -> bool:
+	return predictive_grip_enabled or (input_profile==3 and catch_buffer_enabled)
+
+func _set_catch_buffer(on: bool) -> void:
+	catch_buffer_enabled=on
+	_apply_capture_settings()
+
+func _apply_capture_settings() -> void:
 	if is_instance_valid(controller):
-		controller.tuning.predictive_grip = on
-		if not on:
+		controller.tuning.predictive_grip = _capture_buffer_active()
+		controller.tuning.capture_intent_buffer_duration=catch_buffer_duration if input_profile==3 and catch_buffer_enabled else .15
+		if not _capture_buffer_active():
 			for id in 2:
 				if controller.get_hand_state(id)=="REACHING" and controller.hands[id].get("predictive_wait",false):
 					grip_intents.release(controller,id)

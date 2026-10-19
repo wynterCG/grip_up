@@ -4,7 +4,7 @@ var report: Dictionary = {"runs":[]}
 
 func settings(variant: int) -> void:
 	controller.transfer_diagnostics_enabled = true
-	controller.transfer_assist_enabled = variant==1
+	controller.transfer_assist_enabled = variant in [1,2]
 	controller.set_posture_variant(variant)
 	controller.set_posture_policy(0)
 
@@ -24,9 +24,11 @@ func candidate() -> Dictionary:
 
 func trial(variant: int, mode: String, dual := false) -> Dictionary:
 	var moving := mode in ["moving","transitions"]
-	var rotation := Vector3(0,0,.35) if mode=="roll" else Vector3.ZERO
+	var rotation := Vector3(0,0,.35) if mode.begins_with("roll") else Vector3.ZERO
 	await setup(dual,rotation,moving,3,dual and moving)
 	settings(variant)
+	if mode.ends_with("policy_b"):
+		controller.set_posture_policy(1)
 	var target := candidate()
 	await ticks(2)
 	if moving:
@@ -41,6 +43,11 @@ func trial(variant: int, mode: String, dual := false) -> Dictionary:
 		"first_window":-1.0,"minimum_reach_distance":INF,"hand_time_lower_bound_min":INF,"travel_speed_peak":0.0,
 		"arm_work":0.0,"moment_work":0.0,"saturation_time":0.0}
 	result["frame_rate_peak"] = 0.0
+	result["posture_rate_peak"] = 0.0
+	result["posture_acceleration_peak"] = 0.0
+	result["posture_paused_time"] = 0.0
+	result["swing_phases"] = {"PUMPING":0,"BRAKING":0,"NEUTRAL":0}
+	result["swing_work"] = 0.0
 	var spin_filtered := body.angular_velocity
 	var previous_reference := Vector3.RIGHT
 	var prior_torque: Vector3 = controller.telemetry().assist_torque
@@ -63,10 +70,18 @@ func trial(variant: int, mode: String, dual := false) -> Dictionary:
 			controller.release_grip(1,"study_release")
 		await tick()
 		var data: Dictionary = controller.telemetry()
+		var posture: Dictionary = data.transfer_posture.get("posture",{})
+		if not posture.is_empty():
+			result.posture_rate_peak = maxf(result.posture_rate_peak,Vector3(posture.target_rate).length())
+			result.posture_acceleration_peak = maxf(result.posture_acceleration_peak,Vector3(posture.target_acceleration).length())
+			result.posture_paused_time += 1.0/hz if not posture.advance else 0.0
+			result["last_posture"] = posture
 		var reference: Vector3 = data.transfer_posture.twist.get("reference_right",Vector3.RIGHT)
 		result.frame_rate_peak = maxf(result.frame_rate_peak,previous_reference.angle_to(reference)*hz)
 		previous_reference = reference
 		var motion: Dictionary = controller.transfer_diagnostics().motion
+		result.swing_phases[motion.swing_phase] += 1
+		result.swing_work = motion.estimated_swing_work
 		var theta: float = motion.pendulum_angle
 		result.pendulum_peak = maxf(result.pendulum_peak,theta)
 		var slope := theta-prior_angle
@@ -129,6 +144,8 @@ func trial(variant: int, mode: String, dual := false) -> Dictionary:
 		check(result.linear_momentum_delta<.001 and result.angular_momentum_delta<.01,"closed moving support keeps paired linear/angular momentum P%d %s" % [variant,mode])
 	check(result.retained and result.force_peak<=360.001 and result.assist_peak<=20.001,"P%d %s preserves attachment and unchanged effort caps" % [variant,mode])
 	check(result.frame_rate_peak<=2.5+.002,"P%d %s material heading transport obeys2.5rad/s target rate" % [variant,mode])
+	if variant==2:
+		check(result.posture_rate_peak<=.80001 and result.posture_acceleration_peak<=3.0001,"P2 %s posture target obeysangularrate/acceleration limits" % mode)
 	print("POSTURE STUDY ",JSON.stringify(result))
 	report.runs.append(result)
 	await clear()
@@ -157,7 +174,11 @@ func transitions_and_guard() -> void:
 	controller.transfer_assist_enabled = true
 	controller.set_posture_variant(2)
 	await ticks(3)
-	check(not controller.telemetry().transfer_posture.available and controller.telemetry().transfer_posture.status=="P2_NOT_IMPLEMENTED","unapproved P2 is visible and cannot silently enable another assistance")
+	check(controller.telemetry().transfer_posture.available and controller.telemetry().transfer_posture.status=="P2","approved P2 reports explicit separate support-posture variant")
+	controller.transfer_assist_enabled = false
+	await ticks(hz/2)
+	check(controller._posture_refinement.blend==0 and controller._twist_refinement.blend==0,"P2 disable blends both refinements back to baseline without retained authority")
+	controller.transfer_assist_enabled = true
 	controller.set_control_profile(0)
 	controller.set_posture_variant(1)
 	await ticks(3)
@@ -200,6 +221,116 @@ func finite_handoff() -> void:
 	check(controller.get_hand_state(0)=="ATTACHED" and controller._twist_refinement.blend==1.0,"material reference survives1→2→1 without losing valid support")
 	await clear()
 
+func posture_safety_and_asymmetry() -> void:
+	await setup(false,Vector3(0,0,.35),false,3)
+	settings(2)
+	await ticks(hz/3)
+	var pose := body.global_transform
+	var velocity := body.linear_velocity
+	var spin := body.angular_velocity
+	var rest: float = controller.hands[0].rest_length
+	controller.set_contextual_effort(Vector2(100,-100),Vector3.FORWARD)
+	controller.set_climb_intent(1,1,1,Vector3.FORWARD)
+	check(body.global_transform==pose and body.linear_velocity==velocity and body.angular_velocity==spin and controller.hands[0].rest_length==rest,"P2 independent aim cannot write physical state or supporting-arm length")
+	supports[0].set_meta("grip_load_limit",1.0)
+	for frame in hz/3:
+		await tick()
+		if controller.get_hand_state(0)=="SLIPPING":
+			break
+	var safety: Dictionary = controller.telemetry().transfer_posture.posture
+	await tick() # Integrity transition is detected after posture request on its first tick.
+	safety = controller.telemetry().transfer_posture.posture
+	check(controller.get_hand_state(0)=="SLIPPING" and safety.slipping and not safety.advance,"actual grip slip stops advancement of P2 absolute preferred attitude")
+	await ticks(hz/8)
+	safety = controller.telemetry().transfer_posture.posture
+	check(safety.authority<.001 and Vector3(safety.target_rate).length()<.001,"slip fades P2 effort and brakes target without integral windup")
+	await clear()
+
+	await setup(false,Vector3(0,0,.35),false,3)
+	settings(2)
+	await ticks(hz/3)
+	# Explicit adverse reduced-budget fixture; never an increase to make a route pass.
+	controller.tuning.total_pull_force_budget = 80.0
+	var saturated := false
+	for frame in 5:
+		await tick()
+		var value: Dictionary = controller.telemetry().transfer_posture.posture
+		# Multiple guards may coexist; infeasible geometry has earlier primary
+		# reason priority, while the measured saturation flag must still stop it.
+		saturated = saturated or (value.saturated and not value.advance and controller.telemetry().budget_scale<.95)
+	check(saturated,"observed allocator saturation stops P2 advancement under reduced adverse budget")
+	await clear()
+	await setup(true,Vector3.ZERO,true,3)
+	controller.transfer_diagnostics_enabled = true
+	supports[0].set_meta("grip_load_limit",3000.0)
+	supports[1].set_meta("grip_load_limit",10000.0)
+	controller.set_posture_policy(2)
+	await ticks(hz)
+	await controller.sample_ready # Compare lever and body pose from one published controller step.
+	var budget: Dictionary = controller.transfer_diagnostics().motion.budget
+	var center: Vector3 = body.global_transform*body.center_of_mass
+	var expected := Vector3.ZERO
+	for id in 2:
+		expected += (controller.get_shoulder_world(id)-center)*float(budget.weights[id])
+	var unweighted: Vector3 = (controller.get_shoulder_world(0)+controller.get_shoulder_world(1))*.5-center
+	check(absf(float(budget.weights[0])-.5)>.05 and expected.distance_to(unweighted)>.01,"two-hand diagnostic fixture has real asymmetric allocation and shoulder lever")
+	check(Vector3(budget.swing_lever).distance_to(expected)<.00001,"swing unactuated-axis diagnostic uses exact applied allocation×blend lever, not unweighted shoulder average")
+	await clear()
+	await setup(false,Vector3.ZERO,true,3)
+	settings(2)
+	# Fixture begins a25mm supported stroke at unchanged stiffness/strength.
+	# This loads P2 in a closed zero-gravity pair; it is not a live input shortcut.
+	controller.hands[0].rest_length -= .025
+	var initial := momentum()
+	var posture_peak := 0.0
+	for frame in hz/3:
+		await tick()
+		posture_peak = maxf(posture_peak,Vector3(controller.telemetry().posture_tilt_torque).length())
+	var final := momentum()
+	check(posture_peak>.10,"loaded dynamic fixture actually exercises P2 grip-moment effort")
+	check(Vector3(final.linear).distance_to(initial.linear)<.001 and Vector3(final.angular).distance_to(initial.angular)<.01,"active P2 on free dynamic support conserves complete paired force and angular momentum")
+	controller.release_grip(0)
+	await ticks(3)
+	check(controller.telemetry().assist_torque==Vector3.ZERO and controller._posture_refinement.blend==0,"active P2 cannot continue torque after last real support is released")
+	await clear()
+
+func constant_held(variant: int, dual: bool) -> void:
+	await setup(dual,Vector3.ZERO,false,3)
+	settings(variant)
+	var peak := 0.0
+	var late_peak := 0.0
+	var middle_energy := 0.0
+	var late_energy := 0.0
+	var retained := true
+	var reference: Vector3 = controller.telemetry().control_right
+	var lengths: Array[float] = [controller.hands[0].rest_length,controller.hands[1].rest_length]
+	for frame in hz*12:
+		# The world command remains fixed while a camera-only reference orbits.
+		controller.set_swing_intent(Vector3.FORWARD,Vector3.RIGHT.rotated(Vector3.UP,float(frame)/hz))
+		await tick()
+		var motion: Dictionary = controller.transfer_diagnostics().motion
+		peak = maxf(peak,body.linear_velocity.length())
+		var energy: float = motion.relative_translation_energy+motion.relative_rotation_energy
+		if frame>=8*hz and frame<10*hz:
+			middle_energy = maxf(middle_energy,energy)
+		if frame>=10*hz:
+			late_peak = maxf(late_peak,body.linear_velocity.length())
+			late_energy = maxf(late_energy,energy)
+		retained = retained and controller.get_hand_state(0)=="ATTACHED" and (not dual or controller.get_hand_state(1)=="ATTACHED")
+	var held_result := {"variant":variant,"dual":dual,"peak_speed":peak,"late_speed":late_peak,"middle_energy":middle_energy,"late_energy":late_energy}
+	print("POSTURE CONSTANT ",JSON.stringify(held_result))
+	if not report.has("constant_holds"):
+		report["constant_holds"] = []
+	report.constant_holds.append(held_result)
+	check(retained and peak<3 and late_peak<1 and late_energy<=middle_energy+.5,"P%d dual%s12s held effort settles with bounded speed/late kinetic energy" % [variant,dual])
+	check(controller.telemetry().control_right==reference and controller.hands[0].rest_length==lengths[0] and (not dual or controller.hands[1].rest_length==lengths[1]),"P%d dual%s camera orbit cannot rotate cached gesture or change arm targets" % [variant,dual])
+	for id in 2:
+		controller.release_grip(id)
+	var air_velocity := body.linear_velocity
+	await ticks(hz/4)
+	check(controller.telemetry().assist_torque==Vector3.ZERO and controller.telemetry().total_force==0 and absf(body.linear_velocity.x)<=absf(air_velocity.x)+.0001,"P%d dual%s held command has no unsupported propulsion" % [variant,dual])
+	await clear()
+
 func run() -> void:
 	world = Node3D.new()
 	root.add_child(world)
@@ -207,9 +338,10 @@ func run() -> void:
 	report.baseline_commit = "db6ea96"
 	var neutral: Array[Dictionary] = []
 	var moving: Array[Dictionary] = []
-	for variant in [0,1]:
+	for variant in [0,1,2]:
 		neutral.append(await trial(variant,"neutral"))
 		await trial(variant,"roll")
+		await trial(variant,"roll_policy_b")
 		await trial(variant,"pump")
 		await trial(variant,"brake")
 		moving.append(await trial(variant,"moving"))
@@ -218,6 +350,7 @@ func run() -> void:
 	check(moving[1].support_twist_rms<moving[0].support_twist_rms*.8,"P1 measurably reduces actual support-relative axial twist on rotating support")
 	await transitions_and_guard()
 	await finite_handoff()
+	await posture_safety_and_asymmetry()
 	check(budgets,"all P0/P1 study trials retain360N20Nm150Nm")
 	FileAccess.open("res://builds/posture_study_%dhz.json" % hz,FileAccess.WRITE).store_string(JSON.stringify(report,"  "))
 	print("POSTURE STUDY RESULTS: %d checks, %d failures" % [checks,failures])

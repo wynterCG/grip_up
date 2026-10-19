@@ -87,5 +87,3 @@ PENDULUM REACTIVE {"arm_length":0.188808724284172,"assist":"(-0.199082, -4.15882
 PASS actual short-arm reactive pose retains controllable heading
 PASS all measured swings and transfers preserve 360 N / 150 Nm limits
 PENDULUM RESULTS: 63 checks, 0 failures
-WARNING: Jolt Physics job system exceeded the maximum number of jobs. This should not happen. Please report this. Waiting for jobs to become available...
-   at: CreateJob (modules/jolt_physics/spaces/jolt_job_system.cpp:123)

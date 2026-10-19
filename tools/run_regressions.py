@@ -23,16 +23,19 @@ if label in ['contextual','v04','v05']:
 if label in ['v04','v05']:
     names += ['independent_input','independent_physics','independent_routes']
 if label == 'v05':
-    names += ['transfer_diagnostics','transfer_routes']
+    names += ['transfer_diagnostics','transfer_routes','transfer_routes_p1','transfer_routes_p2',
+              'posture_study','swing_diagnostics','transfer_swing','reach_assessment','transfer_capture']
 assert all(name in names for name in selected)
 dest = root/'docs'/'validation'/label
 dest.mkdir(parents=True,exist_ok=True)
 
 def run(item):
     name, slow = item
-    aliases = {'feet_routes':'playthrough','feet_swing':'swing_playthrough'}
+    aliases = {'feet_routes':'playthrough','feet_swing':'swing_playthrough',
+               'transfer_routes_p1':'transfer_routes','transfer_routes_p2':'transfer_routes'}
     command = ['python',str(root/'tools'/'project.py'),'test','test_'+aliases.get(name,name)]
-    flags = ['--feet'] if name in aliases else []
+    flags = ['--feet'] if name in ['feet_routes','feet_swing'] else []
+    if name.startswith('transfer_routes_p'):flags += ['--'+name.rsplit('_',1)[1]]
     if slow:
         flags += ['--60hz']
     if flags:

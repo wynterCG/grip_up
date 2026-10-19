@@ -6,12 +6,15 @@ PASS hold-to-grip remains mandatory
 PASS variant A and feature flags reach controller
 PASS actual pointer press begins finite-speed left reach
 PASS pointer motion never retargets a reaching/attached hand
+PASS marker fixture is reachable only by the already attached hand
+PASS candidate marker evaluates the free hand rather than misleading attached-hand reach
 PASS M1 gate: large upward/downward aiming never changes supporting arm target
 PASS explicit aim independence telemetry marker is true
 PASS independent aim queues neither drag lengths nor contextual effort
 PASS free upward aim can start independent right reach while left remains held
 PASS right finite reach completes while preserving left material anchor
 PASS second acquisition plus aim cannot extend supporting left arm in A
+PASS two held grips show no free hand available instead of a false catchable marker
 PASS MMB orbit preserves both arm targets and anchors
 PASS W gesture keeps world depth command through orbit
 PASS W commands swing rather than direct arm contraction
@@ -32,4 +35,4 @@ PASS posture OFF preserves targets despite aim; policy 2
 PASS independent tilt/swing OFF flags remove their physical contributions
 PASS prior drag profile is restored explicitly
 PASS retry preserves independent profile and selected posture policy
-INDEPENDENT INPUT RESULTS: 32 checks, 0 failures
+INDEPENDENT INPUT RESULTS: 35 checks, 0 failures

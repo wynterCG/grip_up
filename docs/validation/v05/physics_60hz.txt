@@ -50,5 +50,5 @@ MEASURE swing x_span=1.6415 peak_horizontal=2.5053 state=ATTACHED
 PASS off-center tension and finite anchored work generate useful physical swing
 MEASURE Jolt PinJoint50kg anchor_drift=0.00010 despite weight490N > player budget360N
 PASS built-in pin baseline supports weight beyond player budget; requires different limiter model
-PHYSICS BENCHMARK Hz=60 wall_ms=219.55 physics_frames=1209
+PHYSICS BENCHMARK Hz=60 wall_ms=218.68 physics_frames=1209
 GRIP UP PHYSICS RESULTS: 45 checks, 0 failures

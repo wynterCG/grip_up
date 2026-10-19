@@ -13,9 +13,11 @@ const PosturePlanner = preload("res://features/grip_up/scripts/support_posture_p
 const TargetCoordinator = preload("res://features/grip_up/scripts/arm_target_coordinator.gd")
 const TransferDiagnostics = preload("res://features/grip_up/scripts/transfer_diagnostics.gd")
 const TwistRefinement = preload("res://features/grip_up/scripts/supported_twist_refinement.gd")
+const PostureRefinement = preload("res://features/grip_up/scripts/supported_posture_refinement.gd")
 var transfer_assist_enabled := false
 var posture_variant := 0
 var _twist_refinement = TwistRefinement.new()
+var _posture_refinement = PostureRefinement.new()
 var transfer_journal = TransferDiagnostics.new()
 var transfer_diagnostics_enabled := false:
 	set(value):
@@ -78,6 +80,7 @@ func configure(body: RigidBody3D, configuration: Resource = null) -> void:
 
 func reset_state() -> void:
 	_twist_refinement.reset()
+	_posture_refinement.reset()
 	transfer_journal.reset()
 	posture_planner.reset()
 	posture_coordinator.reset()
@@ -144,6 +147,7 @@ func set_control_profile(profile: int) -> void:
 		return
 	control_profile = next
 	_twist_refinement.reset()
+	_posture_refinement.reset()
 	transfer_journal.reset()
 	_posture_tilt_blend = 0.0
 	_posture_tilt_torque = Vector3.ZERO
@@ -170,7 +174,6 @@ func set_posture_policy(policy: int) -> void:
 		posture_coordinator.reset()
 
 func set_posture_variant(variant: int) -> void:
-	# P2 remains reserved until a measured P1 comparison justifies its gate.
 	posture_variant = clampi(variant,0,2)
 
 func _update_independent_posture(attached: Array[int], delta: float) -> void:
@@ -684,7 +687,7 @@ func _physics_process(delta: float) -> void:
 			_view_right = _swing_reference_right
 			_experimental_heading_active = true
 	if control_profile==3:
-		_twist_refinement.update(self,attached,delta,transfer_assist_enabled and posture_variant==1)
+		_twist_refinement.update(self,attached,delta,transfer_assist_enabled and posture_variant in [1,2])
 	_contextual_actuation = Vector2.ZERO
 	if control_profile == 2:
 		if attached.is_empty():
@@ -745,6 +748,8 @@ func _physics_process(delta: float) -> void:
 	_arm_deltas.clear()
 	var assist: Vector3 = _compute_attitude_assist(attached,forces,center,sum_force)
 	var diagnostic_attitude: Vector3 = assist if _transfer_enabled() else Vector3.ZERO
+	var before_tilt_assist := assist
+	var baseline_tilt_request := Vector3.ZERO
 	_posture_tilt_torque = Vector3.ZERO
 	if control_profile==3:
 		var tilt_active: bool = posture_tilt_assist_enabled and posture_assist_enabled and posture_policy>0 and not attached.is_empty() and not posture_coordinator.plan.is_empty() and posture_coordinator.plan.feasible
@@ -761,9 +766,15 @@ func _physics_process(delta: float) -> void:
 				allocated += share
 				engaged += share*smoothstep(0.0,maxf(.001,tuning.grip_blend_duration),hands[id]["blend_elapsed"])
 			var requested_tilt: Vector3 = (tilt_error*tuning.posture_tilt_stiffness-tilt_spin*tuning.posture_tilt_damping-moments.slide(target_up)*tuning.posture_gravity_moment_compensation)*(_posture_tilt_blend*manual_authority*engaged/maxf(allocated,.000001))
+			baseline_tilt_request = requested_tilt
 			var base_assist := assist
 			assist = (assist+requested_tilt).limit_length(tuning.max_attitude_torque)
 			_posture_tilt_torque = assist-base_assist
+		var requested_posture: Vector3 = _posture_refinement.evaluate(self,attached,center,moments,sum_force,delta,transfer_assist_enabled and posture_variant==2,_twist_refinement.reference_right)
+		if _posture_refinement.blend>0.0:
+			var preferred_tilt := baseline_tilt_request.lerp(requested_posture,_posture_refinement.blend)
+			assist = (before_tilt_assist+preferred_tilt).limit_length(tuning.max_attitude_torque)
+			_posture_tilt_torque = assist-before_tilt_assist
 	_swing_torque = Vector3.ZERO
 	var support_torque_weights: Dictionary = {}
 	var diagnostic_swing_lever := Vector3.ZERO
@@ -867,8 +878,8 @@ func _physics_process(delta: float) -> void:
 		"angular_velocity": torso.angular_velocity, "metrics": metrics.duplicate()}
 	if control_profile==3:
 		_diagnostics["transfer_posture"] = {"enabled":transfer_assist_enabled,"variant":posture_variant,
-			"available":posture_variant in [0,1],"status":"P2_NOT_IMPLEMENTED" if posture_variant==2 else "P1" if _twist_refinement.blend>0.0 else "P0",
-			"twist":_twist_refinement.diagnostics()}
+			"available":true,"status":"P2" if _posture_refinement.blend>0.0 else "P1" if _twist_refinement.blend>0.0 else "P0",
+			"twist":_twist_refinement.diagnostics(),"posture":_posture_refinement.diagnostics()}
 	if _transfer_enabled():
 		transfer_journal.sample(self,delta,{"attitude":diagnostic_attitude*scale_factor,"posture_tilt":_posture_tilt_torque*scale_factor,
 			"swing":_swing_torque*scale_factor,"assist":assist*scale_factor,"shoulder_moment":moments*scale_factor,

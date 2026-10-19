@@ -389,14 +389,14 @@
       "suite": "independent_input",
       "hz": 120,
       "passed": true,
-      "checks": 32,
+      "checks": 35,
       "failures": 0
     },
     {
       "suite": "independent_input",
       "hz": 60,
       "passed": true,
-      "checks": 32,
+      "checks": 35,
       "failures": 0
     },
     {
@@ -453,9 +453,107 @@
       "hz": 60,
       "passed": true,
       "checks": 14,
+      "failures": 0
+    },
+    {
+      "suite": "transfer_routes_p1",
+      "hz": 120,
+      "passed": true,
+      "checks": 14,
+      "failures": 0
+    },
+    {
+      "suite": "transfer_routes_p1",
+      "hz": 60,
+      "passed": true,
+      "checks": 14,
+      "failures": 0
+    },
+    {
+      "suite": "transfer_routes_p2",
+      "hz": 120,
+      "passed": true,
+      "checks": 14,
+      "failures": 0
+    },
+    {
+      "suite": "transfer_routes_p2",
+      "hz": 60,
+      "passed": true,
+      "checks": 14,
+      "failures": 0
+    },
+    {
+      "suite": "posture_study",
+      "hz": 120,
+      "passed": true,
+      "checks": 110,
+      "failures": 0
+    },
+    {
+      "suite": "posture_study",
+      "hz": 60,
+      "passed": true,
+      "checks": 110,
+      "failures": 0
+    },
+    {
+      "suite": "swing_diagnostics",
+      "hz": 120,
+      "passed": true,
+      "checks": 67,
+      "failures": 0
+    },
+    {
+      "suite": "swing_diagnostics",
+      "hz": 60,
+      "passed": true,
+      "checks": 67,
+      "failures": 0
+    },
+    {
+      "suite": "transfer_swing",
+      "hz": 120,
+      "passed": true,
+      "checks": 24,
+      "failures": 0
+    },
+    {
+      "suite": "transfer_swing",
+      "hz": 60,
+      "passed": true,
+      "checks": 24,
+      "failures": 0
+    },
+    {
+      "suite": "reach_assessment",
+      "hz": 120,
+      "passed": true,
+      "checks": 39,
+      "failures": 0
+    },
+    {
+      "suite": "reach_assessment",
+      "hz": 60,
+      "passed": true,
+      "checks": 39,
+      "failures": 0
+    },
+    {
+      "suite": "transfer_capture",
+      "hz": 120,
+      "passed": true,
+      "checks": 25,
+      "failures": 0
+    },
+    {
+      "suite": "transfer_capture",
+      "hz": 60,
+      "passed": true,
+      "checks": 25,
       "failures": 0
     }
   ],
-  "total_checks": 2148,
+  "total_checks": 2740,
   "all_passed": true
 }

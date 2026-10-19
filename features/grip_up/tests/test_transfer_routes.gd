@@ -11,6 +11,7 @@ var report:={"runs":[]}
 func _initialize() -> void:
 	if OS.get_cmdline_user_args().has("--60hz"):hz=60
 	if OS.get_cmdline_user_args().has("--p1"):variant=1
+	if OS.get_cmdline_user_args().has("--p2"):variant=2
 	Engine.physics_ticks_per_second=hz
 	run.call_deferred()
 
@@ -114,6 +115,6 @@ func run() -> void:
 	check(app.controller.tuning.body_mass==12 and app.controller.tuning.total_pull_force_budget==360,"new routes preserve biped tuning")
 	app.queue_free()
 	await ticks(.05)
-	FileAccess.open("res://builds/transfer_routes%s_%dhz.json" % ["_p1" if variant==1 else "",hz],FileAccess.WRITE).store_string(JSON.stringify(report,"  "))
+	FileAccess.open("res://builds/transfer_routes%s_%dhz.json" % ["_p%d" % variant if variant>0 else "",hz],FileAccess.WRITE).store_string(JSON.stringify(report,"  "))
 	print("TRANSFER ROUTES RESULTS: %d checks, %d failures" % [checks,failures])
 	quit(1 if failures else 0)

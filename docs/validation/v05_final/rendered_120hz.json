@@ -1,0 +1,435 @@
+{
+  "buffer_cases": [
+    {
+      "actual_state": "FREE",
+      "assessment": {
+        "advisory_reason": "geometric_window_only; finite_hand_arrival_unknown",
+        "arrival_feasible": false,
+        "arrival_outside_horizon": true,
+        "authorization": false,
+        "catch_load_estimate": {
+          "effective_point_mass": 4.71756102863552,
+          "force_upper_bound": 360.0,
+          "outward_energy": 0.0,
+          "outward_speed": 0.0,
+          "remaining_extension": 0.0,
+          "scope": "instant current-axis estimate; ignores future arm allocation, rotation and contacts; never authorizes or denies",
+          "stopping_work_upper_bound": 0.0
+        },
+        "classification": "NEEDS SWING",
+        "confidence": "short_horizon_estimate",
+        "contact_relative_velocity": null,
+        "current_distance_hand_time": 0.216730609536171,
+        "distance": 0.697785437107086,
+        "horizon": 0.2,
+        "local_point": "(-0.1919, 1.885579, 0.2)",
+        "predicted_contact_time": -1.0,
+        "predicted_distance": 0.56556510925293,
+        "predicted_entry_time": 0.0583333333333333,
+        "predicted_support_angle": 0.0,
+        "predicted_target": "(-0.1919, 4.085579, -0.0)",
+        "predicted_target_time": 0.2,
+        "prediction_reason": "contact_beyond_horizon",
+        "radial_speed": -0.739642322063446,
+        "reachable_now": false,
+        "reason": "predicted_reach_window",
+        "relative_speed": 0.992522418498993,
+        "requires_actual_contact": true,
+        "shoulder_velocity": "(0.0, 0.992522, 0.0)",
+        "status": "SOON",
+        "target_velocity": "(0.0, 0.0, 0.0)",
+        "timing_certified": false,
+        "window_intervals": [
+          {
+            "clipped": true,
+            "entry": 0.0583333333333333,
+            "exit": 0.2
+          }
+        ],
+        "window_sample_resolution": 0.00833333333333333,
+        "window_scope": "predicted anatomical sphere; current LOS/path only; future contacts unmodelled"
+      },
+      "buffer": false,
+      "fixture": "same explicit initial position, 1m/s upward, gravity off; real physics after setup"
+    },
+    {
+      "actual_state": "ATTACHED",
+      "assessment": {
+        "advisory_reason": "geometric_window_only; finite_hand_arrival_unknown",
+        "arrival_feasible": false,
+        "arrival_outside_horizon": true,
+        "authorization": false,
+        "catch_load_estimate": {
+          "effective_point_mass": 4.71756102863552,
+          "force_upper_bound": 360.0,
+          "outward_energy": 0.0,
+          "outward_speed": 0.0,
+          "remaining_extension": 0.0,
+          "scope": "instant current-axis estimate; ignores future arm allocation, rotation and contacts; never authorizes or denies",
+          "stopping_work_upper_bound": 0.0
+        },
+        "classification": "NEEDS SWING",
+        "confidence": "short_horizon_estimate",
+        "contact_relative_velocity": null,
+        "current_distance_hand_time": 0.216730609536171,
+        "distance": 0.697785437107086,
+        "horizon": 0.2,
+        "local_point": "(-0.1919, 1.885579, 0.2)",
+        "predicted_contact_time": -1.0,
+        "predicted_distance": 0.56556510925293,
+        "predicted_entry_time": 0.0583333333333333,
+        "predicted_support_angle": 0.0,
+        "predicted_target": "(-0.1919, 4.085579, -0.0)",
+        "predicted_target_time": 0.2,
+        "prediction_reason": "contact_beyond_horizon",
+        "radial_speed": -0.739642322063446,
+        "reachable_now": false,
+        "reason": "predicted_reach_window",
+        "relative_speed": 0.992522418498993,
+        "requires_actual_contact": true,
+        "shoulder_velocity": "(0.0, 0.992522, 0.0)",
+        "status": "SOON",
+        "target_velocity": "(0.0, 0.0, 0.0)",
+        "timing_certified": false,
+        "window_intervals": [
+          {
+            "clipped": true,
+            "entry": 0.0583333333333333,
+            "exit": 0.2
+          }
+        ],
+        "window_sample_resolution": 0.00833333333333333,
+        "window_scope": "predicted anatomical sphere; current LOS/path only; future contacts unmodelled"
+      },
+      "buffer": true,
+      "fixture": "same explicit initial position, 1m/s upward, gravity off; real physics after setup"
+    }
+  ],
+  "checks": [
+    {
+      "label": "native explicit P1 flag reaches physical controller",
+      "passed": true
+    },
+    {
+      "label": "advisory-only cannot enable physical catch buffer",
+      "passed": true
+    },
+    {
+      "label": "native P1 finite contact 00",
+      "passed": true
+    },
+    {
+      "label": "native P1 finite contact 01",
+      "passed": true
+    },
+    {
+      "label": "native P1 finite contact 02",
+      "passed": true
+    },
+    {
+      "label": "native P1 finite contact 03",
+      "passed": true
+    },
+    {
+      "label": "native P1 finite contact 04",
+      "passed": true
+    },
+    {
+      "label": "native P1 finite contact 05",
+      "passed": true
+    },
+    {
+      "label": "native P1 finite contact 06",
+      "passed": true
+    },
+    {
+      "label": "native P1 finite contact 07",
+      "passed": true
+    },
+    {
+      "label": "native P1 finite contact 08",
+      "passed": true
+    },
+    {
+      "label": "native P1 finite contact 09",
+      "passed": true
+    },
+    {
+      "label": "native P1 finite contact 10",
+      "passed": true
+    },
+    {
+      "label": "native P1 same reference geometry completes uninterrupted ten transfers",
+      "passed": true
+    },
+    {
+      "label": "native early press buffer false has expected pending status",
+      "passed": true
+    },
+    {
+      "label": "native request preserves body pose and momentum",
+      "passed": true
+    },
+    {
+      "label": "native finite catch requires held buffer when press precedes reach",
+      "passed": true
+    },
+    {
+      "label": "native hover movement never rewrites captured attempt assessment",
+      "passed": true
+    },
+    {
+      "label": "native early press buffer true has expected pending status",
+      "passed": true
+    },
+    {
+      "label": "native request preserves body pose and momentum",
+      "passed": true
+    },
+    {
+      "label": "native finite catch requires held buffer when press precedes reach",
+      "passed": true
+    },
+    {
+      "label": "native hover movement never rewrites captured attempt assessment",
+      "passed": true
+    }
+  ],
+  "complete": true,
+  "demo_frames": 337,
+  "focus_events": [],
+  "physics_hz": 120,
+  "provenance": "Godot MCP Pro scripted input; not a human comfort assessment",
+  "route": {
+    "events": [
+      {
+        "code": "ROUTE_STARTED",
+        "time": 0.783333333333333
+      },
+      {
+        "code": "TRANSFER_COMPLETE",
+        "time": 2.94166666666666,
+        "transfer": 1
+      },
+      {
+        "code": "TRANSFER_COMPLETE",
+        "time": 4.75833333333336,
+        "transfer": 2
+      },
+      {
+        "code": "TRANSFER_COMPLETE",
+        "time": 6.9416666666668,
+        "transfer": 3
+      },
+      {
+        "code": "TRANSFER_COMPLETE",
+        "time": 9.02500000000013,
+        "transfer": 4
+      },
+      {
+        "code": "TRANSFER_COMPLETE",
+        "time": 11.3416666666667,
+        "transfer": 5
+      },
+      {
+        "code": "TRANSFER_COMPLETE",
+        "time": 13.3583333333332,
+        "transfer": 6
+      },
+      {
+        "code": "TRANSFER_COMPLETE",
+        "time": 15.6999999999997,
+        "transfer": 7
+      },
+      {
+        "code": "TRANSFER_COMPLETE",
+        "time": 17.608333333333,
+        "transfer": 8
+      },
+      {
+        "code": "TRANSFER_COMPLETE",
+        "time": 19.8333333333328,
+        "transfer": 9
+      },
+      {
+        "code": "TRANSFER_COMPLETE",
+        "time": 21.8249999999994,
+        "transfer": 10
+      }
+    ],
+    "next_contact": 11,
+    "pending_hand": -1,
+    "recoveries": 0,
+    "transfers": 10
+  },
+  "route_session": "2026-10-19T15-10-17_32944_10136768",
+  "snapshots": [
+    {
+      "hands": [
+        {
+          "actual": 0.350734680891037,
+          "force": 130.333847045898,
+          "reason": "",
+          "state": "ATTACHED",
+          "target": 0.316958502717076
+        },
+        {
+          "actual": 0.327389985322952,
+          "force": 0.0,
+          "reason": "manual",
+          "state": "FREE",
+          "target": 0.281503978573635
+        }
+      ],
+      "label": "v05_final_ten",
+      "policy": 1,
+      "position": "(-0.358747, 2.411196, 0.219999)",
+      "posture": {
+        "accelerations": {
+          "0": 0.961206897265945
+        },
+        "actual_movement": "(-0.48021, 0.120274, -0.00678)",
+        "allocations": {
+          "0": 1.0
+        },
+        "body_error": "(0.341688, 0.139146, 0.020001)",
+        "braking_advance": 0.0,
+        "desired_posture": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.017368, 2.548675, 0.24)]",
+        "elapsed": 1.1,
+        "event": 21,
+        "length_errors": {
+          "0": 0.0387347638607025
+        },
+        "planned_lengths": {
+          "0": 0.311999917030334
+        },
+        "rates": {
+          "0": -0.0992357139795835
+        },
+        "reason": "support_acquisition",
+        "requested_lengths": {
+          "0": 0.316958502717076
+        },
+        "state": "ACTIVE"
+      },
+      "velocity": "(0.037159, 0.200043, 0.0)"
+    },
+    {
+      "hands": [
+        {
+          "actual": 0.0,
+          "force": 0.0,
+          "reason": "",
+          "state": "FREE",
+          "target": 0.62
+        },
+        {
+          "actual": 0.0,
+          "force": 0.0,
+          "reason": "",
+          "state": "FREE",
+          "target": 0.62
+        }
+      ],
+      "label": "v05_buffer_false",
+      "policy": 1,
+      "position": "(0.0, 3.605516, 0.45)",
+      "posture": {
+        "accelerations": {},
+        "allocations": {},
+        "braking_advance": 0.0,
+        "elapsed": 0.0,
+        "event": 0,
+        "planned_lengths": {},
+        "rates": {},
+        "reason": "hold_current_length",
+        "state": "HOLD"
+      },
+      "velocity": "(0.0, 0.890843, 0.0)"
+    },
+    {
+      "hands": [
+        {
+          "actual": 0.504619777202606,
+          "force": 8.91473388671875,
+          "reason": "",
+          "state": "ATTACHED",
+          "target": 0.51788208882014
+        },
+        {
+          "actual": 0.0,
+          "force": 0.0,
+          "reason": "",
+          "state": "FREE",
+          "target": 0.62
+        }
+      ],
+      "label": "v05_buffer_true",
+      "policy": 1,
+      "position": "(-0.000005, 3.605495, 0.449579)",
+      "posture": {
+        "accelerations": {
+          "0": 0.0
+        },
+        "actual_movement": "(-0.000003, 0.337914, -0.000226)",
+        "allocations": {
+          "0": 1.0
+        },
+        "body_error": "(0.000003, -0.215951, -0.209775)",
+        "braking_advance": 0.0,
+        "desired_posture": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.0, 3.382131, 0.24)]",
+        "elapsed": 0.375,
+        "event": 1,
+        "length_errors": {
+          "0": 0.192619860172272
+        },
+        "planned_lengths": {
+          "0": 0.311999917030334
+        },
+        "rates": {
+          "0": -0.25
+        },
+        "reason": "support_acquisition",
+        "requested_lengths": {
+          "0": 0.51788208882014
+        },
+        "state": "ACTIVE"
+      },
+      "velocity": "(-0.000286, 0.889551, -0.023414)"
+    },
+    {
+      "hands": [
+        {
+          "actual": 0.0,
+          "force": 0.0,
+          "reason": "",
+          "state": "FREE",
+          "target": 0.62
+        },
+        {
+          "actual": 0.0,
+          "force": 0.0,
+          "reason": "",
+          "state": "FREE",
+          "target": 0.62
+        }
+      ],
+      "label": "v05_controls",
+      "policy": 1,
+      "position": "(0.000095, 1.166693, 0.40011)",
+      "posture": {
+        "accelerations": {},
+        "allocations": {},
+        "braking_advance": 0.0,
+        "elapsed": 0.0,
+        "event": 0,
+        "planned_lengths": {},
+        "rates": {},
+        "reason": "hold_current_length",
+        "state": "HOLD"
+      },
+      "velocity": "(-0.000967, -0.00012, -0.000286)"
+    }
+  ],
+  "variants": []
+}

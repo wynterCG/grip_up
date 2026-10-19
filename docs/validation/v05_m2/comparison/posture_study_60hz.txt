@@ -1,0 +1,271 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+
+
+PASS finite physical grip establishes test anchor
+
+PASS P0 neutral preserves attachment and unchanged effort caps
+
+PASS P0 neutral material heading transport obeys2.5rad/s target rate
+
+POSTURE STUDY {"arm_work":-0.614597143114468,"assist_peak":2.00989246368408,"dual":false,"first_window":-1.0,"force_peak":129.503265380859,"frame_rate_peak":0.0,"free_window_longest":0.0,"free_window_total":0.0,"hand_time_lower_bound_min":-1.0,"jitter_filter_tau":0.08,"jitter_rms":0.101240262901047,"jitter_scope":"high_pass_proxy_including_motion_harmonics_not_proof_of_solver_chatter","minimum_reach_distance":0.696775555610657,"mode":"neutral","moment_work":-1.14859701338573,"pendulum_peak":0.16244116510325,"pendulum_peaks":[0.16244116510325,0.132962920745523,0.106956694400841,0.0856920967426627,0.0684101968281464,0.054558949915806],"pendulum_periods":[1.16666666666667,1.18333333333333,1.15,1.16666666666667,1.15],"posture_acceleration_peak":0.0,"posture_paused_time":0.0,"posture_rate_peak":0.0,"retained":true,"saturation_time":0.0,"support_twist_rms":0.0,"swing_phases":{"BRAKING":0,"NEUTRAL":360,"PUMPING":0},"swing_work":0.0,"third_to_first_peak":0.658433435470977,"tilt_rms":0.372618553812613,"torque_slew_peak":12.3003557324409,"travel_speed_peak":0.519763469696045,"twist_rms":0.0110127696006706,"variant":0}
+
+PASS finite physical grip establishes test anchor
+
+PASS P0 roll preserves attachment and unchanged effort caps
+
+PASS P0 roll material heading transport obeys2.5rad/s target rate
+
+POSTURE STUDY {"arm_work":-2.53191180669722,"assist_peak":3.03130054473877,"dual":false,"first_window":1.25,"force_peak":141.136459350586,"frame_rate_peak":0.0,"free_window_longest":0.166666666666667,"free_window_total":0.25,"hand_time_lower_bound_min":0.312772840261459,"jitter_filter_tau":0.08,"jitter_rms":0.167749707994464,"jitter_scope":"high_pass_proxy_including_motion_harmonics_not_proof_of_solver_chatter","minimum_reach_distance":0.636597335338593,"mode":"roll","moment_work":-3.85504130917834,"pendulum_peak":0.325141451307609,"pendulum_peaks":[0.325141451307609,0.262661657906373,0.209226277024844,0.166461388469716,0.132389796772793,0.105305825626123],"pendulum_periods":[1.18333333333333,1.16666666666667,1.16666666666667,1.15,1.15],"posture_acceleration_peak":0.0,"posture_paused_time":0.0,"posture_rate_peak":0.0,"retained":true,"saturation_time":0.0,"support_twist_rms":0.0,"swing_phases":{"BRAKING":0,"NEUTRAL":360,"PUMPING":0},"swing_work":0.0,"third_to_first_peak":0.643493089495069,"tilt_rms":0.413790932411848,"torque_slew_peak":17.8318852186203,"travel_speed_peak":0.944898545742035,"twist_rms":0.014907046171052,"variant":0}
+
+PASS finite physical grip establishes test anchor
+
+PASS P0 roll_policy_b preserves attachment and unchanged effort caps
+
+PASS P0 roll_policy_b material heading transport obeys2.5rad/s target rate
+
+POSTURE STUDY {"arm_work":18.3891814241108,"assist_peak":20.0,"dual":false,"first_window":0.7,"force_peak":152.275756835938,"frame_rate_peak":0.0,"free_window_longest":0.566666666666667,"free_window_total":3.86666666666666,"hand_time_lower_bound_min":0.259552538394928,"jitter_filter_tau":0.08,"jitter_rms":0.121943164870132,"jitter_scope":"high_pass_proxy_including_motion_harmonics_not_proof_of_solver_chatter","minimum_reach_distance":0.423864454030991,"mode":"roll_policy_b","moment_work":-4.49239814045528,"pendulum_peak":0.386125983471368,"pendulum_peaks":[0.325137532907505,0.386125983471368,0.0635886067218678,0.165303390548271,0.157527319753169,0.0990629275610761],"pendulum_periods":[1.33333333333333,1.28333333333333,0.816666666666666,0.6,1.38333333333333],"posture_acceleration_peak":0.0,"posture_paused_time":0.0,"posture_rate_peak":0.0,"retained":true,"saturation_time":0.0,"support_twist_rms":0.0,"swing_phases":{"BRAKING":0,"NEUTRAL":360,"PUMPING":0},"swing_work":0.0000000264578905747233,"third_to_first_peak":0.195574488596361,"tilt_rms":0.316016020983147,"torque_slew_peak":103.983700275421,"travel_speed_peak":0.87338250875473,"twist_rms":0.013698776670288,"variant":0}
+
+PASS finite physical grip establishes test anchor
+
+PASS P0 pump preserves attachment and unchanged effort caps
+
+PASS P0 pump material heading transport obeys2.5rad/s target rate
+
+POSTURE STUDY {"arm_work":-6.49214989182849,"assist_peak":19.0039024353027,"dual":false,"first_window":-1.0,"force_peak":151.479507446289,"frame_rate_peak":0.0,"free_window_longest":0.0,"free_window_total":0.0,"hand_time_lower_bound_min":-1.0,"jitter_filter_tau":0.08,"jitter_rms":0.174725497151066,"jitter_scope":"high_pass_proxy_including_motion_harmonics_not_proof_of_solver_chatter","minimum_reach_distance":0.714986503124237,"mode":"pump","moment_work":5.9361807797725,"pendulum_peak":0.215962848083582,"pendulum_peaks":[0.162440059451456,0.215962848083582,0.124470402371479,0.0282411606454293,0.0873489195745009,0.146764910827659,0.120393162854928,0.0731990967678381,0.0827112327424413,0.114765944738891],"pendulum_periods":[0.966666666666667,0.7,0.55,0.483333333333333,0.65,0.666666666666667,0.583333333333334,0.55,0.6],"posture_acceleration_peak":0.0,"posture_paused_time":0.0,"posture_rate_peak":0.0,"retained":true,"saturation_time":0.0,"support_twist_rms":0.0,"swing_phases":{"BRAKING":127,"NEUTRAL":0,"PUMPING":233},"swing_work":8.44924906585366,"third_to_first_peak":0.766254351246875,"tilt_rms":0.368210644583082,"torque_slew_peak":331.761016845703,"travel_speed_peak":0.851825416088104,"twist_rms":0.012466079350853,"variant":0}
+
+PASS finite physical grip establishes test anchor
+
+PASS P0 brake preserves attachment and unchanged effort caps
+
+PASS P0 brake material heading transport obeys2.5rad/s target rate
+
+POSTURE STUDY {"arm_work":-0.248942063611078,"assist_peak":16.9054279327393,"dual":false,"first_window":-1.0,"force_peak":129.503265380859,"frame_rate_peak":0.0,"free_window_longest":0.0,"free_window_total":0.0,"hand_time_lower_bound_min":-1.0,"jitter_filter_tau":0.08,"jitter_rms":0.0686937303276867,"jitter_scope":"high_pass_proxy_including_motion_harmonics_not_proof_of_solver_chatter","minimum_reach_distance":0.766540884971619,"mode":"brake","moment_work":-2.43394317332714,"pendulum_peak":0.162440059451456,"pendulum_peaks":[0.162440059451456,0.103445364591205,0.0641628747588819,0.0343830739778636],"pendulum_periods":[1.5,1.46666666666667,1.5],"posture_acceleration_peak":0.0,"posture_paused_time":0.0,"posture_rate_peak":0.0,"retained":true,"saturation_time":0.0,"support_twist_rms":0.0,"swing_phases":{"BRAKING":256,"NEUTRAL":89,"PUMPING":15},"swing_work":-2.19337534287136,"third_to_first_peak":0.394994159541394,"tilt_rms":0.431883904717799,"torque_slew_peak":292.56817817688,"travel_speed_peak":0.290007144212723,"twist_rms":0.0101727075064685,"variant":0}
+
+PASS finite physical grip establishes test anchor
+
+PASS closed moving support keeps paired linear/angular momentum P0 moving
+
+PASS P0 moving preserves attachment and unchanged effort caps
+
+PASS P0 moving material heading transport obeys2.5rad/s target rate
+
+POSTURE STUDY {"angular_momentum_delta":0.0000310493887809571,"arm_work":-0.0000308314780644044,"assist_peak":0.00673360889777541,"dual":false,"first_window":0.0,"force_peak":0.18622650206089,"frame_rate_peak":0.0,"free_window_longest":2.99999999999999,"free_window_total":2.99999999999999,"hand_time_lower_bound_min":0.29715684056282,"jitter_filter_tau":0.08,"jitter_rms":0.00067776691537588,"jitter_scope":"high_pass_proxy_including_motion_harmonics_not_proof_of_solver_chatter","linear_momentum_delta":0.00000381765175916371,"minimum_reach_distance":0.57315856218338,"mode":"moving","moment_work":-0.00622670352490989,"pendulum_peak":0.199017054664019,"pendulum_peaks":[0.199017054664019],"pendulum_periods":[],"posture_acceleration_peak":0.0,"posture_paused_time":0.0,"posture_rate_peak":0.0,"retained":true,"saturation_time":0.0,"support_rotation":"(0.000141, 2.099144, -0.000037)","support_twist_rms":1.33389379130454,"swing_phases":{"BRAKING":0,"NEUTRAL":180,"PUMPING":0},"swing_work":0.0,"tilt_rms":0.0200606217700812,"torque_slew_peak":0.00960381963523105,"travel_speed_peak":0.0233950186520815,"twist_controller":{},"twist_rms":0.000232029853744934,"variant":0}
+
+PASS finite physical grip establishes test anchor
+
+PASS finite physical grip establishes test anchor
+
+PASS closed moving support keeps paired linear/angular momentum P0 transitions
+
+PASS P0 transitions preserves attachment and unchanged effort caps
+
+PASS P0 transitions material heading transport obeys2.5rad/s target rate
+
+POSTURE STUDY {"angular_momentum_delta":0.0000686712010065094,"arm_work":-0.00859153855368883,"assist_peak":0.0287117138504982,"dual":true,"first_window":-1.0,"force_peak":2.78124499320984,"frame_rate_peak":0.0,"free_window_longest":0.0,"free_window_total":0.0,"hand_time_lower_bound_min":-1.0,"jitter_filter_tau":0.08,"jitter_rms":0.00463671663942778,"jitter_scope":"high_pass_proxy_including_motion_harmonics_not_proof_of_solver_chatter","linear_momentum_delta":0.00000477470030091354,"minimum_reach_distance":0.442320168018341,"mode":"transitions","moment_work":0.0352854542398262,"pendulum_peak":0.363016616447523,"pendulum_peaks":[0.0703193574628885,0.100157973157269],"pendulum_periods":[0.983333333333333],"posture_acceleration_peak":0.0,"posture_paused_time":0.0,"posture_rate_peak":0.0,"retained":true,"saturation_time":0.0,"support_rotation":"(0.000931, 2.096651, 0.00564)","support_twist_rms":1.33124062256319,"swing_phases":{"BRAKING":0,"NEUTRAL":180,"PUMPING":0},"swing_work":0.0,"tilt_rms":0.0475444004426136,"torque_slew_peak":0.148005383089185,"travel_speed_peak":0.112882405519485,"twist_controller":{},"twist_rms":0.00105354283181003,"variant":0}
+
+PASS finite physical grip establishes test anchor
+
+PASS P1 neutral preserves attachment and unchanged effort caps
+
+PASS P1 neutral material heading transport obeys2.5rad/s target rate
+
+POSTURE STUDY {"arm_work":-0.614597143114468,"assist_peak":2.00989246368408,"dual":false,"first_window":-1.0,"force_peak":129.503265380859,"frame_rate_peak":0.0,"free_window_longest":0.0,"free_window_total":0.0,"hand_time_lower_bound_min":-1.0,"jitter_filter_tau":0.08,"jitter_rms":0.101240262901047,"jitter_scope":"high_pass_proxy_including_motion_harmonics_not_proof_of_solver_chatter","minimum_reach_distance":0.696775555610657,"mode":"neutral","moment_work":-1.14859701338573,"pendulum_peak":0.16244116510325,"pendulum_peaks":[0.16244116510325,0.132962920745523,0.106956694400841,0.0856920967426627,0.0684101968281464,0.054558949915806],"pendulum_periods":[1.16666666666667,1.18333333333333,1.15,1.16666666666667,1.15],"posture_acceleration_peak":0.0,"posture_paused_time":0.0,"posture_rate_peak":0.0,"retained":true,"saturation_time":0.0,"support_twist_rms":0.0,"swing_phases":{"BRAKING":0,"NEUTRAL":360,"PUMPING":0},"swing_work":0.0,"third_to_first_peak":0.658433435470977,"tilt_rms":0.372618553812613,"torque_slew_peak":12.3003557324409,"travel_speed_peak":0.519763469696045,"twist_rms":0.0110127696006706,"variant":1}
+
+PASS finite physical grip establishes test anchor
+
+PASS P1 roll preserves attachment and unchanged effort caps
+
+PASS P1 roll material heading transport obeys2.5rad/s target rate
+
+POSTURE STUDY {"arm_work":-2.53191180669722,"assist_peak":3.03130054473877,"dual":false,"first_window":1.25,"force_peak":141.136459350586,"frame_rate_peak":0.0,"free_window_longest":0.166666666666667,"free_window_total":0.25,"hand_time_lower_bound_min":0.312772840261459,"jitter_filter_tau":0.08,"jitter_rms":0.167749707994464,"jitter_scope":"high_pass_proxy_including_motion_harmonics_not_proof_of_solver_chatter","minimum_reach_distance":0.636597335338593,"mode":"roll","moment_work":-3.85504130917834,"pendulum_peak":0.325141451307609,"pendulum_peaks":[0.325141451307609,0.262661657906373,0.209226277024844,0.166461388469716,0.132389796772793,0.105305825626123],"pendulum_periods":[1.18333333333333,1.16666666666667,1.16666666666667,1.15,1.15],"posture_acceleration_peak":0.0,"posture_paused_time":0.0,"posture_rate_peak":0.0,"retained":true,"saturation_time":0.0,"support_twist_rms":0.0,"swing_phases":{"BRAKING":0,"NEUTRAL":360,"PUMPING":0},"swing_work":0.0,"third_to_first_peak":0.643493089495069,"tilt_rms":0.413790932411848,"torque_slew_peak":17.8318852186203,"travel_speed_peak":0.944898545742035,"twist_rms":0.014907046171052,"variant":1}
+
+PASS finite physical grip establishes test anchor
+
+PASS P1 roll_policy_b preserves attachment and unchanged effort caps
+
+PASS P1 roll_policy_b material heading transport obeys2.5rad/s target rate
+
+POSTURE STUDY {"arm_work":18.3891814241108,"assist_peak":20.0,"dual":false,"first_window":0.7,"force_peak":152.275756835938,"frame_rate_peak":0.0,"free_window_longest":0.566666666666667,"free_window_total":3.86666666666666,"hand_time_lower_bound_min":0.259552538394928,"jitter_filter_tau":0.08,"jitter_rms":0.121943164870132,"jitter_scope":"high_pass_proxy_including_motion_harmonics_not_proof_of_solver_chatter","minimum_reach_distance":0.423864454030991,"mode":"roll_policy_b","moment_work":-4.49239814045528,"pendulum_peak":0.386125983471368,"pendulum_peaks":[0.325137532907505,0.386125983471368,0.0635886067218678,0.165303390548271,0.157527319753169,0.0990629275610761],"pendulum_periods":[1.33333333333333,1.28333333333333,0.816666666666666,0.6,1.38333333333333],"posture_acceleration_peak":0.0,"posture_paused_time":0.0,"posture_rate_peak":0.0,"retained":true,"saturation_time":0.0,"support_twist_rms":0.0,"swing_phases":{"BRAKING":0,"NEUTRAL":360,"PUMPING":0},"swing_work":0.0000000264578905747233,"third_to_first_peak":0.195574488596361,"tilt_rms":0.316016020983147,"torque_slew_peak":103.983700275421,"travel_speed_peak":0.87338250875473,"twist_rms":0.013698776670288,"variant":1}
+
+PASS finite physical grip establishes test anchor
+
+PASS P1 pump preserves attachment and unchanged effort caps
+
+PASS P1 pump material heading transport obeys2.5rad/s target rate
+
+POSTURE STUDY {"arm_work":-6.49214989182849,"assist_peak":19.0039024353027,"dual":false,"first_window":-1.0,"force_peak":151.479507446289,"frame_rate_peak":0.0,"free_window_longest":0.0,"free_window_total":0.0,"hand_time_lower_bound_min":-1.0,"jitter_filter_tau":0.08,"jitter_rms":0.174725497151066,"jitter_scope":"high_pass_proxy_including_motion_harmonics_not_proof_of_solver_chatter","minimum_reach_distance":0.714986503124237,"mode":"pump","moment_work":5.9361807797725,"pendulum_peak":0.215962848083582,"pendulum_peaks":[0.162440059451456,0.215962848083582,0.124470402371479,0.0282411606454293,0.0873489195745009,0.146764910827659,0.120393162854928,0.0731990967678381,0.0827112327424413,0.114765944738891],"pendulum_periods":[0.966666666666667,0.7,0.55,0.483333333333333,0.65,0.666666666666667,0.583333333333334,0.55,0.6],"posture_acceleration_peak":0.0,"posture_paused_time":0.0,"posture_rate_peak":0.0,"retained":true,"saturation_time":0.0,"support_twist_rms":0.0,"swing_phases":{"BRAKING":127,"NEUTRAL":0,"PUMPING":233},"swing_work":8.44924906585366,"third_to_first_peak":0.766254351246875,"tilt_rms":0.368210644583082,"torque_slew_peak":331.761016845703,"travel_speed_peak":0.851825416088104,"twist_rms":0.012466079350853,"variant":1}
+
+PASS finite physical grip establishes test anchor
+
+PASS P1 brake preserves attachment and unchanged effort caps
+
+PASS P1 brake material heading transport obeys2.5rad/s target rate
+
+POSTURE STUDY {"arm_work":-0.248942063611078,"assist_peak":16.9054279327393,"dual":false,"first_window":-1.0,"force_peak":129.503265380859,"frame_rate_peak":0.0,"free_window_longest":0.0,"free_window_total":0.0,"hand_time_lower_bound_min":-1.0,"jitter_filter_tau":0.08,"jitter_rms":0.0686937303276867,"jitter_scope":"high_pass_proxy_including_motion_harmonics_not_proof_of_solver_chatter","minimum_reach_distance":0.766540884971619,"mode":"brake","moment_work":-2.43394317332714,"pendulum_peak":0.162440059451456,"pendulum_peaks":[0.162440059451456,0.103445364591205,0.0641628747588819,0.0343830739778636],"pendulum_periods":[1.5,1.46666666666667,1.5],"posture_acceleration_peak":0.0,"posture_paused_time":0.0,"posture_rate_peak":0.0,"retained":true,"saturation_time":0.0,"support_twist_rms":0.0,"swing_phases":{"BRAKING":256,"NEUTRAL":89,"PUMPING":15},"swing_work":-2.19337534287136,"third_to_first_peak":0.394994159541394,"tilt_rms":0.431883904717799,"torque_slew_peak":292.56817817688,"travel_speed_peak":0.290007144212723,"twist_rms":0.0101727075064685,"variant":1}
+
+PASS finite physical grip establishes test anchor
+
+PASS closed moving support keeps paired linear/angular momentum P1 moving
+
+PASS P1 moving preserves attachment and unchanged effort caps
+
+PASS P1 moving material heading transport obeys2.5rad/s target rate
+
+POSTURE STUDY {"angular_momentum_delta":0.000236582127399743,"arm_work":-0.0000815099555135627,"assist_peak":3.517169713974,"dual":false,"first_window":0.0,"force_peak":0.598985254764557,"frame_rate_peak":0.652462653815746,"free_window_longest":2.99999999999999,"free_window_total":2.99999999999999,"hand_time_lower_bound_min":0.290355026721954,"jitter_filter_tau":0.08,"jitter_rms":0.0424514391876982,"jitter_scope":"high_pass_proxy_including_motion_harmonics_not_proof_of_solver_chatter","linear_momentum_delta":0.00000381516292691231,"minimum_reach_distance":0.575714528560638,"mode":"moving","moment_work":-0.664395340559228,"pendulum_peak":0.199017054664019,"pendulum_peaks":[0.199017054664019],"pendulum_periods":[],"posture_acceleration_peak":0.0,"posture_paused_time":0.0,"posture_rate_peak":0.0,"retained":true,"saturation_time":0.0,"support_rotation":"(0.007718, 1.836594, -0.003553)","support_twist_rms":0.120926042884557,"swing_phases":{"BRAKING":0,"NEUTRAL":180,"PUMPING":0},"swing_work":0.0,"tilt_rms":0.0287969622490278,"torque_slew_peak":31.4865875244141,"travel_speed_peak":0.0387706831097603,"twist_controller":{"active":true,"authority":0.997252047225707,"axial_error":0.036924559623003,"axial_relative_speed":-0.0845876857638359,"baseline_twist":"(-0.292335, -29.2729, 1.738452)","blend":1.0,"frame_tracking_error":0.0571970865130425,"last_material_rotation":"(0.000013, 0.010316, -0.000067)","material_target_right":"(-0.252746, -0.003583, -0.967526)","observed_rotation_total":1.82632064539939,"reference_right":"(-0.197023, -0.003739, -0.980392)","refined_twist":"(0.008396, 0.840712, -0.049928)","requested_correction":"(0.300731, 30.11361, -1.788381)","source":"bounded_material_frame_and_support_relative_axial_rate","support_spin":"(0.000808, 0.61901, -0.003995)","transitioning":false},"twist_rms":1.01760059994756,"variant":1}
+
+PASS finite physical grip establishes test anchor
+
+PASS finite physical grip establishes test anchor
+
+PASS closed moving support keeps paired linear/angular momentum P1 transitions
+
+PASS P1 transitions preserves attachment and unchanged effort caps
+
+PASS P1 transitions material heading transport obeys2.5rad/s target rate
+
+POSTURE STUDY {"angular_momentum_delta":0.000137360460939817,"arm_work":-0.00348044121412319,"assist_peak":3.47834372520447,"dual":true,"first_window":-1.0,"force_peak":2.70327115058899,"frame_rate_peak":0.652181189507246,"free_window_longest":0.0,"free_window_total":0.0,"hand_time_lower_bound_min":-1.0,"jitter_filter_tau":0.08,"jitter_rms":0.042220233878232,"jitter_scope":"high_pass_proxy_including_motion_harmonics_not_proof_of_solver_chatter","linear_momentum_delta":0.00000286669251181593,"minimum_reach_distance":0.565067231655121,"mode":"transitions","moment_work":-0.650086431861079,"pendulum_peak":0.332780519782652,"pendulum_peaks":[0.0703193574628885,0.100371151740578],"pendulum_periods":[0.983333333333333],"posture_acceleration_peak":0.0,"posture_paused_time":0.0,"posture_rate_peak":0.0,"retained":true,"saturation_time":0.0,"support_rotation":"(0.011421, 1.83835, -0.007173)","support_twist_rms":0.119550482602252,"swing_phases":{"BRAKING":0,"NEUTRAL":180,"PUMPING":0},"swing_work":0.0,"tilt_rms":0.0549428500820437,"torque_slew_peak":31.4865875244141,"travel_speed_peak":0.0505373887717724,"twist_controller":{"active":true,"authority":0.999399721837015,"axial_error":0.0342299342155457,"axial_relative_speed":-0.0835326835513115,"baseline_twist":"(1.19888, -29.32895, -0.755255)","blend":1.0,"frame_tracking_error":0.0572577752172947,"last_material_rotation":"(0.000021, 0.010331, -0.000078)","material_target_right":"(-0.254478, -0.007213, -0.967052)","observed_rotation_total":1.82811129745096,"reference_right":"(-0.198719, -0.007408, -0.980029)","refined_twist":"(-0.032574, 0.796868, 0.02052)","requested_correction":"(-1.231454, 30.12581, 0.775775)","source":"bounded_material_frame_and_support_relative_axial_rate","support_spin":"(0.001238, 0.619856, -0.004682)","transitioning":false},"twist_rms":1.01950367323631,"variant":1}
+
+PASS finite physical grip establishes test anchor
+
+PASS P2 neutral preserves attachment and unchanged effort caps
+
+PASS P2 neutral material heading transport obeys2.5rad/s target rate
+
+PASS P2 neutral posture target obeysangularrate/acceleration limits
+
+POSTURE STUDY {"arm_work":-0.700563764836019,"assist_peak":19.9617042541504,"dual":false,"first_window":1.45,"force_peak":129.509902954102,"frame_rate_peak":0.0,"free_window_longest":0.316666666666667,"free_window_total":0.433333333333333,"hand_time_lower_bound_min":0.314236253499985,"jitter_filter_tau":0.08,"jitter_rms":0.0691653738242833,"jitter_scope":"high_pass_proxy_including_motion_harmonics_not_proof_of_solver_chatter","last_posture":{"active":true,"actual_target_step":0.0,"advance":true,"authority":0.999896315490307,"blend":1.0,"feasible":true,"geometry_margin":0.108957800865173,"load_authority":0.999896315490307,"manual_authority":1.0,"preferred_up":"(0.0, 1.0, 0.0)","reason":"support_loaded_preferred_tilt","requested_torque":"(0.999321, -0.000273, 11.44466)","saturated":false,"slipping":false,"source":"current_material_anchors_load_COM_and_anatomical_shoulders_only","target_acceleration":"(0.0, 0.0, 0.0)","target_rate":"(0.0, 0.0, 0.0)","target_up":"(0.000932, 1.0, 0.000044)","tilt_error":0.17979821562767},"minimum_reach_distance":0.644262313842773,"mode":"neutral","moment_work":-0.158161731561024,"pendulum_peak":0.266623087592192,"pendulum_peaks":[0.162441902200302,0.266623087592192,0.0420094683443211,0.138330950684876,0.0786782941421635],"pendulum_periods":[1.51666666666667,1.26666666666667,1.16666666666667,1.23333333333333],"posture_acceleration_peak":3.0000011920929,"posture_paused_time":0.0,"posture_rate_peak":0.800000071525574,"retained":true,"saturation_time":0.0,"support_twist_rms":0.0,"swing_phases":{"BRAKING":0,"NEUTRAL":360,"PUMPING":0},"swing_work":0.0,"third_to_first_peak":0.258612265525679,"tilt_rms":0.266442161538508,"torque_slew_peak":66.39319896698,"travel_speed_peak":0.646475911140442,"twist_rms":0.0109771675073527,"variant":2}
+
+PASS finite physical grip establishes test anchor
+
+PASS P2 roll preserves attachment and unchanged effort caps
+
+PASS P2 roll material heading transport obeys2.5rad/s target rate
+
+PASS P2 roll posture target obeysangularrate/acceleration limits
+
+POSTURE STUDY {"arm_work":-2.50929220255154,"assist_peak":20.0,"dual":false,"first_window":-1.0,"force_peak":141.136459350586,"frame_rate_peak":0.0,"free_window_longest":0.0,"free_window_total":0.0,"hand_time_lower_bound_min":-1.0,"jitter_filter_tau":0.08,"jitter_rms":0.139169458415101,"jitter_scope":"high_pass_proxy_including_motion_harmonics_not_proof_of_solver_chatter","last_posture":{"active":true,"actual_target_step":0.0,"advance":true,"authority":0.99919740845557,"blend":1.0,"feasible":true,"geometry_margin":0.114727828502655,"load_authority":0.99919740845557,"manual_authority":1.0,"preferred_up":"(0.0, 1.0, 0.0)","reason":"support_loaded_preferred_tilt","requested_torque":"(0.699321, -0.000159, 8.487821)","saturated":false,"slipping":false,"source":"current_material_anchors_load_COM_and_anatomical_shoulders_only","target_acceleration":"(0.0, 0.0, 0.0)","target_rate":"(0.0, 0.0, 0.0)","target_up":"(0.000574, 1.0, 0.000024)","tilt_error":0.178853720426559},"minimum_reach_distance":0.658109068870544,"mode":"roll","moment_work":-4.86941724426967,"pendulum_peak":0.325141451307609,"pendulum_peaks":[0.325141451307609,0.283846548066804,0.0360588046183936,0.171552837143117,0.0813318729935368],"pendulum_periods":[1.16666666666667,1.16666666666667,1.2,1.21666666666667],"posture_acceleration_peak":3.00000071525574,"posture_paused_time":0.516666666666667,"posture_rate_peak":0.800000071525574,"retained":true,"saturation_time":0.0,"support_twist_rms":0.0,"swing_phases":{"BRAKING":0,"NEUTRAL":360,"PUMPING":0},"swing_work":0.0000000310080772910245,"third_to_first_peak":0.11090189969128,"tilt_rms":0.302182034992666,"torque_slew_peak":95.0442838668823,"travel_speed_peak":0.961986362934113,"twist_rms":0.0132645695508147,"variant":2}
+
+PASS finite physical grip establishes test anchor
+
+PASS P2 roll_policy_b preserves attachment and unchanged effort caps
+
+PASS P2 roll_policy_b material heading transport obeys2.5rad/s target rate
+
+PASS P2 roll_policy_b posture target obeysangularrate/acceleration limits
+
+POSTURE STUDY {"arm_work":19.1873699469988,"assist_peak":16.41086769104,"dual":false,"first_window":0.716666666666667,"force_peak":152.496063232422,"frame_rate_peak":0.0,"free_window_longest":0.55,"free_window_total":4.18333333333332,"hand_time_lower_bound_min":0.271602898836136,"jitter_filter_tau":0.08,"jitter_rms":0.105892625147081,"jitter_scope":"high_pass_proxy_including_motion_harmonics_not_proof_of_solver_chatter","last_posture":{"active":true,"actual_target_step":0.0,"advance":true,"authority":0.999959569399049,"blend":1.0,"feasible":true,"geometry_margin":0.281108621358871,"load_authority":0.999959569399049,"manual_authority":1.0,"preferred_up":"(0.0, 1.0, 0.0)","reason":"support_loaded_preferred_tilt","requested_torque":"(0.860141, -0.00016, 10.26688)","saturated":false,"slipping":false,"source":"current_material_anchors_load_COM_and_anatomical_shoulders_only","target_acceleration":"(0.0, 0.0, 0.0)","target_rate":"(0.0, 0.0, 0.0)","target_up":"(0.000574, 1.0, 0.000024)","tilt_error":0.181444942951202},"minimum_reach_distance":0.470970749855042,"mode":"roll_policy_b","moment_work":-6.42750908851158,"pendulum_peak":0.325143317196413,"pendulum_peaks":[0.325143317196413,0.216331368165162,0.137220363226834],"pendulum_periods":[1.48333333333333,2.43333333333333],"posture_acceleration_peak":3.00000071525574,"posture_paused_time":0.266666666666667,"posture_rate_peak":0.800000071525574,"retained":true,"saturation_time":0.0,"support_twist_rms":0.0,"swing_phases":{"BRAKING":0,"NEUTRAL":360,"PUMPING":0},"swing_work":0.0,"third_to_first_peak":0.42203039696474,"tilt_rms":0.302768910051817,"torque_slew_peak":161.446967124939,"travel_speed_peak":0.634886622428894,"twist_rms":0.012798877104201,"variant":2}
+
+PASS finite physical grip establishes test anchor
+
+PASS P2 pump preserves attachment and unchanged effort caps
+
+PASS P2 pump material heading transport obeys2.5rad/s target rate
+
+PASS P2 pump posture target obeysangularrate/acceleration limits
+
+POSTURE STUDY {"arm_work":-9.87374877917269,"assist_peak":20.0000019073486,"dual":false,"first_window":-1.0,"force_peak":164.572830200195,"frame_rate_peak":0.0,"free_window_longest":0.0,"free_window_total":0.0,"hand_time_lower_bound_min":-1.0,"jitter_filter_tau":0.08,"jitter_rms":0.200707407343121,"jitter_scope":"high_pass_proxy_including_motion_harmonics_not_proof_of_solver_chatter","last_posture":{"active":true,"actual_target_step":0.0,"advance":true,"authority":1.0,"blend":1.0,"feasible":true,"geometry_margin":0.119965407848358,"load_authority":1.0,"manual_authority":0.2,"preferred_up":"(0.0, 1.0, 0.0)","reason":"support_loaded_preferred_tilt","requested_torque":"(0.083544, -0.000117, -2.658262)","saturated":false,"slipping":false,"source":"current_material_anchors_load_COM_and_anatomical_shoulders_only","target_acceleration":"(0.0, 0.0, 0.0)","target_rate":"(0.0, 0.0, 0.0)","target_up":"(0.000932, 1.0, 0.000044)","tilt_error":0.411878138780594},"minimum_reach_distance":0.704478681087494,"mode":"pump","moment_work":9.88181920492401,"pendulum_peak":0.230740150051297,"pendulum_peaks":[0.162440059451456,0.230740150051297,0.135086626012824,0.0513564906281902,0.0971570914508666,0.163711423388918,0.130222381203159,0.0977580178895955,0.0978788597424714,0.13421148801744],"pendulum_periods":[0.983333333333333,0.7,0.55,0.5,0.633333333333333,0.65,0.583333333333334,0.566666666666666,0.616666666666666],"posture_acceleration_peak":3.0000011920929,"posture_paused_time":0.0,"posture_rate_peak":0.800000071525574,"retained":true,"saturation_time":0.0,"support_twist_rms":0.0,"swing_phases":{"BRAKING":113,"NEUTRAL":0,"PUMPING":247},"swing_work":12.1704088877266,"third_to_first_peak":0.831609065331536,"tilt_rms":0.363629409119214,"torque_slew_peak":313.307361602783,"travel_speed_peak":0.929243624210358,"twist_rms":0.0128919836499425,"variant":2}
+
+PASS finite physical grip establishes test anchor
+
+PASS P2 brake preserves attachment and unchanged effort caps
+
+PASS P2 brake material heading transport obeys2.5rad/s target rate
+
+PASS P2 brake posture target obeysangularrate/acceleration limits
+
+POSTURE STUDY {"arm_work":-0.260137467737271,"assist_peak":20.0,"dual":false,"first_window":-1.0,"force_peak":129.509902954102,"frame_rate_peak":0.0,"free_window_longest":0.0,"free_window_total":0.0,"hand_time_lower_bound_min":-1.0,"jitter_filter_tau":0.08,"jitter_rms":0.0683178298566597,"jitter_scope":"high_pass_proxy_including_motion_harmonics_not_proof_of_solver_chatter","last_posture":{"active":true,"actual_target_step":0.0,"advance":true,"authority":1.0,"blend":1.0,"feasible":true,"geometry_margin":0.0815815663337708,"load_authority":1.0,"manual_authority":1.0,"preferred_up":"(0.0, 1.0, 0.0)","reason":"support_loaded_preferred_tilt","requested_torque":"(0.816408, -0.000409, 8.209379)","saturated":false,"slipping":false,"source":"current_material_anchors_load_COM_and_anatomical_shoulders_only","target_acceleration":"(0.0, 0.0, 0.0)","target_rate":"(0.0, 0.0, 0.0)","target_up":"(0.000932, 1.0, 0.000044)","tilt_error":0.296004205942154},"minimum_reach_distance":0.74900221824646,"mode":"brake","moment_work":-2.36090982030146,"pendulum_peak":0.162440059451456,"pendulum_peaks":[0.162440059451456,0.0948029516568334,0.0588529682349459,0.0176561714592113,0.0262864381142587,0.0381570502943573],"pendulum_periods":[1.51666666666667,1.45,0.8,0.666666666666667,0.783333333333333],"posture_acceleration_peak":3.0000011920929,"posture_paused_time":0.0,"posture_rate_peak":0.800000071525574,"retained":true,"saturation_time":0.0,"support_twist_rms":0.0,"swing_phases":{"BRAKING":336,"NEUTRAL":5,"PUMPING":19},"swing_work":-2.37824275103485,"third_to_first_peak":0.362305754095921,"tilt_rms":0.418573994805065,"torque_slew_peak":542.108688354492,"travel_speed_peak":0.267271041870117,"twist_rms":0.0105523652368834,"variant":2}
+
+PASS finite physical grip establishes test anchor
+
+PASS closed moving support keeps paired linear/angular momentum P2 moving
+
+PASS P2 moving preserves attachment and unchanged effort caps
+
+PASS P2 moving material heading transport obeys2.5rad/s target rate
+
+PASS P2 moving posture target obeysangularrate/acceleration limits
+
+POSTURE STUDY {"angular_momentum_delta":0.000297701946692541,"arm_work":-0.000081759539655953,"assist_peak":3.51718592643738,"dual":false,"first_window":0.0,"force_peak":0.599904179573059,"frame_rate_peak":0.652462653815746,"free_window_longest":2.99999999999999,"free_window_total":2.99999999999999,"hand_time_lower_bound_min":0.290316253900528,"jitter_filter_tau":0.08,"jitter_rms":0.0424511013942292,"jitter_scope":"high_pass_proxy_including_motion_harmonics_not_proof_of_solver_chatter","last_posture":{"active":true,"actual_target_step":0.0,"advance":true,"authority":0.0,"blend":1.0,"feasible":true,"geometry_margin":0.213372740745544,"load_authority":0.0,"manual_authority":1.0,"preferred_up":"(0.0, 1.0, 0.0)","reason":"support_loaded_preferred_tilt","requested_torque":"(0.0, 0.0, 0.0)","saturated":false,"slipping":false,"source":"current_material_anchors_load_COM_and_anatomical_shoulders_only","target_acceleration":"(0.0, 0.0, 0.0)","target_rate":"(0.0, 0.0, 0.0)","target_up":"(0.0, 1.0, 0.0)","tilt_error":0.0574480816721916},"linear_momentum_delta":0.00000381581048713997,"minimum_reach_distance":0.575646817684174,"mode":"moving","moment_work":-0.664400420724996,"pendulum_peak":0.199017054664019,"pendulum_peaks":[0.199017054664019],"pendulum_periods":[],"posture_acceleration_peak":0.0,"posture_paused_time":0.0,"posture_rate_peak":0.0,"retained":true,"saturation_time":0.0,"support_rotation":"(0.007732, 1.836593, -0.003611)","support_twist_rms":0.120926000619945,"swing_phases":{"BRAKING":0,"NEUTRAL":180,"PUMPING":0},"swing_work":0.0,"tilt_rms":0.0286498809299306,"torque_slew_peak":31.4865875244141,"travel_speed_peak":0.0388153195381165,"twist_controller":{"active":true,"authority":0.997287749920801,"axial_error":0.0369227528572083,"axial_relative_speed":-0.084592267870903,"baseline_twist":"(-0.29327, -29.27331, 1.730152)","blend":1.0,"frame_tracking_error":0.0571971498429775,"last_material_rotation":"(0.000013, 0.010317, -0.000067)","material_target_right":"(-0.252746, -0.003641, -0.967526)","observed_rotation_total":1.82632010430098,"reference_right":"(-0.197022, -0.003796, -0.980392)","refined_twist":"(0.008423, 0.840741, -0.049691)","requested_correction":"(0.301692, 30.11405, -1.779842)","source":"bounded_material_frame_and_support_relative_axial_rate","support_spin":"(0.000788, 0.619009, -0.004009)","transitioning":false},"twist_rms":1.01759726887499,"variant":2}
+
+PASS finite physical grip establishes test anchor
+
+PASS finite physical grip establishes test anchor
+
+PASS closed moving support keeps paired linear/angular momentum P2 transitions
+
+PASS P2 transitions preserves attachment and unchanged effort caps
+
+PASS P2 transitions material heading transport obeys2.5rad/s target rate
+
+PASS P2 transitions posture target obeysangularrate/acceleration limits
+
+POSTURE STUDY {"angular_momentum_delta":0.000144962861668319,"arm_work":-0.00347246737309964,"assist_peak":3.47832942008972,"dual":true,"first_window":-1.0,"force_peak":2.70381903648376,"frame_rate_peak":0.652180183678865,"free_window_longest":0.0,"free_window_total":0.0,"hand_time_lower_bound_min":-1.0,"jitter_filter_tau":0.08,"jitter_rms":0.0422206374180354,"jitter_scope":"high_pass_proxy_including_motion_harmonics_not_proof_of_solver_chatter","last_posture":{"active":true,"actual_target_step":0.0,"advance":true,"authority":0.0,"blend":1.0,"feasible":true,"geometry_margin":0.217216197252274,"load_authority":0.0,"manual_authority":1.0,"preferred_up":"(0.0, 1.0, 0.0)","reason":"support_loaded_preferred_tilt","requested_torque":"(0.0, 0.0, 0.0)","saturated":false,"slipping":false,"source":"current_material_anchors_load_COM_and_anatomical_shoulders_only","target_acceleration":"(0.0, 0.0, 0.0)","target_rate":"(0.0, 0.0, 0.0)","target_up":"(0.0, 1.0, 0.0)","tilt_error":0.0753819495439529},"linear_momentum_delta":0.000005724839411414,"minimum_reach_distance":0.565053164958954,"mode":"transitions","moment_work":-0.650153547234368,"pendulum_peak":0.332806245695562,"pendulum_peaks":[0.0703193574628885,0.100371151740578],"pendulum_periods":[0.983333333333333],"posture_acceleration_peak":0.0,"posture_paused_time":0.0,"posture_rate_peak":0.0,"retained":true,"saturation_time":0.0,"support_rotation":"(0.011299, 1.838351, -0.007182)","support_twist_rms":0.119550803846182,"swing_phases":{"BRAKING":0,"NEUTRAL":180,"PUMPING":0},"swing_work":0.0,"tilt_rms":0.0547089970600546,"torque_slew_peak":31.4853715896606,"travel_speed_peak":0.0503757447004318,"twist_controller":{"active":true,"authority":0.999397218406941,"axial_error":0.0342479348182678,"axial_relative_speed":-0.0835506096482277,"baseline_twist":"(1.181066, -29.33061, -0.753097)","blend":1.0,"frame_tracking_error":0.0572576001286507,"last_material_rotation":"(0.00002, 0.010331, -0.000076)","material_target_right":"(-0.254479, -0.007222, -0.967051)","observed_rotation_total":1.82811180688441,"reference_right":"(-0.19872, -0.007414, -0.980028)","refined_twist":"(-0.032102, 0.797229, 0.02047)","requested_correction":"(-1.213168, 30.12784, 0.773567)","source":"bounded_material_frame_and_support_relative_axial_rate","support_spin":"(0.001229, 0.619853, -0.004576)","transitioning":false},"twist_rms":1.01949173858661,"variant":2}
+
+PASS fixed-support P1 retains P0 pendulum and free-shoulder window without changing planner
+
+PASS P1 measurably reduces actual support-relative axial twist on rotating support
+
+PASS finite physical grip establishes test anchor
+
+PASS finite physical grip establishes test anchor
+
+PASS variant and enable setters preserve exact instantaneous physical state
+
+PASS P1 activation ramps over existing bounded experimental interval
+
+PASS deactivation returns to exact baseline after explicit blend-out
+
+PASS approved P2 reports explicit separate support-posture variant
+
+PASS P2 disable blends both refinements back to baseline without retained authority
+
+PASS legacy profiles ignore experimental posture assistance
+
+PASS unsupported body receives no refinement or swing torque
+
+PASS finite physical grip establishes test anchor
+
+PASS camera/pointer-only setter traffic does not reset material posture frame or inject physical state
+
+PASS P1 finite1→2 handoff preserves surviving actuator target
+
+PASS P1 two→one release preserves exact instantaneous momentum and survivor target
+
+PASS material reference survives1→2→1 without losing valid support
+
+PASS finite physical grip establishes test anchor
+
+PASS P2 independent aim cannot write physical state or supporting-arm length
+
+PASS actual grip slip stops advancement of P2 absolute preferred attitude
+
+PASS slip fades P2 effort and brakes target without integral windup
+
+PASS finite physical grip establishes test anchor
+
+PASS observed allocator saturation stops P2 advancement under reduced adverse budget
+
+PASS finite physical grip establishes test anchor
+
+PASS finite physical grip establishes test anchor
+
+PASS two-hand diagnostic fixture has real asymmetric allocation and shoulder lever
+
+PASS swing unactuated-axis diagnostic uses exact applied allocation×blend lever, not unweighted shoulder average
+
+PASS finite physical grip establishes test anchor
+
+PASS loaded dynamic fixture actually exercises P2 grip-moment effort
+
+PASS active P2 on free dynamic support conserves complete paired force and angular momentum
+
+PASS active P2 cannot continue torque after last real support is released
+
+PASS all P0/P1 study trials retain360N20Nm150Nm
+
+POSTURE STUDY RESULTS: 110 checks, 0 failures
+
+ERROR: Failed to read the root certificate store.
+
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)

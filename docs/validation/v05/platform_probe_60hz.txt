@@ -49,21 +49,21 @@ PLATFORM PROBE {"actual_length":0.696422815322876,"attached":true,"bias":0.0,"de
 PASS shallower_bottom uses a real accessible surface and finite reach
 PASS shallower_bottom force budget preserved
 PASS fallen FREE hand0 stays outside Wall/Start at finite hand speed
-FALLEN BEFORE hand=0 friction=1.0 torso=(0.998861, 0.569521, -0.121048) shoulder=(0.685834, 0.444444, 0.159612) endpoint=(1.132494, 0.287082, 0.243467) endpoint_inside=[] real_hit={ "position": (-0.543528, 1.83, 0.012722), "normal": (0.0, -1.0, 0.0), "face_index": -1, "collider_id": 474392561114, "collider": Hold01:<StaticBody3D#474392561114>, "shape": 0, "rid": RID(691489734658) } requested=true reject=
+FALLEN BEFORE hand=0 friction=1.0 torso=(0.998861, 0.569521, -0.121048) shoulder=(0.685834, 0.444444, 0.159612) endpoint=(1.132494, 0.287082, 0.243467) endpoint_inside=[] real_hit={ "position": (-0.543528, 1.83, 0.012722), "normal": (0.0, -1.0, 0.0), "face_index": -1, "collider_id": 475600520672, "collider": Hold01:<StaticBody3D#475600520672>, "shape": 0, "rid": RID(691489734658) } requested=true reject=
 FALLEN AFTER hand=0 state=ATTACHED reason= torso_drift=0.0
 PASS fallen snapshot hand0 friction1.00 can reacquire real visible hold
 PASS fallen FREE hand1 stays outside Wall/Start at finite hand speed
-FALLEN BEFORE hand=1 friction=1.0 torso=(0.998861, 0.569521, -0.121048) shoulder=(0.712503, 0.694602, -0.428869) endpoint=(0.783029, 0.684787, -0.425) endpoint_inside=[] real_hit={ "position": (0.653685, 2.61, -0.025285), "normal": (0.0, -1.0, 0.0), "face_index": -1, "collider_id": 481204110823, "collider": Hold02:<StaticBody3D#481204110823>, "shape": 0, "rid": RID(743029342209) } requested=true reject=
+FALLEN BEFORE hand=1 friction=1.0 torso=(0.998861, 0.569521, -0.121048) shoulder=(0.712503, 0.694602, -0.428869) endpoint=(0.783029, 0.684787, -0.425) endpoint_inside=[] real_hit={ "position": (0.653685, 2.61, -0.025285), "normal": (0.0, -1.0, 0.0), "face_index": -1, "collider_id": 482445624810, "collider": Hold02:<StaticBody3D#482445624810>, "shape": 0, "rid": RID(743029342209) } requested=true reject=
 FALLEN AFTER hand=1 state=ATTACHED reason= torso_drift=0.0
 PASS fallen snapshot hand1 friction1.00 can reacquire real visible hold
 FALLEN W RECOVERY friction=1.0 y_before=0.56952059268951 y_after=1.48703873157501 state=ATTACHED force=117.219902038574
 PASS fallen RIGHT grip02 and W physically lift torso out of resting pose
 PASS fallen FREE hand0 stays outside Wall/Start at finite hand speed
-FALLEN BEFORE hand=0 friction=0.05 torso=(0.99886, 0.56952, -0.121047) shoulder=(0.685832, 0.444444, 0.159612) endpoint=(1.132493, 0.287082, 0.243467) endpoint_inside=[] real_hit={ "position": (-0.543528, 1.83, 0.012722), "normal": (0.0, -1.0, 0.0), "face_index": -1, "collider_id": 493870908897, "collider": Hold01:<StaticBody3D#493870908897>, "shape": 0, "rid": RID(777389080578) } requested=true reject=
+FALLEN BEFORE hand=0 friction=0.05 torso=(0.99886, 0.56952, -0.121047) shoulder=(0.685832, 0.444444, 0.159612) endpoint=(1.132493, 0.287082, 0.243467) endpoint_inside=[] real_hit={ "position": (-0.543528, 1.83, 0.012722), "normal": (0.0, -1.0, 0.0), "face_index": -1, "collider_id": 495145977314, "collider": Hold01:<StaticBody3D#495145977314>, "shape": 0, "rid": RID(777389080578) } requested=true reject=
 FALLEN AFTER hand=0 state=ATTACHED reason= torso_drift=0.00000401586294
 PASS fallen snapshot hand0 friction0.05 can reacquire real visible hold
 PASS fallen FREE hand1 stays outside Wall/Start at finite hand speed
-FALLEN BEFORE hand=1 friction=0.05 torso=(0.99886, 0.56952, -0.121047) shoulder=(0.712502, 0.694602, -0.428868) endpoint=(0.78303, 0.684787, -0.425) endpoint_inside=[] real_hit={ "position": (0.653685, 2.61, -0.025285), "normal": (0.0, -1.0, 0.0), "face_index": -1, "collider_id": 500682458594, "collider": Hold02:<StaticBody3D#500682458594>, "shape": 0, "rid": RID(828928688129) } requested=true reject=
+FALLEN BEFORE hand=1 friction=0.05 torso=(0.99886, 0.56952, -0.121047) shoulder=(0.712502, 0.694602, -0.428868) endpoint=(0.78303, 0.684787, -0.425) endpoint_inside=[] real_hit={ "position": (0.653685, 2.61, -0.025285), "normal": (0.0, -1.0, 0.0), "face_index": -1, "collider_id": 501991081439, "collider": Hold02:<StaticBody3D#501991081439>, "shape": 0, "rid": RID(828928688129) } requested=true reject=
 FALLEN AFTER hand=1 state=ATTACHED reason= torso_drift=0.00000906735659
 PASS fallen snapshot hand1 friction0.05 can reacquire real visible hold
 FALLEN W RECOVERY friction=0.05 y_before=0.56952047348022 y_after=1.47820603847504 state=ATTACHED force=133.163375854492

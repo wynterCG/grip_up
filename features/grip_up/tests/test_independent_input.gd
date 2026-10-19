@@ -57,6 +57,11 @@ func run() -> void:
 	motion(Vector2(1500,180),Vector2(500,-700))
 	await ticks(int(.4*hz))
 	check(app.controller.get_hand_state(0)=="ATTACHED" and app.controller.hands[0].anchor_world.distance_to(selected)<.00001,"pointer motion never retargets a reaching/attached hand")
+	aim(Vector3(-.5,1.97,0))
+	await ticks(3)
+	var pointed: Vector3=app.candidate.position
+	check(app.controller.get_shoulder_world(0).distance_to(pointed)<app.controller.get_max_reach() and app.controller.get_shoulder_world(1).distance_to(pointed)>app.controller.get_max_reach(),"marker fixture is reachable only by the already attached hand")
+	check(app.target_marker.material_override.albedo_color.is_equal_approx(Color("e66d68")),"candidate marker evaluates the free hand rather than misleading attached-hand reach")
 	var rest: float=app.controller.hands[0].rest_length
 	for position in [Vector2(100,5),Vector2(800,950),Vector2(1300,30),Vector2(1920,0),Vector2(300,900)]:
 		motion(position,Vector2(1000,-1000))
@@ -71,6 +76,9 @@ func run() -> void:
 	await ticks(int(.4*hz))
 	check(app.controller.get_hand_state(1)=="ATTACHED" and app.controller.get_hand_state(0)=="ATTACHED","right finite reach completes while preserving left material anchor")
 	check(absf(app.controller.hands[0].rest_length-rest)<.00001,"second acquisition plus aim cannot extend supporting left arm in A")
+	aim(Vector3(0,2.1,0))
+	await ticks(3)
+	check(app.target_marker.material_override.albedo_color.is_equal_approx(Color("8b9297")),"two held grips show no free hand available instead of a false catchable marker")
 	var right: float=app.controller.hands[1].rest_length
 	button(MOUSE_BUTTON_MIDDLE,true)
 	motion(app.pointer+Vector2(80,20),Vector2(80,20))

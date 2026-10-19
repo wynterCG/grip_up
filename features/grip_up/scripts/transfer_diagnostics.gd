@@ -2,6 +2,7 @@ extends RefCounted
 ## Observations only. No predictor, authorization, force application, or body writes.
 const Actuator = preload("res://features/grip_up/scripts/arm_actuator.gd")
 const MAX_EVENTS := 256
+const SWING_POWER_EPSILON := 0.01 # W; diagnostic sign deadband, never actuation.
 var _events: Array[Dictionary] = []
 var _last: Dictionary = {}
 var _attempts: Dictionary = {}
@@ -13,6 +14,7 @@ var _session := 0
 var _motion: Dictionary = {}
 var _arm_work := 0.0
 var _moment_work := 0.0
+var _swing_work := 0.0
 var _axis_unactuated := false
 var events: Array[Dictionary]:
 	get: return _events.duplicate(true)
@@ -30,6 +32,7 @@ func reset() -> void:
 	_motion.clear()
 	_arm_work = 0.0
 	_moment_work = 0.0
+	_swing_work = 0.0
 	_axis_unactuated = false
 
 func drain_events() -> Array[Dictionary]:
@@ -196,6 +199,7 @@ func sample(controller: Node, delta: float, decomposition: Dictionary) -> void:
 	var total_weight := 0.0
 	var arm_power := 0.0
 	var support_moment_power := 0.0
+	var reaction_weighted_spin := Vector3.ZERO
 	var reactions: Dictionary = {}
 	for applied in decomposition.applied:
 		var support: PhysicsBody3D = applied.support
@@ -210,6 +214,7 @@ func sample(controller: Node, delta: float, decomposition: Dictionary) -> void:
 		arm_power += Vector3(applied.force).dot(Actuator.point_velocity(controller.torso,applied.shoulder)-Vector3(applied.point_velocity))
 		var torque: Vector3 = -Vector3(decomposition.assist)*float(applied.torque_weight)
 		support_moment_power += torque.dot(spin)
+		reaction_weighted_spin += spin*float(applied.torque_weight)
 		var key: int = support.get_instance_id()
 		if not reactions.has(key):
 			reactions[key] = {"support_id":key,"name":str(support.name),"dynamic":support is RigidBody3D,"force":Vector3.ZERO,"torque":Vector3.ZERO}
@@ -230,8 +235,12 @@ func sample(controller: Node, delta: float, decomposition: Dictionary) -> void:
 	var reference_right: Vector3 = controller._view_right.slide(spine)
 	var twist_valid := current_right.length_squared()>.000001 and reference_right.length_squared()>.000001
 	var moment_power: float = Vector3(decomposition.assist).dot(controller.torso.angular_velocity)+support_moment_power
+	var swing_relative_spin: Vector3 = controller.torso.angular_velocity-reaction_weighted_spin
+	var swing_power: float = Vector3(decomposition.swing).dot(swing_relative_spin)
+	var swing_phase := "PUMPING" if swing_power>SWING_POWER_EPSILON else "BRAKING" if swing_power<-SWING_POWER_EPSILON else "NEUTRAL"
 	_arm_work += arm_power*delta
 	_moment_work += moment_power*delta
+	_swing_work += swing_power*delta
 	var rotational_energy := 0.0
 	var inverse_inertia: Basis = controller.torso.get_inverse_inertia_tensor()
 	if absf(inverse_inertia.determinant())>.000000001:
@@ -245,6 +254,8 @@ func sample(controller: Node, delta: float, decomposition: Dictionary) -> void:
 		"trunk_twist_rate":relative_spin.dot(spine),"trunk_tilt":acos(clampf(controller.torso.global_basis.y.normalized().dot(Vector3.UP),-1.0,1.0)),
 		"relative_translation_energy":.5*controller.torso.mass*relative_velocity.length_squared(),"relative_rotation_energy":rotational_energy,
 		"arm_power":arm_power,"grip_moment_power":moment_power,"estimated_arm_work":_arm_work,"estimated_grip_moment_work":_moment_work,
+		"swing_power":swing_power,"estimated_swing_work":_swing_work,"swing_phase":swing_phase,"swing_phase_epsilon_w":SWING_POWER_EPSILON,
+		"swing_relative_spin":swing_relative_spin,"swing_work_scope":"incremental_swing_after_common_cap; actual_blended_reaction_weighted_support_spin",
 		"energy_scope":"body_relative_to_weighted_support; excludes gravity/contact/joint/drag work and support kinetic energy",
 		"budget":budget,"support_reactions":reactions}
 	var request: Vector3 = controller._swing_requested if controller.supported_wasd_swing_enabled else Vector3.ZERO

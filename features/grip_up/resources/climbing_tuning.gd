@@ -3,6 +3,9 @@ extends Resource
 @export var transfer_twist_blend_time: float = 0.20
 @export var transfer_twist_frame_max_rate: float = 2.5
 @export var transfer_twist_frame_response: float = 0.10
+@export var transfer_posture_blend_time: float = 0.25
+@export var transfer_posture_max_rate: float = 0.80
+@export var transfer_posture_max_acceleration: float = 3.0
 @export_group("v0.4 independent aim posture experiment")
 @export var posture_comfort_extension_ratio: float = 0.30
 @export var posture_body_surface_clearance: float = 0.24
