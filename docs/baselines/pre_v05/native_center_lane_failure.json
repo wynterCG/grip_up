@@ -1,0 +1,278 @@
+{
+  "complete": true,
+  "elapsed": 17.0416666666663,
+  "events": [
+    {
+      "caught": true,
+      "index": 0,
+      "position": "(0.000098, 1.166693, 0.400116)",
+      "posture": {
+        "accelerations": {
+          "0": 0.0
+        },
+        "actual_movement": "(0.0, 0.0, 0.0)",
+        "allocations": {
+          "0": 1.0
+        },
+        "body_error": "(0.0, 0.179858, -0.160116)",
+        "braking_advance": 0.0,
+        "desired_posture": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.000098, 1.346552, 0.24)]",
+        "elapsed": 0.00833333333333333,
+        "event": 1,
+        "length_errors": {
+          "0": 0.237194865942001
+        },
+        "planned_lengths": {
+          "0": 0.312000066041946
+        },
+        "rates": {
+          "0": 0.0
+        },
+        "reason": "support_acquisition",
+        "requested_lengths": {
+          "0": 0.549194931983948
+        },
+        "state": "ACTIVE"
+      },
+      "rejection": ""
+    },
+    {
+      "caught": true,
+      "index": 1,
+      "position": "(-0.187217, 1.201653, 0.220471)",
+      "posture": {
+        "accelerations": {
+          "0": -1.0,
+          "1": 0.0
+        },
+        "actual_movement": "(0.0, 0.0, 0.0)",
+        "allocations": {
+          "0": 0.5,
+          "1": 0.5
+        },
+        "body_error": "(0.186309, 0.224906, 0.019506)",
+        "braking_advance": 0.0,
+        "desired_posture": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.000098, 1.426551, 0.24)]",
+        "elapsed": 0.00833333333333333,
+        "event": 2,
+        "length_errors": {
+          "0": 0.0671939551830292,
+          "1": 0.274398654699326
+        },
+        "planned_lengths": {
+          "0": 0.273949593305588,
+          "1": 0.363922625780106
+        },
+        "rates": {
+          "0": -0.00836548433650164,
+          "1": 0.0
+        },
+        "reason": "support_acquisition",
+        "requested_lengths": {
+          "0": 0.311965076411541,
+          "1": 0.62
+        },
+        "state": "ACTIVE"
+      },
+      "rejection": ""
+    },
+    {
+      "caught": true,
+      "index": 2,
+      "position": "(0.01529, 1.370595, 0.2285)",
+      "posture": {
+        "accelerations": {
+          "0": 0.0,
+          "1": -1.0
+        },
+        "actual_movement": "(0.0, 0.0, 0.0)",
+        "allocations": {
+          "0": 0.5,
+          "1": 0.5
+        },
+        "body_error": "(-0.0184, 0.216521, 0.011511)",
+        "braking_advance": 0.0,
+        "desired_posture": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.000098, 1.586551, 0.24)]",
+        "elapsed": 0.00833333333333333,
+        "event": 4,
+        "length_errors": {
+          "0": 0.220962882041931,
+          "1": 0.065546065568924
+        },
+        "planned_lengths": {
+          "0": 0.363922774791718,
+          "1": 0.273949384689331
+        },
+        "rates": {
+          "0": 0.0,
+          "1": -0.00836363059984562
+        },
+        "reason": "support_acquisition",
+        "requested_lengths": {
+          "0": 0.584885656833649,
+          "1": 0.311965091801465
+        },
+        "state": "ACTIVE"
+      },
+      "rejection": ""
+    },
+    {
+      "caught": true,
+      "index": 3,
+      "position": "(-0.088337, 1.523883, 0.222182)",
+      "posture": {
+        "accelerations": {
+          "0": -1.0,
+          "1": 0.0
+        },
+        "actual_movement": "(0.0, 0.0, 0.0)",
+        "allocations": {
+          "0": 0.5,
+          "1": 0.5
+        },
+        "body_error": "(0.091129, 0.222983, 0.017774)",
+        "braking_advance": 0.0,
+        "desired_posture": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.000098, 1.746551, 0.24)]",
+        "elapsed": 0.00833333333333333,
+        "event": 6,
+        "length_errors": {
+          "0": 0.0688791573047638,
+          "1": 0.237182438373566
+        },
+        "planned_lengths": {
+          "0": 0.273949384689331,
+          "1": 0.363922774791718
+        },
+        "rates": {
+          "0": -0.0083888560025377,
+          "1": 0.0
+        },
+        "reason": "support_acquisition",
+        "requested_lengths": {
+          "0": 0.311964882672198,
+          "1": 0.601105213165283
+        },
+        "state": "ACTIVE"
+      },
+      "rejection": ""
+    },
+    {
+      "caught": true,
+      "index": 4,
+      "position": "(0.03697, 1.687184, 0.228741)",
+      "posture": {
+        "accelerations": {
+          "0": 0.0,
+          "1": -1.0
+        },
+        "actual_movement": "(0.0, 0.0, 0.0)",
+        "allocations": {
+          "0": 0.5,
+          "1": 0.5
+        },
+        "body_error": "(-0.039907, 0.219778, 0.011265)",
+        "braking_advance": 0.0,
+        "desired_posture": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.000098, 1.906551, 0.24)]",
+        "elapsed": 0.00833333333333333,
+        "event": 8,
+        "length_errors": {
+          "0": 0.227403581142426,
+          "1": 0.0654564797878265
+        },
+        "planned_lengths": {
+          "0": 0.363922953605652,
+          "1": 0.273949205875397
+        },
+        "rates": {
+          "0": 0.0,
+          "1": -0.00835547476338536
+        },
+        "reason": "support_acquisition",
+        "requested_lengths": {
+          "0": 0.591326534748077,
+          "1": 0.311965159552929
+        },
+        "state": "ACTIVE"
+      },
+      "rejection": ""
+    },
+    {
+      "caught": true,
+      "index": 5,
+      "position": "(-0.06701, 1.849057, 0.224404)",
+      "posture": {
+        "accelerations": {
+          "0": -1.0,
+          "1": 0.0
+        },
+        "actual_movement": "(0.0, 0.0, 0.0)",
+        "allocations": {
+          "0": 0.5,
+          "1": 0.5
+        },
+        "body_error": "(0.069352, 0.217753, 0.015569)",
+        "braking_advance": 0.0,
+        "desired_posture": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.000098, 2.066551, 0.24)]",
+        "elapsed": 0.00833333333333333,
+        "event": 10,
+        "length_errors": {
+          "0": 0.0671176016330719,
+          "1": 0.222045511007309
+        },
+        "planned_lengths": {
+          "0": 0.273949384689331,
+          "1": 0.363922625780106
+        },
+        "rates": {
+          "0": -0.00841218740528815,
+          "1": 0.0
+        },
+        "reason": "support_acquisition",
+        "requested_lengths": {
+          "0": 0.31196468981144,
+          "1": 0.585968136787415
+        },
+        "state": "ACTIVE"
+      },
+      "rejection": ""
+    },
+    {
+      "caught": false,
+      "index": 6,
+      "position": "(0.235044, 2.00285, 0.2259)",
+      "posture": {
+        "accelerations": {
+          "1": 0.0363293660320158
+        },
+        "actual_movement": "(0.266389, 0.131956, 0.001568)",
+        "allocations": {
+          "1": 1.0
+        },
+        "body_error": "(-0.234946, 0.143701, 0.0141)",
+        "braking_advance": 0.0,
+        "desired_posture": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.000098, 2.146551, 0.24)]",
+        "elapsed": 1.125,
+        "event": 11,
+        "length_errors": {
+          "1": 0.0305408239364624
+        },
+        "planned_lengths": {
+          "1": 0.311999917030334
+        },
+        "rates": {
+          "1": -0.00000570657818560992
+        },
+        "reason": "absolute_arm_targets_reached",
+        "requested_lengths": {
+          "1": 0.312034639268839
+        },
+        "state": "COMPLETE"
+      },
+      "rejection": "out_of_reach"
+    }
+  ],
+  "frames": 246,
+  "physics_hz": 120,
+  "swing_actions": 5,
+  "transfers": 5
+}
