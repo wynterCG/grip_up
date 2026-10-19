@@ -1,0 +1,5739 @@
+{
+	"engine": {
+		"build": "steam",
+		"hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+		"hex": 263938,
+		"major": 4,
+		"minor": 7,
+		"patch": 2,
+		"status": "stable",
+		"string": "4.7.2-stable (steam)",
+		"timestamp": 0
+	},
+	"experiments": {
+		"blocked_expansion": {
+			"crouched": {
+				"clear": true,
+				"flex": 1.0,
+				"padding": 0.0005,
+				"reason": "CLEAR"
+			},
+			"extended": {
+				"blocker_id": 1182474962395,
+				"clear": false,
+				"flex": 0.0,
+				"padding": 0.0005,
+				"reason": "COLLIDER_PATH_BLOCKED",
+				"shape": "shin"
+			},
+			"run": {
+				"body": "(0.0, 0.0, 0.0)",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.003
+				},
+				"flex": 0.664166666666666,
+				"peak_impulse_ns": 0.0,
+				"peak_penetration_estimate_m": 0.0,
+				"peak_speed": 0.0,
+				"reason": "COLLIDER_PATH_BLOCKED",
+				"telemetry": {
+					"actual_leg_flex": 0.664166666666666,
+					"blocked": true,
+					"blocked_requests": 144,
+					"body_mass": 12.0,
+					"contacts": {
+						"angular_speed_rad_s": 0.0,
+						"contacts": [
+							{
+								"collider_id": 1182474962395,
+								"impulse": "(0.0, 0.0, 0.0)",
+								"point": "(-0.18, -0.725157, 0.105)",
+								"shape": 2
+							},
+							{
+								"collider_id": 1182474962395,
+								"impulse": "(0.0, 0.0, 0.0)",
+								"point": "(0.18, -0.725157, 0.105)",
+								"shape": 2
+							},
+							{
+								"collider_id": 1182474962395,
+								"impulse": "(0.0, 0.0, 0.0)",
+								"point": "(0.18, -0.725157, -0.175)",
+								"shape": 2
+							},
+							{
+								"collider_id": 1182474962395,
+								"impulse": "(0.0, 0.0, 0.0)",
+								"point": "(-0.18, -0.725157, -0.175)",
+								"shape": 2
+							},
+							{
+								"collider_id": 1182474962395,
+								"impulse": "(0.0, 0.0, 0.0)",
+								"point": "(0.0, -0.725157, 0.0)",
+								"shape": 3
+							}
+						],
+						"peak_impulse_ns": 0.0,
+						"speed_m_s": 0.0
+					},
+					"desired_leg_flex": 0.0,
+					"enabled_shape_configuration": true,
+					"fixed_inertia": "(2.805412, 0.221171, 2.805877)",
+					"foot_local_transform": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, -0.685157, -0.035)]",
+					"force_authority_n": 0.0,
+					"minimum_query_skin_m": 0.0005,
+					"path": {
+						"blocker_id": 1182474962395,
+						"clear": false,
+						"flex": 0.657847222222221,
+						"last_safe_flex": 0.658749999999999,
+						"padding": 0.00149265598107959,
+						"reason": "COLLIDER_PATH_BLOCKED",
+						"shape": "shin",
+						"substeps": 6
+					},
+					"reason": "COLLIDER_PATH_BLOCKED",
+					"representation": "SAME_BODY_TWO_SAGITTAL_CAPSULES"
+				}
+			}
+		},
+		"blocked_fold": {
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"flex": 0.444166666666667,
+			"peak_impulse_ns": 0.0,
+			"peak_penetration_estimate_m": 0.0,
+			"peak_speed": 0.0,
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"telemetry": {
+				"actual_leg_flex": 0.444166666666667,
+				"blocked": true,
+				"blocked_requests": 67,
+				"body_mass": 12.0,
+				"contacts": {
+					"angular_speed_rad_s": 0.0,
+					"contacts": [
+						{
+							"collider_id": 813090997726,
+							"impulse": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, -0.498373, -0.291046)",
+							"shape": 4
+						},
+						{
+							"collider_id": 813090997726,
+							"impulse": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, -0.498373, -0.291046)",
+							"shape": 3
+						}
+					],
+					"peak_impulse_ns": 0.0,
+					"speed_m_s": 0.0
+				},
+				"desired_leg_flex": 1.0,
+				"enabled_shape_configuration": true,
+				"fixed_inertia": "(2.805412, 0.221171, 2.805877)",
+				"foot_local_transform": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, -0.787971, -0.035)]",
+				"force_authority_n": 0.0,
+				"minimum_query_skin_m": 0.0005,
+				"path": {
+					"blocker_id": 813090997726,
+					"clear": false,
+					"flex": 0.452291666666667,
+					"last_safe_flex": 0.451388888888889,
+					"padding": 0.00149265598107959,
+					"reason": "COLLIDER_PATH_BLOCKED",
+					"shape": "thigh",
+					"substeps": 6
+				},
+				"reason": "COLLIDER_PATH_BLOCKED",
+				"representation": "SAME_BODY_TWO_SAGITTAL_CAPSULES"
+			}
+		},
+		"c0_clearance": [
+			{
+				"clear": true,
+				"flex": 0.0,
+				"padding": 0.0005,
+				"reason": "CLEAR"
+			},
+			{
+				"clear": true,
+				"flex": 0.1,
+				"padding": 0.0005,
+				"reason": "CLEAR"
+			},
+			{
+				"clear": true,
+				"flex": 0.2,
+				"padding": 0.0005,
+				"reason": "CLEAR"
+			},
+			{
+				"clear": true,
+				"flex": 0.3,
+				"padding": 0.0005,
+				"reason": "CLEAR"
+			},
+			{
+				"clear": true,
+				"flex": 0.4,
+				"padding": 0.0005,
+				"reason": "CLEAR"
+			},
+			{
+				"clear": true,
+				"flex": 0.5,
+				"padding": 0.0005,
+				"reason": "CLEAR"
+			},
+			{
+				"clear": true,
+				"flex": 0.6,
+				"padding": 0.0005,
+				"reason": "CLEAR"
+			},
+			{
+				"clear": true,
+				"flex": 0.7,
+				"padding": 0.0005,
+				"reason": "CLEAR"
+			},
+			{
+				"clear": true,
+				"flex": 0.8,
+				"padding": 0.0005,
+				"reason": "CLEAR"
+			},
+			{
+				"clear": true,
+				"flex": 0.9,
+				"padding": 0.0005,
+				"reason": "CLEAR"
+			},
+			{
+				"clear": true,
+				"flex": 1.0,
+				"padding": 0.0005,
+				"reason": "CLEAR"
+			}
+		],
+		"clear_fold": {
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"flex": 1.0,
+			"peak_impulse_ns": 0.0,
+			"peak_penetration_estimate_m": 0.0,
+			"peak_speed": 0.0,
+			"reason": "AT_REQUESTED_POSE",
+			"telemetry": {
+				"actual_leg_flex": 1.0,
+				"blocked": false,
+				"blocked_requests": 0,
+				"body_mass": 12.0,
+				"contacts": {
+					"angular_speed_rad_s": 0.0,
+					"contacts": [],
+					"peak_impulse_ns": 0.0,
+					"speed_m_s": 0.0
+				},
+				"desired_leg_flex": 1.0,
+				"enabled_shape_configuration": true,
+				"fixed_inertia": "(2.805412, 0.221171, 2.805877)",
+				"foot_local_transform": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, -0.476462, -0.035)]",
+				"force_authority_n": 0.0,
+				"minimum_query_skin_m": 0.0005,
+				"path": {
+					"clear": true,
+					"flex": 1.0,
+					"last_safe_flex": 1.0,
+					"padding": 0.0005,
+					"reason": "CLEAR",
+					"substeps": 2
+				},
+				"reason": "AT_REQUESTED_POSE",
+				"representation": "SAME_BODY_TWO_SAGITTAL_CAPSULES"
+			}
+		},
+		"clear_restore": {
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"flex": 0.0,
+			"peak_impulse_ns": 0.0,
+			"peak_penetration_estimate_m": 0.0,
+			"peak_speed": 0.0,
+			"reason": "DISABLED",
+			"telemetry": {
+				"actual_leg_flex": 0.0,
+				"blocked": false,
+				"blocked_requests": 0,
+				"body_mass": 12.0,
+				"contacts": {
+					"angular_speed_rad_s": 0.0,
+					"contacts": [],
+					"peak_impulse_ns": 0.0,
+					"speed_m_s": 0.0
+				},
+				"desired_leg_flex": 1.0,
+				"enabled_shape_configuration": false,
+				"fixed_inertia": "(2.805412, 0.221171, 2.805877)",
+				"foot_local_transform": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, -0.8767, -0.035)]",
+				"force_authority_n": 0.0,
+				"minimum_query_skin_m": 0.0005,
+				"path": {
+					"clear": true,
+					"flex": 0.0,
+					"last_safe_flex": 0.0,
+					"padding": 0.0005,
+					"reason": "CLEAR",
+					"substeps": 2
+				},
+				"reason": "DISABLED",
+				"representation": "SAME_BODY_TWO_SAGITTAL_CAPSULES"
+			}
+		},
+		"loaded_guard": {
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"flex": 0.0,
+			"peak_impulse_ns": 0.0,
+			"peak_penetration_estimate_m": 0.0,
+			"peak_speed": 0.0,
+			"reason": "LOAD_TRANSFER_REQUIRED",
+			"telemetry": {
+				"actual_leg_flex": 0.0,
+				"blocked": true,
+				"blocked_requests": 30,
+				"body_mass": 12.0,
+				"contacts": {
+					"angular_speed_rad_s": 0.0,
+					"contacts": [],
+					"peak_impulse_ns": 0.0,
+					"speed_m_s": 0.0
+				},
+				"desired_leg_flex": 1.0,
+				"enabled_shape_configuration": true,
+				"fixed_inertia": "(2.805412, 0.221171, 2.805877)",
+				"foot_local_transform": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, -0.8767, -0.035)]",
+				"force_authority_n": 0.0,
+				"minimum_query_skin_m": 0.0005,
+				"path": {},
+				"reason": "LOAD_TRANSFER_REQUIRED",
+				"representation": "SAME_BODY_TWO_SAGITTAL_CAPSULES"
+			}
+		},
+		"moving_support": {
+			"body": "(-0.0, 0.002149, 0.003936)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"flex": 0.628333333333334,
+			"peak_impulse_ns": 0.111555062234402,
+			"peak_penetration_estimate_m": 0.00000127559508200648,
+			"peak_speed": 0.00840263534337282,
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"telemetry": {
+				"actual_leg_flex": 0.628333333333334,
+				"blocked": true,
+				"blocked_requests": 38,
+				"body_mass": 12.0,
+				"contacts": {
+					"angular_speed_rad_s": 0.00970664713531733,
+					"contacts": [
+						{
+							"collider_id": 1739864409560,
+							"impulse": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, -0.499007, -0.312135)",
+							"shape": 3
+						},
+						{
+							"collider_id": 1739864409560,
+							"impulse": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, -0.499007, -0.312135)",
+							"shape": 4
+						}
+					],
+					"peak_impulse_ns": 0.0,
+					"speed_m_s": 0.00797918066382408
+				},
+				"desired_leg_flex": 1.0,
+				"enabled_shape_configuration": true,
+				"fixed_inertia": "(2.805412, 0.221171, 2.805877)",
+				"foot_local_transform": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, -0.704117, -0.035)]",
+				"force_authority_n": 0.0,
+				"minimum_query_skin_m": 0.0005,
+				"path": {
+					"blocker_id": 1739864409560,
+					"clear": false,
+					"flex": 0.629236111111112,
+					"last_safe_flex": 0.628333333333334,
+					"padding": 0.00149265598107959,
+					"reason": "COLLIDER_PATH_BLOCKED",
+					"shape": "thigh",
+					"substeps": 6
+				},
+				"reason": "COLLIDER_PATH_BLOCKED",
+				"representation": "SAME_BODY_TWO_SAGITTAL_CAPSULES"
+			}
+		},
+		"standing_platform": {
+			"restore": {
+				"body": "(0.0, 0.0, 0.0)",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.003
+				},
+				"flex": 0.0,
+				"peak_impulse_ns": 0.0,
+				"peak_penetration_estimate_m": 0.0,
+				"peak_speed": 0.0,
+				"reason": "DISABLED",
+				"telemetry": {
+					"actual_leg_flex": 0.0,
+					"blocked": false,
+					"blocked_requests": 0,
+					"body_mass": 12.0,
+					"contacts": {
+						"angular_speed_rad_s": 0.0,
+						"contacts": [
+							{
+								"collider_id": 1541255726564,
+								"impulse": "(0.0, 0.0, 0.0)",
+								"point": "(-0.18, -0.9167, 0.105)",
+								"shape": 2
+							},
+							{
+								"collider_id": 1541255726564,
+								"impulse": "(0.0, 0.0, 0.0)",
+								"point": "(0.18, -0.9167, 0.105)",
+								"shape": 2
+							},
+							{
+								"collider_id": 1541255726564,
+								"impulse": "(0.0, 0.0, 0.0)",
+								"point": "(0.18, -0.9167, -0.175)",
+								"shape": 2
+							},
+							{
+								"collider_id": 1541255726564,
+								"impulse": "(0.0, 0.0, 0.0)",
+								"point": "(-0.18, -0.9167, -0.175)",
+								"shape": 2
+							},
+							{
+								"collider_id": 1541255726564,
+								"impulse": "(0.0, 0.0, 0.0)",
+								"point": "(0.0, -0.9167, 0.0)",
+								"shape": 3
+							}
+						],
+						"peak_impulse_ns": 0.0,
+						"speed_m_s": 0.0
+					},
+					"desired_leg_flex": 1.0,
+					"enabled_shape_configuration": false,
+					"fixed_inertia": "(2.805412, 0.221171, 2.805877)",
+					"foot_local_transform": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, -0.8767, -0.035)]",
+					"force_authority_n": 0.0,
+					"minimum_query_skin_m": 0.0005,
+					"path": {
+						"clear": true,
+						"flex": 0.0,
+						"last_safe_flex": 0.0,
+						"padding": 0.0005,
+						"reason": "CLEAR",
+						"substeps": 2
+					},
+					"reason": "DISABLED",
+					"representation": "SAME_BODY_TWO_SAGITTAL_CAPSULES"
+				}
+			},
+			"settled": {
+				"body": "(-0.0, -0.0033, -0.0)",
+				"clearance": {
+					"contact_pairs": 4,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.0
+				},
+				"flex": 0.0,
+				"peak_impulse_ns": 3.9167332649231,
+				"peak_penetration_estimate_m": 0.0,
+				"peak_speed": 0.163333341479301,
+				"reason": "DISABLED",
+				"telemetry": {
+					"actual_leg_flex": 0.0,
+					"blocked": false,
+					"blocked_requests": 0,
+					"body_mass": 12.0,
+					"contacts": {
+						"angular_speed_rad_s": 0.000000000000243532109625924,
+						"contacts": [
+							{
+								"collider_id": 1541255726564,
+								"impulse": "(0.074957, 1.243821, -0.086845)",
+								"point": "(-0.18, -0.92, 0.105)",
+								"shape": 2
+							},
+							{
+								"collider_id": 1541255726564,
+								"impulse": "(0.017767, 0.44692, -0.031947)",
+								"point": "(0.18, -0.92, 0.105)",
+								"shape": 2
+							},
+							{
+								"collider_id": 1541255726564,
+								"impulse": "(-0.002031, 0.290757, 0.003003)",
+								"point": "(0.18, -0.92, -0.175)",
+								"shape": 2
+							},
+							{
+								"collider_id": 1541255726564,
+								"impulse": "(0.0, 0.0, 0.0)",
+								"point": "(-0.18, -0.92, -0.175)",
+								"shape": 2
+							},
+							{
+								"collider_id": 1541255726564,
+								"impulse": "(0.0, 1.96, -0.0)",
+								"point": "(-0.0, -0.92, -0.0)",
+								"shape": 3
+							}
+						],
+						"peak_impulse_ns": 1.96000003814697,
+						"speed_m_s": 0.000000000000322032737932673
+					},
+					"desired_leg_flex": 1.0,
+					"enabled_shape_configuration": false,
+					"fixed_inertia": "(2.805412, 0.221171, 2.805877)",
+					"foot_local_transform": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, -0.8767, -0.035)]",
+					"force_authority_n": 0.0,
+					"minimum_query_skin_m": 0.0005,
+					"path": {
+						"clear": true,
+						"flex": 0.0,
+						"last_safe_flex": 0.0,
+						"padding": 0.0005,
+						"reason": "CLEAR",
+						"substeps": 2
+					},
+					"reason": "DISABLED",
+					"representation": "SAME_BODY_TWO_SAGITTAL_CAPSULES"
+				}
+			}
+		},
+		"stationary_torso_contact": {
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 2,
+				"max_penetration_estimate_m": 0.000100001692771912,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"flex": 1.0,
+			"peak_impulse_ns": 0.0,
+			"peak_penetration_estimate_m": 0.000100001692771912,
+			"peak_speed": 0.0,
+			"reason": "AT_REQUESTED_POSE",
+			"telemetry": {
+				"actual_leg_flex": 1.0,
+				"blocked": false,
+				"blocked_requests": 0,
+				"body_mass": 12.0,
+				"contacts": {
+					"angular_speed_rad_s": 0.0,
+					"contacts": [
+						{
+							"collider_id": 448169772508,
+							"impulse": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.15, -0.22)",
+							"shape": 0
+						},
+						{
+							"collider_id": 448169772508,
+							"impulse": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.54, -0.22)",
+							"shape": 0
+						}
+					],
+					"peak_impulse_ns": 0.0,
+					"speed_m_s": 0.0
+				},
+				"desired_leg_flex": 1.0,
+				"enabled_shape_configuration": true,
+				"fixed_inertia": "(2.805412, 0.221171, 2.805877)",
+				"foot_local_transform": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, -0.476462, -0.035)]",
+				"force_authority_n": 0.0,
+				"minimum_query_skin_m": 0.0005,
+				"path": {
+					"clear": true,
+					"flex": 1.0,
+					"last_safe_flex": 1.0,
+					"padding": 0.0005,
+					"reason": "CLEAR",
+					"substeps": 2
+				},
+				"reason": "AT_REQUESTED_POSE",
+				"representation": "SAME_BODY_TWO_SAGITTAL_CAPSULES"
+			}
+		},
+		"swept_lip": {
+			"end": {
+				"clear": true,
+				"flex": 1.0,
+				"padding": 0.0005,
+				"reason": "CLEAR"
+			},
+			"path": {
+				"blocker_id": 813090997726,
+				"clear": false,
+				"flex": 0.451818181818182,
+				"last_safe_flex": 0.450909090909091,
+				"padding": 0.00149959763129692,
+				"reason": "COLLIDER_PATH_BLOCKED",
+				"shape": "thigh",
+				"substeps": 550
+			},
+			"start": {
+				"clear": true,
+				"flex": 0.0,
+				"padding": 0.0005,
+				"reason": "CLEAR"
+			}
+		}
+	},
+	"failed": 0,
+	"functional_mantle": false,
+	"passed": 25,
+	"physics_hz": 60,
+	"samples": [
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.0,
+			"foot": "(0.0, -0.8767, -0.035)",
+			"reason": "DISABLED",
+			"speed": 0.0,
+			"time": 0.0
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.0,
+			"foot": "(0.0, -0.8767, -0.035)",
+			"reason": "DISABLED",
+			"speed": 0.0,
+			"time": 0.1
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.0108333333333333,
+			"foot": "(0.0, -0.876646, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.0
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.0758333333333333,
+			"foot": "(0.0, -0.874042, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.1
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.140833333333333,
+			"foot": "(0.0, -0.86755, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.2
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.205833333333333,
+			"foot": "(0.0, -0.857218, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.3
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.270833333333333,
+			"foot": "(0.0, -0.843119, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.4
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.335833333333334,
+			"foot": "(0.0, -0.825357, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.5
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.400833333333334,
+			"foot": "(0.0, -0.804059, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.6
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.465833333333334,
+			"foot": "(0.0, -0.77938, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.7
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.530833333333334,
+			"foot": "(0.0, -0.751498, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.8
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.595833333333334,
+			"foot": "(0.0, -0.720615, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.9
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.660833333333334,
+			"foot": "(0.0, -0.686954, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 1.0
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.725833333333335,
+			"foot": "(0.0, -0.650759, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 1.1
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.790833333333335,
+			"foot": "(0.0, -0.612292, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 1.2
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.855833333333335,
+			"foot": "(0.0, -0.571831, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 1.3
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.920833333333335,
+			"foot": "(0.0, -0.529669, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 1.4
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.985833333333335,
+			"foot": "(0.0, -0.48611, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 1.5
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 1.0,
+			"foot": "(0.0, -0.476462, -0.035)",
+			"reason": "AT_REQUESTED_POSE",
+			"speed": 0.0,
+			"time": 1.6
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.989166666666667,
+			"foot": "(0.0, -0.483845, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 0.0
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.924166666666666,
+			"foot": "(0.0, -0.527466, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 0.1
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.859166666666666,
+			"foot": "(0.0, -0.569708, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 0.2
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.794166666666666,
+			"foot": "(0.0, -0.610263, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 0.3
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.729166666666666,
+			"foot": "(0.0, -0.648839, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 0.4
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.664166666666666,
+			"foot": "(0.0, -0.685157, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 0.5
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.599166666666666,
+			"foot": "(0.0, -0.718954, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 0.6
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.534166666666665,
+			"foot": "(0.0, -0.749985, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 0.7
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.469166666666665,
+			"foot": "(0.0, -0.778026, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 0.8
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.404166666666665,
+			"foot": "(0.0, -0.802874, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 0.9
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.339166666666665,
+			"foot": "(0.0, -0.824349, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 1.0
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.274166666666665,
+			"foot": "(0.0, -0.842296, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 1.1
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.209166666666665,
+			"foot": "(0.0, -0.856585, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 1.2
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.144166666666665,
+			"foot": "(0.0, -0.867113, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 1.3
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.0791666666666647,
+			"foot": "(0.0, -0.873803, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 1.4
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.0141666666666647,
+			"foot": "(0.0, -0.876607, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 1.5
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.0,
+			"foot": "(0.0, -0.8767, -0.035)",
+			"reason": "DISABLED",
+			"speed": 0.0,
+			"time": 1.6
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 2,
+				"max_penetration_estimate_m": 0.000100001692771912,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.15, -0.22)",
+						"shape": 0
+					},
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.54, -0.22)",
+						"shape": 0
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.0108333333333333,
+			"foot": "(0.0, -0.876646, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.0
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 2,
+				"max_penetration_estimate_m": 0.000100001692771912,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.15, -0.22)",
+						"shape": 0
+					},
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.54, -0.22)",
+						"shape": 0
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.0758333333333333,
+			"foot": "(0.0, -0.874042, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.1
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 2,
+				"max_penetration_estimate_m": 0.000100001692771912,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.15, -0.22)",
+						"shape": 0
+					},
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.54, -0.22)",
+						"shape": 0
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.140833333333333,
+			"foot": "(0.0, -0.86755, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.2
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 2,
+				"max_penetration_estimate_m": 0.000100001692771912,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.15, -0.22)",
+						"shape": 0
+					},
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.54, -0.22)",
+						"shape": 0
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.205833333333333,
+			"foot": "(0.0, -0.857218, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.3
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 2,
+				"max_penetration_estimate_m": 0.000100001692771912,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.15, -0.22)",
+						"shape": 0
+					},
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.54, -0.22)",
+						"shape": 0
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.270833333333333,
+			"foot": "(0.0, -0.843119, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.4
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 2,
+				"max_penetration_estimate_m": 0.000100001692771912,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.15, -0.22)",
+						"shape": 0
+					},
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.54, -0.22)",
+						"shape": 0
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.335833333333334,
+			"foot": "(0.0, -0.825357, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.5
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 2,
+				"max_penetration_estimate_m": 0.000100001692771912,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.15, -0.22)",
+						"shape": 0
+					},
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.54, -0.22)",
+						"shape": 0
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.400833333333334,
+			"foot": "(0.0, -0.804059, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.6
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 2,
+				"max_penetration_estimate_m": 0.000100001692771912,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.15, -0.22)",
+						"shape": 0
+					},
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.54, -0.22)",
+						"shape": 0
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.465833333333334,
+			"foot": "(0.0, -0.77938, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.7
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 2,
+				"max_penetration_estimate_m": 0.000100001692771912,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.15, -0.22)",
+						"shape": 0
+					},
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.54, -0.22)",
+						"shape": 0
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.530833333333334,
+			"foot": "(0.0, -0.751498, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.8
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 2,
+				"max_penetration_estimate_m": 0.000100001692771912,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.15, -0.22)",
+						"shape": 0
+					},
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.54, -0.22)",
+						"shape": 0
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.595833333333334,
+			"foot": "(0.0, -0.720615, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.9
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 2,
+				"max_penetration_estimate_m": 0.000100001692771912,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.15, -0.22)",
+						"shape": 0
+					},
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.54, -0.22)",
+						"shape": 0
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.660833333333334,
+			"foot": "(0.0, -0.686954, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 1.0
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 2,
+				"max_penetration_estimate_m": 0.000100001692771912,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.15, -0.22)",
+						"shape": 0
+					},
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.54, -0.22)",
+						"shape": 0
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.725833333333335,
+			"foot": "(0.0, -0.650759, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 1.1
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 2,
+				"max_penetration_estimate_m": 0.000100001692771912,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.15, -0.22)",
+						"shape": 0
+					},
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.54, -0.22)",
+						"shape": 0
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.790833333333335,
+			"foot": "(0.0, -0.612292, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 1.2
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 2,
+				"max_penetration_estimate_m": 0.000100001692771912,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.15, -0.22)",
+						"shape": 0
+					},
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.54, -0.22)",
+						"shape": 0
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.855833333333335,
+			"foot": "(0.0, -0.571831, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 1.3
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 2,
+				"max_penetration_estimate_m": 0.000100001692771912,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.15, -0.22)",
+						"shape": 0
+					},
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.54, -0.22)",
+						"shape": 0
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.920833333333335,
+			"foot": "(0.0, -0.529669, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 1.4
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 2,
+				"max_penetration_estimate_m": 0.000100001692771912,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.15, -0.22)",
+						"shape": 0
+					},
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.54, -0.22)",
+						"shape": 0
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.985833333333335,
+			"foot": "(0.0, -0.48611, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 1.5
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 2,
+				"max_penetration_estimate_m": 0.000100001692771912,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.15, -0.22)",
+						"shape": 0
+					},
+					{
+						"collider_id": 448169772508,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, 0.54, -0.22)",
+						"shape": 0
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 1.0,
+			"foot": "(0.0, -0.476462, -0.035)",
+			"reason": "AT_REQUESTED_POSE",
+			"speed": 0.0,
+			"time": 1.6
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.0,
+			"foot": "(0.0, -0.8767, -0.035)",
+			"reason": "LOAD_TRANSFER_REQUIRED",
+			"speed": 0.0,
+			"time": 0.0
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.0,
+			"foot": "(0.0, -0.8767, -0.035)",
+			"reason": "LOAD_TRANSFER_REQUIRED",
+			"speed": 0.0,
+			"time": 0.1
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.0,
+			"foot": "(0.0, -0.8767, -0.035)",
+			"reason": "LOAD_TRANSFER_REQUIRED",
+			"speed": 0.0,
+			"time": 0.2
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.0,
+			"foot": "(0.0, -0.8767, -0.035)",
+			"reason": "LOAD_TRANSFER_REQUIRED",
+			"speed": 0.0,
+			"time": 0.3
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.0,
+			"foot": "(0.0, -0.8767, -0.035)",
+			"reason": "LOAD_TRANSFER_REQUIRED",
+			"speed": 0.0,
+			"time": 0.4
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.0108333333333333,
+			"foot": "(0.0, -0.876646, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.0
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.0758333333333333,
+			"foot": "(0.0, -0.874042, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.1
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.140833333333333,
+			"foot": "(0.0, -0.86755, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.2
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.205833333333333,
+			"foot": "(0.0, -0.857218, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.3
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.270833333333333,
+			"foot": "(0.0, -0.843119, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.4
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.335833333333334,
+			"foot": "(0.0, -0.825357, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.5
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.400833333333334,
+			"foot": "(0.0, -0.804059, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.6
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.465833333333334,
+			"foot": "(0.0, -0.77938, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.7
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.530833333333334,
+			"foot": "(0.0, -0.751498, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.8
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.595833333333334,
+			"foot": "(0.0, -0.720615, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.9
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.660833333333334,
+			"foot": "(0.0, -0.686954, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 1.0
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.725833333333335,
+			"foot": "(0.0, -0.650759, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 1.1
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.790833333333335,
+			"foot": "(0.0, -0.612292, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 1.2
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.855833333333335,
+			"foot": "(0.0, -0.571831, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 1.3
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.920833333333335,
+			"foot": "(0.0, -0.529669, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 1.4
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.985833333333335,
+			"foot": "(0.0, -0.48611, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 1.5
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 1.0,
+			"foot": "(0.0, -0.476462, -0.035)",
+			"reason": "AT_REQUESTED_POSE",
+			"speed": 0.0,
+			"time": 1.6
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.0108333333333333,
+			"foot": "(0.0, -0.876646, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.0
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.0758333333333333,
+			"foot": "(0.0, -0.874042, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.1
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.140833333333333,
+			"foot": "(0.0, -0.86755, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.2
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.205833333333333,
+			"foot": "(0.0, -0.857218, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.3
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.270833333333333,
+			"foot": "(0.0, -0.843119, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.4
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.03
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.335833333333334,
+			"foot": "(0.0, -0.825357, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.5
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.01
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 813090997726,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.495741, -0.278147)",
+						"shape": 4
+					},
+					{
+						"collider_id": 813090997726,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.495741, -0.278146)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.400833333333334,
+			"foot": "(0.0, -0.804059, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.6
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 813090997726,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.498373, -0.291046)",
+						"shape": 4
+					},
+					{
+						"collider_id": 813090997726,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.498373, -0.291046)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.444166666666667,
+			"foot": "(0.0, -0.787971, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.0,
+			"time": 0.7
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 813090997726,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.498373, -0.291046)",
+						"shape": 4
+					},
+					{
+						"collider_id": 813090997726,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.498373, -0.291046)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.444166666666667,
+			"foot": "(0.0, -0.787971, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.0,
+			"time": 0.8
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 813090997726,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.498373, -0.291046)",
+						"shape": 4
+					},
+					{
+						"collider_id": 813090997726,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.498373, -0.291046)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.444166666666667,
+			"foot": "(0.0, -0.787971, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.0,
+			"time": 0.9
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 813090997726,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.498373, -0.291046)",
+						"shape": 4
+					},
+					{
+						"collider_id": 813090997726,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.498373, -0.291046)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.444166666666667,
+			"foot": "(0.0, -0.787971, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.0,
+			"time": 1.0
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 813090997726,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.498373, -0.291046)",
+						"shape": 4
+					},
+					{
+						"collider_id": 813090997726,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.498373, -0.291046)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.444166666666667,
+			"foot": "(0.0, -0.787971, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.0,
+			"time": 1.1
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 813090997726,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.498373, -0.291046)",
+						"shape": 4
+					},
+					{
+						"collider_id": 813090997726,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.498373, -0.291046)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.444166666666667,
+			"foot": "(0.0, -0.787971, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.0,
+			"time": 1.2
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 813090997726,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.498373, -0.291046)",
+						"shape": 4
+					},
+					{
+						"collider_id": 813090997726,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.498373, -0.291046)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.444166666666667,
+			"foot": "(0.0, -0.787971, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.0,
+			"time": 1.3
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 813090997726,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.498373, -0.291046)",
+						"shape": 4
+					},
+					{
+						"collider_id": 813090997726,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.498373, -0.291046)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.444166666666667,
+			"foot": "(0.0, -0.787971, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.0,
+			"time": 1.4
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 813090997726,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.498373, -0.291046)",
+						"shape": 4
+					},
+					{
+						"collider_id": 813090997726,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.498373, -0.291046)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.444166666666667,
+			"foot": "(0.0, -0.787971, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.0,
+			"time": 1.5
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 813090997726,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.498373, -0.291046)",
+						"shape": 4
+					},
+					{
+						"collider_id": 813090997726,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.498373, -0.291046)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.444166666666667,
+			"foot": "(0.0, -0.787971, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.0,
+			"time": 1.6
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 813090997726,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.498373, -0.291046)",
+						"shape": 4
+					},
+					{
+						"collider_id": 813090997726,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.498373, -0.291046)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.444166666666667,
+			"foot": "(0.0, -0.787971, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.0,
+			"time": 1.7
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.455000000000001,
+			"foot": "(0.0, -0.78372, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.0
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.520000000000001,
+			"foot": "(0.0, -0.756359, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.1
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.585000000000001,
+			"foot": "(0.0, -0.725961, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.2
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.650000000000001,
+			"foot": "(0.0, -0.692747, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.3
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.715000000000001,
+			"foot": "(0.0, -0.656956, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.4
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.780000000000001,
+			"foot": "(0.0, -0.618849, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.5
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.845000000000002,
+			"foot": "(0.0, -0.578701, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.6
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.910000000000002,
+			"foot": "(0.0, -0.536801, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.7
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.975000000000002,
+			"foot": "(0.0, -0.493454, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.8
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 1.0,
+			"foot": "(0.0, -0.476462, -0.035)",
+			"reason": "AT_REQUESTED_POSE",
+			"speed": 0.0,
+			"time": 0.9
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 1.0,
+			"foot": "(0.0, -0.476462, -0.035)",
+			"reason": "AT_REQUESTED_POSE",
+			"speed": 0.0,
+			"time": 1.0
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 1.0,
+			"foot": "(0.0, -0.476462, -0.035)",
+			"reason": "AT_REQUESTED_POSE",
+			"speed": 0.0,
+			"time": 1.1
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 1.0,
+			"foot": "(0.0, -0.476462, -0.035)",
+			"reason": "AT_REQUESTED_POSE",
+			"speed": 0.0,
+			"time": 1.2
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 1.0,
+			"foot": "(0.0, -0.476462, -0.035)",
+			"reason": "AT_REQUESTED_POSE",
+			"speed": 0.0,
+			"time": 1.3
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 1.0,
+			"foot": "(0.0, -0.476462, -0.035)",
+			"reason": "AT_REQUESTED_POSE",
+			"speed": 0.0,
+			"time": 1.4
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 1.0,
+			"foot": "(0.0, -0.476462, -0.035)",
+			"reason": "AT_REQUESTED_POSE",
+			"speed": 0.0,
+			"time": 1.5
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 1.0,
+			"foot": "(0.0, -0.476462, -0.035)",
+			"reason": "AT_REQUESTED_POSE",
+			"speed": 0.0,
+			"time": 1.6
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 1.0,
+			"foot": "(0.0, -0.476462, -0.035)",
+			"reason": "AT_REQUESTED_POSE",
+			"speed": 0.0,
+			"time": 1.7
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.989166666666667,
+			"foot": "(0.0, -0.483845, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 0.0
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.924166666666666,
+			"foot": "(0.0, -0.527466, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 0.1
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.859166666666666,
+			"foot": "(0.0, -0.569708, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 0.2
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.794166666666666,
+			"foot": "(0.0, -0.610263, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 0.3
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.03
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.729166666666666,
+			"foot": "(0.0, -0.648839, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 0.4
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.719272, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.719272, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.719272, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.719272, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.719272, 0.0)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.664166666666666,
+			"foot": "(0.0, -0.685157, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 0.5
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.725157, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.725157, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.725157, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.725157, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.725157, 0.0)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.664166666666666,
+			"foot": "(0.0, -0.685157, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.0,
+			"time": 0.6
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.725157, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.725157, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.725157, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.725157, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.725157, 0.0)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.664166666666666,
+			"foot": "(0.0, -0.685157, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.0,
+			"time": 0.7
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.725157, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.725157, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.725157, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.725157, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.725157, 0.0)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.664166666666666,
+			"foot": "(0.0, -0.685157, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.0,
+			"time": 0.8
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.725157, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.725157, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.725157, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.725157, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.725157, 0.0)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.664166666666666,
+			"foot": "(0.0, -0.685157, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.0,
+			"time": 0.9
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.725157, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.725157, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.725157, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.725157, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.725157, 0.0)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.664166666666666,
+			"foot": "(0.0, -0.685157, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.0,
+			"time": 1.0
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.725157, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.725157, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.725157, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.725157, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.725157, 0.0)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.664166666666666,
+			"foot": "(0.0, -0.685157, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.0,
+			"time": 1.1
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.725157, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.725157, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.725157, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.725157, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.725157, 0.0)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.664166666666666,
+			"foot": "(0.0, -0.685157, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.0,
+			"time": 1.2
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.725157, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.725157, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.725157, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.725157, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.725157, 0.0)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.664166666666666,
+			"foot": "(0.0, -0.685157, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.0,
+			"time": 1.3
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.725157, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.725157, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.725157, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.725157, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.725157, 0.0)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.664166666666666,
+			"foot": "(0.0, -0.685157, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.0,
+			"time": 1.4
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.725157, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.725157, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.725157, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.725157, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.725157, 0.0)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.664166666666666,
+			"foot": "(0.0, -0.685157, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.0,
+			"time": 1.5
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.725157, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.725157, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.725157, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.725157, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.725157, 0.0)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.664166666666666,
+			"foot": "(0.0, -0.685157, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.0,
+			"time": 1.6
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.725157, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.725157, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.725157, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.725157, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1182474962395,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.725157, 0.0)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.664166666666666,
+			"foot": "(0.0, -0.685157, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.0,
+			"time": 1.7
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.0108333333333333,
+			"foot": "(0.0, -0.876646, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.0
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.0758333333333333,
+			"foot": "(0.0, -0.874042, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.1
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.140833333333333,
+			"foot": "(0.0, -0.86755, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.2
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.205833333333333,
+			"foot": "(0.0, -0.857218, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.3
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.270833333333333,
+			"foot": "(0.0, -0.843119, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.4
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.335833333333334,
+			"foot": "(0.0, -0.825357, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.5
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.400833333333334,
+			"foot": "(0.0, -0.804059, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.6
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.465833333333334,
+			"foot": "(0.0, -0.77938, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.7
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.530833333333334,
+			"foot": "(0.0, -0.751498, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.8
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.595833333333334,
+			"foot": "(0.0, -0.720615, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.9
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.660833333333334,
+			"foot": "(0.0, -0.686954, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 1.0
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.725833333333335,
+			"foot": "(0.0, -0.650759, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 1.1
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.790833333333335,
+			"foot": "(0.0, -0.612292, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 1.2
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.855833333333335,
+			"foot": "(0.0, -0.571831, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 1.3
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.920833333333335,
+			"foot": "(0.0, -0.529669, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 1.4
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.985833333333335,
+			"foot": "(0.0, -0.48611, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 1.5
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 1.0,
+			"foot": "(0.0, -0.476462, -0.035)",
+			"reason": "AT_REQUESTED_POSE",
+			"speed": 0.0,
+			"time": 1.6
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.989166666666667,
+			"foot": "(0.0, -0.483845, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 0.0
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.924166666666666,
+			"foot": "(0.0, -0.527466, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 0.1
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.859166666666666,
+			"foot": "(0.0, -0.569708, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 0.2
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.794166666666666,
+			"foot": "(0.0, -0.610263, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 0.3
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.729166666666666,
+			"foot": "(0.0, -0.648839, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 0.4
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.664166666666666,
+			"foot": "(0.0, -0.685157, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 0.5
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.599166666666666,
+			"foot": "(0.0, -0.718954, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 0.6
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.534166666666665,
+			"foot": "(0.0, -0.749985, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 0.7
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.469166666666665,
+			"foot": "(0.0, -0.778026, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 0.8
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.404166666666665,
+			"foot": "(0.0, -0.802874, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 0.9
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.339166666666665,
+			"foot": "(0.0, -0.824349, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 1.0
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.03
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.274166666666665,
+			"foot": "(0.0, -0.842296, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 1.1
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.01
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.209166666666665,
+			"foot": "(0.0, -0.856585, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 1.2
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.01
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.905623, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.905623, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.905623, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.905623, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.905623, 0.0)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.144166666666665,
+			"foot": "(0.0, -0.867113, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 1.3
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.912957, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.912957, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.912957, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.912957, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.912957, 0.0)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.0791666666666647,
+			"foot": "(0.0, -0.873803, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 1.4
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.916411, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.916411, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.916411, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.916411, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.916411, 0.0)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.0141666666666647,
+			"foot": "(0.0, -0.876607, -0.035)",
+			"reason": "EXTENDING",
+			"speed": 0.0,
+			"time": 1.5
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.9167, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.9167, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.18, -0.9167, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.9167, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.9167, 0.0)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.0,
+			"foot": "(0.0, -0.8767, -0.035)",
+			"reason": "DISABLED",
+			"speed": 0.0,
+			"time": 1.6
+		},
+		{
+			"body": "(0.0, -0.002722, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.075024, 1.244291, -0.086888)",
+						"point": "(-0.18, -0.9167, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.017733, 0.446697, -0.031879)",
+						"point": "(0.18, -0.9167, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(-0.002042, 0.290445, 0.002991)",
+						"point": "(0.18, -0.9167, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.9167, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 1.96, -0.0)",
+						"point": "(0.0, -0.9167, 0.0)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 1.96000003814697,
+				"speed_m_s": 0.163333341479301
+			},
+			"flex": 0.0,
+			"foot": "(0.0, -0.8767, -0.035)",
+			"reason": "DISABLED",
+			"speed": 0.163333341479301,
+			"time": 0.0
+		},
+		{
+			"body": "(-0.0, -0.0033, -0.0)",
+			"clearance": {
+				"contact_pairs": 4,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0000000163040176914819,
+				"contacts": [
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.074957, 1.243821, -0.086845)",
+						"point": "(-0.18, -0.92, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.017767, 0.446919, -0.031947)",
+						"point": "(0.18, -0.92, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(-0.002031, 0.290757, 0.003003)",
+						"point": "(0.18, -0.92, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.92, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 1.96, -0.0)",
+						"point": "(-0.0, -0.92, 0.0)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 1.96000003814697,
+				"speed_m_s": 0.0000000152157060284708
+			},
+			"flex": 0.0,
+			"foot": "(0.0, -0.8767, -0.035)",
+			"reason": "DISABLED",
+			"speed": 0.0000000152157060284708,
+			"time": 0.1
+		},
+		{
+			"body": "(-0.0, -0.0033, -0.0)",
+			"clearance": {
+				"contact_pairs": 4,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0000000242992044263701,
+				"contacts": [
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.074957, 1.243821, -0.086845)",
+						"point": "(-0.18, -0.92, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.017767, 0.446919, -0.031947)",
+						"point": "(0.18, -0.92, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(-0.002031, 0.290757, 0.003003)",
+						"point": "(0.18, -0.92, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.92, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 1.96, -0.0)",
+						"point": "(-0.0, -0.92, -0.0)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 1.96000003814697,
+				"speed_m_s": 0.0000000226779874878957
+			},
+			"flex": 0.0,
+			"foot": "(0.0, -0.8767, -0.035)",
+			"reason": "DISABLED",
+			"speed": 0.0000000226779874878957,
+			"time": 0.2
+		},
+		{
+			"body": "(-0.0, -0.0033, -0.0)",
+			"clearance": {
+				"contact_pairs": 4,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0000000218865139345326,
+				"contacts": [
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.074957, 1.243821, -0.086845)",
+						"point": "(-0.18, -0.92, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.017767, 0.446919, -0.031947)",
+						"point": "(0.18, -0.92, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(-0.002031, 0.290757, 0.003003)",
+						"point": "(0.18, -0.92, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.92, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 1.96, -0.0)",
+						"point": "(-0.0, -0.92, -0.0)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 1.96000003814697,
+				"speed_m_s": 0.0000000204423393768138
+			},
+			"flex": 0.0,
+			"foot": "(0.0, -0.8767, -0.035)",
+			"reason": "DISABLED",
+			"speed": 0.0000000204423393768138,
+			"time": 0.3
+		},
+		{
+			"body": "(-0.0, -0.0033, -0.0)",
+			"clearance": {
+				"contact_pairs": 4,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.00000000431634417097371,
+				"contacts": [
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.074957, 1.243821, -0.086845)",
+						"point": "(-0.18, -0.92, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.017767, 0.44692, -0.031947)",
+						"point": "(0.18, -0.92, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(-0.002031, 0.290757, 0.003003)",
+						"point": "(0.18, -0.92, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.92, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 1.96, -0.0)",
+						"point": "(-0.0, -0.92, -0.0)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 1.96000003814697,
+				"speed_m_s": 0.00000000402784339215145
+			},
+			"flex": 0.0,
+			"foot": "(0.0, -0.8767, -0.035)",
+			"reason": "DISABLED",
+			"speed": 0.00000000402784339215145,
+			"time": 0.4
+		},
+		{
+			"body": "(-0.0, -0.0033, -0.0)",
+			"clearance": {
+				"contact_pairs": 4,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.000000000271363931325652,
+				"contacts": [
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.074957, 1.243821, -0.086845)",
+						"point": "(-0.18, -0.92, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.017767, 0.44692, -0.031947)",
+						"point": "(0.18, -0.92, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(-0.002031, 0.290757, 0.003003)",
+						"point": "(0.18, -0.92, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.92, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 1.96, -0.0)",
+						"point": "(-0.0, -0.92, -0.0)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 1.96000003814697,
+				"speed_m_s": 0.000000000391999294135914
+			},
+			"flex": 0.0,
+			"foot": "(0.0, -0.8767, -0.035)",
+			"reason": "DISABLED",
+			"speed": 0.000000000391999294135914,
+			"time": 0.5
+		},
+		{
+			"body": "(-0.0, -0.0033, -0.0)",
+			"clearance": {
+				"contact_pairs": 4,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0000000000603546448929571,
+				"contacts": [
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.074957, 1.243821, -0.086845)",
+						"point": "(-0.18, -0.92, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.017767, 0.44692, -0.031947)",
+						"point": "(0.18, -0.92, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(-0.002031, 0.290757, 0.003003)",
+						"point": "(0.18, -0.92, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.92, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 1.96, -0.0)",
+						"point": "(-0.0, -0.92, -0.0)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 1.96000003814697,
+				"speed_m_s": 0.0000000000923348411618896
+			},
+			"flex": 0.0,
+			"foot": "(0.0, -0.8767, -0.035)",
+			"reason": "DISABLED",
+			"speed": 0.0000000000923348411618896,
+			"time": 0.6
+		},
+		{
+			"body": "(-0.0, -0.0033, -0.0)",
+			"clearance": {
+				"contact_pairs": 4,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0000000000124058966224916,
+				"contacts": [
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.074957, 1.243821, -0.086845)",
+						"point": "(-0.18, -0.92, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.017767, 0.44692, -0.031947)",
+						"point": "(0.18, -0.92, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(-0.002031, 0.290757, 0.003003)",
+						"point": "(0.18, -0.92, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.92, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 1.96, -0.0)",
+						"point": "(-0.0, -0.92, -0.0)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 1.96000003814697,
+				"speed_m_s": 0.0000000000192634953127824
+			},
+			"flex": 0.0,
+			"foot": "(0.0, -0.8767, -0.035)",
+			"reason": "DISABLED",
+			"speed": 0.0000000000192634953127824,
+			"time": 0.7
+		},
+		{
+			"body": "(-0.0, -0.0033, -0.0)",
+			"clearance": {
+				"contact_pairs": 4,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.00000000000308058374816345,
+				"contacts": [
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.074957, 1.243821, -0.086845)",
+						"point": "(-0.18, -0.92, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.017767, 0.44692, -0.031947)",
+						"point": "(0.18, -0.92, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(-0.002031, 0.290757, 0.003003)",
+						"point": "(0.18, -0.92, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.92, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 1.96, -0.0)",
+						"point": "(-0.0, -0.92, -0.0)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 1.96000003814697,
+				"speed_m_s": 0.00000000000417662822729814
+			},
+			"flex": 0.0,
+			"foot": "(0.0, -0.8767, -0.035)",
+			"reason": "DISABLED",
+			"speed": 0.00000000000417662822729814,
+			"time": 0.8
+		},
+		{
+			"body": "(-0.0, -0.0033, -0.0)",
+			"clearance": {
+				"contact_pairs": 4,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.000000000000907124310563223,
+				"contacts": [
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.074957, 1.243821, -0.086845)",
+						"point": "(-0.18, -0.92, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.017767, 0.44692, -0.031947)",
+						"point": "(0.18, -0.92, 0.105)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(-0.002031, 0.290757, 0.003003)",
+						"point": "(0.18, -0.92, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.18, -0.92, -0.175)",
+						"shape": 2
+					},
+					{
+						"collider_id": 1541255726564,
+						"impulse": "(0.0, 1.96, -0.0)",
+						"point": "(-0.0, -0.92, -0.0)",
+						"shape": 3
+					}
+				],
+				"peak_impulse_ns": 1.96000003814697,
+				"speed_m_s": 0.00000000000120322783854487
+			},
+			"flex": 0.0,
+			"foot": "(0.0, -0.8767, -0.035)",
+			"reason": "DISABLED",
+			"speed": 0.00000000000120322783854487,
+			"time": 0.9
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.0108333333333333,
+			"foot": "(0.0, -0.876646, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.0
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.0758333333333333,
+			"foot": "(0.0, -0.874042, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.1
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.140833333333333,
+			"foot": "(0.0, -0.86755, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.2
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.205833333333333,
+			"foot": "(0.0, -0.857218, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.3
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.270833333333333,
+			"foot": "(0.0, -0.843119, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.4
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.335833333333334,
+			"foot": "(0.0, -0.825357, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.5
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.03
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.400833333333334,
+			"foot": "(0.0, -0.804059, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.6
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.01
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.465833333333334,
+			"foot": "(0.0, -0.77938, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.7
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.01
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 1739864409560,
+						"impulse": "(-0.0, 0.053834, 0.097032)",
+						"point": "(0.0, -0.49298, -0.308889)",
+						"shape": 3
+					},
+					{
+						"collider_id": 1739864409560,
+						"impulse": "(0.0, 0.053834, 0.097032)",
+						"point": "(0.0, -0.49298, -0.308889)",
+						"shape": 4
+					}
+				],
+				"peak_impulse_ns": 0.110965311527252,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.530833333333334,
+			"foot": "(0.0, -0.751498, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.8
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.003
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 1739864409560,
+						"impulse": "(-0.0, 0.053548, 0.091071)",
+						"point": "(0.0, -0.496285, -0.317063)",
+						"shape": 3
+					},
+					{
+						"collider_id": 1739864409560,
+						"impulse": "(0.0, 0.053548, 0.091071)",
+						"point": "(0.0, -0.496285, -0.317063)",
+						"shape": 4
+					}
+				],
+				"peak_impulse_ns": 0.105647318065166,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.595833333333334,
+			"foot": "(0.0, -0.720615, -0.035)",
+			"reason": "FLEXING",
+			"speed": 0.0,
+			"time": 0.9
+		},
+		{
+			"body": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0,
+				"contacts": [
+					{
+						"collider_id": 1739864409560,
+						"impulse": "(0.0, 0.04959, 0.088285)",
+						"point": "(0.0, -0.498283, -0.319432)",
+						"shape": 3
+					},
+					{
+						"collider_id": 1739864409560,
+						"impulse": "(0.0, 0.04959, 0.088285)",
+						"point": "(0.0, -0.498283, -0.319432)",
+						"shape": 4
+					}
+				],
+				"peak_impulse_ns": 0.10125944763422,
+				"speed_m_s": 0.0
+			},
+			"flex": 0.628333333333334,
+			"foot": "(0.0, -0.704117, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.0,
+			"time": 1.0
+		},
+		{
+			"body": "(-0.0, 0.000252, 0.000474)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0101877339184284,
+				"contacts": [
+					{
+						"collider_id": 1739864409560,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.499157, -0.318175)",
+						"shape": 3
+					},
+					{
+						"collider_id": 1739864409560,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.499157, -0.318175)",
+						"shape": 4
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0083746500313282
+			},
+			"flex": 0.628333333333334,
+			"foot": "(0.0, -0.704117, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.0083746500313282,
+			"time": 1.1
+		},
+		{
+			"body": "(-0.0, 0.000652, 0.001204)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0100862802937627,
+				"contacts": [
+					{
+						"collider_id": 1739864409560,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.0, -0.49911, -0.316915)",
+						"shape": 3
+					},
+					{
+						"collider_id": 1739864409560,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.49911, -0.316915)",
+						"shape": 4
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.00829125195741653
+			},
+			"flex": 0.628333333333334,
+			"foot": "(0.0, -0.704117, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.00829125195741653,
+			"time": 1.2
+		},
+		{
+			"body": "(-0.0, 0.001048, 0.001927)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.0099858371540904,
+				"contacts": [
+					{
+						"collider_id": 1739864409560,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(-0.0, -0.49907, -0.315661)",
+						"shape": 3
+					},
+					{
+						"collider_id": 1739864409560,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.49907, -0.315661)",
+						"shape": 4
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.00820868462324142
+			},
+			"flex": 0.628333333333334,
+			"foot": "(0.0, -0.704117, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.00820868462324142,
+			"time": 1.3
+		},
+		{
+			"body": "(-0.0, 0.00144, 0.002643)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.00988639425486326,
+				"contacts": [
+					{
+						"collider_id": 1739864409560,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.499038, -0.314413)",
+						"shape": 3
+					},
+					{
+						"collider_id": 1739864409560,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.499038, -0.314413)",
+						"shape": 4
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.0081269396468997
+			},
+			"flex": 0.628333333333334,
+			"foot": "(0.0, -0.704117, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.0081269396468997,
+			"time": 1.4
+		},
+		{
+			"body": "(-0.0, 0.001829, 0.003351)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.0
+			},
+			"contacts": {
+				"angular_speed_rad_s": 0.00978794228285551,
+				"contacts": [
+					{
+						"collider_id": 1739864409560,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.499017, -0.313169)",
+						"shape": 3
+					},
+					{
+						"collider_id": 1739864409560,
+						"impulse": "(0.0, 0.0, 0.0)",
+						"point": "(0.0, -0.499017, -0.313169)",
+						"shape": 4
+					}
+				],
+				"peak_impulse_ns": 0.0,
+				"speed_m_s": 0.00804600771516562
+			},
+			"flex": 0.628333333333334,
+			"foot": "(0.0, -0.704117, -0.035)",
+			"reason": "COLLIDER_PATH_BLOCKED",
+			"speed": 0.00804600771516562,
+			"time": 1.5
+		}
+	],
+	"stage": "M2_ISOLATED_COLLIDER_CLEARANCE"
+}

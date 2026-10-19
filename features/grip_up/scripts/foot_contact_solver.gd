@@ -11,6 +11,8 @@ var _lengths: Array[float] = []
 var _clearances: Array[float] = []
 var _pending: Array[Dictionary] = []
 var _committed := true
+## v0.8 only: world ankle positions admitted by the current physical proxy pose.
+var collision_pose_guard:Array[Vector3]=[]
 
 func configure(torso: RigidBody3D, settings: Resource, hips: Array[Vector3], rest_feet: Array[Vector3], lengths: Array[float], clearances: Array[float]) -> void:
 	body = torso
@@ -114,6 +116,11 @@ func prepare(delta: float, contract: float, extend: float, _bias: float, active:
 		var point: Vector3 = support.to_global(foot.local_point)
 		var normal: Vector3 = (support.global_basis.inverse().transposed() * foot.local_normal).normalized()
 		var ankle: Vector3 = point + normal * _clearances[id]
+		if id<collision_pose_guard.size():
+			var mismatch:Vector3=ankle-collision_pose_guard[id]
+			if absf(mismatch.dot(normal))>.005 or mismatch.slide(normal).length()>.08:
+				_release(foot,"physical_foot_pose_mismatch")
+				continue
 		var invalid := Sampler.validate(body, tuning, hip, ankle, _lengths[id], support, point, normal, _clearances[id])
 		if invalid != "":
 			_release(foot, invalid)

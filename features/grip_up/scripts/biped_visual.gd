@@ -101,6 +101,7 @@ func _process(delta: float) -> void:
 
 func _update_ground_animation(delta: float) -> void:
 	var on_ground: bool = is_instance_valid(ground_motor) and ground_motor.grounded and not ground_motor.has_climbing_intent()
+	if torso.has_meta("adaptive_legs") and torso.get_meta("adaptive_legs").achieved_flex>.001:on_ground=false
 	var speed: float = torso.linear_velocity.slide(Vector3.UP).length()
 	var clip := ("Walk" if speed>0.12 else "Idle") if on_ground else "A_TPose"
 	if clip!=animation_clip:
@@ -172,6 +173,19 @@ func _physics_process(delta: float) -> void:
 					forward = torso.global_basis.x.cross(direction)
 				var pole: Vector3 = hip+direction*leg_motion.current_lengths[i]*0.5+forward.normalized()*0.48
 				leg_motion.poles[i] = leg_motion.poles[i].lerp(pole,1.0-exp(-12.0*delta))
+	if torso.has_meta("adaptive_legs"):
+		var physical_legs=torso.get_meta("adaptive_legs")
+		if physical_legs.active:
+			var pose:Dictionary=physical_legs.pose_for(physical_legs.achieved_flex)
+			var shift:Vector3=pose.sole.origin-controller.tuning.foot_base_offset
+			for i in 2:
+				var endpoint:Vector3=torso.global_transform*(leg_motion.rest_feet[i]+shift)
+				if controller.feet_solver!=null:
+					var foot:Dictionary=controller.feet_solver.feet[i]
+					var mismatch:Vector3=foot.ankle-endpoint
+					if foot.state in ["SUPPORTING","SLIDING"] and absf(mismatch.dot(foot.normal))<=.005 and mismatch.slide(foot.normal).length()<=.08:endpoint=foot.ankle
+				leg_motion.constrain_foot(i,endpoint,Vector3.ZERO)
+				leg_motion.poles[i]=torso.global_transform*(pose.knee+Vector3((-1.0 if i==0 else 1.0)*.1,0,-.1))
 	controller.free_foot_positions = leg_motion.feet.duplicate()
 
 func _update_targets(delta: float = 1.0) -> void:

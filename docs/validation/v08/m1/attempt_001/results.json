@@ -1,0 +1,26 @@
+{
+  "recorded_utc": "2026-10-19T20:04:51.054256+00:00",
+  "source": "C:\\Users\\Wynter\\grip_up",
+  "provenance": "Automated physical evidence; not human acceptance",
+  "baseline_commit": "9197172e50a9e78c481b9ed251725a3c9ccb3d1c",
+  "runs": [
+    {
+      "suite": "palm_compression",
+      "hz": 120,
+      "passed": true,
+      "checks": 49,
+      "failures": 0,
+      "exit_code": 0
+    },
+    {
+      "suite": "palm_compression",
+      "hz": 60,
+      "passed": true,
+      "checks": 49,
+      "failures": 0,
+      "exit_code": 0
+    }
+  ],
+  "all_passed": true,
+  "total_checks": 98
+}

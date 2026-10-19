@@ -18,6 +18,7 @@ const IntentLocomotion = preload("res://features/grip_up/scripts/intent_locomoti
 const PendingGripTarget = preload("res://features/grip_up/scripts/pending_grip_target.gd")
 const ReachableGripResolver = preload("res://features/grip_up/scripts/reachable_grip_resolver.gd")
 const LedgeTransfer = preload("res://features/grip_up/scripts/ledge_transfer.gd")
+const PalmSupport = preload("res://features/grip_up/scripts/palm_support_solver.gd")
 var _held_targets: Dictionary = {}
 var _held_target_serial := 0
 var transfer_assist_enabled := false
@@ -56,6 +57,9 @@ var intent_climb_enabled := false
 var intent_locomotion = IntentLocomotion.new()
 var intent_auto_mantle_enabled := false
 var ledge_transfer = LedgeTransfer.new()
+var physics_mantle_v08_enabled := false
+var palm_compression_enabled := false
+var palm_solver = PalmSupport.new()
 var control_profile := 0
 var posture_policy := 0
 var independent_aim_enabled := true
@@ -89,6 +93,7 @@ func configure(body: RigidBody3D, configuration: Resource = null) -> void:
 	reset_state()
 
 func reset_state() -> void:
+	palm_solver.reset()
 	ledge_transfer.reset()
 	intent_locomotion.reset()
 	_held_targets.clear()
@@ -162,6 +167,7 @@ func set_control_profile(profile: int) -> void:
 		if _held_targets[hand_id].active and get_hand_state(hand_id)=="REACHING":
 			release_grip(hand_id,"input_released")
 	control_profile = next
+	palm_solver.reset()
 	ledge_transfer.reset()
 	intent_locomotion.reset()
 	_twist_refinement.reset()
@@ -186,6 +192,9 @@ func set_control_profile(profile: int) -> void:
 
 func set_traversal_input(value: Vector2, camera_right: Vector3 = Vector3.RIGHT) -> void:
 	intent_locomotion.set_input(value,camera_right)
+
+func is_palm_hand(id:int)->bool:
+	return palm_solver.is_palm(id)
 
 func set_ground_support(snapshot: Dictionary) -> void:
 	intent_locomotion.ground = snapshot.duplicate(true)
@@ -577,6 +586,10 @@ func release_grip(id: int, reason: String = "manual") -> void:
 		transfer_journal.release(self,id,reason)
 		_publish_transfer_events()
 	var hand: Dictionary = hands[id]
+	palm_solver.release(id)
+	if hand.has("palm"):
+		hand.contact_mode="FREE"
+		hand.palm={"valid":false,"reason":reason,"requested_force":Vector3.ZERO,"applied_force":Vector3.ZERO,"applied_normal":0.0,"applied_tangent":Vector3.ZERO,"reaction_force":Vector3.ZERO}
 	_arm_deltas.erase(id)
 	_contextual_holds.erase(id)
 	_free_hand_targets.erase(id)
@@ -844,7 +857,13 @@ func _physics_process(delta: float) -> void:
 				transfer_journal.contact(self,id)
 				_publish_transfer_events()
 	_advance_launch(delta)
+	palm_solver.prepare(self,delta,control_profile==4 and physics_mantle_v08_enabled and palm_compression_enabled and _launch_state=="IDLE")
 	var attached: Array[int] = _attached_ids()
+	var torque_attached:Array[int]=attached.duplicate()
+	if palm_solver.enabled:
+		# A purely axial palm is not an adhesive gripper joint. The old20Nm
+		# assist may react only through remaining actual TRACTION hands.
+		torque_attached=torque_attached.filter(func(id):return not is_palm_hand(id))
 	if control_profile == 4:
 		ledge_transfer.step(self,delta,intent_auto_mantle_enabled and intent_climb_enabled and _launch_state=="IDLE")
 		intent_locomotion.step(self,delta,intent_climb_enabled and _launch_state=="IDLE")
@@ -872,6 +891,7 @@ func _physics_process(delta: float) -> void:
 			# released gesture decays must not rotate that residual effort.
 			_contextual_world_filtered = _contextual_world_filtered.lerp(_contextual_right*_contextual_requested.x,response)
 	var forces: Array[Vector3] = [Vector3.ZERO, Vector3.ZERO]
+	var palm_releases:Dictionary={}
 	var raw_tensions: Array[float] = [0.0, 0.0]
 	var center: Vector3 = torso.global_transform * torso.center_of_mass
 	var sum_force: float = 0.0
@@ -907,8 +927,15 @@ func _physics_process(delta: float) -> void:
 		hand["blend_elapsed"] += delta
 		var blend: float = smoothstep(0.0, maxf(0.001, tuning.grip_blend_duration), hand["blend_elapsed"])
 		var effort: float = hand["allocation"]
-		var result: Dictionary = Actuator.evaluate(torso, get_shoulder_world(id), hand["anchor"], hand["rest_length"], tuning.arm_stiffness * effort, tuning.arm_damping * effort, tuning.max_length_error, delta)
-		var raw: float = minf(result["tension"] * blend, tuning.max_force_per_arm)
+		var result:Dictionary
+		var raw:float
+		if is_palm_hand(id):
+			result=palm_solver.evaluate(self,id,tuning.arm_stiffness*effort,tuning.arm_damping*effort,delta,blend)
+			raw=Vector3(result.force).length()
+			if result.release_reason!="":palm_releases[id]=result.release_reason
+		else:
+			result=Actuator.evaluate(torso, get_shoulder_world(id), hand["anchor"], hand["rest_length"], tuning.arm_stiffness * effort, tuning.arm_damping * effort, tuning.max_length_error, delta)
+			raw=minf(result["tension"] * blend, tuning.max_force_per_arm)
 		raw_tensions[id] = raw
 		if hand["state"] == "SLIPPING":
 			raw *= tuning.slip_force_multiplier
@@ -917,7 +944,7 @@ func _physics_process(delta: float) -> void:
 		sum_force += forces[id].length()
 		moments += (get_shoulder_world(id) - center).cross(forces[id])
 	_arm_deltas.clear()
-	var assist: Vector3 = _compute_attitude_assist(attached,forces,center,sum_force)
+	var assist: Vector3 = _compute_attitude_assist(torque_attached,forces,center,sum_force)
 	var mantle_assist:=Vector3.ZERO
 	var diagnostic_attitude: Vector3 = assist if _transfer_enabled() else Vector3.ZERO
 	var before_tilt_assist := assist
@@ -951,12 +978,12 @@ func _physics_process(delta: float) -> void:
 	var support_torque_weights: Dictionary = {}
 	var diagnostic_swing_lever := Vector3.ZERO
 	var diagnostic_swing_engagement := 0.0
-	if control_profile in [1,2,3,4] and not attached.is_empty():
+	if control_profile in [1,2,3,4] and not torque_attached.is_empty():
 		var lever := Vector3.ZERO
 		var support_spin := Vector3.ZERO
 		var engaged_weight := 0.0
 		var allocation_weight := 0.0
-		for id in attached:
+		for id in torque_attached:
 			var allocation: float = maxf(0.0,hands[id]["allocation"])
 			var weight: float = allocation*smoothstep(0.0,maxf(0.001,tuning.grip_blend_duration),hands[id]["blend_elapsed"])
 			support_torque_weights[id] = weight
@@ -970,7 +997,7 @@ func _physics_process(delta: float) -> void:
 				support_spin += support.constant_angular_velocity*weight
 		lever /= maxf(engaged_weight,0.000001)
 		support_spin /= maxf(engaged_weight,0.000001)
-		for id in attached:
+		for id in torque_attached:
 			support_torque_weights[id] /= maxf(engaged_weight,0.000001)
 		var engagement: float = engaged_weight/maxf(allocation_weight,0.000001)
 		if _transfer_enabled():
@@ -989,7 +1016,7 @@ func _physics_process(delta: float) -> void:
 		_swing_torque = assist-base_assist
 	# M6 is the final incremental attitude contribution, sharing the same20Nm
 	# cap and the existing actual-anchor reaction pair. No separate torso motor.
-	if control_profile==4 and intent_auto_mantle_enabled and not attached.is_empty():
+	if control_profile==4 and intent_auto_mantle_enabled and not torque_attached.is_empty():
 		var before_mantle:=assist
 		assist=(assist+ledge_transfer.torque).limit_length(tuning.max_attitude_torque)
 		mantle_assist=assist-before_mantle
@@ -1040,6 +1067,7 @@ func _physics_process(delta: float) -> void:
 		var force: Vector3 = forces[id] * scale_factor
 		hand["force"] = force
 		hand["reaction_force"] = -force
+		if is_palm_hand(id):palm_solver.admitted(self,id,force)
 		if _held_targets.has(id) and _held_targets[id].active and hand["anchor"]==_held_targets[id].anchor:
 			var pending_load: Dictionary = _held_targets[id].snapshot
 			pending_load.current_force = force.length()
@@ -1056,11 +1084,14 @@ func _physics_process(delta: float) -> void:
 		if support is RigidBody3D:
 			support.apply_force(-force, hand["anchor_world"] - support.global_position)
 			if control_profile in [1,2,3,4]:
-				support.apply_torque(-assist * scale_factor * float(support_torque_weights.get(id,1.0/float(attached.size()))))
+				support.apply_torque(-assist * scale_factor * float(support_torque_weights.get(id,0.0 if palm_solver.enabled else 1.0/float(attached.size()))))
 			else:
 				support.apply_torque(-assist * scale_factor / float(attached.size()))
 			support.sleeping = false
-		_update_integrity(id, raw_tensions[id] * scale_factor, delta)
+		if is_palm_hand(id):
+			if palm_releases.has(id):release_grip(id,palm_releases[id])
+		else:
+			_update_integrity(id, raw_tensions[id] * scale_factor, delta)
 	if not attached.is_empty():
 		torso.apply_torque(assist * scale_factor)
 		torso.sleeping = false
@@ -1084,6 +1115,8 @@ func _physics_process(delta: float) -> void:
 	if control_profile==4:
 		_diagnostics["ledge_transfer"]=ledge_transfer.data.duplicate(true)
 		_diagnostics["ledge_transfer"]["applied_torque"]=mantle_assist*scale_factor
+		if physics_mantle_v08_enabled:
+			_diagnostics["ledge_transfer"]["palm_support"]=palm_solver.diagnostics()
 		_diagnostics["combined_ground_climb_torque"] = Vector3(intent_locomotion.ground.get("applied_torque",Vector3.ZERO))+(moments+leg_moment+assist)*scale_factor
 	if control_profile==3:
 		_diagnostics["transfer_posture"] = {"enabled":transfer_assist_enabled,"variant":posture_variant,

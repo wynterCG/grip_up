@@ -169,6 +169,12 @@ func step(controller: Node, delta: float, enabled: bool) -> void:
 	var goals := {}
 	for id in ids:
 		var hand: Dictionary = controller.hands[id]
+		if controller.is_palm_hand(id):
+			# Palm compression has the opposite axial sign from a traction cable.
+			# Its bounded press target has one owner in PalmSupportSolver.
+			records.erase(id)
+			goals[id]=hand.rest_length
+			continue
 		if not records.has(id) or records[id].anchor!=hand.anchor:
 			records[id] = {"anchor":hand.anchor,"hold":hand.rest_length,"velocity":0.0,"previous_actual":hand.actual_length,"stall":0.0,"last_direction":0,"idle":0.0}
 		var record: Dictionary = records[id]

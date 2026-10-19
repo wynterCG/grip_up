@@ -42,16 +42,34 @@ func _physics_process(_delta: float) -> void:
 	if not is_instance_valid(torso):
 		return
 	var sole: Vector3 = torso.to_global(tuning.foot_base_offset)
+	var sole_basis:Basis=torso.global_basis
+	if torso.has_meta("adaptive_legs"):
+		var physical_sole:Transform3D=torso.get_meta("adaptive_legs").foot_local_transform()
+		sole=torso.global_transform*physical_sole.origin
+		sole_basis=torso.global_basis*physical_sole.basis
 	var query := PhysicsRayQueryParameters3D.create(sole + Vector3.UP*0.12,sole-Vector3.UP*0.30,3,[torso.get_rid()])
 	var hit := torso.get_world_3d().direct_space_state.intersect_ray(query)
 	if not hit.is_empty() and hit.normal.dot(Vector3.UP)>0.65 and torso.global_basis.y.dot(Vector3.UP)>0.6:
 		var half: Vector3 = tuning.foot_base_size*0.5
-		var extent: float = absf(hit.normal.dot(torso.global_basis.x))*half.x + absf(hit.normal.dot(torso.global_basis.y))*half.y + absf(hit.normal.dot(torso.global_basis.z))*half.z
+		var extent: float = absf(hit.normal.dot(sole_basis.x))*half.x + absf(hit.normal.dot(sole_basis.y))*half.y + absf(hit.normal.dot(sole_basis.z))*half.z
 		var gap: float = hit.normal.dot(sole-hit.position)-extent
 		if gap<=0.018 and gap>=-0.04:
 			grounded = true
 			ground_normal = hit.normal
 			support_body = hit.collider
+		if grounded and controller.physics_mantle_v08_enabled and controller.control_profile==4:
+			# v0.8 support must carry a native sole contact, not just be near a ray.
+			var native_contact:=false
+			var state:=PhysicsServer3D.body_get_direct_state(torso.get_rid())
+			if state!=null and absf(gap)<=.005:
+				for index in state.get_contact_count():
+					var shape_index:int=state.get_contact_local_shape(index)
+					if shape_index<0 or shape_index>=PhysicsServer3D.body_get_shape_count(torso.get_rid()):continue
+					var owner:int=torso.shape_find_owner(shape_index)
+					var shape_node:Object=torso.shape_owner_get_owner(owner)
+					if shape_node!=null and shape_node.name=="FootBase" and state.get_contact_collider_id(index)==support_body.get_instance_id() and state.get_contact_impulse(index).dot(Vector3.UP)>.0001:native_contact=true
+			grounded=native_contact
+			if not grounded:support_body=null
 	controller.grounded_for_walking = grounded
 	var intent_profile:bool=controller.control_profile==4 and controller.intent_climb_enabled
 	if intent_profile:

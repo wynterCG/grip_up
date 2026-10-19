@@ -1,0 +1,2506 @@
+{
+	"checks": 15,
+	"contacts": [
+		{
+			"contact": "(-0.239999, 2.43, 0.0)",
+			"hand": 0,
+			"index": 2,
+			"pending": {
+				"acquisition_load": 0.0,
+				"acquisition_load_scope": "instant contact before existing force blend",
+				"active": true,
+				"attempt_id": 3,
+				"blocked": false,
+				"blocker_id": 0,
+				"capture": {
+					"accepted": true,
+					"actual_arrival": 0.133333333333333,
+					"available_work_upper_bound": 30.2196670532227,
+					"buffered": false,
+					"contact_resolution_applied": false,
+					"contact_resolution_reason": "clicked_point_already_reachable",
+					"failure_reason": "",
+					"input_time": 4.33333333333332,
+					"load_risk": false,
+					"original_selection_local": "(-0.489999, 0.38, 0.2)",
+					"original_selection_world": "(-0.239999, 2.43, 0.0)",
+					"out_of_reach_selection": false,
+					"persistent_target": true,
+					"predicted_contact_time": -1.0,
+					"predicted_entry_time": -1.0,
+					"predicted_target": "(-0.239999, 2.43, 0.0)",
+					"predicted_target_time": -1.0,
+					"prediction_error": -1.0,
+					"radial_speed": 0.178262144327164,
+					"reason": "contact_valid",
+					"relative_speed": 0.328723132610321,
+					"stopping_energy": 0.147732637105143
+				},
+				"contact_distance": 0.576056480407715,
+				"contact_resolution_applied": false,
+				"contact_resolution_blocker_id": 0,
+				"contact_resolution_reason": "clicked_point_already_reachable",
+				"contact_rest_length": 0.576056480407715,
+				"contact_time": 4.46666666666666,
+				"contact_validated": true,
+				"current_force": 0.157937452197075,
+				"distance": 0.576056480407715,
+				"endpoint_valid": true,
+				"first_applied_load": 0.157937452197075,
+				"gesture_speed": 2.90697646141052,
+				"gesture_velocity": "(0.096769, 0.090566, -2.903953)",
+				"hand_goal": "(-0.239999, 2.43, 0.0)",
+				"hand_world": "(-0.239999, 2.43, 0.0)",
+				"held": true,
+				"label_in_reach": true,
+				"last_window_duration": -1.0,
+				"last_window_reason": "",
+				"local_normal": "(0.0, 0.0, 1.0)",
+				"local_point": "(-0.489999, 0.38, 0.2)",
+				"missed_window_count": 0,
+				"motion_scope": "shoulder-frame transport plus finite relative gesture; full world sweep",
+				"normal_world": "(0.0, 0.0, 1.0)",
+				"original_selection_distance": 0.555617570877075,
+				"original_selection_local": "(-0.489999, 0.38, 0.2)",
+				"original_selection_normal_local": "(0.0, 0.0, 1.0)",
+				"original_selection_world": "(-0.239999, 2.43, 0.0)",
+				"peak_blend_load": 0.157937452197075,
+				"pending_time": 0.133333333333333,
+				"phase": "ATTACHED",
+				"physical_in_reach": true,
+				"physical_transition_count": 0,
+				"reach_margin": 0.0810235195922852,
+				"reason": "contact_valid",
+				"requested_gesture_speed": 2.90697646141052,
+				"requested_gesture_velocity": "(0.096769, 0.090566, -2.903953)",
+				"selected_time": 4.33333333333332,
+				"selection_policy": "REACHABLE_SAME_COLLIDER_ON_REQUEST",
+				"shoulder_world": "(-0.192722, 1.936562, 0.293471)",
+				"substate": "ATTACHED",
+				"support_id": 62914562563,
+				"target_relative_speed": 2.70000004768372,
+				"target_selection_id": 3,
+				"target_velocity": "(0.0, 0.0, 0.0)",
+				"target_world": "(-0.239999, 2.43, 0.0)",
+				"transition_count": 0,
+				"transport_speed": 0.24323508143425,
+				"transport_velocity": "(-0.096769, -0.090566, 0.203953)",
+				"workspace_valid": true,
+				"world_speed": 2.70000004768372,
+				"world_velocity": "(0.0, 0.0, -2.7)"
+			},
+			"position": "(0.035019, 1.437525, 0.411665)"
+		},
+		{
+			"contact": "(0.238695, 2.575984, -0.0)",
+			"hand": 1,
+			"index": 3,
+			"pending": {
+				"acquisition_load": 0.0,
+				"acquisition_load_scope": "instant contact before existing force blend",
+				"active": true,
+				"attempt_id": 4,
+				"blocked": false,
+				"blocker_id": 0,
+				"capture": {
+					"accepted": true,
+					"actual_arrival": 0.149999999999999,
+					"available_work_upper_bound": 7.94106731414796,
+					"buffered": false,
+					"contact_resolution_applied": true,
+					"contact_resolution_reason": "same_collider_current_reachable_surface",
+					"failure_reason": "",
+					"input_time": 4.71666666666666,
+					"load_risk": false,
+					"original_selection_local": "(-0.01, 0.59, 0.2)",
+					"original_selection_world": "(0.24, 2.64, 0.0)",
+					"out_of_reach_selection": true,
+					"persistent_target": true,
+					"predicted_contact_time": -1.0,
+					"predicted_entry_time": -1.0,
+					"predicted_target": "(0.238695, 2.575984, -0.0)",
+					"predicted_target_time": -1.0,
+					"prediction_error": -1.0,
+					"radial_speed": -0.171571046113968,
+					"reason": "contact_valid",
+					"relative_speed": 0.289945274591446,
+					"stopping_energy": 0.0
+				},
+				"contact_distance": 0.637941479682922,
+				"contact_resolution_applied": true,
+				"contact_resolution_blocker_id": 0,
+				"contact_resolution_reason": "same_collider_current_reachable_surface",
+				"contact_rest_length": 0.62,
+				"contact_time": 4.86666666666665,
+				"contact_validated": true,
+				"current_force": 0.282934457063675,
+				"distance": 0.637941479682922,
+				"endpoint_valid": true,
+				"first_applied_load": 0.282934457063675,
+				"gesture_speed": 3.18039512634277,
+				"gesture_velocity": "(0.018739, -0.300894, -3.166074)",
+				"hand_goal": "(0.238695, 2.575984, -0.0)",
+				"hand_world": "(0.238695, 2.575984, -0.0)",
+				"held": true,
+				"label_in_reach": true,
+				"last_window_duration": -1.0,
+				"last_window_reason": "",
+				"local_normal": "(0.0, 0.0, 1.0)",
+				"local_point": "(-0.011305, 0.525985, 0.2)",
+				"missed_window_count": 0,
+				"motion_scope": "shoulder-frame transport plus finite relative gesture; full world sweep",
+				"normal_world": "(0.0, 0.0, 1.0)",
+				"original_selection_distance": 0.719123184680939,
+				"original_selection_local": "(-0.01, 0.59, 0.2)",
+				"original_selection_normal_local": "(0.0, 0.0, 1.0)",
+				"original_selection_world": "(0.24, 2.64, 0.0)",
+				"peak_blend_load": 0.282934457063675,
+				"pending_time": 0.149999999999999,
+				"phase": "ATTACHED",
+				"physical_in_reach": true,
+				"physical_transition_count": 0,
+				"reach_margin": 0.0191385203170776,
+				"reason": "contact_valid",
+				"requested_gesture_speed": 3.18039512634277,
+				"requested_gesture_velocity": "(0.018739, -0.300894, -3.166074)",
+				"resolved_contact_distance": 0.657079994678497,
+				"resolved_contact_world_at_selection": "(0.238695, 2.575984, -0.0)",
+				"selected_time": 4.71666666666666,
+				"selection_policy": "REACHABLE_SAME_COLLIDER_ON_REQUEST",
+				"shoulder_world": "(0.247268, 1.967289, 0.190751)",
+				"substate": "ATTACHED",
+				"support_id": 62914562563,
+				"target_relative_speed": 2.70000004768372,
+				"target_selection_id": 4,
+				"target_velocity": "(0.0, 0.0, 0.0)",
+				"target_world": "(0.238695, 2.575984, -0.0)",
+				"transition_count": 0,
+				"transport_speed": 0.555079460144043,
+				"transport_velocity": "(-0.018739, 0.300894, 0.466074)",
+				"workspace_valid": true,
+				"world_speed": 2.70000004768372,
+				"world_velocity": "(0.0, 0.0, -2.7)"
+			},
+			"position": "(0.16578, 1.468917, 0.422992)"
+		},
+		{
+			"contact": "(0.450001, 2.55, 0.0)",
+			"hand": 0,
+			"index": 4,
+			"pending": {
+				"acquisition_load": 0.0,
+				"acquisition_load_scope": "instant contact before existing force blend",
+				"active": true,
+				"attempt_id": 5,
+				"blocked": false,
+				"blocker_id": 0,
+				"capture": {
+					"accepted": true,
+					"actual_arrival": 1.86666666666666,
+					"available_work_upper_bound": 1.26783857345582,
+					"buffered": false,
+					"contact_resolution_applied": false,
+					"contact_resolution_reason": "actual_surface_outside_reach",
+					"failure_reason": "",
+					"input_time": 5.86666666666665,
+					"load_risk": false,
+					"original_selection_local": "(0.200001, 0.5, 0.2)",
+					"original_selection_world": "(0.450001, 2.55, 0.0)",
+					"out_of_reach_selection": true,
+					"persistent_target": true,
+					"predicted_contact_time": -1.0,
+					"predicted_entry_time": -1.0,
+					"predicted_target": "(0.450001, 2.55, 0.0)",
+					"predicted_target_time": -1.0,
+					"prediction_error": -1.0,
+					"radial_speed": -0.037884596735239,
+					"reason": "contact_valid",
+					"relative_speed": 0.0537150613963604,
+					"stopping_energy": 0.0
+				},
+				"contact_distance": 0.656478226184845,
+				"contact_resolution_applied": false,
+				"contact_resolution_blocker_id": 0,
+				"contact_resolution_reason": "actual_surface_outside_reach",
+				"contact_rest_length": 0.62,
+				"contact_time": 7.73333333333331,
+				"contact_validated": true,
+				"current_force": 0.827567100524902,
+				"distance": 0.656478226184845,
+				"endpoint_valid": true,
+				"first_applied_load": 0.827567100524902,
+				"gesture_speed": 2.67230820655823,
+				"gesture_velocity": "(0.080785, -0.149932, -2.666876)",
+				"hand_goal": "(0.450001, 2.55, 0.0)",
+				"hand_world": "(0.450001, 2.55, 0.0)",
+				"held": true,
+				"label_in_reach": false,
+				"last_window_duration": -1.0,
+				"last_window_reason": "",
+				"local_normal": "(0.0, 0.0, 1.0)",
+				"local_point": "(0.200001, 0.5, 0.2)",
+				"missed_window_count": 0,
+				"motion_scope": "shoulder-frame transport plus finite relative gesture; full world sweep",
+				"normal_world": "(0.0, 0.0, 1.0)",
+				"original_selection_distance": 0.837457239627838,
+				"original_selection_local": "(0.200001, 0.5, 0.2)",
+				"original_selection_normal_local": "(0.0, 0.0, 1.0)",
+				"original_selection_world": "(0.450001, 2.55, 0.0)",
+				"peak_blend_load": 0.827567100524902,
+				"pending_time": 1.86666666666666,
+				"phase": "ATTACHED",
+				"physical_in_reach": true,
+				"physical_transition_count": 1,
+				"reach_margin": 0.000601773815155027,
+				"reason": "contact_valid",
+				"requested_gesture_speed": 2.67230820655823,
+				"requested_gesture_velocity": "(0.080785, -0.149932, -2.666876)",
+				"selected_time": 5.86666666666665,
+				"selection_policy": "REACHABLE_SAME_COLLIDER_ON_REQUEST",
+				"shoulder_world": "(0.013683, 2.217092, 0.360226)",
+				"substate": "ATTACHED",
+				"support_id": 62914562563,
+				"target_relative_speed": 2.6999990940094,
+				"target_selection_id": 5,
+				"target_velocity": "(0.0, 0.0, 0.0)",
+				"target_world": "(0.450001, 2.55, 0.0)",
+				"transition_count": 0,
+				"transport_speed": 0.173501819372177,
+				"transport_velocity": "(-0.080785, 0.149932, -0.033123)",
+				"workspace_valid": true,
+				"world_speed": 2.6999990940094,
+				"world_velocity": "(0.0, 0.0, -2.699999)"
+			},
+			"position": "(0.426529, 1.863498, 0.231743)"
+		},
+		{
+			"contact": "(0.900001, 2.6, 0.0)",
+			"hand": 1,
+			"index": 5,
+			"pending": {
+				"acquisition_load": 0.0,
+				"acquisition_load_scope": "instant contact before existing force blend",
+				"active": true,
+				"attempt_id": 6,
+				"blocked": false,
+				"blocker_id": 0,
+				"capture": {
+					"accepted": true,
+					"actual_arrival": 0.183333333333342,
+					"available_work_upper_bound": 49.3248272895813,
+					"buffered": false,
+					"contact_resolution_applied": false,
+					"contact_resolution_reason": "clicked_point_already_reachable",
+					"failure_reason": "",
+					"input_time": 8.33333333333333,
+					"load_risk": false,
+					"original_selection_local": "(0.650001, 0.55, 0.2)",
+					"original_selection_world": "(0.900001, 2.6, 0.0)",
+					"out_of_reach_selection": false,
+					"persistent_target": true,
+					"predicted_contact_time": -1.0,
+					"predicted_entry_time": -1.0,
+					"predicted_target": "(0.900001, 2.6, 0.0)",
+					"predicted_target_time": -1.0,
+					"prediction_error": -1.0,
+					"radial_speed": -0.646723985671997,
+					"reason": "contact_valid",
+					"relative_speed": 1.39197623729706,
+					"stopping_energy": 0.0
+				},
+				"contact_distance": 0.522986590862274,
+				"contact_resolution_applied": false,
+				"contact_resolution_blocker_id": 0,
+				"contact_resolution_reason": "clicked_point_already_reachable",
+				"contact_rest_length": 0.522986590862274,
+				"contact_time": 8.51666666666667,
+				"contact_validated": true,
+				"current_force": 0.0,
+				"distance": 0.522986590862274,
+				"endpoint_valid": true,
+				"first_applied_load": 0.0,
+				"gesture_speed": 3.09494471549988,
+				"gesture_velocity": "(-1.499655, 1.277518, -2.386978)",
+				"hand_goal": "(0.900001, 2.6, 0.0)",
+				"hand_world": "(0.900001, 2.6, 0.0)",
+				"held": true,
+				"label_in_reach": true,
+				"last_window_duration": -1.0,
+				"last_window_reason": "",
+				"local_normal": "(0.0, 0.0, 1.0)",
+				"local_point": "(0.650001, 0.55, 0.2)",
+				"missed_window_count": 0,
+				"motion_scope": "shoulder-frame transport plus finite relative gesture; full world sweep",
+				"normal_world": "(0.0, 0.0, 1.0)",
+				"original_selection_distance": 0.616419076919556,
+				"original_selection_local": "(0.650001, 0.55, 0.2)",
+				"original_selection_normal_local": "(0.0, 0.0, 1.0)",
+				"original_selection_world": "(0.900001, 2.6, 0.0)",
+				"peak_blend_load": 0.0,
+				"pending_time": 0.183333333333342,
+				"phase": "ATTACHED",
+				"physical_in_reach": true,
+				"physical_transition_count": 0,
+				"reach_margin": 0.134093409137726,
+				"reason": "contact_valid",
+				"requested_gesture_speed": 3.09494471549988,
+				"requested_gesture_velocity": "(-1.499655, 1.277518, -2.386978)",
+				"selected_time": 8.33333333333333,
+				"selection_policy": "REACHABLE_SAME_COLLIDER_ON_REQUEST",
+				"shoulder_world": "(0.459847, 2.327527, 0.074418)",
+				"substate": "ATTACHED",
+				"support_id": 62914562563,
+				"target_relative_speed": 2.70000004768372,
+				"target_selection_id": 6,
+				"target_velocity": "(0.0, 0.0, 0.0)",
+				"target_world": "(0.900001, 2.6, 0.0)",
+				"transition_count": 0,
+				"transport_speed": 1.99474334716797,
+				"transport_velocity": "(1.499655, -1.277518, -0.313022)",
+				"workspace_valid": true,
+				"world_speed": 2.70000004768372,
+				"world_velocity": "(0.0, 0.0, -2.7)"
+			},
+			"position": "(0.561588, 1.792401, 0.253932)"
+		},
+		{
+			"contact": "(0.95, 2.63, 0.2)",
+			"hand": 0,
+			"index": 6,
+			"pending": {
+				"acquisition_load": 0.0,
+				"acquisition_load_scope": "instant contact before existing force blend",
+				"active": true,
+				"attempt_id": 7,
+				"blocked": false,
+				"blocker_id": 0,
+				"capture": {
+					"accepted": true,
+					"actual_arrival": 0.183333333333342,
+					"available_work_upper_bound": 46.801512336731,
+					"buffered": false,
+					"contact_resolution_applied": false,
+					"contact_resolution_reason": "clicked_point_already_reachable",
+					"failure_reason": "",
+					"input_time": 8.81666666666668,
+					"load_risk": false,
+					"original_selection_local": "(-0.25, -0.03, 0.12)",
+					"original_selection_world": "(0.95, 2.63, 0.2)",
+					"out_of_reach_selection": false,
+					"persistent_target": true,
+					"predicted_contact_time": -1.0,
+					"predicted_entry_time": -1.0,
+					"predicted_target": "(0.95, 2.63, 0.2)",
+					"predicted_target_time": -1.0,
+					"prediction_error": -1.0,
+					"radial_speed": 0.411845922470093,
+					"reason": "contact_valid",
+					"relative_speed": 0.544861197471619,
+					"stopping_energy": 0.44034167874553
+				},
+				"contact_distance": 0.529995799064636,
+				"contact_resolution_applied": false,
+				"contact_resolution_blocker_id": 0,
+				"contact_resolution_reason": "clicked_point_already_reachable",
+				"contact_rest_length": 0.529995799064636,
+				"contact_time": 9.00000000000003,
+				"contact_validated": true,
+				"current_force": 0.356107383966446,
+				"distance": 0.529995799064636,
+				"endpoint_valid": true,
+				"first_applied_load": 0.356107383966446,
+				"gesture_speed": 2.71350240707397,
+				"gesture_velocity": "(0.985379, -0.191703, -2.520987)",
+				"hand_goal": "(0.95, 2.63, 0.2)",
+				"hand_world": "(0.95, 2.63, 0.2)",
+				"held": true,
+				"label_in_reach": true,
+				"last_window_duration": -1.0,
+				"last_window_reason": "",
+				"local_normal": "(0.0, 0.0, 1.0)",
+				"local_point": "(-0.25, -0.03, 0.12)",
+				"missed_window_count": 0,
+				"motion_scope": "shoulder-frame transport plus finite relative gesture; full world sweep",
+				"normal_world": "(0.0, 0.0, 1.0)",
+				"original_selection_distance": 0.547139048576355,
+				"original_selection_local": "(-0.25, -0.03, 0.12)",
+				"original_selection_normal_local": "(0.0, 0.0, 1.0)",
+				"original_selection_world": "(0.95, 2.63, 0.2)",
+				"peak_blend_load": 0.356107383966446,
+				"pending_time": 0.183333333333342,
+				"phase": "ATTACHED",
+				"physical_in_reach": true,
+				"physical_transition_count": 0,
+				"reach_margin": 0.127084200935364,
+				"reason": "contact_valid",
+				"requested_gesture_speed": 2.71350240707397,
+				"requested_gesture_velocity": "(0.985379, -0.191703, -2.520987)",
+				"selected_time": 8.81666666666668,
+				"selection_policy": "REACHABLE_SAME_COLLIDER_ON_REQUEST",
+				"shoulder_world": "(0.635856, 2.228459, 0.344823)",
+				"substate": "ATTACHED",
+				"support_id": 63317215771,
+				"target_relative_speed": 2.70000004768372,
+				"target_selection_id": 7,
+				"target_velocity": "(0.0, 0.0, 0.0)",
+				"target_world": "(0.95, 2.63, 0.2)",
+				"transition_count": 0,
+				"transport_speed": 1.01969003677368,
+				"transport_velocity": "(-0.985379, 0.191703, -0.179013)",
+				"workspace_valid": true,
+				"world_speed": 2.70000004768372,
+				"world_velocity": "(0.0, 0.0, -2.7)"
+			},
+			"position": "(0.834534, 1.777173, 0.607579)"
+		},
+		{
+			"contact": "(1.450001, 2.65, 0.2)",
+			"hand": 1,
+			"index": 7,
+			"pending": {
+				"acquisition_load": 0.0,
+				"acquisition_load_scope": "instant contact before existing force blend",
+				"active": true,
+				"attempt_id": 8,
+				"blocked": false,
+				"blocker_id": 0,
+				"capture": {
+					"accepted": true,
+					"actual_arrival": 1.05000000000005,
+					"available_work_upper_bound": 64.3483305931091,
+					"buffered": false,
+					"contact_resolution_applied": false,
+					"contact_resolution_reason": "clicked_point_already_reachable",
+					"failure_reason": "",
+					"input_time": 9.30000000000004,
+					"load_risk": false,
+					"original_selection_local": "(0.25, -0.01, 0.12)",
+					"original_selection_world": "(1.450001, 2.65, 0.2)",
+					"out_of_reach_selection": false,
+					"persistent_target": true,
+					"predicted_contact_time": -1.0,
+					"predicted_entry_time": -1.0,
+					"predicted_target": "(1.450001, 2.65, 0.2)",
+					"predicted_target_time": -1.0,
+					"prediction_error": -1.0,
+					"radial_speed": 0.200468689203262,
+					"reason": "contact_valid",
+					"relative_speed": 0.381571471691132,
+					"stopping_energy": 0.226516727455051
+				},
+				"contact_distance": 0.481254637241364,
+				"contact_resolution_applied": false,
+				"contact_resolution_blocker_id": 0,
+				"contact_resolution_reason": "clicked_point_already_reachable",
+				"contact_rest_length": 0.481254637241364,
+				"contact_time": 10.3500000000001,
+				"contact_validated": true,
+				"current_force": 0.178587809205055,
+				"distance": 0.481254637241364,
+				"endpoint_valid": true,
+				"first_applied_load": 0.178587809205055,
+				"gesture_speed": 2.29055714607239,
+				"gesture_velocity": "(0.140476, 0.1366, -2.282161)",
+				"hand_goal": "(1.450001, 2.65, 0.2)",
+				"hand_world": "(1.450001, 2.65, 0.2)",
+				"held": true,
+				"label_in_reach": true,
+				"last_window_duration": -1.0,
+				"last_window_reason": "",
+				"local_normal": "(0.0, 0.0, 1.0)",
+				"local_point": "(0.25, -0.01, 0.12)",
+				"missed_window_count": 0,
+				"motion_scope": "shoulder-frame transport plus finite relative gesture; full world sweep",
+				"normal_world": "(0.0, 0.0, 1.0)",
+				"original_selection_distance": 0.644138813018799,
+				"original_selection_local": "(0.25, -0.01, 0.12)",
+				"original_selection_normal_local": "(0.0, 0.0, 1.0)",
+				"original_selection_world": "(1.450001, 2.65, 0.2)",
+				"peak_blend_load": 0.178587809205055,
+				"pending_time": 1.05000000000005,
+				"phase": "ATTACHED",
+				"physical_in_reach": true,
+				"physical_transition_count": 0,
+				"reach_margin": 0.175825362758636,
+				"reason": "contact_valid",
+				"requested_gesture_speed": 2.29055714607239,
+				"requested_gesture_velocity": "(0.140476, 0.1366, -2.282161)",
+				"selected_time": 9.30000000000004,
+				"selection_policy": "REACHABLE_SAME_COLLIDER_ON_REQUEST",
+				"shoulder_world": "(1.290322, 2.196128, 0.210441)",
+				"substate": "ATTACHED",
+				"support_id": 63317215771,
+				"target_relative_speed": 2.70000004768372,
+				"target_selection_id": 8,
+				"target_velocity": "(0.0, 0.0, 0.0)",
+				"target_world": "(1.450001, 2.65, 0.2)",
+				"transition_count": 0,
+				"transport_speed": 0.46150016784668,
+				"transport_velocity": "(-0.140476, -0.1366, -0.417839)",
+				"workspace_valid": true,
+				"world_speed": 2.70000004768372,
+				"world_velocity": "(0.0, 0.0, -2.7)"
+			},
+			"position": "(1.200295, 1.644997, 0.264392)"
+		},
+		{
+			"contact": "(1.2, 2.63, 0.2)",
+			"hand": 0,
+			"index": 8,
+			"pending": {
+				"acquisition_load": 0.0,
+				"acquisition_load_scope": "instant contact before existing force blend",
+				"active": true,
+				"attempt_id": 9,
+				"blocked": false,
+				"blocker_id": 0,
+				"capture": {
+					"accepted": true,
+					"actual_arrival": 0.100000000000005,
+					"available_work_upper_bound": 55.9247566223145,
+					"buffered": false,
+					"contact_resolution_applied": false,
+					"contact_resolution_reason": "clicked_point_already_reachable",
+					"failure_reason": "",
+					"input_time": 10.6500000000001,
+					"load_risk": false,
+					"original_selection_local": "(-0.0, -0.03, 0.12)",
+					"original_selection_world": "(1.2, 2.63, 0.2)",
+					"out_of_reach_selection": false,
+					"persistent_target": true,
+					"predicted_contact_time": -1.0,
+					"predicted_entry_time": -1.0,
+					"predicted_target": "(1.2, 2.63, 0.2)",
+					"predicted_target_time": -1.0,
+					"prediction_error": -1.0,
+					"radial_speed": -0.173575773835182,
+					"reason": "contact_valid",
+					"relative_speed": 0.27683362364769,
+					"stopping_energy": 0.0
+				},
+				"contact_distance": 0.504653453826904,
+				"contact_resolution_applied": false,
+				"contact_resolution_blocker_id": 0,
+				"contact_resolution_reason": "clicked_point_already_reachable",
+				"contact_rest_length": 0.504653453826904,
+				"contact_time": 10.7500000000001,
+				"contact_validated": true,
+				"current_force": 0.0,
+				"distance": 0.504653453826904,
+				"endpoint_valid": true,
+				"first_applied_load": 0.0,
+				"gesture_speed": 2.92566108703613,
+				"gesture_velocity": "(-0.084815, -0.188684, -2.918338)",
+				"hand_goal": "(1.2, 2.63, 0.2)",
+				"hand_world": "(1.2, 2.63, 0.2)",
+				"held": true,
+				"label_in_reach": true,
+				"last_window_duration": -1.0,
+				"last_window_reason": "",
+				"local_normal": "(0.0, 0.0, 1.0)",
+				"local_point": "(-0.0, -0.03, 0.12)",
+				"missed_window_count": 0,
+				"motion_scope": "shoulder-frame transport plus finite relative gesture; full world sweep",
+				"normal_world": "(0.0, 0.0, 1.0)",
+				"original_selection_distance": 0.52346658706665,
+				"original_selection_local": "(-0.0, -0.03, 0.12)",
+				"original_selection_normal_local": "(0.0, 0.0, 1.0)",
+				"original_selection_world": "(1.2, 2.63, 0.2)",
+				"peak_blend_load": 0.0,
+				"pending_time": 0.100000000000005,
+				"phase": "ATTACHED",
+				"physical_in_reach": true,
+				"physical_transition_count": 0,
+				"reach_margin": 0.152426546173096,
+				"reason": "contact_valid",
+				"requested_gesture_speed": 2.92566108703613,
+				"requested_gesture_velocity": "(-0.084815, -0.188684, -2.918338)",
+				"selected_time": 10.6500000000001,
+				"selection_policy": "REACHABLE_SAME_COLLIDER_ON_REQUEST",
+				"shoulder_world": "(0.967928, 2.188915, 0.27913)",
+				"substate": "ATTACHED",
+				"support_id": 63317215771,
+				"target_relative_speed": 2.70000004768372,
+				"target_selection_id": 9,
+				"target_velocity": "(0.0, 0.0, 0.0)",
+				"target_world": "(1.2, 2.63, 0.2)",
+				"transition_count": 0,
+				"transport_speed": 0.300777196884155,
+				"transport_velocity": "(0.084815, 0.188684, 0.218338)",
+				"workspace_valid": true,
+				"world_speed": 2.70000004768372,
+				"world_velocity": "(0.0, 0.0, -2.7)"
+			},
+			"position": "(1.132506, 1.661976, 0.355924)"
+		},
+		{
+			"contact": "(1.75, 2.68, 0.08)",
+			"hand": 1,
+			"index": 9,
+			"pending": {
+				"acquisition_load": 0.0,
+				"acquisition_load_scope": "instant contact before existing force blend",
+				"active": true,
+				"attempt_id": 10,
+				"blocked": false,
+				"blocker_id": 0,
+				"capture": {
+					"accepted": true,
+					"actual_arrival": 0.116666666666672,
+					"available_work_upper_bound": 28.3864952087402,
+					"buffered": false,
+					"contact_resolution_applied": false,
+					"contact_resolution_reason": "clicked_point_already_reachable",
+					"failure_reason": "",
+					"input_time": 11.0500000000001,
+					"load_risk": false,
+					"original_selection_local": "(0.0, -0.02, 0.12)",
+					"original_selection_world": "(1.75, 2.68, 0.08)",
+					"out_of_reach_selection": false,
+					"persistent_target": true,
+					"predicted_contact_time": -1.0,
+					"predicted_entry_time": -1.0,
+					"predicted_target": "(1.75, 2.68, 0.08)",
+					"predicted_target_time": -1.0,
+					"prediction_error": -1.0,
+					"radial_speed": -0.23830483853817,
+					"reason": "contact_valid",
+					"relative_speed": 1.12967264652252,
+					"stopping_energy": 0.0
+				},
+				"contact_distance": 0.581148624420166,
+				"contact_resolution_applied": false,
+				"contact_resolution_blocker_id": 0,
+				"contact_resolution_reason": "clicked_point_already_reachable",
+				"contact_rest_length": 0.581148624420166,
+				"contact_time": 11.1666666666668,
+				"contact_validated": true,
+				"current_force": 0.0,
+				"distance": 0.581148624420166,
+				"endpoint_valid": true,
+				"first_applied_load": 0.0,
+				"gesture_speed": 2.08820986747742,
+				"gesture_velocity": "(-1.057227, 0.509362, -1.727264)",
+				"hand_goal": "(1.75, 2.68, 0.08)",
+				"hand_world": "(1.75, 2.68, 0.08)",
+				"held": true,
+				"label_in_reach": true,
+				"last_window_duration": -1.0,
+				"last_window_reason": "",
+				"local_normal": "(0.0, 0.0, 1.0)",
+				"local_point": "(0.0, -0.02, 0.12)",
+				"missed_window_count": 0,
+				"motion_scope": "shoulder-frame transport plus finite relative gesture; full world sweep",
+				"normal_world": "(0.0, 0.0, 1.0)",
+				"original_selection_distance": 0.610339820384979,
+				"original_selection_local": "(0.0, -0.02, 0.12)",
+				"original_selection_normal_local": "(0.0, 0.0, 1.0)",
+				"original_selection_world": "(1.75, 2.68, 0.08)",
+				"peak_blend_load": 0.0,
+				"pending_time": 0.116666666666672,
+				"phase": "ATTACHED",
+				"physical_in_reach": true,
+				"physical_transition_count": 0,
+				"reach_margin": 0.075931375579834,
+				"reason": "contact_valid",
+				"requested_gesture_speed": 2.08820986747742,
+				"requested_gesture_velocity": "(-1.057227, 0.509362, -1.727264)",
+				"selected_time": 11.0500000000001,
+				"selection_policy": "REACHABLE_SAME_COLLIDER_ON_REQUEST",
+				"shoulder_world": "(1.489566, 2.180281, 0.222088)",
+				"substate": "ATTACHED",
+				"support_id": 63417879073,
+				"target_relative_speed": 2.70000004768372,
+				"target_selection_id": 10,
+				"target_velocity": "(0.0, 0.0, 0.0)",
+				"target_world": "(1.75, 2.68, 0.08)",
+				"transition_count": 0,
+				"transport_speed": 1.5242680311203,
+				"transport_velocity": "(1.057227, -0.509362, -0.972736)",
+				"workspace_valid": true,
+				"world_speed": 2.70000004768372,
+				"world_velocity": "(0.0, 0.0, -2.7)"
+			},
+			"position": "(1.401044, 1.6579, 0.399945)"
+		}
+	],
+	"failures": 0,
+	"final_position": "(1.470079, 1.709609, -0.038112)",
+	"height_gain": 0.542929768562317,
+	"longest_suspension": 1.26666666666667,
+	"peaks": {
+		"combined_moment": 94.7968597412109,
+		"hand_force": 262.968322753906,
+		"leg_force": 106.187057495117
+	},
+	"physics_hz": 60,
+	"progress": {
+		"completed": true,
+		"elapsed": 10.7833333333335,
+		"events": [
+			{
+				"code": "ROUTE_STAGE_COMPLETE",
+				"label": "CLIMB",
+				"stage": 0,
+				"time": 4.68333333333332
+			},
+			{
+				"code": "ROUTE_STAGE_COMPLETE",
+				"label": "TRAVERSE",
+				"stage": 1,
+				"time": 8.73333333333335
+			},
+			{
+				"code": "ROUTE_STAGE_COMPLETE",
+				"label": "SUSPENSION",
+				"stage": 2,
+				"time": 11.5333333333335
+			}
+		],
+		"recoveries": 0,
+		"stage": 3,
+		"started": true
+	},
+	"samples": [
+		{
+			"force": 1.4707590341568,
+			"grounded": true,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(-0.000189, 1.166678, 0.400069)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 0.0166666666666667,
+			"torque": 3.31491112709045,
+			"velocity": "(-0.000021, -0.000006, -0.000033)"
+		},
+		{
+			"force": 1.37731420993805,
+			"grounded": true,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(-0.00019, 1.166679, 0.400066)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 0.133333333333333,
+			"torque": 3.59700202941895,
+			"velocity": "(-0.000073, -0.000005, -0.000157)"
+		},
+		{
+			"force": 1.31783509254456,
+			"grounded": true,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(-0.000193, 1.166679, 0.400057)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 0.25,
+			"torque": 3.6040244102478,
+			"velocity": "(-0.000018, 0.000001, -0.000045)"
+		},
+		{
+			"force": 6.86319589614868,
+			"grounded": true,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(-0.001057, 1.166687, 0.396356)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 0.35,
+			"torque": 5.62059020996094,
+			"velocity": "(-0.051752, 0.000458, -0.221929)"
+		},
+		{
+			"force": 0.0,
+			"grounded": true,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(-0.022922, 1.1667, 0.301547)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 0.45,
+			"torque": 1.29948782920837,
+			"velocity": "(-0.343939, 0.000207, -1.459127)"
+		},
+		{
+			"force": 0.0,
+			"grounded": true,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(-0.05505, 1.175161, 0.232513)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 0.55,
+			"torque": 0.549686014652252,
+			"velocity": "(-0.250833, 0.009096, -0.000219)"
+		},
+		{
+			"force": 0.0,
+			"grounded": true,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(-0.077636, 1.172248, 0.23258)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 0.65,
+			"torque": 0.606952130794525,
+			"velocity": "(-0.200168, -0.006722, 0.000161)"
+		},
+		{
+			"force": 0.0,
+			"grounded": true,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 10.5273189544678,
+			"position": "(-0.095731, 1.171159, 0.232604)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 0.750000000000001,
+			"torque": 3.33660340309143,
+			"velocity": "(-0.17191, -0.014701, 0.000288)"
+		},
+		{
+			"force": 13.8365302085876,
+			"grounded": true,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 35.6730756759644,
+			"position": "(-0.114359, 1.170478, 0.232617)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 0.850000000000001,
+			"torque": 7.14804458618164,
+			"velocity": "(-0.183531, 0.000271, -0.000007)"
+		},
+		{
+			"force": 107.51016998291,
+			"grounded": true,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 75.4219741821289,
+			"position": "(-0.13579, 1.171653, 0.232591)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 0.950000000000001,
+			"torque": 25.8329963684082,
+			"velocity": "(-0.236554, 0.048431, -0.001048)"
+		},
+		{
+			"force": 80.983980178833,
+			"grounded": true,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 63.6876792907715,
+			"position": "(-0.163168, 1.196489, 0.232594)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 1.06666666666667,
+			"torque": 14.426794052124,
+			"velocity": "(-0.231281, 0.289272, 0.003022)"
+		},
+		{
+			"force": 78.6908740997314,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 61.8120749294758,
+			"position": "(-0.19135, 1.227584, 0.232954)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 1.18333333333333,
+			"torque": 11.1984806060791,
+			"velocity": "(-0.250557, 0.241788, 0.002006)"
+		},
+		{
+			"force": 127.857553482056,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 77.3082382678986,
+			"position": "(-0.220093, 1.251017, 0.236272)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 1.3,
+			"torque": 19.9869823455811,
+			"velocity": "(-0.222052, 0.113036, 0.12576)"
+		},
+		{
+			"force": 96.3385200500488,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 62.777099609375,
+			"position": "(-0.24199, 1.279904, 0.255972)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 1.41666666666667,
+			"torque": 11.4003620147705,
+			"velocity": "(-0.166749, 0.317581, 0.184495)"
+		},
+		{
+			"force": 82.5117540359497,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 58.7691116333008,
+			"position": "(-0.261011, 1.315507, 0.274583)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 1.53333333333333,
+			"torque": 8.9988317489624,
+			"velocity": "(-0.162745, 0.272885, 0.137552)"
+		},
+		{
+			"force": 90.9057674407959,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 63.6691131591797,
+			"position": "(-0.27886, 1.344986, 0.286995)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 1.65,
+			"torque": 10.4247102737427,
+			"velocity": "(-0.143377, 0.250306, 0.08233)"
+		},
+		{
+			"force": 97.859260559082,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 40.5052452087402,
+			"position": "(-0.292073, 1.371117, 0.29279)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 1.76666666666667,
+			"torque": 13.4957571029663,
+			"velocity": "(-0.069009, 0.172905, 0.023506)"
+		},
+		{
+			"force": 110.901082992554,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 42.5992851257324,
+			"position": "(-0.290551, 1.383663, 0.291011)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 1.88333333333333,
+			"torque": 19.8144702911377,
+			"velocity": "(0.069817, 0.074101, -0.043764)"
+		},
+		{
+			"force": 107.445236206055,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 52.0164451599121,
+			"position": "(-0.277882, 1.389763, 0.282486)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 2.0,
+			"torque": 22.8396835327148,
+			"velocity": "(0.122065, 0.03991, -0.091078)"
+		},
+		{
+			"force": 104.837459564209,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 58.0947380065918,
+			"position": "(-0.264654, 1.393463, 0.269924)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 2.11666666666666,
+			"torque": 24.2497425079346,
+			"velocity": "(0.102553, 0.028146, -0.118473)"
+		},
+		{
+			"force": 104.377553939819,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 69.8759641647339,
+			"position": "(-0.254338, 1.397077, 0.256981)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 2.23333333333333,
+			"torque": 26.9558391571045,
+			"velocity": "(0.074225, 0.038662, -0.018801)"
+		},
+		{
+			"force": 98.601978302002,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 67.8124170303345,
+			"position": "(-0.243134, 1.404778, 0.259692)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 2.35,
+			"torque": 28.7024173736572,
+			"velocity": "(0.115493, 0.071478, 0.054089)"
+		},
+		{
+			"force": 98.5102653503418,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 69.791898727417,
+			"position": "(-0.227577, 1.411717, 0.27104)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 2.46666666666666,
+			"torque": 28.809944152832,
+			"velocity": "(0.142323, 0.052871, 0.130128)"
+		},
+		{
+			"force": 98.8295288085938,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 67.849235534668,
+			"position": "(-0.210295, 1.418449, 0.291217)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 2.58333333333333,
+			"torque": 28.1190414428711,
+			"velocity": "(0.155397, 0.068514, 0.202331)"
+		},
+		{
+			"force": 91.56809425354,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 60.9996299743652,
+			"position": "(-0.189599, 1.42808, 0.317858)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 2.7,
+			"torque": 25.0298633575439,
+			"velocity": "(0.197218, 0.083004, 0.243649)"
+		},
+		{
+			"force": 93.8950290679932,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 60.5695753097534,
+			"position": "(-0.162911, 1.435929, 0.347929)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 2.81666666666666,
+			"torque": 24.0899238586426,
+			"velocity": "(0.252989, 0.057877, 0.265858)"
+		},
+		{
+			"force": 96.3131885528564,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 54.3615674972534,
+			"position": "(-0.129809, 1.442172, 0.379161)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 2.93333333333333,
+			"torque": 22.1660346984863,
+			"velocity": "(0.306143, 0.050018, 0.25989)"
+		},
+		{
+			"force": 99.1501865386963,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 51.1249732971191,
+			"position": "(-0.092069, 1.445904, 0.402163)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 3.04999999999999,
+			"torque": 25.470272064209,
+			"velocity": "(0.332258, 0.013217, 0.122872)"
+		},
+		{
+			"force": 97.6701850891113,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 62.4116668701172,
+			"position": "(-0.05237, 1.44442, 0.407404)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 3.16666666666666,
+			"torque": 28.8599624633789,
+			"velocity": "(0.341051, -0.030189, -0.003033)"
+		},
+		{
+			"force": 104.919075012207,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 61.8684730529785,
+			"position": "(-0.016986, 1.441975, 0.40642)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 3.28333333333333,
+			"torque": 33.7119903564453,
+			"velocity": "(0.272912, -0.005282, -0.003011)"
+		},
+		{
+			"force": 63.6943817138672,
+			"grounded": false,
+			"hands": [
+				1
+			],
+			"left_state": "REACHING",
+			"leg_force": 94.4426441192627,
+			"position": "(0.017061, 1.438304, 0.407926)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 3.39999999999999,
+			"torque": 20.8582401275635,
+			"velocity": "(0.328233, -0.047824, 0.037709)"
+		},
+		{
+			"force": 76.4512805938721,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 81.5265760421753,
+			"position": "(0.062248, 1.44071, 0.421049)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 3.51666666666666,
+			"torque": 17.8675594329834,
+			"velocity": "(0.425574, 0.07772, 0.160213)"
+		},
+		{
+			"force": 107.871849060059,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 36.8048629760742,
+			"position": "(0.11292, 1.453779, 0.437918)",
+			"right_state": "ATTACHED",
+			"stage": 0,
+			"time": 3.63333333333333,
+			"torque": 21.8040904998779,
+			"velocity": "(0.421025, 0.109353, 0.098362)"
+		},
+		{
+			"force": 127.970603942871,
+			"grounded": false,
+			"hands": [
+				0
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 17.6273002624512,
+			"position": "(0.153641, 1.463248, 0.438502)",
+			"right_state": "REACHING",
+			"stage": 1,
+			"time": 3.74999999999999,
+			"torque": 25.9264640808105,
+			"velocity": "(0.264431, 0.039585, -0.055452)"
+		},
+		{
+			"force": 119.139164209366,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 6.77377557754517,
+			"position": "(0.165525, 1.469411, 0.419531)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 3.86666666666666,
+			"torque": 19.0069541931152,
+			"velocity": "(-0.015287, 0.029588, -0.207634)"
+		},
+		{
+			"force": 111.76891708374,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 27.6591777801514,
+			"position": "(0.149396, 1.465898, 0.391469)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 3.98333333333332,
+			"torque": 18.7897796630859,
+			"velocity": "(-0.220128, -0.052818, -0.260067)"
+		},
+		{
+			"force": 105.758220672607,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 43.3502187728882,
+			"position": "(0.120667, 1.46349, 0.366423)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 4.08333333333332,
+			"torque": 19.3221569061279,
+			"velocity": "(-0.326004, 0.010631, -0.232859)"
+		},
+		{
+			"force": 113.622024536133,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 26.0586719512939,
+			"position": "(0.08456, 1.468769, 0.34507)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 4.18333333333332,
+			"torque": 16.5705318450928,
+			"velocity": "(-0.380237, 0.074941, -0.211644)"
+		},
+		{
+			"force": 128.556461334229,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 8.97807693481445,
+			"position": "(0.046116, 1.479416, 0.322189)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 4.28333333333332,
+			"torque": 19.9491844177246,
+			"velocity": "(-0.377581, 0.126006, -0.242941)"
+		},
+		{
+			"force": 143.582988739014,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(0.012213, 1.49282, 0.29567)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 4.38333333333332,
+			"torque": 24.4804000854492,
+			"velocity": "(-0.301959, 0.14271, -0.280749)"
+		},
+		{
+			"force": 140.860939025879,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.980754673480988,
+			"position": "(-0.011015, 1.509638, 0.266021)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 4.48333333333332,
+			"torque": 27.2887268066406,
+			"velocity": "(-0.178742, 0.18229, -0.304755)"
+		},
+		{
+			"force": 136.34716796875,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 2.61334228515625,
+			"position": "(-0.021159, 1.528178, 0.235906)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 4.58333333333332,
+			"torque": 30.2502899169922,
+			"velocity": "(-0.047575, 0.18187, -0.293912)"
+		},
+		{
+			"force": 139.513134002686,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 1.22987496852875,
+			"position": "(-0.019094, 1.544353, 0.220001)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 4.68333333333332,
+			"torque": 30.7060890197754,
+			"velocity": "(0.066885, 0.155207, 0.000087)"
+		},
+		{
+			"force": 144.474758148193,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 5.6098510324955,
+			"position": "(-0.007873, 1.560736, 0.223568)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 4.78333333333332,
+			"torque": 32.8459548950195,
+			"velocity": "(0.139485, 0.17458, 0.034661)"
+		},
+		{
+			"force": 84.8992309570313,
+			"grounded": false,
+			"hands": [
+				1
+			],
+			"left_state": "REACHING",
+			"leg_force": 50.6218935102224,
+			"position": "(0.005759, 1.581644, 0.22639)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 4.88333333333332,
+			"torque": 12.6000213623047,
+			"velocity": "(0.12098, 0.215656, 0.019457)"
+		},
+		{
+			"force": 70.1479110717773,
+			"grounded": false,
+			"hands": [
+				1
+			],
+			"left_state": "REACHING",
+			"leg_force": 52.1498947143555,
+			"position": "(0.013191, 1.602697, 0.226081)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 4.98333333333332,
+			"torque": 10.021448135376,
+			"velocity": "(0.041553, 0.18915, -0.021177)"
+		},
+		{
+			"force": 88.8065185546875,
+			"grounded": false,
+			"hands": [
+				1
+			],
+			"left_state": "REACHING",
+			"leg_force": 47.4229545593262,
+			"position": "(0.014201, 1.620181, 0.225147)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 5.08333333333332,
+			"torque": 8.86340427398682,
+			"velocity": "(-0.001747, 0.187243, 0.015096)"
+		},
+		{
+			"force": 109.685882568359,
+			"grounded": false,
+			"hands": [
+				1
+			],
+			"left_state": "REACHING",
+			"leg_force": 21.9245071411133,
+			"position": "(0.019023, 1.639162, 0.226214)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 5.18333333333332,
+			"torque": 12.4062566757202,
+			"velocity": "(0.111305, 0.181663, 0.007516)"
+		},
+		{
+			"force": 117.786582946777,
+			"grounded": false,
+			"hands": [
+				1
+			],
+			"left_state": "REACHING",
+			"leg_force": 15.259033203125,
+			"position": "(0.032849, 1.654034, 0.23153)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 5.28333333333332,
+			"torque": 12.4181966781616,
+			"velocity": "(0.1945, 0.133709, 0.055523)"
+		},
+		{
+			"force": 116.515296936035,
+			"grounded": false,
+			"hands": [
+				1
+			],
+			"left_state": "REACHING",
+			"leg_force": 16.9211673736572,
+			"position": "(0.059858, 1.666342, 0.236107)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 5.38333333333332,
+			"torque": 12.5427360534668,
+			"velocity": "(0.309948, 0.119114, 0.040269)"
+		},
+		{
+			"force": 120.439590454102,
+			"grounded": false,
+			"hands": [
+				1
+			],
+			"left_state": "REACHING",
+			"leg_force": 13.2816972732544,
+			"position": "(0.092269, 1.679007, 0.240011)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 5.48333333333332,
+			"torque": 16.8446502685547,
+			"velocity": "(0.320021, 0.13492, 0.041137)"
+		},
+		{
+			"force": 125.267463684082,
+			"grounded": false,
+			"hands": [
+				1
+			],
+			"left_state": "REACHING",
+			"leg_force": 3.86447775363922,
+			"position": "(0.120606, 1.693465, 0.245456)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 5.58333333333332,
+			"torque": 20.6106281280518,
+			"velocity": "(0.249821, 0.146352, 0.06728)"
+		},
+		{
+			"force": 132.997116088867,
+			"grounded": false,
+			"hands": [
+				1
+			],
+			"left_state": "REACHING",
+			"leg_force": 0.0,
+			"position": "(0.139243, 1.707423, 0.253604)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 5.68333333333332,
+			"torque": 20.5329132080078,
+			"velocity": "(0.137373, 0.141499, 0.088625)"
+		},
+		{
+			"force": 128.316711425781,
+			"grounded": false,
+			"hands": [
+				1
+			],
+			"left_state": "REACHING",
+			"leg_force": 0.0,
+			"position": "(0.146711, 1.722854, 0.262694)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 5.78333333333332,
+			"torque": 16.7160243988037,
+			"velocity": "(0.037361, 0.167714, 0.084321)"
+		},
+		{
+			"force": 122.937774658203,
+			"grounded": false,
+			"hands": [
+				1
+			],
+			"left_state": "REACHING",
+			"leg_force": 1.41796493530273,
+			"position": "(0.150618, 1.739721, 0.265513)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 5.88333333333332,
+			"torque": 11.1240139007568,
+			"velocity": "(0.0664, 0.149809, -0.021856)"
+		},
+		{
+			"force": 133.062759399414,
+			"grounded": false,
+			"hands": [
+				1
+			],
+			"left_state": "REACHING",
+			"leg_force": 2.39576077461243,
+			"position": "(0.164336, 1.753468, 0.257082)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 5.98333333333332,
+			"torque": 13.1461496353149,
+			"velocity": "(0.19863, 0.137474, -0.125338)"
+		},
+		{
+			"force": 131.720596313477,
+			"grounded": false,
+			"hands": [
+				1
+			],
+			"left_state": "REACHING",
+			"leg_force": 0.230009622871876,
+			"position": "(0.194649, 1.766736, 0.239348)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 6.08333333333332,
+			"torque": 18.8190517425537,
+			"velocity": "(0.378952, 0.122113, -0.212862)"
+		},
+		{
+			"force": 141.471496582031,
+			"grounded": false,
+			"hands": [
+				1
+			],
+			"left_state": "REACHING",
+			"leg_force": 0.0,
+			"position": "(0.239692, 1.777253, 0.230396)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 6.18333333333332,
+			"torque": 20.9442806243896,
+			"velocity": "(0.488845, 0.117103, 0.003709)"
+		},
+		{
+			"force": 136.323379516602,
+			"grounded": false,
+			"hands": [
+				1
+			],
+			"left_state": "REACHING",
+			"leg_force": 0.0,
+			"position": "(0.291347, 1.791257, 0.230899)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 6.28333333333332,
+			"torque": 18.8596439361572,
+			"velocity": "(0.520562, 0.150813, 0.005237)"
+		},
+		{
+			"force": 136.419097900391,
+			"grounded": false,
+			"hands": [
+				1
+			],
+			"left_state": "REACHING",
+			"leg_force": 0.0,
+			"position": "(0.339712, 1.807557, 0.231366)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 6.38333333333332,
+			"torque": 17.7302322387695,
+			"velocity": "(0.444382, 0.171867, 0.004026)"
+		},
+		{
+			"force": 136.404571533203,
+			"grounded": false,
+			"hands": [
+				1
+			],
+			"left_state": "REACHING",
+			"leg_force": 0.0,
+			"position": "(0.376656, 1.825352, 0.231639)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 6.48333333333332,
+			"torque": 17.214282989502,
+			"velocity": "(0.317258, 0.176117, 0.001673)"
+		},
+		{
+			"force": 138.740249633789,
+			"grounded": false,
+			"hands": [
+				1
+			],
+			"left_state": "REACHING",
+			"leg_force": 0.0,
+			"position": "(0.403079, 1.842437, 0.231695)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 6.58333333333332,
+			"torque": 18.9788188934326,
+			"velocity": "(0.229188, 0.169065, 0.000211)"
+		},
+		{
+			"force": 137.422332763672,
+			"grounded": false,
+			"hands": [
+				1
+			],
+			"left_state": "REACHING",
+			"leg_force": 0.0,
+			"position": "(0.421756, 1.858653, 0.231724)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 6.68333333333331,
+			"torque": 20.5138740539551,
+			"velocity": "(0.15847, 0.154479, 0.000438)"
+		},
+		{
+			"force": 143.170850753784,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.102408140897751,
+			"position": "(0.43565, 1.871186, 0.231813)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 6.78333333333331,
+			"torque": 28.3314056396484,
+			"velocity": "(0.145999, 0.103419, 0.001256)"
+		},
+		{
+			"force": 123.606843948364,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 9.13535348325968,
+			"position": "(0.451523, 1.876006, 0.231893)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 6.88333333333331,
+			"torque": 22.2389507293701,
+			"velocity": "(0.152027, 0.003368, 0.000634)"
+		},
+		{
+			"force": 133.489946365356,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 14.6944073885679,
+			"position": "(0.463884, 1.87405, 0.231947)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 6.98333333333331,
+			"torque": 24.1211738586426,
+			"velocity": "(0.103781, -0.020193, 0.0002)"
+		},
+		{
+			"force": 146.490573883057,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 13.2802295684814,
+			"position": "(0.472267, 1.873784, 0.231878)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 7.08333333333331,
+			"torque": 27.940803527832,
+			"velocity": "(0.074447, 0.010034, -0.001492)"
+		},
+		{
+			"force": 154.390483856201,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 10.9223003387451,
+			"position": "(0.479898, 1.875411, 0.231586)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 7.18333333333331,
+			"torque": 29.4598541259766,
+			"velocity": "(0.079407, 0.017289, -0.003799)"
+		},
+		{
+			"force": 161.484329223633,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 9.19149515032768,
+			"position": "(0.487396, 1.876941, 0.231099)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 7.28333333333331,
+			"torque": 30.8321399688721,
+			"velocity": "(0.067739, 0.011938, -0.006)"
+		},
+		{
+			"force": 92.0084915161133,
+			"grounded": false,
+			"hands": [
+				0
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 26.8807563781738,
+			"position": "(0.502623, 1.86194, 0.232434)",
+			"right_state": "REACHING",
+			"stage": 1,
+			"time": 7.38333333333331,
+			"torque": 46.3301200866699,
+			"velocity": "(0.287088, -0.352747, 0.047723)"
+		},
+		{
+			"force": 75.6564865112305,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 56.3760957717896,
+			"position": "(0.550782, 1.804895, 0.248566)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 7.48333333333331,
+			"torque": 46.5080451965332,
+			"velocity": "(0.606005, -0.704098, 0.268997)"
+		},
+		{
+			"force": 120.622001647949,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 89.0661010742188,
+			"position": "(0.625273, 1.723523, 0.296274)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 7.58333333333331,
+			"torque": 71.5807418823242,
+			"velocity": "(0.837585, -0.83286, 0.64755)"
+		},
+		{
+			"force": 245.683898925781,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 91.8443508148193,
+			"position": "(0.715601, 1.664775, 0.389467)",
+			"right_state": "ATTACHED",
+			"stage": 1,
+			"time": 7.68333333333331,
+			"torque": 85.1675186157227,
+			"velocity": "(0.892017, -0.325944, 1.113986)"
+		},
+		{
+			"force": 250.331428527832,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(0.787184, 1.684699, 0.502808)",
+			"right_state": "ATTACHED",
+			"stage": 2,
+			"time": 7.78333333333331,
+			"torque": 49.1082344055176,
+			"velocity": "(0.523218, 0.532769, 0.987486)"
+		},
+		{
+			"force": 117.079444885254,
+			"grounded": false,
+			"hands": [
+				1
+			],
+			"left_state": "REACHING",
+			"leg_force": 0.0,
+			"position": "(0.820974, 1.741623, 0.573194)",
+			"right_state": "ATTACHED",
+			"stage": 2,
+			"time": 7.88333333333331,
+			"torque": 43.3692359924316,
+			"velocity": "(0.239357, 0.544571, 0.509418)"
+		},
+		{
+			"force": 61.3316283226013,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(0.834534, 1.777173, 0.607579)",
+			"right_state": "ATTACHED",
+			"stage": 2,
+			"time": 7.98333333333331,
+			"torque": 14.0684537887573,
+			"velocity": "(0.083757, 0.150736, 0.247801)"
+		},
+		{
+			"force": 166.713851928711,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(0.848614, 1.774775, 0.613867)",
+			"right_state": "ATTACHED",
+			"stage": 2,
+			"time": 8.08333333333331,
+			"torque": 30.8428745269775,
+			"velocity": "(0.269042, -0.020968, -0.108374)"
+		},
+		{
+			"force": 99.5027961730957,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 1.66957521438599,
+			"position": "(0.895166, 1.771676, 0.583619)",
+			"right_state": "ATTACHED",
+			"stage": 2,
+			"time": 8.18333333333332,
+			"torque": 2.64893341064453,
+			"velocity": "(0.561631, -0.107216, -0.408511)"
+		},
+		{
+			"force": 50.5318908691406,
+			"grounded": false,
+			"hands": [
+				0
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 13.8063192367554,
+			"position": "(0.957647, 1.746518, 0.531328)",
+			"right_state": "REACHING",
+			"stage": 2,
+			"time": 8.28333333333332,
+			"torque": 11.9378986358643,
+			"velocity": "(0.664384, -0.321065, -0.604623)"
+		},
+		{
+			"force": 103.02970123291,
+			"grounded": false,
+			"hands": [
+				0
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 9.60251426696777,
+			"position": "(1.042312, 1.688317, 0.472236)",
+			"right_state": "REACHING",
+			"stage": 2,
+			"time": 8.38333333333333,
+			"torque": 28.9383125305176,
+			"velocity": "(0.994191, -0.706806, -0.590604)"
+		},
+		{
+			"force": 173.809875488281,
+			"grounded": false,
+			"hands": [
+				0
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(1.157491, 1.613967, 0.411243)",
+			"right_state": "REACHING",
+			"stage": 2,
+			"time": 8.48333333333333,
+			"torque": 36.0843391418457,
+			"velocity": "(1.223948, -0.698951, -0.566764)"
+		},
+		{
+			"force": 254.355453491211,
+			"grounded": false,
+			"hands": [
+				0
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(1.273624, 1.583712, 0.350403)",
+			"right_state": "REACHING",
+			"stage": 2,
+			"time": 8.58333333333334,
+			"torque": 31.1388492584229,
+			"velocity": "(1.013749, 0.084399, -0.639478)"
+		},
+		{
+			"force": 93.3031616210938,
+			"grounded": false,
+			"hands": [
+				0
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(1.339453, 1.629325, 0.266646)",
+			"right_state": "REACHING",
+			"stage": 2,
+			"time": 8.68333333333334,
+			"torque": 30.9678382873535,
+			"velocity": "(0.428637, 0.529929, -0.917707)"
+		},
+		{
+			"force": 96.3236694335938,
+			"grounded": false,
+			"hands": [
+				0
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(1.370228, 1.652862, 0.180419)",
+			"right_state": "REACHING",
+			"stage": 2,
+			"time": 8.78333333333335,
+			"torque": 31.0286865234375,
+			"velocity": "(0.375279, -0.03556, -0.630236)"
+		},
+		{
+			"force": 124.601463317871,
+			"grounded": false,
+			"hands": [
+				0
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(1.396959, 1.640215, 0.161415)",
+			"right_state": "REACHING",
+			"stage": 2,
+			"time": 8.88333333333335,
+			"torque": 18.2657165527344,
+			"velocity": "(0.078802, -0.143339, -0.026293)"
+		},
+		{
+			"force": 150.080169677734,
+			"grounded": false,
+			"hands": [
+				0
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(1.393447, 1.631467, 0.179275)",
+			"right_state": "REACHING",
+			"stage": 2,
+			"time": 8.98333333333336,
+			"torque": 13.1248903274536,
+			"velocity": "(-0.179097, -0.008373, 0.260352)"
+		},
+		{
+			"force": 114.381195068359,
+			"grounded": false,
+			"hands": [
+				0
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 3.26092171669006,
+			"position": "(1.354734, 1.636373, 0.203788)",
+			"right_state": "REACHING",
+			"stage": 2,
+			"time": 9.08333333333336,
+			"torque": 15.2138633728027,
+			"velocity": "(-0.507627, 0.052095, 0.217274)"
+		},
+		{
+			"force": 114.753898620605,
+			"grounded": false,
+			"hands": [
+				0
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 10.038649559021,
+			"position": "(1.294784, 1.640895, 0.222675)",
+			"right_state": "REACHING",
+			"stage": 2,
+			"time": 9.18333333333337,
+			"torque": 19.8666858673096,
+			"velocity": "(-0.644171, 0.054039, 0.170791)"
+		},
+		{
+			"force": 97.8262405395508,
+			"grounded": false,
+			"hands": [
+				0
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 8.4628381729126,
+			"position": "(1.230679, 1.645914, 0.249029)",
+			"right_state": "REACHING",
+			"stage": 2,
+			"time": 9.28333333333337,
+			"torque": 15.8505716323853,
+			"velocity": "(-0.628609, 0.024949, 0.292544)"
+		},
+		{
+			"force": 117.158338546753,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 5.54657697677612,
+			"position": "(1.172122, 1.640636, 0.280512)",
+			"right_state": "ATTACHED",
+			"stage": 2,
+			"time": 9.38333333333338,
+			"torque": 14.2259941101074,
+			"velocity": "(-0.542998, -0.101132, 0.325236)"
+		},
+		{
+			"force": 138.116821289063,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(1.129914, 1.633705, 0.31108)",
+			"right_state": "ATTACHED",
+			"stage": 2,
+			"time": 9.48333333333338,
+			"torque": 5.30549478530884,
+			"velocity": "(-0.321245, -0.031868, 0.277179)"
+		},
+		{
+			"force": 135.702844619751,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(1.1134, 1.63901, 0.334469)",
+			"right_state": "ATTACHED",
+			"stage": 2,
+			"time": 9.58333333333339,
+			"torque": 17.4811935424805,
+			"velocity": "(-0.056204, 0.116089, 0.20431)"
+		},
+		{
+			"force": 125.519905090332,
+			"grounded": false,
+			"hands": [
+				1
+			],
+			"left_state": "REACHING",
+			"leg_force": 0.0,
+			"position": "(1.120806, 1.653959, 0.350678)",
+			"right_state": "ATTACHED",
+			"stage": 2,
+			"time": 9.68333333333339,
+			"torque": 21.496036529541,
+			"velocity": "(0.165005, 0.153189, 0.131939)"
+		},
+		{
+			"force": 89.5636868774891,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 10.9030523300171,
+			"position": "(1.148381, 1.667567, 0.359723)",
+			"right_state": "ATTACHED",
+			"stage": 2,
+			"time": 9.7833333333334,
+			"torque": 14.5441617965698,
+			"velocity": "(0.341166, 0.082649, 0.069799)"
+		},
+		{
+			"force": 113.869924545288,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 29.4924211502075,
+			"position": "(1.190971, 1.667574, 0.367051)",
+			"right_state": "ATTACHED",
+			"stage": 2,
+			"time": 9.8833333333334,
+			"torque": 7.77313566207886,
+			"velocity": "(0.498771, -0.020835, 0.083984)"
+		},
+		{
+			"force": 107.185371398926,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 26.4134700894356,
+			"position": "(1.254175, 1.670414, 0.377999)",
+			"right_state": "ATTACHED",
+			"stage": 2,
+			"time": 9.98333333333341,
+			"torque": 10.6622562408447,
+			"velocity": "(0.724824, 0.054402, 0.124887)"
+		},
+		{
+			"force": 84.1586532592773,
+			"grounded": false,
+			"hands": [
+				0
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 30.5089497566223,
+			"position": "(1.336783, 1.669239, 0.391098)",
+			"right_state": "REACHING",
+			"stage": 2,
+			"time": 10.0833333333334,
+			"torque": 23.4394912719727,
+			"velocity": "(0.891594, -0.128633, 0.138261)"
+		},
+		{
+			"force": 109.481414794922,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 24.4851245880127,
+			"position": "(1.43534, 1.651873, 0.403763)",
+			"right_state": "ATTACHED",
+			"stage": 2,
+			"time": 10.1833333333334,
+			"torque": 17.3496723175049,
+			"velocity": "(1.035782, -0.180292, 0.110401)"
+		},
+		{
+			"force": 166.717753410339,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(1.53714, 1.641281, 0.408771)",
+			"right_state": "ATTACHED",
+			"stage": 2,
+			"time": 10.2833333333334,
+			"torque": 9.36678314208984,
+			"velocity": "(0.960452, -0.000941, -0.014151)"
+		},
+		{
+			"force": 135.105909347534,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(1.611291, 1.66268, 0.398017)",
+			"right_state": "ATTACHED",
+			"stage": 2,
+			"time": 10.3833333333334,
+			"torque": 25.0060424804688,
+			"velocity": "(0.558053, 0.339496, -0.152255)"
+		},
+		{
+			"force": 81.0964555740356,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(1.644445, 1.688277, 0.381227)",
+			"right_state": "ATTACHED",
+			"stage": 2,
+			"time": 10.4833333333334,
+			"torque": 18.1793842315674,
+			"velocity": "(0.194358, 0.123559, -0.170724)"
+		},
+		{
+			"force": 111.54460144043,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(1.648057, 1.682695, 0.365052)",
+			"right_state": "ATTACHED",
+			"stage": 3,
+			"time": 10.5833333333334,
+			"torque": 21.6521873474121,
+			"velocity": "(-0.071892, -0.146356, -0.152168)"
+		},
+		{
+			"force": 144.942604064941,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(1.627721, 1.667595, 0.350756)",
+			"right_state": "ATTACHED",
+			"stage": 3,
+			"time": 10.6833333333334,
+			"torque": 19.5935878753662,
+			"velocity": "(-0.285659, -0.111219, -0.143819)"
+		},
+		{
+			"force": 141.900886535645,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(1.59252, 1.669098, 0.33219)",
+			"right_state": "ATTACHED",
+			"stage": 3,
+			"time": 10.7833333333334,
+			"torque": 19.8245868682861,
+			"velocity": "(-0.379017, 0.103264, -0.232386)"
+		},
+		{
+			"force": 105.866771697998,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(1.555494, 1.68484, 0.299297)",
+			"right_state": "ATTACHED",
+			"stage": 3,
+			"time": 10.8833333333335,
+			"torque": 20.7224102020264,
+			"velocity": "(-0.352691, 0.152751, -0.400248)"
+		},
+		{
+			"force": 107.902576446533,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(1.525362, 1.690212, 0.250313)",
+			"right_state": "ATTACHED",
+			"stage": 3,
+			"time": 10.9833333333335,
+			"torque": 16.8078575134277,
+			"velocity": "(-0.253782, -0.019574, -0.551278)"
+		},
+		{
+			"force": 139.550941467285,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(1.508784, 1.684879, 0.187063)",
+			"right_state": "ATTACHED",
+			"stage": 3,
+			"time": 11.0833333333335,
+			"torque": 8.16173553466797,
+			"velocity": "(-0.101525, -0.040302, -0.686367)"
+		},
+		{
+			"force": 201.943161010742,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(1.504399, 1.689942, 0.114149)",
+			"right_state": "ATTACHED",
+			"stage": 3,
+			"time": 11.1833333333335,
+			"torque": 14.035192489624,
+			"velocity": "(-0.038195, -0.005643, -0.734483)"
+		},
+		{
+			"force": 257.519729614258,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(1.494406, 1.691861, 0.048789)",
+			"right_state": "ATTACHED",
+			"stage": 3,
+			"time": 11.2833333333335,
+			"torque": 20.7596473693848,
+			"velocity": "(-0.094327, 0.028068, -0.569574)"
+		},
+		{
+			"force": 257.972625732422,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(1.482465, 1.696734, 0.001835)",
+			"right_state": "ATTACHED",
+			"stage": 3,
+			"time": 11.3833333333335,
+			"torque": 11.9718885421753,
+			"velocity": "(-0.135136, 0.063383, -0.394175)"
+		},
+		{
+			"force": 250.226005554199,
+			"grounded": false,
+			"hands": [
+				0,
+				1
+			],
+			"left_state": "ATTACHED",
+			"leg_force": 0.0,
+			"position": "(1.470331, 1.704472, -0.027182)",
+			"right_state": "ATTACHED",
+			"stage": 3,
+			"time": 11.4833333333335,
+			"torque": 12.0109262466431,
+			"velocity": "(-0.103246, 0.083214, -0.222942)"
+		}
+	]
+}
