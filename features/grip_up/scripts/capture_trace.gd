@@ -1,5 +1,6 @@
 extends RefCounted
 ## Optional sampled JSONL instrumentation. Reading this state cannot drive physics.
+const Actuator = preload("res://features/grip_up/scripts/arm_actuator.gd")
 var enabled := false
 var interval := 0.05
 var path := "user://capture_frames.jsonl"
@@ -43,7 +44,7 @@ func sample(delta: float, controller: Node, extra: Dictionary = {}) -> void:
 		var valid: bool = anchor!=null and anchor.is_valid()
 		var support: PhysicsBody3D = anchor.support_body() if valid else null
 		var point: Vector3 = anchor.world_point() if valid else hand.hand_world
-		var relative: Vector3 = controller.torso.linear_velocity+controller.torso.angular_velocity.cross(controller.get_shoulder_world(id)-controller.torso.global_position)-(anchor.point_velocity() if valid else Vector3.ZERO)
+		var relative: Vector3 = Actuator.point_velocity(controller.torso,controller.get_shoulder_world(id))-(anchor.point_velocity() if valid else Vector3.ZERO)
 		row.hands.append({"id":id,"state":hand.state,"hand_position":vector(hand.hand_world),"target_world":vector(point),
 			"target_local":vector(anchor.local_point) if valid else [],"support_id":support.get_instance_id() if support!=null else 0,
 			"support_name":str(support.name) if support!=null else "","actual_length":controller.get_shoulder_world(id).distance_to(point),

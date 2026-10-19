@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DEST = Path(r'E:\Godot Games\grip_up')
 ENGINE = Path(r'C:\Users\Wynter\WrapRush\tools\godot.exe')
 CLI = Path(r'C:\Users\Wynter\Downloads\godot-mcp-pro-v1.17.1\server\build\cli.js')
+BUILD_NAME = 'GripUp-v0.2-M1.exe'
 
 parser = argparse.ArgumentParser()
 parser.add_argument('task', choices=['sync','test','test-saved','editor','mcp','export','cleanup','smoke'])
@@ -42,7 +43,7 @@ elif args.task == 'sync':
     # The licensed local plugin is enabled by ignored override.cfg, not by the
     # portable project settings committed to Git.
     (DEST/'builds').mkdir(exist_ok=True)
-    for name in ['GripUp-v0.1.exe','verification.json','decision.md']:
+    for name in [BUILD_NAME,'verification.json','decision.md']:
         if (ROOT/'builds'/name).exists(): shutil.copy2(ROOT/'builds'/name, DEST/'builds'/name)
     # Licensed editor plugin stays local and is excluded from exported builds.
     addon = DEST/'addons'/'godot_mcp'
@@ -74,9 +75,9 @@ else:
         command=[str(ENGINE),'--headless','--path',str(DEST if args.task=='test-saved' else ROOT),'--script',f'res://features/grip_up/tests/{script}.gd','--fixed-fps','120','--quit-after','20000']
         if len(args.extra)>1: command += ['--'] + args.extra[1:]
     elif args.task == 'smoke':
-        command=[str(ROOT/'builds'/'GripUp-v0.1.exe'),'--write-movie',str(ROOT/'builds'/'export.png'),'--fixed-fps','60','--quit-after','3']
+        command=[str(ROOT/'builds'/BUILD_NAME),'--write-movie',str(ROOT/'builds'/'export.png'),'--fixed-fps','60','--quit-after','3']
     else:
-        command=[str(ENGINE),'--headless','--path',str(ROOT),'--export-debug','Windows PC',str(ROOT/'builds'/'GripUp-v0.1.exe')]
+        command=[str(ENGINE),'--headless','--path',str(ROOT),'--export-debug','Windows PC',str(ROOT/'builds'/BUILD_NAME)]
     result=subprocess.run(command,capture_output=True,startupinfo=startup,timeout=180)
     output=(result.stdout+result.stderr).decode('utf-8',errors='replace')
     suffix = '_' + '_'.join(value.lstrip('-') for value in args.extra[1:]) if len(args.extra)>1 else ''

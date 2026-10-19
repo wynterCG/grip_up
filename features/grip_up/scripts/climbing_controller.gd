@@ -3,6 +3,8 @@ signal sample_ready(delta: float)
 const Tuning = preload("res://features/grip_up/resources/climbing_tuning.gd")
 const Anchor = preload("res://features/grip_up/scripts/grip_anchor.gd")
 const Actuator = preload("res://features/grip_up/scripts/arm_actuator.gd")
+const CapturePredictor = preload("res://features/grip_up/scripts/grip_capture_predictor.gd")
+const CaptureEvaluator = preload("res://features/grip_up/scripts/grip_capture_evaluator.gd")
 var torso: RigidBody3D
 var tuning: Resource = Tuning.new()
 var hands: Array[Dictionary] = []
@@ -20,6 +22,8 @@ var _launch_elapsed := 0.0
 var _launch_charge := 0.0
 var _launch_anchors: Dictionary = {}
 var simulation_time := 0.0
+var capture_predictor = CapturePredictor.new()
+var capture_evaluator = CaptureEvaluator.new()
 
 func configure(body: RigidBody3D, configuration: Resource = null) -> void:
 	torso = body
@@ -138,6 +142,14 @@ func get_arm_force(id: int) -> Vector3:
 	return hands[id]["force"] if id >= 0 and id < hands.size() else Vector3.ZERO
 
 func request_grip(id: int, support: PhysicsBody3D, world_point: Vector3, normal: Vector3) -> bool:
+	return _request_grip(id,support,world_point,normal,false)
+
+func request_buffered_grip(id: int, support: PhysicsBody3D, world_point: Vector3, normal: Vector3) -> bool:
+	if not tuning.predictive_grip:
+		return request_grip(id,support,world_point,normal)
+	return _request_grip(id,support,world_point,normal,true)
+
+func _request_grip(id: int, support: PhysicsBody3D, world_point: Vector3, normal: Vector3, predictive: bool) -> bool:
 	metrics["attempts"] += 1
 	if id < 0 or id >= hands.size() or not is_instance_valid(torso) or not is_instance_valid(support) or support == torso:
 		return _reject("invalid_hand_or_support")
@@ -149,8 +161,15 @@ func request_grip(id: int, support: PhysicsBody3D, world_point: Vector3, normal:
 		return _reject("surface_not_grippable")
 	if not world_point.is_finite() or not normal.is_finite() or normal.length_squared() < 0.5:
 		return _reject("invalid_surface_point")
-	if get_shoulder_world(id).distance_to(world_point) > get_max_reach()+0.00005:
-		return _reject("out_of_reach")
+	var pending: bool = get_shoulder_world(id).distance_to(world_point)>get_max_reach()+0.00005
+	var forecast: Dictionary = {}
+	if predictive:
+		forecast = capture_predictor.evaluate(self,id,support,world_point,normal)
+	if pending:
+		if not predictive or forecast.get("status")!="SOON":
+			return _reject("out_of_reach")
+		if float(forecast.get("predicted_entry_time",INF))>clampf(tuning.capture_intent_buffer_duration,0.10,0.15):
+			return _reject("outside_buffer_window")
 	if not _accessible(get_shoulder_world(id), world_point, normal.normalized(), support):
 		return _reject("surface_obstructed")
 	var hand: Dictionary = hands[id]
@@ -164,6 +183,10 @@ func request_grip(id: int, support: PhysicsBody3D, world_point: Vector3, normal:
 	hand["target_world"] = world_point
 	hand["approaching_surface"] = true
 	hand["reason"] = ""
+	hand["predictive_wait"] = pending
+	hand["capture"] = {"input_time":simulation_time,"buffered":pending,"predicted_entry_time":forecast.get("predicted_entry_time",-1.0),
+		"predicted_contact_time":forecast.get("predicted_contact_time",-1.0),"predicted_target":forecast.get("predicted_target",world_point),
+		"predicted_target_time":forecast.get("predicted_target_time",-1.0),"actual_arrival":-1.0,"failure_reason":""}
 	last_rejection = ""
 	return true
 
@@ -176,6 +199,10 @@ func release_grip(id: int, reason: String = "manual") -> void:
 	if id < 0 or id >= hands.size():
 		return
 	var hand: Dictionary = hands[id]
+	if hand.has("capture") and reason not in ["manual","launch"]:
+		hand["capture"]["failure_reason"] = reason
+		if tuning.predictive_grip and reason=="arm_extension_limit" and hand["capture"].get("load_risk",false):
+			hand["capture"]["failure_reason"] = "excessive_relative_speed"
 	if OS.get_cmdline_user_args().has("--debug-reach") and hand["state"]=="REACHING":
 		print("REACH_RELEASE id=",id," reason=",reason," actual=",hand["actual_length"]," endpoint=",hand["hand_world"])
 	if hand["state"] in ["ATTACHED", "SLIPPING"]:
@@ -246,8 +273,14 @@ func _update_hand(id: int, delta: float) -> void:
 	hand["actual_length"] = shoulder.distance_to(point)
 	if hand["state"] == "REACHING":
 		if hand["actual_length"] > get_max_reach()+0.00005:
-			release_grip(id, "target_left_reach")
-			return
+			if not hand.get("predictive_wait",false):
+				release_grip(id, "target_left_reach")
+				return
+			if hand["elapsed"]>clampf(tuning.capture_intent_buffer_duration,0.10,0.15):
+				release_grip(id,"capture_window_expired")
+				return
+		elif hand.get("predictive_wait",false):
+			hand["predictive_wait"] = false
 		if hand["elapsed"] > tuning.candidate_hold_timeout or not _accessible(shoulder, point, anchor.world_normal(), anchor.support_body()):
 			release_grip(id, "candidate_timeout_or_obstructed")
 			return
@@ -258,6 +291,8 @@ func _update_hand(id: int, delta: float) -> void:
 		var destination: Vector3 = point
 		if hand.get("departing_surface",false):
 			destination = hand["departure_world"]
+		elif hand.get("predictive_wait",false):
+			destination = shoulder+(point-shoulder).limit_length(get_max_reach())
 		elif hand.get("approaching_surface",false):
 			# Keep the approach waypoint inside the same anatomical reach sphere.
 			var offset := point-shoulder
@@ -282,11 +317,24 @@ func _update_hand(id: int, delta: float) -> void:
 			release_grip(id, "hand_path_obstructed")
 			return
 		hand["hand_world"] = next
+		if hand.get("predictive_wait",false):
+			if hand.get("departing_surface",false) and next.distance_to(destination)<0.001:
+				hand["departing_surface"] = false
+			return
 		if hand.get("departing_surface",false) and next.distance_to(destination)<0.001:
 			hand["departing_surface"] = false
 		elif hand.get("approaching_surface", false) and next.distance_to(destination) < 0.001:
 			hand["approaching_surface"] = false
-		elif not hand.get("approaching_surface", false) and next.distance_to(point) <= tuning.attach_distance_tolerance:
+		elif not hand.get("approaching_surface", false) and next.distance_to(point) <= (0.000001 if tuning.predictive_grip else tuning.attach_distance_tolerance):
+			if tuning.predictive_grip:
+				var capture: Dictionary = capture_evaluator.evaluate(self,id)
+				if not capture.accepted:
+					release_grip(id,capture.reason)
+					return
+				hand["capture"].merge(capture,true)
+			if hand.has("capture"):
+				hand["capture"]["actual_arrival"] = simulation_time-float(hand["capture"]["input_time"])
+				hand["capture"]["prediction_error"] = Vector3(hand["capture"]["predicted_target"]).distance_to(point) if float(hand["capture"]["predicted_contact_time"])>=0.0 else -1.0
 			hand["state"] = "ATTACHED"
 			hand["hand_world"] = point
 			hand["rest_length"] = clampf(hand["actual_length"], tuning.min_arm_length, tuning.max_arm_length)

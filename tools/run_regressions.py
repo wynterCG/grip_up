@@ -12,6 +12,8 @@ names = ['physics','platform_probe','wall_clearance','biped_profile','playthroug
          'climb_direction','leg_motion','pendulum','free_climb','launch','full_reach','biped_asset']
 label = sys.argv[1] if len(sys.argv)>1 else 'regressions'
 selected = sys.argv[2:]
+if label == 'm1':
+    names += ['m0_instrumentation','capture_input','capture_matrix']
 assert all(name in names for name in selected)
 dest = root/'docs'/'validation'/label
 dest.mkdir(parents=True,exist_ok=True)
@@ -22,7 +24,7 @@ def run(item):
     if slow:
         command += ['--','--60hz']
     result = subprocess.run(command,capture_output=True,timeout=210)
-    output = (result.stdout+result.stderr).decode('utf-8',errors='replace')
+    output = (result.stdout+result.stderr).decode('utf-8',errors='replace').replace('\r','').rstrip()+'\n'
     footer = re.search(r'RESULTS: (\d+) checks, (\d+) failures',output)
     ok = result.returncode==0 and footer and int(footer[2])==0 and 'FAIL ' not in output and 'SCRIPT ERROR:' not in output
     (dest/(name+('_60hz' if slow else '_120hz')+'.txt')).write_text(output,encoding='utf-8')

@@ -8,6 +8,8 @@ const BipedProfile = preload("res://features/grip_up/resources/biped_tuning.gd")
 const BipedVisual = preload("res://features/grip_up/scripts/biped_visual.gd")
 const GroundLocomotion = preload("res://features/grip_up/scripts/ground_locomotion.gd")
 const CaptureTrace = preload("res://features/grip_up/scripts/capture_trace.gd")
+const GripIntentBuffer = preload("res://features/grip_up/scripts/grip_intent_buffer.gd")
+const CaptureDebugDraw = preload("res://features/grip_up/scripts/capture_debug_draw.gd")
 const LEVELS = [preload("res://features/grip_up/scenes/static_climb.tscn"), preload("res://features/grip_up/scenes/swing_and_catch.tscn"), preload("res://features/grip_up/scenes/reactive_structure.tscn")]
 const COLORS = [Color("65dfcc"), Color("f0b85c")]
 var torso: RigidBody3D
@@ -53,6 +55,15 @@ var hint := ""
 var hint_time := 0.0
 var mode_buttons: Array[Button] = []
 var capture_trace = CaptureTrace.new()
+var grip_intents = GripIntentBuffer.new()
+var predictive_grip_enabled := false
+var capture_predictions: Array[Dictionary] = [{},{}]
+var prediction_clock := 0.0
+var prediction_label: Label
+var predictive_toggle: CheckButton
+var capture_debug: MeshInstance3D
+var prediction_support_id := 0
+var prediction_point := Vector3.INF
 
 func _ready() -> void:
 	router.setup()
@@ -64,6 +75,7 @@ func _ready() -> void:
 	load_test(0)
 	get_window().focus_exited.connect(func():
 		orbiting = false
+		grip_intents.clear(controller)
 		controller.cancel_launch()
 		for action in ["contract", "extend", "bias_left", "bias_right", "launch"]:
 			Input.action_release(action)
@@ -111,6 +123,11 @@ func _mesh(parent: Node3D, geometry: Mesh, color: Color, at := Vector3.ZERO) -> 
 
 func load_test(index: int, use_checkpoint := false) -> void:
 	capture_trace.close()
+	grip_intents = GripIntentBuffer.new()
+	capture_predictions = [{},{}]
+	prediction_clock = 0.0
+	prediction_support_id = 0
+	prediction_point = Vector3.INF
 	for action in ["contract","extend","bias_left","bias_right","launch"]:
 		Input.action_release(action)
 	if not trial.is_empty():
@@ -138,6 +155,7 @@ func load_test(index: int, use_checkpoint := false) -> void:
 		_mesh(world,stripe,Color("29404a"),Vector3(i*1.5,-2.843,0))
 	torso = RigidBody3D.new()
 	var profile := BipedProfile.new()
+	profile.predictive_grip = predictive_grip_enabled
 	torso.name = "BipedTorso"
 	torso.mass = profile.body_mass
 	torso.continuous_cd = true
@@ -204,6 +222,8 @@ func load_test(index: int, use_checkpoint := false) -> void:
 	target.height = 0.18
 	target_marker = _mesh(world,target,Color.WHITE)
 	target_marker.visible = false
+	capture_debug = CaptureDebugDraw.new()
+	world.add_child(capture_debug)
 	camera.reset(torso,controller)
 	trial = {"test":index,"character":"biped","grip_mode":"hold" if hold_mode else "toggle","fixed_beam":fixed_beam,"elapsed":0.0,"first_grab_seconds":-1.0,"goal_seconds":-1.0,"attempts":0,"misses":0,"slips":0,"falls":0,"transfers":0,"inputs":0,"large_step_events":0,"max_speed":0.0,"max_spin":0.0,"max_force_used":0.0,"ratings":{}}
 	session_ticks = 0
@@ -245,6 +265,7 @@ func _input(event: InputEvent) -> void:
 	if hold_mode and not event.is_pressed() and is_instance_valid(controller):
 		for hand in 2:
 			if event.is_action_released("grip_left" if hand==0 else "grip_right"):
+				grip_intents.release(controller,hand)
 				controller.release_grip(hand)
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -288,10 +309,10 @@ func request_hand(hand: int) -> bool:
 		trial.misses += 1
 		message("Aim at a solid surface within arm's reach. Hold LMB / RMB to grip that exact point.")
 		return false
-	var ok: bool = controller.request_grip(hand,hit.collider,hit.position,hit.normal)
+	var ok: bool = grip_intents.press(controller,hand,hit.collider,hit.position,hit.normal) if predictive_grip_enabled and hold_mode else controller.request_grip(hand,hit.collider,hit.position,hit.normal)
 	if not ok:
 		trial.misses += 1
-		message("Hold out of reach or blocked. Move closer with your attached arm.")
+		message(_capture_reason(controller.last_rejection))
 	return ok
 
 func toggle_beam() -> void:
@@ -306,6 +327,12 @@ func _physics_process(delta: float) -> void:
 	var blocked := settings.visible or binding_action != ""
 	if blocked:
 		controller.cancel_launch()
+		grip_intents.clear(controller)
+	if predictive_grip_enabled:
+		for hand in 2:
+			if not Input.is_action_pressed("grip_left" if hand==0 else "grip_right"):
+				grip_intents.release(controller,hand)
+		grip_intents.update(controller)
 	ground_motor.enabled = not blocked
 	ground_motor.move_intent = Input.get_vector("bias_left","bias_right","contract","extend")
 	controller.set_climb_intent(0.0 if blocked else Input.get_action_strength("contract"),0.0 if blocked else Input.get_action_strength("extend"),0.0 if blocked else Input.get_axis("bias_left","bias_right"),camera.global_basis.x)
@@ -363,6 +390,19 @@ func _process(delta: float) -> void:
 		return
 	hint_time = maxf(0,hint_time-delta)
 	candidate = targeting.candidate(camera,pointer,torso)
+	prediction_clock -= delta
+	if not candidate.is_empty() and (candidate.collider.get_instance_id()!=prediction_support_id or Vector3(candidate.position).distance_to(prediction_point)>0.02):
+		prediction_clock = 0.0
+	if predictive_grip_enabled and not candidate.is_empty() and prediction_clock<=0.0:
+		for id in 2:
+			capture_predictions[id] = controller.capture_predictor.evaluate(controller,id,candidate.collider,candidate.position,candidate.normal)
+		prediction_clock = 0.05
+		prediction_support_id = candidate.collider.get_instance_id()
+		prediction_point = candidate.position
+	if candidate.is_empty():
+		capture_predictions = [{},{}]
+	capture_debug.update_state(controller,capture_predictions,debug_visible)
+	prediction_label.visible = predictive_grip_enabled and not settings.visible and not candidate.is_empty()
 	target_marker.visible = not candidate.is_empty() and not settings.visible
 	if target_marker.visible:
 		target_marker.global_position = candidate.position + candidate.normal * 0.025
@@ -371,11 +411,25 @@ func _process(delta: float) -> void:
 			if controller.get_shoulder_world(i).distance_to(candidate.position) <= controller.get_max_reach():
 				reachable = true
 			target_marker.material_override.albedo_color = Color("b1f5d8") if reachable else Color("e66d68")
+		if predictive_grip_enabled:
+			var status := "UNAVAILABLE"
+			var eta := -1.0
+			for forecast in capture_predictions:
+				if forecast.get("status")=="NOW":
+					status = "NOW"
+					break
+				if forecast.get("status")=="SOON":
+					status = "SOON"
+					eta = forecast.get("predicted_entry_time",-1.0)
+			target_marker.material_override.albedo_color = Color("b1f5d8") if status=="NOW" else Color("f0b85c") if status=="SOON" else Color("e66d68")
+			prediction_label.text = "TARGET / "+status+("  %.2f s" % eta if eta>=0 and status=="SOON" else "")
 	for i in 2:
 		var end: Vector3 = biped.palms[i]
 		hand_meshes[i].global_position = end
 		var hand: Dictionary = controller.hands[i]
 		var warning: String = " / " + str(hand.reason) if hand.state in ["SLIPPING","RELEASED"] else ""
+		if predictive_grip_enabled and hand.get("capture",{}).get("failure_reason","")!="" and hand.state in ["FREE","RELEASED"]:
+			warning = "\n"+_capture_reason(hand.capture.failure_reason)
 		if hand.state == "ATTACHED" and controller.get_arm_force(i).length() > hand.grip_limit * 0.75:
 			warning = " / STRAINED"
 		hand_labels[i].text = ("LEFT / CYAN" if i==0 else "RIGHT / AMBER") + "\n" + hand.state + warning
@@ -412,8 +466,17 @@ func _record_capture(delta: float) -> void:
 	if not capture_trace.enabled:
 		return
 	capture_trace.sample(delta,controller,{"scene":level_id,"launch_state":controller.telemetry().get("launch_state","IDLE"),
+		"grip_buttons":[Input.is_action_pressed("grip_left"),Input.is_action_pressed("grip_right")],"capture_predictions":capture_predictions,
 		"grounded":ground_motor.grounded if is_instance_valid(ground_motor) else false,
 		"beam_angle":level.beam.rotation.z if is_instance_valid(level) and is_instance_valid(level.beam) else 0.0})
+
+func _capture_reason(reason: String) -> String:
+	return {"out_of_reach":"Point outside arm reach.","outside_buffer_window":"Point will arrive too late; try closer to the catch.",
+		"surface_obstructed":"The surface is blocked.","hand_path_obstructed":"Hand path blocked.","surface_contact_missing":"The hand missed the surface.",
+		"capture_window_expired":"The point did not enter reach in time.","target_left_reach":"The point left arm reach before contact.",
+		"hand_path_left_reach":"The body moved beyond the reaching arm.","excessive_relative_speed":"Too much speed to hold this catch.",
+		"candidate_timeout_or_obstructed":"Contact timed out or became blocked.","support_invalidated":"The support disappeared.",
+		"arm_extension_limit":"The arm reached its physical limit.","grip_overload":"Grip load exceeded its limit."}.get(reason,reason.replace("_"," "))
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
@@ -475,7 +538,7 @@ func _setup_ui() -> void:
 	branding.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	row.add_child(branding)
 	_label("GRIP UP",36,branding,Color("edf4e9"))
-	_label("PHYSICS CLIMBING LAB  /  0.1",15,branding,COLORS[0])
+	_label("PHYSICS CLIMBING LAB  /  0.2 M1",15,branding,COLORS[0])
 	for i in 3:
 		var index := i
 		var button := _button(["01  STATIC CLIMB","02  SWING & CATCH","03  REACTIVE STRUCTURE"][i],func():load_test(index),row)
@@ -489,6 +552,8 @@ func _setup_ui() -> void:
 	title_label = _label("",23,mission,COLORS[0])
 	objective_label = _label("",18,mission)
 	checkpoint_label = _label("",15,mission,Color("91aab5"))
+	prediction_label = _label("",16,mission,COLORS[1])
+	prediction_label.hide()
 	beam_button = _button("",toggle_beam,mission)
 	var hands_panel := _panel(hud)
 	hands_panel.set_anchors_and_offsets_preset(Control.PRESET_CENTER_RIGHT)
@@ -525,6 +590,19 @@ func _setup_ui() -> void:
 	hold.button_pressed = hold_mode
 	hold.toggled.connect(_set_hold_mode)
 	settings_box.add_child(hold)
+	predictive_toggle = CheckButton.new()
+	predictive_toggle.text = "Predictive catches / prepare a near-future grip"
+	predictive_toggle.button_pressed = predictive_grip_enabled
+	predictive_toggle.toggled.connect(_set_predictive_grip)
+	settings_box.add_child(predictive_toggle)
+	var record := CheckButton.new()
+	record.text = "Record capture diagnostics (JSONL)"
+	record.toggled.connect(func(on:bool):
+		capture_trace.enabled=on
+		if not on:
+			capture_trace.close()
+	)
+	settings_box.add_child(record)
 	for action in router.DEFAULTS:
 		var binding := str(action)
 		var line := HBoxContainer.new()
@@ -569,3 +647,15 @@ func _set_hold_mode(on: bool) -> void:
 
 func _controls_hint() -> String:
 	return "WASD / Walk or climb    Hold LMB / RMB / Grip    %s / Hold to load, release to launch    MMB / Orbit    Wheel / Dolly" % router.prompt("launch")
+
+func _set_predictive_grip(on: bool) -> void:
+	predictive_grip_enabled = on
+	if is_instance_valid(predictive_toggle):
+		predictive_toggle.set_pressed_no_signal(on)
+	prediction_clock = 0.0
+	if is_instance_valid(controller):
+		controller.tuning.predictive_grip = on
+		if not on:
+			for id in 2:
+				if controller.get_hand_state(id)=="REACHING" and controller.hands[id].get("predictive_wait",false):
+					grip_intents.release(controller,id)

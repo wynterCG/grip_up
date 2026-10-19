@@ -1,10 +1,43 @@
-# GRIP UP / physics climbing lab 0.1
+# GRIP UP / physics climbing lab 0.2 M1
 
-Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v0.1.exe`.
+Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v0.2-M1.exe`.
 PC mouse and keyboard. Resizable 1920x1080 reference canvas; initial window 1440x810.
 Integrated Jolt, 120 Hz. Core and complete routes also tested at 60 Hz.
 
 This is a separate prototype. The Janga object grabber and its project are unchanged.
+
+## v0.2 progress: baseline protection and predictive capture
+
+This iteration implements M0 and M1 of `docs/specs/grip_up_v0.2.md`.
+The immutable baseline is tagged `v0.1-baseline`; its configuration, 962 passing
+checks and representative sessions are archived in `docs/baselines/v0.1/`.
+
+In **Controls**, enable **Predictive catches** to compare the experimental M1.
+It starts OFF. Aim at a surface marked NOW or SOON and hold the corresponding
+mouse button. SOON prepares that exact material point for up to 150 ms until it
+enters real arm reach. The hand then still travels at its existing finite speed;
+attachment requires current, unobstructed surface contact. Releasing the button
+cancels immediately, including over UI. There is no automatic retry or retargeting.
+The 200 ms forecast is an estimate and may not cover the entire reaching gesture.
+NOW means the point is currently selectable, not an immediate or guaranteed catch.
+Toggle-to-grip retains its previous behavior without the held-intent buffer.
+
+Tab adds optional reach, anchor, normal and force lines. **Record capture
+diagnostics** writes sampled `user://capture_frames.jsonl`. Recording is OFF by
+default. Uncertain contact times and errors are recorded as -1 rather than invented.
+
+All 1,102 checks pass across 60/120 Hz, including the original 962. In the
+controlled favorable matrix, currently reachable catches retain 24/24 with M1
+OFF and ON at each frequency. Future-only held catches improve from 0/12 OFF
+to 12/12 ON, with one-second retention. Adverse momentum/support cases remain
+physical failures and are reported separately. See `docs/validation/M1.md` for
+rendered evidence, timing uncertainty and the limits of this comparison.
+
+M2 physical feet, M3 support-aware posture, M4 directional grip quality, M5 the
+new reactive challenge and M6 mantle are not implemented yet. Their flags are
+OFF. In particular, the old camera-referenced twist assistance remains until M3.
+Human A/B feel evaluation is still pending; this prototype does not certify a
+completed v0.2 or a better subjective feel.
 
 ## Controls
 

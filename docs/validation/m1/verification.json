@@ -1,0 +1,272 @@
+{
+  "revision": "v0.2 M0/M1: protected baseline / opt-in predictive held capture",
+  "recorded_utc": "2026-10-19T11:49:17.274276+00:00",
+  "engine": "4.7.2.stable.ed1daf0bf",
+  "backend": "Jolt Physics",
+  "default_hz": 120,
+  "suites": {
+    "physics": {
+      "120hz": 45,
+      "60hz": 45
+    },
+    "platform_probe": {
+      "120hz": 42,
+      "60hz": 42
+    },
+    "wall_clearance": {
+      "120hz": 6,
+      "60hz": 6
+    },
+    "biped_profile": {
+      "120hz": 58,
+      "60hz": 58
+    },
+    "playthrough": {
+      "120hz": 19,
+      "60hz": 19
+    },
+    "swing_playthrough": {
+      "120hz": 10,
+      "60hz": 10
+    },
+    "integration": {
+      "120hz": 27,
+      "60hz": 27
+    },
+    "biped_visual": {
+      "120hz": 15,
+      "60hz": 15
+    },
+    "idle_hang": {
+      "120hz": 13,
+      "60hz": 13
+    },
+    "ground_locomotion": {
+      "120hz": 24,
+      "60hz": 24
+    },
+    "climb_direction": {
+      "120hz": 43,
+      "60hz": 43
+    },
+    "leg_motion": {
+      "120hz": 20,
+      "60hz": 20
+    },
+    "pendulum": {
+      "120hz": 63,
+      "60hz": 63
+    },
+    "free_climb": {
+      "120hz": 22,
+      "60hz": 24
+    },
+    "launch": {
+      "120hz": 60,
+      "60hz": 60
+    },
+    "full_reach": {
+      "120hz": 7,
+      "60hz": 7
+    },
+    "biped_asset": {
+      "120hz": 12
+    },
+    "m0_instrumentation": {
+      "120hz": 5,
+      "60hz": 5
+    },
+    "capture_input": {
+      "120hz": 9,
+      "60hz": 9
+    },
+    "capture_matrix": {
+      "120hz": 56,
+      "60hz": 56
+    }
+  },
+  "total_checks": 1102,
+  "failures": 0,
+  "legacy": {
+    "unchanged_grabber_sha256": "8ab923ac1d903e8dcc8ed2a2e4f9f8c5cec326a3217cb4a9d8f00036557e7dad",
+    "previous_smoke_checks": 72
+  },
+  "baseline_ref": "v0.1-baseline",
+  "default_flags": {
+    "predictive_grip": false,
+    "physical_feet": false,
+    "posture_solver": false,
+    "directional_grip_quality": false,
+    "reactive_challenge": false
+  },
+  "exe_name": "GripUp-v0.2-M1.exe",
+  "exe_sha256": "d0873d23323e4b966ca55b1555b5b13947c85c8bef6c04267771a9be70841b9b",
+  "mcp_project": "E:/Godot Games/grip_up/",
+  "rendered_capture": {
+    "120": {
+      "complete": true,
+      "physics_hz": 120,
+      "runs": [
+        {
+          "accepted": false,
+          "arrival": -1.0,
+          "caught": false,
+          "distance_at_input": 0.674700677394867,
+          "enabled": false,
+          "entry": 0.0166666666666667,
+          "failure": "",
+          "final_state": "FREE",
+          "forecast": {
+            "arrival_feasible": false,
+            "authorization": false,
+            "confidence": "short_horizon_estimate",
+            "distance": 0.674700677394867,
+            "horizon": 0.2,
+            "local_point": "(-0.12, 0.92266, 0.2)",
+            "predicted_contact_time": -1.0,
+            "predicted_distance": 0.467895805835724,
+            "predicted_entry_time": 0.0166666666666667,
+            "predicted_target": "(-0.12, 3.12266, 0.0)",
+            "predicted_target_time": 0.2,
+            "prediction_reason": "contact_beyond_horizon",
+            "radial_speed": -1.94472980499268,
+            "reachable_now": false,
+            "reason": "predicted_reach_window",
+            "relative_speed": 2.01688504219055,
+            "shoulder_velocity": "(-0.002086, 2.001949, -0.24499)",
+            "status": "SOON",
+            "target_velocity": "(0.0, 0.0, 0.0)"
+          },
+          "initial_distance": 0.762608587741852,
+          "rejection": "out_of_reach",
+          "requested": true,
+          "retained": false,
+          "target": "(-0.12, 3.12266, 0.0)"
+        },
+        {
+          "accepted": true,
+          "arrival": 0.199999999999989,
+          "caught": true,
+          "distance_at_input": 0.67462569475174,
+          "enabled": true,
+          "entry": 0.0166666666666667,
+          "failure": "",
+          "final_state": "ATTACHED",
+          "forecast": {
+            "arrival_feasible": false,
+            "authorization": false,
+            "confidence": "short_horizon_estimate",
+            "distance": 0.67462569475174,
+            "horizon": 0.2,
+            "local_point": "(-0.12, 0.922864, 0.2)",
+            "predicted_contact_time": -1.0,
+            "predicted_distance": 0.467835992574692,
+            "predicted_entry_time": 0.0166666666666667,
+            "predicted_target": "(-0.12, 3.122864, 0.0)",
+            "predicted_target_time": 0.2,
+            "prediction_reason": "contact_beyond_horizon",
+            "radial_speed": -1.94470512866974,
+            "reachable_now": false,
+            "reason": "predicted_reach_window",
+            "relative_speed": 2.0168399810791,
+            "shoulder_velocity": "(-0.000374, 2.001941, -0.244694)",
+            "status": "SOON",
+            "target_velocity": "(0.0, 0.0, 0.0)"
+          },
+          "initial_distance": 0.762614607810974,
+          "rejection": "",
+          "requested": true,
+          "retained": true,
+          "target": "(-0.12, 3.122864, 0.0)"
+        }
+      ]
+    },
+    "60": {
+      "complete": true,
+      "physics_hz": 60,
+      "runs": [
+        {
+          "accepted": false,
+          "arrival": -1.0,
+          "caught": false,
+          "distance_at_input": 0.71193528175354,
+          "enabled": false,
+          "entry": 0.0416666666666667,
+          "failure": "",
+          "final_state": "FREE",
+          "forecast": {
+            "arrival_feasible": false,
+            "authorization": false,
+            "confidence": "short_horizon_estimate",
+            "distance": 0.71193528175354,
+            "horizon": 0.2,
+            "local_point": "(-0.12, 0.876697, 0.2)",
+            "predicted_contact_time": -1.0,
+            "predicted_distance": 0.537209153175354,
+            "predicted_entry_time": 0.0416666666666667,
+            "predicted_target": "(-0.12, 3.076697, 0.0)",
+            "predicted_target_time": 0.2,
+            "prediction_reason": "contact_beyond_horizon",
+            "radial_speed": -1.7889575958252,
+            "reachable_now": false,
+            "reason": "predicted_reach_window",
+            "relative_speed": 1.85988998413086,
+            "shoulder_velocity": "(0.046255, 1.850736, -0.178405)",
+            "status": "SOON",
+            "target_velocity": "(0.0, 0.0, 0.0)"
+          },
+          "initial_distance": 0.762941062450409,
+          "rejection": "out_of_reach",
+          "requested": true,
+          "retained": false,
+          "target": "(-0.12, 3.076697, 0.0)"
+        },
+        {
+          "accepted": true,
+          "arrival": 0.20000000000001,
+          "caught": true,
+          "distance_at_input": 0.712182760238647,
+          "enabled": true,
+          "entry": 0.0416666666666667,
+          "failure": "",
+          "final_state": "ATTACHED",
+          "forecast": {
+            "arrival_feasible": false,
+            "authorization": false,
+            "confidence": "short_horizon_estimate",
+            "distance": 0.712182760238647,
+            "horizon": 0.2,
+            "local_point": "(-0.12, 0.876933, 0.2)",
+            "predicted_contact_time": -1.0,
+            "predicted_distance": 0.537622332572937,
+            "predicted_entry_time": 0.0416666666666667,
+            "predicted_target": "(-0.12, 3.076933, 0.0)",
+            "predicted_target_time": 0.2,
+            "prediction_reason": "contact_beyond_horizon",
+            "radial_speed": -1.78812003135681,
+            "reachable_now": false,
+            "reason": "predicted_reach_window",
+            "relative_speed": 1.85904216766357,
+            "shoulder_velocity": "(0.043208, 1.849946, -0.17852)",
+            "status": "SOON",
+            "target_velocity": "(0.0, 0.0, 0.0)"
+          },
+          "initial_distance": 0.762843728065491,
+          "rejection": "",
+          "requested": true,
+          "retained": true,
+          "target": "(-0.12, 3.076934, 0.0)"
+        }
+      ]
+    }
+  },
+  "export_smoke_frames": 3,
+  "human_playtest": "M1 unfamiliar-player A/B evaluation pending",
+  "future_milestones": [
+    "M2 physical feet",
+    "M3 support-aware posture",
+    "M4 directional grips",
+    "M5 reactive challenge",
+    "M6 mantle"
+  ]
+}
