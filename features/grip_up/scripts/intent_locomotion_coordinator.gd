@@ -20,6 +20,7 @@ var _origin_frame: Dictionary = {}
 var _start_position := Vector3.ZERO
 var _position_initialized := false
 var _voluntary_reversals := 0
+var _swing_reversal_active := false
 
 func reset() -> void:
 	frame.reset()
@@ -36,6 +37,7 @@ func reset() -> void:
 	_origin_frame.clear()
 	_position_initialized = false
 	_voluntary_reversals = 0
+	_swing_reversal_active = false
 
 func set_input(value: Vector2, reference_right: Vector3) -> void:
 	requested = value.limit_length(1.0) if value.is_finite() else Vector2.ZERO
@@ -80,6 +82,10 @@ func step(controller: Node, delta: float, enabled: bool) -> void:
 	if not ids.is_empty() or feet>0:_had_support = true
 	var current_frame: Dictionary = frame.update(contacts,camera_right,delta)
 	if requested!=_previous_requested:
+		if requested.length_squared()>.00001:
+			# Only an explicit opposite gesture bypasses the first of the two
+			# serial ramps. The existing .10s SupportedSwing effort ramp remains.
+			_swing_reversal_active = requested.dot(_previous_requested)<-.5*requested.length()*_previous_requested.length() and _previous_requested.length_squared()>.00001
 		if requested.dot(_previous_requested)<-.01:_voluntary_reversals += 1
 		_input_frame_id += 1
 		_input_timestamp = controller.simulation_time
@@ -88,6 +94,7 @@ func step(controller: Node, delta: float, enabled: bool) -> void:
 	var command := requested if enabled and (not ids.is_empty() or feet>0) else Vector2.ZERO
 	input = input.move_toward(command,delta/maxf(.001,tuning.traversal_input_ramp_s))
 	if not enabled or ids.is_empty() and feet==0:input = Vector2.ZERO
+	if input.length_squared()<.00001 and command.length_squared()<.00001:_swing_reversal_active = false
 	# The material support frame transports intent. Camera orbit alone cannot
 	# rotate it; real support geometry may change it through the finite filter.
 	var direction: Vector3 = (frame.right*input.x+frame.up*input.y).limit_length(1.0)
@@ -162,6 +169,11 @@ func step(controller: Node, delta: float, enabled: bool) -> void:
 		if id not in ids:records.erase(id)
 	var climb_share := 1.0-ground_authority
 	swing = direction*climb_share if enabled and not ids.is_empty() and not slipping else Vector3.ZERO
+	if _swing_reversal_active:
+		# A release after a short reversal feeds ZERO, not the stale old-sign
+		# traversal ramp. No angular-velocity feedback chooses a braking input.
+		var counter_direction: Vector3 = (frame.right*command.x+frame.up*command.y).limit_length(1.0)
+		swing = counter_direction*climb_share if enabled and not ids.is_empty() and not slipping else Vector3.ZERO
 	# Ground motor owns horizontal walk. Upward traction can start while feet
 	# still bear weight, avoiding an authority=1 / zero hand load deadlock.
 	foot_contract = maxf(0.0,input.y) if enabled and (not ids.is_empty() or feet>0) else 0.0
@@ -174,6 +186,7 @@ func step(controller: Node, delta: float, enabled: bool) -> void:
 		"movement_block_reason":reason,"actual_hand_ids":ids,"actual_foot_count":feet,"ground":ground_diagnostics,"recommended_climb_share":climb_share,
 		"input_frame_id":_input_frame_id,"input_timestamp":_input_timestamp,"originating_support_frame":_origin_frame.duplicate(true),"input_ramp_s":tuning.traversal_input_ramp_s,
 		"voluntary_reversals":_voluntary_reversals,"actual_com_displacement":controller.torso.global_position-_start_position,
+		"swing_reversal_active":_swing_reversal_active,"swing_request_world":swing,
 		"actual_height_gain":controller.torso.global_position.y-_start_position.y,"actuator_saturated":saturated,
 		"planned_foot_action":Vector2(foot_contract,foot_extend),"aim_input_does_not_change_length":true,"tier":1,
 		"planner_cpu_usec":Time.get_ticks_usec()-began}

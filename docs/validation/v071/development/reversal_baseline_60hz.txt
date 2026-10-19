@@ -1,0 +1,25 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS finite physical grip establishes test anchor
+PASS serial reverse uses actual retained grip and unchanged360/20/150 budgets
+REVERSAL_MEASURE {"latency":0.199999999999999,"mode":"reverse","retained":true,"serial":true,"work":1.45015776044068,"wrong_impulse":1.48069187005361}
+PASS finite physical grip establishes test anchor
+PASS candidate reverse uses actual retained grip and unchanged360/20/150 budgets
+REVERSAL_MEASURE {"latency":0.199999999999999,"mode":"reverse","retained":true,"serial":false,"work":1.45015776044068,"wrong_impulse":1.48069187005361}
+PASS finite physical grip establishes test anchor
+PASS serial release_only uses actual retained grip and unchanged360/20/150 budgets
+REVERSAL_MEASURE {"latency":-1.0,"mode":"release_only","retained":true,"serial":true,"work":0.736961886410912,"wrong_impulse":1.78047595421473}
+PASS finite physical grip establishes test anchor
+PASS candidate release_only uses actual retained grip and unchanged360/20/150 budgets
+REVERSAL_MEASURE {"latency":-1.0,"mode":"release_only","retained":true,"serial":false,"work":0.736961886410912,"wrong_impulse":1.78047595421473}
+PASS initial gesture trajectory/force is exactly preserved before first explicit reversal
+PASS release-only gesture preserves complete historical neutral decay and body/arm trajectory exactly
+PASS finite physical grip establishes test anchor
+PASS reactive brake serialtrue preserves real support and capacity
+REVERSAL_PHASE {"anticipation_seconds":0.0,"energy_peak":1.81414431333542,"mode":"reactive_phase_brake","negative_samples":114,"positive_samples":186,"retained":true,"serial_control":true,"work":3.35791775130977}
+PASS finite physical grip establishes test anchor
+PASS reactive brake serialfalse preserves real support and capacity
+REVERSAL_PHASE {"anticipation_seconds":0.0,"energy_peak":1.81414431333542,"mode":"reactive_phase_brake","negative_samples":114,"positive_samples":186,"retained":true,"serial_control":false,"work":3.35791775130977}
+INTENT REVERSAL RESULTS: 14 checks, 0 failures
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
