@@ -1,0 +1,62 @@
+{
+	"authority": "SAME_RIGIDBODY_FREEZE_KINEMATIC",
+	"checks": 43,
+	"combined_preflight": {
+		"body_pose": "[X: (0.921061, 0.0, -0.389418), Y: (0.0, 1.0, 0.0), Z: (0.389418, 0.0, 0.921061), O: (0.25, 2.4, 0.75)]",
+		"clear": true,
+		"flex": 1.0,
+		"point_motion_bound": 2.07697730086767,
+		"query_padding": 0.00159854062111665,
+		"reason": "CLEAR",
+		"substeps": 693
+	},
+	"engine": {
+		"build": "steam",
+		"hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+		"hex": 263938,
+		"major": 4,
+		"minor": 7,
+		"patch": 2,
+		"status": "stable",
+		"string": "4.7.2-stable (steam)",
+		"timestamp": 0
+	},
+	"failures": 0,
+	"fixed_tick_tracking_error_m": 0.0000000596046447753906,
+	"native_settled_body_y": 1.99170005321503,
+	"native_support_after_restore": true,
+	"physics_hz": 120,
+	"records": [
+		{
+			"active": true,
+			"begins": 1,
+			"ends": 0,
+			"flex": 0.0,
+			"last": {
+				"allowed_motion": "(0.0, 0.0, 0.0)",
+				"attempted_motion": "(0.0, 0.0, -2.0)",
+				"blocked_collider": 349922395613,
+				"blocked_segment": 258,
+				"blocker_id": 349922395613,
+				"body_pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 2.0, 0.224888)]",
+				"clear": false,
+				"flex": 0.0,
+				"moved": false,
+				"padding": 0.00159925037481259,
+				"reason": "PATH_BLOCKED",
+				"shape": "TorsoCapsule",
+				"substeps": 667
+			},
+			"lowest_point": -0.916699983179569,
+			"measured_velocity": "(0.0, 0.0, 0.0)",
+			"native_touch_tolerance": 0.002,
+			"point_step": 0.003,
+			"profile": "HEEL_BACK",
+			"query_skin": 0.0001,
+			"reason": "PATH_BLOCKED",
+			"same_body": true
+		}
+	],
+	"standing_lowest_local": -0.916699983179569,
+	"tucked_lowest_local": -0.646700005914923
+}

@@ -1,0 +1,95 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+
+
+PASS motor snapshots unchanged existing compound rigid body
+
+PASS configure changes neither authority nor real geometry
+
+PASS standing and heel-back bounds include actual knee and sole volumes
+
+PASS commit is idempotent on same frozen-kinematic rigid body
+
+PASS temporary real shin preserves exact standing capsule union
+
+PASS preflight subdivides translation rotation and shape morph conservatively
+
+PASS native movement tracks approved translation rotation and morph across real fixed ticks
+
+PASS assisted route preserves mass and collision layers
+
+PASS normal profile unfolds through a validated local geometry path
+
+PASS restore returns dynamic authority once with measured exit velocity
+
+PASS original shape resource identities/transforms restored and stale swing velocity discarded
+
+PASS motor snapshots unchanged existing compound rigid body
+
+PASS thin wall between free endpoints blocks continuous compound path
+
+PASS blocked preflight leaves body/profile at previous safe pose
+
+PASS live recheck permits previously blocked corridor after obstacle removal
+
+PASS motor snapshots unchanged existing compound rigid body
+
+PASS standing validation includes foot volume below torso
+
+PASS blocked full-height restore never unfreezes overlapping standing geometry
+
+PASS unrestorable state remains explicitly assisted pending safe recovery/reset
+
+PASS cleared restoration corridor safely unfolds and restores original dynamics
+
+PASS motor snapshots unchanged existing compound rigid body
+
+PASS runtime dynamic object blocks assistance without an artificial push
+
+PASS motor snapshots unchanged existing compound rigid body
+
+PASS shallow existing static native wall touch is eligible without hiding collision
+
+PASS initial shallow touch never permits deepening movement into the wall
+
+RETREAT PROOF { "clear": true, "reason": "CLEAR", "body_pose": [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 2.0, 1.03)], "flex": 0.0, "substeps": 10, "point_motion_bound": 0.02999997138977, "query_padding": 0.00159999856949 }
+
+PASS existing shallow contact permits finite strictly outward clearance motion
+
+RETREAT MOTION { "clear": true, "reason": "CLEAR", "body_pose": [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 2.0, 1.03)], "flex": 0.0, "substeps": 10, "point_motion_bound": 0.02999997138977, "query_padding": 0.00159999856949, "moved": true, "attempted_motion": (0.0, 0.0, 0.03), "allowed_motion": (0.0, 0.0, 0.03), "blocked_collider": 0, "measured_velocity": (0.0, 0.0, 0.3) }
+
+PASS native frozen-kinematic motion also accepts the certified outward retreat
+
+PASS motor snapshots unchanged existing compound rigid body
+
+PASS rotation adversary has free starting and ending compound poses
+
+PASS intermediate rotating foot corner cannot pass a thin obstacle despite free endpoints
+
+PASS motor snapshots unchanged existing compound rigid body
+
+PASS morph adversary has free normal and fully tucked endpoints
+
+PASS continuous knee/shin/sole morph catches obstruction between free profiles
+
+PASS motor snapshots unchanged existing compound rigid body
+
+PASS dynamic authority is explicitly refused until caller has restored flex zero
+
+PASS normal representation restores before gravity handoff
+
+PASS unfreeze settles onto real native deck support without stale launch impulse
+
+PASS motor snapshots unchanged existing compound rigid body
+
+PASS pending precommit force fixture restores dynamic mode normally
+
+PASS precommit accumulated forces do not replay as an impulse after frozen ticks
+
+PASS motor snapshots unchanged existing compound rigid body
+
+PASS changing collision authority cannot turn assistance into a no-collision shortcut
+
+PASS restoring unchanged collision ownership permits safe normal handoff
+
+HYBRID MOTOR RESULTS: 43 checks, 0 failures

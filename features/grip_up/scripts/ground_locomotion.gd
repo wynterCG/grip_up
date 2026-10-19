@@ -16,6 +16,8 @@ var support_body: PhysicsBody3D
 var desired_facing := Vector3.FORWARD
 var motor_authority:=1.0
 var support_snapshot:Dictionary={}
+var assisted_authority_suspended:=false
+var require_native_support:=false
 
 func configure(body: RigidBody3D, grip_controller: Node, view: Camera3D) -> void:
 	torso = body
@@ -57,7 +59,7 @@ func _physics_process(_delta: float) -> void:
 			grounded = true
 			ground_normal = hit.normal
 			support_body = hit.collider
-		if grounded and controller.physics_mantle_v08_enabled and controller.control_profile==4:
+		if grounded and (require_native_support or controller.physics_mantle_v08_enabled and controller.control_profile==4):
 			# v0.8 support must carry a native sole contact, not just be near a ray.
 			var native_contact:=false
 			var state:=PhysicsServer3D.body_get_direct_state(torso.get_rid())
@@ -96,7 +98,7 @@ func _physics_process(_delta: float) -> void:
 	else:
 		motor_authority=1.0
 		support_snapshot={}
-	if not grounded or (has_climbing_intent() and not intent_profile):
+	if assisted_authority_suspended or not grounded or (has_climbing_intent() and not intent_profile):
 		return
 	var forward := -camera.global_basis.z
 	forward.y = 0

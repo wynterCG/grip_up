@@ -1,10 +1,36 @@
-# GRIP UP / physics climbing lab 0.8 experimental
+# GRIP UP / physics climbing lab 0.9 experimental
 
-Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v0.8-experimental.exe`.
+Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v0.9-experimental.exe`.
 PC mouse and keyboard. Resizable 1920x1080 reference canvas; initial window 1440x810.
 Integrated Jolt, 120 Hz. Core and complete routes also tested at 60 Hz.
 
 This is a separate prototype. The Janga object grabber and its project are unchanged.
+
+## v0.9 hybrid mantle — static technical gates pass
+
+Choose **Controls / v0.9 / Mantle 1.25 m** or **Mantle 2.10 m**. Reach a real
+grip near the upper edge and hold W: the character performs a short assisted
+transition over the lip. Once committed you can release both mouse buttons and
+W. Normal dynamic walking resumes on actual upper-platform contact. MMB orbits,
+scroll zooms, R retries; Tab shows the collision body and diagnostics.
+
+This deliberately uses an authored animation and a collision-checked kinematic
+body route during the mantle. Ordinary climbing, swinging and walking retain
+their dynamic controllers. It is an intentional design exception to pure physics.
+The body keeps its world collisions and original standing profile on exit.
+Moving supports, narrow tops and obstructed paths are refused safely.
+
+**4,356 checks across139 runs pass at60/120Hz**, including both full static
+top-outs, real support,30cm walking, varied approaches, two consecutive ledges,
+interruptions and all earlier regression suites. Native Godot MCP Pro runs also
+complete both platforms at both rates. **Human feel remains unvalidated**: the
+crossing currently reads as an assisted lift, with visible tucked-foot clearance.
+The hybrid feature stays opt-in; the approved route is unchanged.
+
+See the [v0.9 implementation and gate report](docs/validation/v09/report.md),
+[physics audit](docs/validation/v09/motor/M1_PHYSICS.md),
+[animation review](docs/validation/v09/animation/report.md) and
+[interruption tests](docs/validation/v09/resilience/report.md).
 
 ## v0.8 physical palm and leg-clearance experiments
 

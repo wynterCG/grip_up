@@ -22,6 +22,8 @@ var hand_pose: SkeletonModifier3D
 var animation: AnimationPlayer
 var animation_clip := "A_TPose"
 var physical_foot_mismatch:Array[float]=[0.0,0.0]
+var mantle_driver:Node
+var observed_pose_rotations:Array[Quaternion]=[]
 
 func configure(body: RigidBody3D, physical_controller: Node) -> void:
 	torso = body
@@ -97,6 +99,8 @@ func configure(body: RigidBody3D, physical_controller: Node) -> void:
 	hand_pose.modification_processed.connect(_measure_physical_foot_error)
 
 func _measure_physical_foot_error()->void:
+	observed_pose_rotations.clear()
+	for index in skeleton.get_bone_count():observed_pose_rotations.append(skeleton.get_bone_pose_rotation(index))
 	if not torso.has_meta("adaptive_legs"):return
 	var physical_legs=torso.get_meta("adaptive_legs")
 	if not physical_legs.active:return
@@ -109,6 +113,9 @@ func _measure_physical_foot_error()->void:
 
 func _process(delta: float) -> void:
 	if is_instance_valid(torso):
+		if is_instance_valid(mantle_driver) and mantle_driver.is_driving():
+			mantle_driver.update_visual(delta)
+			return
 		_update_ground_animation(delta)
 		_update_targets(delta)
 
@@ -135,6 +142,7 @@ func _update_ground_animation(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	if not is_instance_valid(torso):
 		return
+	if is_instance_valid(mantle_driver) and mantle_driver.is_driving():return
 	var grounded: bool = is_instance_valid(ground_motor) and ground_motor.grounded
 	var speed: float = clampf(torso.linear_velocity.slide(Vector3.UP).length()/controller.tuning.walk_speed,0,1)
 	gait_weight = lerpf(gait_weight,speed if grounded else 0.0,1.0-exp(-delta/0.12))

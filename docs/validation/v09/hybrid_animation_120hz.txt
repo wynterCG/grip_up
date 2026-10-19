@@ -1,0 +1,27 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS default biped has no mantle presentation owner
+IMPORTED_CLIPS ["A_TPose", "Crouch_Fwd", "Crouch_Idle", "Dance", "Death01", "Driving", "Fixing_Kneeling", "Hit_Chest", "Hit_Head", "Idle", "Idle_Talking", "Idle_Torch", "Interact", "Jog_Fwd", "Jump", "Jump_Land", "Jump_Start", "PickUp_Table", "Pistol_Aim_Down", "Pistol_Aim_Neutral", "Pistol_Aim_Up", "Pistol_Idle", "Pistol_Reload", "Pistol_Shoot", "Punch_Cross", "Punch_Jab", "Push", "Roll", "Sitting_Enter", "Sitting_Exit", "Sitting_Idle", "Sitting_Talking", "Spell_Simple_Enter", "Spell_Simple_Exit", "Spell_Simple_Idle", "Spell_Simple_Shoot", "Sprint", "Swim_Fwd", "Swim_Idle", "Sword_Attack", "Sword_Idle", "Walk", "Walk_Formal"]
+PASS imported library contains no invented mantle clip
+PASS authored nonlooping clip has intentional 1.05 second timing
+PASS authored clip articulates torso head arms and both complete legs
+PASS all authored track names resolve on the actual 65 bone rig
+PASS clip has no root position or world displacement tracks
+PASS every authored bone has seven phase keyframes
+PASS commit presentation is idempotent
+PASS presentation remembers actual ledge anchors independently of real grip ownership
+PASS ordinary climbing modifiers cannot fight mantle pose
+PASS render updates do not advance collision-owned progress
+PASS telemetry samples actual post-IK modifier frames
+PASS visible ankles agree with actual supplied proxy pose after entry blend
+PASS remembered contact phase keeps visible palms on their actual anchors
+PASS diagnostics preserve raw errors while distinguishing anchored measurement and render target
+PASS animation seek stays synchronized with approved normalized progress
+PASS animation never edits gameplay body transform or velocities
+PASS authored release phase removes both temporary hand contacts
+PASS skeleton parent follows actual collision body without root drift
+PASS complete authored pose and constrained limbs remain finite
+PASS finish retires presentation anchors exactly once
+PASS short exit blend returns animation and IK authority to ordinary locomotion
+PASS interruption also clears anchors and returns ordinary pose ownership
+HYBRID ANIMATION RESULTS: 23 checks, 0 failures

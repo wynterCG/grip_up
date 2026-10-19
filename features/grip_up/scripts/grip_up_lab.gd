@@ -16,6 +16,9 @@ const ClimbingRouteProgress = preload("res://features/grip_up/scripts/climbing_r
 const ReachAssessment = preload("res://features/grip_up/scripts/reach_assessment.gd")
 const ContextualInput = preload("res://features/grip_up/scripts/contextual_arm_input.gd")
 const MantleV08=preload("res://features/grip_up/scripts/mantle_support_coordinator.gd")
+const HybridMantle=preload("res://features/grip_up/scripts/hybrid_mantle_controller.gd")
+const HybridLevel=preload("res://features/grip_up/scripts/hybrid_mantle_level.gd")
+const HYBRID_SCENARIOS=["LOW","HIGH","NARROW","CEILING","OCCUPIED","DYNAMIC","DOUBLE"]
 const V08_LEVELS=[preload("res://features/grip_up/scenes/mantle_v08_low.tscn"),preload("res://features/grip_up/scenes/mantle_v08_high.tscn")]
 const LEVELS = [preload("res://features/grip_up/scenes/static_climb.tscn"), preload("res://features/grip_up/scenes/swing_and_catch.tscn"), preload("res://features/grip_up/scenes/reactive_structure.tscn"), preload("res://features/grip_up/scenes/foot_support.tscn"),preload("res://features/grip_up/scenes/transfer_lab.tscn"),preload("res://features/grip_up/scenes/swing_reach_lab.tscn"),preload("res://features/grip_up/scenes/intent_step.tscn"),preload("res://features/grip_up/scenes/intent_hang.tscn"),preload("res://features/grip_up/scenes/intent_traverse.tscn"),preload("res://features/grip_up/scenes/intent_corner.tscn"),preload("res://features/grip_up/scenes/climbing_route.tscn"),preload("res://features/grip_up/scenes/mantle.tscn")]
 const COLORS = [Color("65dfcc"), Color("f0b85c")]
@@ -107,6 +110,8 @@ var mantle_support_handoff_enabled:=false
 var mantle_hanging_fixture_start:=false
 var mantle_v08:Node
 var mantle_overlay:Node3D
+var hybrid_mantle_v09_enabled:=false
+var hybrid_mantle:Node
 var transfer_diagnostics_toggle: CheckButton
 var posture_choice: OptionButton
 var experimental_launch_enabled := false
@@ -167,6 +172,7 @@ func _ready() -> void:
 			controller.clear_drag_requests()
 	)
 	get_window().focus_exited.connect(func():
+		if is_instance_valid(hybrid_mantle):hybrid_mantle.focus_lost()
 		if input_profile==2:
 			contextual_paused=true
 			contextual.clear_motion()
@@ -257,8 +263,13 @@ func load_test(index: int, use_checkpoint := false) -> void:
 	add_child(world)
 	mantle_v08=null
 	mantle_overlay=null
-	level = (LEVELS[index] if index<LEVELS.size() else V08_LEVELS[index-LEVELS.size()]).instantiate()
-	if index>=12:level.hanging_fixture_start=mantle_hanging_fixture_start
+	hybrid_mantle=null
+	if index>=14:
+		level=HybridLevel.new()
+		level.scenario=HYBRID_SCENARIOS[index-14]
+	else:
+		level = (LEVELS[index] if index<LEVELS.size() else V08_LEVELS[index-LEVELS.size()]).instantiate()
+	if index in [12,13]:level.hanging_fixture_start=mantle_hanging_fixture_start
 	level.fixed_beam = fixed_beam
 	if index==4:level.vertical_spacing=transfer_route_spacing
 	world.add_child(level)
@@ -288,6 +299,7 @@ func load_test(index: int, use_checkpoint := false) -> void:
 	torso.collision_mask = 3
 	torso.center_of_mass_mode = RigidBody3D.CENTER_OF_MASS_MODE_CUSTOM
 	torso.center_of_mass = profile.body_center_of_mass
+	if index>=14:torso.max_contacts_reported=16
 	var body_material := PhysicsMaterial.new()
 	body_material.friction = profile.body_friction
 	body_material.rough = false
@@ -324,7 +336,7 @@ func load_test(index: int, use_checkpoint := false) -> void:
 	world.add_child(controller)
 	controller.configure(torso,profile)
 	controller.intent_auto_mantle_enabled=index==11
-	controller.physics_mantle_v08_enabled=index>=12 and physics_mantle_v08_enabled
+	controller.physics_mantle_v08_enabled=index in [12,13] and physics_mantle_v08_enabled
 	controller.palm_compression_enabled=controller.physics_mantle_v08_enabled and palm_compression_enabled
 	controller.palm_wrist_support_enabled=controller.physics_mantle_v08_enabled and palm_wrist_support_enabled
 	controller.transfer_event.connect(_on_transfer_event)
@@ -342,12 +354,21 @@ func load_test(index: int, use_checkpoint := false) -> void:
 	world.add_child(biped)
 	biped.configure(torso,controller)
 	biped.ground_motor = ground_motor
-	if index>=12:
+	if index in [12,13]:
 		mantle_v08=MantleV08.new()
 		world.add_child(mantle_v08)
 		mantle_v08.configure(controller,ground_motor,level,torso.get_node("LowerCapsule"),foot_collision)
 		mantle_v08.adaptive_enabled=adaptive_leg_collision_enabled
 		mantle_v08.handoff_enabled=mantle_support_handoff_enabled
+		mantle_overlay=load("res://features/grip_up/scripts/mantle_collision_overlay.gd").new()
+		world.add_child(mantle_overlay)
+		mantle_overlay.body=torso
+	if index>=14:
+		hybrid_mantle=HybridMantle.new()
+		world.add_child(hybrid_mantle)
+		hybrid_mantle.configure(controller,ground_motor,biped,camera)
+		hybrid_mantle.enabled=hybrid_mantle_v09_enabled and input_profile==4
+		ground_motor.require_native_support=hybrid_mantle.enabled
 		mantle_overlay=load("res://features/grip_up/scripts/mantle_collision_overlay.gd").new()
 		world.add_child(mantle_overlay)
 		mantle_overlay.body=torso
@@ -490,6 +511,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		trial.inputs += 1
 
 func request_hand(hand: int) -> bool:
+	if is_instance_valid(hybrid_mantle) and not hybrid_mantle.allows_grip(hand):return false
 	trial.inputs += 1
 	var state: String = controller.get_hand_state(hand)
 	if state in ["ATTACHED","SLIPPING","REACHING"]:
@@ -645,7 +667,8 @@ func _physics_process(delta: float) -> void:
 		if top_ground and hands_free and mantle_standing and ground_motor.walking:
 			mantle_completed=mantle_completed or torso.global_position.slide(Vector3.UP).distance_to(mantle_walk_origin.slide(Vector3.UP))>=.30
 		goal=mantle_completed
-	if level_id>=12:goal=mantle_v08.completed
+	if level_id in [12,13]:goal=mantle_v08.completed
+	if level_id>=14:goal=hybrid_mantle.completed and (level.scenario!="DOUBLE" or hybrid_mantle.commits>=2)
 	stable_goal = stable_goal + delta if goal else 0.0
 	if stable_goal > 0.5 and not won:
 		won = true
@@ -745,6 +768,7 @@ func _process(delta: float) -> void:
 		if input_profile==4 and hand.state=="ATTACHED" and hand.actual_length>controller.get_max_reach()-.035:
 			warning=" / EXTENDED" if warning.is_empty() else warning+" / EXTENDED"
 		hand_labels[i].text = ("LEFT / CYAN" if i==0 else "RIGHT / AMBER") + "\n" + hand.state + warning
+		if is_instance_valid(hybrid_mantle) and hybrid_mantle.active():hand_labels[i].text=("LEFT / CYAN" if i==0 else "RIGHT / AMBER")+"\nMANTLING"
 		if controller.physics_mantle_v08_enabled and hand.get("contact_mode","") in ["PALM_CONTACT","PALM_SLIPPING"]:
 			hand_labels[i].text=("LEFT / CYAN" if i==0 else "RIGHT / AMBER")+"\n"+("PALM / SUPPORTING" if Vector3(hand.force).length()>1 else "PALM / UNLOADED")+warning
 		var pending:Dictionary=controller.pending_diagnostics(i)
@@ -806,9 +830,19 @@ func _process(delta: float) -> void:
 	if level_id==11:
 		checkpoint_label.text="TOP-OUT COMPLETE / R to retry" if mantle_completed else "LEDGE EXPERIMENT / R to retry"
 		status_label.text="Release the hands and walk across the top." if mantle_standing else "Hold the edge and press W to try. Physical limits can stop this experiment."
-	if level_id>=12:
+	if level_id in [12,13]:
 		checkpoint_label.text="v0.8 / %s  |  R / retry"%mantle_v08.phase
 		status_label.text="H0 / Release one hand and aim onto the top. Hold W to request effort; keep a real support."
+		mantle_overlay.visible=debug_visible
+	if level_id>=14:
+		checkpoint_label.text="W / mantle" if hybrid_mantle.candidate.get("eligible",false) and hybrid_mantle.state in ["DYNAMIC","PREPARE"] else ""
+		status_label.text="Climbing onto the ledge..." if hybrid_mantle.active() else "Walk forward on top." if hybrid_mantle.state=="DYNAMIC_GROUNDED" else "Grip near the upper edge, then hold W."
+		if hybrid_mantle.state=="BLOCKED_RECOVERY":status_label.text="Path blocked. R / retry."
+		elif hybrid_mantle.state=="DYNAMIC":
+			var refusal:String=hybrid_mantle.candidate.get("eligibility_reason","")
+			if refusal=="TOO_NARROW":status_label.text="There is not enough room to stand on this ledge."
+			elif refusal=="TARGET_OCCUPIED":status_label.text="The landing space is blocked."
+			elif refusal=="UNSUPPORTED_DYNAMIC_PLATFORM":status_label.text="This ledge moves. Keep climbing normally here."
 		mantle_overlay.visible=debug_visible
 	if debug_visible:
 		debug_label.text = "PHYSICS / %d Hz  |  step %d  |  %.2f ms  |  %d fps\nBody %s  |  rotation %s\nv %s  /  spin %s" % [Engine.physics_ticks_per_second,session_ticks,Performance.get_monitor(Performance.TIME_PHYSICS_PROCESS)*1000,Engine.get_frames_per_second(),str(torso.position),str(torso.rotation),str(torso.linear_velocity),str(torso.angular_velocity)]
@@ -836,8 +870,10 @@ func _process(delta: float) -> void:
 			if level_id==11:
 				var ledge:Dictionary=launch.get("ledge_transfer",{})
 				debug_label.text+="\nLedge / %s | %s\nDestination free %s | top ground %s | walked away %s"%[ledge.get("status",""),ledge.get("reason",""),str(ledge.get("destination_clear",false)),str(ground_motor.grounded and ground_motor.support_body==level.platform),str(mantle_completed)]
-			if level_id>=12:
+			if level_id in [12,13]:
 				debug_label.text+="\nv0.8 / %s | flex %.2f | %s\nGround %s | walk %.3f /0.30 m"%[mantle_v08.phase,mantle_v08.legs.achieved_flex,mantle_v08.legs.reason,str(mantle_v08.data.get("actual_top_ground",false)),mantle_v08.ground_distance]
+			if level_id>=14:
+				debug_label.text+="\nv0.9 / %s | %.2f | %s\nAuthority %s | walk %.3f /0.30 m"%[hybrid_mantle.state,hybrid_mantle.progress,hybrid_mantle.reason,hybrid_mantle.data.get("motor_ownership","DYNAMIC"),hybrid_mantle.walk_distance]
 
 func _transfer_debug_text(data: Dictionary) -> String:
 	var out: String="TRANSFER DIAGNOSTICS / %d Hz | aim never changes length\nBody v %s | spin %s" % [Engine.physics_ticks_per_second,str(torso.linear_velocity),str(torso.angular_velocity)]
@@ -895,6 +931,18 @@ func _open_mantle_v08(index:int,adaptive:bool=true,palms:bool=true,wrist:bool=tr
 	_open_intent_arena(index,true)
 	_set_distant_targeting(true)
 
+func _open_hybrid_mantle(scenario:int=0)->void:
+	hybrid_mantle_v09_enabled=true
+	physics_mantle_v08_enabled=false
+	palm_compression_enabled=false
+	palm_wrist_support_enabled=false
+	adaptive_leg_collision_enabled=false
+	mantle_support_handoff_enabled=false
+	mantle_hanging_fixture_start=false
+	_open_intent_arena(14+scenario,false)
+	_set_distant_targeting(true)
+	message("Grip near the top edge and hold W to mantle. Release the mouse buttons after you begin; walking resumes on top.")
+
 func _on_transfer_event(event: Dictionary) -> void:
 	var row: Dictionary=event.duplicate(true)
 	row.session_id=transfer_session_id
@@ -917,6 +965,7 @@ func _on_transfer_event(event: Dictionary) -> void:
 	row.climbing_route=climbing_route.diagnostics() if level_id==10 else {}
 	row.ledge_transfer=controller.telemetry().get("ledge_transfer",{})
 	row.mantle_v08=mantle_v08.data if is_instance_valid(mantle_v08) else {}
+	row.hybrid_mantle=hybrid_mantle.data if is_instance_valid(hybrid_mantle) else {}
 	DirAccess.make_dir_recursive_absolute("user://transfer_sessions")
 	var path: String="user://transfer_sessions/%s.jsonl" % transfer_session_id
 	var file:=FileAccess.open(path,FileAccess.READ_WRITE if FileAccess.file_exists(path) else FileAccess.WRITE)
@@ -941,6 +990,7 @@ func _save_trial(outcome: String) -> void:
 	row.ledge_transfer=controller.telemetry().get("ledge_transfer",{})
 	row.mantle_v08=mantle_v08.data if is_instance_valid(mantle_v08) else {}
 	row.mantle_gate={"standing":mantle_standing,"completed":mantle_completed} if level_id==11 else {}
+	row.hybrid_mantle=hybrid_mantle.data if is_instance_valid(hybrid_mantle) else {}
 	row.intent_climb_enabled=intent_climb_enabled and input_profile==4
 	row.intent_locomotion=controller.telemetry().get("intent_locomotion",{})
 	row.posture_policy=posture_policy
@@ -977,6 +1027,7 @@ func _record_capture(delta: float) -> void:
 		"climbing_route":climbing_route.diagnostics() if level_id==10 else {},
 		"ledge_transfer":contextual_data.get("ledge_transfer",{}),"mantle_gate":{"standing":mantle_standing,"completed":mantle_completed} if level_id==11 else {},
 		"mantle_v08":mantle_v08.data if is_instance_valid(mantle_v08) else {},
+		"hybrid_mantle":hybrid_mantle.data if is_instance_valid(hybrid_mantle) else {},
 		"physical_foot_visual_error_m":biped.physical_foot_mismatch if is_instance_valid(mantle_v08) else [],
 		"posture_policy":posture_policy if input_profile in [3,4] else -1,"posture":contextual_data.get("posture",{}),
 		"contextual_filtered":[filtered.x,filtered.y],"contextual_actuation_m_s":[actuation.x,actuation.y],
@@ -1176,6 +1227,17 @@ func _setup_ui() -> void:
 	_button("Ledge experiment / hands",func():_open_intent_arena(11,false);_set_distant_targeting(true),ledge_row)
 	_button("Ledge experiment / hands + feet",func():_open_intent_arena(11,true);_set_distant_targeting(true),ledge_row)
 	_label("v0.8 / Physical palms and leg clearance / H0",18,settings_box,COLORS[0])
+	var hybrid_row:=HBoxContainer.new()
+	settings_box.add_child(hybrid_row)
+	_button("v0.9 / Mantle 1.25 m",func():_open_hybrid_mantle(0),hybrid_row)
+	_button("v0.9 / Mantle 2.10 m",func():_open_hybrid_mantle(1),hybrid_row)
+	_button("v0.9 / Two ledges",func():_open_hybrid_mantle(6),hybrid_row)
+	var hybrid_adverse:=HBoxContainer.new()
+	settings_box.add_child(hybrid_adverse)
+	_button("v0.9 / Narrow",func():_open_hybrid_mantle(2),hybrid_adverse)
+	_button("v0.9 / Ceiling",func():_open_hybrid_mantle(3),hybrid_adverse)
+	_button("v0.9 / Occupied",func():_open_hybrid_mantle(4),hybrid_adverse)
+	_button("v0.9 / Moving",func():_open_hybrid_mantle(5),hybrid_adverse)
 	var mantle_row:=HBoxContainer.new()
 	settings_box.add_child(mantle_row)
 	_button("v0.8 / Low ledge 1.25 m",func():_open_mantle_v08(12),mantle_row)

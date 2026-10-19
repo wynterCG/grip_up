@@ -89,6 +89,24 @@ var posture_coordinator = TargetCoordinator.new()
 var _posture_signature := ""
 var _posture_tilt_blend := 0.0
 var _posture_tilt_torque := Vector3.ZERO
+var assisted_motion_owned:=false
+
+func retire_for_assisted_motion()->void:
+	assisted_motion_owned=true
+	for id in 2:release_grip(id,"assisted_mantle_commit")
+	_held_targets.clear()
+	clear_drag_requests()
+	clear_free_hand_targets()
+	cancel_launch()
+	palm_solver.reset()
+	if feet_solver!=null:feet_solver.reset()
+	intent_locomotion.reset()
+	posture_coordinator.reset()
+	_intent_target=Vector3.ZERO
+	_swing_requested=Vector3.ZERO
+	_contextual_requested=Vector2.ZERO
+	for key in ["total_force","leg_force"]:_diagnostics[key]=0.0
+	for key in ["torque","assist_torque","leg_torque","combined_ground_climb_torque"]:_diagnostics[key]=Vector3.ZERO
 
 func configure(body: RigidBody3D, configuration: Resource = null) -> void:
 	torso = body
@@ -97,6 +115,7 @@ func configure(body: RigidBody3D, configuration: Resource = null) -> void:
 	reset_state()
 
 func reset_state() -> void:
+	assisted_motion_owned=false
 	palm_solver.reset()
 	ledge_transfer.reset()
 	intent_locomotion.reset()
@@ -403,9 +422,11 @@ func get_arm_force(id: int) -> Vector3:
 	return hands[id]["force"] if id >= 0 and id < hands.size() else Vector3.ZERO
 
 func request_grip(id: int, support: PhysicsBody3D, world_point: Vector3, normal: Vector3) -> bool:
+	if assisted_motion_owned:return false
 	return _request_grip(id,support,world_point,normal,false)
 
 func request_held_grip(id: int, support: PhysicsBody3D, world_point: Vector3, normal: Vector3) -> bool:
+	if assisted_motion_owned:return false
 	if not tuning.allow_out_of_reach_grip_targets:
 		return request_grip(id,support,world_point,normal)
 	if _transfer_enabled():
@@ -853,6 +874,10 @@ func _physics_process(delta: float) -> void:
 		return
 	_step += 1
 	simulation_time += delta
+	if assisted_motion_owned:
+		_diagnostics["assisted_motion_owned"]=true
+		sample_ready.emit(delta)
+		return
 	var intent_response: float = 1.0 if tuning.intent_response_time <= 0.0 else 1.0-exp(-delta/tuning.intent_response_time)
 	_contract = lerpf(_contract,_intent_target.x,intent_response)
 	_extend = lerpf(_extend,_intent_target.y,intent_response)

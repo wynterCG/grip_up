@@ -1,0 +1,1651 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS hybrid independent of v08 palm/leg experiment
+PASS ordinary approach earns two actual finite grips
+PASS hybrid independent of v08 palm/leg experiment
+PASS ordinary approach earns two actual finite grips
+HYBRID MANTLE RESULTS: 4 checks, 0 failures
+SCRIPT ERROR: Parse Error: Could not preload resource script "res://features/grip_up/scripts/mantle_candidate_detector.gd".
+   at: GDScript::reload (res://features/grip_up/scripts/hybrid_mantle_controller.gd:3)
+SCRIPT ERROR: Parse Error: Could not resolve script "res://features/grip_up/scripts/mantle_candidate_detector.gd".
+   at: GDScript::reload (res://features/grip_up/scripts/hybrid_mantle_controller.gd:3)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://features/grip_up/scripts/grip_up_lab.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://features/grip_up/tests/test_intent_integration.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://features/grip_up/tests/test_hybrid_mantle.gd:0)
+ERROR: Failed to load script "res://features/grip_up/tests/test_hybrid_mantle.gd" with error "Compilation failed".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+SCRIPT ERROR: Invalid call. Nonexistent function 'new' in base 'GDScript'.
+   at: load_test (res://features/grip_up/scripts/grip_up_lab.gd:366)
+   GDScript backtrace (most recent call first):
+       [0] load_test (res://features/grip_up/scripts/grip_up_lab.gd:366)
+       [1] _open_intent_arena (res://features/grip_up/scripts/grip_up_lab.gd:914)
+       [2] _open_hybrid_mantle (res://features/grip_up/scripts/grip_up_lab.gd:934)
+       [3] ascent (res://features/grip_up/tests/test_hybrid_mantle.gd:28)
+       [4] fresh (res://features/grip_up/tests/test_intent_integration.gd:54)
+       [5] ticks (res://features/grip_up/tests/test_intent_integration.gd:27)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid access to property or key 'data' on a base object of type 'Nil'.
+   at: observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+   GDScript backtrace (most recent call first):
+       [0] observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+       [1] _physics_process (res://features/grip_up/scripts/climbing_controller.gd:1198)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid access to property or key 'data' on a base object of type 'Nil'.
+   at: observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+   GDScript backtrace (most recent call first):
+       [0] observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+       [1] _physics_process (res://features/grip_up/scripts/climbing_controller.gd:1198)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid access to property or key 'data' on a base object of type 'Nil'.
+   at: observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+   GDScript backtrace (most recent call first):
+       [0] observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+       [1] _physics_process (res://features/grip_up/scripts/climbing_controller.gd:1198)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid access to property or key 'data' on a base object of type 'Nil'.
+   at: observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+   GDScript backtrace (most recent call first):
+       [0] observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+       [1] _physics_process (res://features/grip_up/scripts/climbing_controller.gd:1198)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid access to property or key 'data' on a base object of type 'Nil'.
+   at: observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+   GDScript backtrace (most recent call first):
+       [0] observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+       [1] _physics_process (res://features/grip_up/scripts/climbing_controller.gd:1198)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid access to property or key 'data' on a base object of type 'Nil'.
+   at: observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+   GDScript backtrace (most recent call first):
+       [0] observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+       [1] _physics_process (res://features/grip_up/scripts/climbing_controller.gd:1198)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid access to property or key 'data' on a base object of type 'Nil'.
+   at: observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+   GDScript backtrace (most recent call first):
+       [0] observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+       [1] _physics_process (res://features/grip_up/scripts/climbing_controller.gd:1198)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid access to property or key 'data' on a base object of type 'Nil'.
+   at: observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+   GDScript backtrace (most recent call first):
+       [0] observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+       [1] _physics_process (res://features/grip_up/scripts/climbing_controller.gd:1198)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid access to property or key 'data' on a base object of type 'Nil'.
+   at: observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+   GDScript backtrace (most recent call first):
+       [0] observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+       [1] _physics_process (res://features/grip_up/scripts/climbing_controller.gd:1198)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid access to property or key 'data' on a base object of type 'Nil'.
+   at: observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+   GDScript backtrace (most recent call first):
+       [0] observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+       [1] _physics_process (res://features/grip_up/scripts/climbing_controller.gd:1198)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid access to property or key 'data' on a base object of type 'Nil'.
+   at: observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+   GDScript backtrace (most recent call first):
+       [0] observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+       [1] _physics_process (res://features/grip_up/scripts/climbing_controller.gd:1198)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid access to property or key 'data' on a base object of type 'Nil'.
+   at: observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+   GDScript backtrace (most recent call first):
+       [0] observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+       [1] _physics_process (res://features/grip_up/scripts/climbing_controller.gd:1198)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'commits' on a base object of type 'Nil'.
+   at: ascent (res://features/grip_up/tests/test_hybrid_mantle.gd:42)
+   GDScript backtrace (most recent call first):
+       [0] ascent (res://features/grip_up/tests/test_hybrid_mantle.gd:42)
+       [1] ticks (res://features/grip_up/tests/test_intent_integration.gd:27)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'new' in base 'GDScript'.
+   at: load_test (res://features/grip_up/scripts/grip_up_lab.gd:366)
+   GDScript backtrace (most recent call first):
+       [0] load_test (res://features/grip_up/scripts/grip_up_lab.gd:366)
+       [1] _open_intent_arena (res://features/grip_up/scripts/grip_up_lab.gd:914)
+       [2] _open_hybrid_mantle (res://features/grip_up/scripts/grip_up_lab.gd:934)
+       [3] ascent (res://features/grip_up/tests/test_hybrid_mantle.gd:28)
+       [4] fresh (res://features/grip_up/tests/test_intent_integration.gd:54)
+       [5] ticks (res://features/grip_up/tests/test_intent_integration.gd:27)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid access to property or key 'data' on a base object of type 'Nil'.
+   at: observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+   GDScript backtrace (most recent call first):
+       [0] observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+       [1] _physics_process (res://features/grip_up/scripts/climbing_controller.gd:1198)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid access to property or key 'data' on a base object of type 'Nil'.
+   at: observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+   GDScript backtrace (most recent call first):
+       [0] observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+       [1] _physics_process (res://features/grip_up/scripts/climbing_controller.gd:1198)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid access to property or key 'data' on a base object of type 'Nil'.
+   at: observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+   GDScript backtrace (most recent call first):
+       [0] observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+       [1] _physics_process (res://features/grip_up/scripts/climbing_controller.gd:1198)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid access to property or key 'data' on a base object of type 'Nil'.
+   at: observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+   GDScript backtrace (most recent call first):
+       [0] observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+       [1] _physics_process (res://features/grip_up/scripts/climbing_controller.gd:1198)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid access to property or key 'data' on a base object of type 'Nil'.
+   at: observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+   GDScript backtrace (most recent call first):
+       [0] observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+       [1] _physics_process (res://features/grip_up/scripts/climbing_controller.gd:1198)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid access to property or key 'data' on a base object of type 'Nil'.
+   at: observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+   GDScript backtrace (most recent call first):
+       [0] observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+       [1] _physics_process (res://features/grip_up/scripts/climbing_controller.gd:1198)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid access to property or key 'data' on a base object of type 'Nil'.
+   at: observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+   GDScript backtrace (most recent call first):
+       [0] observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+       [1] _physics_process (res://features/grip_up/scripts/climbing_controller.gd:1198)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid access to property or key 'data' on a base object of type 'Nil'.
+   at: observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+   GDScript backtrace (most recent call first):
+       [0] observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+       [1] _physics_process (res://features/grip_up/scripts/climbing_controller.gd:1198)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid access to property or key 'data' on a base object of type 'Nil'.
+   at: observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+   GDScript backtrace (most recent call first):
+       [0] observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+       [1] _physics_process (res://features/grip_up/scripts/climbing_controller.gd:1198)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid access to property or key 'data' on a base object of type 'Nil'.
+   at: observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+   GDScript backtrace (most recent call first):
+       [0] observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+       [1] _physics_process (res://features/grip_up/scripts/climbing_controller.gd:1198)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid access to property or key 'data' on a base object of type 'Nil'.
+   at: observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+   GDScript backtrace (most recent call first):
+       [0] observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+       [1] _physics_process (res://features/grip_up/scripts/climbing_controller.gd:1198)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid access to property or key 'data' on a base object of type 'Nil'.
+   at: observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+   GDScript backtrace (most recent call first):
+       [0] observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+       [1] _physics_process (res://features/grip_up/scripts/climbing_controller.gd:1198)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid access to property or key 'data' on a base object of type 'Nil'.
+   at: observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+   GDScript backtrace (most recent call first):
+       [0] observe (res://features/grip_up/tests/test_hybrid_mantle.gd:15)
+       [1] _physics_process (res://features/grip_up/scripts/climbing_controller.gd:1198)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:713)
+SCRIPT ERROR: Invalid access to property or key 'commits' on a base object of type 'Nil'.
+   at: ascent (res://features/grip_up/tests/test_hybrid_mantle.gd:42)
+   GDScript backtrace (most recent call first):
+       [0] ascent (res://features/grip_up/tests/test_hybrid_mantle.gd:42)
+       [1] ticks (res://features/grip_up/tests/test_intent_integration.gd:27)
+SCRIPT ERROR: Invalid access to property or key 'final' on a base object of type 'Dictionary'.
+   at: <anonymous lambda> (res://features/grip_up/tests/test_hybrid_mantle.gd:75)
+   GDScript backtrace (most recent call first):
+       [0] <anonymous lambda> (res://features/grip_up/tests/test_hybrid_mantle.gd:75)
+       [1] run (res://features/grip_up/tests/test_hybrid_mantle.gd:75)
+       [2] ascent (res://features/grip_up/tests/test_hybrid_mantle.gd:42)
+       [3] ticks (res://features/grip_up/tests/test_intent_integration.gd:27)
+SCRIPT ERROR: Invalid access to property or key 'completed' on a base object of type 'Nil'.
+   at: _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://features/grip_up/scripts/grip_up_lab.gd:669)

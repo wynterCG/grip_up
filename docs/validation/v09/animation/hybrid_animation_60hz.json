@@ -1,0 +1,436 @@
+{
+	"checks": 23,
+	"failures": 0,
+	"human_feel": "NOT_TESTED",
+	"imported_clips": [
+		"A_TPose",
+		"Crouch_Fwd",
+		"Crouch_Idle",
+		"Dance",
+		"Death01",
+		"Driving",
+		"Fixing_Kneeling",
+		"Hit_Chest",
+		"Hit_Head",
+		"Idle",
+		"Idle_Talking",
+		"Idle_Torch",
+		"Interact",
+		"Jog_Fwd",
+		"Jump",
+		"Jump_Land",
+		"Jump_Start",
+		"PickUp_Table",
+		"Pistol_Aim_Down",
+		"Pistol_Aim_Neutral",
+		"Pistol_Aim_Up",
+		"Pistol_Idle",
+		"Pistol_Reload",
+		"Pistol_Shoot",
+		"Punch_Cross",
+		"Punch_Jab",
+		"Push",
+		"Roll",
+		"Sitting_Enter",
+		"Sitting_Exit",
+		"Sitting_Idle",
+		"Sitting_Talking",
+		"Spell_Simple_Enter",
+		"Spell_Simple_Exit",
+		"Spell_Simple_Idle",
+		"Spell_Simple_Shoot",
+		"Sprint",
+		"Swim_Fwd",
+		"Swim_Idle",
+		"Sword_Attack",
+		"Sword_Idle",
+		"Walk",
+		"Walk_Formal"
+	],
+	"samples": [
+		{
+			"animation_time_s": 0.0,
+			"body_authority": false,
+			"body_interpolation_lag_at_visual_update_m": 0.0,
+			"clip": "HybridMantle",
+			"collision_flex": 0.0,
+			"duration_s": 1.05,
+			"finished_count": 0,
+			"hand_contact_error": [
+				0.000000147513972592606,
+				0.0000000868879510562692
+			],
+			"hand_ik_weight": 1.0,
+			"interpolated_target_change_since_visual_update_m": 0.0000000000582076609134674,
+			"last_measurement": {
+				"anchored_hand_error_m": [
+					0.000000147513972592606,
+					0.0000000868879510562692
+				],
+				"anchored_hand_error_threshold": 0.99,
+				"collision_corrected_foot_error_m": [
+					-1.0,
+					-1.0
+				],
+				"frame": 179,
+				"hand_ik_weights": [
+					1.0,
+					1.0
+				],
+				"leg_ik_weight": 0.0,
+				"mode": "ASSISTED",
+				"progress": 0.0
+			},
+			"measured_frames": 2,
+			"mode": "ASSISTED",
+			"physical_foot_error": [
+				0.193812891840935,
+				0.243380203843117
+			],
+			"progress": 0.0,
+			"reason": "ACTIVE_PRESENTATION_ONLY",
+			"root_motion": false,
+			"started_count": 1,
+			"visual_root_error": 0.0000000000582076609134674,
+			"visual_target_measurement_scope": "ASSISTED",
+			"visual_target_recorded": true,
+			"visual_vs_assigned_interpolated_target_error_m": 0.0
+		},
+		{
+			"animation_time_s": 0.105,
+			"body_authority": false,
+			"body_interpolation_lag_at_visual_update_m": 0.0000000000582076609134674,
+			"clip": "HybridMantle",
+			"collision_flex": 0.0,
+			"duration_s": 1.05,
+			"finished_count": 0,
+			"hand_contact_error": [
+				0.000000146759418839792,
+				0.000000136571401299079
+			],
+			"hand_ik_weight": 1.0,
+			"interpolated_target_change_since_visual_update_m": 0.0000000000582076609134674,
+			"last_measurement": {
+				"anchored_hand_error_m": [
+					0.000000146759418839792,
+					0.000000136571401299079
+				],
+				"anchored_hand_error_threshold": 0.99,
+				"collision_corrected_foot_error_m": [
+					-1.0,
+					-1.0
+				],
+				"frame": 181,
+				"hand_ik_weights": [
+					1.0,
+					1.0
+				],
+				"leg_ik_weight": 0.740740716457367,
+				"mode": "ASSISTED",
+				"progress": 0.1
+			},
+			"measured_frames": 5,
+			"mode": "ASSISTED",
+			"physical_foot_error": [
+				0.0171656087040901,
+				0.0314411148428917
+			],
+			"progress": 0.1,
+			"reason": "ACTIVE_PRESENTATION_ONLY",
+			"root_motion": false,
+			"started_count": 1,
+			"visual_root_error": 0.0000000000582076609134674,
+			"visual_target_measurement_scope": "ASSISTED",
+			"visual_target_recorded": true,
+			"visual_vs_assigned_interpolated_target_error_m": 0.0
+		},
+		{
+			"animation_time_s": 0.2625,
+			"body_authority": false,
+			"body_interpolation_lag_at_visual_update_m": 0.0,
+			"clip": "HybridMantle",
+			"collision_flex": 0.297025034293553,
+			"duration_s": 1.05,
+			"finished_count": 0,
+			"hand_contact_error": [
+				0.00000010536712125031,
+				0.00000010536712125031
+			],
+			"hand_ik_weight": 1.0,
+			"interpolated_target_change_since_visual_update_m": 0.0,
+			"last_measurement": {
+				"anchored_hand_error_m": [
+					0.00000010536712125031,
+					0.00000010536712125031
+				],
+				"anchored_hand_error_threshold": 0.99,
+				"collision_corrected_foot_error_m": [
+					0.000000327825546264648,
+					0.000000298116333397047
+				],
+				"frame": 183,
+				"hand_ik_weights": [
+					1.0,
+					1.0
+				],
+				"leg_ik_weight": 1.0,
+				"mode": "ASSISTED",
+				"progress": 0.25
+			},
+			"measured_frames": 8,
+			"mode": "ASSISTED",
+			"physical_foot_error": [
+				0.000000327825546264648,
+				0.000000298116333397047
+			],
+			"progress": 0.25,
+			"reason": "ACTIVE_PRESENTATION_ONLY",
+			"root_motion": false,
+			"started_count": 1,
+			"visual_root_error": 0.0,
+			"visual_target_measurement_scope": "ASSISTED",
+			"visual_target_recorded": true,
+			"visual_vs_assigned_interpolated_target_error_m": 0.0
+		},
+		{
+			"animation_time_s": 0.504,
+			"body_authority": false,
+			"body_interpolation_lag_at_visual_update_m": 0.0,
+			"clip": "HybridMantle",
+			"collision_flex": 1.0,
+			"duration_s": 1.05,
+			"finished_count": 0,
+			"hand_contact_error": [
+				0.000000207549163633303,
+				0.000000202677711058641
+			],
+			"hand_ik_weight": 1.0,
+			"interpolated_target_change_since_visual_update_m": 0.0,
+			"last_measurement": {
+				"anchored_hand_error_m": [
+					0.000000207549163633303,
+					0.000000202677711058641
+				],
+				"anchored_hand_error_threshold": 0.99,
+				"collision_corrected_foot_error_m": [
+					0.000000421534338101992,
+					0.000000320980831247653
+				],
+				"frame": 185,
+				"hand_ik_weights": [
+					1.0,
+					1.0
+				],
+				"leg_ik_weight": 1.0,
+				"mode": "ASSISTED",
+				"progress": 0.48
+			},
+			"measured_frames": 11,
+			"mode": "ASSISTED",
+			"physical_foot_error": [
+				0.000000421534338101992,
+				0.000000320980831247653
+			],
+			"progress": 0.48,
+			"reason": "ACTIVE_PRESENTATION_ONLY",
+			"root_motion": false,
+			"started_count": 1,
+			"visual_root_error": 0.0,
+			"visual_target_measurement_scope": "ASSISTED",
+			"visual_target_recorded": true,
+			"visual_vs_assigned_interpolated_target_error_m": 0.0
+		},
+		{
+			"animation_time_s": 0.63,
+			"body_authority": false,
+			"body_interpolation_lag_at_visual_update_m": 0.0,
+			"clip": "HybridMantle",
+			"collision_flex": 1.0,
+			"duration_s": 1.05,
+			"finished_count": 0,
+			"hand_contact_error": [
+				0.216286435723305,
+				0.220379486680031
+			],
+			"hand_ik_weight": 0.648,
+			"interpolated_target_change_since_visual_update_m": 0.0,
+			"last_measurement": {
+				"anchored_hand_error_m": [
+					-1.0,
+					-1.0
+				],
+				"anchored_hand_error_threshold": 0.99,
+				"collision_corrected_foot_error_m": [
+					0.000000168751952855928,
+					0.000000133488128994941
+				],
+				"frame": 187,
+				"hand_ik_weights": [
+					0.648000001907349,
+					0.648000001907349
+				],
+				"leg_ik_weight": 1.0,
+				"mode": "ASSISTED",
+				"progress": 0.6
+			},
+			"measured_frames": 14,
+			"mode": "ASSISTED",
+			"physical_foot_error": [
+				0.000000168751952855928,
+				0.000000133488128994941
+			],
+			"progress": 0.6,
+			"reason": "ACTIVE_PRESENTATION_ONLY",
+			"root_motion": false,
+			"started_count": 1,
+			"visual_root_error": 0.0,
+			"visual_target_measurement_scope": "ASSISTED",
+			"visual_target_recorded": true,
+			"visual_vs_assigned_interpolated_target_error_m": 0.0
+		},
+		{
+			"animation_time_s": 0.7875,
+			"body_authority": false,
+			"body_interpolation_lag_at_visual_update_m": 0.0,
+			"clip": "HybridMantle",
+			"collision_flex": 1.0,
+			"duration_s": 1.05,
+			"finished_count": 0,
+			"hand_contact_error": [
+				0.559928357601166,
+				0.55302232503891
+			],
+			"hand_ik_weight": 0.028,
+			"interpolated_target_change_since_visual_update_m": 0.0,
+			"last_measurement": {
+				"anchored_hand_error_m": [
+					-1.0,
+					-1.0
+				],
+				"anchored_hand_error_threshold": 0.99,
+				"collision_corrected_foot_error_m": [
+					0.000000119209289550781,
+					0.000000133280039449346
+				],
+				"frame": 189,
+				"hand_ik_weights": [
+					0.0280000008642673,
+					0.0280000008642673
+				],
+				"leg_ik_weight": 1.0,
+				"mode": "ASSISTED",
+				"progress": 0.75
+			},
+			"measured_frames": 17,
+			"mode": "ASSISTED",
+			"physical_foot_error": [
+				0.000000119209289550781,
+				0.000000133280039449346
+			],
+			"progress": 0.75,
+			"reason": "ACTIVE_PRESENTATION_ONLY",
+			"root_motion": false,
+			"started_count": 1,
+			"visual_root_error": 0.0,
+			"visual_target_measurement_scope": "ASSISTED",
+			"visual_target_recorded": true,
+			"visual_vs_assigned_interpolated_target_error_m": 0.0
+		},
+		{
+			"animation_time_s": 0.945,
+			"body_authority": false,
+			"body_interpolation_lag_at_visual_update_m": 0.0,
+			"clip": "HybridMantle",
+			"collision_flex": 0.352,
+			"duration_s": 1.05,
+			"finished_count": 0,
+			"hand_contact_error": [
+				-1.0,
+				-1.0
+			],
+			"hand_ik_weight": 0.0,
+			"interpolated_target_change_since_visual_update_m": 0.0,
+			"last_measurement": {
+				"anchored_hand_error_m": [
+					-1.0,
+					-1.0
+				],
+				"anchored_hand_error_threshold": 0.99,
+				"collision_corrected_foot_error_m": [
+					0.000000133280039449346,
+					0.000000322447505141099
+				],
+				"frame": 191,
+				"hand_ik_weights": [
+					0.0,
+					0.0
+				],
+				"leg_ik_weight": 1.0,
+				"mode": "ASSISTED",
+				"progress": 0.9
+			},
+			"measured_frames": 20,
+			"mode": "ASSISTED",
+			"physical_foot_error": [
+				0.000000133280039449346,
+				0.000000322447505141099
+			],
+			"progress": 0.9,
+			"reason": "ACTIVE_PRESENTATION_ONLY",
+			"root_motion": false,
+			"started_count": 1,
+			"visual_root_error": 0.0,
+			"visual_target_measurement_scope": "ASSISTED",
+			"visual_target_recorded": true,
+			"visual_vs_assigned_interpolated_target_error_m": 0.0
+		},
+		{
+			"animation_time_s": 1.05,
+			"body_authority": false,
+			"body_interpolation_lag_at_visual_update_m": 0.0,
+			"clip": "HybridMantle",
+			"collision_flex": 0.0,
+			"duration_s": 1.05,
+			"finished_count": 0,
+			"hand_contact_error": [
+				-1.0,
+				-1.0
+			],
+			"hand_ik_weight": 0.0,
+			"interpolated_target_change_since_visual_update_m": 0.0,
+			"last_measurement": {
+				"anchored_hand_error_m": [
+					-1.0,
+					-1.0
+				],
+				"anchored_hand_error_threshold": 0.99,
+				"collision_corrected_foot_error_m": [
+					0.000000216964181731782,
+					0.000000281549148439808
+				],
+				"frame": 193,
+				"hand_ik_weights": [
+					0.0,
+					0.0
+				],
+				"leg_ik_weight": 1.0,
+				"mode": "ASSISTED",
+				"progress": 1.0
+			},
+			"measured_frames": 23,
+			"mode": "ASSISTED",
+			"physical_foot_error": [
+				0.000000216964181731782,
+				0.000000281549148439808
+			],
+			"progress": 1.0,
+			"reason": "ACTIVE_PRESENTATION_ONLY",
+			"root_motion": false,
+			"started_count": 1,
+			"visual_root_error": 0.0,
+			"visual_target_measurement_scope": "ASSISTED",
+			"visual_target_recorded": true,
+			"visual_vs_assigned_interpolated_target_error_m": 0.0
+		}
+	]
+}

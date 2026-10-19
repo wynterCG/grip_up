@@ -1,0 +1,2980 @@
+{
+	"checks": 48,
+	"failures": 3,
+	"force_authority_ok": true,
+	"physics_hz": 120,
+	"provenance": "ordinary in-app grip/W input; focus signals emitted headlessly; duplicate COMMIT callback explicitly fault-injected; Animatable fixture replaced before grip",
+	"rows": [
+		{
+			"force_authority_ok": true,
+			"hybrid": {
+				"animation": {
+					"animation_time_s": 0.0,
+					"body_authority": false,
+					"clip": "HybridMantle",
+					"collision_flex": 0.0,
+					"duration_s": 1.05,
+					"finished_count": 0,
+					"hand_contact_error": [
+						-1.0,
+						-1.0
+					],
+					"hand_ik_weight": 1.0,
+					"measured_frames": 0,
+					"mode": "INACTIVE",
+					"physical_foot_error": [
+						0.0,
+						0.0
+					],
+					"progress": 0.0,
+					"reason": "NOT_STARTED",
+					"root_motion": false,
+					"started_count": 0,
+					"visual_root_error": 0.00330117275007069
+				},
+				"animation_complete": false,
+				"body_pose": "[X: (0.979678, -0.064158, -0.19004), Y: (0.064054, 0.997924, -0.006699), Z: (0.190076, -0.00561, 0.981753), O: (-0.024793, 0.396252, 0.223542)]",
+				"body_velocity": "(0.182631, 0.062303, 0.032451)",
+				"candidate": {
+					"candidate_timestamp": 915,
+					"eligibility_reason": "TOO_NARROW",
+					"eligible": false
+				},
+				"commits": 0,
+				"dynamic_restored": true,
+				"enabled": true,
+				"events": [],
+				"freeze": false,
+				"freeze_mode": 0,
+				"grips_released": false,
+				"mantle_complete": false,
+				"motor_ownership": "DYNAMIC",
+				"progress": 0.0,
+				"reason": "TOO_NARROW",
+				"restores": 0,
+				"result": "",
+				"standing_collision_clear": false,
+				"state": "DYNAMIC",
+				"top_ground_valid": false,
+				"walk_distance_relative_to_support": 0.0
+			},
+			"label": "geometry rejection2",
+			"observed_reasons": [
+				"START_POSE_OUTSIDE_ENVELOPE",
+				"TOO_NARROW"
+			],
+			"position": "(-0.023303, 0.396746, 0.223826)",
+			"shape_count": 4
+		},
+		{
+			"force_authority_ok": true,
+			"hybrid": {
+				"animation": {
+					"animation_time_s": 0.0,
+					"body_authority": false,
+					"clip": "HybridMantle",
+					"collision_flex": 0.0,
+					"duration_s": 1.05,
+					"finished_count": 0,
+					"hand_contact_error": [
+						-1.0,
+						-1.0
+					],
+					"hand_ik_weight": 1.0,
+					"measured_frames": 0,
+					"mode": "INACTIVE",
+					"physical_foot_error": [
+						0.0,
+						0.0
+					],
+					"progress": 0.0,
+					"reason": "NOT_STARTED",
+					"root_motion": false,
+					"started_count": 0,
+					"visual_root_error": 0.00332238618284464
+				},
+				"animation_complete": false,
+				"body_pose": "[X: (0.979411, -0.064815, -0.191188), Y: (0.064734, 0.99788, -0.006679), Z: (0.191215, -0.005835, 0.981531), O: (-0.025467, 0.396253, 0.223521)]",
+				"body_velocity": "(0.18409, 0.062157, 0.032289)",
+				"candidate": {
+					"candidate_timestamp": 1288,
+					"eligibility_reason": "TARGET_OCCUPIED",
+					"eligible": false
+				},
+				"commits": 0,
+				"dynamic_restored": true,
+				"enabled": true,
+				"events": [],
+				"freeze": false,
+				"freeze_mode": 0,
+				"grips_released": false,
+				"mantle_complete": false,
+				"motor_ownership": "DYNAMIC",
+				"progress": 0.0,
+				"reason": "TARGET_OCCUPIED",
+				"restores": 0,
+				"result": "",
+				"standing_collision_clear": false,
+				"state": "DYNAMIC",
+				"top_ground_valid": false,
+				"walk_distance_relative_to_support": 0.0
+			},
+			"label": "geometry rejection3",
+			"observed_reasons": [
+				"START_POSE_OUTSIDE_ENVELOPE",
+				"TARGET_OCCUPIED"
+			],
+			"position": "(-0.023965, 0.396746, 0.223803)",
+			"shape_count": 4
+		},
+		{
+			"force_authority_ok": true,
+			"hybrid": {
+				"animation": {
+					"animation_time_s": 0.0,
+					"body_authority": false,
+					"clip": "HybridMantle",
+					"collision_flex": 0.0,
+					"duration_s": 1.05,
+					"finished_count": 0,
+					"hand_contact_error": [
+						-1.0,
+						-1.0
+					],
+					"hand_ik_weight": 1.0,
+					"measured_frames": 0,
+					"mode": "INACTIVE",
+					"physical_foot_error": [
+						0.0,
+						0.0
+					],
+					"progress": 0.0,
+					"reason": "NOT_STARTED",
+					"root_motion": false,
+					"started_count": 0,
+					"visual_root_error": 0.00332238618284464
+				},
+				"animation_complete": false,
+				"body_pose": "[X: (0.979411, -0.064815, -0.191188), Y: (0.064734, 0.99788, -0.006679), Z: (0.191215, -0.005835, 0.981531), O: (-0.025467, 0.396253, 0.223521)]",
+				"body_velocity": "(0.18409, 0.062157, 0.032289)",
+				"candidate": {
+					"candidate_timestamp": 1651,
+					"eligibility_reason": "TARGET_OCCUPIED",
+					"eligible": false
+				},
+				"commits": 0,
+				"dynamic_restored": true,
+				"enabled": true,
+				"events": [],
+				"freeze": false,
+				"freeze_mode": 0,
+				"grips_released": false,
+				"mantle_complete": false,
+				"motor_ownership": "DYNAMIC",
+				"progress": 0.0,
+				"reason": "TARGET_OCCUPIED",
+				"restores": 0,
+				"result": "",
+				"standing_collision_clear": false,
+				"state": "DYNAMIC",
+				"top_ground_valid": false,
+				"walk_distance_relative_to_support": 0.0
+			},
+			"label": "geometry rejection4",
+			"observed_reasons": [
+				"START_POSE_OUTSIDE_ENVELOPE",
+				"TARGET_OCCUPIED"
+			],
+			"position": "(-0.023965, 0.396746, 0.223803)",
+			"shape_count": 4
+		},
+		{
+			"force_authority_ok": true,
+			"hybrid": {
+				"animation": {
+					"animation_time_s": 0.0,
+					"body_authority": false,
+					"clip": "HybridMantle",
+					"collision_flex": 0.0,
+					"duration_s": 1.05,
+					"finished_count": 0,
+					"hand_contact_error": [
+						-1.0,
+						-1.0
+					],
+					"hand_ik_weight": 1.0,
+					"measured_frames": 0,
+					"mode": "INACTIVE",
+					"physical_foot_error": [
+						0.0,
+						0.0
+					],
+					"progress": 0.0,
+					"reason": "NOT_STARTED",
+					"root_motion": false,
+					"started_count": 0,
+					"visual_root_error": 0.00000537063397132442
+				},
+				"animation_complete": false,
+				"body_pose": "[X: (0.999791, 0.000005, -0.020422), Y: (-0.000005, 1.0, -0.000001), Z: (0.020422, 0.000001, 0.999791), O: (0.000033, 0.3667, 0.399911)]",
+				"body_velocity": "(0.000215, 0.0, 0.000278)",
+				"candidate": {
+					"candidate_timestamp": 1887,
+					"eligibility_reason": "UNSUPPORTED_DYNAMIC_PLATFORM",
+					"eligible": false
+				},
+				"commits": 0,
+				"dynamic_restored": true,
+				"enabled": true,
+				"events": [],
+				"freeze": false,
+				"freeze_mode": 0,
+				"grips_released": false,
+				"mantle_complete": false,
+				"motor_ownership": "DYNAMIC",
+				"progress": 0.0,
+				"reason": "UNSUPPORTED_DYNAMIC_PLATFORM",
+				"restores": 0,
+				"result": "",
+				"standing_collision_clear": false,
+				"state": "DYNAMIC",
+				"top_ground_valid": false,
+				"walk_distance_relative_to_support": 0.0
+			},
+			"label": "geometry rejection5",
+			"observed_reasons": [
+				"UNSUPPORTED_DYNAMIC_PLATFORM"
+			],
+			"position": "(0.000035, 0.3667, 0.399914)",
+			"shape_count": 4
+		},
+		{
+			"force_authority_ok": true,
+			"hybrid": {
+				"animation": {
+					"animation_time_s": 0.0,
+					"body_authority": false,
+					"clip": "HybridMantle",
+					"collision_flex": 0.0,
+					"duration_s": 1.05,
+					"finished_count": 0,
+					"hand_contact_error": [
+						-1.0,
+						-1.0
+					],
+					"hand_ik_weight": 1.0,
+					"measured_frames": 0,
+					"mode": "INACTIVE",
+					"physical_foot_error": [
+						0.0,
+						0.0
+					],
+					"progress": 0.0,
+					"reason": "NOT_STARTED",
+					"root_motion": false,
+					"started_count": 0,
+					"visual_root_error": 0.000000467074755761132
+				},
+				"animation_complete": false,
+				"body_pose": "[X: (0.999921, 0.0, -0.01256), Y: (-0.0, 1.0, -0.0), Z: (0.01256, 0.0, 0.999921), O: (0.000009, 0.3667, 0.399983)]",
+				"body_velocity": "(-0.00001, 0.000006, -0.000025)",
+				"candidate": {
+					"candidate_timestamp": 2112,
+					"eligibility_reason": "UNSUPPORTED_DYNAMIC_PLATFORM",
+					"eligible": false
+				},
+				"commits": 0,
+				"dynamic_restored": true,
+				"enabled": true,
+				"events": [],
+				"freeze": false,
+				"freeze_mode": 0,
+				"grips_released": false,
+				"mantle_complete": false,
+				"motor_ownership": "DYNAMIC",
+				"progress": 0.0,
+				"reason": "UNSUPPORTED_DYNAMIC_PLATFORM",
+				"restores": 0,
+				"result": "",
+				"standing_collision_clear": false,
+				"state": "DYNAMIC",
+				"top_ground_valid": false,
+				"walk_distance_relative_to_support": 0.0
+			},
+			"label": "animatable support rejection / fixture platform replacement before grip",
+			"position": "(0.000009, 0.3667, 0.399983)",
+			"shape_count": 4
+		},
+		{
+			"force_authority_ok": true,
+			"hybrid": {
+				"animation": {
+					"animation_time_s": 0.0,
+					"body_authority": false,
+					"clip": "HybridMantle",
+					"collision_flex": 0.0,
+					"duration_s": 1.05,
+					"finished_count": 0,
+					"hand_contact_error": [
+						-1.0,
+						-1.0
+					],
+					"hand_ik_weight": 1.0,
+					"measured_frames": 0,
+					"mode": "INACTIVE",
+					"physical_foot_error": [
+						0.0,
+						0.0
+					],
+					"progress": 0.0,
+					"reason": "NOT_STARTED",
+					"root_motion": false,
+					"started_count": 0,
+					"visual_root_error": 0.00361406058073044
+				},
+				"animation_complete": false,
+				"body_pose": "[X: (0.98406, 0.0, -0.177835), Y: (-0.0, 1.0, 0.0), Z: (0.177835, -0.0, 0.98406), O: (-0.072247, 0.3667, 0.219999)]",
+				"body_velocity": "(-0.214027, -0.0, -0.0)",
+				"candidate": {
+					"candidate_timestamp": 2408,
+					"eligibility_reason": "NO_REAL_GRIP",
+					"eligible": false
+				},
+				"commits": 0,
+				"dynamic_restored": true,
+				"enabled": true,
+				"events": [],
+				"freeze": false,
+				"freeze_mode": 0,
+				"grips_released": true,
+				"mantle_complete": false,
+				"motor_ownership": "DYNAMIC",
+				"progress": 0.0,
+				"reason": "NO_REAL_GRIP",
+				"restores": 0,
+				"result": "",
+				"standing_collision_clear": false,
+				"state": "DYNAMIC",
+				"top_ground_valid": false,
+				"walk_distance_relative_to_support": 0.0
+			},
+			"label": "release before commit",
+			"position": "(-0.073986, 0.3667, 0.219999)",
+			"shape_count": 4
+		},
+		{
+			"force_authority_ok": true,
+			"hybrid": {
+				"animation": {
+					"animation_time_s": 0.0,
+					"body_authority": false,
+					"clip": "HybridMantle",
+					"collision_flex": 0.0,
+					"duration_s": 1.05,
+					"finished_count": 0,
+					"hand_contact_error": [
+						-1.0,
+						-1.0
+					],
+					"hand_ik_weight": 1.0,
+					"measured_frames": 0,
+					"mode": "INACTIVE",
+					"physical_foot_error": [
+						0.0,
+						0.0
+					],
+					"progress": 0.0,
+					"reason": "NOT_STARTED",
+					"root_motion": false,
+					"started_count": 0,
+					"visual_root_error": 0.0000000967665982898325
+				},
+				"animation_complete": false,
+				"body_pose": "[X: (0.999955, -0.000008, -0.009491), Y: (0.000009, 1.0, 0.000039), Z: (0.009491, -0.000039, 0.999955), O: (0.000021, 0.366692, 0.400032)]",
+				"body_velocity": "(0.000003, 0.0, -0.000005)",
+				"candidate": {
+					"candidate_timestamp": 2660,
+					"eligibility_reason": "NO_REAL_GRIP",
+					"eligible": false
+				},
+				"commits": 0,
+				"dynamic_restored": true,
+				"enabled": true,
+				"events": [],
+				"freeze": false,
+				"freeze_mode": 0,
+				"grips_released": true,
+				"mantle_complete": false,
+				"motor_ownership": "DYNAMIC",
+				"progress": 0.0,
+				"reason": "NO_REAL_GRIP",
+				"restores": 0,
+				"result": "",
+				"standing_collision_clear": false,
+				"state": "DYNAMIC",
+				"top_ground_valid": false,
+				"walk_distance_relative_to_support": 0.0
+			},
+			"label": "simulated actual focus callbacks before commit",
+			"position": "(0.000021, 0.366692, 0.400032)",
+			"shape_count": 4
+		},
+		{
+			"force_authority_ok": true,
+			"hybrid": {
+				"animation": {
+					"animation_time_s": 1.05,
+					"body_authority": false,
+					"clip": "HybridMantle",
+					"collision_flex": 0.0,
+					"duration_s": 1.05,
+					"finished_count": 1,
+					"hand_contact_error": [
+						-1.0,
+						-1.0
+					],
+					"hand_ik_weight": 0.0,
+					"measured_frames": 327,
+					"mode": "EXIT_BLEND",
+					"physical_foot_error": [
+						0.0729583725333214,
+						0.0919125899672508
+					],
+					"progress": 1.0,
+					"reason": "FINISHED_PRESENTATION",
+					"root_motion": false,
+					"started_count": 1,
+					"visual_root_error": 0.00000933921182877384
+				},
+				"animation_complete": true,
+				"body_pose": "[X: (0.992331, -0.000005, -0.123605), Y: (0.000008, 1.0, 0.000024), Z: (0.123605, -0.000025, 0.992331), O: (-0.007333, 2.166694, -0.649983)]",
+				"body_velocity": "(-0.000199, 0.000136, -0.000669)",
+				"candidate": {
+					"allowed_collision_profile_id": "MANTLE_TUCKED",
+					"anchor_local_on_support": "(-0.2, 0.775, 1.4)",
+					"candidate_timestamp": 3035,
+					"clearance_reason": "CLEAR",
+					"edge_tangent_world": "(1.0, 0.0, 0.0)",
+					"eligibility_reason": "ELIGIBLE",
+					"eligible": true,
+					"estimated_path_samples": [
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.98817, -0.014768, -0.152647), Y: (0.012644, 0.999809, -0.014876), Z: (0.152838, 0.01277, 0.988169), O: (-0.007422, 0.401189, 0.227896)]",
+							"progress": 0.0
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.98817, -0.014768, -0.152647), Y: (0.012644, 0.999809, -0.014876), Z: (0.152838, 0.01277, 0.988169), O: (-0.007422, 0.401189, 0.234457)]",
+							"progress": 0.015625
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.98817, -0.014768, -0.152647), Y: (0.012644, 0.999809, -0.014876), Z: (0.152838, 0.01277, 0.988169), O: (-0.007422, 0.401189, 0.251089)]",
+							"progress": 0.03125
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.98817, -0.014768, -0.152647), Y: (0.012644, 0.999809, -0.014876), Z: (0.152838, 0.01277, 0.988169), O: (-0.007422, 0.401189, 0.273215)]",
+							"progress": 0.046875
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.98817, -0.014768, -0.152647), Y: (0.012644, 0.999809, -0.014876), Z: (0.152838, 0.01277, 0.988169), O: (-0.007422, 0.401189, 0.296255)]",
+							"progress": 0.0625
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.98817, -0.014768, -0.152647), Y: (0.012644, 0.999809, -0.014876), Z: (0.152838, 0.01277, 0.988169), O: (-0.007422, 0.401189, 0.315634)]",
+							"progress": 0.078125
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.98817, -0.014768, -0.152647), Y: (0.012644, 0.999809, -0.014876), Z: (0.152838, 0.01277, 0.988169), O: (-0.007422, 0.401189, 0.326773)]",
+							"progress": 0.09375
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.988747, -0.01438, -0.148905), Y: (0.01236, 0.999819, -0.014486), Z: (0.149087, 0.012482, 0.988745), O: (-0.007422, 0.401189, 0.327896)]",
+							"progress": 0.109375
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.991574, -0.012335, -0.128957), Y: (0.010822, 0.999864, -0.012427), Z: (0.129093, 0.010926, 0.991572), O: (-0.007422, 0.401189, 0.327896)]",
+							"progress": 0.125
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.995164, -0.009213, -0.097791), Y: (0.008345, 0.999922, -0.009284), Z: (0.097868, 0.008423, 0.995164), O: (-0.007422, 0.401189, 0.327896)]",
+							"progress": 0.140625
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.99804, -0.005769, -0.062318), Y: (0.005418, 0.999968, -0.005816), Z: (0.062349, 0.005467, 0.998039), O: (-0.007422, 0.401189, 0.327896)]",
+							"progress": 0.15625
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.999559, -0.002692, -0.02956), Y: (0.002613, 0.999993, -0.002715), Z: (0.029567, 0.002636, 0.999559), O: (-0.007422, 0.401189, 0.327896)]",
+							"progress": 0.171875
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.999978, -0.000593, -0.006589), Y: (0.000589, 1.0, -0.000598), Z: (0.006589, 0.000594, 0.999978), O: (-0.007422, 0.401189, 0.327896)]",
+							"progress": 0.1875
+						},
+						{
+							"flex": 0.000323260271990738,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 0.401678, 0.327896)]",
+							"progress": 0.203125
+						},
+						{
+							"flex": 0.01123046875,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 0.418187, 0.327896)]",
+							"progress": 0.21875
+						},
+						{
+							"flex": 0.0363792136863426,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 0.456249, 0.327896)]",
+							"progress": 0.234375
+						},
+						{
+							"flex": 0.0740740740740741,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 0.513301, 0.327896)]",
+							"progress": 0.25
+						},
+						{
+							"flex": 0.12261962890625,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 0.586775, 0.327896)]",
+							"progress": 0.265625
+						},
+						{
+							"flex": 0.180320457175926,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 0.674106, 0.327896)]",
+							"progress": 0.28125
+						},
+						{
+							"flex": 0.245481137876157,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 0.772727, 0.327896)]",
+							"progress": 0.296875
+						},
+						{
+							"flex": 0.31640625,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 0.880073, 0.327896)]",
+							"progress": 0.3125
+						},
+						{
+							"flex": 0.391400372540509,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 0.993578, 0.327896)]",
+							"progress": 0.328125
+						},
+						{
+							"flex": 0.468768084490741,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.110675, 0.327896)]",
+							"progress": 0.34375
+						},
+						{
+							"flex": 0.54681396484375,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.228798, 0.327896)]",
+							"progress": 0.359375
+						},
+						{
+							"flex": 0.623842592592593,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.345382, 0.327896)]",
+							"progress": 0.375
+						},
+						{
+							"flex": 0.698158546730324,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.45786, 0.327896)]",
+							"progress": 0.390625
+						},
+						{
+							"flex": 0.76806640625,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.563666, 0.327896)]",
+							"progress": 0.40625
+						},
+						{
+							"flex": 0.831870750144676,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.660235, 0.327896)]",
+							"progress": 0.421875
+						},
+						{
+							"flex": 0.887876157407407,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.744999, 0.327896)]",
+							"progress": 0.4375
+						},
+						{
+							"flex": 0.93438720703125,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.815394, 0.327896)]",
+							"progress": 0.453125
+						},
+						{
+							"flex": 0.969708478009259,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.868854, 0.327896)]",
+							"progress": 0.46875
+						},
+						{
+							"flex": 0.992144549334491,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.902811, 0.327896)]",
+							"progress": 0.484375
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.9147, 0.327896)]",
+							"progress": 0.5
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.9147, 0.31845)]",
+							"progress": 0.515625
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.9147, 0.291629)]",
+							"progress": 0.53125
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.9147, 0.249706)]",
+							"progress": 0.546875
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.9147, 0.194957)]",
+							"progress": 0.5625
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.9147, 0.129655)]",
+							"progress": 0.578125
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.9147, 0.056075)]",
+							"progress": 0.59375
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.9147, -0.02351)]",
+							"progress": 0.609375
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.9147, -0.106824)]",
+							"progress": 0.625
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.9147, -0.191594)]",
+							"progress": 0.640625
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.9147, -0.275545)]",
+							"progress": 0.65625
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.9147, -0.356403)]",
+							"progress": 0.671875
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.9147, -0.431893)]",
+							"progress": 0.6875
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.9147, -0.499742)]",
+							"progress": 0.703125
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.9147, -0.557676)]",
+							"progress": 0.71875
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.9147, -0.603419)]",
+							"progress": 0.734375
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.9147, -0.634698)]",
+							"progress": 0.75
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.9147, -0.649238)]",
+							"progress": 0.765625
+						},
+						{
+							"flex": 0.993056590059176,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.916507, -0.65)]",
+							"progress": 0.78125
+						},
+						{
+							"flex": 0.962230500213179,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.924531, -0.65)]",
+							"progress": 0.796875
+						},
+						{
+							"flex": 0.91018482370346,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.938079, -0.65)]",
+							"progress": 0.8125
+						},
+						{
+							"flex": 0.840681898590963,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.956171, -0.65)]",
+							"progress": 0.828125
+						},
+						{
+							"flex": 0.757484062936632,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 1.977827, -0.65)]",
+							"progress": 0.84375
+						},
+						{
+							"flex": 0.66435365480141,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 2.002069, -0.65)]",
+							"progress": 0.859375
+						},
+						{
+							"flex": 0.56505301224624,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 2.027917, -0.65)]",
+							"progress": 0.875
+						},
+						{
+							"flex": 0.463344473332066,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 2.054391, -0.65)]",
+							"progress": 0.890625
+						},
+						{
+							"flex": 0.362990376119833,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 2.080513, -0.65)]",
+							"progress": 0.90625
+						},
+						{
+							"flex": 0.267753058670482,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 2.111337, -0.65)]",
+							"progress": 0.921875
+						},
+						{
+							"flex": 0.181394859044958,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 2.145123, -0.65)]",
+							"progress": 0.9375
+						},
+						{
+							"flex": 0.107678115304204,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 2.164343, -0.65)]",
+							"progress": 0.953125
+						},
+						{
+							"flex": 0.0503651655091643,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 2.172656, -0.65)]",
+							"progress": 0.96875
+						},
+						{
+							"flex": 0.0132183477207817,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 2.174838, -0.65)]",
+							"progress": 0.984375
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 2.175, -0.65)]",
+							"progress": 1.0
+						}
+					],
+					"hand_anchors_world": [
+						"(-0.2, 1.2, 0.0)",
+						"(0.2, 1.2, 0.0)"
+					],
+					"hand_release_end": 0.38,
+					"hand_release_start": 0.25,
+					"inward_world": "(0.0, 0.0, -1.0)",
+					"outward_world": "(0.0, 0.0, 1.0)",
+					"source_hands": [
+						0,
+						1
+					],
+					"start_pose_world": "[X: (0.98817, -0.014768, -0.152647), Y: (0.012644, 0.999809, -0.014876), Z: (0.152838, 0.01277, 0.988169), O: (-0.007422, 0.401189, 0.227896)]",
+					"support": "<Freed Object>",
+					"support_id": 771936487837,
+					"support_transform": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.425, -1.4)]",
+					"target_standing_pose_world": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 2.175, -0.65)]",
+					"top_normal_world": "(0.0, 1.0, 0.0)",
+					"top_reference_world": "(-0.2, 1.25, 0.0)"
+				},
+				"commits": 1,
+				"dynamic_restored": true,
+				"enabled": true,
+				"events": [
+					{
+						"from": "DYNAMIC",
+						"pose": "[X: (0.98817, -0.014768, -0.152647), Y: (0.012644, 0.999809, -0.014876), Z: (0.152838, 0.01277, 0.988169), O: (-0.007422, 0.401189, 0.227896)]",
+						"progress": 0.0,
+						"reason": "VALIDATING_ROUTE",
+						"state": "PREPARE",
+						"time": 2.27499999999999
+					},
+					{
+						"from": "PREPARE",
+						"pose": "[X: (0.98817, -0.014768, -0.152647), Y: (0.012644, 0.999809, -0.014876), Z: (0.152838, 0.01277, 0.988169), O: (-0.007422, 0.401189, 0.227896)]",
+						"progress": 0.0,
+						"reason": "PATH_VALIDATED",
+						"state": "COMMIT",
+						"time": 2.27499999999999
+					},
+					{
+						"from": "COMMIT",
+						"pose": "[X: (0.98817, -0.014768, -0.152647), Y: (0.012644, 0.999809, -0.014876), Z: (0.152838, 0.01277, 0.988169), O: (-0.007422, 0.401189, 0.227896)]",
+						"progress": 0.0,
+						"reason": "COMMITTED",
+						"state": "ASSISTED_TRAVERSE",
+						"time": 2.27499999999999
+					},
+					{
+						"from": "ASSISTED_TRAVERSE",
+						"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 2.174992, -0.65)]",
+						"progress": 1.0,
+						"reason": "ANIMATION_COMPLETE",
+						"state": "RESTORE_DYNAMIC",
+						"time": 3.72499999999999
+					},
+					{
+						"from": "RESTORE_DYNAMIC",
+						"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.007422, 2.174312, -0.65)]",
+						"progress": 1.0,
+						"reason": "TOP_GROUND_VALID",
+						"state": "DYNAMIC_GROUNDED",
+						"time": 3.73333333333332
+					}
+				],
+				"freeze": false,
+				"freeze_mode": 0,
+				"grips_released": true,
+				"mantle_complete": false,
+				"motor_ownership": "DYNAMIC",
+				"progress": 1.0,
+				"reason": "TOP_GROUND_VALID",
+				"restores": 1,
+				"result": "",
+				"standing_collision_clear": false,
+				"state": "DYNAMIC_GROUNDED",
+				"top_ground_valid": true,
+				"walk_distance_relative_to_support": 0.0
+			},
+			"label": "pause resume stale-button rearm / no functional-walk claim",
+			"position": "(-0.007335, 2.166695, -0.649987)",
+			"shape_count": 4
+		},
+		{
+			"force_authority_ok": true,
+			"hybrid": {
+				"animation": {
+					"animation_time_s": 0.441304347826086,
+					"body_authority": false,
+					"clip": "HybridMantle",
+					"collision_flex": 0.82572493926825,
+					"duration_s": 1.05,
+					"finished_count": 0,
+					"hand_contact_error": [
+						-1.0,
+						-1.0
+					],
+					"hand_ik_weight": 0.0,
+					"measured_frames": 184,
+					"mode": "ASSISTED",
+					"physical_foot_error": [
+						0.000000245869159698486,
+						0.000000266664187620336
+					],
+					"progress": 0.420289855072463,
+					"reason": "ACTIVE_PRESENTATION_ONLY",
+					"root_motion": false,
+					"started_count": 1,
+					"visual_root_error": 0.0
+				},
+				"animation_complete": false,
+				"body_pose": "[X: (1.0, -0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (-0.0, -0.0, 1.0), O: (-0.008617, 1.650934, 0.327787)]",
+				"body_velocity": "(0.0, 0.0, 0.0)",
+				"candidate": {
+					"allowed_collision_profile_id": "MANTLE_TUCKED",
+					"anchor_local_on_support": "(-0.200001, 0.775, 1.399999)",
+					"candidate_timestamp": 3997,
+					"clearance_reason": "CLEAR",
+					"edge_tangent_world": "(1.0, 0.0, 0.0)",
+					"eligibility_reason": "ELIGIBLE",
+					"eligible": true,
+					"estimated_path_samples": [
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.987859, -0.01631, -0.154498), Y: (0.014212, 0.999791, -0.014672), Z: (0.154705, 0.012298, 0.987884), O: (-0.008617, 0.401197, 0.227787)]",
+							"progress": 0.0
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.987859, -0.01631, -0.154498), Y: (0.014212, 0.999791, -0.014672), Z: (0.154705, 0.012298, 0.987884), O: (-0.008617, 0.401197, 0.234349)]",
+							"progress": 0.015625
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.987859, -0.01631, -0.154498), Y: (0.014212, 0.999791, -0.014672), Z: (0.154705, 0.012298, 0.987884), O: (-0.008617, 0.401197, 0.250981)]",
+							"progress": 0.03125
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.987859, -0.01631, -0.154498), Y: (0.014212, 0.999791, -0.014672), Z: (0.154705, 0.012298, 0.987884), O: (-0.008617, 0.401197, 0.273106)]",
+							"progress": 0.046875
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.987859, -0.01631, -0.154498), Y: (0.014212, 0.999791, -0.014672), Z: (0.154705, 0.012298, 0.987884), O: (-0.008617, 0.401197, 0.296147)]",
+							"progress": 0.0625
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.987859, -0.01631, -0.154498), Y: (0.014212, 0.999791, -0.014672), Z: (0.154705, 0.012298, 0.987884), O: (-0.008617, 0.401197, 0.315525)]",
+							"progress": 0.078125
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.987859, -0.01631, -0.154498), Y: (0.014212, 0.999791, -0.014672), Z: (0.154705, 0.012298, 0.987884), O: (-0.008617, 0.401197, 0.326664)]",
+							"progress": 0.09375
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.98845, -0.015884, -0.150711), Y: (0.013889, 0.999802, -0.014283), Z: (0.150908, 0.012025, 0.988475), O: (-0.008617, 0.401197, 0.327787)]",
+							"progress": 0.109375
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.991351, -0.013639, -0.130525), Y: (0.012145, 0.999851, -0.012237), Z: (0.130672, 0.010546, 0.99137), O: (-0.008617, 0.401197, 0.327787)]",
+							"progress": 0.125
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.995037, -0.010204, -0.098984), Y: (0.009346, 0.999915, -0.009122), Z: (0.099068, 0.008152, 0.995047), O: (-0.008617, 0.401197, 0.327787)]",
+							"progress": 0.140625
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.997988, -0.006402, -0.06308), Y: (0.006055, 0.999965, -0.0057), Z: (0.063114, 0.005307, 0.997992), O: (-0.008617, 0.401197, 0.327787)]",
+							"progress": 0.15625
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.999548, -0.002993, -0.029922), Y: (0.002915, 0.999992, -0.002654), Z: (0.02993, 0.002566, 0.999549), O: (-0.008617, 0.401197, 0.327787)]",
+							"progress": 0.171875
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.999978, -0.00066, -0.00667), Y: (0.000656, 1.0, -0.000584), Z: (0.00667, 0.00058, 0.999978), O: (-0.008617, 0.401197, 0.327787)]",
+							"progress": 0.1875
+						},
+						{
+							"flex": 0.000323260271990738,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 0.401687, 0.327787)]",
+							"progress": 0.203125
+						},
+						{
+							"flex": 0.01123046875,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 0.418195, 0.327787)]",
+							"progress": 0.21875
+						},
+						{
+							"flex": 0.0363792136863426,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 0.456257, 0.327787)]",
+							"progress": 0.234375
+						},
+						{
+							"flex": 0.0740740740740741,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 0.513309, 0.327787)]",
+							"progress": 0.25
+						},
+						{
+							"flex": 0.12261962890625,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 0.586783, 0.327787)]",
+							"progress": 0.265625
+						},
+						{
+							"flex": 0.180320457175926,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 0.674113, 0.327787)]",
+							"progress": 0.28125
+						},
+						{
+							"flex": 0.245481137876157,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 0.772734, 0.327787)]",
+							"progress": 0.296875
+						},
+						{
+							"flex": 0.31640625,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 0.880079, 0.327787)]",
+							"progress": 0.3125
+						},
+						{
+							"flex": 0.391400372540509,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 0.993583, 0.327787)]",
+							"progress": 0.328125
+						},
+						{
+							"flex": 0.468768084490741,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.110679, 0.327787)]",
+							"progress": 0.34375
+						},
+						{
+							"flex": 0.54681396484375,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.228802, 0.327787)]",
+							"progress": 0.359375
+						},
+						{
+							"flex": 0.623842592592593,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.345385, 0.327787)]",
+							"progress": 0.375
+						},
+						{
+							"flex": 0.698158546730324,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.457862, 0.327787)]",
+							"progress": 0.390625
+						},
+						{
+							"flex": 0.76806640625,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.563668, 0.327787)]",
+							"progress": 0.40625
+						},
+						{
+							"flex": 0.831870750144676,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.660236, 0.327787)]",
+							"progress": 0.421875
+						},
+						{
+							"flex": 0.887876157407407,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.745, 0.327787)]",
+							"progress": 0.4375
+						},
+						{
+							"flex": 0.93438720703125,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.815395, 0.327787)]",
+							"progress": 0.453125
+						},
+						{
+							"flex": 0.969708478009259,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.868854, 0.327787)]",
+							"progress": 0.46875
+						},
+						{
+							"flex": 0.992144549334491,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.902811, 0.327787)]",
+							"progress": 0.484375
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.9147, 0.327787)]",
+							"progress": 0.5
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.9147, 0.318343)]",
+							"progress": 0.515625
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.9147, 0.291524)]",
+							"progress": 0.53125
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.9147, 0.249607)]",
+							"progress": 0.546875
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.9147, 0.194863)]",
+							"progress": 0.5625
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.9147, 0.129568)]",
+							"progress": 0.578125
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.9147, 0.055996)]",
+							"progress": 0.59375
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.9147, -0.023579)]",
+							"progress": 0.609375
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.9147, -0.106884)]",
+							"progress": 0.625
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.9147, -0.191645)]",
+							"progress": 0.640625
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.9147, -0.275586)]",
+							"progress": 0.65625
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.9147, -0.356436)]",
+							"progress": 0.671875
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.9147, -0.431918)]",
+							"progress": 0.6875
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.9147, -0.499759)]",
+							"progress": 0.703125
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.9147, -0.557686)]",
+							"progress": 0.71875
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.9147, -0.603425)]",
+							"progress": 0.734375
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.9147, -0.6347)]",
+							"progress": 0.75
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.9147, -0.649239)]",
+							"progress": 0.765625
+						},
+						{
+							"flex": 0.993056590059176,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.916507, -0.65)]",
+							"progress": 0.78125
+						},
+						{
+							"flex": 0.962230500213179,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.924531, -0.65)]",
+							"progress": 0.796875
+						},
+						{
+							"flex": 0.91018482370346,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.938079, -0.65)]",
+							"progress": 0.8125
+						},
+						{
+							"flex": 0.840681898590963,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.956171, -0.65)]",
+							"progress": 0.828125
+						},
+						{
+							"flex": 0.757484062936632,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 1.977827, -0.65)]",
+							"progress": 0.84375
+						},
+						{
+							"flex": 0.66435365480141,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 2.002069, -0.65)]",
+							"progress": 0.859375
+						},
+						{
+							"flex": 0.56505301224624,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 2.027917, -0.65)]",
+							"progress": 0.875
+						},
+						{
+							"flex": 0.463344473332066,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 2.054391, -0.65)]",
+							"progress": 0.890625
+						},
+						{
+							"flex": 0.362990376119833,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 2.080513, -0.65)]",
+							"progress": 0.90625
+						},
+						{
+							"flex": 0.267753058670482,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 2.111337, -0.65)]",
+							"progress": 0.921875
+						},
+						{
+							"flex": 0.181394859044958,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 2.145123, -0.65)]",
+							"progress": 0.9375
+						},
+						{
+							"flex": 0.107678115304204,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 2.164343, -0.65)]",
+							"progress": 0.953125
+						},
+						{
+							"flex": 0.0503651655091643,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 2.172656, -0.65)]",
+							"progress": 0.96875
+						},
+						{
+							"flex": 0.0132183477207817,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 2.174838, -0.65)]",
+							"progress": 0.984375
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 2.175, -0.65)]",
+							"progress": 1.0
+						}
+					],
+					"hand_anchors_world": [
+						"(-0.200001, 1.2, -0.0)",
+						"(0.200001, 1.2, 0.0)"
+					],
+					"hand_release_end": 0.38,
+					"hand_release_start": 0.25,
+					"inward_world": "(0.0, 0.0, -1.0)",
+					"outward_world": "(0.0, 0.0, 1.0)",
+					"runtime_block": {
+						"allowed_motion": "(0.0, 0.0, 0.0)",
+						"attempted_motion": "(0.0, 0.041512, 0.0)",
+						"blocked_collider": 1954830879256,
+						"blocked_segment": 5,
+						"blocker_id": 1954830879256,
+						"body_pose": "[X: (1.0, -0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (-0.0, -0.0, 1.0), O: (-0.008617, 1.660447, 0.327787)]",
+						"clear": false,
+						"flex": 0.832010411218602,
+						"moved": false,
+						"padding": 0.00159311794657661,
+						"reason": "PATH_BLOCKED",
+						"shape": "@CollisionShape3D@4061",
+						"substeps": 24
+					},
+					"source_hands": [
+						0,
+						1
+					],
+					"start_pose_world": "[X: (0.987859, -0.01631, -0.154498), Y: (0.014212, 0.999791, -0.014672), Z: (0.154705, 0.012298, 0.987884), O: (-0.008617, 0.401197, 0.227787)]",
+					"support": "<Freed Object>",
+					"support_id": 1563602979519,
+					"support_transform": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.425, -1.4)]",
+					"target_standing_pose_world": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008617, 2.175, -0.65)]",
+					"top_normal_world": "(0.0, 1.0, 0.0)",
+					"top_reference_world": "(-0.200001, 1.25, -0.0)"
+				},
+				"commits": 1,
+				"dynamic_restored": false,
+				"enabled": true,
+				"events": [
+					{
+						"from": "DYNAMIC",
+						"pose": "[X: (0.987859, -0.01631, -0.154498), Y: (0.014212, 0.999791, -0.014672), Z: (0.154705, 0.012298, 0.987884), O: (-0.008617, 0.401197, 0.227787)]",
+						"progress": 0.0,
+						"reason": "VALIDATING_ROUTE",
+						"state": "PREPARE",
+						"time": 2.27499999999999
+					},
+					{
+						"from": "PREPARE",
+						"pose": "[X: (0.987859, -0.01631, -0.154498), Y: (0.014212, 0.999791, -0.014672), Z: (0.154705, 0.012298, 0.987884), O: (-0.008617, 0.401197, 0.227787)]",
+						"progress": 0.0,
+						"reason": "PATH_VALIDATED",
+						"state": "COMMIT",
+						"time": 2.27499999999999
+					},
+					{
+						"from": "COMMIT",
+						"pose": "[X: (0.987859, -0.01631, -0.154498), Y: (0.014212, 0.999791, -0.014672), Z: (0.154705, 0.012298, 0.987884), O: (-0.008617, 0.401197, 0.227787)]",
+						"progress": 0.0,
+						"reason": "COMMITTED",
+						"state": "ASSISTED_TRAVERSE",
+						"time": 2.27499999999999
+					},
+					{
+						"from": "ASSISTED_TRAVERSE",
+						"pose": "[X: (1.0, -0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (-0.0, -0.0, 1.0), O: (-0.008617, 1.650934, 0.327787)]",
+						"progress": 0.420289855072463,
+						"reason": "PATH_BLOCKED",
+						"state": "BLOCKED_RECOVERY",
+						"time": 2.76666666666666
+					}
+				],
+				"freeze": true,
+				"freeze_mode": 1,
+				"grips_released": true,
+				"mantle_complete": false,
+				"motor_ownership": "ASSISTED",
+				"progress": 0.420289855072463,
+				"reason": "PATH_BLOCKED",
+				"restores": 0,
+				"result": "BLOCKED / R TO RESTART",
+				"standing_collision_clear": false,
+				"state": "BLOCKED_RECOVERY",
+				"top_ground_valid": false,
+				"walk_distance_relative_to_support": 0.0
+			},
+			"label": "runtime obstacle last safe recovery",
+			"position": "(-0.008617, 1.650934, 0.327787)",
+			"shape_count": 5
+		},
+		{
+			"force_authority_ok": true,
+			"hybrid": {
+				"animation": {
+					"animation_time_s": 0.0,
+					"body_authority": false,
+					"clip": "HybridMantle",
+					"collision_flex": 0.0,
+					"duration_s": 1.05,
+					"finished_count": 0,
+					"hand_contact_error": [
+						-1.0,
+						-1.0
+					],
+					"hand_ik_weight": 1.0,
+					"measured_frames": 0,
+					"mode": "INACTIVE",
+					"physical_foot_error": [
+						0.0,
+						0.0
+					],
+					"progress": 0.0,
+					"reason": "NOT_STARTED",
+					"root_motion": false,
+					"started_count": 0,
+					"visual_root_error": 0.0000138529039759305
+				},
+				"animation_complete": false,
+				"body_pose": "[X: (1.0, 0.000008, -0.000024), Y: (-0.000008, 1.0, 0.000005), Z: (0.000024, -0.000005, 1.0), O: (0.000031, 0.3667, 0.399917)]",
+				"body_velocity": "(0.000216, 0.0, 0.001254)",
+				"candidate": {
+					"candidate_timestamp": 4299,
+					"eligibility_reason": "NO_REAL_GRIP",
+					"eligible": false
+				},
+				"commits": 0,
+				"dynamic_restored": true,
+				"enabled": true,
+				"events": [],
+				"freeze": false,
+				"freeze_mode": 0,
+				"grips_released": true,
+				"mantle_complete": false,
+				"motor_ownership": "DYNAMIC",
+				"progress": 0.0,
+				"reason": "NO_REAL_GRIP",
+				"restores": 0,
+				"result": "",
+				"standing_collision_clear": false,
+				"state": "DYNAMIC",
+				"top_ground_valid": false,
+				"walk_distance_relative_to_support": 0.0
+			},
+			"label": "runtime obstacle reset",
+			"position": "(0.000041, 0.3667, 0.399925)",
+			"shape_count": 4
+		},
+		{
+			"force_authority_ok": true,
+			"hybrid": {
+				"animation": {
+					"animation_time_s": 0.091304347826087,
+					"body_authority": false,
+					"clip": "HybridMantle",
+					"collision_flex": 0.0,
+					"duration_s": 1.05,
+					"finished_count": 0,
+					"hand_contact_error": [
+						0.000000174413614217883,
+						0.000000360718928504866
+					],
+					"hand_ik_weight": 1.0,
+					"measured_frames": 91,
+					"mode": "ASSISTED",
+					"physical_foot_error": [
+						0.0154842054471374,
+						0.00981630105525255
+					],
+					"progress": 0.0869565217391304,
+					"reason": "ACTIVE_PRESENTATION_ONLY",
+					"root_motion": false,
+					"started_count": 1,
+					"visual_root_error": 0.0
+				},
+				"animation_complete": false,
+				"body_pose": "[X: (0.987908, -0.015986, -0.154218), Y: (0.013872, 0.999795, -0.014777), Z: (0.154423, 0.012459, 0.987926), O: (-0.008314, 0.401182, 0.323163)]",
+				"body_velocity": "(0.0, 0.0, 0.0)",
+				"candidate": {
+					"allowed_collision_profile_id": "MANTLE_TUCKED",
+					"anchor_local_on_support": "(-0.2, 0.775, 1.4)",
+					"candidate_timestamp": 4677,
+					"clearance_reason": "CLEAR",
+					"edge_tangent_world": "(1.0, 0.0, 0.0)",
+					"eligibility_reason": "ELIGIBLE",
+					"eligible": true,
+					"estimated_path_samples": [
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.987908, -0.015986, -0.154218), Y: (0.013872, 0.999795, -0.014777), Z: (0.154423, 0.012459, 0.987926), O: (-0.008314, 0.401182, 0.227823)]",
+							"progress": 0.0
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.987908, -0.015986, -0.154218), Y: (0.013872, 0.999795, -0.014777), Z: (0.154423, 0.012459, 0.987926), O: (-0.008314, 0.401182, 0.234384)]",
+							"progress": 0.015625
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.987908, -0.015986, -0.154218), Y: (0.013872, 0.999795, -0.014777), Z: (0.154423, 0.012459, 0.987926), O: (-0.008314, 0.401182, 0.251016)]",
+							"progress": 0.03125
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.987908, -0.015986, -0.154218), Y: (0.013872, 0.999795, -0.014777), Z: (0.154423, 0.012459, 0.987926), O: (-0.008314, 0.401182, 0.273141)]",
+							"progress": 0.046875
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.987908, -0.015986, -0.154218), Y: (0.013872, 0.999795, -0.014777), Z: (0.154423, 0.012459, 0.987926), O: (-0.008314, 0.401182, 0.296182)]",
+							"progress": 0.0625
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.987908, -0.015986, -0.154218), Y: (0.013872, 0.999795, -0.014777), Z: (0.154423, 0.012459, 0.987926), O: (-0.008314, 0.401182, 0.315561)]",
+							"progress": 0.078125
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.987908, -0.015986, -0.154218), Y: (0.013872, 0.999795, -0.014777), Z: (0.154423, 0.012459, 0.987926), O: (-0.008314, 0.401182, 0.3267)]",
+							"progress": 0.09375
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.988497, -0.015569, -0.150438), Y: (0.013557, 0.999805, -0.014386), Z: (0.150633, 0.012181, 0.988515), O: (-0.008314, 0.401182, 0.327823)]",
+							"progress": 0.109375
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.991386, -0.013364, -0.130288), Y: (0.011858, 0.999854, -0.012329), Z: (0.130434, 0.010678, 0.9914), O: (-0.008314, 0.401182, 0.327823)]",
+							"progress": 0.125
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.995057, -0.009995, -0.098803), Y: (0.00913, 0.999916, -0.009196), Z: (0.098887, 0.008249, 0.995064), O: (-0.008314, 0.401182, 0.327823)]",
+							"progress": 0.140625
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.997996, -0.006268, -0.062965), Y: (0.005918, 0.999966, -0.00575), Z: (0.062999, 0.005366, 0.997999), O: (-0.008314, 0.401182, 0.327823)]",
+							"progress": 0.15625
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.99955, -0.002929, -0.029868), Y: (0.00285, 0.999992, -0.002679), Z: (0.029875, 0.002593, 0.99955), O: (-0.008314, 0.401182, 0.327823)]",
+							"progress": 0.171875
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.999978, -0.000646, -0.006658), Y: (0.000642, 1.0, -0.00059), Z: (0.006658, 0.000585, 0.999978), O: (-0.008314, 0.401182, 0.327823)]",
+							"progress": 0.1875
+						},
+						{
+							"flex": 0.000323260271990738,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 0.401671, 0.327823)]",
+							"progress": 0.203125
+						},
+						{
+							"flex": 0.01123046875,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 0.418179, 0.327823)]",
+							"progress": 0.21875
+						},
+						{
+							"flex": 0.0363792136863426,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 0.456242, 0.327823)]",
+							"progress": 0.234375
+						},
+						{
+							"flex": 0.0740740740740741,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 0.513294, 0.327823)]",
+							"progress": 0.25
+						},
+						{
+							"flex": 0.12261962890625,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 0.586769, 0.327823)]",
+							"progress": 0.265625
+						},
+						{
+							"flex": 0.180320457175926,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 0.6741, 0.327823)]",
+							"progress": 0.28125
+						},
+						{
+							"flex": 0.245481137876157,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 0.772722, 0.327823)]",
+							"progress": 0.296875
+						},
+						{
+							"flex": 0.31640625,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 0.880068, 0.327823)]",
+							"progress": 0.3125
+						},
+						{
+							"flex": 0.391400372540509,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 0.993573, 0.327823)]",
+							"progress": 0.328125
+						},
+						{
+							"flex": 0.468768084490741,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.110671, 0.327823)]",
+							"progress": 0.34375
+						},
+						{
+							"flex": 0.54681396484375,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.228795, 0.327823)]",
+							"progress": 0.359375
+						},
+						{
+							"flex": 0.623842592592593,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.345379, 0.327823)]",
+							"progress": 0.375
+						},
+						{
+							"flex": 0.698158546730324,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.457857, 0.327823)]",
+							"progress": 0.390625
+						},
+						{
+							"flex": 0.76806640625,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.563664, 0.327823)]",
+							"progress": 0.40625
+						},
+						{
+							"flex": 0.831870750144676,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.660233, 0.327823)]",
+							"progress": 0.421875
+						},
+						{
+							"flex": 0.887876157407407,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.744999, 0.327823)]",
+							"progress": 0.4375
+						},
+						{
+							"flex": 0.93438720703125,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.815394, 0.327823)]",
+							"progress": 0.453125
+						},
+						{
+							"flex": 0.969708478009259,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.868853, 0.327823)]",
+							"progress": 0.46875
+						},
+						{
+							"flex": 0.992144549334491,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.902811, 0.327823)]",
+							"progress": 0.484375
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, 0.327823)]",
+							"progress": 0.5
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, 0.318378)]",
+							"progress": 0.515625
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, 0.291558)]",
+							"progress": 0.53125
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, 0.249639)]",
+							"progress": 0.546875
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, 0.194894)]",
+							"progress": 0.5625
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, 0.129597)]",
+							"progress": 0.578125
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, 0.056022)]",
+							"progress": 0.59375
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, -0.023556)]",
+							"progress": 0.609375
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, -0.106864)]",
+							"progress": 0.625
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, -0.191628)]",
+							"progress": 0.640625
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, -0.275573)]",
+							"progress": 0.65625
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, -0.356425)]",
+							"progress": 0.671875
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, -0.43191)]",
+							"progress": 0.6875
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, -0.499754)]",
+							"progress": 0.703125
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, -0.557683)]",
+							"progress": 0.71875
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, -0.603422)]",
+							"progress": 0.734375
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, -0.634699)]",
+							"progress": 0.75
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, -0.649238)]",
+							"progress": 0.765625
+						},
+						{
+							"flex": 0.993056590059176,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.916507, -0.65)]",
+							"progress": 0.78125
+						},
+						{
+							"flex": 0.962230500213179,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.924531, -0.65)]",
+							"progress": 0.796875
+						},
+						{
+							"flex": 0.91018482370346,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.938079, -0.65)]",
+							"progress": 0.8125
+						},
+						{
+							"flex": 0.840681898590963,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.956171, -0.65)]",
+							"progress": 0.828125
+						},
+						{
+							"flex": 0.757484062936632,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.977827, -0.65)]",
+							"progress": 0.84375
+						},
+						{
+							"flex": 0.66435365480141,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 2.002069, -0.65)]",
+							"progress": 0.859375
+						},
+						{
+							"flex": 0.56505301224624,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 2.027917, -0.65)]",
+							"progress": 0.875
+						},
+						{
+							"flex": 0.463344473332066,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 2.054391, -0.65)]",
+							"progress": 0.890625
+						},
+						{
+							"flex": 0.362990376119833,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 2.080513, -0.65)]",
+							"progress": 0.90625
+						},
+						{
+							"flex": 0.267753058670482,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 2.111337, -0.65)]",
+							"progress": 0.921875
+						},
+						{
+							"flex": 0.181394859044958,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 2.145123, -0.65)]",
+							"progress": 0.9375
+						},
+						{
+							"flex": 0.107678115304204,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 2.164343, -0.65)]",
+							"progress": 0.953125
+						},
+						{
+							"flex": 0.0503651655091643,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 2.172656, -0.65)]",
+							"progress": 0.96875
+						},
+						{
+							"flex": 0.0132183477207817,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 2.174838, -0.65)]",
+							"progress": 0.984375
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 2.175, -0.65)]",
+							"progress": 1.0
+						}
+					],
+					"hand_anchors_world": [
+						"(-0.2, 1.2, 0.0)",
+						"(0.2, 1.2, 0.0)"
+					],
+					"hand_release_end": 0.38,
+					"hand_release_start": 0.25,
+					"inward_world": "(0.0, 0.0, -1.0)",
+					"outward_world": "(0.0, 0.0, 1.0)",
+					"source_hands": [
+						0,
+						1
+					],
+					"start_pose_world": "[X: (0.987908, -0.015986, -0.154218), Y: (0.013872, 0.999795, -0.014777), Z: (0.154423, 0.012459, 0.987926), O: (-0.008314, 0.401182, 0.227823)]",
+					"support": "<Freed Object>",
+					"support_id": 2221336955459,
+					"support_transform": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.425, -1.4)]",
+					"target_standing_pose_world": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 2.175, -0.65)]",
+					"top_normal_world": "(0.0, 1.0, 0.0)",
+					"top_reference_world": "(-0.2, 1.25, 0.0)"
+				},
+				"commits": 1,
+				"dynamic_restored": false,
+				"enabled": true,
+				"events": [
+					{
+						"from": "DYNAMIC",
+						"pose": "[X: (0.987908, -0.015986, -0.154218), Y: (0.013872, 0.999795, -0.014777), Z: (0.154423, 0.012459, 0.987926), O: (-0.008314, 0.401182, 0.227823)]",
+						"progress": 0.0,
+						"reason": "VALIDATING_ROUTE",
+						"state": "PREPARE",
+						"time": 2.27499999999999
+					},
+					{
+						"from": "PREPARE",
+						"pose": "[X: (0.987908, -0.015986, -0.154218), Y: (0.013872, 0.999795, -0.014777), Z: (0.154423, 0.012459, 0.987926), O: (-0.008314, 0.401182, 0.227823)]",
+						"progress": 0.0,
+						"reason": "PATH_VALIDATED",
+						"state": "COMMIT",
+						"time": 2.27499999999999
+					},
+					{
+						"from": "COMMIT",
+						"pose": "[X: (0.987908, -0.015986, -0.154218), Y: (0.013872, 0.999795, -0.014777), Z: (0.154423, 0.012459, 0.987926), O: (-0.008314, 0.401182, 0.227823)]",
+						"progress": 0.0,
+						"reason": "COMMITTED",
+						"state": "ASSISTED_TRAVERSE",
+						"time": 2.27499999999999
+					},
+					{
+						"from": "ASSISTED_TRAVERSE",
+						"pose": "[X: (0.987908, -0.015986, -0.154218), Y: (0.013872, 0.999795, -0.014777), Z: (0.154423, 0.012459, 0.987926), O: (-0.008314, 0.401182, 0.323163)]",
+						"progress": 0.0869565217391304,
+						"reason": "FOCUS_LOST",
+						"state": "BLOCKED_RECOVERY",
+						"time": 2.38333333333333
+					}
+				],
+				"freeze": true,
+				"freeze_mode": 1,
+				"grips_released": true,
+				"mantle_complete": false,
+				"motor_ownership": "ASSISTED",
+				"progress": 0.0869565217391304,
+				"reason": "FOCUS_LOST",
+				"restores": 0,
+				"result": "BLOCKED / R TO RESTART",
+				"standing_collision_clear": false,
+				"state": "BLOCKED_RECOVERY",
+				"top_ground_valid": false,
+				"walk_distance_relative_to_support": 0.0
+			},
+			"label": "simulated actual focus callbacks midcommit",
+			"position": "(-0.008314, 0.401182, 0.323163)",
+			"shape_count": 5
+		},
+		{
+			"force_authority_ok": true,
+			"hybrid": {
+				"animation": {
+					"animation_time_s": 0.0,
+					"body_authority": false,
+					"clip": "HybridMantle",
+					"collision_flex": 0.0,
+					"duration_s": 1.05,
+					"finished_count": 0,
+					"hand_contact_error": [
+						-1.0,
+						-1.0
+					],
+					"hand_ik_weight": 1.0,
+					"measured_frames": 0,
+					"mode": "INACTIVE",
+					"physical_foot_error": [
+						0.0,
+						0.0
+					],
+					"progress": 0.0,
+					"reason": "NOT_STARTED",
+					"root_motion": false,
+					"started_count": 0,
+					"visual_root_error": 0.0000138529039759305
+				},
+				"animation_complete": false,
+				"body_pose": "[X: (1.0, 0.000008, -0.000024), Y: (-0.000008, 1.0, 0.000005), Z: (0.000024, -0.000005, 1.0), O: (0.000031, 0.3667, 0.399917)]",
+				"body_velocity": "(0.000216, 0.0, 0.001254)",
+				"candidate": {
+					"candidate_timestamp": 4874,
+					"eligibility_reason": "NO_REAL_GRIP",
+					"eligible": false
+				},
+				"commits": 0,
+				"dynamic_restored": true,
+				"enabled": true,
+				"events": [],
+				"freeze": false,
+				"freeze_mode": 0,
+				"grips_released": true,
+				"mantle_complete": false,
+				"motor_ownership": "DYNAMIC",
+				"progress": 0.0,
+				"reason": "NO_REAL_GRIP",
+				"restores": 0,
+				"result": "",
+				"standing_collision_clear": false,
+				"state": "DYNAMIC",
+				"top_ground_valid": false,
+				"walk_distance_relative_to_support": 0.0
+			},
+			"label": "focus loss reset",
+			"position": "(0.000041, 0.3667, 0.399925)",
+			"shape_count": 4
+		},
+		{
+			"force_authority_ok": true,
+			"hybrid": {
+				"animation": {
+					"animation_time_s": 0.00760869565217391,
+					"body_authority": false,
+					"clip": "HybridMantle",
+					"collision_flex": 0.0,
+					"duration_s": 1.05,
+					"finished_count": 0,
+					"hand_contact_error": [
+						0.000000157874978867767,
+						0.0000001413648220705
+					],
+					"hand_ik_weight": 1.0,
+					"measured_frames": 68,
+					"mode": "ASSISTED",
+					"physical_foot_error": [
+						0.100138731300831,
+						0.0951196253299713
+					],
+					"progress": 0.0072463768115942,
+					"reason": "ACTIVE_PRESENTATION_ONLY",
+					"root_motion": false,
+					"started_count": 1,
+					"visual_root_error": 0.0
+				},
+				"animation_complete": false,
+				"body_pose": "[X: (0.987908, -0.015986, -0.154218), Y: (0.013872, 0.999795, -0.014777), Z: (0.154423, 0.012459, 0.987926), O: (-0.008314, 0.401182, 0.229545)]",
+				"body_velocity": "(0.0, 0.0, 0.0)",
+				"candidate": {
+					"allowed_collision_profile_id": "MANTLE_TUCKED",
+					"anchor_local_on_support": "(-0.2, 0.775, 1.4)",
+					"candidate_timestamp": 5243,
+					"clearance_reason": "CLEAR",
+					"edge_tangent_world": "(1.0, 0.0, 0.0)",
+					"eligibility_reason": "ELIGIBLE",
+					"eligible": true,
+					"estimated_path_samples": [
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.987908, -0.015986, -0.154218), Y: (0.013872, 0.999795, -0.014777), Z: (0.154423, 0.012459, 0.987926), O: (-0.008314, 0.401182, 0.227823)]",
+							"progress": 0.0
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.987908, -0.015986, -0.154218), Y: (0.013872, 0.999795, -0.014777), Z: (0.154423, 0.012459, 0.987926), O: (-0.008314, 0.401182, 0.234384)]",
+							"progress": 0.015625
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.987908, -0.015986, -0.154218), Y: (0.013872, 0.999795, -0.014777), Z: (0.154423, 0.012459, 0.987926), O: (-0.008314, 0.401182, 0.251016)]",
+							"progress": 0.03125
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.987908, -0.015986, -0.154218), Y: (0.013872, 0.999795, -0.014777), Z: (0.154423, 0.012459, 0.987926), O: (-0.008314, 0.401182, 0.273141)]",
+							"progress": 0.046875
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.987908, -0.015986, -0.154218), Y: (0.013872, 0.999795, -0.014777), Z: (0.154423, 0.012459, 0.987926), O: (-0.008314, 0.401182, 0.296182)]",
+							"progress": 0.0625
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.987908, -0.015986, -0.154218), Y: (0.013872, 0.999795, -0.014777), Z: (0.154423, 0.012459, 0.987926), O: (-0.008314, 0.401182, 0.315561)]",
+							"progress": 0.078125
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.987908, -0.015986, -0.154218), Y: (0.013872, 0.999795, -0.014777), Z: (0.154423, 0.012459, 0.987926), O: (-0.008314, 0.401182, 0.3267)]",
+							"progress": 0.09375
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.988497, -0.015569, -0.150438), Y: (0.013557, 0.999805, -0.014386), Z: (0.150633, 0.012181, 0.988515), O: (-0.008314, 0.401182, 0.327823)]",
+							"progress": 0.109375
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.991386, -0.013364, -0.130288), Y: (0.011858, 0.999854, -0.012329), Z: (0.130434, 0.010678, 0.9914), O: (-0.008314, 0.401182, 0.327823)]",
+							"progress": 0.125
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.995057, -0.009995, -0.098803), Y: (0.00913, 0.999916, -0.009196), Z: (0.098887, 0.008249, 0.995064), O: (-0.008314, 0.401182, 0.327823)]",
+							"progress": 0.140625
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.997996, -0.006268, -0.062965), Y: (0.005918, 0.999966, -0.00575), Z: (0.062999, 0.005366, 0.997999), O: (-0.008314, 0.401182, 0.327823)]",
+							"progress": 0.15625
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.99955, -0.002929, -0.029868), Y: (0.00285, 0.999992, -0.002679), Z: (0.029875, 0.002593, 0.99955), O: (-0.008314, 0.401182, 0.327823)]",
+							"progress": 0.171875
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (0.999978, -0.000646, -0.006658), Y: (0.000642, 1.0, -0.00059), Z: (0.006658, 0.000585, 0.999978), O: (-0.008314, 0.401182, 0.327823)]",
+							"progress": 0.1875
+						},
+						{
+							"flex": 0.000323260271990738,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 0.401671, 0.327823)]",
+							"progress": 0.203125
+						},
+						{
+							"flex": 0.01123046875,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 0.418179, 0.327823)]",
+							"progress": 0.21875
+						},
+						{
+							"flex": 0.0363792136863426,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 0.456242, 0.327823)]",
+							"progress": 0.234375
+						},
+						{
+							"flex": 0.0740740740740741,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 0.513294, 0.327823)]",
+							"progress": 0.25
+						},
+						{
+							"flex": 0.12261962890625,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 0.586769, 0.327823)]",
+							"progress": 0.265625
+						},
+						{
+							"flex": 0.180320457175926,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 0.6741, 0.327823)]",
+							"progress": 0.28125
+						},
+						{
+							"flex": 0.245481137876157,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 0.772722, 0.327823)]",
+							"progress": 0.296875
+						},
+						{
+							"flex": 0.31640625,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 0.880068, 0.327823)]",
+							"progress": 0.3125
+						},
+						{
+							"flex": 0.391400372540509,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 0.993573, 0.327823)]",
+							"progress": 0.328125
+						},
+						{
+							"flex": 0.468768084490741,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.110671, 0.327823)]",
+							"progress": 0.34375
+						},
+						{
+							"flex": 0.54681396484375,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.228795, 0.327823)]",
+							"progress": 0.359375
+						},
+						{
+							"flex": 0.623842592592593,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.345379, 0.327823)]",
+							"progress": 0.375
+						},
+						{
+							"flex": 0.698158546730324,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.457857, 0.327823)]",
+							"progress": 0.390625
+						},
+						{
+							"flex": 0.76806640625,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.563664, 0.327823)]",
+							"progress": 0.40625
+						},
+						{
+							"flex": 0.831870750144676,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.660233, 0.327823)]",
+							"progress": 0.421875
+						},
+						{
+							"flex": 0.887876157407407,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.744999, 0.327823)]",
+							"progress": 0.4375
+						},
+						{
+							"flex": 0.93438720703125,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.815394, 0.327823)]",
+							"progress": 0.453125
+						},
+						{
+							"flex": 0.969708478009259,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.868853, 0.327823)]",
+							"progress": 0.46875
+						},
+						{
+							"flex": 0.992144549334491,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.902811, 0.327823)]",
+							"progress": 0.484375
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, 0.327823)]",
+							"progress": 0.5
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, 0.318378)]",
+							"progress": 0.515625
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, 0.291558)]",
+							"progress": 0.53125
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, 0.249639)]",
+							"progress": 0.546875
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, 0.194894)]",
+							"progress": 0.5625
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, 0.129597)]",
+							"progress": 0.578125
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, 0.056022)]",
+							"progress": 0.59375
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, -0.023556)]",
+							"progress": 0.609375
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, -0.106864)]",
+							"progress": 0.625
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, -0.191628)]",
+							"progress": 0.640625
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, -0.275573)]",
+							"progress": 0.65625
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, -0.356425)]",
+							"progress": 0.671875
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, -0.43191)]",
+							"progress": 0.6875
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, -0.499754)]",
+							"progress": 0.703125
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, -0.557683)]",
+							"progress": 0.71875
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, -0.603422)]",
+							"progress": 0.734375
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, -0.634699)]",
+							"progress": 0.75
+						},
+						{
+							"flex": 1.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.9147, -0.649238)]",
+							"progress": 0.765625
+						},
+						{
+							"flex": 0.993056590059176,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.916507, -0.65)]",
+							"progress": 0.78125
+						},
+						{
+							"flex": 0.962230500213179,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.924531, -0.65)]",
+							"progress": 0.796875
+						},
+						{
+							"flex": 0.91018482370346,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.938079, -0.65)]",
+							"progress": 0.8125
+						},
+						{
+							"flex": 0.840681898590963,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.956171, -0.65)]",
+							"progress": 0.828125
+						},
+						{
+							"flex": 0.757484062936632,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 1.977827, -0.65)]",
+							"progress": 0.84375
+						},
+						{
+							"flex": 0.66435365480141,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 2.002069, -0.65)]",
+							"progress": 0.859375
+						},
+						{
+							"flex": 0.56505301224624,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 2.027917, -0.65)]",
+							"progress": 0.875
+						},
+						{
+							"flex": 0.463344473332066,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 2.054391, -0.65)]",
+							"progress": 0.890625
+						},
+						{
+							"flex": 0.362990376119833,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 2.080513, -0.65)]",
+							"progress": 0.90625
+						},
+						{
+							"flex": 0.267753058670482,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 2.111337, -0.65)]",
+							"progress": 0.921875
+						},
+						{
+							"flex": 0.181394859044958,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 2.145123, -0.65)]",
+							"progress": 0.9375
+						},
+						{
+							"flex": 0.107678115304204,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 2.164343, -0.65)]",
+							"progress": 0.953125
+						},
+						{
+							"flex": 0.0503651655091643,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 2.172656, -0.65)]",
+							"progress": 0.96875
+						},
+						{
+							"flex": 0.0132183477207817,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 2.174838, -0.65)]",
+							"progress": 0.984375
+						},
+						{
+							"flex": 0.0,
+							"pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 2.175, -0.65)]",
+							"progress": 1.0
+						}
+					],
+					"hand_anchors_world": [
+						"(-0.2, 1.2, 0.0)",
+						"(0.2, 1.2, 0.0)"
+					],
+					"hand_release_end": 0.38,
+					"hand_release_start": 0.25,
+					"inward_world": "(0.0, 0.0, -1.0)",
+					"outward_world": "(0.0, 0.0, 1.0)",
+					"source_hands": [
+						0,
+						1
+					],
+					"start_pose_world": "[X: (0.987908, -0.015986, -0.154218), Y: (0.013872, 0.999795, -0.014777), Z: (0.154423, 0.012459, 0.987926), O: (-0.008314, 0.401182, 0.227823)]",
+					"support": "<Freed Object>",
+					"support_id": 2675882068431,
+					"support_transform": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.425, -1.4)]",
+					"target_standing_pose_world": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.008314, 2.175, -0.65)]",
+					"top_normal_world": "(0.0, 1.0, 0.0)",
+					"top_reference_world": "(-0.2, 1.25, 0.0)"
+				},
+				"commits": 1,
+				"dynamic_restored": false,
+				"enabled": true,
+				"events": [
+					{
+						"from": "DYNAMIC",
+						"pose": "[X: (0.987908, -0.015986, -0.154218), Y: (0.013872, 0.999795, -0.014777), Z: (0.154423, 0.012459, 0.987926), O: (-0.008314, 0.401182, 0.227823)]",
+						"progress": 0.0,
+						"reason": "VALIDATING_ROUTE",
+						"state": "PREPARE",
+						"time": 2.27499999999999
+					},
+					{
+						"from": "PREPARE",
+						"pose": "[X: (0.987908, -0.015986, -0.154218), Y: (0.013872, 0.999795, -0.014777), Z: (0.154423, 0.012459, 0.987926), O: (-0.008314, 0.401182, 0.227823)]",
+						"progress": 0.0,
+						"reason": "PATH_VALIDATED",
+						"state": "COMMIT",
+						"time": 2.27499999999999
+					},
+					{
+						"from": "COMMIT",
+						"pose": "[X: (0.987908, -0.015986, -0.154218), Y: (0.013872, 0.999795, -0.014777), Z: (0.154423, 0.012459, 0.987926), O: (-0.008314, 0.401182, 0.227823)]",
+						"progress": 0.0,
+						"reason": "COMMITTED",
+						"state": "ASSISTED_TRAVERSE",
+						"time": 2.27499999999999
+					},
+					{
+						"from": "ASSISTED_TRAVERSE",
+						"pose": "[X: (0.987908, -0.015986, -0.154218), Y: (0.013872, 0.999795, -0.014777), Z: (0.154423, 0.012459, 0.987926), O: (-0.008314, 0.401182, 0.229545)]",
+						"progress": 0.0072463768115942,
+						"reason": "SUPPORT_INVALIDATED",
+						"state": "BLOCKED_RECOVERY",
+						"time": 2.29166666666666
+					}
+				],
+				"freeze": true,
+				"freeze_mode": 1,
+				"grips_released": true,
+				"mantle_complete": false,
+				"motor_ownership": "ASSISTED",
+				"progress": 0.0072463768115942,
+				"reason": "SUPPORT_INVALIDATED",
+				"restores": 0,
+				"result": "BLOCKED / R TO RESTART",
+				"standing_collision_clear": false,
+				"state": "BLOCKED_RECOVERY",
+				"top_ground_valid": false,
+				"walk_distance_relative_to_support": 0.0
+			},
+			"label": "support invalidation",
+			"position": "(-0.008314, 0.401182, 0.229545)",
+			"shape_count": 5
+		},
+		{
+			"force_authority_ok": true,
+			"hybrid": {
+				"animation": {
+					"animation_time_s": 0.0,
+					"body_authority": false,
+					"clip": "HybridMantle",
+					"collision_flex": 0.0,
+					"duration_s": 1.05,
+					"finished_count": 0,
+					"hand_contact_error": [
+						-1.0,
+						-1.0
+					],
+					"hand_ik_weight": 1.0,
+					"measured_frames": 0,
+					"mode": "INACTIVE",
+					"physical_foot_error": [
+						0.0,
+						0.0
+					],
+					"progress": 0.0,
+					"reason": "NOT_STARTED",
+					"root_motion": false,
+					"started_count": 0,
+					"visual_root_error": 0.0000000000965112989526062
+				},
+				"animation_complete": false,
+				"body_pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.3667, 0.4)]",
+				"body_velocity": "(0.0, 0.0, -0.0)",
+				"candidate": {
+					"candidate_timestamp": 5411,
+					"eligibility_reason": "NO_REAL_GRIP",
+					"eligible": false
+				},
+				"commits": 0,
+				"dynamic_restored": true,
+				"enabled": true,
+				"events": [],
+				"freeze": false,
+				"freeze_mode": 0,
+				"grips_released": true,
+				"mantle_complete": false,
+				"motor_ownership": "DYNAMIC",
+				"progress": 0.0,
+				"reason": "NO_REAL_GRIP",
+				"restores": 0,
+				"result": "",
+				"standing_collision_clear": false,
+				"state": "DYNAMIC",
+				"top_ground_valid": false,
+				"walk_distance_relative_to_support": 0.0
+			},
+			"label": "invalid support reset",
+			"position": "(0.0, 0.3667, 0.4)",
+			"shape_count": 4
+		}
+	],
+	"scope": "M5 resilience and negative contracts; does NOT accept F1/F2,30cm walking or human feel",
+	"trace": [
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(0.000039, 0.3667, 0.399912)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 0.408333333333334
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(0.000039, 0.3667, 0.399912)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 0.458333333333334
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(0.000039, 0.3667, 0.399912)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 0.508333333333334
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(0.000039, 0.3667, 0.399912)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 0.566666666666667
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(0.000039, 0.3667, 0.399912)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 0.625
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(0.000039, 0.3667, 0.399912)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 0.683333333333333
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(0.000036, 0.3667, 0.399905)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 0.741666666666666
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(0.000018, 0.3667, 0.399874)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 0.8
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(0.000016, 0.3667, 0.399863)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 0.858333333333333
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(0.000016, 0.3667, 0.39986)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 0.916666666666666
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(-0.000171, 0.3667, 0.398958)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 0.974999999999999
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(-0.006823, 0.3667, 0.368124)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 1.03333333333333
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(-0.023618, 0.3667, 0.295281)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 1.09166666666667
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(-0.046652, 0.3667, 0.220002)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 1.15
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(-0.062044, 0.3667, 0.22)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 1.20833333333333
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(-0.074678, 0.3667, 0.22)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 1.26666666666666
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(-0.085366, 0.3667, 0.22)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 1.325
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(-0.094675, 0.3667, 0.219999)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 1.38333333333333
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(-0.10298, 0.3667, 0.219999)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 1.44166666666666
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(-0.110432, 0.3667, 0.219999)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 1.5
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(-0.116604, 0.3667, 0.219996)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 1.55833333333333
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(-0.120448, 0.3667, 0.219992)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 1.61666666666666
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(-0.123104, 0.366796, 0.219993)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 1.675
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(-0.124044, 0.367754, 0.219992)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 1.73333333333333
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(-0.119993, 0.370436, 0.22)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 1.79166666666666
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(-0.110085, 0.374037, 0.22)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 1.85
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(-0.096005, 0.377385, 0.22)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 1.90833333333333
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(-0.079292, 0.380149, 0.220048)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 1.96666666666666
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(-0.064334, 0.383093, 0.220308)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 2.01666666666666
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(-0.048185, 0.387789, 0.220972)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 2.075
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(-0.034535, 0.392745, 0.222112)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 2.13333333333333
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(-0.023303, 0.396746, 0.223826)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 2.19166666666666
+		},
+		{
+			"animation_progress": 0.0,
+			"commits": 0,
+			"freeze": false,
+			"position": "(-0.013034, 0.399665, 0.226218)",
+			"progress": 0.0,
+			"restores": 0,
+			"state": "DYNAMIC",
+			"time": 2.24999999999999
+		},
+		{
+			"animation_progress": 0.0217391304347826,
+			"commits": 1,
+			"freeze": true,
+			"position": "(-0.007422, 0.401189, 0.240019)",
+			"progress": 0.0217391304347826,
+			"restores": 0,
+			"state": "ASSISTED_TRAVERSE",
+			"time": 2.30833333333333
+		},
+		{
+			"animation_progress": 0.072463768115942,
+			"commits": 1,
+			"freeze": true,
+			"position": "(-0.007422, 0.401189, 0.309325)",
+			"progress": 0.072463768115942,
+			"restores": 0,
+			"state": "ASSISTED_TRAVERSE",
+			"time": 2.36666666666666
+		},
+		{
+			"animation_progress": 0.101449275362319,
+			"commits": 1,
+			"freeze": true,
+			"position": "(-0.007422, 0.401189, 0.327896)",
+			"progress": 0.101449275362319,
+			"restores": 0,
+			"state": "ASSISTED_TRAVERSE",
+			"time": 2.42499999999999
+		},
+		{
+			"animation_progress": 0.101449275362319,
+			"commits": 1,
+			"freeze": true,
+			"position": "(-0.007422, 0.401189, 0.327896)",
+			"progress": 0.101449275362319,
+			"restores": 0,
+			"state": "ASSISTED_TRAVERSE",
+			"time": 2.48333333333333
+		},
+		{
+			"animation_progress": 0.101449275362319,
+			"commits": 1,
+			"freeze": true,
+			"position": "(-0.007422, 0.401189, 0.327896)",
+			"progress": 0.101449275362319,
+			"restores": 0,
+			"state": "ASSISTED_TRAVERSE",
+			"time": 2.54166666666666
+		},
+		{
+			"animation_progress": 0.101449275362319,
+			"commits": 1,
+			"freeze": true,
+			"position": "(-0.007422, 0.401189, 0.327896)",
+			"progress": 0.101449275362319,
+			"restores": 0,
+			"state": "ASSISTED_TRAVERSE",
+			"time": 2.59999999999999
+		},
+		{
+			"animation_progress": 0.101449275362319,
+			"commits": 1,
+			"freeze": true,
+			"position": "(-0.007422, 0.401189, 0.327896)",
+			"progress": 0.101449275362319,
+			"restores": 0,
+			"state": "ASSISTED_TRAVERSE",
+			"time": 2.65833333333333
+		},
+		{
+			"animation_progress": 0.115942028985507,
+			"commits": 1,
+			"freeze": true,
+			"position": "(-0.007422, 0.401189, 0.327896)",
+			"progress": 0.115942028985507,
+			"restores": 0,
+			"state": "ASSISTED_TRAVERSE",
+			"time": 2.71666666666666
+		},
+		{
+			"animation_progress": 0.166666666666667,
+			"commits": 1,
+			"freeze": true,
+			"position": "(-0.007422, 0.401189, 0.327896)",
+			"progress": 0.166666666666667,
+			"restores": 0,
+			"state": "ASSISTED_TRAVERSE",
+			"time": 2.77499999999999
+		},
+		{
+			"animation_progress": 0.217391304347826,
+			"commits": 1,
+			"freeze": true,
+			"position": "(-0.007422, 0.415858, 0.327896)",
+			"progress": 0.217391304347826,
+			"restores": 0,
+			"state": "ASSISTED_TRAVERSE",
+			"time": 2.83333333333333
+		},
+		{
+			"animation_progress": 0.268115942028986,
+			"commits": 1,
+			"freeze": true,
+			"position": "(-0.007422, 0.599836, 0.327896)",
+			"progress": 0.268115942028986,
+			"restores": 0,
+			"state": "ASSISTED_TRAVERSE",
+			"time": 2.89166666666666
+		},
+		{
+			"animation_progress": 0.318840579710145,
+			"commits": 1,
+			"freeze": true,
+			"position": "(-0.007422, 0.925536, 0.327896)",
+			"progress": 0.318840579710145,
+			"restores": 0,
+			"state": "ASSISTED_TRAVERSE",
+			"time": 2.94999999999999
+		},
+		{
+			"animation_progress": 0.369565217391304,
+			"commits": 1,
+			"freeze": true,
+			"position": "(-0.007422, 1.305166, 0.327896)",
+			"progress": 0.369565217391304,
+			"restores": 0,
+			"state": "ASSISTED_TRAVERSE",
+			"time": 3.00833333333333
+		},
+		{
+			"animation_progress": 0.420289855072463,
+			"commits": 1,
+			"freeze": true,
+			"position": "(-0.007422, 1.650933, 0.327896)",
+			"progress": 0.420289855072463,
+			"restores": 0,
+			"state": "ASSISTED_TRAVERSE",
+			"time": 3.06666666666666
+		},
+		{
+			"animation_progress": 0.471014492753623,
+			"commits": 1,
+			"freeze": true,
+			"position": "(-0.007422, 1.875044, 0.327896)",
+			"progress": 0.471014492753623,
+			"restores": 0,
+			"state": "ASSISTED_TRAVERSE",
+			"time": 3.12499999999999
+		},
+		{
+			"animation_progress": 0.521739130434782,
+			"commits": 1,
+			"freeze": true,
+			"position": "(-0.007422, 1.9147, 0.309899)",
+			"progress": 0.521739130434782,
+			"restores": 0,
+			"state": "ASSISTED_TRAVERSE",
+			"time": 3.18333333333332
+		},
+		{
+			"animation_progress": 0.572463768115942,
+			"commits": 1,
+			"freeze": true,
+			"position": "(-0.007422, 1.9147, 0.154391)",
+			"progress": 0.572463768115942,
+			"restores": 0,
+			"state": "ASSISTED_TRAVERSE",
+			"time": 3.24166666666666
+		},
+		{
+			"animation_progress": 0.623188405797101,
+			"commits": 1,
+			"freeze": true,
+			"position": "(-0.007422, 1.9147, -0.097046)",
+			"progress": 0.623188405797101,
+			"restores": 0,
+			"state": "ASSISTED_TRAVERSE",
+			"time": 3.29999999999999
+		},
+		{
+			"animation_progress": 0.673913043478261,
+			"commits": 1,
+			"freeze": true,
+			"position": "(-0.007422, 1.9147, -0.366602)",
+			"progress": 0.673913043478261,
+			"restores": 0,
+			"state": "ASSISTED_TRAVERSE",
+			"time": 3.35833333333332
+		},
+		{
+			"animation_progress": 0.724637681159421,
+			"commits": 1,
+			"freeze": true,
+			"position": "(-0.007422, 1.9147, -0.576466)",
+			"progress": 0.724637681159421,
+			"restores": 0,
+			"state": "ASSISTED_TRAVERSE",
+			"time": 3.41666666666666
+		},
+		{
+			"animation_progress": 0.77536231884058,
+			"commits": 1,
+			"freeze": true,
+			"position": "(-0.007422, 1.915118, -0.65)",
+			"progress": 0.77536231884058,
+			"restores": 0,
+			"state": "ASSISTED_TRAVERSE",
+			"time": 3.47499999999999
+		},
+		{
+			"animation_progress": 0.82608695652174,
+			"commits": 1,
+			"freeze": true,
+			"position": "(-0.007422, 1.953588, -0.65)",
+			"progress": 0.82608695652174,
+			"restores": 0,
+			"state": "ASSISTED_TRAVERSE",
+			"time": 3.53333333333332
+		},
+		{
+			"animation_progress": 0.876811594202899,
+			"commits": 1,
+			"freeze": true,
+			"position": "(-0.007422, 2.030973, -0.65)",
+			"progress": 0.876811594202899,
+			"restores": 0,
+			"state": "ASSISTED_TRAVERSE",
+			"time": 3.59166666666666
+		},
+		{
+			"animation_progress": 0.927536231884059,
+			"commits": 1,
+			"freeze": true,
+			"position": "(-0.007422, 2.125395, -0.65)",
+			"progress": 0.927536231884059,
+			"restores": 0,
+			"state": "ASSISTED_TRAVERSE",
+			"time": 3.64999999999999
+		},
+		{
+			"animation_progress": 0.978260869565219,
+			"commits": 1,
+			"freeze": true,
+			"position": "(-0.007422, 2.174417, -0.65)",
+			"progress": 0.978260869565219,
+			"restores": 0,
+			"state": "ASSISTED_TRAVERSE",
+			"time": 3.70833333333332
+		},
+		{
+			"animation_progress": 1.0,
+			"commits": 1,
+			"freeze": false,
+			"position": "(-0.007422, 2.168197, -0.65)",
+			"progress": 1.0,
+			"restores": 1,
+			"state": "DYNAMIC_GROUNDED",
+			"time": 3.76666666666666
+		},
+		{
+			"animation_progress": 1.0,
+			"commits": 1,
+			"freeze": false,
+			"position": "(-0.007332, 2.166692, -0.649974)",
+			"progress": 1.0,
+			"restores": 1,
+			"state": "DYNAMIC_GROUNDED",
+			"time": 3.82499999999999
+		}
+	]
+}

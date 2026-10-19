@@ -1,0 +1,156 @@
+{
+	"authority": "SAME_RIGIDBODY_FREEZE_KINEMATIC",
+	"checks": 54,
+	"combined_preflight": {
+		"body_pose": "[X: (0.921061, 0.0, -0.389418), Y: (0.0, 1.0, 0.0), Z: (0.389418, 0.0, 0.921061), O: (0.25, 2.4, 0.75)]",
+		"clear": true,
+		"flex": 1.0,
+		"point_motion_bound": 2.07697730086767,
+		"query_padding": 0.00159854062111665,
+		"reason": "CLEAR",
+		"substeps": 693
+	},
+	"engine": {
+		"build": "steam",
+		"hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+		"hex": 263938,
+		"major": 4,
+		"minor": 7,
+		"patch": 2,
+		"status": "stable",
+		"string": "4.7.2-stable (steam)",
+		"timestamp": 0
+	},
+	"failures": 0,
+	"fixed_tick_tracking_error_m": 0.0000000596046447753906,
+	"native_settled_body_y": 1.99170005321503,
+	"native_support_after_restore": true,
+	"physics_hz": 120,
+	"records": [
+		{
+			"active": true,
+			"begins": 1,
+			"ends": 0,
+			"flex": 0.0,
+			"last": {
+				"allowed_motion": "(0.0, 0.0, 0.0)",
+				"attempted_motion": "(0.0, 0.0, -2.0)",
+				"blocked_collider": 349922395613,
+				"blocked_segment": 258,
+				"blocker_id": 349922395613,
+				"body_pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 2.0, 0.224888)]",
+				"clear": false,
+				"flex": 0.0,
+				"moved": false,
+				"padding": 0.00159925037481259,
+				"reason": "PATH_BLOCKED",
+				"shape": "TorsoCapsule",
+				"substeps": 667
+			},
+			"lowest_point": -0.916699983179569,
+			"measured_velocity": "(0.0, 0.0, 0.0)",
+			"native_touch_tolerance": 0.002,
+			"point_step": 0.003,
+			"profile": "HEEL_BACK",
+			"query_skin": 0.0001,
+			"reason": "PATH_BLOCKED",
+			"same_body": true,
+			"start_contact_audit": {
+				"body_pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 2.0, 1.0)]",
+				"clear": true,
+				"maximum_query_depth": 0.0,
+				"native_contacts": [],
+				"physics_server_pose": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 2.0, 1.0)]",
+				"pose_origin_delta": 0.0,
+				"probes": [],
+				"touch_policy": "2mm ordinary touch; native-proven existing overlap<=20mm permits certified monotonic outward frozen recovery only"
+			}
+		},
+		{
+			"case": "EXISTING_NATIVE_RECOVERY",
+			"initial": {
+				"body_pose": "[X: (0.969133, 0.10542, -0.222864), Y: (-0.121496, 0.990797, -0.059662), Z: (0.214524, 0.084898, 0.973022), O: (0.0, 2.0, 1.012217)]",
+				"clear": true,
+				"maximum_query_depth": 0.020000159740448,
+				"native_contacts": [
+					{
+						"collider_id": 854178399696,
+						"impulse": "(0.0, 0.0, 1.666667)",
+						"normal_api": "(0.0, 0.0, 1.0)",
+						"position_api": "(-0.065608, 2.535031, 0.76)",
+						"shape_index": 0
+					}
+				],
+				"physics_server_pose": "[X: (0.969133, 0.10542, -0.222864), Y: (-0.121496, 0.990797, -0.059662), Z: (0.214524, 0.084898, 0.973022), O: (0.0, 2.0, 1.012217)]",
+				"pose_origin_delta": 0.0,
+				"probes": [
+					{
+						"collider_ids": [
+							854178399696
+						],
+						"depth": 0.020000159740448,
+						"native_recovery_proven": true,
+						"pair_points": "[(-0.065608, 2.53503, 0.76), (-0.065608, 2.535031, 0.78)]",
+						"shape": "TorsoCapsule",
+						"world_pose": "[X: (0.969133, 0.10542, -0.222864), Y: (-0.121496, 0.990797, -0.059662), Z: (0.214524, 0.084898, 0.973022), O: (-0.032804, 2.267515, 0.996109)]"
+					}
+				],
+				"touch_policy": "2mm ordinary touch; native-proven existing overlap<=20mm permits certified monotonic outward frozen recovery only"
+			},
+			"steps": [
+				{
+					"actual_motion": "(0.0, 0.0, 0.003)",
+					"depth": 0.0170000791549683,
+					"recovery_steps": 2
+				},
+				{
+					"actual_motion": "(0.0, 0.0, 0.003)",
+					"depth": 0.0140000581741333,
+					"recovery_steps": 2
+				},
+				{
+					"actual_motion": "(0.0, 0.0, 0.003)",
+					"depth": 0.0110000967979431,
+					"recovery_steps": 2
+				},
+				{
+					"actual_motion": "(0.0, 0.0, 0.003)",
+					"depth": 0.00800001621246338,
+					"recovery_steps": 2
+				},
+				{
+					"actual_motion": "(0.0, 0.0, 0.003)",
+					"depth": 0.00500005483627319,
+					"recovery_steps": 2
+				},
+				{
+					"actual_motion": "(0.0, 0.0, 0.003)",
+					"depth": 0.00200003385543823,
+					"recovery_steps": 2
+				},
+				{
+					"actual_motion": "(0.0, 0.0, 0.003)",
+					"depth": 0.0,
+					"recovery_steps": 2
+				},
+				{
+					"actual_motion": "(0.0, 0.0, 0.003)",
+					"depth": 0.0,
+					"recovery_steps": 0
+				},
+				{
+					"actual_motion": "(0.0, 0.0, 0.003)",
+					"depth": 0.0,
+					"recovery_steps": 0
+				},
+				{
+					"actual_motion": "(0.0, 0.0, 0.003)",
+					"depth": 0.0,
+					"recovery_steps": 0
+				}
+			]
+		}
+	],
+	"standing_lowest_local": -0.916699983179569,
+	"tucked_lowest_local": -0.646700005914923
+}

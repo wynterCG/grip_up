@@ -1,0 +1,39 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+
+
+PASS playable scene instantiates the skinned biped
+
+PASS one dynamic torso uses head/torso/legs proxies and a flat foot base
+
+PASS grounded biped uses authored idle with physical IK blended out
+
+PASS arm IK and palm modifiers execute
+
+PASS IK preserves authored bone lengths: 0
+
+RIG 0 measured={ "shoulder": (-0.189587, 1.633319, 0.35156), "wrist": (-0.329386, 1.124842, 0.314917), "upper": 0.27444013953209, "lower": 0.27264049649239 } target=(-0.216446, 1.185602, 0.431845)
+
+PASS IK preserves authored bone lengths: 1
+
+RIG 1 measured={ "shoulder": (0.17216, 1.644452, 0.471895), "wrist": (0.281153, 1.14966, 0.504924), "upper": 0.27444013953209, "lower": 0.27264031767845 } target=(0.216641, 1.185605, 0.431845)
+
+PASS biped acquires an actual surface using existing physical core
+
+PASS biped reaches and holds with finite physical arm
+
+PASS physical endpoint IK takes over after reaching starts
+
+PASS climbing mesh and physical shoulder agree: 0
+
+PASS climbing mesh and physical shoulder agree: 1
+
+PASS attached wrist follows controller palm target
+
+PASS evaluating visual IK never edits torso transform or velocity
+
+PASS released hand returns to finite-speed physical free state
+
+PASS reset frees old rig and its controller references
+
+BIPED VISUAL RESULTS: 15 checks, 0 failures

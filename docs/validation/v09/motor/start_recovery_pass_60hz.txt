@@ -1,0 +1,23 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+
+
+PASS hybrid independent of v08 palm/leg experiment
+
+PASS ordinary approach earns two actual finite grips
+
+PASS ledge-specific W commits from real geometry and actual hanging grip
+
+PASS actual top ground restores dynamic body and walking authority
+
+PASS FULL static top-out then30cm ordinary ground walk
+
+PASS no old hand/foot/ground force while assisted authority owns body
+
+PASS commit and restore occur exactly once
+
+HYBRID START PROBE RESULTS: 7 checks, 0 failures
+
+ERROR: Failed to read the root certificate store.
+
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
