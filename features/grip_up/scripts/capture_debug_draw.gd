@@ -40,6 +40,8 @@ func update_state(controller: Node, predictions: Array[Dictionary], show_debug: 
 			var angle := float(sample)*TAU/24.0
 			var next := float(sample+1)*TAU/24.0
 			segment(shoulder+Vector3(cos(angle),sin(angle),0)*radius,shoulder+Vector3(cos(next),sin(next),0)*radius,Color(0.3,0.5,0.65))
+			segment(shoulder+Vector3(cos(angle),0,sin(angle))*radius,shoulder+Vector3(cos(next),0,sin(next))*radius,Color(0.3,0.5,0.65,.6))
+			segment(shoulder+Vector3(0,cos(angle),sin(angle))*radius,shoulder+Vector3(0,cos(next),sin(next))*radius,Color(0.3,0.5,0.65,.6))
 	if controller.feet_solver!=null and controller.tuning.physical_feet:
 		for id in controller.feet_solver.feet.size():
 			var foot: Dictionary = controller.feet_solver.feet[id]

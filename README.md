@@ -6,6 +6,24 @@ Integrated Jolt, 120 Hz. Core and complete routes also tested at 60 Hz.
 
 This is a separate prototype. The Janga object grabber and its project are unchanged.
 
+## v0.5 transfer study / M0?M1
+
+**Controls ? 05 / Ten transfers** opens independent aim with optional diagnostics.
+The new flat-wall route has eleven painted guides for ten alternating transfers;
+its spacing is configurable. Any wall surface remains grippable. A separate
+**06 / Swing-required route** keeps deliberately out-of-static-reach captures
+out of the basic transfer test. These scenes add no strength or grip snapping.
+
+Tab shows actual shoulder spheres, finite hand travel, pose/transit/retention
+reasons, pendulum/twist and estimated work. Each attempt has its own immutable
+snapshots in per-session JSONL under `user://transfer_sessions/`. Controls also
+allows ratings after a failed session. The old v0.4 profile remains available.
+
+M1 diagnoses before assisting:2,148 checks pass, and native MCP Pro captures
+complete ten transfers at60/120Hz with P0 and explicit timing. No new posture
+algorithm has been introduced at this milestone. Human sessions are pending;
+see [M1 report](docs/validation/V05_M1.md) and [physics audit](docs/validation/V05_PHYSICS_AUDIT.md).
+
 ## v0.4 independent aim (opt-in experiment)
 
 Open **Controls / Esc**, choose **3 / v0.4 Independent aim + physical posture**.

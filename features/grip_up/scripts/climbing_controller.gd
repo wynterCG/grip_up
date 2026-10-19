@@ -1,5 +1,6 @@
 extends Node
 signal sample_ready(delta: float)
+signal transfer_event(event: Dictionary)
 const Tuning = preload("res://features/grip_up/resources/climbing_tuning.gd")
 const Anchor = preload("res://features/grip_up/scripts/grip_anchor.gd")
 const Actuator = preload("res://features/grip_up/scripts/arm_actuator.gd")
@@ -10,6 +11,13 @@ const FootProfile = preload("res://features/grip_up/resources/foot_tuning.gd")
 const SupportedSwing = preload("res://features/grip_up/scripts/supported_swing.gd")
 const PosturePlanner = preload("res://features/grip_up/scripts/support_posture_planner.gd")
 const TargetCoordinator = preload("res://features/grip_up/scripts/arm_target_coordinator.gd")
+const TransferDiagnostics = preload("res://features/grip_up/scripts/transfer_diagnostics.gd")
+var transfer_journal = TransferDiagnostics.new()
+var transfer_diagnostics_enabled := false:
+	set(value):
+		if transfer_diagnostics_enabled!=value:
+			transfer_diagnostics_enabled = value
+			transfer_journal.reset()
 var torso: RigidBody3D
 var tuning: Resource = Tuning.new()
 var hands: Array[Dictionary] = []
@@ -65,6 +73,7 @@ func configure(body: RigidBody3D, configuration: Resource = null) -> void:
 	reset_state()
 
 func reset_state() -> void:
+	transfer_journal.reset()
 	posture_planner.reset()
 	posture_coordinator.reset()
 	_posture_signature = ""
@@ -129,6 +138,7 @@ func set_control_profile(profile: int) -> void:
 	if next == control_profile:
 		return
 	control_profile = next
+	transfer_journal.reset()
 	_posture_tilt_blend = 0.0
 	_posture_tilt_torque = Vector3.ZERO
 	posture_planner.reset()
@@ -347,6 +357,9 @@ func request_buffered_grip(id: int, support: PhysicsBody3D, world_point: Vector3
 	return _request_grip(id,support,world_point,normal,true)
 
 func _request_grip(id: int, support: PhysicsBody3D, world_point: Vector3, normal: Vector3, predictive: bool) -> bool:
+	if _transfer_enabled():
+		transfer_journal.begin_attempt(self,id,support,world_point,normal)
+		_publish_transfer_events()
 	metrics["attempts"] += 1
 	if id < 0 or id >= hands.size() or not is_instance_valid(torso) or not is_instance_valid(support) or support == torso:
 		return _reject("invalid_hand_or_support")
@@ -405,9 +418,15 @@ func _request_grip(id: int, support: PhysicsBody3D, world_point: Vector3, normal
 		"predicted_contact_time":forecast.get("predicted_contact_time",-1.0),"predicted_target":forecast.get("predicted_target",world_point),
 		"predicted_target_time":forecast.get("predicted_target_time",-1.0),"actual_arrival":-1.0,"failure_reason":""}
 	last_rejection = ""
+	if _transfer_enabled():
+		transfer_journal.accept(self,id)
+		_publish_transfer_events()
 	return true
 
 func _reject(reason: String) -> bool:
+	if _transfer_enabled():
+		transfer_journal.reject(self,reason)
+		_publish_transfer_events()
 	last_rejection = reason
 	metrics["misses"] += 1
 	return false
@@ -415,6 +434,9 @@ func _reject(reason: String) -> bool:
 func release_grip(id: int, reason: String = "manual") -> void:
 	if id < 0 or id >= hands.size():
 		return
+	if _transfer_enabled():
+		transfer_journal.release(self,id,reason)
+		_publish_transfer_events()
 	var hand: Dictionary = hands[id]
 	_arm_deltas.erase(id)
 	_contextual_holds.erase(id)
@@ -628,7 +650,14 @@ func _physics_process(delta: float) -> void:
 	_extend = lerpf(_extend,_intent_target.y,intent_response)
 	_bias = lerpf(_bias,_intent_target.z,intent_response)
 	for id in hands.size():
+		var diagnostic_previous: Vector3 = hands[id]["hand_world"] if _transfer_enabled() else Vector3.ZERO
+		var diagnostic_state: String = hands[id]["state"] if _transfer_enabled() else ""
 		_update_hand(id, delta)
+		if _transfer_enabled():
+			transfer_journal.advance(self,id,diagnostic_previous,delta)
+			if diagnostic_state=="REACHING" and hands[id]["state"]=="ATTACHED":
+				transfer_journal.contact(self,id)
+				_publish_transfer_events()
 	_advance_launch(delta)
 	var attached: Array[int] = _attached_ids()
 	if control_profile == 3:
@@ -699,6 +728,7 @@ func _physics_process(delta: float) -> void:
 		moments += (get_shoulder_world(id) - center).cross(forces[id])
 	_arm_deltas.clear()
 	var assist: Vector3 = _compute_attitude_assist(attached,forces,center,sum_force)
+	var diagnostic_attitude: Vector3 = assist if _transfer_enabled() else Vector3.ZERO
 	_posture_tilt_torque = Vector3.ZERO
 	if control_profile==3:
 		var tilt_active: bool = posture_tilt_assist_enabled and posture_assist_enabled and posture_policy>0 and not attached.is_empty() and not posture_coordinator.plan.is_empty() and posture_coordinator.plan.feasible
@@ -720,6 +750,8 @@ func _physics_process(delta: float) -> void:
 			_posture_tilt_torque = assist-base_assist
 	_swing_torque = Vector3.ZERO
 	var support_torque_weights: Dictionary = {}
+	var diagnostic_swing_lever := Vector3.ZERO
+	var diagnostic_swing_engagement := 0.0
 	if control_profile in [1,2,3] and not attached.is_empty():
 		var lever := Vector3.ZERO
 		var support_spin := Vector3.ZERO
@@ -742,6 +774,9 @@ func _physics_process(delta: float) -> void:
 		for id in attached:
 			support_torque_weights[id] /= maxf(engaged_weight,0.000001)
 		var engagement: float = engaged_weight/maxf(allocation_weight,0.000001)
+		if _transfer_enabled():
+			diagnostic_swing_lever = lever
+			diagnostic_swing_engagement = engagement
 		var base_assist := assist
 		var requested := _swing_requested
 		if control_profile == 3 and not supported_wasd_swing_enabled:
@@ -772,6 +807,7 @@ func _physics_process(delta: float) -> void:
 	var scale_factor: float = minf(1.0, minf(tuning.total_pull_force_budget / maxf(sum_force, 0.000001), tuning.max_total_torque / maxf((moments + leg_moment + assist).length(), 0.000001)))
 	if feet_solver!=null:
 		feet_solver.commit(leg_scale*scale_factor)
+	var diagnostic_applied: Array[Dictionary] = []
 	for id in attached:
 		var hand: Dictionary = hands[id]
 		var force: Vector3 = forces[id] * scale_factor
@@ -779,6 +815,12 @@ func _physics_process(delta: float) -> void:
 		hand["reaction_force"] = -force
 		torso.apply_force(force, get_shoulder_world(id) - torso.global_position)
 		var support: PhysicsBody3D = hand["anchor"].support_body()
+		if _transfer_enabled():
+			# Snapshot before integrity may clear a released hand's diagnostic
+			# force. That force was still physically applied on this exact tick.
+			diagnostic_applied.append({"id":id,"support":support,"point":hand["anchor_world"],
+				"shoulder":get_shoulder_world(id),"force":force,"allocation":hand["allocation"],
+				"torque_weight":float(support_torque_weights.get(id,0.0)),"point_velocity":hand["anchor"].point_velocity()})
 		if support is RigidBody3D:
 			support.apply_force(-force, hand["anchor_world"] - support.global_position)
 			if control_profile in [1,2,3]:
@@ -807,6 +849,15 @@ func _physics_process(delta: float) -> void:
 		"budget_scale": scale_factor, "control_right": _view_right, "hands": hands.duplicate(true),
 		"torso_position": torso.global_position, "linear_velocity": torso.linear_velocity,
 		"angular_velocity": torso.angular_velocity, "metrics": metrics.duplicate()}
+	if _transfer_enabled():
+		transfer_journal.sample(self,delta,{"attitude":diagnostic_attitude*scale_factor,"posture_tilt":_posture_tilt_torque*scale_factor,
+			"swing":_swing_torque*scale_factor,"assist":assist*scale_factor,"shoulder_moment":moments*scale_factor,
+			"leg_moment":leg_moment*scale_factor,"total_moment":(moments+leg_moment+assist)*scale_factor,
+			"raw_hand_force_sum":sum_force,"hand_force_sum":sum_force*scale_factor,"force_limit":tuning.total_pull_force_budget,
+			"assist_limit":tuning.max_attitude_torque,"total_moment_limit":tuning.max_total_torque,"allocator_scale":scale_factor,
+			"weights":support_torque_weights,"swing_lever":diagnostic_swing_lever,"swing_engagement":diagnostic_swing_engagement,"applied":diagnostic_applied})
+		_diagnostics["transfer_diagnostics"] = transfer_journal.diagnostics()
+		_publish_transfer_events()
 	sample_ready.emit(delta)
 
 func _update_integrity(id: int, unweakened_force: float, delta: float) -> void:
@@ -822,6 +873,9 @@ func _update_integrity(id: int, unweakened_force: float, delta: float) -> void:
 			hand["recovery_time"] = 0.0
 			hand["reason"] = "load_limit_exceeded"
 			metrics["slips"] += 1
+			if _transfer_enabled():
+				transfer_journal.slipping(self,id,unweakened_force)
+				_publish_transfer_events()
 	else:
 		hand["slip_elapsed"] += delta
 		hand["recovery_time"] = hand["recovery_time"] + delta if unweakened_force < limit * tuning.slip_recovery_ratio else 0.0
@@ -834,3 +888,18 @@ func _update_integrity(id: int, unweakened_force: float, delta: float) -> void:
 
 func telemetry() -> Dictionary:
 	return _diagnostics
+
+func _transfer_enabled() -> bool:
+	return control_profile==3 and transfer_diagnostics_enabled
+
+func _publish_transfer_events() -> void:
+	for event in transfer_journal.drain_events():
+		transfer_event.emit(event)
+
+func transfer_diagnostics(include_events: bool = false) -> Dictionary:
+	return transfer_journal.diagnostics(include_events) if _transfer_enabled() else {"enabled":false}
+
+func record_unselected_attempt(id: int, reason: String = "no_surface") -> void:
+	if _transfer_enabled():
+		transfer_journal.unselected(self,id,reason)
+		_publish_transfer_events()

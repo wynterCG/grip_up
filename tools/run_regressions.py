@@ -12,16 +12,18 @@ names = ['physics','platform_probe','wall_clearance','biped_profile','playthroug
          'climb_direction','leg_motion','pendulum','free_climb','launch','full_reach','biped_asset']
 label = sys.argv[1] if len(sys.argv)>1 else 'regressions'
 selected = sys.argv[2:]
-if label in ['m1','m2','v03','contextual','v04']:
+if label in ['m1','m2','v03','contextual','v04','v05']:
     names += ['m0_instrumentation','capture_input','capture_matrix']
-if label in ['m2','v03','contextual','v04']:
+if label in ['m2','v03','contextual','v04','v05']:
     names += ['foot_support','foot_integration','feet_routes','feet_swing']
-if label in ['v03','contextual','v04']:
+if label in ['v03','contextual','v04','v05']:
     names += ['drag_input','drag_swing_physics']
-if label in ['contextual','v04']:
+if label in ['contextual','v04','v05']:
     names += ['contextual_input','contextual_physics']
-if label == 'v04':
+if label in ['v04','v05']:
     names += ['independent_input','independent_physics','independent_routes']
+if label == 'v05':
+    names += ['transfer_diagnostics','transfer_routes']
 assert all(name in names for name in selected)
 dest = root/'docs'/'validation'/label
 dest.mkdir(parents=True,exist_ok=True)
