@@ -3,12 +3,14 @@ extends SceneTree
 const Lab=preload("res://features/grip_up/scripts/grip_up_lab.gd")
 var app
 var hz:=120
+var early_targets:=false
 var checks:=0
 var failures:=0
 var report:={"runs":[]}
 
 func _initialize() -> void:
 	if OS.get_cmdline_user_args().has("--60hz"):hz=60
+	early_targets=OS.get_cmdline_user_args().has("--distant")
 	Engine.physics_ticks_per_second=hz
 	run.call_deferred()
 
@@ -41,6 +43,7 @@ func trial(variant: int) -> void:
 	app.transfer_assist_enabled=variant>0
 	app._set_posture_variant(variant)
 	app._open_transfer_lab(5)
+	if early_targets:app._set_distant_targeting(true)
 	app.won=true
 	await ticks(.45)
 	var point: Vector3=app.level.transfer_points[1]+Vector3(0,-.051,0)
@@ -53,6 +56,14 @@ func trial(variant: int) -> void:
 	click(0,true,app.level.transfer_points[0])
 	await ticks(.5)
 	check(app.controller.get_hand_state(0)=="ATTACHED","P%d starts from actual held left contact" % variant)
+	if early_targets:
+		row.early_selection_time=app.trial.elapsed
+		var pose:Transform3D=app.torso.global_transform
+		var velocity:Vector3=app.torso.linear_velocity
+		click(1,true,point)
+		row.initial_selection=app.controller.pending_diagnostics(1).duplicate(true)
+		check(row.initial_selection.get("active",false) and row.initial_selection.get("reach_margin",0)<0,"far destination selected once before swing, outside actual reach")
+		check(app.torso.global_transform==pose and app.torso.linear_velocity==velocity,"early selection never attracts or snaps the body")
 	var active_action:=""
 	var opportunity:=false
 	var last_distance:=10.0
@@ -69,6 +80,7 @@ func trial(variant: int) -> void:
 		var target: Vector3=hit.get("position",point)
 		var distance: float=app.controller.get_shoulder_world(1).distance_to(target)
 		if frame%6==0:row.samples.append({"time":app.trial.elapsed,"distance":distance,"body":str(app.torso.position),"motion":app.controller.transfer_diagnostics().get("motion",{})})
+		if early_targets and app.controller.get_hand_state(1)=="ATTACHED":opportunity=true;break
 		if distance<app.controller.get_max_reach()-.03 and distance<last_distance:
 			opportunity=true
 			row.press_distance=distance
@@ -80,15 +92,21 @@ func trial(variant: int) -> void:
 	if opportunity:
 		var pose: Transform3D=app.torso.global_transform
 		var velocity: Vector3=app.torso.linear_velocity
-		click(1,true,point)
-		check(app.torso.global_transform==pose and app.torso.linear_velocity==velocity,"catch request never snaps body or overwrites momentum")
+		if not early_targets:click(1,true,point)
+		if early_targets:
+			check(app.controller.hands[1].anchor!=null and app.controller.hands[1].anchor.local_point==row.initial_selection.local_point,"full supported swing preserves the original queued material point")
+		else:check(app.torso.global_transform==pose and app.torso.linear_velocity==velocity,"catch request never snaps body or overwrites momentum")
 		var started: float=app.trial.elapsed
 		for frame in hz:
 			await physics_frame
 			if app.controller.get_hand_state(1)=="ATTACHED":
 				row.caught=true
 				row.contact_speed=app.torso.linear_velocity.length()
-				row.hand_travel_time=app.trial.elapsed-started
+				if early_targets:
+					var contact:Dictionary=app.controller.pending_diagnostics(1)
+					row.selection_to_contact=contact.get("contact_time",app.trial.elapsed)-contact.get("selected_time",row.early_selection_time)
+					row.remaining_wait_after_range_observation=app.trial.elapsed-started
+				else:row.hand_travel_time=app.trial.elapsed-started
 				break
 			if app.controller.get_hand_state(1) in ["FREE","RELEASED"]:break
 		row.contact=app.controller.transfer_diagnostics().get("last_by_hand",{}).get(1,{})
@@ -114,6 +132,6 @@ func trial(variant: int) -> void:
 func run() -> void:
 	report.physics_hz=hz
 	for variant in [0,1,2]:await trial(variant)
-	FileAccess.open("res://builds/transfer_swing_%dhz.json" % hz,FileAccess.WRITE).store_string(JSON.stringify(report,"  "))
+	FileAccess.open("res://builds/transfer_swing%s_%dhz.json" % ["_distant" if early_targets else "",hz],FileAccess.WRITE).store_string(JSON.stringify(report,"  "))
 	print("TRANSFER SWING RESULTS: %d checks, %d failures" % [checks,failures])
 	quit(1 if failures else 0)

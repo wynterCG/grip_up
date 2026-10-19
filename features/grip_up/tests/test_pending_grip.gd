@@ -47,14 +47,14 @@ func static_pending() -> void:
 	check(controller.hands[1].anchor==other.anchor and controller.hands[1].target_world==other.target_world and controller.hands[1].rest_length==other.rest_length and controller.get_hand_state(1)=="FREE","selecting one hand preserves the other free hand's anchor, target and actuator length")
 	var copy: Dictionary = controller.pending_diagnostics(0)
 	copy.local_point = Vector3.INF
-	check(controller.pending_diagnostics(0).local_point==first.local_point and controller.pending_diagnostics(0).attempt_id==first.attempt_id,"diagnostics are immutable copies of one stable material target and attempt")
+	check(controller.pending_diagnostics(0).local_point==first.local_point and controller.pending_diagnostics(0).target_selection_id==first.target_selection_id,"diagnostics are immutable copies of one stable material target and selection")
 	controller.set_hand_held(0,false,"input_released")
 	check(controller.get_hand_state(0)=="RELEASED" and controller.hands[0].anchor==null and not controller.pending_diagnostics(0).active,"button-up immediately clears pending support without waiting for physics")
 	check(body.global_transform==pose and body.linear_velocity==velocity and body.angular_velocity==spin,"cancellation preserves body pose and momentum")
 	controller.set_hand_held(0,true)
 	await ticks(int(1.0*hz))
 	check(controller.get_hand_state(0)=="FREE" and controller.metrics.attaches==0 and controller.pending_diagnostics(0).reason=="input_released","cancelled target cannot resurrect or attach later")
-	report.static = {"duration":2.0,"max_extension":max_extension,"reach":controller.get_max_reach(),"force":controller.get_arm_force(0),"attempt":first.attempt_id}
+	report.static = {"duration":2.0,"max_extension":max_extension,"reach":controller.get_max_reach(),"force":controller.get_arm_force(0),"selection":first.target_selection_id}
 	await clear()
 
 func legacy_off() -> void:

@@ -3,6 +3,23 @@ extends "res://features/grip_up/tests/test_pending_grip.gd"
 const PendingTarget = preload("res://features/grip_up/scripts/pending_grip_target.gd")
 var motion_report: Dictionary = {}
 
+class MotionOnlyController:
+	extends "res://features/grip_up/scripts/climbing_controller.gd"
+	func _try_held_contact(_id: int) -> void:
+		pass # Isolate the historical M2 motion gate after M3 becomes available.
+
+func setup(definition: Dictionary, enabled: bool) -> void:
+	await super.setup(definition,enabled)
+	var original = controller
+	var fixture_hands: Array[Dictionary] = original.hands.duplicate(true)
+	var fixture_tuning: Resource = original.tuning
+	world.remove_child(original)
+	original.queue_free()
+	controller = MotionOnlyController.new()
+	world.add_child(controller)
+	controller.configure(body,fixture_tuning)
+	controller.hands = fixture_hands
+
 func enable_pending() -> void:
 	controller.set_control_profile(3)
 	controller.tuning.allow_out_of_reach_grip_targets = true

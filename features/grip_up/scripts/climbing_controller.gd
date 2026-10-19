@@ -403,6 +403,9 @@ func request_held_grip(id: int, support: PhysicsBody3D, world_point: Vector3, no
 		"target_world":world_point,"anchor_world":world_point,"actual_length":get_shoulder_world(id).distance_to(world_point),
 		"force":Vector3.ZERO,"reaction_force":Vector3.ZERO,"allocation":0.0,"reason":"",
 		"held_target_pending":true,"predictive_wait":false},true)
+	hand["capture"] = {"input_time":simulation_time,"buffered":false,"persistent_target":true,"out_of_reach_selection":hand.actual_length>get_max_reach(),
+		"predicted_entry_time":-1.0,"predicted_contact_time":-1.0,"predicted_target":world_point,
+		"predicted_target_time":-1.0,"actual_arrival":-1.0,"failure_reason":""}
 	last_rejection = ""
 	if _transfer_enabled():
 		transfer_journal.observe(self,id,"TARGET_SELECTED_OUT_OF_REACH" if hand.actual_length>get_max_reach() else "TARGET_SELECTED_IN_REACH","TRANSIT","held_material_target_selected",{"pending":pending.diagnostics()})
@@ -417,6 +420,35 @@ func set_hand_held(id: int, held: bool, reason: String = "input_released") -> vo
 
 func pending_diagnostics(id: int) -> Dictionary:
 	return _held_targets[id].diagnostics() if _held_targets.has(id) else {"active":false,"held":false}
+
+func _try_held_contact(id: int) -> void:
+	var hand: Dictionary = hands[id]
+	var pending = _held_targets[id]
+	if not pending.held or not pending.active or not pending.anchor.is_valid():return
+	var data: Dictionary = pending.diagnostics()
+	if not data.endpoint_valid or data.blocked or not data.physical_in_reach:return
+	if Vector3(hand.hand_world).distance_to(pending.anchor.world_point())>.000001:return
+	# Current geometry authorizes. No forecast, time horizon, label hysteresis
+	# or relative-speed risk estimate can replace this physical contact test.
+	var capture: Dictionary = capture_evaluator.evaluate(self,id)
+	if not capture.accepted:
+		pending.snapshot["contact_rejection_reason"] = capture.reason
+		return
+	var point: Vector3 = pending.anchor.world_point()
+	var separation := get_shoulder_world(id).distance_to(point)
+	var previous_supports := _attached_ids().size()
+	hand["capture"].merge(capture,true)
+	hand["capture"]["actual_arrival"] = simulation_time-pending.selected_time
+	hand["capture"]["prediction_error"] = -1.0
+	hand.merge({"state":"ATTACHED","hand_world":point,"anchor_world":point,"target_world":point,
+		"actual_length":separation,"rest_length":clampf(separation,tuning.min_arm_length,tuning.max_arm_length),
+		"blend_elapsed":0.0,"overload_time":0.0,"slip_elapsed":0.0,"recovery_time":0.0,
+		"allocation":1.0 if previous_supports==0 else 0.0,"held_target_pending":false,"reason":""},true)
+	pending.attached(simulation_time,separation,hand.rest_length,hand.capture)
+	metrics["attaches"] += 1
+	if _transfer_enabled():
+		transfer_journal.observe(self,id,"HAND_CONTACT_VALID","CONTACT","actual_held_material_point_contact",{"pending":pending.diagnostics()})
+		_publish_transfer_events()
 
 func request_buffered_grip(id: int, support: PhysicsBody3D, world_point: Vector3, normal: Vector3) -> bool:
 	if not tuning.predictive_grip:
@@ -567,12 +599,16 @@ func _update_hand(id: int, delta: float) -> void:
 				transfer_journal.observe(self,id,"TARGET_ENTERED_REACH" if after.label_in_reach else "TARGET_LEFT_REACH_PENDING","TRANSIT","pending_reach_label_transition",{"pending":after})
 			if before.blocked!=after.blocked:
 				transfer_journal.observe(self,id,"HAND_PATH_BLOCKED" if after.blocked else "HAND_PATH_CLEAR","TRANSIT","pending_path_transition",{"pending":after})
+			if before.missed_window_count!=after.missed_window_count:
+				transfer_journal.observe(self,id,"HAND_WINDOW_MISSED","TRANSIT",after.last_window_reason,{"pending":after})
 			_publish_transfer_events()
 		if not after.endpoint_valid:
 			if _transfer_enabled():
 				transfer_journal.observe(self,id,"WORKSPACE_SWEEP_CONFLICT","TRANSIT","no_collision_free_anatomical_finite_segment",{"pending":after})
 				_publish_transfer_events()
 			release_grip(id,"WORKSPACE_SWEEP_CONFLICT")
+		else:
+			_try_held_contact(id)
 		return
 	if hand["state"] == "RELEASED":
 		hand["state"] = "FREE"
@@ -617,6 +653,10 @@ func _update_hand(id: int, delta: float) -> void:
 	if anchor == null or not anchor.is_valid():
 		release_grip(id, "support_invalidated")
 		return
+	if _held_targets.has(id) and _held_targets[id].active and anchor==_held_targets[id].anchor:
+		if not _held_targets[id].held or not bool(anchor.support_body().get_meta("grippable",true)):
+			release_grip(id,"input_released" if not _held_targets[id].held else "support_invalidated")
+			return
 	var point: Vector3 = anchor.world_point()
 	hand["target_world"] = point
 	hand["anchor_world"] = point
@@ -696,6 +736,8 @@ func _update_hand(id: int, delta: float) -> void:
 	hand["hand_world"] = point
 	if hand["actual_length"] > tuning.max_arm_length + tuning.max_elastic_extension:
 		release_grip(id, "arm_extension_limit")
+	elif _held_targets.has(id) and _held_targets[id].active and anchor==_held_targets[id].anchor:
+		_held_targets[id].update_attached(shoulder,point,get_max_reach(),hand.state)
 
 func _attached_ids() -> Array[int]:
 	var result: Array[int] = []
@@ -928,6 +970,11 @@ func _physics_process(delta: float) -> void:
 		var force: Vector3 = forces[id] * scale_factor
 		hand["force"] = force
 		hand["reaction_force"] = -force
+		if _held_targets.has(id) and _held_targets[id].active and hand["anchor"]==_held_targets[id].anchor:
+			var pending_load: Dictionary = _held_targets[id].snapshot
+			pending_load.current_force = force.length()
+			if pending_load.first_applied_load<0.0:pending_load.first_applied_load = force.length()
+			if hand["blend_elapsed"]<=tuning.grip_blend_duration:pending_load.peak_blend_load = maxf(pending_load.peak_blend_load,force.length())
 		torso.apply_force(force, get_shoulder_world(id) - torso.global_position)
 		var support: PhysicsBody3D = hand["anchor"].support_body()
 		if _transfer_enabled():

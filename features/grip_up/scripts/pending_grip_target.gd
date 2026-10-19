@@ -1,6 +1,6 @@
 extends RefCounted
 ## Remembered material point and finite swept gesture. Never an arm constraint.
-## M2: real moving workspace/obstruction recovery; attachment remains disabled.
+## This module proposes motion only; controller's actual contact test authorizes.
 var anchor: RefCounted
 var held := true
 var active := true
@@ -14,6 +14,8 @@ var departure_normal := Vector3.ZERO
 var _label_inside := false
 var _physical_inside := false
 var _retraction_used := false
+var _window_entry := -1.0
+var _window_blocked := false
 
 func configure(material_anchor: RefCounted, frame: Transform3D, endpoint: Vector3, time: float, serial: int, reach: float, journal_attempt: int = -1) -> void:
 	anchor = material_anchor
@@ -24,6 +26,7 @@ func configure(material_anchor: RefCounted, frame: Transform3D, endpoint: Vector
 	var distance := frame.origin.distance_to(point)
 	_label_inside = distance<=reach+.00005
 	_physical_inside = _label_inside
+	_window_entry = time if _physical_inside else -1.0
 	snapshot = {"active":true,"held":true,"attempt_id":journal_attempt,"target_selection_id":serial,"selected_time":time,
 		"substate":"REACHING" if _label_inside else "PENDING_OUT_OF_REACH",
 		"support_id":anchor.support_body().get_instance_id(),"local_point":anchor.local_point,"local_normal":anchor.local_normal,
@@ -34,6 +37,7 @@ func configure(material_anchor: RefCounted, frame: Transform3D, endpoint: Vector
 		"world_velocity":Vector3.ZERO,"gesture_velocity":Vector3.ZERO,"transport_velocity":Vector3.ZERO,
 		"target_relative_speed":0.0,"workspace_valid":frame.origin.distance_to(endpoint)<=reach+.00005,"endpoint_valid":true,
 		"physical_in_reach":_physical_inside,"label_in_reach":_label_inside,"physical_transition_count":0,"phase":phase,
+		"missed_window_count":0,"last_window_duration":-1.0,"last_window_reason":"",
 		"reason":"","contact_time":-1.0,"acquisition_load":0.0,"motion_scope":"shoulder-frame transport plus finite relative gesture; full world sweep"}
 
 func cancel(reason: String) -> void:
@@ -43,6 +47,19 @@ func cancel(reason: String) -> void:
 	snapshot.held = false
 	snapshot.substate = "CANCELLED"
 	snapshot.reason = reason
+
+func attached(time: float, separation: float, rest_length: float, capture: Dictionary) -> void:
+	snapshot.merge({"substate":"ATTACHED","phase":"ATTACHED","contact_time":time,
+		"pending_time":time-selected_time,"contact_distance":separation,"contact_rest_length":rest_length,
+		"contact_validated":true,"reason":"contact_valid","capture":capture.duplicate(true),
+		"acquisition_load":0.0,"acquisition_load_scope":"instant contact before existing force blend",
+		"first_applied_load":-1.0,"peak_blend_load":0.0,"current_force":0.0},true)
+
+func update_attached(shoulder: Vector3, endpoint: Vector3, reach: float, state: String) -> void:
+	var point: Vector3 = anchor.world_point()
+	snapshot.merge({"substate":state,"phase":state,"target_world":point,"normal_world":anchor.world_normal(),
+		"shoulder_world":shoulder,"hand_world":endpoint,"hand_goal":point,"distance":shoulder.distance_to(point),
+		"reach_margin":reach-shoulder.distance_to(point),"target_velocity":anchor.point_velocity()},true)
 
 func set_departure(endpoint: Vector3, normal: Vector3, clearance: float) -> void:
 	if normal.length_squared()<.5:return
@@ -83,7 +100,11 @@ func step(body: RigidBody3D, frame: Transform3D, endpoint: Vector3, reach: float
 	var shoulder := frame.origin
 	var distance := shoulder.distance_to(point)
 	var inside := distance<=reach+.00005
+	var exited_window := _physical_inside and not inside
 	if _physical_inside!=inside:snapshot.physical_transition_count += 1
+	if inside and not _physical_inside:
+		_window_entry = time
+		_window_blocked = false
 	_physical_inside = inside
 	var prior_label := _label_inside
 	if _label_inside and distance>reach+hysteresis:_label_inside = false
@@ -136,10 +157,15 @@ func step(body: RigidBody3D, frame: Transform3D, endpoint: Vector3, reach: float
 	if not visible:
 		blocked = true
 		if blocker_id==0 and not surface.is_empty():blocker_id = surface.collider.get_instance_id()
+	if inside:_window_blocked = _window_blocked or blocked
+	if exited_window:
+		snapshot.missed_window_count += 1
+		snapshot.last_window_duration = time-_window_entry if _window_entry>=0.0 else -1.0
+		snapshot.last_window_reason = "PATH_OBSTRUCTED" if _window_blocked else "CONTACT_REJECTED" if snapshot.get("contact_rejection_reason","")!="" else "HAND_TOO_SLOW"
 	if valid and not blocked and candidate.distance_to(destination)<=.000001:
 		if phase in ["DEPARTURE","RETRACT"]:phase = "APPROACH"
 		elif phase=="APPROACH" and inside:phase = "FINAL"
-	var reason := "WORKSPACE_SWEEP_CONFLICT" if not valid else "hand_path_blocked" if blocked else "out_of_reach" if not inside else "contact_not_enabled_m2"
+	var reason := "WORKSPACE_SWEEP_CONFLICT" if not valid else "hand_path_blocked" if blocked else "out_of_reach" if not inside else "finite_contact_approach"
 	var world_velocity := (candidate-endpoint)/maxf(.000001,delta)
 	var gesture_velocity := (candidate-carried)/maxf(.000001,delta)
 	var target_velocity: Vector3 = anchor.point_velocity()

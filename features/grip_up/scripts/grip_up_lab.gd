@@ -746,10 +746,11 @@ func _transfer_debug_text(data: Dictionary) -> String:
 	for id in 2:
 		var hand: Dictionary=controller.hands[id]
 		var last: Dictionary=diagnostic.get("last_by_hand",{}).get(id,{})
-		out+="\n\n%s / %s | %s / %s\nShoulder %s | anchor %s\nActual %.3f / requested %.3f / planned %.3f m\nAttempt %s | distance %s | travel %s" % ["LEFT" if id==0 else "RIGHT",hand.state,last.get("stage","none"),last.get("code","none"),str(controller.get_shoulder_world(id)),str(hand.anchor_world),hand.actual_length,hand.rest_length,hand.get("planned_length",hand.rest_length),str(last.get("attempt_id","none")),"%.3f m" % last.anatomical_distance if last.has("anatomical_distance") else "unknown","%.2f s" % last.get("elapsed",0)]
 		var pending:Dictionary=controller.pending_diagnostics(id)
+		var shown_length:float=controller.get_shoulder_world(id).distance_to(controller.get_hand_world(id)) if pending.get("active",false) and hand.state=="REACHING" else hand.actual_length
+		out+="\n\n%s / %s | %s / %s\nShoulder %s | anchor %s\nActual %.3f / requested %.3f / planned %.3f m\nAttempt %s | distance %s | travel %s" % ["LEFT" if id==0 else "RIGHT",hand.state,last.get("stage","none"),last.get("code","none"),str(controller.get_shoulder_world(id)),str(hand.anchor_world),shown_length,hand.rest_length,hand.get("planned_length",hand.rest_length),str(last.get("attempt_id","none")),"%.3f m" % last.anatomical_distance if last.has("anatomical_distance") else "unknown","%.2f s" % last.get("elapsed",0)]
 		if pending.get("active",false):
-			out+="\n%s | held %s | margin %.3f m | pending %.2f s\nGesture %.2f /4 m/s | transport %.2f | world %.2f | blocker %s" % [pending.get("substate","PENDING"),pending.get("held",false),pending.get("reach_margin",0),pending.get("pending_time",0),pending.get("gesture_speed",0),pending.get("transport_speed",0),pending.get("world_speed",0),str(pending.get("blocker_id",0))]
+			out+="\n%s | held %s | target %.3f m | margin %.3f m | pending %.2f s\nGesture %.2f /4 m/s | transport %.2f | world %.2f | blocker %s" % [pending.get("substate","PENDING"),pending.get("held",false),pending.get("distance",0),pending.get("reach_margin",0),pending.get("pending_time",0),pending.get("gesture_speed",0),pending.get("transport_speed",0),pending.get("world_speed",0),str(pending.get("blocker_id",0))]
 	var refinement: Dictionary=data.get("transfer_posture",{})
 	var twist: Dictionary=refinement.get("twist",{})
 	out+="\nAttitude %s | blend %.2f | relative axial error %s" % [refinement.get("status","P0"),twist.get("blend",0),"%.3f rad" % twist.axial_error if twist.has("axial_error") else "P0 reference"]
@@ -785,6 +786,7 @@ func _on_transfer_event(event: Dictionary) -> void:
 	row.catch_buffer_enabled=catch_buffer_enabled
 	row.catch_buffer_duration=catch_buffer_duration
 	row.allow_out_of_reach_grip_targets=allow_out_of_reach_grip_targets
+	row.out_of_reach_targeting_active=_distant_targeting_active()
 	row.pending_targets=_pending_target_snapshots()
 	var event_hand: int=int(event.get("hand",-1))
 	row.attempt_assessment=attempt_assessments[event_hand].duplicate(true) if event_hand in [0,1] else {}
@@ -817,6 +819,7 @@ func _save_trial(outcome: String) -> void:
 	row.catch_buffer_enabled=catch_buffer_enabled
 	row.catch_buffer_duration=catch_buffer_duration
 	row.allow_out_of_reach_grip_targets=allow_out_of_reach_grip_targets
+	row.out_of_reach_targeting_active=_distant_targeting_active()
 	row.pending_targets=_pending_target_snapshots()
 	var summary_path: String="user://trials.jsonl"
 	if input_profile==3 and transfer_diagnostics_enabled:
@@ -845,7 +848,7 @@ func _record_capture(delta: float) -> void:
 		"swing_torque":capture_trace.vector(controller.telemetry().get("swing_torque",Vector3.ZERO)),
 		"grip_buttons":[Input.is_action_pressed("grip_left"),Input.is_action_pressed("grip_right")],"capture_predictions":capture_predictions,
 		"reach_prediction_enabled":reach_prediction_enabled,"catch_buffer_enabled":catch_buffer_enabled,"catch_buffer_duration":catch_buffer_duration,"reach_advice":reach_advice,"attempt_assessments":attempt_assessments,
-		"allow_out_of_reach_grip_targets":allow_out_of_reach_grip_targets,"pending_targets":_pending_target_snapshots(),
+		"allow_out_of_reach_grip_targets":allow_out_of_reach_grip_targets,"out_of_reach_targeting_active":_distant_targeting_active(),"pending_targets":_pending_target_snapshots(),
 		"anomalous_displacements":trial.get("large_step_events",0),
 		"grounded":ground_motor.grounded if is_instance_valid(ground_motor) else false,
 		"beam_angle":level.beam.rotation.z if is_instance_valid(level) and is_instance_valid(level.beam) else 0.0})
