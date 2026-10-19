@@ -1,0 +1,33 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS contextual profile is the actual startup and UI selection
+PASS contextual grip always uses hold semantics
+PASS grounded contextual hands use arm IK while keeping authored walking legs
+PASS raw relative delta moves free-hand aim even at constant absolute cursor position
+PASS virtual target stays within anatomical reach; hand 0
+PASS virtual target stays within anatomical reach; hand 1
+PASS reverse movement responds immediately after saturated aim without stored windup
+PASS relative free-hand aiming provides no support force
+PASS virtual left aim selects an actual reachable raycast surface
+PASS held LMB begins a finite physical reach
+PASS left palm reaches actual selected surface
+PASS relative downward drag requests pull and physically raises supported body
+PASS relative aim event does not write arm length before physical integration
+PASS upward aim remains available for the free hand after contraction
+PASS sustained upward relative effort genuinely extends the supported arm and lowers body
+PASS stationary mouse retains achieved arm posture without input tail
+PASS independent held RMB reaches from the virtual free-hand aim
+PASS second hand reaches contact after contracted first hand is retained
+PASS two attached hands route mouse to supported posture rather than free aim
+PASS two hands preserve the shared force budget
+PASS camera orbit does not create arm-effort input or release grips
+PASS MMB retains both material anchors
+PASS contextual mode retains per-gesture WASD reference through orbit
+PASS Space comparison stays off by default
+PASS UI capture and return discard hidden effort deltas
+PASS mouse-up releases only its own contextual grip
+PASS released hand immediately becomes a movable anatomical aim
+PASS focus loss clears effort, releases held hands and pauses capture
+PASS resume click cannot accidentally acquire a grip
+PASS reset preserves contextual profile without stale effort
+CONTEXTUAL INPUT RESULTS: 30 checks, 0 failures

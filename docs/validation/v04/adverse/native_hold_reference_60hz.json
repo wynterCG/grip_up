@@ -1,0 +1,637 @@
+{
+  "baseline": {
+    "anatomical_reach": 0.65708,
+    "assist_torque": 20,
+    "body_friction": 0.12,
+    "elastic": 0.04,
+    "force_budget": 360,
+    "hand_speed": 4,
+    "mass": 12,
+    "spring_d": 220,
+    "spring_k": 6000,
+    "target_range": [
+      0.18,
+      0.62
+    ],
+    "total_torque": 150
+  },
+  "beam_angle": -0.140257939696312,
+  "checks": [
+    {
+      "label": "opt-in native independent aim uses visible full-screen pointer",
+      "passed": true
+    },
+    {
+      "label": "Space remains OFF for initial independent-aim comparison",
+      "passed": true
+    },
+    {
+      "label": "variant 0 press starts finite reach",
+      "passed": true
+    },
+    {
+      "label": "variant 0 actual left contact acquired",
+      "passed": true
+    },
+    {
+      "label": "variant 0 upward aim never changes posture plan",
+      "passed": true
+    },
+    {
+      "label": "variant 0 settled support target is independent of cursor",
+      "passed": true
+    },
+    {
+      "label": "variant 0 second press preserves pose and velocity",
+      "passed": true
+    },
+    {
+      "label": "variant 0 right finite catch preserves held left",
+      "passed": true
+    },
+    {
+      "label": "variant 0 handoff preserves surviving right anchor",
+      "passed": false
+    },
+    {
+      "label": "variant 1 press starts finite reach",
+      "passed": true
+    },
+    {
+      "label": "variant 1 actual left contact acquired",
+      "passed": true
+    },
+    {
+      "label": "variant 1 upward aim never changes posture plan",
+      "passed": true
+    },
+    {
+      "label": "variant 1 settled support target is independent of cursor",
+      "passed": true
+    },
+    {
+      "label": "variant 1 second press preserves pose and velocity",
+      "passed": true
+    },
+    {
+      "label": "variant 1 right finite catch preserves held left",
+      "passed": true
+    },
+    {
+      "label": "variant 1 handoff preserves surviving right anchor",
+      "passed": true
+    },
+    {
+      "label": "variant 2 press starts finite reach",
+      "passed": true
+    },
+    {
+      "label": "variant 2 actual left contact acquired",
+      "passed": true
+    },
+    {
+      "label": "variant 2 upward aim never changes posture plan",
+      "passed": true
+    },
+    {
+      "label": "variant 2 settled support target is independent of cursor",
+      "passed": true
+    },
+    {
+      "label": "variant 2 second press preserves pose and velocity",
+      "passed": true
+    },
+    {
+      "label": "variant 2 right finite catch preserves held left",
+      "passed": true
+    },
+    {
+      "label": "variant 2 handoff preserves surviving right anchor",
+      "passed": true
+    },
+    {
+      "label": "swing scene first surface catches",
+      "passed": true
+    },
+    {
+      "label": "native contract requests supported swing",
+      "passed": true
+    },
+    {
+      "label": "MMB preserves cached W world command and posture event",
+      "passed": true
+    },
+    {
+      "label": "native extend requests supported swing",
+      "passed": true
+    },
+    {
+      "label": "native bias_left requests supported swing",
+      "passed": true
+    },
+    {
+      "label": "native bias_right requests supported swing",
+      "passed": true
+    },
+    {
+      "label": "last release removes all climb actuation in flight",
+      "passed": true
+    },
+    {
+      "label": "reactive beam caught at actual material point",
+      "passed": true
+    },
+    {
+      "label": "moving beam preserves local anchor and remains bounded under supported input",
+      "passed": true
+    },
+    {
+      "label": "two independent material contacts share moving beam load",
+      "passed": true
+    },
+    {
+      "label": "beam handoff preserves surviving left contact",
+      "passed": true
+    },
+    {
+      "label": "explicit native Space ON uses preserved charge",
+      "passed": true
+    },
+    {
+      "label": "explicit native Space release ends finite pull and releases old contacts",
+      "passed": true
+    },
+    {
+      "label": "Controls retains visible mouse",
+      "passed": true
+    }
+  ],
+  "complete": true,
+  "demo_frames": 0,
+  "physics_hz": 60,
+  "snapshots": [
+    {
+      "hands": [
+        {
+          "actual": 0.487681001424789,
+          "force": 5.14434719085693,
+          "state": "ATTACHED",
+          "target": 0.486021429300308
+        },
+        {
+          "actual": 0.0,
+          "force": 0.0,
+          "state": "FREE",
+          "target": 0.62
+        }
+      ],
+      "label": "variant_0_single",
+      "policy": 0,
+      "position": "(0.000051, 1.166676, 0.398887)",
+      "posture": {
+        "accelerations": {},
+        "allocations": {},
+        "braking_advance": 0.0,
+        "elapsed": 0.0,
+        "event": 0,
+        "planned_lengths": {},
+        "rates": {},
+        "reason": "hold_current_length",
+        "state": "HOLD"
+      },
+      "velocity": "(-0.0, 0.0, -0.0)"
+    },
+    {
+      "hands": [
+        {
+          "actual": 0.487830311059952,
+          "force": 0.0,
+          "state": "FREE",
+          "target": 0.486021429300308
+        },
+        {
+          "actual": 0.484573602676392,
+          "force": 0.0,
+          "state": "FREE",
+          "target": 0.48486652970314
+        }
+      ],
+      "label": "variant_0_dual",
+      "policy": 0,
+      "position": "(0.000153, 1.166687, 0.398769)",
+      "posture": {
+        "accelerations": {},
+        "allocations": {},
+        "braking_advance": 0.0,
+        "elapsed": 0.0,
+        "event": 0,
+        "planned_lengths": {},
+        "rates": {},
+        "reason": "hold_current_length",
+        "state": "HOLD"
+      },
+      "velocity": "(0.0, -0.0, -0.0)"
+    },
+    {
+      "hands": [
+        {
+          "actual": 0.34274286031723,
+          "force": 117.90096282959,
+          "state": "ATTACHED",
+          "target": 0.312138954952205
+        },
+        {
+          "actual": 0.0,
+          "force": 0.0,
+          "state": "FREE",
+          "target": 0.62
+        }
+      ],
+      "label": "variant_1_single",
+      "policy": 1,
+      "position": "(-0.03633, 1.230716, 0.219995)",
+      "posture": {
+        "accelerations": {
+          "0": 0.0276196117280914
+        },
+        "actual_movement": "(-0.036239, 0.064036, -0.180136)",
+        "allocations": {
+          "0": 1.0
+        },
+        "body_error": "(0.026065, 0.160474, 0.145052)",
+        "braking_advance": 0.0,
+        "desired_posture": "[X: (0.994069, 0.0, -0.108753), Y: (0.0, 1.0, 0.0), Z: (0.108753, 0.0, 0.994069), O: (-0.010265, 1.39119, 0.365047)]",
+        "elapsed": 1.11666666666667,
+        "event": 1,
+        "length_errors": {
+          "0": 0.0307427942752838
+        },
+        "planned_lengths": {
+          "0": 0.312000066041946
+        },
+        "rates": {
+          "0": -6.53759030548248e-06
+        },
+        "reason": "absolute_arm_targets_reached",
+        "requested_lengths": {
+          "0": 0.312138954952205
+        },
+        "state": "COMPLETE"
+      },
+      "velocity": "(0.000006, -0.000001, -0.000001)"
+    },
+    {
+      "hands": [
+        {
+          "actual": 0.3566555082798,
+          "force": 45.6894798278809,
+          "state": "ATTACHED",
+          "target": 0.336477090782589
+        },
+        {
+          "actual": 0.326520591974258,
+          "force": 76.1738662719727,
+          "state": "ATTACHED",
+          "target": 0.294692913909505
+        }
+      ],
+      "label": "variant_1_dual",
+      "policy": 1,
+      "position": "(0.036076, 1.245689, 0.219972)",
+      "posture": {
+        "accelerations": {
+          "0": 0.0,
+          "1": 0.0388749095853947
+        },
+        "actual_movement": "(0.072202, 0.014966, -0.000022)",
+        "allocations": {
+          "0": 0.5,
+          "1": 0.5
+        },
+        "body_error": "(0.001279, 0.145655, 0.166144)",
+        "braking_advance": 0.0,
+        "desired_posture": "[X: (0.994069, 0.0, -0.108753), Y: (0.0, 1.0, 0.0), Z: (0.108753, 0.0, 0.994069), O: (0.037151, 1.391338, 0.386116)]",
+        "elapsed": 0.716666666666667,
+        "event": 2,
+        "length_errors": {
+          "0": 0.0200395286083221,
+          "1": 0.0319665670394897
+        },
+        "planned_lengths": {
+          "0": 0.336615979671478,
+          "1": 0.294554024934769
+        },
+        "rates": {
+          "0": 1.30451205393456e-15,
+          "1": -1.31032076384797e-05
+        },
+        "reason": "absolute_arm_targets_reached",
+        "requested_lengths": {
+          "0": 0.336477090782589,
+          "1": 0.294692913909505
+        },
+        "state": "COMPLETE"
+      },
+      "velocity": "(0.012245, 0.00039, -0.000025)"
+    },
+    {
+      "hands": [
+        {
+          "actual": 0.342745214700699,
+          "force": 117.904937744141,
+          "state": "ATTACHED",
+          "target": 0.312138954952333
+        },
+        {
+          "actual": 0.0,
+          "force": 0.0,
+          "state": "FREE",
+          "target": 0.62
+        }
+      ],
+      "label": "variant_2_single",
+      "policy": 2,
+      "position": "(-0.036363, 1.230722, 0.219993)",
+      "posture": {
+        "accelerations": {
+          "0": 0.0276600824063773
+        },
+        "actual_movement": "(-0.036272, 0.064041, -0.180138)",
+        "allocations": {
+          "0": 1.0
+        },
+        "body_error": "(0.026099, 0.16047, 0.145053)",
+        "braking_advance": 0.0,
+        "desired_posture": "[X: (0.994069, 0.0, -0.108753), Y: (0.0, 1.0, 0.0), Z: (0.108753, 0.0, 0.994069), O: (-0.010264, 1.391192, 0.365046)]",
+        "elapsed": 1.11666666666667,
+        "event": 1,
+        "length_errors": {
+          "0": 0.0307451486587524
+        },
+        "planned_lengths": {
+          "0": 0.312000066041946
+        },
+        "rates": {
+          "0": -6.55703614856062e-06
+        },
+        "reason": "absolute_arm_targets_reached",
+        "requested_lengths": {
+          "0": 0.312138954952333
+        },
+        "state": "COMPLETE"
+      },
+      "velocity": "(0.000005, -0.000001, -0.000001)"
+    },
+    {
+      "hands": [
+        {
+          "actual": 0.358263731002808,
+          "force": 42.7436408996582,
+          "state": "ATTACHED",
+          "target": 0.338360180324978
+        },
+        {
+          "actual": 0.32719150185585,
+          "force": 79.6602096557617,
+          "state": "ATTACHED",
+          "target": 0.295615027486622
+        }
+      ],
+      "label": "variant_2_dual",
+      "policy": 2,
+      "position": "(0.036831, 1.244728, 0.219972)",
+      "posture": {
+        "accelerations": {
+          "0": 0.0,
+          "1": 0.0201538803906039
+        },
+        "actual_movement": "(0.072953, 0.013999, -0.000021)",
+        "allocations": {
+          "0": 0.466271694545148,
+          "1": 0.533728305454852
+        },
+        "body_error": "(0.00376, 0.146628, 0.167565)",
+        "braking_advance": 0.0,
+        "desired_posture": "[X: (0.994069, 0.0, -0.108753), Y: (0.0, 1.0, 0.0), Z: (0.108753, 0.0, 0.994069), O: (0.040349, 1.391348, 0.387537)]",
+        "elapsed": 0.716666666666667,
+        "event": 2,
+        "length_errors": {
+          "0": 0.0197646617889404,
+          "1": 0.0317153632640839
+        },
+        "planned_lengths": {
+          "0": 0.338499069213867,
+          "1": 0.295476138591766
+        },
+        "rates": {
+          "0": 1.30451205393456e-15,
+          "1": -3.45444458636421e-06
+        },
+        "reason": "absolute_arm_targets_reached",
+        "requested_lengths": {
+          "0": 0.338360180324978,
+          "1": 0.295615027486622
+        },
+        "state": "COMPLETE"
+      },
+      "velocity": "(0.014475, 0.000445, 0.000002)"
+    },
+    {
+      "hands": [
+        {
+          "actual": 0.343689292669296,
+          "force": 133.91340637207,
+          "state": "ATTACHED",
+          "target": 0.312138954937028
+        },
+        {
+          "actual": 0.0,
+          "force": 0.0,
+          "state": "FREE",
+          "target": 0.62
+        }
+      ],
+      "label": "supported_swing",
+      "policy": 1,
+      "position": "(-0.666613, 1.300808, 0.281289)",
+      "posture": {
+        "accelerations": {
+          "0": 0.0203404556287301
+        },
+        "actual_movement": "(-0.114114, 0.132997, -0.117464)",
+        "allocations": {
+          "0": 1.0
+        },
+        "body_error": "(0.327222, 0.185117, 0.197334)",
+        "braking_advance": 0.0,
+        "desired_posture": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-0.336983, 1.484796, 0.480001)]",
+        "elapsed": 1.45,
+        "event": 1,
+        "length_errors": {
+          "0": 0.0316892266273499
+        },
+        "planned_lengths": {
+          "0": 0.312000066041946
+        },
+        "rates": {
+          "0": -3.51937005049069e-06
+        },
+        "reason": "absolute_arm_targets_reached",
+        "requested_lengths": {
+          "0": 0.312138954937028
+        },
+        "state": "COMPLETE"
+      },
+      "velocity": "(-0.144493, 0.067804, -0.082639)"
+    },
+    {
+      "hands": [
+        {
+          "actual": 0.292625457048416,
+          "force": 0.0,
+          "state": "FREE",
+          "target": 0.18
+        },
+        {
+          "actual": 0.304774612188339,
+          "force": 0.0,
+          "state": "FREE",
+          "target": 0.304276522427756
+        }
+      ],
+      "label": "dynamic_beam",
+      "policy": 1,
+      "position": "(-0.099316, 1.178349, 0.299812)",
+      "posture": {
+        "accelerations": {},
+        "allocations": {},
+        "braking_advance": 0.0,
+        "elapsed": 0.0,
+        "event": 0,
+        "planned_lengths": {},
+        "rates": {},
+        "reason": "hold_current_length",
+        "state": "HOLD"
+      },
+      "velocity": "(-0.032645, -0.013043, 0.03645)"
+    },
+    {
+      "hands": [
+        {
+          "actual": 0.0,
+          "force": 0.0,
+          "state": "FREE",
+          "target": 0.62
+        },
+        {
+          "actual": 0.0,
+          "force": 0.0,
+          "state": "FREE",
+          "target": 0.62
+        }
+      ],
+      "label": "controls",
+      "policy": 1,
+      "position": "(-0.00009, 1.166681, 0.40013)",
+      "posture": {
+        "accelerations": {},
+        "allocations": {},
+        "braking_advance": 0.0,
+        "elapsed": 0.0,
+        "event": 0,
+        "planned_lengths": {},
+        "rates": {},
+        "reason": "hold_current_length",
+        "state": "HOLD"
+      },
+      "velocity": "(-0.000001, -0.0, -0.0)"
+    }
+  ],
+  "variants": [
+    {
+      "initial_length": 0.486021429300308,
+      "plan": {
+        "accelerations": {},
+        "allocations": {},
+        "braking_advance": 0.0,
+        "elapsed": 0.0,
+        "event": 0,
+        "planned_lengths": {},
+        "rates": {},
+        "reason": "hold_current_length",
+        "state": "HOLD"
+      },
+      "policy": 0,
+      "rise": -5.36441802978516e-06,
+      "settled_length": 0.486021429300308
+    },
+    {
+      "initial_length": 0.486020445823669,
+      "plan": {
+        "accelerations": {
+          "0": 0.0276196117280914
+        },
+        "actual_movement": "(-0.036239, 0.064036, -0.180136)",
+        "allocations": {
+          "0": 1.0
+        },
+        "body_error": "(0.026065, 0.160474, 0.145052)",
+        "braking_advance": 0.0,
+        "desired_posture": "[X: (0.994069, 0.0, -0.108753), Y: (0.0, 1.0, 0.0), Z: (0.108753, 0.0, 0.994069), O: (-0.010265, 1.39119, 0.365047)]",
+        "elapsed": 1.11666666666667,
+        "event": 1,
+        "length_errors": {
+          "0": 0.0307427942752838
+        },
+        "planned_lengths": {
+          "0": 0.312000066041946
+        },
+        "rates": {
+          "0": -6.53759030548248e-06
+        },
+        "reason": "absolute_arm_targets_reached",
+        "requested_lengths": {
+          "0": 0.312138954952205
+        },
+        "state": "COMPLETE"
+      },
+      "policy": 1,
+      "rise": 0.0640352964401245,
+      "settled_length": 0.312138954952205
+    },
+    {
+      "initial_length": 0.486022502183914,
+      "plan": {
+        "accelerations": {
+          "0": 0.0276600824063773
+        },
+        "actual_movement": "(-0.036272, 0.064041, -0.180138)",
+        "allocations": {
+          "0": 1.0
+        },
+        "body_error": "(0.026099, 0.16047, 0.145053)",
+        "braking_advance": 0.0,
+        "desired_posture": "[X: (0.994069, 0.0, -0.108753), Y: (0.0, 1.0, 0.0), Z: (0.108753, 0.0, 0.994069), O: (-0.010264, 1.391192, 0.365046)]",
+        "elapsed": 1.11666666666667,
+        "event": 1,
+        "length_errors": {
+          "0": 0.0307451486587524
+        },
+        "planned_lengths": {
+          "0": 0.312000066041946
+        },
+        "rates": {
+          "0": -6.55703614856062e-06
+        },
+        "reason": "absolute_arm_targets_reached",
+        "requested_lengths": {
+          "0": 0.312138954952333
+        },
+        "state": "COMPLETE"
+      },
+      "policy": 2,
+      "rise": 0.0640407800674438,
+      "settled_length": 0.312138954952333
+    }
+  ]
+}

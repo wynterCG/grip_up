@@ -1,4 +1,16 @@
 extends Resource
+@export_group("v0.4 independent aim posture experiment")
+@export var posture_comfort_extension_ratio: float = 0.30
+@export var posture_body_surface_clearance: float = 0.24
+@export var posture_target_max_speed: float = 0.25
+@export var posture_target_max_acceleration: float = 1.0
+@export var posture_max_settle_time: float = 2.0
+@export var posture_tracking_tolerance: float = 0.07
+@export var posture_stall_confirm_time: float = 0.25
+@export var posture_saturation_ratio: float = 0.92
+@export var posture_tilt_stiffness: float = 12.0
+@export var posture_tilt_damping: float = 1.2
+@export var posture_gravity_moment_compensation: float = 0.80
 @export_group("v0.3 hold drag swing experiment")
 @export var arm_drag_sensitivity_m_per_px: float = 0.0015
 @export var arm_drag_deadzone_px: float = 0.10

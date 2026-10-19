@@ -66,6 +66,11 @@ var contextual_paused := false
 var contextual_owner := "GAME"
 var contextual_rebase := false
 var aim_labels: Array[Label] = []
+var posture_policy := 1
+var posture_assist_enabled := true
+var posture_tilt_assist_enabled := true
+var supported_wasd_swing_enabled := true
+var posture_choice: OptionButton
 var experimental_launch_enabled := false
 var profile_choice: OptionButton
 var hold_toggle: CheckButton
@@ -265,6 +270,7 @@ func load_test(index: int, use_checkpoint := false) -> void:
 	world.add_child(controller)
 	controller.configure(torso,profile)
 	controller.set_control_profile(input_profile)
+	_apply_independent_settings()
 	controller.experimental_launch_enabled = experimental_launch_enabled
 	controller.sample_ready.connect(_record_capture)
 	ground_motor = GroundLocomotion.new()
@@ -317,7 +323,7 @@ func _input(event: InputEvent) -> void:
 		_refresh_pointer_capture()
 		get_viewport().set_input_as_handled()
 		return
-	if input_profile==1 and event is InputEventMouseMotion:
+	if input_profile in [1,3] and event is InputEventMouseMotion:
 		pointer = event.position
 		var next_owner := _control_owner()
 		if next_owner!="GAME":
@@ -456,7 +462,7 @@ func _physics_process(delta: float) -> void:
 		var displacements: Array[float] = router.consume_drag(controller,_held_grips())
 		for id in 2:
 			controller.queue_arm_length_delta(id,displacements[id])
-	else:
+	elif input_profile==2:
 		controller.set_climb_intent(0,0,0,camera.global_basis.x)
 		controller.set_swing_intent(Vector3.ZERO if blocked else router.swing_direction(camera.global_basis.x),camera.global_basis.x)
 		var input_owner := _control_owner()
@@ -468,6 +474,10 @@ func _physics_process(delta: float) -> void:
 			for id in 2:
 				var hit: Dictionary=contextual.candidate(id,controller,camera)
 				controller.set_free_hand_target(id,hit.position if not hit.is_empty() else contextual.target(id,controller,camera))
+	else:
+		# Independent aim never calls either mouse-effort or arm-drag APIs.
+		controller.set_climb_intent(0,0,0,camera.global_basis.x)
+		controller.set_swing_intent(Vector3.ZERO if blocked or not supported_wasd_swing_enabled else router.swing_direction(camera.global_basis.x),camera.global_basis.x)
 	trial.max_speed = maxf(trial.max_speed,torso.linear_velocity.length())
 	trial.max_spin = maxf(trial.max_spin,torso.angular_velocity.length())
 	if session_ticks > 3 and torso.position.distance_to(previous_position) > 0.8:
@@ -584,6 +594,9 @@ func _process(delta: float) -> void:
 			hand_labels[i].text += "\n%.2f m  /  %.0f N" % [hand.actual_length,controller.get_arm_force(i).length()]
 			if input_profile>=1:
 				hand_labels[i].text += "\nTarget / %.2f m" % hand.rest_length
+			if input_profile==3:
+				var planned: Dictionary=controller.telemetry().get("posture",{})
+				hand_labels[i].text += "\nPlan / %.2f m" % planned.get("planned_lengths",{}).get(i,hand.rest_length)
 	status_label.text = hint if hint_time > 0 else ("WASD / Walk relative to camera. MMB / Orbit. Hold LMB / RMB on any surface to climb." if ground_motor.grounded and not ground_motor.has_climbing_intent() else "Grip anywhere within reach. W / Pull. S / Lower. Keep the other hand attached while transferring.")
 	if input_profile==1 and hint_time<=0 and ground_motor.has_climbing_intent():
 		status_label.text = "Hold each grip. Drag up / pull; down / lower, also while aiming. WASD / supported 3D swing."
@@ -591,6 +604,8 @@ func _process(delta: float) -> void:
 		var count: int=controller._attached_ids().size()
 		status_label.text=["Move mouse / aim free hands. Hold LMB or RMB / grip. WASD / walk.","ONE GRIP / Aim the free hand. Mouse down / pull; up / extend with supported effort.","TWO GRIPS / Mouse down / pull; up / extend; sideways / posture. WASD / 3D swing."][count]
 		if contextual_paused:status_label.text="Click to resume. Escape / Controls."
+	elif input_profile==3 and hint_time<=0:
+		status_label.text="AIM ONLY / Pick the next surface freely. Hold LMB / RMB. Supports drive bounded posture; WASD swings."
 	feet_panel.visible = physical_feet_enabled and controller.feet_solver!=null
 	if feet_panel.visible:
 		feet_label.text = "FEET / AUTOMATIC"
@@ -618,6 +633,9 @@ func _process(delta: float) -> void:
 			debug_label.text += "\n\nPROFILE 1 / HOLD + DRAG | Input %s\nSwing request %s | torque %s\nCamera right %s | forward %s\nLast arm requests %s | acquisitions %d" % [router.owner,str(launch.get("swing_requested",Vector3.ZERO)),str(launch.get("swing_torque",Vector3.ZERO)),str(camera.global_basis.x),str(Vector3.UP.cross(camera.global_basis.x).normalized()),str(router.last_displacements),controller.metrics.attaches]
 		elif input_profile==2:
 			debug_label.text += "\n\nCONTEXTUAL / %s | effort %s\nVirtual hand offsets %s\nActual mouse mode %s" % [_control_owner(),str(contextual.effort),str(contextual.offsets),str(Input.mouse_mode)]
+		elif input_profile==3:
+			var plan: Dictionary=launch.get("posture",{})
+			debug_label.text += "\n\nINDEPENDENT AIM / %s | mouse never commands length\n%s / %s | event %s\nBody error %s | target rates %s\nTarget acceleration %s | load shares %s" % [["A","B","C"][posture_policy],plan.get("state","IDLE"),plan.get("reason","none"),str(plan.get("event",0)),str(plan.get("body_error",Vector3.ZERO)),str(plan.get("rates",{})),str(plan.get("accelerations",{})),str(plan.get("allocations",{}))]
 
 func _save_trial(outcome: String) -> void:
 	if trial.is_empty():
@@ -643,6 +661,8 @@ func _record_capture(delta: float) -> void:
 	capture_trace.sample(delta,controller,{"scene":level_id,"launch_state":controller.telemetry().get("launch_state","IDLE"),
 		"control_profile":input_profile,"space_comparison":experimental_launch_enabled,"input_control":router.diagnostics(),
 		"contextual_input":contextual.diagnostics() if input_profile==2 else {},
+		"aim_input_does_not_change_length":input_profile==3,
+		"posture_policy":posture_policy if input_profile==3 else -1,"posture":contextual_data.get("posture",{}),
 		"contextual_filtered":[filtered.x,filtered.y],"contextual_actuation_m_s":[actuation.x,actuation.y],
 		"camera_right":capture_trace.vector(camera.global_basis.x),"camera_forward":capture_trace.vector(Vector3.UP.cross(camera.global_basis.x).normalized()),
 		"swing_requested":capture_trace.vector(controller.telemetry().get("swing_requested",Vector3.ZERO)),
@@ -720,7 +740,7 @@ func _setup_ui() -> void:
 	branding.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	row.add_child(branding)
 	_label("GRIP UP",36,branding,Color("edf4e9"))
-	_label("PHYSICS CLIMBING LAB  /  CONTEXTUAL ARMS",15,branding,COLORS[0])
+	_label("PHYSICS CLIMBING LAB  /  GRIP UP",15,branding,COLORS[0])
 	for i in LEVELS.size():
 		var index := i
 		var button := _button(["01  STATIC CLIMB","02  SWING & CATCH","03  REACTIVE STRUCTURE","04  FOOT SUPPORT"][i],func():load_test(index),row)
@@ -797,9 +817,34 @@ func _setup_ui() -> void:
 	profile_choice.add_item("0 / Baseline: W/S pull, A/D bias, Space launch")
 	profile_choice.add_item("1 / Hold + arm drag + 3D swing (experimental)")
 	profile_choice.add_item("2 / Contextual arms + virtual hand aim (experimental)")
+	profile_choice.add_item("3 / v0.4 Independent aim + physical posture (opt-in)")
 	profile_choice.select(input_profile)
 	profile_choice.item_selected.connect(_set_input_profile)
 	settings_box.add_child(profile_choice)
+	_label("v0.4 posture comparison / same strength",18,settings_box,COLORS[0])
+	posture_choice=OptionButton.new()
+	posture_choice.add_item("A / Hold current length")
+	posture_choice.add_item("B / Bounded supported auto-pull")
+	posture_choice.add_item("C / Load-aware supported auto-pull")
+	posture_choice.select(posture_policy)
+	posture_choice.item_selected.connect(_set_posture_policy)
+	settings_box.add_child(posture_choice)
+	var posture_toggle := CheckButton.new()
+	posture_toggle.text="Enable v0.4 bounded posture assistance"
+	posture_toggle.button_pressed=posture_assist_enabled
+	posture_toggle.toggled.connect(func(on:bool):posture_assist_enabled=on;_apply_independent_settings())
+	settings_box.add_child(posture_toggle)
+	var tilt_toggle := CheckButton.new()
+	tilt_toggle.text="Enable v0.4 limited posture tilt assistance / 20 Nm budget"
+	tilt_toggle.button_pressed=posture_tilt_assist_enabled
+	tilt_toggle.toggled.connect(func(on:bool):posture_tilt_assist_enabled=on;_apply_independent_settings())
+	settings_box.add_child(tilt_toggle)
+	var swing_toggle := CheckButton.new()
+	swing_toggle.text="Enable v0.4 supported WASD swing"
+	swing_toggle.button_pressed=supported_wasd_swing_enabled
+	swing_toggle.toggled.connect(func(on:bool):supported_wasd_swing_enabled=on;_apply_independent_settings())
+	settings_box.add_child(swing_toggle)
+	_label("v0.4 targets / 0.25 m/s, 1 m/s? | hands / 360 N total",16,settings_box,COLORS[0])
 	hold_toggle = CheckButton.new()
 	hold_toggle.text = "Hold to grip / mandatory in experimental profiles"
 	hold_toggle.button_pressed = hold_mode
@@ -817,7 +862,7 @@ func _setup_ui() -> void:
 	settings_box.add_child(sounds)
 	var sensitivity_row := HBoxContainer.new()
 	settings_box.add_child(sensitivity_row)
-	_label("Arm drag sensitivity / m per pixel",17,sensitivity_row)
+	_label("Profile 1 drag sensitivity / m per pixel",17,sensitivity_row)
 	var sensitivity := SpinBox.new()
 	sensitivity.min_value = 0.0001
 	sensitivity.max_value = 0.005
@@ -830,7 +875,7 @@ func _setup_ui() -> void:
 	)
 	sensitivity_row.add_child(sensitivity)
 	var aim_sensitivity := SpinBox.new()
-	_label("Virtual hand sensitivity / m per pixel",17,settings_box)
+	_label("Profile 2 virtual hand sensitivity / m per pixel",17,settings_box)
 	aim_sensitivity.min_value=.0002
 	aim_sensitivity.max_value=.006
 	aim_sensitivity.step=.0002
@@ -839,7 +884,7 @@ func _setup_ui() -> void:
 	settings_box.add_child(aim_sensitivity)
 	var rate_row := HBoxContainer.new()
 	settings_box.add_child(rate_row)
-	_label("Arm target maximum speed / m per second",17,rate_row)
+	_label("Profile 1 target maximum speed / m per second",17,rate_row)
 	var rate := SpinBox.new()
 	rate.min_value = 0.1
 	rate.max_value = 1.2
@@ -917,6 +962,8 @@ func _set_hold_mode(on: bool) -> void:
 	message("Hold each mouse button to grip; release it to let go." if on else "Toggle mode: click to grip, click again to let go.")
 
 func _controls_hint() -> String:
+	if input_profile==3:
+		return "Mouse / Aim only    Hold LMB / RMB / Grip    WASD / Supported swing or walk    MMB / Orbit    Wheel / Dolly    Esc / Controls"
 	if input_profile==2:
 		return "Mouse / Virtual hands + supported effort    Hold LMB / RMB / Grip    WASD / Swing or walk    MMB / Orbit    Esc / Controls"
 	if input_profile==1:
@@ -941,7 +988,7 @@ func _control_owner() -> String:
 	return "UI" if hovered!=null else "GAME"
 
 func _set_input_profile(profile: int) -> void:
-	input_profile = clampi(profile,0,2)
+	input_profile = clampi(profile,0,3)
 	router.reset_control_input()
 	contextual.reset()
 	contextual_paused=false
@@ -957,13 +1004,15 @@ func _set_input_profile(profile: int) -> void:
 	if is_instance_valid(controller):
 		controller.set_control_profile(input_profile)
 		controller.experimental_launch_enabled = experimental_launch_enabled
+		_apply_independent_settings()
 	if not trial.is_empty():
 		trial.control_profile = input_profile
 	controls_label.text = _controls_hint()
 	_update_objective()
 	_refresh_pointer_capture()
-	message("Hold to grip. Drag up to pull, down to lower. WASD swings through your grips." if input_profile==1 else "Baseline / W pulls, S lowers, A/D biases, Space charges a launch.")
+	message(["Baseline / W pulls, S lowers, A/D biases, Space charges a launch.","Hold to grip. Drag up to pull, down to lower. WASD swings through your grips.","Contextual arms / relative mouse aims and requests supported effort.","Independent aim / mouse selects contacts only. Hold LMB / RMB; WASD swings."][input_profile])
 	if input_profile==2:message("Relative mouse aims free hands and requests supported effort. Hold LMB / RMB. Escape / Controls.")
+	if input_profile==3:message("v0.4 / Mouse aims only. Acquire supports to test bounded posture. WASD / supported swing. Space comparison is OFF by default.")
 
 func _update_objective() -> void:
 	objective_label.text = level.objective
@@ -974,6 +1023,21 @@ func _update_objective() -> void:
 			objective_label.text = "Hold the two targets and drag to change arm length.\nFoot contacts are optional; baseline profile 0 retains the W-driven feet comparison."
 	elif input_profile==2:
 		objective_label.text="Move the L / R virtual aims onto reachable surfaces. Hold that hand's button.\nMouse down / pull; up / extend through supported effort. WASD swings."
+	elif input_profile==3:
+		objective_label.text="Aim at any reachable surface. Hold LMB / RMB, then choose the next contact.\nAiming never commands arm length; compare posture policies A / B / C in Controls."
+
+func _apply_independent_settings() -> void:
+	if not is_instance_valid(controller):return
+	controller.independent_aim_enabled=input_profile==3
+	controller.posture_assist_enabled=posture_assist_enabled
+	controller.posture_tilt_assist_enabled=posture_tilt_assist_enabled
+	controller.supported_wasd_swing_enabled=supported_wasd_swing_enabled
+	controller.set_posture_policy(posture_policy)
+
+func _set_posture_policy(policy: int) -> void:
+	posture_policy=clampi(policy,0,2)
+	if is_instance_valid(posture_choice):posture_choice.select(posture_policy)
+	_apply_independent_settings()
 
 func _refresh_pointer_capture() -> void:
 	if not is_instance_valid(settings) or not is_instance_valid(rating_panel):return

@@ -12,14 +12,16 @@ names = ['physics','platform_probe','wall_clearance','biped_profile','playthroug
          'climb_direction','leg_motion','pendulum','free_climb','launch','full_reach','biped_asset']
 label = sys.argv[1] if len(sys.argv)>1 else 'regressions'
 selected = sys.argv[2:]
-if label in ['m1','m2','v03','contextual']:
+if label in ['m1','m2','v03','contextual','v04']:
     names += ['m0_instrumentation','capture_input','capture_matrix']
-if label in ['m2','v03','contextual']:
+if label in ['m2','v03','contextual','v04']:
     names += ['foot_support','foot_integration','feet_routes','feet_swing']
-if label in ['v03','contextual']:
+if label in ['v03','contextual','v04']:
     names += ['drag_input','drag_swing_physics']
-if label == 'contextual':
+if label in ['contextual','v04']:
     names += ['contextual_input','contextual_physics']
+if label == 'v04':
+    names += ['independent_input','independent_physics','independent_routes']
 assert all(name in names for name in selected)
 dest = root/'docs'/'validation'/label
 dest.mkdir(parents=True,exist_ok=True)

@@ -1,12 +1,42 @@
-# GRIP UP / physics climbing lab 0.3
+# GRIP UP / physics climbing lab 0.4
 
-Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-contextual.exe`.
+Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v0.4.exe`.
 PC mouse and keyboard. Resizable 1920x1080 reference canvas; initial window 1440x810.
 Integrated Jolt, 120 Hz. Core and complete routes also tested at 60 Hz.
 
 This is a separate prototype. The Janga object grabber and its project are unchanged.
 
-## Contextual Arm Control (current default)
+## v0.4 independent aim (opt-in experiment)
+
+Open **Controls / Esc**, choose **3 / v0.4 Independent aim + physical posture**.
+The preserved startup comparison is still profile 2. In profile 3, the visible
+pointer only selects real surface contacts: it never changes supporting arm
+lengths, posture plans or effort. Hold LMB/RMB for each hand; mouse-up releases
+that hand, including over UI. MMB orbits; wheel dollies. WASD walks on the ground
+and requests physically supported swing when attached.
+
+Compare **A / hold length**, **B / bounded auto-pull**, and **C / load-aware pull**
+on the same geometry and strength. B/C produce finite geometric settling goals
+per support configuration. Target speed is 0.25 m/s, acceleration 1 m/s?; blockers,
+slip, saturation and a 2 s deadline stop advancement. Repeated identical anchors
+reuse absolute goals. Controls exposes posture, limited tilt and supported-swing
+switches. Space launch, predictive catches and physical feet stay optional OFF.
+
+Limits stay 12 kg, 360 N shared hands, 20 Nm assistance, 150 Nm total torque,
+0.65708 m selectable reach, 0.18?0.62 m targets and 4 m/s reaching speed.
+The limited gripper moment has a dynamic support reaction; it does not freeze
+the torso. Actual length, requested length and planned length remain separate.
+Tab opens diagnostics; optional JSONL logging includes plan reasons and failures.
+
+All 2,012 automated checks pass at the supported frequencies. B/C complete ten
+alternating transfers at 0.16 and 0.20 m vertical spacing on an unadorned lane of
+the existing wall, with deliberate timed A/D input. The central protrusions can
+still block a route. This is automated feasibility evidence, not human skill or
+comfort validation. **Recommendation: REVISE / continue human comparison.**
+See [v0.4 report](docs/validation/V04.md) and archived evidence in
+`docs/validation/v04/`. Earlier profiles 0, 1 and 2 remain available.
+
+## Contextual Arm Control (preserved startup comparison)
 
 The game now opens in **Profile 2**. Relative mouse movement directs anatomical
 virtual targets for FREE hands; L/R reticles mark each hand's aim. Real raycasts,
@@ -30,7 +60,8 @@ Space launch, predictive catches and physical feet remain optional and OFF.
 With one attached hand, aiming and physical effort share mouse movement, as
 requested in the contextual design. Virtual hand aims use a camera-facing plane
 with anatomical reach limits.
-Human comfort and long-session coordination still need playtesting.
+This shared aim/effort mapping was rejected as the independent-aim solution.
+It remains available for comparison; human comfort still needs playtesting.
 See `docs/validation/CONTEXTUAL.md` and `docs/specs/contextual_arm_control.md`.
 
 ## Earlier 0.3: hold, drag and supported swing
