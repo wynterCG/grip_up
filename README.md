@@ -1,10 +1,26 @@
-# GRIP UP / physics climbing lab 0.7.2 candidate
+# GRIP UP / physics climbing lab 0.7.3 candidate
 
-Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v0.7.2.exe`.
+Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v0.7.3.exe`.
 PC mouse and keyboard. Resizable 1920x1080 reference canvas; initial window 1440x810.
 Integrated Jolt, 120 Hz. Core and complete routes also tested at 60 Hz.
 
 This is a separate prototype. The Janga object grabber and its project are unchanged.
+
+## v0.7.3 the first route
+
+**Controls / PLAY / The first route** opens one short continuous course:
+climb, cross right, then transfer along the hanging bars to the turquoise finish.
+The coloured wall areas are broad goals. Every eligible face remains grippable;
+the course never chooses a handhold or moves the character for you.
+
+Hold LMB/RMB, use W to rise and W+D to cross, and move each hand along the first
+bar before reaching the last one. R restarts immediately. Falling onto the safe
+base resets progress; completion leaves control available. The final stage needs
+actual suspension, with no ground or meaningful foot load, on the finish material.
+
+This adds an authored M5 comparison route. The v0.7.2 maximum-reach controller,
+physical budgets and earlier labs are preserved. There is no new mantle or launch.
+See the [route report](docs/validation/v073/comparison_summary.md).
 
 ## v0.7.2 reach toward a surface
 

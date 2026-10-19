@@ -12,9 +12,10 @@ const GripIntentBuffer = preload("res://features/grip_up/scripts/grip_intent_buf
 const CaptureDebugDraw = preload("res://features/grip_up/scripts/capture_debug_draw.gd")
 const GripFeedback = preload("res://features/grip_up/scripts/grip_feedback.gd")
 const TransferProgress = preload("res://features/grip_up/scripts/transfer_route_progress.gd")
+const ClimbingRouteProgress = preload("res://features/grip_up/scripts/climbing_route_progress.gd")
 const ReachAssessment = preload("res://features/grip_up/scripts/reach_assessment.gd")
 const ContextualInput = preload("res://features/grip_up/scripts/contextual_arm_input.gd")
-const LEVELS = [preload("res://features/grip_up/scenes/static_climb.tscn"), preload("res://features/grip_up/scenes/swing_and_catch.tscn"), preload("res://features/grip_up/scenes/reactive_structure.tscn"), preload("res://features/grip_up/scenes/foot_support.tscn"),preload("res://features/grip_up/scenes/transfer_lab.tscn"),preload("res://features/grip_up/scenes/swing_reach_lab.tscn"),preload("res://features/grip_up/scenes/intent_step.tscn"),preload("res://features/grip_up/scenes/intent_hang.tscn"),preload("res://features/grip_up/scenes/intent_traverse.tscn"),preload("res://features/grip_up/scenes/intent_corner.tscn")]
+const LEVELS = [preload("res://features/grip_up/scenes/static_climb.tscn"), preload("res://features/grip_up/scenes/swing_and_catch.tscn"), preload("res://features/grip_up/scenes/reactive_structure.tscn"), preload("res://features/grip_up/scenes/foot_support.tscn"),preload("res://features/grip_up/scenes/transfer_lab.tscn"),preload("res://features/grip_up/scenes/swing_reach_lab.tscn"),preload("res://features/grip_up/scenes/intent_step.tscn"),preload("res://features/grip_up/scenes/intent_hang.tscn"),preload("res://features/grip_up/scenes/intent_traverse.tscn"),preload("res://features/grip_up/scenes/intent_corner.tscn"),preload("res://features/grip_up/scenes/climbing_route.tscn")]
 const COLORS = [Color("65dfcc"), Color("f0b85c")]
 var torso: RigidBody3D
 var controller: Node
@@ -90,6 +91,7 @@ var transfer_diagnostics_enabled := false
 var transfer_route_spacing := .12
 var transfer_session_id := ""
 var transfer_progress = TransferProgress.new()
+var climbing_route = ClimbingRouteProgress.new()
 var transfer_diagnostics_toggle: CheckButton
 var posture_choice: OptionButton
 var experimental_launch_enabled := false
@@ -229,6 +231,7 @@ func load_test(index: int, use_checkpoint := false) -> void:
 	level_id = index
 	transfer_session_id="%s_%d_%d" % [Time.get_datetime_string_from_system(true).replace(":","-"),OS.get_process_id(),Time.get_ticks_usec()]
 	transfer_progress=TransferProgress.new()
+	climbing_route=ClimbingRouteProgress.new()
 	checkpoint_active = checkpoint_active and use_checkpoint and index == 0
 	world = Node3D.new()
 	world.name = "TrialWorld"
@@ -571,6 +574,8 @@ func _physics_process(delta: float) -> void:
 		message("Checkpoint saved on the rest ledge. R returns here.")
 	if level_id==4:
 		transfer_progress.update(controller,level.transfer_points,trial.elapsed)
+	if level_id==10:
+		climbing_route.update(controller,ground_motor.grounded,level.route_zones,trial.elapsed,delta)
 	var finish_support = level.holds[-1]
 	var on_final_hold := false
 	for hand in controller.hands:
@@ -590,13 +595,17 @@ func _physics_process(delta: float) -> void:
 		goal = goal and torso.position.x > 0.4
 	if level_id>=6:
 		goal=controller.hands.any(func(hand):return hand.state=="ATTACHED" and Vector3(hand.anchor_world).distance_to(level.finish_point)<.12) and torso.linear_velocity.length()<1.0
+	if level_id==10:goal=climbing_route.completed
 	stable_goal = stable_goal + delta if goal else 0.0
 	if stable_goal > 0.5 and not won:
 		won = true
 		trial.goal_seconds = trial.elapsed
 		_save_trial("goal")
-		rating_panel.show()
-		message("Test complete. Rate the feel, retry, or select another test.")
+		if level_id==10:
+			message("ROUTE COMPLETE / R to try again. You kept control through the whole climb.")
+		else:
+			rating_panel.show()
+			message("Test complete. Rate the feel, retry, or select another test.")
 
 func _process(delta: float) -> void:
 	if not is_instance_valid(controller):
@@ -734,6 +743,11 @@ func _process(delta: float) -> void:
 	elif launch.get("launch_state")=="PULLING":
 		status_label.text = "LAUNCH / reach for your next grip."
 	checkpoint_label.text = "CHECKPOINT ACTIVE" if checkpoint_active else "R / QUICK RESET"
+	if level_id==10:
+		checkpoint_label.text="ROUTE COMPLETE / R to retry" if climbing_route.completed else "ROUTE / %d OF %d  |  R / retry" % [climbing_route.stage+1,level.route_zones.size()]
+		if not climbing_route.completed:
+			var zone:Dictionary=level.route_zones[climbing_route.stage]
+			status_label.text=zone.hint if input_profile==4 else "COMPARE / Choose grips with the mouse. Existing posture policy moves the body; WASD requests supported swing."
 	debug_label.visible = debug_visible
 	if debug_visible:
 		debug_label.text = "PHYSICS / %d Hz  |  step %d  |  %.2f ms  |  %d fps\nBody %s  |  rotation %s\nv %s  /  spin %s" % [Engine.physics_ticks_per_second,session_ticks,Performance.get_monitor(Performance.TIME_PHYSICS_PROCESS)*1000,Engine.get_frames_per_second(),str(torso.position),str(torso.rotation),str(torso.linear_velocity),str(torso.angular_velocity)]
@@ -825,6 +839,7 @@ func _on_transfer_event(event: Dictionary) -> void:
 	var event_hand: int=int(event.get("hand",-1))
 	row.attempt_assessment=attempt_assessments[event_hand].duplicate(true) if event_hand in [0,1] else {}
 	row.route=transfer_progress.diagnostics() if level_id==4 else {}
+	row.climbing_route=climbing_route.diagnostics() if level_id==10 else {}
 	DirAccess.make_dir_recursive_absolute("user://transfer_sessions")
 	var path: String="user://transfer_sessions/%s.jsonl" % transfer_session_id
 	var file:=FileAccess.open(path,FileAccess.READ_WRITE if FileAccess.file_exists(path) else FileAccess.WRITE)
@@ -845,6 +860,7 @@ func _save_trial(outcome: String) -> void:
 	row.transfer_session=transfer_session_id
 	row.transfer_diagnostics_enabled=transfer_diagnostics_enabled
 	row.transfer_route=transfer_progress.diagnostics() if level_id==4 else {}
+	row.climbing_route=climbing_route.diagnostics() if level_id==10 else {}
 	row.intent_climb_enabled=intent_climb_enabled and input_profile==4
 	row.intent_locomotion=controller.telemetry().get("intent_locomotion",{})
 	row.posture_policy=posture_policy
@@ -878,6 +894,7 @@ func _record_capture(delta: float) -> void:
 		"aim_input_does_not_change_length":input_profile in [3,4],
 		"intent_climb_enabled":intent_climb_enabled and input_profile==4,"intent_locomotion":controller.telemetry().get("intent_locomotion",{}),
 		"transfer_posture":contextual_data.get("transfer_posture",{}),"transfer_assist_enabled":transfer_assist_enabled,"posture_variant":posture_variant,"transfer_session":transfer_session_id,"transfer_diagnostics":controller.transfer_diagnostics(),"transfer_route":transfer_progress.diagnostics() if level_id==4 else {},
+		"climbing_route":climbing_route.diagnostics() if level_id==10 else {},
 		"posture_policy":posture_policy if input_profile in [3,4] else -1,"posture":contextual_data.get("posture",{}),
 		"contextual_filtered":[filtered.x,filtered.y],"contextual_actuation_m_s":[actuation.x,actuation.y],
 		"camera_right":capture_trace.vector(camera.global_basis.x),"camera_forward":capture_trace.vector(Vector3.UP.cross(camera.global_basis.x).normalized()),
@@ -1070,6 +1087,7 @@ func _setup_ui() -> void:
 	_button("The Hang",func():_open_intent_arena(7,false),intent_row)
 	_button("The Traverse",func():_open_intent_arena(8,false),intent_row)
 	_button("The Corner",func():_open_intent_arena(9,false),intent_row)
+	_button("PLAY / The first route",func():_open_intent_arena(10,true);_set_distant_targeting(true),settings_box)
 	var intent_compare_row:=HBoxContainer.new()
 	settings_box.add_child(intent_compare_row)
 	_button("v0.7 / Beam",func():_open_intent_arena(2,false),intent_compare_row)

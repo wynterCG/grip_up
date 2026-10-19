@@ -6,8 +6,8 @@ import hashlib,json,re,shutil,subprocess,sys
 root=Path(__file__).resolve().parents[1]
 dest=Path(r'E:\Godot Games\grip_up')
 version=sys.argv[1] if len(sys.argv)>1 else 'v07'
-assert version in ['v07','v071','v072']
-exe_name={'v07':'GripUp-v0.7.exe','v071':'GripUp-v0.7.1.exe','v072':'GripUp-v0.7.2.exe'}[version]
+assert version in ['v07','v071','v072','v073']
+exe_name={'v07':'GripUp-v0.7.exe','v071':'GripUp-v0.7.1.exe','v072':'GripUp-v0.7.2.exe','v073':'GripUp-v0.7.3.exe'}[version]
 folder=root/f'docs/validation/{version}'
 final=folder/'final'
 aggregate=json.loads((folder/'results.json').read_text())
@@ -64,6 +64,14 @@ if version in ['v071','v072']:
     report['refinement_baseline_ref']='ec89ebd' if version=='v072' else 'cea4ae0'
     report['native_handoffs']={hz:run.get('second_handoff',{}) for hz,run in native.items()}
     if version=='v072':report['native_reachable_grips']={hz:run['trials'] for hz,run in native.items()}
+    for target in [root/'builds/verification.json',final/'verification.json']:
+        target.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+if version=='v073':
+    report['decision']='KEEP as a short M5 route candidate; human route comparison remains open'
+    report['human_feedback_received']='Designer: muito melhor on v0.7.2 reach; route not yet evaluated'
+    report['refinement_baseline_ref']='a78ecb0'
+    report['native_route']={hz:run['route'] for hz,run in native.items()}
+    assert all(run['route']['completed'] for run in native.values())
     for target in [root/'builds/verification.json',final/'verification.json']:
         target.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
 for source_name,target_name in [(f'{version}_ui_final.json','ui_final.json'),(f'{version}_controls_final.png','controls_final.png'),('export00000002.png','export_smoke.png')]:shutil.copy2(root/'builds'/source_name,final/target_name)

@@ -4,12 +4,13 @@ import gzip,hashlib,json,shutil,subprocess,sys
 
 root=Path(__file__).resolve().parents[1]
 version=sys.argv[1] if len(sys.argv)>1 else 'v07'
-assert version in ['v07','v071','v072']
-native_prefix={'v07':'intent','v071':'intent_refinement','v072':'reachable_grip'}[version]
-labels={'v07':['step_false','step_true','traverse','hang'],'v071':['step_false','step_true','first_handoff','second_handoff','hang'],'v072':['reach_0_03','reach_0_15']}[version]
+assert version in ['v07','v071','v072','v073']
+native_prefix={'v07':'intent','v071':'intent_refinement','v072':'reachable_grip','v073':'climbing_route'}[version]
+labels={'v07':['step_false','step_true','traverse','hang'],'v071':['step_false','step_true','first_handoff','second_handoff','hang'],'v072':['reach_0_03','reach_0_15'],'v073':['route_start','route_climb','route_traverse','route_finish']}[version]
 test_names=['intent_locomotion','intent_swing','intent_integration','intent_arenas']
-if version in ['v071','v072']:test_names+=['intent_reversal','intent_progress','intent_handoffs','intent_frame_sign']
-if version=='v072':test_names+=['reachable_grip','reach_visual']
+if version in ['v071','v072','v073']:test_names+=['intent_reversal','intent_progress','intent_handoffs','intent_frame_sign']
+if version in ['v072','v073']:test_names+=['reachable_grip','reach_visual']
+if version=='v073':test_names+=['route_progress','climbing_route']
 out=root/f'docs/validation/{version}/final'
 out.mkdir(exist_ok=True)
 user=Path.home()/'AppData/Roaming/Godot/app_userdata/GRIP UP'

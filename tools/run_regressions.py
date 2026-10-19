@@ -13,7 +13,7 @@ names = ['physics','platform_probe','wall_clearance','biped_profile','playthroug
 label = sys.argv[1] if len(sys.argv)>1 else 'regressions'
 requested_label = label
 if label == 'v07_baseline':label = 'v06'
-if label in ['v07','v071','v072']:label = 'v06'
+if label in ['v07','v071','v072','v073']:label = 'v06'
 selected = sys.argv[2:]
 if label in ['m1','m2','v03','contextual','v04','v05','v06']:
     names += ['m0_instrumentation','capture_input','capture_matrix']
@@ -30,12 +30,14 @@ if label in ['v05','v06']:
               'posture_study','swing_diagnostics','transfer_swing','reach_assessment','transfer_capture']
 if label == 'v06':
     names += ['distant_baseline','pending_grip','pending_motion','pending_contact','distant_input','distant_routes','distant_swing']
-if requested_label in ['v07','v071','v072']:
+if requested_label in ['v07','v071','v072','v073']:
     names += ['intent_locomotion','intent_swing','intent_integration','intent_arenas']
-if requested_label in ['v071','v072']:
+if requested_label in ['v071','v072','v073']:
     names += ['intent_reversal','intent_progress','intent_handoffs','intent_frame_sign']
-if requested_label == 'v072':
+if requested_label in ['v072','v073']:
     names += ['reachable_grip','reach_visual']
+if requested_label == 'v073':
+    names += ['route_progress','climbing_route']
 assert all(name in names for name in selected)
 dest = root/'docs'/'validation'/requested_label
 dest.mkdir(parents=True,exist_ok=True)
