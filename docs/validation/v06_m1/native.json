@@ -1,0 +1,97 @@
+{
+	"checks": [
+		{
+			"label": "native baseline supporting left acquired",
+			"passed": true
+		},
+		{
+			"label": "native two-second pending persists without pointer retarget",
+			"passed": true
+		},
+		{
+			"label": "native pending has no load and stays in anatomical workspace",
+			"passed": true
+		},
+		{
+			"label": "native right release preserves left support",
+			"passed": true
+		},
+		{
+			"label": "native cancelled target does not attach later",
+			"passed": true
+		}
+	],
+	"complete": true,
+	"focus_events": [],
+	"pending": {
+		"acquisition_load": 0.0,
+		"active": true,
+		"attempt_id": 1,
+		"blocked": false,
+		"blocker_id": 0,
+		"contact_time": -1.0,
+		"distance": 0.883051872253418,
+		"gesture_speed": 0.0000286660524579929,
+		"gesture_velocity": "(0.0, 0.000029, 0.000002)",
+		"hand_goal": "(0.168731, 2.032491, 0.21003)",
+		"hand_world": "(0.168731, 2.032491, 0.21003)",
+		"held": true,
+		"local_normal": "(0.0, -1.0, 0.0)",
+		"local_point": "(-0.000705, -0.05, -0.008174)",
+		"motion_scope": "shoulder-frame transport plus finite relative gesture; full world sweep",
+		"normal_world": "(0.0, -1.0, 0.0)",
+		"pending_time": 1.99999999999999,
+		"reach_margin": -0.225971872253418,
+		"reason": "out_of_reach",
+		"requested_gesture_speed": 0.0000286660524579929,
+		"requested_gesture_velocity": "(0.0, 0.000029, 0.000002)",
+		"selected_time": 0.941666666666666,
+		"shoulder_world": "(-0.356309, 1.690797, 0.408354)",
+		"substate": "PENDING_OUT_OF_REACH",
+		"support_id": 145441687996,
+		"target_relative_speed": 0.0000297067999781575,
+		"target_world": "(0.349295, 2.15, 0.141826)",
+		"transition_count": 0,
+		"transport_speed": 0.00000894069580681389,
+		"transport_velocity": "(0.000007, 0.0, -0.000005)",
+		"workspace_valid": true,
+		"world_speed": 0.0000297067999781575,
+		"world_velocity": "(0.000007, 0.000029, -0.000004)"
+	},
+	"snapshots": [
+		{
+			"hands": [
+				{
+					"actual": 0.570209503173828,
+					"force": 6.19777202606201,
+					"reason": "",
+					"state": "ATTACHED",
+					"target": 0.568814635276794
+				},
+				{
+					"actual": 0.883051872253418,
+					"force": 0.0,
+					"reason": "",
+					"state": "REACHING",
+					"target": 0.62
+				}
+			],
+			"label": "v06_m1_pending",
+			"policy": 0,
+			"position": "(-0.548622, 1.166693, 0.399943)",
+			"posture": {
+				"accelerations": {},
+				"allocations": {},
+				"braking_advance": 0.0,
+				"elapsed": 0.0,
+				"event": 0,
+				"planned_lengths": {},
+				"rates": {},
+				"reason": "hold_current_length",
+				"state": "HOLD"
+			},
+			"velocity": "(0.000007, 0.0, -0.000002)"
+		}
+	],
+	"variants": []
+}

@@ -14,6 +14,9 @@ const TargetCoordinator = preload("res://features/grip_up/scripts/arm_target_coo
 const TransferDiagnostics = preload("res://features/grip_up/scripts/transfer_diagnostics.gd")
 const TwistRefinement = preload("res://features/grip_up/scripts/supported_twist_refinement.gd")
 const PostureRefinement = preload("res://features/grip_up/scripts/supported_posture_refinement.gd")
+const PendingGripTarget = preload("res://features/grip_up/scripts/pending_grip_target.gd")
+var _held_targets: Dictionary = {}
+var _held_target_serial := 0
 var transfer_assist_enabled := false
 var posture_variant := 0
 var _twist_refinement = TwistRefinement.new()
@@ -79,6 +82,7 @@ func configure(body: RigidBody3D, configuration: Resource = null) -> void:
 	reset_state()
 
 func reset_state() -> void:
+	_held_targets.clear()
 	_twist_refinement.reset()
 	_posture_refinement.reset()
 	transfer_journal.reset()
@@ -145,6 +149,9 @@ func set_control_profile(profile: int) -> void:
 	var next := clampi(profile,0,3)
 	if next == control_profile:
 		return
+	for hand_id in _held_targets.keys():
+		if _held_targets[hand_id].active and get_hand_state(hand_id)=="REACHING":
+			release_grip(hand_id,"input_released")
 	control_profile = next
 	_twist_refinement.reset()
 	_posture_refinement.reset()
@@ -364,6 +371,49 @@ func get_arm_force(id: int) -> Vector3:
 func request_grip(id: int, support: PhysicsBody3D, world_point: Vector3, normal: Vector3) -> bool:
 	return _request_grip(id,support,world_point,normal,false)
 
+func request_held_grip(id: int, support: PhysicsBody3D, world_point: Vector3, normal: Vector3) -> bool:
+	if not tuning.allow_out_of_reach_grip_targets:
+		return request_grip(id,support,world_point,normal)
+	if _transfer_enabled():
+		transfer_journal.begin_attempt(self,id,support,world_point,normal)
+		_publish_transfer_events()
+	metrics["attempts"] += 1
+	if id not in [0,1] or not is_instance_valid(torso) or not is_instance_valid(support) or support==torso:
+		return _reject("invalid_hand_or_support")
+	if get_hand_state(id) not in ["FREE","RELEASED"]:
+		return _reject("release_hand_before_regrip")
+	if not support is StaticBody3D and not support is RigidBody3D:
+		return _reject("unsupported_body_type")
+	if not support.is_inside_tree() or not bool(support.get_meta("grippable",true)):
+		return _reject("surface_not_grippable")
+	if not world_point.is_finite() or not normal.is_finite() or normal.length_squared()<.5:
+		return _reject("invalid_surface_point")
+	var hand: Dictionary = hands[id]
+	var selected = Anchor.new(support,world_point,normal.normalized())
+	var pending = PendingGripTarget.new()
+	_held_target_serial += 1
+	pending.configure(selected,Transform3D(torso.global_basis.orthonormalized(),get_shoulder_world(id)),hand.hand_world,simulation_time,_held_target_serial,get_max_reach())
+	_held_targets[id] = pending
+	_free_hand_targets.erase(id)
+	hand.merge({"state":"REACHING","anchor":selected,"support":support,"elapsed":0.0,
+		"target_world":world_point,"anchor_world":world_point,"actual_length":get_shoulder_world(id).distance_to(world_point),
+		"force":Vector3.ZERO,"reaction_force":Vector3.ZERO,"allocation":0.0,"reason":"",
+		"held_target_pending":true,"predictive_wait":false},true)
+	last_rejection = ""
+	if _transfer_enabled():
+		transfer_journal.observe(self,id,"TARGET_SELECTED_OUT_OF_REACH" if hand.actual_length>get_max_reach() else "TARGET_SELECTED_IN_REACH","TRANSIT","held_material_target_selected",{"pending":pending.diagnostics()})
+		_publish_transfer_events()
+	return true
+
+func set_hand_held(id: int, held: bool, reason: String = "input_released") -> void:
+	if not _held_targets.has(id) or not _held_targets[id].active:
+		return
+	_held_targets[id].held = held
+	if not held:release_grip(id,reason)
+
+func pending_diagnostics(id: int) -> Dictionary:
+	return _held_targets[id].diagnostics() if _held_targets.has(id) else {"active":false,"held":false}
+
 func request_buffered_grip(id: int, support: PhysicsBody3D, world_point: Vector3, normal: Vector3) -> bool:
 	if not tuning.predictive_grip:
 		return request_grip(id,support,world_point,normal)
@@ -447,6 +497,8 @@ func _reject(reason: String) -> bool:
 func release_grip(id: int, reason: String = "manual") -> void:
 	if id < 0 or id >= hands.size():
 		return
+	if _held_targets.has(id) and _held_targets[id].active:
+		_held_targets[id].cancel(reason)
 	if _transfer_enabled():
 		transfer_journal.release(self,id,reason)
 		_publish_transfer_events()
@@ -471,6 +523,7 @@ func release_grip(id: int, reason: String = "manual") -> void:
 	hand["allocation"] = 0.0
 	hand["elapsed"] = 0.0
 	hand["reason"] = reason
+	hand["held_target_pending"] = false
 
 func _accessible(from: Vector3, point: Vector3, normal: Vector3, support: PhysicsBody3D) -> bool:
 	if not torso.is_inside_tree():
@@ -490,6 +543,19 @@ func _update_hand(id: int, delta: float) -> void:
 	hand["reaction_force"] = Vector3.ZERO
 	hand["elapsed"] += delta
 	var shoulder: Vector3 = get_shoulder_world(id)
+	if hand["state"]=="REACHING" and hand.get("held_target_pending",false):
+		var pending = _held_targets.get(id)
+		if pending==null or not pending.held or not tuning.allow_out_of_reach_grip_targets:
+			release_grip(id,"input_released")
+			return
+		if not pending.anchor.is_valid() or not bool(pending.anchor.support_body().get_meta("grippable",true)):
+			release_grip(id,"support_invalidated")
+			return
+		hand["hand_world"] = pending.step(torso,Transform3D(torso.global_basis.orthonormalized(),shoulder),hand.hand_world,get_max_reach(),tuning.hand_reach_speed,tuning.allowed_grip_surface_mask,simulation_time,delta)
+		hand["target_world"] = pending.anchor.world_point()
+		hand["anchor_world"] = hand["target_world"]
+		hand["actual_length"] = shoulder.distance_to(hand["target_world"])
+		return
 	if hand["state"] == "RELEASED":
 		hand["state"] = "FREE"
 	if hand["state"] == "FREE":
@@ -821,7 +887,7 @@ func _physics_process(delta: float) -> void:
 	if feet_solver!=null:
 		for id in mini(2,free_foot_positions.size()):
 			feet_solver.set_free_foot_world(id,free_foot_positions[id])
-		var climbing: bool = hands.any(func(hand):return hand.state in ["REACHING","ATTACHED","SLIPPING"])
+		var climbing: bool = hands.any(func(hand):return hand.state in ["REACHING","ATTACHED","SLIPPING"] and not hand.get("held_target_pending",false))
 		var foot_stance: bool = feet_solver.feet.any(func(foot):return foot.state in ["SUPPORTING","SLIDING"]) and not grounded_for_walking
 		foot_requests = feet_solver.prepare(delta,_contract,_extend,_bias,tuning.physical_feet and (climbing or foot_stance) and _launch_state=="IDLE",climbing)
 		leg_budget = feet_solver.tuning.total_force_budget

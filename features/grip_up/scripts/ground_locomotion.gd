@@ -24,6 +24,7 @@ func configure(body: RigidBody3D, grip_controller: Node, view: Camera3D) -> void
 
 func has_climbing_intent() -> bool:
 	for hand in 2:
+		if controller.tuning.allow_out_of_reach_grip_targets and controller.get_hand_state(hand)=="REACHING" and controller.pending_diagnostics(hand).get("active",false):continue
 		if controller.get_hand_state(hand) in ["REACHING","ATTACHED","SLIPPING"]:
 			return true
 	if controller.tuning.physical_feet and controller.feet_solver!=null and not grounded:

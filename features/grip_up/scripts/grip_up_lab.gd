@@ -64,6 +64,10 @@ var predictive_grip_enabled := false
 var reach_prediction_enabled := false
 var catch_buffer_enabled := false
 var catch_buffer_duration := .12
+var allow_out_of_reach_grip_targets := false
+var pending_grip_feedback_enabled := true
+var distant_target_toggle: CheckButton
+var pending_markers: Array[MeshInstance3D]=[]
 var reach_assessor = ReachAssessment.new()
 var reach_advice: Array[Dictionary] = [{},{}]
 var attempt_assessments: Array[Dictionary] = [{},{}]
@@ -159,7 +163,7 @@ func _ready() -> void:
 			Input.action_release(action)
 		if hold_mode and is_instance_valid(controller):
 			for hand in 2:
-				controller.release_grip(hand, "input_focus_lost")
+				_release_hand_input(hand,"input_focus_lost")
 				Input.action_release("grip_left" if hand == 0 else "grip_right")
 	)
 
@@ -243,6 +247,7 @@ func load_test(index: int, use_checkpoint := false) -> void:
 	torso = RigidBody3D.new()
 	var profile := BipedProfile.new()
 	profile.predictive_grip = _capture_buffer_active()
+	profile.allow_out_of_reach_grip_targets=_distant_targeting_active()
 	if input_profile==3 and catch_buffer_enabled:profile.capture_intent_buffer_duration=catch_buffer_duration
 	profile.physical_feet = physical_feet_enabled
 	profile.arm_drag_sensitivity_m_per_px = arm_drag_sensitivity
@@ -306,12 +311,23 @@ func load_test(index: int, use_checkpoint := false) -> void:
 	biped.configure(torso,controller)
 	biped.ground_motor = ground_motor
 	hand_meshes.clear()
+	pending_markers.clear()
 	for i in 2:
 		var grip := SphereMesh.new()
 		grip.radius = 0.032
 		grip.height = 0.064
 		hand_meshes.append(_mesh(world,grip,COLORS[i]))
 		hand_meshes[i].physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_OFF
+		var ring:=TorusMesh.new()
+		ring.inner_radius=.022
+		ring.outer_radius=.031
+		ring.rings=16
+		ring.ring_segments=8
+		var marker:=_mesh(world,ring,COLORS[i])
+		marker.material_override.shading_mode=BaseMaterial3D.SHADING_MODE_UNSHADED
+		marker.physics_interpolation_mode=Node.PHYSICS_INTERPOLATION_MODE_OFF
+		marker.hide()
+		pending_markers.append(marker)
 	var target := SphereMesh.new()
 	target.radius = 0.09
 	target.height = 0.18
@@ -380,7 +396,7 @@ func _input(event: InputEvent) -> void:
 				router.clear_motion(hand)
 				controller.clear_drag_requests(hand)
 				grip_intents.release(controller,hand)
-				controller.release_grip(hand)
+				_release_hand_input(hand)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if input_profile==2 and contextual_paused and event is InputEventMouseButton and event.pressed:
@@ -451,7 +467,11 @@ func request_hand(hand: int) -> bool:
 		return false
 	if input_profile==3 and (reach_prediction_enabled or catch_buffer_enabled):
 		attempt_assessments[hand]=reach_assessor.evaluate(controller,hand,hit.collider,hit.position,hit.normal).duplicate(true)
-	var ok: bool = grip_intents.press(controller,hand,hit.collider,hit.position,hit.normal) if _capture_buffer_active() and hold_mode else controller.request_grip(hand,hit.collider,hit.position,hit.normal)
+	var ok: bool
+	if _distant_targeting_active() and hold_mode:
+		ok=controller.request_held_grip(hand,hit.collider,hit.position,hit.normal)
+	else:
+		ok=grip_intents.press(controller,hand,hit.collider,hit.position,hit.normal) if _capture_buffer_active() and hold_mode else controller.request_grip(hand,hit.collider,hit.position,hit.normal)
 	if not ok:
 		trial.misses += 1
 		message(_capture_reason(controller.last_rejection))
@@ -478,6 +498,12 @@ func _physics_process(delta: float) -> void:
 			if not Input.is_action_pressed("grip_left" if hand==0 else "grip_right"):
 				grip_intents.release(controller,hand)
 		grip_intents.update(controller)
+	if _distant_targeting_active():
+		for hand in 2:
+			var pressed:bool=Input.is_action_pressed("grip_left" if hand==0 else "grip_right")
+			if controller.get_hand_state(hand)=="REACHING" and controller.pending_diagnostics(hand).get("active",false):
+				controller.set_hand_held(hand,pressed and not blocked,"ui_blocked" if blocked else "input_released")
+			elif not pressed:controller.set_hand_held(hand,false)
 	ground_motor.enabled = not blocked
 	ground_motor.move_intent = Input.get_vector("bias_left","bias_right","contract","extend")
 	if input_profile==0:
@@ -646,6 +672,16 @@ func _process(delta: float) -> void:
 		if hand.state == "ATTACHED" and controller.get_arm_force(i).length() > hand.grip_limit * 0.75:
 			warning = " / STRAINED"
 		hand_labels[i].text = ("LEFT / CYAN" if i==0 else "RIGHT / AMBER") + "\n" + hand.state + warning
+		var pending:Dictionary=controller.pending_diagnostics(i)
+		var committed:bool=_distant_targeting_active() and pending.get("active",false) and hand.state=="REACHING"
+		pending_markers[i].visible=committed and pending_grip_feedback_enabled
+		if committed:
+			hand_labels[i].text=("LEFT / CYAN" if i==0 else "RIGHT / AMBER")+"\n"+str(pending.get("substate","PENDING"))
+			var contact_normal:Vector3=pending.get("normal_world",Vector3.FORWARD)
+			pending_markers[i].global_position=Vector3(pending.get("target_world",hand.target_world))+contact_normal*.012
+			pending_markers[i].global_basis=Basis(Quaternion(Vector3.UP,contact_normal.normalized()))
+			pending_markers[i].scale=Vector3.ONE*(1.25 if pending.get("substate","")=="PENDING_OUT_OF_REACH" else .85)
+			pending_markers[i].material_override.albedo_color=COLORS[i].lerp(Color("8b9297"),.55) if pending.get("blocked",false) else COLORS[i]
 		if hand.state in ["ATTACHED","SLIPPING"]:
 			hand_labels[i].text += "\n%.2f m  /  %.0f N" % [hand.actual_length,controller.get_arm_force(i).length()]
 			if input_profile>=1:
@@ -704,6 +740,9 @@ func _transfer_debug_text(data: Dictionary) -> String:
 		var hand: Dictionary=controller.hands[id]
 		var last: Dictionary=diagnostic.get("last_by_hand",{}).get(id,{})
 		out+="\n\n%s / %s | %s / %s\nShoulder %s | anchor %s\nActual %.3f / requested %.3f / planned %.3f m\nAttempt %s | distance %s | travel %s" % ["LEFT" if id==0 else "RIGHT",hand.state,last.get("stage","none"),last.get("code","none"),str(controller.get_shoulder_world(id)),str(hand.anchor_world),hand.actual_length,hand.rest_length,hand.get("planned_length",hand.rest_length),str(last.get("attempt_id","none")),"%.3f m" % last.anatomical_distance if last.has("anatomical_distance") else "unknown","%.2f s" % last.get("elapsed",0)]
+		var pending:Dictionary=controller.pending_diagnostics(id)
+		if pending.get("active",false):
+			out+="\n%s | held %s | margin %.3f m | pending %.2f s\nGesture %.2f /4 m/s | transport %.2f | world %.2f | blocker %s" % [pending.get("substate","PENDING"),pending.get("held",false),pending.get("reach_margin",0),pending.get("pending_time",0),pending.get("gesture_speed",0),pending.get("transport_speed",0),pending.get("world_speed",0),str(pending.get("blocker_id",0))]
 	var refinement: Dictionary=data.get("transfer_posture",{})
 	var twist: Dictionary=refinement.get("twist",{})
 	out+="\nAttitude %s | blend %.2f | relative axial error %s" % [refinement.get("status","P0"),twist.get("blend",0),"%.3f rad" % twist.axial_error if twist.has("axial_error") else "P0 reference"]
@@ -721,6 +760,12 @@ func _open_transfer_lab(index: int) -> void:
 	load_test(index)
 	message("Transfer study / hold LMB and RMB. Tab shows reach and per-attempt diagnoses.")
 
+func _open_distant_lab(index:int) -> void:
+	_open_transfer_lab(index)
+	_set_distant_targeting(true)
+	_update_objective()
+	message("Early target study / hold a visible destination; the free hand waits for real reach and contact.")
+
 func _on_transfer_event(event: Dictionary) -> void:
 	var row: Dictionary=event.duplicate(true)
 	row.session_id=transfer_session_id
@@ -732,6 +777,8 @@ func _on_transfer_event(event: Dictionary) -> void:
 	row.reach_prediction_enabled=reach_prediction_enabled
 	row.catch_buffer_enabled=catch_buffer_enabled
 	row.catch_buffer_duration=catch_buffer_duration
+	row.allow_out_of_reach_grip_targets=allow_out_of_reach_grip_targets
+	row.pending_targets=_pending_target_snapshots()
 	var event_hand: int=int(event.get("hand",-1))
 	row.attempt_assessment=attempt_assessments[event_hand].duplicate(true) if event_hand in [0,1] else {}
 	row.route=transfer_progress.diagnostics() if level_id==4 else {}
@@ -762,6 +809,8 @@ func _save_trial(outcome: String) -> void:
 	row.reach_prediction_enabled=reach_prediction_enabled
 	row.catch_buffer_enabled=catch_buffer_enabled
 	row.catch_buffer_duration=catch_buffer_duration
+	row.allow_out_of_reach_grip_targets=allow_out_of_reach_grip_targets
+	row.pending_targets=_pending_target_snapshots()
 	var summary_path: String="user://trials.jsonl"
 	if input_profile==3 and transfer_diagnostics_enabled:
 		DirAccess.make_dir_recursive_absolute("user://transfer_sessions")
@@ -789,6 +838,7 @@ func _record_capture(delta: float) -> void:
 		"swing_torque":capture_trace.vector(controller.telemetry().get("swing_torque",Vector3.ZERO)),
 		"grip_buttons":[Input.is_action_pressed("grip_left"),Input.is_action_pressed("grip_right")],"capture_predictions":capture_predictions,
 		"reach_prediction_enabled":reach_prediction_enabled,"catch_buffer_enabled":catch_buffer_enabled,"catch_buffer_duration":catch_buffer_duration,"reach_advice":reach_advice,"attempt_assessments":attempt_assessments,
+		"allow_out_of_reach_grip_targets":allow_out_of_reach_grip_targets,"pending_targets":_pending_target_snapshots(),
 		"anomalous_displacements":trial.get("large_step_events",0),
 		"grounded":ground_motor.grounded if is_instance_valid(ground_motor) else false,
 		"beam_angle":level.beam.rotation.z if is_instance_valid(level) and is_instance_valid(level.beam) else 0.0})
@@ -957,6 +1007,10 @@ func _setup_ui() -> void:
 	spacing_row.add_child(spacing_spin)
 	_button("05 / Ten transfers",func():_open_transfer_lab(4),route_row)
 	_button("06 / Swing-required route",func():_open_transfer_lab(5),route_row)
+	var distant_row:=HBoxContainer.new()
+	settings_box.add_child(distant_row)
+	_button("v0.6 / Early targets: swing",func():_open_distant_lab(5),distant_row)
+	_button("v0.6 / Early targets: moving beam",func():_open_distant_lab(2),distant_row)
 	transfer_diagnostics_toggle=CheckButton.new()
 	transfer_diagnostics_toggle.text="v0.5 diagnostics + per-attempt JSONL / no added strength"
 	transfer_diagnostics_toggle.button_pressed=transfer_diagnostics_enabled
@@ -1066,6 +1120,16 @@ func _setup_ui() -> void:
 	buffer_toggle.button_pressed=catch_buffer_enabled
 	buffer_toggle.toggled.connect(_set_catch_buffer)
 	settings_box.add_child(buffer_toggle)
+	distant_target_toggle=CheckButton.new()
+	distant_target_toggle.text="v0.6 select distant targets / hold until real contact (opt-in)"
+	distant_target_toggle.button_pressed=allow_out_of_reach_grip_targets
+	distant_target_toggle.toggled.connect(_set_distant_targeting)
+	settings_box.add_child(distant_target_toggle)
+	var pending_feedback_toggle:=CheckButton.new()
+	pending_feedback_toggle.text="v0.6 show selected pending target outlines"
+	pending_feedback_toggle.button_pressed=pending_grip_feedback_enabled
+	pending_feedback_toggle.toggled.connect(func(on:bool):pending_grip_feedback_enabled=on)
+	settings_box.add_child(pending_feedback_toggle)
 	var buffer_row:=HBoxContainer.new()
 	settings_box.add_child(buffer_row)
 	_label("Held intent duration / seconds",17,buffer_row)
@@ -1204,6 +1268,8 @@ func _update_objective() -> void:
 		objective_label.text="Start with left hand on guide 00, then right on 01; alternate up to 10.\nWait for a reachable shoulder position. Tab shows reach; all wall surfaces remain grippable."
 	elif input_profile==3 and level_id==5:
 		objective_label.text="The far contact is outside static reach. Use supported A/D or W/S swing.\nTime the catch and release deliberately; Tab separates reach, transit and grip load."
+	if _distant_targeting_active():
+		objective_label.text="Hold LMB / RMB on a visible destination, even beyond reach.\nMove or swing into real contact; mouse-up cancels. The selected point stays fixed on its surface."
 
 func _apply_independent_settings() -> void:
 	if not is_instance_valid(controller):return
@@ -1216,6 +1282,31 @@ func _apply_independent_settings() -> void:
 	controller.supported_wasd_swing_enabled=supported_wasd_swing_enabled
 	controller.set_posture_policy(posture_policy)
 	_apply_capture_settings()
+	_apply_pending_settings()
+
+func _distant_targeting_active() -> bool:
+	return input_profile==3 and allow_out_of_reach_grip_targets
+
+func _pending_target_snapshots() -> Array:
+	return [controller.pending_diagnostics(0),controller.pending_diagnostics(1)]
+
+func _release_hand_input(hand:int,reason:String="input_released") -> void:
+	if controller.pending_diagnostics(hand).get("active",false):controller.set_hand_held(hand,false,reason)
+	else:controller.release_grip(hand,"manual" if reason=="input_released" else reason)
+
+func _set_distant_targeting(on:bool) -> void:
+	allow_out_of_reach_grip_targets=on
+	if is_instance_valid(distant_target_toggle):distant_target_toggle.set_pressed_no_signal(on)
+	if on and is_instance_valid(controller):grip_intents.clear(controller)
+	_apply_pending_settings()
+	if is_instance_valid(level):_update_objective()
+
+func _apply_pending_settings() -> void:
+	if not is_instance_valid(controller):return
+	if not _distant_targeting_active():
+		for hand in 2:
+			if controller.get_hand_state(hand)=="REACHING" and controller.pending_diagnostics(hand).get("active",false):controller.set_hand_held(hand,false,"feature_disabled")
+	controller.tuning.allow_out_of_reach_grip_targets=_distant_targeting_active()
 
 func _set_posture_variant(variant: int) -> void:
 	posture_variant=clampi(variant,0,2)
