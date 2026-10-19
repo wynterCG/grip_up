@@ -125,6 +125,7 @@ func app_trial(legs_enabled: bool) -> Dictionary:
 	# the same phase so its floor settling has exactly the same physics ticks.
 	await physics_frame
 	var app = Lab.new()
+	app.input_profile = 0 # Explicitly exercise the preserved legacy control profile.
 	root.add_child(app)
 	current_scene = app
 	app.biped.set_physics_process(legs_enabled)

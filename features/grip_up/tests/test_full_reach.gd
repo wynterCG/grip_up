@@ -23,6 +23,7 @@ func check(ok: bool, label: String) -> void:
 
 func run() -> void:
 	app = Lab.new()
+	app.input_profile = 0 # Explicitly exercise the preserved legacy control profile.
 	root.add_child(app)
 	current_scene = app
 	# A stationary geometry fixture isolates anatomical reach from catch momentum;

@@ -1,15 +1,38 @@
-# GRIP UP / physics climbing lab 0.2 M2
+# GRIP UP / physics climbing lab 0.3
 
-Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v0.2-M2.exe`.
+Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v0.3.exe`.
 PC mouse and keyboard. Resizable 1920x1080 reference canvas; initial window 1440x810.
 Integrated Jolt, 120 Hz. Core and complete routes also tested at 60 Hz.
 
 This is a separate prototype. The Janga object grabber and its project are unchanged.
 
+## 0.3: hold, drag and supported swing
+
+The game now opens in **Profile 1**, following the user's request to use the
+new controls immediately. Hold LMB/RMB to keep each hand attached. Move the
+mouse up to shorten attached arm targets; move down to extend them. With both
+hands attached the same drag changes both targets. Aiming for the next grip
+intentionally keeps changing the supporting arm. A hand still reaching never
+stores drag to apply later.
+
+WASD requests supported 3D swing while gripping; W/S no longer change arm length.
+Each held direction uses the camera frame captured when that key was pressed.
+MMB orbit suspends arm drag, keeps the grips and discards camera mouse deltas.
+Ground walking is unchanged. Space launch is OFF in this profile, available
+only through an explicit comparison checkbox. Controls also offers sensitivity,
+target speed, sound muting and the preserved **Profile 0** baseline.
+
+This is an input experiment, separate from v0.2's posture milestone. Physics
+limits remain 360 N shared hand effort, 20 Nm assistance and 150 Nm total.
+Physical feet and predictive catches remain independently optional and OFF.
+Automated checks do not establish comfort, fatigue or enjoyment: the 10-15
+minute human A/B session and the final feel decision remain pending.
+See `docs/validation/V03.md` for evidence and limits.
+
 ## M2: physical feet
 
 Enable **Controls → Automatic foot contacts**, then select **04 FOOT SUPPORT**.
-Hold LMB/RMB on L/R, press W and compare the same footholds with feet OFF/ON.
+Select baseline profile 0, hold LMB/RMB on L/R, press W and compare feet OFF/ON.
 Each foot independently searches, lifts over a step, plants, supports or slides.
 It can push and transmit friction, with a shared 180 N leg budget; hands retain
 360 N and the combined climbing torque stays capped at 150 Nm. Moving supports
@@ -68,17 +91,17 @@ The M1-only snapshot remains tagged `v0.2-M1`.
 |---|---|
 | Hold left / right mouse button | Hold cyan / amber hand; releasing the button lets go |
 | WASD, grounded and hands free | Walk relative to camera, with braking and turn-to-move |
-| W, gripping | Contract attached arms using finite tension |
-| S, gripping | Extend target lengths for controlled lowering; no pushing |
-| A / D, gripping | Left / right relative to camera; bounded swing with one hand, bias toward that side's anchor with two |
-| Hold Space, gripping; release Space | Load the arms, then pull rapidly and launch; click/hold again to catch a higher surface |
+| Hold grip + mouse up / down | Shorten / extend attached arm targets |
+| W / S, gripping | Request forward / backward supported swing |
+| A / D, gripping | Request left / right supported swing |
+| Space | Disabled by default in profile 1; optional launch comparison in Controls |
 | Middle mouse drag / wheel | Orbit / dolly |
 | R | Immediate retry from checkpoint or start |
 | Tab | Physics diagnostics |
 | F, reactive test | Restart same geometry fixed or hinged |
 
 Controls opens remapping with conflict checks and saved bindings. Hold-to-grip is
-the default; disable its checkbox to compare toggle mode. Mouse-up cancels a
+mandatory in profile 1; select baseline profile 0 before comparing toggle mode. Mouse-up cancels a
 pending reach too, including over UI. Losing window focus releases held grips.
 Neither hand gives any midair steering when unattached.
 
@@ -150,6 +173,9 @@ depends on the available arm stroke, support motion and nearby geometry.
 
 ## Original three experiments
 
+These preserved route instructions use **baseline profile 0** in Controls.
+Profile 1 replaces their W/S arm commands with mouse drag.
+
 1. **Static climb:** choose any wall point within reach and alternate hands to climb. The small rounded holds provide an optional route: aim at hold 01 and attach cyan. Hold W. Catch 02 with amber,
    wait until ATTACHED and let both hands stabilize. To reach 03, release only
    LMB and press/hold it again over 03 while keeping RMB held. Alternate which
@@ -194,6 +220,10 @@ Detailed provenance, joint comparison and limitations:
 `features/grip_up/tests/physics_decisions.md`.
 
 ## Repeatable checks
+
+The complete v0.3 run has 1,556 passing checks: `python tools/run_regressions.py v03`.
+The new input and physics suites are `test_drag_input.gd` and
+`test_drag_swing_physics.gd`, each supporting 60/120 Hz.
 
 From the project directory, replace `godot` with your executable:
 

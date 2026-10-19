@@ -1,4 +1,11 @@
 extends Resource
+@export_group("v0.3 hold drag swing experiment")
+@export var arm_drag_sensitivity_m_per_px: float = 0.0015
+@export var arm_drag_deadzone_px: float = 0.10
+@export var arm_target_max_rate_m_s: float = 0.60
+@export var swing_max_support_torque: float = 18.0
+@export var swing_input_ramp_s: float = 0.10
+@export var swing_max_relative_speed: float = 1.8
 @export_group("v0.2 experiments")
 @export var predictive_grip: bool = false
 @export var physical_feet: bool = false

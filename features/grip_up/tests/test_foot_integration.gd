@@ -41,6 +41,7 @@ func acquire(id: int) -> bool:
 
 func setup(enabled: bool) -> void:
 	app = Lab.new()
+	app.input_profile = 0 # Explicitly exercise the preserved legacy control profile.
 	root.add_child(app)
 	current_scene = app
 	app.load_test(3)

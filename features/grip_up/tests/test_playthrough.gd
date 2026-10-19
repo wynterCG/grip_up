@@ -111,6 +111,7 @@ func acquire(support: PhysicsBody3D, hand: int, timeout: float = 6.0, local_targ
 
 func run() -> void:
 	app = Lab.new()
+	app.input_profile = 0 # Explicitly exercise the preserved legacy control profile.
 	root.add_child(app)
 	current_scene = app
 	if OS.get_cmdline_user_args().has("--feet"):

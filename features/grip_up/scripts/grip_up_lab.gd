@@ -10,6 +10,7 @@ const GroundLocomotion = preload("res://features/grip_up/scripts/ground_locomoti
 const CaptureTrace = preload("res://features/grip_up/scripts/capture_trace.gd")
 const GripIntentBuffer = preload("res://features/grip_up/scripts/grip_intent_buffer.gd")
 const CaptureDebugDraw = preload("res://features/grip_up/scripts/capture_debug_draw.gd")
+const GripFeedback = preload("res://features/grip_up/scripts/grip_feedback.gd")
 const LEVELS = [preload("res://features/grip_up/scenes/static_climb.tscn"), preload("res://features/grip_up/scenes/swing_and_catch.tscn"), preload("res://features/grip_up/scenes/reactive_structure.tscn"), preload("res://features/grip_up/scenes/foot_support.tscn")]
 const COLORS = [Color("65dfcc"), Color("f0b85c")]
 var torso: RigidBody3D
@@ -58,6 +59,15 @@ var capture_trace = CaptureTrace.new()
 var grip_intents = GripIntentBuffer.new()
 var predictive_grip_enabled := false
 var physical_feet_enabled := false
+var input_profile := 1
+var experimental_launch_enabled := false
+var profile_choice: OptionButton
+var hold_toggle: CheckButton
+var launch_toggle: CheckButton
+var arm_drag_sensitivity := 0.0015
+var arm_target_rate := 0.6
+var sound_feedback_enabled := true
+var grip_feedback: Node
 var capture_predictions: Array[Dictionary] = [{},{}]
 var prediction_clock := 0.0
 var prediction_label: Label
@@ -76,9 +86,35 @@ func _ready() -> void:
 	camera = CameraRig.new()
 	add_child(camera)
 	_setup_ui()
+	grip_feedback = GripFeedback.new()
+	add_child(grip_feedback)
 	load_test(0)
+	_set_input_profile(input_profile)
+	get_window().mouse_exited.connect(func():
+		if input_profile==1:
+			router.set_owner("BOUNDARY")
+			controller.clear_drag_requests()
+	)
+	get_window().mouse_entered.connect(func():
+		if input_profile==1:
+			router.set_owner("GAME")
+			router.rebase_next_motion = true
+	)
+	get_window().focus_entered.connect(func():
+		if input_profile==1:
+			router.reset_control_input()
+			router.rebase_next_motion = true
+			controller.clear_drag_requests()
+	)
+	get_window().size_changed.connect(func():
+		if input_profile==1:
+			router.clear_motion()
+			controller.clear_drag_requests()
+	)
 	get_window().focus_exited.connect(func():
 		orbiting = false
+		router.reset_control_input("FOCUS")
+		controller.clear_drag_requests()
 		grip_intents.clear(controller)
 		controller.cancel_launch()
 		for action in ["contract", "extend", "bias_left", "bias_right", "launch"]:
@@ -127,6 +163,8 @@ func _mesh(parent: Node3D, geometry: Mesh, color: Color, at := Vector3.ZERO) -> 
 
 func load_test(index: int, use_checkpoint := false) -> void:
 	capture_trace.close()
+	router.reset_control_input()
+	orbiting = false
 	grip_intents = GripIntentBuffer.new()
 	capture_predictions = [{},{}]
 	prediction_clock = 0.0
@@ -161,6 +199,8 @@ func load_test(index: int, use_checkpoint := false) -> void:
 	var profile := BipedProfile.new()
 	profile.predictive_grip = predictive_grip_enabled
 	profile.physical_feet = physical_feet_enabled
+	profile.arm_drag_sensitivity_m_per_px = arm_drag_sensitivity
+	profile.arm_target_max_rate_m_s = arm_target_rate
 	torso.name = "BipedTorso"
 	torso.mass = profile.body_mass
 	torso.continuous_cd = true
@@ -205,6 +245,8 @@ func load_test(index: int, use_checkpoint := false) -> void:
 	controller.name = "ClimbingController"
 	world.add_child(controller)
 	controller.configure(torso,profile)
+	controller.set_control_profile(input_profile)
+	controller.experimental_launch_enabled = experimental_launch_enabled
 	controller.sample_ready.connect(_record_capture)
 	ground_motor = GroundLocomotion.new()
 	ground_motor.name = "GroundLocomotion"
@@ -230,7 +272,7 @@ func load_test(index: int, use_checkpoint := false) -> void:
 	capture_debug = CaptureDebugDraw.new()
 	world.add_child(capture_debug)
 	camera.reset(torso,controller)
-	trial = {"test":index,"character":"biped","grip_mode":"hold" if hold_mode else "toggle","fixed_beam":fixed_beam,"elapsed":0.0,"first_grab_seconds":-1.0,"goal_seconds":-1.0,"attempts":0,"misses":0,"slips":0,"falls":0,"transfers":0,"inputs":0,"large_step_events":0,"max_speed":0.0,"max_spin":0.0,"max_force_used":0.0,"ratings":{}}
+	trial = {"test":index,"control_profile":input_profile,"character":"biped","grip_mode":"hold" if hold_mode else "toggle","fixed_beam":fixed_beam,"elapsed":0.0,"first_grab_seconds":-1.0,"goal_seconds":-1.0,"attempts":0,"misses":0,"slips":0,"falls":0,"transfers":0,"inputs":0,"large_step_events":0,"max_speed":0.0,"max_spin":0.0,"max_force_used":0.0,"ratings":{}}
 	session_ticks = 0
 	previous_position = torso.position
 	previous_states = ["FREE","FREE"]
@@ -238,7 +280,7 @@ func load_test(index: int, use_checkpoint := false) -> void:
 	won = false
 	rating_panel.hide()
 	title_label.text = level.title
-	objective_label.text = level.objective
+	_update_objective()
 	beam_button.visible = index == 2
 	beam_button.text = "F  /  " + ("FIXED BEAM" if fixed_beam else "HINGED BEAM")
 	for i in mode_buttons.size():
@@ -250,8 +292,19 @@ func message(text: String) -> void:
 	hint_time = 4.0
 
 func _input(event: InputEvent) -> void:
+	if input_profile==1 and event is InputEventMouseMotion:
+		pointer = event.position
+		var next_owner := _control_owner()
+		if next_owner!="GAME":
+			router.set_owner(next_owner)
+			controller.clear_drag_requests()
+	if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_MIDDLE and not event.pressed:
+		orbiting = false
+		router.set_owner(_control_owner())
+		router.clear_motion()
+		controller.clear_drag_requests()
 	if event.is_action_released("launch") and is_instance_valid(controller):
-		if settings.visible or binding_action!="":
+		if settings.visible or binding_action!="" or not _launch_allowed():
 			controller.cancel_launch()
 		else:
 			controller.request_launch_charge(false)
@@ -270,21 +323,31 @@ func _input(event: InputEvent) -> void:
 	if hold_mode and not event.is_pressed() and is_instance_valid(controller):
 		for hand in 2:
 			if event.is_action_released("grip_left" if hand==0 else "grip_right"):
+				router.clear_motion(hand)
+				controller.clear_drag_requests(hand)
 				grip_intents.release(controller,hand)
 				controller.release_grip(hand)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("launch") and not event.is_echo() and not settings.visible:
-		if not controller.request_launch_charge(true):
+		if not _launch_allowed():
+			message("Space launch is an optional comparison in Controls.")
+		elif not controller.request_launch_charge(true):
 			message("Grip a surface first, then hold %s to prepare a launch." % router.prompt("launch"))
 	if event is InputEventMouseMotion:
 		pointer = event.position
 		if orbiting:
 			camera.orbit(event.relative)
+		if input_profile==1:
+			router.set_owner(_control_owner())
+			router.capture_motion(event.screen_relative,controller,_held_grips())
 	if event is InputEventMouseButton:
 		pointer = event.position
 		if event.button_index == MOUSE_BUTTON_MIDDLE:
 			orbiting = event.pressed
+			router.set_owner(_control_owner())
+			router.clear_motion()
+			controller.clear_drag_requests()
 		if event.pressed and event.button_index in [MOUSE_BUTTON_WHEEL_UP,MOUSE_BUTTON_WHEEL_DOWN]:
 			camera.dolly(-0.65 if event.button_index==MOUSE_BUTTON_WHEEL_UP else 0.65)
 	for hand in 2:
@@ -333,6 +396,8 @@ func _physics_process(delta: float) -> void:
 	if blocked:
 		controller.cancel_launch()
 		grip_intents.clear(controller)
+		router.reset_control_input("UI")
+		controller.clear_drag_requests()
 	if predictive_grip_enabled:
 		for hand in 2:
 			if not Input.is_action_pressed("grip_left" if hand==0 else "grip_right"):
@@ -340,7 +405,15 @@ func _physics_process(delta: float) -> void:
 		grip_intents.update(controller)
 	ground_motor.enabled = not blocked
 	ground_motor.move_intent = Input.get_vector("bias_left","bias_right","contract","extend")
-	controller.set_climb_intent(0.0 if blocked else Input.get_action_strength("contract"),0.0 if blocked else Input.get_action_strength("extend"),0.0 if blocked else Input.get_axis("bias_left","bias_right"),camera.global_basis.x)
+	if input_profile==0:
+		controller.set_climb_intent(0.0 if blocked else Input.get_action_strength("contract"),0.0 if blocked else Input.get_action_strength("extend"),0.0 if blocked else Input.get_axis("bias_left","bias_right"),camera.global_basis.x)
+	else:
+		controller.set_climb_intent(0,0,0,camera.global_basis.x)
+		var direction := Vector3.ZERO if blocked else router.swing_direction(camera.global_basis.x)
+		controller.set_swing_intent(direction,camera.global_basis.x)
+		var displacements: Array[float] = router.consume_drag(controller,_held_grips())
+		for id in 2:
+			controller.queue_arm_length_delta(id,displacements[id])
 	trial.max_speed = maxf(trial.max_speed,torso.linear_velocity.length())
 	trial.max_spin = maxf(trial.max_spin,torso.angular_velocity.length())
 	if session_ticks > 3 and torso.position.distance_to(previous_position) > 0.8:
@@ -350,6 +423,9 @@ func _physics_process(delta: float) -> void:
 	var total_force := 0.0
 	for i in 2:
 		var state: String = controller.get_hand_state(i)
+		if input_profile==1 and sound_feedback_enabled:
+			if state=="ATTACHED" and previous_states[i]=="REACHING":grip_feedback.cue(i,true)
+			elif state=="RELEASED" and previous_states[i] in ["ATTACHED","SLIPPING"]:grip_feedback.cue(i,false)
 		if state in ["ATTACHED","SLIPPING"]:
 			attached += 1
 			if trial.first_grab_seconds < 0:
@@ -440,7 +516,11 @@ func _process(delta: float) -> void:
 		hand_labels[i].text = ("LEFT / CYAN" if i==0 else "RIGHT / AMBER") + "\n" + hand.state + warning
 		if hand.state in ["ATTACHED","SLIPPING"]:
 			hand_labels[i].text += "\n%.2f m  /  %.0f N" % [hand.actual_length,controller.get_arm_force(i).length()]
+			if input_profile==1:
+				hand_labels[i].text += "\nTarget / %.2f m" % hand.rest_length
 	status_label.text = hint if hint_time > 0 else ("WASD / Walk relative to camera. MMB / Orbit. Hold LMB / RMB on any surface to climb." if ground_motor.grounded and not ground_motor.has_climbing_intent() else "Grip anywhere within reach. W / Pull. S / Lower. Keep the other hand attached while transferring.")
+	if input_profile==1 and hint_time<=0 and ground_motor.has_climbing_intent():
+		status_label.text = "Hold each grip. Drag up / pull; down / lower, also while aiming. WASD / supported 3D swing."
 	feet_panel.visible = physical_feet_enabled and controller.feet_solver!=null
 	if feet_panel.visible:
 		feet_label.text = "FEET / AUTOMATIC"
@@ -464,6 +544,8 @@ func _process(delta: float) -> void:
 			debug_label.text += "\nLegs %.1f / %.1f N | combined torque %.1f / %.1f Nm" % [launch.get("leg_force",0),launch.get("leg_force_budget",0),Vector3(launch.get("torque",Vector3.ZERO)).length(),controller.tuning.max_total_torque]
 			for foot in controller.feet_solver.feet:
 				debug_label.text += "\nFoot %s / N %.1f / T %.1f / %s" % [foot.state,foot.normal_force,Vector3(foot.tangent_force).length(),foot.reason]
+		if input_profile==1:
+			debug_label.text += "\n\nPROFILE 1 / HOLD + DRAG | Input %s\nSwing request %s | torque %s\nCamera right %s | forward %s\nLast arm requests %s | acquisitions %d" % [router.owner,str(launch.get("swing_requested",Vector3.ZERO)),str(launch.get("swing_torque",Vector3.ZERO)),str(camera.global_basis.x),str(Vector3.UP.cross(camera.global_basis.x).normalized()),str(router.last_displacements),controller.metrics.attaches]
 
 func _save_trial(outcome: String) -> void:
 	if trial.is_empty():
@@ -472,6 +554,9 @@ func _save_trial(outcome: String) -> void:
 	row.outcome = outcome
 	row.timestamp = Time.get_datetime_string_from_system(true)
 	row.physics_hz = Engine.physics_ticks_per_second
+	row.control_profile = input_profile
+	row.space_comparison = experimental_launch_enabled
+	row.session_input_metrics = router.diagnostics()
 	var file := FileAccess.open("user://trials.jsonl",FileAccess.READ_WRITE if FileAccess.file_exists("user://trials.jsonl") else FileAccess.WRITE)
 	if file:
 		file.seek_end()
@@ -481,6 +566,10 @@ func _record_capture(delta: float) -> void:
 	if not capture_trace.enabled:
 		return
 	capture_trace.sample(delta,controller,{"scene":level_id,"launch_state":controller.telemetry().get("launch_state","IDLE"),
+		"control_profile":input_profile,"space_comparison":experimental_launch_enabled,"input_control":router.diagnostics(),
+		"camera_right":capture_trace.vector(camera.global_basis.x),"camera_forward":capture_trace.vector(Vector3.UP.cross(camera.global_basis.x).normalized()),
+		"swing_requested":capture_trace.vector(controller.telemetry().get("swing_requested",Vector3.ZERO)),
+		"swing_torque":capture_trace.vector(controller.telemetry().get("swing_torque",Vector3.ZERO)),
 		"grip_buttons":[Input.is_action_pressed("grip_left"),Input.is_action_pressed("grip_right")],"capture_predictions":capture_predictions,
 		"anomalous_displacements":trial.get("large_step_events",0),
 		"grounded":ground_motor.grounded if is_instance_valid(ground_motor) else false,
@@ -554,7 +643,7 @@ func _setup_ui() -> void:
 	branding.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	row.add_child(branding)
 	_label("GRIP UP",36,branding,Color("edf4e9"))
-	_label("PHYSICS CLIMBING LAB  /  0.2 M2",15,branding,COLORS[0])
+	_label("PHYSICS CLIMBING LAB  /  0.3 CONTROLS",15,branding,COLORS[0])
 	for i in LEVELS.size():
 		var index := i
 		var button := _button(["01  STATIC CLIMB","02  SWING & CATCH","03  REACTIVE STRUCTURE","04  FOOT SUPPORT"][i],func():load_test(index),row)
@@ -605,15 +694,70 @@ func _setup_ui() -> void:
 	debug_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	debug_label.hide()
 	settings = _panel(hud)
-	settings.position = Vector2(420,150)
+	settings.anchor_left = 0.20
+	settings.anchor_right = 0.80
+	settings.anchor_top = 0.12
+	settings.anchor_bottom = 0.88
+	var settings_layout := VBoxContainer.new()
+	settings.add_child(settings_layout)
+	var scroll := ScrollContainer.new()
+	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	scroll.follow_focus = true
+	settings_layout.add_child(scroll)
 	var settings_box := VBoxContainer.new()
-	settings.add_child(settings_box)
+	settings_box.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	scroll.add_child(settings_box)
 	_label("CONTROLS / click a binding to change it",23,settings_box,COLORS[0])
-	var hold := CheckButton.new()
-	hold.text = "Hold to grip (default) / disable for toggle"
-	hold.button_pressed = hold_mode
-	hold.toggled.connect(_set_hold_mode)
-	settings_box.add_child(hold)
+	profile_choice = OptionButton.new()
+	profile_choice.add_item("0 / Baseline: W/S pull, A/D bias, Space launch")
+	profile_choice.add_item("1 / Hold + arm drag + 3D swing (experimental)")
+	profile_choice.select(input_profile)
+	profile_choice.item_selected.connect(_set_input_profile)
+	settings_box.add_child(profile_choice)
+	hold_toggle = CheckButton.new()
+	hold_toggle.text = "Hold to grip / mandatory in profile 1"
+	hold_toggle.button_pressed = hold_mode
+	hold_toggle.toggled.connect(_set_hold_mode)
+	settings_box.add_child(hold_toggle)
+	launch_toggle = CheckButton.new()
+	launch_toggle.text = "Enable Space launch in profile 1 / optional A/B comparison"
+	launch_toggle.disabled = input_profile==0
+	launch_toggle.toggled.connect(_set_experimental_launch)
+	settings_box.add_child(launch_toggle)
+	var sounds := CheckButton.new()
+	sounds.text = "Grip contact sounds / profile 1"
+	sounds.button_pressed = sound_feedback_enabled
+	sounds.toggled.connect(func(on:bool):sound_feedback_enabled=on)
+	settings_box.add_child(sounds)
+	var sensitivity_row := HBoxContainer.new()
+	settings_box.add_child(sensitivity_row)
+	_label("Arm drag sensitivity / m per pixel",17,sensitivity_row)
+	var sensitivity := SpinBox.new()
+	sensitivity.min_value = 0.0001
+	sensitivity.max_value = 0.005
+	sensitivity.step = 0.0001
+	sensitivity.value = arm_drag_sensitivity
+	sensitivity.custom_minimum_size.x = 220
+	sensitivity.value_changed.connect(func(value:float):
+		arm_drag_sensitivity=value
+		if is_instance_valid(controller):controller.tuning.arm_drag_sensitivity_m_per_px=value
+	)
+	sensitivity_row.add_child(sensitivity)
+	var rate_row := HBoxContainer.new()
+	settings_box.add_child(rate_row)
+	_label("Arm target maximum speed / m per second",17,rate_row)
+	var rate := SpinBox.new()
+	rate.min_value = 0.1
+	rate.max_value = 1.2
+	rate.step = 0.05
+	rate.value = arm_target_rate
+	rate.custom_minimum_size.x = 180
+	rate.value_changed.connect(func(value:float):
+		arm_target_rate=value
+		if is_instance_valid(controller):controller.tuning.arm_target_max_rate_m_s=value
+	)
+	rate_row.add_child(rate)
 	predictive_toggle = CheckButton.new()
 	predictive_toggle.text = "Predictive catches / prepare a near-future grip"
 	predictive_toggle.button_pressed = predictive_grip_enabled
@@ -636,7 +780,7 @@ func _setup_ui() -> void:
 		var binding := str(action)
 		var line := HBoxContainer.new()
 		settings_box.add_child(line)
-		var binding_names := {"contract":"forward / pull","extend":"backward / lower","bias_left":"left / bias left","bias_right":"right / bias right"}
+		var binding_names := {"contract":"forward","extend":"backward","bias_left":"left","bias_right":"right"}
 		var name_label := _label(binding_names.get(binding,binding.replace("_"," ")),18,line)
 		name_label.custom_minimum_size.x = 190
 		binding_buttons[binding] = _button(router.prompt(binding),func():
@@ -644,7 +788,7 @@ func _setup_ui() -> void:
 			binding_status.text="Press a key or mouse button. Escape cancels."
 		,line)
 	binding_status = _label("Middle mouse / orbit. Wheel / dolly.",16,settings_box)
-	_button("Close",func():settings.hide(),settings_box)
+	_button("Close",func():settings.hide();router.reset_control_input(),settings_layout)
 	settings.hide()
 	rating_panel = _panel(hud)
 	rating_panel.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
@@ -665,6 +809,9 @@ func _setup_ui() -> void:
 	rating_panel.hide()
 
 func _set_hold_mode(on: bool) -> void:
+	if input_profile==1 and not on:
+		hold_toggle.set_pressed_no_signal(true)
+		return
 	hold_mode = on
 	if not trial.is_empty():
 		trial.grip_mode = "hold" if on else "toggle"
@@ -675,7 +822,61 @@ func _set_hold_mode(on: bool) -> void:
 	message("Hold each mouse button to grip; release it to let go." if on else "Toggle mode: click to grip, click again to let go.")
 
 func _controls_hint() -> String:
+	if input_profile==1:
+		return "Hold LMB / RMB + drag up / Pull; down / Lower    WASD / 3D swing or walk    MMB / Orbit    Wheel / Dolly    R / Retry"
 	return "WASD / Walk or climb    Hold LMB / RMB / Grip    %s / Hold to load, release to launch    MMB / Orbit    Wheel / Dolly" % router.prompt("launch")
+
+func _held_grips() -> Array[bool]:
+	return [Input.is_action_pressed("grip_left"),Input.is_action_pressed("grip_right")]
+
+func _launch_allowed() -> bool:
+	return input_profile==0 or experimental_launch_enabled
+
+func _control_owner() -> String:
+	if settings.visible or binding_action!="" or rating_panel.visible:
+		return "UI"
+	if orbiting:
+		return "CAMERA"
+	if not get_viewport().get_visible_rect().has_point(pointer):
+		return "BOUNDARY"
+	var hovered := get_viewport().gui_get_hovered_control()
+	return "UI" if hovered!=null else "GAME"
+
+func _set_input_profile(profile: int) -> void:
+	input_profile = clampi(profile,0,1)
+	router.reset_control_input()
+	if is_instance_valid(profile_choice):
+		profile_choice.select(input_profile)
+	if input_profile==1 and not hold_mode:
+		_set_hold_mode(true)
+	if is_instance_valid(hold_toggle):
+		hold_toggle.disabled = input_profile==1
+		hold_toggle.set_pressed_no_signal(hold_mode)
+	if is_instance_valid(launch_toggle):
+		launch_toggle.disabled = input_profile==0
+	if is_instance_valid(controller):
+		controller.set_control_profile(input_profile)
+		controller.experimental_launch_enabled = experimental_launch_enabled
+	if not trial.is_empty():
+		trial.control_profile = input_profile
+	controls_label.text = _controls_hint()
+	_update_objective()
+	message("Hold to grip. Drag up to pull, down to lower. WASD swings through your grips." if input_profile==1 else "Baseline / W pulls, S lowers, A/D biases, Space charges a launch.")
+
+func _update_objective() -> void:
+	objective_label.text = level.objective
+	if input_profile==1:
+		if level_id==1:
+			objective_label.text = "Hold your grip and drag up to pull. WASD swings in 3D.\nBuild momentum, release and catch the next reachable surface."
+		elif level_id==3:
+			objective_label.text = "Hold the two targets and drag to change arm length.\nFoot contacts are optional; baseline profile 0 retains the W-driven feet comparison."
+
+func _set_experimental_launch(on: bool) -> void:
+	experimental_launch_enabled = on
+	if is_instance_valid(controller):
+		controller.experimental_launch_enabled = on
+		if not on and input_profile==1:
+			controller.cancel_launch()
 
 func _set_predictive_grip(on: bool) -> void:
 	predictive_grip_enabled = on

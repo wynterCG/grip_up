@@ -5,6 +5,7 @@ var report := {"complete":false,"runs":[]}
 
 func _ready() -> void:
 	app = get_parent()
+	app._set_input_profile(0) # Preserve this older baseline capture.
 	run.call_deferred()
 
 func wait_seconds(seconds: float) -> void:

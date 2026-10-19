@@ -1,0 +1,662 @@
+{
+  "revision": "v0.3: hold-to-grip, mouse arm drag and supported 3D swing",
+  "recorded_utc": "2026-10-19T12:52:24.454056+00:00",
+  "engine": "4.7.2.stable.ed1daf0bf",
+  "backend": "Jolt Physics",
+  "default_hz": 120,
+  "suites": {
+    "physics": {
+      "120hz": 45,
+      "60hz": 45
+    },
+    "platform_probe": {
+      "120hz": 42,
+      "60hz": 42
+    },
+    "wall_clearance": {
+      "120hz": 6,
+      "60hz": 6
+    },
+    "biped_profile": {
+      "120hz": 58,
+      "60hz": 58
+    },
+    "playthrough": {
+      "120hz": 19,
+      "60hz": 19
+    },
+    "swing_playthrough": {
+      "120hz": 10,
+      "60hz": 10
+    },
+    "biped_visual": {
+      "120hz": 15,
+      "60hz": 15
+    },
+    "idle_hang": {
+      "120hz": 13,
+      "60hz": 13
+    },
+    "ground_locomotion": {
+      "120hz": 24,
+      "60hz": 24
+    },
+    "climb_direction": {
+      "120hz": 43,
+      "60hz": 43
+    },
+    "leg_motion": {
+      "120hz": 20,
+      "60hz": 20
+    },
+    "pendulum": {
+      "120hz": 63,
+      "60hz": 63
+    },
+    "free_climb": {
+      "120hz": 22,
+      "60hz": 24
+    },
+    "launch": {
+      "120hz": 60,
+      "60hz": 60
+    },
+    "full_reach": {
+      "120hz": 7,
+      "60hz": 7
+    },
+    "biped_asset": {
+      "120hz": 12
+    },
+    "m0_instrumentation": {
+      "120hz": 5,
+      "60hz": 5
+    },
+    "capture_input": {
+      "120hz": 9,
+      "60hz": 9
+    },
+    "capture_matrix": {
+      "120hz": 56,
+      "60hz": 56
+    },
+    "foot_support": {
+      "120hz": 50,
+      "60hz": 50
+    },
+    "foot_integration": {
+      "120hz": 17,
+      "60hz": 17
+    },
+    "feet_routes": {
+      "120hz": 19,
+      "60hz": 19
+    },
+    "feet_swing": {
+      "120hz": 10,
+      "60hz": 10
+    },
+    "drag_swing_physics": {
+      "120hz": 101,
+      "60hz": 101
+    },
+    "integration": {
+      "120hz": 27,
+      "60hz": 27
+    },
+    "drag_input": {
+      "120hz": 30,
+      "60hz": 30
+    }
+  },
+  "total_checks": 1556,
+  "failures": 0,
+  "legacy": {
+    "unchanged_grabber_sha256": "8ab923ac1d903e8dcc8ed2a2e4f9f8c5cec326a3217cb4a9d8f00036557e7dad",
+    "previous_smoke_checks": 72
+  },
+  "baseline_ref": "v0.1-baseline",
+  "previous_milestone_ref": "v0.2-M2",
+  "default_input_profile": 1,
+  "default_profile_reason": "User requested the new arm controls active at startup; feel comparison remains pending",
+  "experimental_space_launch": false,
+  "arm_drag_mapping": "mouse up contracts / mouse down extends (user override)",
+  "default_flags": {
+    "predictive_grip": false,
+    "physical_feet": false,
+    "posture_solver": false,
+    "directional_grip_quality": false,
+    "reactive_challenge": false
+  },
+  "exe_name": "GripUp-v0.3.exe",
+  "exe_sha256": "0e8a980838a5469e50ea25637ffeb7f296783cfe7a034e5cfdb1ed624a85d7d4",
+  "mcp_project": "E:/Godot Games/grip_up/",
+  "rendered_controls": {
+    "120": {
+      "aim_delta_y": -3.26119995117188,
+      "beam_angle": -0.200004741549492,
+      "checks": [
+        {
+          "label": "fresh app starts with mouse arm drag",
+          "passed": true
+        },
+        {
+          "label": "held LMB acquires fixed surface",
+          "passed": true
+        },
+        {
+          "label": "slow upward drag shortens target by 60mm",
+          "passed": true
+        },
+        {
+          "label": "downward drag extends the target back",
+          "passed": true
+        },
+        {
+          "label": "native W and S never actuate arm length",
+          "passed": true
+        },
+        {
+          "label": "RMB press alone never applies another arm delta",
+          "passed": true
+        },
+        {
+          "label": "supporting arm responds while other hand reaches",
+          "passed": true
+        },
+        {
+          "label": "RMB reaches second actual contact",
+          "passed": true
+        },
+        {
+          "label": "shared drag updates both targets once",
+          "passed": true
+        },
+        {
+          "label": "releasing LMB leaves RMB attached",
+          "passed": true
+        },
+        {
+          "label": "MMB orbit does not drag arms or store a later delta",
+          "passed": true
+        },
+        {
+          "label": "swing scene acquires first actual contact",
+          "passed": true
+        },
+        {
+          "label": "four supported swing gestures keep bounded live support",
+          "passed": true
+        },
+        {
+          "label": "hinged support stays finite under drag and swing",
+          "passed": true
+        },
+        {
+          "label": "explicit legacy profile ignores mouse arm drag",
+          "passed": true
+        },
+        {
+          "label": "explicit legacy comparison retains W contraction",
+          "passed": true
+        }
+      ],
+      "complete": true,
+      "dynamic_initial_state": "ATTACHED",
+      "physics_hz": 120,
+      "snapshots": [
+        {
+          "hands": [
+            {
+              "actual": 0.436836808919907,
+              "force": 23.7704334259033,
+              "state": "ATTACHED",
+              "target": 0.426018568277359
+            },
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            }
+          ],
+          "label": "single_drag",
+          "owner": "GAME",
+          "position": "(-0.002931, 1.172451, 0.338434)",
+          "profile": 1,
+          "swing": "(0.0, 0.0, 0.0)",
+          "swing_torque": "(0.0, 0.0, 0.0)",
+          "velocity": "(-0.024998, 0.016085, -0.265777)"
+        },
+        {
+          "hands": [
+            {
+              "actual": 0.467479228973389,
+              "force": 10.1482639312744,
+              "state": "ATTACHED",
+              "target": 0.463126768350602
+            },
+            {
+              "actual": 0.426155894994736,
+              "force": 29.4805850982666,
+              "state": "ATTACHED",
+              "target": 0.413650319576264
+            }
+          ],
+          "label": "dual_drag",
+          "owner": "GAME",
+          "position": "(0.028143, 1.166758, 0.311689)",
+          "profile": 1,
+          "swing": "(0.0, 0.0, 0.0)",
+          "swing_torque": "(-0.002555, -0.000018, 0.000622)",
+          "velocity": "(0.020969, 0.002655, -0.054362)"
+        },
+        {
+          "hands": [
+            {
+              "actual": 0.469490498304367,
+              "force": 0.0,
+              "state": "ATTACHED",
+              "target": 0.468816781044006
+            },
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            }
+          ],
+          "label": "swing_contract",
+          "owner": "GAME",
+          "position": "(-0.362748, 1.181101, 0.291721)",
+          "profile": 1,
+          "swing": "(-0.232999, 0.0, -0.972477)",
+          "swing_torque": "(16.51395, 2.547251, -3.956634)",
+          "velocity": "(-0.162107, 0.000862, -0.092932)"
+        },
+        {
+          "hands": [
+            {
+              "actual": 0.467211008071899,
+              "force": 4.99214315414429,
+              "state": "ATTACHED",
+              "target": 0.468816781044006
+            },
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            }
+          ],
+          "label": "swing_extend",
+          "owner": "GAME",
+          "position": "(-0.43722, 1.180276, 0.298576)",
+          "profile": 1,
+          "swing": "(0.238347, 0.0, 0.97118)",
+          "swing_torque": "(-15.96879, -3.321666, 3.919698)",
+          "velocity": "(-0.197109, -0.005512, 0.011511)"
+        },
+        {
+          "hands": [
+            {
+              "actual": 0.481294840574265,
+              "force": 60.310375213623,
+              "state": "ATTACHED",
+              "target": 0.468816781044006
+            },
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            }
+          ],
+          "label": "swing_bias_right",
+          "owner": "GAME",
+          "position": "(-0.478657, 1.179399, 0.26879)",
+          "profile": 1,
+          "swing": "(0.970755, 0.0, -0.240072)",
+          "swing_torque": "(3.815795, 0.617092, 15.84742)",
+          "velocity": "(0.12948, -0.011337, -0.133495)"
+        },
+        {
+          "hands": [
+            {
+              "actual": 0.462853342294693,
+              "force": 11.4643611907959,
+              "state": "ATTACHED",
+              "target": 0.468816781044006
+            },
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            }
+          ],
+          "label": "swing_bias_left",
+          "owner": "GAME",
+          "position": "(-0.363539, 1.181669, 0.240766)",
+          "profile": 1,
+          "swing": "(-0.971386, 0.0, 0.237506)",
+          "swing_torque": "(-3.268336, 0.046482, -13.36591)",
+          "velocity": "(0.351203, -0.000477, -0.077056)"
+        },
+        {
+          "hands": [
+            {
+              "actual": 0.528964102268219,
+              "force": 0.0,
+              "state": "ATTACHED",
+              "target": 0.56
+            },
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            }
+          ],
+          "label": "dynamic_support",
+          "owner": "GAME",
+          "position": "(-0.112808, 1.166698, 0.385881)",
+          "profile": 1,
+          "swing": "(0.971586, 0.0, -0.236689)",
+          "swing_torque": "(3.988964, 0.005866, 16.37434)",
+          "velocity": "(-0.000154, 0.000017, -0.000019)"
+        },
+        {
+          "hands": [
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            },
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            }
+          ],
+          "label": "controls",
+          "owner": "UI",
+          "position": "(0.000093, 1.166692, 0.400114)",
+          "profile": 1,
+          "swing": "(0.0, 0.0, 0.0)",
+          "swing_torque": "(0.0, 0.0, 0.0)",
+          "velocity": "(-0.000242, -0.000087, 0.000569)"
+        }
+      ]
+    },
+    "60": {
+      "aim_delta_y": -3.48956298828125,
+      "beam_angle": -0.200004622340202,
+      "checks": [
+        {
+          "label": "fresh app starts with mouse arm drag",
+          "passed": true
+        },
+        {
+          "label": "held LMB acquires fixed surface",
+          "passed": true
+        },
+        {
+          "label": "slow upward drag shortens target by 60mm",
+          "passed": true
+        },
+        {
+          "label": "downward drag extends the target back",
+          "passed": true
+        },
+        {
+          "label": "native W and S never actuate arm length",
+          "passed": true
+        },
+        {
+          "label": "RMB press alone never applies another arm delta",
+          "passed": true
+        },
+        {
+          "label": "supporting arm responds while other hand reaches",
+          "passed": true
+        },
+        {
+          "label": "RMB reaches second actual contact",
+          "passed": true
+        },
+        {
+          "label": "shared drag updates both targets once",
+          "passed": true
+        },
+        {
+          "label": "releasing LMB leaves RMB attached",
+          "passed": true
+        },
+        {
+          "label": "MMB orbit does not drag arms or store a later delta",
+          "passed": true
+        },
+        {
+          "label": "swing scene acquires first actual contact",
+          "passed": true
+        },
+        {
+          "label": "four supported swing gestures keep bounded live support",
+          "passed": true
+        },
+        {
+          "label": "hinged support stays finite under drag and swing",
+          "passed": true
+        },
+        {
+          "label": "explicit legacy profile ignores mouse arm drag",
+          "passed": true
+        },
+        {
+          "label": "explicit legacy comparison retains W contraction",
+          "passed": true
+        }
+      ],
+      "complete": true,
+      "dynamic_initial_state": "ATTACHED",
+      "physics_hz": 60,
+      "snapshots": [
+        {
+          "hands": [
+            {
+              "actual": 0.437888383865356,
+              "force": 14.8476390838623,
+              "state": "ATTACHED",
+              "target": 0.426021190881729
+            },
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            }
+          ],
+          "label": "single_drag",
+          "owner": "GAME",
+          "position": "(-0.010391, 1.171689, 0.339121)",
+          "profile": 1,
+          "swing": "(0.0, 0.0, 0.0)",
+          "swing_torque": "(0.0, 0.0, 0.0)",
+          "velocity": "(-0.001311, 0.035426, -0.292789)"
+        },
+        {
+          "hands": [
+            {
+              "actual": 0.469820886850357,
+              "force": 13.1841382980347,
+              "state": "ATTACHED",
+              "target": 0.462786846399308
+            },
+            {
+              "actual": 0.430043429136276,
+              "force": 27.3763542175293,
+              "state": "ATTACHED",
+              "target": 0.416846082210541
+            }
+          ],
+          "label": "dual_drag",
+          "owner": "GAME",
+          "position": "(0.019328, 1.166083, 0.316691)",
+          "profile": 1,
+          "swing": "(0.0, 0.0, 0.0)",
+          "swing_torque": "(-0.002502, -0.00002, 0.00061)",
+          "velocity": "(0.010774, 0.004263, -0.046036)"
+        },
+        {
+          "hands": [
+            {
+              "actual": 0.447604447603226,
+              "force": 118.516647338867,
+              "state": "ATTACHED",
+              "target": 0.418940877914429
+            },
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            }
+          ],
+          "label": "swing_contract",
+          "owner": "GAME",
+          "position": "(-0.534022, 1.202204, 0.132148)",
+          "profile": 1,
+          "swing": "(-0.232977, 0.0, -0.972482)",
+          "swing_torque": "(13.34243, 1.416687, -3.196439)",
+          "velocity": "(-0.330146, -0.103381, -0.230806)"
+        },
+        {
+          "hands": [
+            {
+              "actual": 0.449670970439911,
+              "force": 126.810615539551,
+              "state": "ATTACHED",
+              "target": 0.418940877914429
+            },
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            }
+          ],
+          "label": "swing_extend",
+          "owner": "GAME",
+          "position": "(-0.684225, 1.202281, 0.148819)",
+          "profile": 1,
+          "swing": "(0.24231, 0.0, 0.970199)",
+          "swing_torque": "(-14.05712, 1.640928, 3.511627)",
+          "velocity": "(-0.133239, -0.073457, 0.559976)"
+        },
+        {
+          "hands": [
+            {
+              "actual": 0.448804140090942,
+              "force": 125.452339172363,
+              "state": "ATTACHED",
+              "target": 0.418940877914429
+            },
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            }
+          ],
+          "label": "swing_bias_right",
+          "owner": "GAME",
+          "position": "(-0.482039, 1.199053, 0.417035)",
+          "profile": 1,
+          "swing": "(0.970137, 0.0, -0.242557)",
+          "swing_torque": "(2.96656, 2.201498, 12.21261)",
+          "velocity": "(0.698842, 0.033694, 0.13617)"
+        },
+        {
+          "hands": [
+            {
+              "actual": 0.445756554603577,
+              "force": 107.321128845215,
+              "state": "ATTACHED",
+              "target": 0.418940877914429
+            },
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            }
+          ],
+          "label": "swing_bias_left",
+          "owner": "GAME",
+          "position": "(-0.324034, 1.220315, 0.32378)",
+          "profile": 1,
+          "swing": "(-0.972732, 0.0, 0.231933)",
+          "swing_torque": "(-3.692968, -2.932982, -15.49038)",
+          "velocity": "(-0.329641, -0.116828, -0.284336)"
+        },
+        {
+          "hands": [
+            {
+              "actual": 0.531100273132324,
+              "force": 0.0,
+              "state": "ATTACHED",
+              "target": 0.56
+            },
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            }
+          ],
+          "label": "dynamic_support",
+          "owner": "GAME",
+          "position": "(-0.115647, 1.166695, 0.387225)",
+          "profile": 1,
+          "swing": "(0.97158, 0.0, -0.236712)",
+          "swing_torque": "(3.990558, 0.074816, 16.37916)",
+          "velocity": "(-0.007812, -0.000007, -0.009808)"
+        },
+        {
+          "hands": [
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            },
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            }
+          ],
+          "label": "controls",
+          "owner": "UI",
+          "position": "(-0.000078, 1.16667, 0.40002)",
+          "profile": 1,
+          "swing": "(0.0, 0.0, 0.0)",
+          "swing_torque": "(0.0, 0.0, 0.0)",
+          "velocity": "(-0.01037, -0.002431, -0.007526)"
+        }
+      ]
+    }
+  },
+  "export_smoke_frames": 3,
+  "human_playtest": "v0.3 M4: 10-15 minute coordination, fatigue and enjoyment comparison pending",
+  "future_milestones": [
+    "v0.2 M3 support-aware posture",
+    "v0.2 M4 directional grips",
+    "v0.2 M5 reactive challenge",
+    "v0.2 M6 mantle"
+  ]
+}

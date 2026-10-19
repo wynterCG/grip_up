@@ -32,6 +32,7 @@ func mouse(pressed: bool) -> void:
 func setup() -> void:
 	await physics_frame
 	app = Lab.new()
+	app.input_profile = 0 # Explicitly exercise the preserved legacy control profile.
 	root.add_child(app)
 	current_scene = app
 	app._set_predictive_grip(true)

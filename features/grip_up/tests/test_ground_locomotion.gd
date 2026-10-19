@@ -283,6 +283,7 @@ func test_dynamic_support() -> void:
 
 func test_main_reset() -> void:
 	var app = Lab.new()
+	app.input_profile = 0 # Explicitly exercise the preserved legacy control profile.
 	root.add_child(app)
 	current_scene = app
 	await ticks(hz)

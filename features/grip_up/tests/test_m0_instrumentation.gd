@@ -18,6 +18,7 @@ func check(ok: bool, label: String) -> void:
 
 func run() -> void:
 	var app = Lab.new()
+	app.input_profile = 0 # Explicitly exercise the preserved legacy control profile.
 	root.add_child(app)
 	for frame in 20:
 		await physics_frame

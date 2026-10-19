@@ -43,6 +43,7 @@ func request(pressed: bool) -> bool:
 func setup(hands: int, dynamic: bool = false) -> Array[PhysicsBody3D]:
 	await physics_frame
 	app = Lab.new()
+	app.input_profile = 0 # Explicitly exercise the preserved legacy control profile.
 	root.add_child(app)
 	current_scene = app
 	# Elevated free-wall fixture: the production one-body capsule/sole, actual
@@ -251,6 +252,7 @@ func preserve_new_catch() -> void:
 func practical_wall_launch() -> void:
 	await physics_frame
 	app = Lab.new()
+	app.input_profile = 0 # Explicitly exercise the preserved legacy control profile.
 	root.add_child(app)
 	current_scene = app
 	await ticks(int(0.5*hz))

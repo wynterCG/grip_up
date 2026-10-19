@@ -2,6 +2,7 @@ extends Node
 ## MCP-only view inspection, excluded from game builds.
 func _ready() -> void:
 	var app = get_parent()
+	app._set_input_profile(0) # Preserve this older baseline capture.
 	Engine.physics_ticks_per_second = 120
 	app.load_test(0)
 	app._set_predictive_grip(true)

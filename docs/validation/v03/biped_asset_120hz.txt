@@ -1,0 +1,16 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS Godot imports the complete 65-bone skeleton
+PASS arm hierarchy supports shoulder-elbow-hand IK: l
+PASS leg hierarchy supports hip-knee-foot IK: l
+PASS arm hierarchy supports shoulder-elbow-hand IK: r
+PASS leg hierarchy supports hip-knee-foot IK: r
+PASS Godot imports the skinned character mesh
+ANIMATIONS ["A_TPose", "Crouch_Fwd", "Crouch_Idle", "Dance", "Death01", "Driving", "Fixing_Kneeling", "Hit_Chest", "Hit_Head", "Idle", "Idle_Talking", "Idle_Torch", "Interact", "Jog_Fwd", "Jump", "Jump_Land", "Jump_Start", "PickUp_Table", "Pistol_Aim_Down", "Pistol_Aim_Neutral", "Pistol_Aim_Up", "Pistol_Idle", "Pistol_Reload", "Pistol_Shoot", "Punch_Cross", "Punch_Jab", "Push", "Roll", "Sitting_Enter", "Sitting_Exit", "Sitting_Idle", "Sitting_Talking", "Spell_Simple_Enter", "Spell_Simple_Exit", "Spell_Simple_Idle", "Spell_Simple_Shoot", "Sprint", "Swim_Fwd", "Swim_Idle", "Sword_Attack", "Sword_Idle", "Walk", "Walk_Formal"]
+PASS idle and reference pose are available
+PASS bone transforms remain finite in Idle_Loop
+PASS bone transforms remain finite in A_TPose
+PASS bone transforms remain finite in Push_Loop
+PASS bone transforms remain finite in Jump_Loop
+PASS animation actually articulates the hand
+BIPED ASSET RESULTS: 12 checks, 0 failures

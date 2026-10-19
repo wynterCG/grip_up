@@ -35,6 +35,7 @@ func grip(hand: int, point: Vector3) -> bool:
 func setup(midwall: bool, mid_steps: int = 5) -> void:
 	await physics_frame
 	app = Lab.new()
+	app.input_profile = 0 # Preserve this older baseline probe.
 	root.add_child(app)
 	current_scene = app
 	app.torso.contact_monitor = true

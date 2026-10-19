@@ -7,6 +7,7 @@ const CapturePredictor = preload("res://features/grip_up/scripts/grip_capture_pr
 const CaptureEvaluator = preload("res://features/grip_up/scripts/grip_capture_evaluator.gd")
 const FootSolver = preload("res://features/grip_up/scripts/foot_contact_solver.gd")
 const FootProfile = preload("res://features/grip_up/resources/foot_tuning.gd")
+const SupportedSwing = preload("res://features/grip_up/scripts/supported_swing.gd")
 var torso: RigidBody3D
 var tuning: Resource = Tuning.new()
 var hands: Array[Dictionary] = []
@@ -29,6 +30,14 @@ var capture_evaluator = CaptureEvaluator.new()
 var feet_solver: RefCounted
 var free_foot_positions: Array[Vector3] = []
 var grounded_for_walking := false
+var control_profile := 0
+var experimental_launch_enabled := false
+var _arm_deltas: Dictionary = {}
+var _swing_requested := Vector3.ZERO
+var _swing_reference_right := Vector3.RIGHT
+var _experimental_heading_active := false
+var _supported_swing = SupportedSwing.new()
+var _swing_torque := Vector3.ZERO
 
 func configure(body: RigidBody3D, configuration: Resource = null) -> void:
 	torso = body
@@ -37,6 +46,11 @@ func configure(body: RigidBody3D, configuration: Resource = null) -> void:
 	reset_state()
 
 func reset_state() -> void:
+	_arm_deltas.clear()
+	_swing_requested = Vector3.ZERO
+	_supported_swing.reset()
+	_swing_torque = Vector3.ZERO
+	_experimental_heading_active = false
 	if feet_solver!=null:
 		feet_solver.reset()
 	free_foot_positions.clear()
@@ -69,6 +83,12 @@ func configure_feet(hips: Array[Vector3], rest_feet: Array[Vector3], lengths: Ar
 	feet_solver.configure(torso,FootProfile.new(),hips,rest_feet,lengths,clearances)
 
 func set_climb_intent(contract: float, extend: float, bias: float, view_right: Vector3 = Vector3.RIGHT) -> void:
+	if control_profile == 1:
+		_intent_target = Vector3.ZERO
+		_contract = 0.0
+		_extend = 0.0
+		_bias = 0.0
+		return
 	_intent_target = Vector3(clampf(contract, 0.0, 1.0),clampf(extend, 0.0, 1.0),clampf(bias, -1.0, 1.0))
 	if tuning.intent_response_time <= 0.0:
 		_contract = _intent_target.x
@@ -79,6 +99,44 @@ func set_climb_intent(contract: float, extend: float, bias: float, view_right: V
 		if horizontal.length_squared()>0.0001:
 			_view_right = horizontal.normalized()
 
+func set_control_profile(profile: int) -> void:
+	var next := clampi(profile,0,1)
+	if next == control_profile:
+		return
+	control_profile = next
+	_arm_deltas.clear()
+	_swing_requested = Vector3.ZERO
+	_supported_swing.reset()
+	_swing_torque = Vector3.ZERO
+	_experimental_heading_active = false
+	_intent_target = Vector3.ZERO
+	_contract = 0.0
+	_extend = 0.0
+	_bias = 0.0
+	cancel_launch()
+
+func queue_arm_length_delta(id: int, metres: float) -> bool:
+	if control_profile != 1 or id < 0 or id >= hands.size() or not is_finite(metres) or hands[id]["state"] not in ["ATTACHED","SLIPPING"]:
+		return false
+	var anchor = hands[id]["anchor"]
+	if not _arm_deltas.has(id) or _arm_deltas[id].anchor != anchor:
+		_arm_deltas[id] = {"anchor":anchor,"metres":0.0}
+	_arm_deltas[id].metres += metres
+	return true
+
+func clear_drag_requests(id: int = -1) -> void:
+	if id < 0:
+		_arm_deltas.clear()
+	else:
+		_arm_deltas.erase(id)
+
+func set_swing_intent(world_dir: Vector3, reference_right: Vector3 = Vector3.RIGHT) -> void:
+	_swing_requested = world_dir.slide(Vector3.UP).limit_length(1.0) if world_dir.is_finite() else Vector3.ZERO
+	if reference_right.is_finite():
+		var right := reference_right.slide(Vector3.UP)
+		if right.length_squared()>0.0001:
+			_swing_reference_right = right.normalized()
+
 func get_shoulder_world(id: int) -> Vector3:
 	if not is_instance_valid(torso):
 		return Vector3.ZERO
@@ -86,6 +144,8 @@ func get_shoulder_world(id: int) -> Vector3:
 	return (torso.global_transform if torso.is_inside_tree() else torso.transform) * local
 
 func request_launch_charge(pressed: bool) -> bool:
+	if control_profile == 1 and not experimental_launch_enabled:
+		return false
 	if pressed:
 		if _launch_state!="IDLE" or tuning.launch_contraction_speed<=0.0:
 			return false
@@ -212,6 +272,7 @@ func release_grip(id: int, reason: String = "manual") -> void:
 	if id < 0 or id >= hands.size():
 		return
 	var hand: Dictionary = hands[id]
+	_arm_deltas.erase(id)
 	if hand.has("capture") and reason not in ["manual","launch"]:
 		hand["capture"]["failure_reason"] = reason
 		if tuning.predictive_grip and reason=="arm_extension_limit" and hand["capture"].get("load_risk",false):
@@ -338,7 +399,7 @@ func _update_hand(id: int, delta: float) -> void:
 			hand["departing_surface"] = false
 		elif hand.get("approaching_surface", false) and next.distance_to(destination) < 0.001:
 			hand["approaching_surface"] = false
-		elif not hand.get("approaching_surface", false) and next.distance_to(point) <= (0.000001 if tuning.predictive_grip else tuning.attach_distance_tolerance):
+		elif not hand.get("approaching_surface", false) and next.distance_to(point) <= (0.000001 if tuning.predictive_grip or control_profile == 1 else tuning.attach_distance_tolerance):
 			if tuning.predictive_grip:
 				var capture: Dictionary = capture_evaluator.evaluate(self,id)
 				if not capture.accepted:
@@ -417,6 +478,13 @@ func _physics_process(delta: float) -> void:
 		_update_hand(id, delta)
 	_advance_launch(delta)
 	var attached: Array[int] = _attached_ids()
+	if control_profile == 1:
+		if attached.is_empty():
+			_experimental_heading_active = false
+			_supported_swing.reset()
+		elif not _experimental_heading_active:
+			_view_right = _swing_reference_right
+			_experimental_heading_active = true
 	var forces: Array[Vector3] = [Vector3.ZERO, Vector3.ZERO]
 	var raw_tensions: Array[float] = [0.0, 0.0]
 	var center: Vector3 = torso.global_transform * torso.center_of_mass
@@ -443,6 +511,9 @@ func _physics_process(delta: float) -> void:
 				contraction = lerpf(tuning.contraction_speed,tuning.launch_contraction_speed,_launch_charge)
 				extension = 0.0
 		hand["rest_length"] = clampf(hand["rest_length"] + (extension - contraction) * delta, tuning.min_arm_length, tuning.max_arm_length)
+		if control_profile == 1 and _arm_deltas.has(id) and _arm_deltas[id].anchor == hand["anchor"]:
+			var change: float = clampf(_arm_deltas[id].metres,-maxf(0.0,tuning.arm_target_max_rate_m_s)*delta,maxf(0.0,tuning.arm_target_max_rate_m_s)*delta)
+			hand["rest_length"] = clampf(hand["rest_length"]+change,tuning.min_arm_length,tuning.max_arm_length)
 		hand["blend_elapsed"] += delta
 		var blend: float = smoothstep(0.0, maxf(0.001, tuning.grip_blend_duration), hand["blend_elapsed"])
 		var effort: float = hand["allocation"]
@@ -455,7 +526,36 @@ func _physics_process(delta: float) -> void:
 		hand["force_axis"] = result["axis"]
 		sum_force += forces[id].length()
 		moments += (get_shoulder_world(id) - center).cross(forces[id])
+	_arm_deltas.clear()
 	var assist: Vector3 = _compute_attitude_assist(attached,forces,center,sum_force)
+	_swing_torque = Vector3.ZERO
+	var support_torque_weights: Dictionary = {}
+	if control_profile == 1 and not attached.is_empty():
+		var lever := Vector3.ZERO
+		var support_spin := Vector3.ZERO
+		var engaged_weight := 0.0
+		var allocation_weight := 0.0
+		for id in attached:
+			var allocation: float = maxf(0.0,hands[id]["allocation"])
+			var weight: float = allocation*smoothstep(0.0,maxf(0.001,tuning.grip_blend_duration),hands[id]["blend_elapsed"])
+			support_torque_weights[id] = weight
+			engaged_weight += weight
+			allocation_weight += allocation
+			lever += (get_shoulder_world(id)-center)*weight
+			var support: PhysicsBody3D = hands[id]["anchor"].support_body()
+			if support is RigidBody3D:
+				support_spin += support.angular_velocity*weight
+			elif support is StaticBody3D:
+				support_spin += support.constant_angular_velocity*weight
+		lever /= maxf(engaged_weight,0.000001)
+		support_spin /= maxf(engaged_weight,0.000001)
+		for id in attached:
+			support_torque_weights[id] /= maxf(engaged_weight,0.000001)
+		var engagement: float = engaged_weight/maxf(allocation_weight,0.000001)
+		var base_assist := assist
+		var requested_swing: Vector3 = _supported_swing.evaluate(delta,_swing_requested,lever,torso.angular_velocity-support_spin,engagement,tuning)
+		assist = (base_assist+requested_swing).limit_length(tuning.max_attitude_torque)
+		_swing_torque = assist-base_assist
 	var foot_requests: Array[Dictionary] = []
 	var leg_force := 0.0
 	var leg_moment := Vector3.ZERO
@@ -486,13 +586,17 @@ func _physics_process(delta: float) -> void:
 		var support: PhysicsBody3D = hand["anchor"].support_body()
 		if support is RigidBody3D:
 			support.apply_force(-force, hand["anchor_world"] - support.global_position)
-			support.apply_torque(-assist * scale_factor / float(attached.size()))
+			if control_profile == 1:
+				support.apply_torque(-assist * scale_factor * float(support_torque_weights.get(id,1.0/float(attached.size()))))
+			else:
+				support.apply_torque(-assist * scale_factor / float(attached.size()))
 			support.sleeping = false
 		_update_integrity(id, raw_tensions[id] * scale_factor, delta)
 	if not attached.is_empty():
 		torso.apply_torque(assist * scale_factor)
 		torso.sleeping = false
 	_diagnostics = {"step": _step, "physics_delta": delta, "attached_count": attached.size(),
+		"control_profile":control_profile,"swing_intent":_supported_swing.intent if control_profile==1 else Vector3.ZERO,"swing_requested":_swing_requested,"swing_torque":_swing_torque*scale_factor,
 		"simulation_time":simulation_time,"input_intent":Vector3(_contract,_extend,_bias),"requested_intent":_intent_target,
 		"features":{"predictive_grip":tuning.predictive_grip,"physical_feet":tuning.physical_feet,"posture_solver":tuning.posture_solver,"directional_grip_quality":tuning.directional_grip_quality,"reactive_challenge":tuning.reactive_challenge},
 		"launch_state":_launch_state,"launch_elapsed":_launch_elapsed,"launch_charge":_launch_charge,

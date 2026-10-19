@@ -5,6 +5,7 @@ func _ready() -> void:
 
 func run() -> void:
 	var app = get_parent()
+	app._set_input_profile(0) # Preserve this older baseline capture.
 	app.load_test(0)
 	await get_tree().create_timer(0.4).timeout
 	var start: Vector3 = app.torso.position
