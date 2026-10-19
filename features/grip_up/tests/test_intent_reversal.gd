@@ -25,12 +25,13 @@ func sample(command: Vector2, camera := Vector3.RIGHT) -> Dictionary:
 	budgets = budgets and data.total_force<=360.001 and Vector3(data.assist_torque).length()<=20.001 and Vector3(data.torque).length()<=150.001
 	return data
 
-func one_reversal(serial: bool, reverse: bool = true) -> Dictionary:
+func one_reversal(serial: bool, reverse: bool = true, neutral_gap: float = 0.0) -> Dictionary:
 	await prepare(serial)
 	var start_trace: Array = []
 	for index in int(.60*hz):
 		var data: Dictionary = await sample(Vector2(1,0))
 		start_trace.append({"position":data.torso_position,"velocity":data.linear_velocity,"force":data.total_force,"torque":data.assist_torque,"rest":data.hands[0].rest_length})
+	for index in int(neutral_gap*hz):await sample(Vector2.ZERO)
 	var before: Dictionary = controller.telemetry()
 	var press: float = controller.simulation_time
 	var first_counter := -1.0
@@ -58,7 +59,7 @@ func one_reversal(serial: bool, reverse: bool = true) -> Dictionary:
 		neutral_trace.append({"swing":data.swing_torque,"velocity":data.linear_velocity,"rest":data.hands[0].rest_length})
 	var result := {"serial_control":serial,"mode":"reverse" if reverse else "release_only","latency":first_counter,"wrong_direction_impulse_first250ms":wrong_impulse,
 		"swing_work_first500ms":work,"retained":retained,"phases":phases,"before_spin":before.angular_velocity,"before_velocity":before.linear_velocity,
-		"start_trace":start_trace,"neutral_trace":neutral_trace,"samples":snapshots,"zero_command":zero_command}
+		"start_trace":start_trace,"neutral_trace":neutral_trace,"samples":snapshots,"zero_command":zero_command,"neutral_gap":neutral_gap}
 	check(retained and budgets,"%s %s uses actual retained grip and unchanged360/20/150 budgets" % ["serial" if serial else "candidate",result.mode])
 	report.runs.append(result)
 	print("REVERSAL_MEASURE ",JSON.stringify({"serial":serial,"mode":result.mode,"latency":first_counter,"wrong_impulse":wrong_impulse,"work":work,"retained":retained}))
@@ -139,6 +140,12 @@ func run() -> void:
 		check(candidate.latency>0 and candidate.latency<old.latency*.75,"explicit opposite command produces finite countereffort at least25percent sooner")
 		check(candidate.wrong_direction_impulse_first250ms<old.wrong_direction_impulse_first250ms*.75,"reversal reduces wrong-way torque impulse without more maximum torque")
 		check(new_brake.work<old_brake.work and new_brake.energy_peak<=old_brake.energy_peak+.05,"same no-anticipation brake policy reduces injected work without increasing peak energy")
+		var gap_old: Dictionary = await one_reversal(true,true,1.0/hz)
+		var gap_new: Dictionary = await one_reversal(false,true,1.0/hz)
+		check(gap_new.latency>0 and gap_new.latency<gap_old.latency*.75,"one real neutral tick between opposite keys retains finite faster counter-command")
+		var idle_old: Dictionary = await one_reversal(true,true,.4)
+		var idle_new: Dictionary = await one_reversal(false,true,.4)
+		check(idle_new.samples==idle_old.samples and idle_new.neutral_trace==idle_old.neutral_trace,"after long neutral a new opposite gesture exactly preserves historical startup instead of forcing brake mode")
 		await safety_and_reaction()
 	var filename := "res://builds/intent_reversal_baseline_%dhz.json" if baseline_only else "res://builds/intent_reversal_%dhz.json"
 	FileAccess.open(filename % hz,FileAccess.WRITE).store_string(JSON.stringify({"hz":hz,"checks":checks,"failures":failures,"baseline_only":baseline_only,"report":report},"\t"))

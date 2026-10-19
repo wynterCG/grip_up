@@ -1,11 +1,14 @@
 """Verify the opt-in v0.7 candidate; human acceptance remains a separate gate."""
 from pathlib import Path
 from datetime import datetime,timezone
-import hashlib,json,re,shutil,subprocess
+import hashlib,json,re,shutil,subprocess,sys
 
 root=Path(__file__).resolve().parents[1]
 dest=Path(r'E:\Godot Games\grip_up')
-folder=root/'docs/validation/v07'
+version=sys.argv[1] if len(sys.argv)>1 else 'v07'
+assert version in ['v07','v071']
+exe_name='GripUp-v0.7.1.exe' if version=='v071' else 'GripUp-v0.7.exe'
+folder=root/f'docs/validation/{version}'
 final=folder/'final'
 aggregate=json.loads((folder/'results.json').read_text())
 assert aggregate['all_passed']
@@ -17,9 +20,9 @@ for item in aggregate['suites']:
     if item['suite'].startswith('intent_'):assert 'ERROR:' not in log
 native={str(hz):json.loads((final/f'rendered_{hz}hz.json').read_text()) for hz in [120,60]}
 assert all(r['complete'] and not r['focus_events'] and all(c['passed'] for c in r['checks']) for r in native.values())
-ui=json.loads((root/'builds/v07_ui_final.json').read_text())
+ui=json.loads((root/f'builds/{version}_ui_final.json').read_text())
 assert ui['profile']==4 and ui['intent_climb_enabled'] and ui['physical_feet'] and ui['posture_variant']==0 and not ui['launch'] and ui['hud_matches_viewport']
-errors,_=json.JSONDecoder().raw_decode((root/'builds/v07_editor_errors.json').read_text(encoding='utf-8'))
+errors,_=json.JSONDecoder().raw_decode((root/f'builds/{version}_editor_errors.json').read_text(encoding='utf-8'))
 assert errors['count']==0
 smoke=(root/'builds/smoke_export.log').read_text(encoding='utf-8')
 assert '3 frames at 60 FPS' in smoke and 'SCRIPT ERROR:' not in smoke
@@ -32,11 +35,11 @@ for p in sorted((root/'features/grip_up').rglob('*')):
     relative=p.relative_to(root)
     assert sha(p)==sha(dest/relative),relative
     source[str(relative).replace('\\','/')]=sha(p)
-exe=root/'builds/GripUp-v0.7.exe'
+exe=root/'builds'/exe_name
 assert sha(exe)==sha(dest/'builds'/exe.name)
 lab=(root/'features/grip_up/scripts/grip_up_lab.gd').read_text(encoding='utf-8')
 assert 'var input_profile := 2' in lab and 'var intent_climb_enabled := false' in lab
-report={'revision':'v0.7 intent-driven locomotion technical candidate','recorded_utc':datetime.now(timezone.utc).isoformat(),
+report={'revision':version+' intent-driven locomotion technical candidate','recorded_utc':datetime.now(timezone.utc).isoformat(),
  'source_commit':subprocess.check_output(['git','-C',str(dest),'rev-parse','HEAD'],text=True).strip(),
  'engine':'Godot4.7.2 / Jolt','default_hz':120,'comparison_hz':60,
  'automated_checks':aggregate['total_checks'],'suite_runs':len(aggregate['suites']),'automated_failures':0,
@@ -54,7 +57,13 @@ report={'revision':'v0.7 intent-driven locomotion technical candidate','recorded
  'source_sha256':source}
 for p in [root/'builds/verification.json',final/'verification.json']:
     p.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
-for source_name,target_name in [('v07_ui_final.json','ui_final.json'),('v07_controls_final.png','controls_final.png'),('export00000002.png','export_smoke.png')]:shutil.copy2(root/'builds'/source_name,final/target_name)
+if version=='v071':
+    report['human_feedback_received']='Designer: sim está melhor (v0.7 baseline); new refinement not yet human validated'
+    report['refinement_baseline_ref']='cea4ae0'
+    report['native_handoffs']={hz:run.get('second_handoff',{}) for hz,run in native.items()}
+    for target in [root/'builds/verification.json',final/'verification.json']:
+        target.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+for source_name,target_name in [(f'{version}_ui_final.json','ui_final.json'),(f'{version}_controls_final.png','controls_final.png'),('export00000002.png','export_smoke.png')]:shutil.copy2(root/'builds'/source_name,final/target_name)
 (final/'editor_errors.json').write_text(json.dumps(errors,indent=2)+'\n',encoding='utf-8')
 (final/'export_smoke.txt').write_text(smoke.replace('\r','').rstrip()+'\n',encoding='utf-8')
 files={str(p.relative_to(final)).replace('\\','/'):sha(p) for p in sorted(final.rglob('*')) if p.is_file() and p.name!='manifest.json'}

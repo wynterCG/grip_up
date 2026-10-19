@@ -681,6 +681,8 @@ func _process(delta: float) -> void:
 			warning = "\n"+_capture_reason(hand.capture.failure_reason)
 		if hand.state == "ATTACHED" and controller.get_arm_force(i).length() > hand.grip_limit * 0.75:
 			warning = " / STRAINED"
+		if input_profile==4 and hand.state=="ATTACHED" and hand.actual_length>controller.get_max_reach()-.035:
+			warning=" / EXTENDED" if warning.is_empty() else warning+" / EXTENDED"
 		hand_labels[i].text = ("LEFT / CYAN" if i==0 else "RIGHT / AMBER") + "\n" + hand.state + warning
 		var pending:Dictionary=controller.pending_diagnostics(i)
 		var committed:bool=_distant_targeting_active() and pending.get("active",false) and hand.state=="REACHING"
@@ -1062,6 +1064,7 @@ func _setup_ui() -> void:
 	settings_box.add_child(step_row)
 	_button("The Step / hands only",func():_open_intent_arena(6,false),step_row)
 	_button("The Step / physical feet ON",func():_open_intent_arena(6,true),step_row)
+	_button("The Step / early grips + feet",func():_open_intent_arena(6,true);_set_distant_targeting(true),step_row)
 	var intent_row:=HBoxContainer.new()
 	settings_box.add_child(intent_row)
 	_button("The Hang",func():_open_intent_arena(7,false),intent_row)

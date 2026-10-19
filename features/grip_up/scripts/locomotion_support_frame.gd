@@ -60,7 +60,9 @@ func update(supports: Array[Dictionary], camera_right: Vector3, delta: float) ->
 		tangent_up = up.slide(normal)
 		quality += "_TRANSPORTED_UP"
 	if tangent_up.length_squared()<.0001:
-		tangent_up = Vector3(camera_right).cross(normal)
+		# Then (normal x camera_right) x normal = projected camera_right.
+		# The reverse cross inverted A/D on the very first horizontal grip.
+		tangent_up = normal.cross(camera_right)
 	if tangent_up.length_squared()<.0001:tangent_up = Vector3.FORWARD.slide(normal)
 	up = tangent_up.normalized()
 	# With gravity-up defined, up x outward normal fixes the handedness.

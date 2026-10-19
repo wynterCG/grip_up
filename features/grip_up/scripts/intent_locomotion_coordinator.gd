@@ -21,6 +21,8 @@ var _start_position := Vector3.ZERO
 var _position_initialized := false
 var _voluntary_reversals := 0
 var _swing_reversal_active := false
+var _last_swing_command := Vector2.ZERO
+var _last_swing_command_time := -1.0
 
 func reset() -> void:
 	frame.reset()
@@ -38,10 +40,37 @@ func reset() -> void:
 	_position_initialized = false
 	_voluntary_reversals = 0
 	_swing_reversal_active = false
+	_last_swing_command = Vector2.ZERO
+	_last_swing_command_time = -1.0
 
 func set_input(value: Vector2, reference_right: Vector3) -> void:
 	requested = value.limit_length(1.0) if value.is_finite() else Vector2.ZERO
 	if reference_right.is_finite() and reference_right.length_squared()>.01:camera_right = reference_right.normalized()
+
+func _capture_achieved_posture(record: Dictionary, actual: float, _rest: float) -> void:
+	var direction: int = int(record.get("requested_length_direction",0))
+	if not record.get("capture_commanded",false) or direction==0:
+		record["capture_direction"] = 0
+		return
+	if int(record.get("capture_direction",0))!=direction:
+		record["capture_direction"] = direction
+		record["capture_reference_actual"] = actual
+		record["capture_reference_hold"] = record.hold
+	# Net achieved geometry, not a sum of one-sided tiny oscillations. Repeated
+	# jitter against a blocked body cannot ratchet a future target downward.
+	var posture_reference: float = record.capture_reference_hold
+	var achieved: float = posture_reference+actual-float(record.capture_reference_actual)
+	# Keep the best actual posture reached in this commanded stroke. This is
+	# an absolute extremum from one fixed reference, not cumulative negative
+	# deltas, so repeated oscillation cannot manufacture more contraction.
+	record.hold = minf(record.hold,minf(posture_reference,achieved)) if direction<0 else maxf(record.hold,maxf(posture_reference,achieved))
+
+func _limit_goal_to_achieved_geometry(record: Dictionary, actual: float, goal: float, offset: float, max_error: float) -> float:
+	# The movement envelope is additional to the measured loaded spring strain,
+	# not a replacement for the preload that already carries the torso weight.
+	# Otherwise60Hz's implicit spring strain can consume the entire55mm request.
+	var loaded_strain: float = clampf(float(record.get("capture_reference_actual",actual))-float(record.get("capture_reference_hold",record.hold)),0.0,maxf(0.0,max_error-offset))
+	return clampf(goal,actual-offset-loaded_strain,actual+offset)
 
 func step(controller: Node, delta: float, enabled: bool) -> void:
 	var began := Time.get_ticks_usec()
@@ -85,12 +114,18 @@ func step(controller: Node, delta: float, enabled: bool) -> void:
 		if requested.length_squared()>.00001:
 			# Only an explicit opposite gesture bypasses the first of the two
 			# serial ramps. The existing .10s SupportedSwing effort ramp remains.
-			_swing_reversal_active = requested.dot(_previous_requested)<-.5*requested.length()*_previous_requested.length() and _previous_requested.length_squared()>.00001
+			# A key-up/down can cross one neutral tick. Remember the actual prior
+			# gesture only for the existing input ramp duration, never invent input.
+			var recent: bool = _last_swing_command_time>=0.0 and controller.simulation_time-_last_swing_command_time<=tuning.traversal_input_ramp_s+.00001
+			_swing_reversal_active = recent and requested.dot(_last_swing_command)<-.5*requested.length()*_last_swing_command.length() and _last_swing_command.length_squared()>.00001
 		if requested.dot(_previous_requested)<-.01:_voluntary_reversals += 1
 		_input_frame_id += 1
 		_input_timestamp = controller.simulation_time
 		_origin_frame = current_frame.duplicate(true)
 		_previous_requested = requested
+	if requested.length_squared()>.00001 and enabled and not ids.is_empty():
+		_last_swing_command = requested
+		_last_swing_command_time = controller.simulation_time
 	var command := requested if enabled and (not ids.is_empty() or feet>0) else Vector2.ZERO
 	input = input.move_toward(command,delta/maxf(.001,tuning.traversal_input_ramp_s))
 	if not enabled or ids.is_empty() and feet==0:input = Vector2.ZERO
@@ -137,24 +172,29 @@ func step(controller: Node, delta: float, enabled: bool) -> void:
 		var rest: float = hand.rest_length
 		var progress: float = absf(actual-float(record.previous_actual))/maxf(delta,.000001)
 		record.stall = record.stall+delta if absf(actual-rest)>tuning.traversal_tracking_tolerance and progress<.025 else 0.0
-		record.previous_actual = actual
 		record.idle = record.idle+delta if command.length_squared()<.00001 else 0.0
-		# Capture achieved contraction/extension, never an unachieved request.
-		# A short settling window cannot ratchet passive elastic sag forever.
-		if record.idle<.25:
-			if record.last_direction<0 and actual<=rest+tuning.traversal_hold_tolerance:record.hold = minf(record.hold,rest)
-			elif record.last_direction>0:record.hold = maxf(record.hold,minf(rest,actual-tuning.traversal_hold_tolerance))
 		var shoulder: Vector3 = controller.get_shoulder_world(id)
 		var geometric_change: float = (shoulder+body_step).distance_to(hand.anchor_world)-actual
+		record["requested_length_direction"] = int(signf(geometric_change)) if absf(geometric_change)>.00001 else 0
+		# Saturation stops actuator advancement below, but must not reset this
+		# stroke's absolute reference on every cap crossing (an oscillation ratchet).
+		record["capture_commanded"] = command.length_squared()>.00001 and enabled and not slipping
+		_capture_achieved_posture(record,actual,rest)
+		record.hold = clampf(record.hold,tuning.min_arm_length,tuning.max_arm_length)
+		record.previous_actual = actual
 		var goal: float = record.hold+geometric_change
 		if command.length()>.001:
 			# Bound remaining strain to actual geometry; holding a blocked command
 			# for minutes does not integrate minutes of target displacement.
-			goal = clampf(goal,actual-tuning.traversal_max_target_offset,actual+tuning.traversal_max_target_offset)
+			goal = _limit_goal_to_achieved_geometry(record,actual,goal,tuning.traversal_max_target_offset,tuning.max_length_error)
 			if absf(geometric_change)>.00001:record.last_direction = int(signf(geometric_change))
 		if record.stall>tuning.traversal_stall_confirm_s:
 			reason = "POSTURE_TARGET_NOT_REACHED"
-		if not enabled or slipping or saturated or record.stall>tuning.traversal_stall_confirm_s:goal = rest
+		if not enabled or slipping:goal = rest
+		elif (saturated or record.stall>tuning.traversal_stall_confirm_s) and goal<rest:
+			# Saturation blocks adding load, never the extension which releases
+			# unachieved strain. Otherwise neutral/S can get stuck at full effort.
+			goal = rest
 		goal = clampf(goal,tuning.min_arm_length,tuning.max_arm_length)
 		var error: float = goal-rest
 		var target_velocity: float = signf(error)*minf(tuning.traversal_target_max_rate,maxf(0.0,sqrt(2.0*tuning.traversal_target_max_acceleration*absf(error))-tuning.traversal_target_max_acceleration*delta))

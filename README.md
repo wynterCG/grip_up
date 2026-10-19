@@ -1,10 +1,26 @@
-# GRIP UP / physics climbing lab 0.7 candidate
+# GRIP UP / physics climbing lab 0.7.1 candidate
 
-Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v0.7.exe`.
+Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v0.7.1.exe`.
 PC mouse and keyboard. Resizable 1920x1080 reference canvas; initial window 1440x810.
 Integrated Jolt, 120 Hz. Core and complete routes also tested at 60 Hz.
 
 This is a separate prototype. The Janga object grabber and its project are unchanged.
+
+## v0.7.1 control refinement
+
+In **Controls**, choose **The Step / early grips + feet**. Hold LMB/RMB on the
+two low contacts, use W to climb, then alternate hands onto the higher points.
+A short D while holding W can help move the right shoulder toward the second
+destination. A held distant selection remains unladen until actual contact.
+
+This revision improves achieved-posture tracking under elastic load, explicit
+swing reversals and the initial A/D sign on horizontal supports. `EXTENDED`
+marks a hand close to anatomical reach. Physics budgets and startup defaults
+are preserved. The previous v0.7 executable remains available for comparison.
+
+See the [v0.7.1 changes and validation](docs/validation/v071/comparison_summary.md).
+The positive human feedback concerns the v0.7 baseline; this refinement still
+needs hands-on comparison. Mantle and the new reactive challenge remain later gates.
 
 ## v0.7 intent-driven body travel (opt-in candidate)
 
@@ -36,7 +52,7 @@ The selected material point persists while held; walk or swing into real contact
 Pending hands exert no force. Pointer movement never retargets a held selection;
 mouse-up cancels/releases, including over UI. Force, torque and reach limits are unchanged.
 
-The checkbox is OFF by default and applies only to independent-aim profile3.
+The checkbox is OFF by default and applies to independent-aim profile3 and intent profile4.
 Startup profile2 and earlier comparison modes remain available. The full matrix
 passes **3116 automated checks**, plus **46 scripted native checks** at60/120Hz.
 These are technical results; the v0.6 comparative human pilot remains pending.
