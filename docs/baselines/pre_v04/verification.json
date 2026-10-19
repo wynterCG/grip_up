@@ -1,0 +1,686 @@
+{
+  "revision": "Contextual Arm Control: anatomical virtual hands and transient supported effort",
+  "recorded_utc": "2026-10-19T13:27:22.309926+00:00",
+  "engine": "4.7.2.stable.ed1daf0bf",
+  "backend": "Jolt Physics",
+  "default_hz": 120,
+  "suites": {
+    "physics": {
+      "120hz": 45,
+      "60hz": 45
+    },
+    "platform_probe": {
+      "120hz": 42,
+      "60hz": 42
+    },
+    "wall_clearance": {
+      "120hz": 6,
+      "60hz": 6
+    },
+    "biped_profile": {
+      "120hz": 58,
+      "60hz": 58
+    },
+    "playthrough": {
+      "120hz": 19,
+      "60hz": 19
+    },
+    "swing_playthrough": {
+      "120hz": 10,
+      "60hz": 10
+    },
+    "integration": {
+      "120hz": 27,
+      "60hz": 27
+    },
+    "biped_visual": {
+      "120hz": 15,
+      "60hz": 15
+    },
+    "idle_hang": {
+      "120hz": 13,
+      "60hz": 13
+    },
+    "ground_locomotion": {
+      "120hz": 24,
+      "60hz": 24
+    },
+    "climb_direction": {
+      "120hz": 43,
+      "60hz": 43
+    },
+    "leg_motion": {
+      "120hz": 20,
+      "60hz": 20
+    },
+    "pendulum": {
+      "120hz": 63,
+      "60hz": 63
+    },
+    "free_climb": {
+      "120hz": 22,
+      "60hz": 24
+    },
+    "launch": {
+      "120hz": 60,
+      "60hz": 60
+    },
+    "full_reach": {
+      "120hz": 7,
+      "60hz": 7
+    },
+    "biped_asset": {
+      "120hz": 12
+    },
+    "m0_instrumentation": {
+      "120hz": 5,
+      "60hz": 5
+    },
+    "capture_input": {
+      "120hz": 9,
+      "60hz": 9
+    },
+    "capture_matrix": {
+      "120hz": 56,
+      "60hz": 56
+    },
+    "foot_support": {
+      "120hz": 50,
+      "60hz": 50
+    },
+    "foot_integration": {
+      "120hz": 17,
+      "60hz": 17
+    },
+    "feet_routes": {
+      "120hz": 19,
+      "60hz": 19
+    },
+    "feet_swing": {
+      "120hz": 10,
+      "60hz": 10
+    },
+    "drag_input": {
+      "120hz": 30,
+      "60hz": 30
+    },
+    "drag_swing_physics": {
+      "120hz": 101,
+      "60hz": 101
+    },
+    "contextual_input": {
+      "120hz": 30,
+      "60hz": 30
+    },
+    "contextual_physics": {
+      "120hz": 65,
+      "60hz": 65
+    }
+  },
+  "total_checks": 1746,
+  "failures": 0,
+  "legacy": {
+    "unchanged_grabber_sha256": "8ab923ac1d903e8dcc8ed2a2e4f9f8c5cec326a3217cb4a9d8f00036557e7dad",
+    "previous_smoke_checks": 72
+  },
+  "baseline_ref": "v0.1-baseline",
+  "previous_milestone_ref": "b6bc249",
+  "default_input_profile": 2,
+  "default_profile_reason": "User requested contextual relative hand aim and supported effort instead of pixel-driven arm lengths",
+  "experimental_space_launch": false,
+  "mouse_mapping": "Relative anatomical free-hand aim; downward effort contracts, upward effort extends; hold only achieved posture",
+  "default_flags": {
+    "predictive_grip": false,
+    "physical_feet": false,
+    "posture_solver": false,
+    "directional_grip_quality": false,
+    "reactive_challenge": false
+  },
+  "exe_name": "GripUp-contextual.exe",
+  "exe_sha256": "0997635f4005b9b6ccc1e51328e91595f4fc8e6ca739c6fda62d93a552238dd3",
+  "mcp_project": "E:/Godot Games/grip_up/",
+  "rendered_controls": {
+    "120": {
+      "checks": [
+        {
+          "label": "native startup selects contextual arms",
+          "passed": true
+        },
+        {
+          "label": "native game captures relative mouse without a screen-edge cursor",
+          "passed": true
+        },
+        {
+          "label": "virtual L raycast and held button acquire actual contact",
+          "passed": true
+        },
+        {
+          "label": "relative downward drag produces actual supported rise",
+          "passed": true
+        },
+        {
+          "label": "aim input does not immediately write a cursor-derived arm length",
+          "passed": true
+        },
+        {
+          "label": "upward relative effort physically extends the arm and lowers the body",
+          "passed": true
+        },
+        {
+          "label": "second virtual hand catches after the first contracted",
+          "passed": true
+        },
+        {
+          "label": "dual contextual effort respects shared hand budget",
+          "passed": true
+        },
+        {
+          "label": "MMB orbit does not command arm posture",
+          "passed": true
+        },
+        {
+          "label": "held W keeps its world swing direction while camera orbits",
+          "passed": true
+        },
+        {
+          "label": "releasing left preserves the contextual right grip",
+          "passed": true
+        },
+        {
+          "label": "Controls frees native mouse for UI",
+          "passed": true
+        },
+        {
+          "label": "closing Controls resumes relative capture",
+          "passed": true
+        }
+      ],
+      "complete": true,
+      "lower_m": 0.0894559621810913,
+      "physics_hz": 120,
+      "rise_m": 0.0909602642059326,
+      "snapshots": [
+        {
+          "hands": [
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            },
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            }
+          ],
+          "input": {
+            "effort": [
+              0.0,
+              0.0
+            ],
+            "offsets": [
+              [
+                0.0304099638015032,
+                0.399600505828857
+              ],
+              [
+                0.0304099638015032,
+                0.399600505828857
+              ]
+            ],
+            "pending": [
+              0.0,
+              0.0
+            ],
+            "sensitivity": 0.0018
+          },
+          "label": "free_aim",
+          "mouse_mode": 2,
+          "owner": "GAME",
+          "position": "(0.000098, 1.166693, 0.400116)"
+        },
+        {
+          "hands": [
+            {
+              "actual": 0.314345002174377,
+              "force": 146.759323120117,
+              "state": "ATTACHED",
+              "target": 0.284415622552236
+            },
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            }
+          ],
+          "input": {
+            "effort": [
+              0.0,
+              0.0
+            ],
+            "offsets": [
+              [
+                0.0304099638015032,
+                0.399600505828857
+              ],
+              [
+                0.0304099638015032,
+                -0.140399634838104
+              ]
+            ],
+            "pending": [
+              0.0,
+              0.0
+            ],
+            "sensitivity": 0.0018
+          },
+          "label": "contracted",
+          "mouse_mode": 2,
+          "owner": "GAME",
+          "position": "(-0.026927, 1.25765, 0.220341)"
+        },
+        {
+          "hands": [
+            {
+              "actual": 0.410198122262955,
+              "force": 72.4735488891602,
+              "state": "ATTACHED",
+              "target": 0.396711784747118
+            },
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            }
+          ],
+          "input": {
+            "effort": [
+              0.0,
+              0.0
+            ],
+            "offsets": [
+              [
+                0.0304099638015032,
+                0.399600505828857
+              ],
+              [
+                0.0304099638015032,
+                0.426600486040115
+              ]
+            ],
+            "pending": [
+              0.0,
+              0.0
+            ],
+            "sensitivity": 0.0018
+          },
+          "label": "aim_reposition",
+          "mouse_mode": 2,
+          "owner": "GAME",
+          "position": "(-0.049422, 1.168194, 0.226712)"
+        },
+        {
+          "hands": [
+            {
+              "actual": 0.408033013343811,
+              "force": 68.6960296630859,
+              "state": "ATTACHED",
+              "target": 0.382293821573257
+            },
+            {
+              "actual": 0.422285377979279,
+              "force": 0.0,
+              "state": "ATTACHED",
+              "target": 0.426011651754379
+            }
+          ],
+          "input": {
+            "effort": [
+              0.0,
+              0.0
+            ],
+            "offsets": [
+              [
+                0.0304099638015032,
+                0.399600505828857
+              ],
+              [
+                0.12453605979681,
+                0.424504280090332
+              ]
+            ],
+            "pending": [
+              0.0,
+              0.0
+            ],
+            "sensitivity": 0.0018
+          },
+          "label": "dual_posture",
+          "mouse_mode": 2,
+          "owner": "GAME",
+          "position": "(-0.041661, 1.169398, 0.22773)"
+        },
+        {
+          "hands": [
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            },
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            }
+          ],
+          "input": {
+            "effort": [
+              0.0,
+              0.0
+            ],
+            "offsets": [
+              [
+                0.0,
+                0.349999994039536
+              ],
+              [
+                0.0,
+                0.349999994039536
+              ]
+            ],
+            "pending": [
+              0.0,
+              0.0
+            ],
+            "sensitivity": 0.0018
+          },
+          "label": "controls",
+          "mouse_mode": 0,
+          "owner": "UI",
+          "position": "(0.000095, 1.166693, 0.40011)"
+        }
+      ]
+    },
+    "60": {
+      "checks": [
+        {
+          "label": "native startup selects contextual arms",
+          "passed": true
+        },
+        {
+          "label": "native game captures relative mouse without a screen-edge cursor",
+          "passed": true
+        },
+        {
+          "label": "virtual L raycast and held button acquire actual contact",
+          "passed": true
+        },
+        {
+          "label": "relative downward drag produces actual supported rise",
+          "passed": true
+        },
+        {
+          "label": "aim input does not immediately write a cursor-derived arm length",
+          "passed": true
+        },
+        {
+          "label": "upward relative effort physically extends the arm and lowers the body",
+          "passed": true
+        },
+        {
+          "label": "second virtual hand catches after the first contracted",
+          "passed": true
+        },
+        {
+          "label": "dual contextual effort respects shared hand budget",
+          "passed": true
+        },
+        {
+          "label": "MMB orbit does not command arm posture",
+          "passed": true
+        },
+        {
+          "label": "held W keeps its world swing direction while camera orbits",
+          "passed": true
+        },
+        {
+          "label": "releasing left preserves the contextual right grip",
+          "passed": true
+        },
+        {
+          "label": "Controls frees native mouse for UI",
+          "passed": true
+        },
+        {
+          "label": "closing Controls resumes relative capture",
+          "passed": true
+        }
+      ],
+      "complete": true,
+      "lower_m": 0.0883091688156128,
+      "physics_hz": 60,
+      "rise_m": 0.0893670320510864,
+      "snapshots": [
+        {
+          "hands": [
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            },
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            }
+          ],
+          "input": {
+            "effort": [
+              0.0,
+              0.0
+            ],
+            "offsets": [
+              [
+                0.0306288171559572,
+                0.399637460708618
+              ],
+              [
+                0.0306288171559572,
+                0.399637460708618
+              ]
+            ],
+            "pending": [
+              0.0,
+              0.0
+            ],
+            "sensitivity": 0.0018
+          },
+          "label": "free_aim",
+          "mouse_mode": 2,
+          "owner": "GAME",
+          "position": "(-0.000091, 1.166681, 0.400131)"
+        },
+        {
+          "hands": [
+            {
+              "actual": 0.31688728928566,
+              "force": 131.451873779297,
+              "state": "ATTACHED",
+              "target": 0.283612769047419
+            },
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            }
+          ],
+          "input": {
+            "effort": [
+              0.0,
+              0.0
+            ],
+            "offsets": [
+              [
+                0.0306288171559572,
+                0.399637460708618
+              ],
+              [
+                0.0306288171559572,
+                -0.140362679958344
+              ]
+            ],
+            "pending": [
+              0.0,
+              0.0
+            ],
+            "sensitivity": 0.0018
+          },
+          "label": "contracted",
+          "mouse_mode": 2,
+          "owner": "GAME",
+          "position": "(-0.02183, 1.256042, 0.221539)"
+        },
+        {
+          "hands": [
+            {
+              "actual": 0.413863569498062,
+              "force": 57.397029876709,
+              "state": "ATTACHED",
+              "target": 0.398875117416028
+            },
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            }
+          ],
+          "input": {
+            "effort": [
+              0.0,
+              0.0
+            ],
+            "offsets": [
+              [
+                0.0306288171559572,
+                0.399637460708618
+              ],
+              [
+                0.0306288171559572,
+                0.426637440919876
+              ]
+            ],
+            "pending": [
+              0.0,
+              0.0
+            ],
+            "sensitivity": 0.0018
+          },
+          "label": "aim_reposition",
+          "mouse_mode": 2,
+          "owner": "GAME",
+          "position": "(-0.057726, 1.167733, 0.225352)"
+        },
+        {
+          "hands": [
+            {
+              "actual": 0.410234868526459,
+              "force": 60.2491722106934,
+              "state": "ATTACHED",
+              "target": 0.384105117321014
+            },
+            {
+              "actual": 0.422116041183472,
+              "force": 0.0,
+              "state": "ATTACHED",
+              "target": 0.422347605228424
+            }
+          ],
+          "input": {
+            "effort": [
+              0.0,
+              0.0
+            ],
+            "offsets": [
+              [
+                0.0306288171559572,
+                0.399637460708618
+              ],
+              [
+                0.137851849198341,
+                0.423579216003418
+              ]
+            ],
+            "pending": [
+              0.0,
+              0.0
+            ],
+            "sensitivity": 0.0018
+          },
+          "label": "dual_posture",
+          "mouse_mode": 2,
+          "owner": "GAME",
+          "position": "(-0.044769, 1.169012, 0.225961)"
+        },
+        {
+          "hands": [
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            },
+            {
+              "actual": 0.0,
+              "force": 0.0,
+              "state": "FREE",
+              "target": 0.62
+            }
+          ],
+          "input": {
+            "effort": [
+              0.0,
+              0.0
+            ],
+            "offsets": [
+              [
+                0.0,
+                0.349999994039536
+              ],
+              [
+                0.0,
+                0.349999994039536
+              ]
+            ],
+            "pending": [
+              0.0,
+              0.0
+            ],
+            "sensitivity": 0.0018
+          },
+          "label": "controls",
+          "mouse_mode": 0,
+          "owner": "UI",
+          "position": "(-0.000078, 1.16667, 0.40002)"
+        }
+      ]
+    }
+  },
+  "export_smoke_frames": 3,
+  "human_playtest": "Contextual coordination, fatigue, precision and enjoyment comparison pending",
+  "future_milestones": [
+    "v0.2 M3 support-aware posture",
+    "v0.2 M4 directional grips",
+    "v0.2 M5 reactive challenge",
+    "v0.2 M6 mantle"
+  ]
+}

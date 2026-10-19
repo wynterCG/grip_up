@@ -1,0 +1,37 @@
+{
+  "engine": "Godot 4.7.2 ed1daf0bf",
+  "physics_backend": "Jolt",
+  "default_hz": 120,
+  "checked_hz": [
+    60,
+    120
+  ],
+  "baseline_checks": 1746,
+  "native_checks_per_hz": 13,
+  "input_profile": 2,
+  "mass_kg": 12,
+  "body_friction": 0.12,
+  "hand_force_budget_N": 360,
+  "climb_torque_Nm": 150,
+  "assistance_torque_Nm": 20,
+  "arm_stiffness": 6000,
+  "arm_damping": 220,
+  "reach_m": 0.65708,
+  "arm_target_min_m": 0.18,
+  "arm_target_max_m": 0.62,
+  "elastic_extension_m": 0.04,
+  "hand_speed_m_s": 4,
+  "grip_blend_s": 0.1,
+  "allocation_blend_s": 0.14,
+  "camera": "Visible/captured by selected profile; MMB orbit, wheel dolly; per-gesture suspended WASD frame",
+  "feature_flags": {
+    "predictive_grip": false,
+    "physical_feet": false,
+    "posture_solver": false,
+    "directional_grip_quality": false,
+    "reactive_challenge": false,
+    "legacy_space_comparison": false
+  },
+  "legacy_grabber_sha256": "8ab923ac1d903e8dcc8ed2a2e4f9f8c5cec326a3217cb4a9d8f00036557e7dad",
+  "status": "Physical baseline verified; shared mouse aim/effort rejected as independent control solution"
+}
