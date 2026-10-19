@@ -1,0 +1,26 @@
+{
+  "recorded_utc": "2026-10-19T20:08:35.117448+00:00",
+  "source": "C:\\Users\\Wynter\\grip_up",
+  "provenance": "Automated physical evidence; not human acceptance",
+  "baseline_commit": "70f62483255dd96627b2121f65323e4ffac19e9c",
+  "runs": [
+    {
+      "suite": "mantle_leg_clearance",
+      "hz": 120,
+      "passed": true,
+      "checks": 29,
+      "failures": 0,
+      "exit_code": 0
+    },
+    {
+      "suite": "mantle_leg_clearance",
+      "hz": 60,
+      "passed": true,
+      "checks": 29,
+      "failures": 0,
+      "exit_code": 0
+    }
+  ],
+  "all_passed": true,
+  "total_checks": 58
+}

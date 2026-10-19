@@ -1,0 +1,1302 @@
+{
+	"checks": [
+		{
+			"label": "native isolated palm begins finite contact acquisition",
+			"passed": true
+		},
+		{
+			"label": "native finite palm arrival",
+			"passed": true
+		},
+		{
+			"label": "native actual palm force produces measured lift in favorable posture",
+			"passed": true
+		},
+		{
+			"label": "native palm remains inside existing shared force and torque budgets",
+			"passed": true
+		},
+		{
+			"label": "native release removes palm support",
+			"passed": true
+		},
+		{
+			"label": "native isolated palm begins finite contact acquisition",
+			"passed": true
+		},
+		{
+			"label": "native finite palm arrival",
+			"passed": true
+		},
+		{
+			"label": "native actual palm force produces measured lift in favorable posture",
+			"passed": true
+		},
+		{
+			"label": "native palm remains inside existing shared force and torque budgets",
+			"passed": true
+		},
+		{
+			"label": "native dynamic platform receives downward reaction",
+			"passed": true
+		},
+		{
+			"label": "native release removes palm support",
+			"passed": true
+		},
+		{
+			"label": "native C1 physical colliders reach crouched pose",
+			"passed": true
+		},
+		{
+			"label": "native free collider folding does not move the body",
+			"passed": true
+		},
+		{
+			"label": "native obstruction inserted without overlapping current crouched body",
+			"passed": true
+		},
+		{
+			"label": "native blocked expansion retains collision-valid pose",
+			"passed": true
+		},
+		{
+			"label": "native valid clearance restores standing geometry",
+			"passed": true
+		}
+	],
+	"complete": true,
+	"leg": {
+		"data": {
+			"actual_flex": 0.0,
+			"anatomy": "Hip75deg knee150deg; unchanged0.15m capsule radius/full sole",
+			"blocker": "NONE",
+			"body_speed": 0.0,
+			"body_translation": "(0.0, 0.0, 0.0)",
+			"clearance": {
+				"contact_pairs": 0,
+				"max_penetration_estimate_m": 0.0,
+				"not_native_solved_contact": true,
+				"separation_lower_bound_m": 0.05
+			},
+			"elapsed": 4.70000000000002,
+			"enabled": true,
+			"isolation": "12kg dynamic body; gravityZERO; controller forcesOFF; NOT mantle or load-bearing proof",
+			"leg_collision": {
+				"actual_leg_flex": 0.0,
+				"blocked": false,
+				"blocked_requests": 58,
+				"body_mass": 12.0,
+				"contacts": {
+					"angular_speed_rad_s": 0.0,
+					"contacts": [],
+					"peak_impulse_ns": 0.0,
+					"speed_m_s": 0.0
+				},
+				"desired_leg_flex": 0.0,
+				"enabled_shape_configuration": true,
+				"fixed_inertia": "(2.805412, 0.221171, 2.805877)",
+				"foot_local_transform": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, -0.8767, -0.035)]",
+				"force_authority_n": 0.0,
+				"minimum_query_skin_m": 0.0005,
+				"path": {
+					"clear": true,
+					"flex": 0.0,
+					"last_safe_flex": 0.0,
+					"padding": 0.0005,
+					"reason": "CLEAR",
+					"substeps": 2
+				},
+				"pose_mode": "SYMMETRIC_TUCK",
+				"reason": "AT_REQUESTED_POSE",
+				"representation": "SAME_BODY_TWO_SAGITTAL_CAPSULES"
+			},
+			"loaded_guard_n": 0.0,
+			"peak_impulse_ns": 0.0,
+			"physics_hz": 120,
+			"placement_reason": "",
+			"reason": "AT_REQUESTED_POSE",
+			"requested_flex": 0.0
+		},
+		"samples": [
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.0,
+				"impulse_ns": 0.0,
+				"reason": "AT_REQUESTED_POSE",
+				"time": 0.00833333333333333
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.0108333333333333,
+				"impulse_ns": 0.0,
+				"reason": "FLEXING",
+				"time": 0.116666666666667
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.08125,
+				"impulse_ns": 0.0,
+				"reason": "FLEXING",
+				"time": 0.225
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.14625,
+				"impulse_ns": 0.0,
+				"reason": "FLEXING",
+				"time": 0.325
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.21125,
+				"impulse_ns": 0.0,
+				"reason": "FLEXING",
+				"time": 0.425
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.27625,
+				"impulse_ns": 0.0,
+				"reason": "FLEXING",
+				"time": 0.525000000000001
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.346666666666667,
+				"impulse_ns": 0.0,
+				"reason": "FLEXING",
+				"time": 0.633333333333334
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.417083333333334,
+				"impulse_ns": 0.0,
+				"reason": "FLEXING",
+				"time": 0.741666666666666
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.487500000000001,
+				"impulse_ns": 0.0,
+				"reason": "FLEXING",
+				"time": 0.849999999999999
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.557916666666667,
+				"impulse_ns": 0.0,
+				"reason": "FLEXING",
+				"time": 0.958333333333332
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.628333333333333,
+				"impulse_ns": 0.0,
+				"reason": "FLEXING",
+				"time": 1.06666666666667
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.698749999999999,
+				"impulse_ns": 0.0,
+				"reason": "FLEXING",
+				"time": 1.175
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.769166666666666,
+				"impulse_ns": 0.0,
+				"reason": "FLEXING",
+				"time": 1.28333333333333
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.839583333333332,
+				"impulse_ns": 0.0,
+				"reason": "FLEXING",
+				"time": 1.39166666666666
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.909999999999998,
+				"impulse_ns": 0.0,
+				"reason": "FLEXING",
+				"time": 1.5
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.980416666666664,
+				"impulse_ns": 0.0,
+				"reason": "FLEXING",
+				"time": 1.60833333333333
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 1.0,
+				"impulse_ns": 0.0,
+				"reason": "AT_REQUESTED_POSE",
+				"time": 1.71666666666666
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 1.0,
+				"impulse_ns": 0.0,
+				"reason": "AT_REQUESTED_POSE",
+				"time": 1.825
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.98375,
+				"impulse_ns": 0.0,
+				"reason": "EXTENDING",
+				"time": 1.93333333333333
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.913333333333334,
+				"impulse_ns": 0.0,
+				"reason": "EXTENDING",
+				"time": 2.04166666666666
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.842916666666668,
+				"impulse_ns": 0.0,
+				"reason": "EXTENDING",
+				"time": 2.15
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.772500000000002,
+				"impulse_ns": 0.0,
+				"reason": "EXTENDING",
+				"time": 2.25833333333333
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.01
+				},
+				"flex": 0.702083333333336,
+				"impulse_ns": 0.0,
+				"reason": "EXTENDING",
+				"time": 2.36666666666666
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.001
+				},
+				"flex": 0.658750000000003,
+				"impulse_ns": 0.0,
+				"reason": "COLLIDER_PATH_BLOCKED",
+				"time": 2.47499999999999
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.001
+				},
+				"flex": 0.658750000000003,
+				"impulse_ns": 0.0,
+				"reason": "COLLIDER_PATH_BLOCKED",
+				"time": 2.58333333333333
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.001
+				},
+				"flex": 0.658750000000003,
+				"impulse_ns": 0.0,
+				"reason": "COLLIDER_PATH_BLOCKED",
+				"time": 2.69166666666666
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.001
+				},
+				"flex": 0.658750000000003,
+				"impulse_ns": 0.0,
+				"reason": "COLLIDER_PATH_BLOCKED",
+				"time": 2.79999999999999
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.001
+				},
+				"flex": 0.658750000000003,
+				"impulse_ns": 0.0,
+				"reason": "COLLIDER_PATH_BLOCKED",
+				"time": 2.90833333333333
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.593750000000003,
+				"impulse_ns": 0.0,
+				"reason": "EXTENDING",
+				"time": 3.01666666666666
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.523333333333337,
+				"impulse_ns": 0.0,
+				"reason": "EXTENDING",
+				"time": 3.12499999999999
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.45291666666667,
+				"impulse_ns": 0.0,
+				"reason": "EXTENDING",
+				"time": 3.23333333333332
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.382500000000004,
+				"impulse_ns": 0.0,
+				"reason": "EXTENDING",
+				"time": 3.34166666666666
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.312083333333337,
+				"impulse_ns": 0.0,
+				"reason": "EXTENDING",
+				"time": 3.44999999999999
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.24166666666667,
+				"impulse_ns": 0.0,
+				"reason": "EXTENDING",
+				"time": 3.55833333333332
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.171250000000003,
+				"impulse_ns": 0.0,
+				"reason": "EXTENDING",
+				"time": 3.66666666666666
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.100833333333336,
+				"impulse_ns": 0.0,
+				"reason": "EXTENDING",
+				"time": 3.77499999999999
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.0304166666666695,
+				"impulse_ns": 0.0,
+				"reason": "EXTENDING",
+				"time": 3.88333333333332
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.0,
+				"impulse_ns": 0.0,
+				"reason": "AT_REQUESTED_POSE",
+				"time": 3.99166666666666
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.0,
+				"impulse_ns": 0.0,
+				"reason": "AT_REQUESTED_POSE",
+				"time": 4.09166666666666
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.0,
+				"impulse_ns": 0.0,
+				"reason": "AT_REQUESTED_POSE",
+				"time": 4.19166666666666
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.0,
+				"impulse_ns": 0.0,
+				"reason": "AT_REQUESTED_POSE",
+				"time": 4.29166666666667
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.0,
+				"impulse_ns": 0.0,
+				"reason": "AT_REQUESTED_POSE",
+				"time": 4.39166666666667
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.0,
+				"impulse_ns": 0.0,
+				"reason": "AT_REQUESTED_POSE",
+				"time": 4.49166666666668
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.0,
+				"impulse_ns": 0.0,
+				"reason": "AT_REQUESTED_POSE",
+				"time": 4.59166666666668
+			},
+			{
+				"body": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+				"clearance": {
+					"contact_pairs": 0,
+					"max_penetration_estimate_m": 0.0,
+					"not_native_solved_contact": true,
+					"separation_lower_bound_m": 0.05
+				},
+				"flex": 0.0,
+				"impulse_ns": 0.0,
+				"reason": "AT_REQUESTED_POSE",
+				"time": 4.69166666666669
+			}
+		]
+	},
+	"palm": [
+		{
+			"dynamic": false,
+			"peak_y": 2.78271460533142,
+			"start": "(0.0, 2.7, 0.55)",
+			"support_displacement": "(0.0, 0.0, 0.0)",
+			"telemetry": {
+				"aim_input_does_not_change_length": true,
+				"angular_velocity": "(0.0, 0.0, -0.000001)",
+				"assist_torque": "(0.0, 0.0, 0.0)",
+				"attached_count": 1,
+				"budget_scale": 1.0,
+				"combined_force": 117.327461242676,
+				"combined_ground_climb_torque": "(0.0, 0.0, -0.000004)",
+				"contextual_actuation": "(0.0, 0.0)",
+				"contextual_filtered": "(0.0, 0.0)",
+				"contextual_requested": "(0.0, 0.0)",
+				"contextual_world_effort": "(0.0, 0.0, 0.0)",
+				"control_profile": 4,
+				"control_right": "(1.0, 0.0, 0.0)",
+				"features": {
+					"directional_grip_quality": false,
+					"physical_feet": false,
+					"posture_solver": false,
+					"predictive_grip": false,
+					"reactive_challenge": false
+				},
+				"force_budget": 360.0,
+				"hands": [
+					{
+						"actual_length": 0.500978827476501,
+						"allocation": 1.0,
+						"anchor": "<RefCounted#-9223371908643289446>",
+						"anchor_world": "(-0.0, 1.721663, 0.55)",
+						"blend_elapsed": 0.775,
+						"capture": {
+							"accepted": true,
+							"actual_arrival": 0.2,
+							"available_work_upper_bound": 86.4000154495239,
+							"buffered": false,
+							"contact_resolution_applied": false,
+							"contact_resolution_reason": "clicked_point_already_reachable",
+							"failure_reason": "",
+							"input_time": 0.0916666666666667,
+							"load_risk": false,
+							"original_selection_local": "(-0.0, 0.1, 0.55)",
+							"original_selection_world": "(-0.0, 1.721663, 0.55)",
+							"out_of_reach_selection": false,
+							"persistent_target": true,
+							"predicted_contact_time": -1.0,
+							"predicted_entry_time": -1.0,
+							"predicted_target": "(-0.0, 1.721663, 0.55)",
+							"predicted_target_time": -1.0,
+							"prediction_error": -1.0,
+							"radial_speed": 0.0,
+							"reason": "contact_valid",
+							"relative_speed": 0.0,
+							"stopping_energy": 0.0
+						},
+						"contact_mode": "PALM_CONTACT",
+						"elapsed": 0.966666666666666,
+						"force": "(0.000001, 117.3275, 0.0)",
+						"force_axis": "(0.0, 1.0, 0.0)",
+						"grip_limit": 260.0,
+						"hand_world": "(-0.0, 1.721663, 0.55)",
+						"held_target_pending": false,
+						"overload_time": 0.0,
+						"palm": {
+							"admitted_body_couple": "(0.0, 0.0, 0.0)",
+							"anchor": "<RefCounted#-9223371908643289446>",
+							"applied_force": "(0.000001, 117.3275, 0.0)",
+							"applied_normal": 117.327461242676,
+							"applied_tangent": "(0.000001, 0.0, 0.0)",
+							"axis": "(0.0, 1.0, 0.0)",
+							"blend_elapsed": 0.775,
+							"body_offset": "(-0.0, -0.558337, 0.0)",
+							"command_direction": 1,
+							"effective_support": true,
+							"force": "(0.000001, 117.3275, 0.0)",
+							"friction": 0.850000023841858,
+							"goal": 0.555978827476502,
+							"hold": 0.500978827476501,
+							"length": 0.500978827476501,
+							"local_right": "(-0.986534, 0.0, 0.163557)",
+							"normal": "(0.0, 1.0, 0.0)",
+							"normal_force": 117.327461242676,
+							"overload_elapsed": 0.0,
+							"pair_wrench_residual": "(0.0, 0.0, 0.0)",
+							"point": "(-0.0, 1.721663, 0.55)",
+							"previous_actual": 0.500978827476501,
+							"previous_applied_normal": 117.294883728027,
+							"raw_compression": 117.327460466411,
+							"reaction_force": "(-0.000001, -117.3275, 0.0)",
+							"reason": "PALM_AXIAL_COMPRESSION",
+							"reference_actual": 0.419999957084656,
+							"reference_hold": 0.419999957084656,
+							"shoulder": "(-0.0, 2.222642, 0.55)",
+							"slip_elapsed": 0.0,
+							"stall": 0.0,
+							"support_offset": "(-0.0, 0.1, 0.55)",
+							"tangent_force": "(0.000001, 0.0, 0.0)",
+							"tangent_limit": 99.7283448535791,
+							"target_acceleration": 0.000685112871204874,
+							"target_rate": 0.208295572055991,
+							"valid": true,
+							"velocity": 0.208295572055991
+						},
+						"predictive_wait": false,
+						"reaction_force": "(-0.000001, -117.3275, 0.0)",
+						"reason": "",
+						"recovery_time": 0.0,
+						"rest_length": 0.531843663399761,
+						"slip_elapsed": 0.0,
+						"state": "ATTACHED",
+						"support": "<Freed Object>",
+						"target_world": "(-0.0, 1.721663, 0.55)"
+					},
+					{
+						"actual_length": 0.0,
+						"allocation": 0.0,
+						"anchor": null,
+						"anchor_world": "(-0.355565, 2.273575, 0.608949)",
+						"blend_elapsed": 0.0,
+						"contact_mode": "FREE",
+						"elapsed": 1.05833333333333,
+						"force": "(0.0, 0.0, 0.0)",
+						"grip_limit": 260.0,
+						"hand_world": "(-0.168912, 2.941604, 0.616459)",
+						"overload_time": 0.0,
+						"palm": {
+							"applied_force": "(0.0, 0.0, 0.0)",
+							"reason": "NO_ACTUAL_CONTACT",
+							"requested_force": "(0.0, 0.0, 0.0)",
+							"valid": false
+						},
+						"reaction_force": "(0.0, 0.0, 0.0)",
+						"reason": "",
+						"recovery_time": 0.0,
+						"rest_length": 0.62,
+						"slip_elapsed": 0.0,
+						"state": "FREE",
+						"support": null,
+						"target_world": "(-0.355565, 2.273575, 0.608949)"
+					}
+				],
+				"input_intent": "(0.0, 0.0, 0.0)",
+				"intent_locomotion": {
+					"actual_com_displacement": "(0.0, 0.080979, 0.0)",
+					"actual_foot_count": 0,
+					"actual_hand_ids": [
+						0
+					],
+					"actual_height_gain": 0.0809788703918457,
+					"actual_relative_velocity": "(0.0, 0.208467, 0.0)",
+					"actuator_saturated": false,
+					"aim_input_does_not_change_length": true,
+					"desired_com_velocity": "(0.0, 0.0, -0.25)",
+					"enabled": true,
+					"frame": {
+						"normal": "(0.0, 1.0, 0.0)",
+						"quality": "WEIGHTED_NORMAL_TRANSPORTED_UP",
+						"right": "(1.0, 0.0, 0.0)",
+						"support_ids": [
+							126684760697
+						],
+						"up": "(0.0, 0.0, -1.0)",
+						"valid": true
+					},
+					"ground": {},
+					"input_frame_id": 1,
+					"input_ramp_s": 0.12,
+					"input_timestamp": 0.416666666666667,
+					"intent_strength": 1.0,
+					"movement_block_reason": "DIRECTION_UNACTUATABLE_AXIAL_SWING_ONLY",
+					"movement_intent_local": "(0.0, 1.0)",
+					"movement_intent_world": "(0.0, 0.0, -1.0)",
+					"originating_support_frame": {
+						"normal": "(0.0, 1.0, 0.0)",
+						"quality": "WEIGHTED_NORMAL_TRANSPORTED_UP",
+						"right": "(1.0, 0.0, 0.0)",
+						"support_ids": [
+							126684760697
+						],
+						"up": "(0.0, 0.0, -1.0)",
+						"valid": true
+					},
+					"planned_arm_rest_lengths": {
+						"0": 0.531843663399761
+					},
+					"planned_foot_action": "(1.0, 0.0)",
+					"planner_cpu_usec": 37,
+					"recommended_climb_share": 1.0,
+					"requested_input": "(0.0, 1.0)",
+					"support_mode": "HANG_ONE_HAND",
+					"swing_request_world": "(0.0, 0.0, -1.0)",
+					"swing_reversal_active": false,
+					"target_accelerations": {},
+					"target_rates": {},
+					"tier": 1,
+					"virtual_acceleration": "(-0.0, 0.0, -1.0)",
+					"voluntary_reversals": 0
+				},
+				"launch_charge": 0.0,
+				"launch_elapsed": 0.0,
+				"launch_state": "IDLE",
+				"ledge_transfer": {
+					"applied_torque": "(0.0, 0.0, 0.0)",
+					"destination_clear": false,
+					"enabled": false,
+					"palm_support": {
+						"architecture": "P-A_AXIAL",
+						"enabled": true,
+						"footprint": "(0.07, 0.1)",
+						"hands": {
+							"0": {
+								"admitted_body_couple": "(0.0, 0.0, 0.0)",
+								"applied_force": "(0.000001, 117.3275, 0.0)",
+								"applied_normal": 117.327461242676,
+								"applied_tangent": "(0.000001, 0.0, 0.0)",
+								"axis": "(0.0, 1.0, 0.0)",
+								"blend_elapsed": 0.775,
+								"body_offset": "(-0.0, -0.558337, 0.0)",
+								"command_direction": 1,
+								"effective_support": true,
+								"force": "(0.000001, 117.3275, 0.0)",
+								"friction": 0.850000023841858,
+								"goal": 0.555978827476502,
+								"hold": 0.500978827476501,
+								"length": 0.500978827476501,
+								"local_right": "(-0.986534, 0.0, 0.163557)",
+								"normal": "(0.0, 1.0, 0.0)",
+								"normal_force": 117.327461242676,
+								"overload_elapsed": 0.0,
+								"pair_wrench_residual": "(0.0, 0.0, 0.0)",
+								"point": "(-0.0, 1.721663, 0.55)",
+								"previous_actual": 0.500978827476501,
+								"previous_applied_normal": 117.294883728027,
+								"raw_compression": 117.327460466411,
+								"reaction_force": "(-0.000001, -117.3275, 0.0)",
+								"reason": "PALM_AXIAL_COMPRESSION",
+								"reference_actual": 0.419999957084656,
+								"reference_hold": 0.419999957084656,
+								"shoulder": "(-0.0, 2.222642, 0.55)",
+								"slip_elapsed": 0.0,
+								"stall": 0.0,
+								"support_offset": "(-0.0, 0.1, 0.55)",
+								"tangent_force": "(0.000001, 0.0, 0.0)",
+								"tangent_limit": 99.7283448535791,
+								"target_acceleration": 0.000685112871204874,
+								"target_rate": 0.208295572055991,
+								"valid": true,
+								"velocity": 0.208295572055991
+							}
+						}
+					},
+					"path_clear": false,
+					"physical_completion": false,
+					"reacted_assist": "(0.0, 0.0, 0.0)",
+					"reason": "FEATURE_DISABLED",
+					"requested_torque": "(0.0, 0.0, 0.0)",
+					"status": "DISABLED",
+					"top_normal": "(0.0, 0.0, 0.0)",
+					"top_point": "(0.0, 0.0, 0.0)",
+					"wrist_body_couple": "(0.0, 0.0, 0.0)",
+					"wrist_moment_sum": 0.0
+				},
+				"leg_force": 0.0,
+				"leg_force_budget": 0.0,
+				"leg_torque": "(0.0, 0.0, 0.0)",
+				"linear_velocity": "(0.0, 0.208467, 0.0)",
+				"metrics": {
+					"attaches": 1,
+					"attempts": 1,
+					"misses": 0,
+					"releases": 0,
+					"slips": 0
+				},
+				"physics_delta": 0.00833333333333333,
+				"posture": {},
+				"posture_assist_enabled": true,
+				"posture_policy": 0,
+				"posture_tilt_assist_enabled": true,
+				"posture_tilt_torque": "(0.0, 0.0, 0.0)",
+				"requested_intent": "(0.0, 0.0, 0.0)",
+				"simulation_time": 1.05833333333333,
+				"step": 127,
+				"supported_wasd_swing_enabled": true,
+				"swing_intent": "(0.0, 0.0, 0.0)",
+				"swing_requested": "(0.0, 0.0, 0.0)",
+				"swing_torque": "(0.0, 0.0, 0.0)",
+				"torque": "(0.0, 0.0, -0.000004)",
+				"torso_position": "(0.0, 2.780979, 0.55)",
+				"total_force": 117.327461242676
+			}
+		},
+		{
+			"dynamic": true,
+			"peak_y": 2.75910878181458,
+			"start": "(0.0, 2.7, 0.55)",
+			"support_displacement": "(0.0, -0.023645, 0.000029)",
+			"telemetry": {
+				"aim_input_does_not_change_length": true,
+				"angular_velocity": "(0.001458, 0.002757, -0.000081)",
+				"assist_torque": "(0.0, 0.0, 0.0)",
+				"attached_count": 1,
+				"budget_scale": 1.0,
+				"combined_force": 0.0,
+				"combined_ground_climb_torque": "(0.0, 0.0, 0.0)",
+				"contextual_actuation": "(0.0, 0.0)",
+				"contextual_filtered": "(0.0, 0.0)",
+				"contextual_requested": "(0.0, 0.0)",
+				"contextual_world_effort": "(0.0, 0.0, 0.0)",
+				"control_profile": 4,
+				"control_right": "(1.0, 0.0, 0.0)",
+				"features": {
+					"directional_grip_quality": false,
+					"physical_feet": false,
+					"posture_solver": false,
+					"predictive_grip": false,
+					"reactive_challenge": false
+				},
+				"force_budget": 360.0,
+				"hands": [
+					{
+						"actual_length": 0.538440346717834,
+						"allocation": 1.0,
+						"anchor": "<RefCounted#-9223371873562129796>",
+						"anchor_world": "(0.0, 1.661349, 0.555493)",
+						"blend_elapsed": 0.775,
+						"capture": {
+							"accepted": true,
+							"actual_arrival": 0.208333333333333,
+							"available_work_upper_bound": 86.4000154495239,
+							"buffered": false,
+							"contact_resolution_applied": false,
+							"contact_resolution_reason": "clicked_point_already_reachable",
+							"failure_reason": "",
+							"input_time": 0.1,
+							"load_risk": false,
+							"original_selection_local": "(-0.0, 0.1, 0.55)",
+							"original_selection_world": "(-0.0, 1.721663, 0.55)",
+							"out_of_reach_selection": false,
+							"persistent_target": true,
+							"predicted_contact_time": -1.0,
+							"predicted_entry_time": -1.0,
+							"predicted_target": "(-0.0, 1.721663, 0.55)",
+							"predicted_target_time": -1.0,
+							"prediction_error": -1.0,
+							"radial_speed": 0.0,
+							"reason": "contact_valid",
+							"relative_speed": 0.0,
+							"stopping_energy": 0.0
+						},
+						"contact_mode": "PALM_CONTACT",
+						"elapsed": 0.974999999999999,
+						"force": "(0.0, 0.0, 0.0)",
+						"force_axis": "(-0.000034, 0.99994, -0.010948)",
+						"grip_limit": 260.0,
+						"hand_world": "(0.0, 1.661349, 0.555493)",
+						"held_target_pending": false,
+						"overload_time": 0.0,
+						"palm": {
+							"admitted_body_couple": "(0.0, 0.0, 0.0)",
+							"anchor": "<RefCounted#-9223371873562129796>",
+							"applied_force": "(0.0, 0.0, 0.0)",
+							"applied_normal": 0.0,
+							"applied_tangent": "(0.0, 0.0, 0.0)",
+							"axis": "(-0.000034, 0.99994, -0.010948)",
+							"blend_elapsed": 0.775,
+							"body_offset": "(-0.000018, -0.558337, -0.000332)",
+							"command_direction": 1,
+							"effective_support": false,
+							"force": "(0.0, 0.0, 0.0)",
+							"friction": 0.850000023841858,
+							"goal": 0.593440346717835,
+							"hold": 0.538440346717834,
+							"length": 0.538440346717834,
+							"local_right": "(-0.986534, 0.0, 0.163557)",
+							"normal": "(0.0, 0.997753, 0.067)",
+							"normal_force": 0.0,
+							"overload_elapsed": 0.0,
+							"pair_wrench_residual": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 1.661349, 0.555493)",
+							"previous_actual": 0.538440346717834,
+							"previous_applied_normal": 0.0,
+							"raw_compression": 0.0,
+							"reaction_force": "(0.0, 0.0, 0.0)",
+							"reason": "PALM_UNLOADED",
+							"reference_actual": 0.419999957084656,
+							"reference_hold": 0.419999957084656,
+							"shoulder": "(-0.000019, 2.199757, 0.549598)",
+							"slip_elapsed": 0.0,
+							"stall": 0.0,
+							"support_offset": "(-0.0, 0.062925, 0.555464)",
+							"tangent_force": "(0.0, 0.0, 0.0)",
+							"tangent_limit": 0.0,
+							"target_acceleration": 0.0,
+							"target_rate": 0.24,
+							"valid": true,
+							"velocity": 0.24
+						},
+						"predictive_wait": false,
+						"reaction_force": "(0.0, 0.0, 0.0)",
+						"reason": "",
+						"recovery_time": 0.0,
+						"rest_length": 0.544999957084656,
+						"slip_elapsed": 0.0,
+						"state": "ATTACHED",
+						"support": "<Freed Object>",
+						"target_world": "(0.0, 1.661349, 0.555493)"
+					},
+					{
+						"actual_length": 0.0,
+						"allocation": 0.0,
+						"anchor": null,
+						"anchor_world": "(-0.355565, 2.273575, 0.608949)",
+						"blend_elapsed": 0.0,
+						"contact_mode": "FREE",
+						"elapsed": 1.075,
+						"force": "(0.0, 0.0, 0.0)",
+						"grip_limit": 260.0,
+						"hand_world": "(-0.168832, 2.918686, 0.616674)",
+						"overload_time": 0.0,
+						"palm": {
+							"applied_force": "(0.0, 0.0, 0.0)",
+							"reason": "NO_ACTUAL_CONTACT",
+							"requested_force": "(0.0, 0.0, 0.0)",
+							"valid": false
+						},
+						"reaction_force": "(0.0, 0.0, 0.0)",
+						"reason": "",
+						"recovery_time": 0.0,
+						"rest_length": 0.62,
+						"slip_elapsed": 0.0,
+						"state": "FREE",
+						"support": null,
+						"target_world": "(-0.355565, 2.273575, 0.608949)"
+					}
+				],
+				"input_intent": "(0.0, 0.0, 0.0)",
+				"intent_locomotion": {
+					"actual_com_displacement": "(-0.0, 0.058094, -0.00007)",
+					"actual_foot_count": 0,
+					"actual_hand_ids": [
+						0
+					],
+					"actual_height_gain": 0.0580940246582031,
+					"actual_relative_velocity": "(-0.0, 0.24854, -0.009089)",
+					"actuator_saturated": false,
+					"aim_input_does_not_change_length": true,
+					"desired_com_velocity": "(-0.0, 0.01675, -0.249438)",
+					"enabled": true,
+					"frame": {
+						"normal": "(0.0, 0.997753, 0.067)",
+						"quality": "WEIGHTED_NORMAL_TRANSPORTED_UP",
+						"right": "(1.0, -0.0, -0.0)",
+						"support_ids": [
+							161581368998
+						],
+						"up": "(-0.0, 0.067, -0.997753)",
+						"valid": true
+					},
+					"ground": {},
+					"input_frame_id": 1,
+					"input_ramp_s": 0.12,
+					"input_timestamp": 0.433333333333334,
+					"intent_strength": 1.0,
+					"movement_block_reason": "DIRECTION_UNACTUATABLE_AXIAL_SWING_ONLY",
+					"movement_intent_local": "(0.0, 1.0)",
+					"movement_intent_world": "(-0.0, 0.067, -0.997753)",
+					"originating_support_frame": {
+						"normal": "(0.0, 1.0, 0.0)",
+						"quality": "WEIGHTED_NORMAL_TRANSPORTED_UP",
+						"right": "(1.0, 0.0, 0.0)",
+						"support_ids": [
+							161581368998
+						],
+						"up": "(0.0, 0.0, -1.0)",
+						"valid": true
+					},
+					"planned_arm_rest_lengths": {
+						"0": 0.544999957084656
+					},
+					"planned_foot_action": "(1.0, 0.0)",
+					"planner_cpu_usec": 33,
+					"recommended_climb_share": 1.0,
+					"requested_input": "(0.0, 1.0)",
+					"support_mode": "HANG_ONE_HAND",
+					"swing_request_world": "(-0.0, 0.067, -0.997753)",
+					"swing_reversal_active": false,
+					"target_accelerations": {},
+					"target_rates": {},
+					"tier": 1,
+					"virtual_acceleration": "(0.000001, 0.060107, -0.895102)",
+					"voluntary_reversals": 0
+				},
+				"launch_charge": 0.0,
+				"launch_elapsed": 0.0,
+				"launch_state": "IDLE",
+				"ledge_transfer": {
+					"applied_torque": "(0.0, 0.0, 0.0)",
+					"destination_clear": false,
+					"enabled": false,
+					"palm_support": {
+						"architecture": "P-A_AXIAL",
+						"enabled": true,
+						"footprint": "(0.07, 0.1)",
+						"hands": {
+							"0": {
+								"admitted_body_couple": "(0.0, 0.0, 0.0)",
+								"applied_force": "(0.0, 0.0, 0.0)",
+								"applied_normal": 0.0,
+								"applied_tangent": "(0.0, 0.0, 0.0)",
+								"axis": "(-0.000034, 0.99994, -0.010948)",
+								"blend_elapsed": 0.775,
+								"body_offset": "(-0.000018, -0.558337, -0.000332)",
+								"command_direction": 1,
+								"effective_support": false,
+								"force": "(0.0, 0.0, 0.0)",
+								"friction": 0.850000023841858,
+								"goal": 0.593440346717835,
+								"hold": 0.538440346717834,
+								"length": 0.538440346717834,
+								"local_right": "(-0.986534, 0.0, 0.163557)",
+								"normal": "(0.0, 0.997753, 0.067)",
+								"normal_force": 0.0,
+								"overload_elapsed": 0.0,
+								"pair_wrench_residual": "(0.0, 0.0, 0.0)",
+								"point": "(0.0, 1.661349, 0.555493)",
+								"previous_actual": 0.538440346717834,
+								"previous_applied_normal": 0.0,
+								"raw_compression": 0.0,
+								"reaction_force": "(0.0, 0.0, 0.0)",
+								"reason": "PALM_UNLOADED",
+								"reference_actual": 0.419999957084656,
+								"reference_hold": 0.419999957084656,
+								"shoulder": "(-0.000019, 2.199757, 0.549598)",
+								"slip_elapsed": 0.0,
+								"stall": 0.0,
+								"support_offset": "(-0.0, 0.062925, 0.555464)",
+								"tangent_force": "(0.0, 0.0, 0.0)",
+								"tangent_limit": 0.0,
+								"target_acceleration": 0.0,
+								"target_rate": 0.24,
+								"valid": true,
+								"velocity": 0.24
+							}
+						}
+					},
+					"path_clear": false,
+					"physical_completion": false,
+					"reacted_assist": "(0.0, 0.0, 0.0)",
+					"reason": "FEATURE_DISABLED",
+					"requested_torque": "(0.0, 0.0, 0.0)",
+					"status": "DISABLED",
+					"top_normal": "(0.0, 0.0, 0.0)",
+					"top_point": "(0.0, 0.0, 0.0)",
+					"wrist_body_couple": "(0.0, 0.0, 0.0)",
+					"wrist_moment_sum": 0.0
+				},
+				"leg_force": 0.0,
+				"leg_force_budget": 0.0,
+				"leg_torque": "(0.0, 0.0, 0.0)",
+				"linear_velocity": "(-0.0, 0.12176, -0.000174)",
+				"metrics": {
+					"attaches": 1,
+					"attempts": 1,
+					"misses": 0,
+					"releases": 0,
+					"slips": 0
+				},
+				"physics_delta": 0.00833333333333333,
+				"posture": {},
+				"posture_assist_enabled": true,
+				"posture_policy": 0,
+				"posture_tilt_assist_enabled": true,
+				"posture_tilt_torque": "(0.0, 0.0, 0.0)",
+				"requested_intent": "(0.0, 0.0, 0.0)",
+				"simulation_time": 1.075,
+				"step": 129,
+				"supported_wasd_swing_enabled": true,
+				"swing_intent": "(0.0, 0.0, 0.0)",
+				"swing_requested": "(0.0, 0.0, 0.0)",
+				"swing_torque": "(0.0, 0.0, 0.0)",
+				"torque": "(0.0, 0.0, 0.0)",
+				"torso_position": "(-0.0, 2.758094, 0.54993)",
+				"total_force": 0.0
+			}
+		}
+	],
+	"physics_hz": 120,
+	"provenance": "Godot MCP Pro rendered isolated primitives; not human mantle evidence",
+	"window_screen": 1
+}

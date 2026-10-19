@@ -1,10 +1,35 @@
-# GRIP UP / physics climbing lab 0.7.4 ledge experiment
+# GRIP UP / physics climbing lab 0.8 experimental
 
-Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v0.7.4.exe`.
+Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v0.8-experimental.exe`.
 PC mouse and keyboard. Resizable 1920x1080 reference canvas; initial window 1440x810.
 Integrated Jolt, 120 Hz. Core and complete routes also tested at 60 Hz.
 
 This is a separate prototype. The Janga object grabber and its project are unchanged.
+
+## v0.8 physical palm and leg-clearance experiments
+
+**Full top-out is still not achieved.** Finite-area palm compression, an explicit
+bounded wrist moment and swept lower-body collision proxies now work in isolated
+fixtures. H0 release/regrip reaches the top and briefly carries load in the
+combined hanging test, but rotation takes the supporting arm outside reach.
+There is no successful transfer to actual upper-ground support or walking.
+
+Open **Controls / v0.8 / Low ledge 1.25 m** or **High ledge 2.10 m** to compare.
+Hold LMB/RMB to grip, release one and select a real upper surface for a palm;
+W requests physical effort. R retries, MMB orbits, scroll zooms, Tab shows real
+collision proxies. Separate buttons compare fixed legs, palms OFF and axial
+palms. These experiments remain opt-in; **PLAY / The first route** is preserved.
+
+The master, palm, wrist, adaptive-collision and handoff flags default OFF. H1
+automatic palm roll is unimplemented. Independent geometry tests are available
+as `tests/palm_compression_lab.tscn` and `tests/mantle_leg_clearance_lab.tscn`.
+The first is a simplified physics fixture; the second visibly exercises safe
+folding and blocked unfolding with gravity and controller forces disabled.
+
+See the [v0.8 milestone ledger](docs/validation/v08/status.md) and
+[implementation, evidence and missing capability](docs/validation/v08/report.md).
+Automated safety passes are distinct from the deliberately failed full mantle
+gate and from a human playtest. Test/editor windows use monitor 2 locally.
 
 ## v0.7.4 ledge capability experiment — M6 gate not met
 

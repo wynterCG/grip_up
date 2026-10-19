@@ -65,8 +65,8 @@ func _physics_process(_delta: float) -> void:
 				for index in state.get_contact_count():
 					var shape_index:int=state.get_contact_local_shape(index)
 					if shape_index<0 or shape_index>=PhysicsServer3D.body_get_shape_count(torso.get_rid()):continue
-					var owner:int=torso.shape_find_owner(shape_index)
-					var shape_node:Object=torso.shape_owner_get_owner(owner)
+					var shape_owner_id:int=torso.shape_find_owner(shape_index)
+					var shape_node:Object=torso.shape_owner_get_owner(shape_owner_id)
 					if shape_node!=null and shape_node.name=="FootBase" and state.get_contact_collider_id(index)==support_body.get_instance_id() and state.get_contact_impulse(index).dot(Vector3.UP)>.0001:native_contact=true
 			grounded=native_contact
 			if not grounded:support_body=null

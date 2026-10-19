@@ -13,7 +13,7 @@ names = ['physics','platform_probe','wall_clearance','biped_profile','playthroug
 label = sys.argv[1] if len(sys.argv)>1 else 'regressions'
 requested_label = label
 if label == 'v07_baseline':label = 'v06'
-if label in ['v07','v071','v072','v073','v074']:label = 'v06'
+if label in ['v07','v071','v072','v073','v074','v08']:label = 'v06'
 selected = sys.argv[2:]
 if label in ['m1','m2','v03','contextual','v04','v05','v06']:
     names += ['m0_instrumentation','capture_input','capture_matrix']
@@ -30,16 +30,20 @@ if label in ['v05','v06']:
               'posture_study','swing_diagnostics','transfer_swing','reach_assessment','transfer_capture']
 if label == 'v06':
     names += ['distant_baseline','pending_grip','pending_motion','pending_contact','distant_input','distant_routes','distant_swing']
-if requested_label in ['v07','v071','v072','v073','v074']:
+if requested_label in ['v07','v071','v072','v073','v074','v08']:
     names += ['intent_locomotion','intent_swing','intent_integration','intent_arenas']
-if requested_label in ['v071','v072','v073','v074']:
+if requested_label in ['v071','v072','v073','v074','v08']:
     names += ['intent_reversal','intent_progress','intent_handoffs','intent_frame_sign']
-if requested_label in ['v072','v073','v074']:
+if requested_label in ['v072','v073','v074','v08']:
     names += ['reachable_grip','reach_visual']
-if requested_label in ['v073','v074']:
+if requested_label in ['v073','v074','v08']:
     names += ['route_progress','climbing_route']
-if requested_label == 'v074':
+if requested_label in ['v074','v08']:
     names += ['intent_mantle','mantle_integration']
+if requested_label == 'v08':
+    # Safety and isolated capabilities only. The deliberately failing functional
+    # gate remains separately archived under v08/m4; this cannot accept top-out.
+    names += ['palm_compression','palm_wrist','mantle_leg_clearance','mantle_support_handoff']
 assert all(name in names for name in selected)
 dest = root/'docs'/'validation'/requested_label
 dest.mkdir(parents=True,exist_ok=True)
@@ -72,6 +76,9 @@ if selected and (dest/'results.json').exists():
     previous = json.loads((dest/'results.json').read_text(encoding='utf-8'))['suites']
     suites = [item for item in previous if item['suite'] not in selected]+suites
 report = {'suites':suites,'total_checks':sum(item['checks'] for item in suites),'all_passed':all(item['passed'] for item in suites)}
+if requested_label == 'v08':
+    report['scope'] = 'Regression and isolated capability checks; not functional mantle acceptance'
+    report['functional_mantle_gate_met'] = False
 (dest/'results.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
 print(json.dumps({'checks':report['total_checks'],'all_passed':report['all_passed']}))
 raise SystemExit(0 if report['all_passed'] else 1)

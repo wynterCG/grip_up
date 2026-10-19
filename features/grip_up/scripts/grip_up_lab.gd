@@ -101,8 +101,10 @@ var mantle_completed:=false
 var mantle_attempted:=false
 var physics_mantle_v08_enabled:=false
 var palm_compression_enabled:=false
+var palm_wrist_support_enabled:=false
 var adaptive_leg_collision_enabled:=false
 var mantle_support_handoff_enabled:=false
+var mantle_hanging_fixture_start:=false
 var mantle_v08:Node
 var mantle_overlay:Node3D
 var transfer_diagnostics_toggle: CheckButton
@@ -256,6 +258,7 @@ func load_test(index: int, use_checkpoint := false) -> void:
 	mantle_v08=null
 	mantle_overlay=null
 	level = (LEVELS[index] if index<LEVELS.size() else V08_LEVELS[index-LEVELS.size()]).instantiate()
+	if index>=12:level.hanging_fixture_start=mantle_hanging_fixture_start
 	level.fixed_beam = fixed_beam
 	if index==4:level.vertical_spacing=transfer_route_spacing
 	world.add_child(level)
@@ -323,6 +326,7 @@ func load_test(index: int, use_checkpoint := false) -> void:
 	controller.intent_auto_mantle_enabled=index==11
 	controller.physics_mantle_v08_enabled=index>=12 and physics_mantle_v08_enabled
 	controller.palm_compression_enabled=controller.physics_mantle_v08_enabled and palm_compression_enabled
+	controller.palm_wrist_support_enabled=controller.physics_mantle_v08_enabled and palm_wrist_support_enabled
 	controller.transfer_event.connect(_on_transfer_event)
 	controller.set_control_profile(input_profile)
 	_apply_independent_settings()
@@ -882,9 +886,10 @@ func _open_intent_arena(index:int,feet_on:bool=false) -> void:
 	load_test(index)
 	message("Choose a grip and hold its button. W/S asks to go up/down; A/D asks to cross. Physics decides what the supports can do.")
 
-func _open_mantle_v08(index:int,adaptive:bool=true,palms:bool=true)->void:
+func _open_mantle_v08(index:int,adaptive:bool=true,palms:bool=true,wrist:bool=true)->void:
 	physics_mantle_v08_enabled=true
 	palm_compression_enabled=palms
+	palm_wrist_support_enabled=wrist
 	adaptive_leg_collision_enabled=adaptive
 	mantle_support_handoff_enabled=true
 	_open_intent_arena(index,true)
@@ -972,6 +977,7 @@ func _record_capture(delta: float) -> void:
 		"climbing_route":climbing_route.diagnostics() if level_id==10 else {},
 		"ledge_transfer":contextual_data.get("ledge_transfer",{}),"mantle_gate":{"standing":mantle_standing,"completed":mantle_completed} if level_id==11 else {},
 		"mantle_v08":mantle_v08.data if is_instance_valid(mantle_v08) else {},
+		"physical_foot_visual_error_m":biped.physical_foot_mismatch if is_instance_valid(mantle_v08) else [],
 		"posture_policy":posture_policy if input_profile in [3,4] else -1,"posture":contextual_data.get("posture",{}),
 		"contextual_filtered":[filtered.x,filtered.y],"contextual_actuation_m_s":[actuation.x,actuation.y],
 		"camera_right":capture_trace.vector(camera.global_basis.x),"camera_forward":capture_trace.vector(Vector3.UP.cross(camera.global_basis.x).normalized()),
@@ -1178,6 +1184,7 @@ func _setup_ui() -> void:
 	settings_box.add_child(mantle_compare)
 	_button("v0.8 / Low, legs fixed",func():_open_mantle_v08(12,false,true),mantle_compare)
 	_button("v0.8 / Low, palms OFF",func():_open_mantle_v08(12,true,false),mantle_compare)
+	_button("v0.8 / Low, axial palms",func():_open_mantle_v08(12,true,true,false),mantle_compare)
 	var intent_compare_row:=HBoxContainer.new()
 	settings_box.add_child(intent_compare_row)
 	_button("v0.7 / Beam",func():_open_intent_arena(2,false),intent_compare_row)

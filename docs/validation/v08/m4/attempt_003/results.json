@@ -1,0 +1,26 @@
+{
+  "recorded_utc": "2026-10-19T20:12:15.630604+00:00",
+  "source": "C:\\Users\\Wynter\\grip_up",
+  "provenance": "Automated physical evidence; not human acceptance",
+  "baseline_commit": "70f62483255dd96627b2121f65323e4ffac19e9c",
+  "runs": [
+    {
+      "suite": "mantle_full_sequence",
+      "hz": 120,
+      "passed": false,
+      "checks": 8,
+      "failures": 2,
+      "exit_code": 1
+    },
+    {
+      "suite": "mantle_full_sequence",
+      "hz": 60,
+      "passed": false,
+      "checks": 8,
+      "failures": 2,
+      "exit_code": 1
+    }
+  ],
+  "all_passed": false,
+  "total_checks": 16
+}

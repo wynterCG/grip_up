@@ -21,6 +21,7 @@ var free_aim_ik: TwoBoneIK3D
 var hand_pose: SkeletonModifier3D
 var animation: AnimationPlayer
 var animation_clip := "A_TPose"
+var physical_foot_mismatch:Array[float]=[0.0,0.0]
 
 func configure(body: RigidBody3D, physical_controller: Node) -> void:
 	torso = body
@@ -93,6 +94,18 @@ func configure(body: RigidBody3D, physical_controller: Node) -> void:
 	hand_pose.name = "PalmAlignment"
 	hand_pose.visual = self
 	skeleton.add_child(hand_pose)
+	hand_pose.modification_processed.connect(_measure_physical_foot_error)
+
+func _measure_physical_foot_error()->void:
+	if not torso.has_meta("adaptive_legs"):return
+	var physical_legs=torso.get_meta("adaptive_legs")
+	if not physical_legs.active:return
+	var shift:Vector3=physical_legs.foot_local_transform().origin-controller.tuning.foot_base_offset
+	for id in 2:
+		var bone:int=skeleton.find_bone("foot_l" if id==0 else "foot_r")
+		var visible_ankle:Vector3=skeleton.global_transform*skeleton.get_bone_global_pose(bone).origin
+		var physical_ankle:Vector3=torso.get_global_transform_interpolated()*(leg_motion.rest_feet[id]+shift)
+		physical_foot_mismatch[id]=visible_ankle.distance_to(physical_ankle)
 
 func _process(delta: float) -> void:
 	if is_instance_valid(torso):
@@ -214,6 +227,11 @@ func _update_targets(delta: float = 1.0) -> void:
 		var pole_offset := Vector3(side * 0.10,-0.50,0.20) if hand.state in ["FREE","RELEASED"] else Vector3(side * 0.48,-0.15,0.36)
 		# Ease the elbow plane when attaching; avoid an abrupt visual flip.
 		poles[i].global_position = poles[i].global_position.lerp(shoulder + global_basis * pole_offset,1.0-exp(-14.0*delta))
+		var arm_path:Dictionary=hand.get("palm",{}).get("arm_path",{})
+		if controller.physics_mantle_v08_enabled and arm_path.get("valid",false):
+			targets[i].global_position=render_correction*Vector3(arm_path.wrist)
+			poles[i].global_position=render_correction*Vector3(arm_path.elbow)
+			hand_directions[i]=(palm-targets[i].global_position).normalized()
 		var alpha := Engine.get_physics_interpolation_fraction()
 		targets[i+2].global_position = leg_motion.previous_feet[i].lerp(leg_motion.feet[i],alpha)
 		poles[i+2].global_position = leg_motion.previous_poles[i].lerp(leg_motion.poles[i],alpha)

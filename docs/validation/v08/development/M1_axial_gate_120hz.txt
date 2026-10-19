@@ -1,0 +1,103 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+
+
+PASS real top surface starts finite H0 hand reach
+
+PASS pending top hand is not already a palm support
+
+PASS palm request never teleports or impulses body
+
+PASS finite arrival and full footprint establish exactly one palm mode
+
+PASS actual finite palm force raises body above its pre-press pose
+
+PASS compressive normal is unilateral and admitted axial tangent stays within friction cone
+
+PASS shoulder force and material-point reaction conserve complete paired wrench
+
+PASS explicit release clears palm force and old material record immediately
+
+PASS real top surface starts finite H0 hand reach
+
+PASS pending top hand is not already a palm support
+
+PASS palm request never teleports or impulses body
+
+PASS finite arrival and full footprint establish exactly one palm mode
+
+PASS second independent finite palm arrives
+
+PASS actual finite palm force raises body above its pre-press pose
+
+PASS compressive normal is unilateral and admitted axial tangent stays within friction cone
+
+PASS shoulder force and material-point reaction conserve complete paired wrench
+
+PASS explicit release clears palm force and old material record immediately
+
+PASS real top surface starts finite H0 hand reach
+
+PASS pending top hand is not already a palm support
+
+PASS palm request never teleports or impulses body
+
+PASS finite arrival and full footprint establish exactly one palm mode
+
+PASS actual finite palm force raises body above its pre-press pose
+
+PASS compressive normal is unilateral and admitted axial tangent stays within friction cone
+
+PASS shoulder force and material-point reaction conserve complete paired wrench
+
+PASS free dynamic platform receives actual downward reaction
+
+PASS isolated body+platform preserve total linear momentum
+
+PASS pure palm has no unmodelled adhesive attitude motor
+
+PASS explicit release clears palm force and old material record immediately
+
+PASS hand suspended3cm above surface has no palm reaction
+
+PASS corner point cannot substitute for full finite palm footprint
+
+PASS slippery material can receive an actual hand contact
+
+PASS axial request outside friction cone slips/releases without nonaxial rescue force
+
+PASS support-loss fixture obtains finite palm
+
+PASS destroyed support cannot retain palm or torque authority
+
+PASS released palm telemetry never retains stale applied load
+
+PASS unloaded palm fixture acquires current contact
+
+PASS valid unloaded palm produces zero reaction without adhesive preload
+
+PASS contact and press planning never transform the torso
+
+PASS new actual shoulder-path obstruction immediately removes all palm authority
+
+PASS blocked press fixture obtains both real palms
+
+PASS blocked continuous press preserves55mm geometry envelope and finite target rate/acceleration
+
+PASS neutral freezes achieved press target after bounded release settling
+
+PASS legacy top grip remains reachable with palm flagOFF
+
+PASS legacy top grip remains reachable with palm flagOFF
+
+PASS master flag alone with palmOFF preserves exact legacy physical trajectory
+
+PASS mixed fixture establishes one real palm
+
+PASS other hand independently requests existing traction support
+
+PASS one traction plus one palm share the same summed hand force admission, never duplicate a hand
+
+PASS all physics ticks preserve zero pending force and existing shared caps
+
+PALM COMPRESSION RESULTS: 49 checks, 0 failures

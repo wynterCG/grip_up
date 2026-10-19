@@ -1,0 +1,32 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS T05 flagOFF exact collider resources and transforms unchanged
+PASS flagOFF mass and automatic inertia unchanged
+PASS C0 whole-body diagnostic poses clear without collider mutations
+PASS C01 continuous physical proxies reach declared75deg hip150deg knee
+PASS C01 actual sole gains400mm clearance with full-size shin thigh and sole
+PASS clear-space collider motion writes no body pose or velocity and creates no drift
+PASS clear-space fold has no uncommanded impulse or speed spike
+PASS single-body inertia remains pinned to solved standing approximation
+PASS all three lower proxies retain physical collision
+PASS safe disabled restoration returns exact original standing capsule sole and inertia
+PASS stationary shallow torso wall contact does not veto clear leg flex
+PASS C04 real loaded foot blocks retraction until load transferred
+PASS C04 unloaded foot permits guarded fold
+PASS C02 clear endpoints do not hide thin lip in continuous swept knee path
+PASS C02 fold stops at last admitted pose instead of tunneling through lip
+PASS C02 achieved physical shape remains outside blocker
+PASS C02 blocked fold avoids uncommanded collision impulse spikes
+PASS C02 flex resumes only after real obstruction removed
+PASS C03 abort restoration stays crouched when expansion blocked by platform volume
+PASS C03 blocked restoration keeps collision-valid full sole active
+PASS C01 platform restoration recovers stable native standing collider under gravity
+PASS restored standing supports weight without sustained deep penetration or drift
+PASS C05 moving support evolves dynamically during collider flex queries
+PASS C05 moving support has bounded native impact and no deep leg penetration
+PASS same dynamic12kg body collision masks preserved across all flex tests
+PASS independent C1 visible fixture folds same dynamic body without controller force authority
+PASS independent C1 fixture admits only currently collision-free blocker placement
+PASS independent C1 fixture exposes blocked reverse sweep instead of inserting through lip
+PASS independent C1 fixture safely restores after real blocker removal
+MANTLE LEG CLEARANCE RESULTS: 29 checks, 0 failures

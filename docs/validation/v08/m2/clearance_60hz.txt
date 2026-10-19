@@ -52,5 +52,28 @@ PASS C05 moving support has bounded native impact and no deep leg penetration
 
 PASS same dynamic12kg body collision masks preserved across all flex tests
 
-RESULTS: 25 passed, 0 failed
+PASS symmetric tuck forward knee is genuinely blocked by torso-touching wall
 
+PASS pose variant cannot teleport lower geometry while already flexed
+
+PASS heel-back variant selected explicitly only at standing union
+
+PASS heel-back full150deg knee path clears actual torso-touching wall
+
+PASS heel-back raises full sole504mm and moves it135mm away from wall
+
+PASS heel-back wall fold creates no large uncommanded impulse or penetration
+
+PASS heel-back loaded-foot guard also blocks unsafe extension
+
+PASS heel-back safe OFF recovers original full standing geometry
+
+PASS independent C1 visible fixture folds same dynamic body without controller force authority
+
+PASS independent C1 fixture admits only currently collision-free blocker placement
+
+PASS independent C1 fixture exposes blocked reverse sweep instead of inserting through lip
+
+PASS independent C1 fixture safely restores after real blocker removal
+
+MANTLE LEG CLEARANCE RESULTS: 37 checks, 0 failures

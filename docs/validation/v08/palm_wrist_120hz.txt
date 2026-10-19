@@ -1,0 +1,40 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS current below-edge bent arm has two collision-free finite links and real palm surface
+PASS bent witness preserves declared upper/forearm lengths and finite hand length
+PASS H0 hand follows finite route above the lip and reaches actual top contact
+PASS finite below-edge wrist press produces actual body lift
+PASS all palms together reserve at most the existing20Nm before other assist
+PASS normal force pair plus explicitly charged body couple conserves paired wrench
+PASS release leaves no wrist force or couple
+PASS current below-edge bent arm has two collision-free finite links and real palm surface
+PASS bent witness preserves declared upper/forearm lengths and finite hand length
+PASS H0 hand follows finite route above the lip and reaches actual top contact
+PASS second H0 palm independently reaches real top contact
+PASS finite below-edge wrist press produces actual body lift
+PASS all palms together reserve at most the existing20Nm before other assist
+PASS normal force pair plus explicitly charged body couple conserves paired wrench
+PASS release leaves no wrist force or couple
+PASS current below-edge bent arm has two collision-free finite links and real palm surface
+PASS bent witness preserves declared upper/forearm lengths and finite hand length
+PASS H0 hand follows finite route above the lip and reaches actual top contact
+PASS finite below-edge wrist press produces actual body lift
+PASS all palms together reserve at most the existing20Nm before other assist
+PASS normal force pair plus explicitly charged body couple conserves paired wrench
+PASS dynamic support receives opposite normal force with conserved linear momentum
+PASS release leaves no wrist force or couple
+PASS loaded fixture obtains two finite current palms
+PASS gravity-loaded pair saturates the shared20Nm once without doubling wrist authority
+PASS invalidating fixture establishes real contact
+PASS new physical arm obstruction immediately removes both force and joint couple
+PASS low-capacity surface can receive unloaded actual palm
+PASS material capacity uses actual admitted compression and releases overloaded palm
+PASS support-loss fixture obtains finite wrist palm
+PASS disappearing support cannot leave a body-only couple
+PASS focus cancellation before contact has no wrist or compression authority
+PASS planning fixture begins from actual current palm contact
+PASS unachieved wrist request remains55mm/rate/acceleration bounded without accumulating3s of input
+PASS neutral relaxes unachieved wrist extension to its discrete acceleration-braking deadband
+PASS wrist planning writes neither body pose nor velocity
+PASS every H0 pending sample retains the4m/s relative gesture cap and zero effort
+PALM WRIST RESULTS: 37 checks, 0 failures

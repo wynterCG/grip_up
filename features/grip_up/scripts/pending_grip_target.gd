@@ -16,6 +16,7 @@ var _physical_inside := false
 var _retraction_used := false
 var _window_entry := -1.0
 var _window_blocked := false
+var _palm_clearance_done:=false
 
 func configure(material_anchor: RefCounted, frame: Transform3D, endpoint: Vector3, time: float, serial: int, reach: float, journal_attempt: int = -1) -> void:
 	anchor = material_anchor
@@ -94,7 +95,7 @@ func _sweep(body: RigidBody3D, start: Vector3, finish: Vector3, mask: int) -> Di
 	path.hit_from_inside = not (phase=="DEPARTURE" and (finish-start).normalized().dot(departure_normal)>.5)
 	return body.get_world_3d().direct_space_state.intersect_ray(path)
 
-func step(body: RigidBody3D, frame: Transform3D, endpoint: Vector3, reach: float, speed: float, mask: int, time: float, delta: float, clearance: float, minimum_length: float, hysteresis: float) -> Vector3:
+func step(body: RigidBody3D, frame: Transform3D, endpoint: Vector3, reach: float, speed: float, mask: int, time: float, delta: float, clearance: float, minimum_length: float, hysteresis: float,arm_route:Dictionary={}) -> Vector3:
 	var point: Vector3 = anchor.world_point()
 	var normal: Vector3 = anchor.world_normal()
 	var shoulder := frame.origin
@@ -116,6 +117,8 @@ func step(body: RigidBody3D, frame: Transform3D, endpoint: Vector3, reach: float
 		destination = shoulder+(departure_world-shoulder).limit_length(reach)
 	elif phase=="FINAL" and inside:destination = point
 	elif not inside:phase = "APPROACH"
+	if phase=="APPROACH" and arm_route.get("valid",false) and not _palm_clearance_done:
+		destination=shoulder+(Vector3(arm_route.hand_waypoint)-shoulder).limit_length(reach)
 	var candidate := carried.move_toward(destination,speed*delta)
 	if phase=="APPROACH" and not _retraction_used and not _sweep(body,endpoint,candidate,mask).is_empty():
 		# Choose the safe fold before advancing into the flank. Clipping first
@@ -154,6 +157,7 @@ func step(body: RigidBody3D, frame: Transform3D, endpoint: Vector3, reach: float
 	sight.hit_from_inside = true
 	var surface: Dictionary = space.intersect_ray(sight)
 	var visible: bool = not surface.is_empty() and surface.collider==anchor.support_body() and Vector3(surface.position).distance_to(point)<=.06 and Vector3(surface.normal).dot(normal)>.3
+	if not visible and arm_route.get("valid",false) and int(arm_route.get("support_id",0))==anchor.support_body().get_instance_id():visible=true
 	if not visible:
 		blocked = true
 		if blocker_id==0 and not surface.is_empty():blocker_id = surface.collider.get_instance_id()
@@ -164,7 +168,10 @@ func step(body: RigidBody3D, frame: Transform3D, endpoint: Vector3, reach: float
 		snapshot.last_window_reason = "PATH_OBSTRUCTED" if _window_blocked else "CONTACT_REJECTED" if snapshot.get("contact_rejection_reason","")!="" else "HAND_TOO_SLOW"
 	if valid and not blocked and candidate.distance_to(destination)<=.000001:
 		if phase in ["DEPARTURE","RETRACT"]:phase = "APPROACH"
-		elif phase=="APPROACH" and inside:phase = "FINAL"
+		elif phase=="APPROACH" and inside:
+			if arm_route.get("valid",false) and not _palm_clearance_done:
+				if candidate.distance_to(arm_route.hand_waypoint)<=.000001:_palm_clearance_done=true
+			else:phase = "FINAL"
 	var reason := "WORKSPACE_SWEEP_CONFLICT" if not valid else "hand_path_blocked" if blocked else "out_of_reach" if not inside else "finite_contact_approach"
 	var world_velocity := (candidate-endpoint)/maxf(.000001,delta)
 	var gesture_velocity := (candidate-carried)/maxf(.000001,delta)
@@ -176,6 +183,8 @@ func step(body: RigidBody3D, frame: Transform3D, endpoint: Vector3, reach: float
 		"world_velocity":world_velocity,"gesture_velocity":gesture_velocity,"transport_velocity":transport_velocity,
 		"requested_gesture_velocity":requested_gesture_velocity,"requested_gesture_speed":requested_gesture_velocity.length(),
 		"target_velocity":target_velocity,"target_relative_speed":(world_velocity-target_velocity).length(),"workspace_valid":valid,"endpoint_valid":valid,"reason":reason},true)
+	if arm_route.get("valid",false):snapshot["bent_arm_witness"]=arm_route.duplicate(true)
+	else:snapshot.erase("bent_arm_witness")
 	previous_frame = frame
 	return candidate
 

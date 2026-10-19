@@ -1,0 +1,51 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+
+
+WITNESS { "valid": true, "reason": "CURRENT_TWO_SEGMENT_ARM_AND_PALM_CLEAR", "shoulder": (-0.1919, 3.2241, 0.5653), "elbow": (-0.1919, 3.480682, 0.649358), "wrist": (-0.1919, 3.4291, 0.377121), "palm": (-0.1919, 3.4041, 0.27), "hand_waypoint": (-0.1919, 3.5241, 0.45), "upper_length": 0.27, "lower_length": 0.27708, "palm_length": 0.11, "arm_radius": 0.02, "support_id": 35047605737 }
+
+PASS current below-edge bent arm has two collision-free finite links and real palm surface
+
+PASS H0 hand follows finite route above the lip and reaches actual top contact
+
+PASS finite below-edge wrist press produces actual body lift
+
+PASS all palms together reserve at most the existing20Nm before other assist
+
+PASS normal force pair plus explicitly charged body couple conserves paired wrench
+
+PASS release leaves no wrist force or couple
+
+WITNESS { "valid": true, "reason": "CURRENT_TWO_SEGMENT_ARM_AND_PALM_CLEAR", "shoulder": (-0.1919, 3.2241, 0.5653), "elbow": (-0.1919, 3.480682, 0.649358), "wrist": (-0.1919, 3.4291, 0.377121), "palm": (-0.1919, 3.4041, 0.27), "hand_waypoint": (-0.1919, 3.5241, 0.45), "upper_length": 0.27, "lower_length": 0.27708, "palm_length": 0.11, "arm_radius": 0.02, "support_id": 90697631217 }
+
+PASS current below-edge bent arm has two collision-free finite links and real palm surface
+
+PASS H0 hand follows finite route above the lip and reaches actual top contact
+
+PASS second H0 palm independently reaches real top contact
+
+PASS finite below-edge wrist press produces actual body lift
+
+PASS all palms together reserve at most the existing20Nm before other assist
+
+PASS normal force pair plus explicitly charged body couple conserves paired wrench
+
+PASS release leaves no wrist force or couple
+
+WITNESS { "valid": true, "reason": "CURRENT_TWO_SEGMENT_ARM_AND_PALM_CLEAR", "shoulder": (-0.1919, 3.2241, 0.5653), "elbow": (-0.1919, 3.480682, 0.649358), "wrist": (-0.1919, 3.4291, 0.377121), "palm": (-0.1919, 3.4041, 0.27), "hand_waypoint": (-0.1919, 3.5241, 0.45), "upper_length": 0.27, "lower_length": 0.27708, "palm_length": 0.11, "arm_radius": 0.02, "support_id": 212600882668 }
+
+PASS current below-edge bent arm has two collision-free finite links and real palm surface
+
+PASS H0 hand follows finite route above the lip and reaches actual top contact
+
+FAIL finite below-edge wrist press produces actual body lift
+
+PASS all palms together reserve at most the existing20Nm before other assist
+
+PASS normal force pair plus explicitly charged body couple conserves paired wrench
+
+PASS dynamic support receives opposite normal force with conserved linear momentum
+
+PASS release leaves no wrist force or couple
+
+PALM WRIST RESULTS: 20 checks, 1 failures

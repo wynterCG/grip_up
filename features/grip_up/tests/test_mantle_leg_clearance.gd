@@ -204,11 +204,59 @@ func run()->void:
 	# actual shallow native contact is valid, unlike penetration through the lip.
 	check(dynamic_result.peak_speed<.03 and dynamic_result.peak_impulse_ns<.25 and dynamic_result.peak_penetration_estimate_m<.004,"C05 moving support has bounded native impact and no deep leg penetration")
 	check(body.mass==12 and body.collision_layer==4 and body.collision_mask==3 and not body.freeze,"same dynamic12kg body collision masks preserved across all flex tests")
+	await fresh()
+	box(world,Vector3(0,-.05,-.32),Vector3(2,2,.2))
+	await physics_frame
+	await physics_frame
+	adaptive.request_flex(1)
+	var forward_knee:Dictionary=await advance(1.7)
+	report.experiments.symmetric_wall_block=forward_knee
+	check(adaptive.blocked and adaptive.achieved_flex<.5,"symmetric tuck forward knee is genuinely blocked by torso-touching wall")
+	check(not adaptive.set_pose_mode("HEEL_BACK") and adaptive.pose_mode=="SYMMETRIC_TUCK","pose variant cannot teleport lower geometry while already flexed")
+	adaptive.request_flex(0)
+	await advance(1.7)
+	check(adaptive.set_pose_mode("HEEL_BACK"),"heel-back variant selected explicitly only at standing union")
+	var heel_audit:Dictionary=adaptive.audit_path(0,1)
+	adaptive.request_flex(1)
+	var heel_back:Dictionary=await advance(1.7)
+	report.experiments.heel_back_wall={"path":heel_audit,"run":heel_back,"pose":adaptive.pose_for(1)}
+	check(heel_audit.clear and adaptive.achieved_flex>.999,"heel-back full150deg knee path clears actual torso-touching wall")
+	check(sole.position.y-(-.8767)>.503 and sole.position.y-(-.8767)<.505 and sole.position.z>.099,"heel-back raises full sole504mm and moves it135mm away from wall")
+	check(heel_back.peak_penetration_estimate_m<.002 and heel_back.peak_impulse_ns<.02 and heel_back.peak_speed<.002,"heel-back wall fold creates no large uncommanded impulse or penetration")
+	adaptive.request_flex(0)
+	var heel_loaded:Dictionary=await advance(.3,true,25)
+	report.experiments.heel_back_loaded=heel_loaded
+	check(adaptive.achieved_flex>.999 and adaptive.reason=="LOAD_TRANSFER_REQUIRED","heel-back loaded-foot guard also blocks unsafe extension")
+	var heel_restore:Dictionary=await advance(1.7,false,0)
+	report.experiments.heel_back_restore=heel_restore
+	check(not adaptive.active and adaptive.achieved_flex==0 and sole.position.is_equal_approx(Vector3(0,-.8767,-.035)),"heel-back safe OFF recovers original full standing geometry")
+	# Independent visible scene also runs headlessly: prove the public native
+	# capture interface drives the same finite controller and safe blockers.
+	world.queue_free()
+	await physics_frame
+	var fixture:Node3D=load("res://features/grip_up/tests/mantle_leg_clearance_lab.gd").new()
+	root.add_child(fixture)
+	await physics_frame
+	await physics_frame
+	fixture.request_flex(1)
+	for index in int(1.7*hz):await physics_frame
+	check(fixture.legs.achieved_flex>.999 and fixture.body.gravity_scale==0 and not fixture.controller.is_physics_processing(),"independent C1 visible fixture folds same dynamic body without controller force authority")
+	check(fixture.set_blocker("LIP"),"independent C1 fixture admits only currently collision-free blocker placement")
+	await physics_frame
+	fixture.request_flex(0)
+	for index in int(1.7*hz):await physics_frame
+	check(fixture.legs.blocked and fixture.legs.achieved_flex>.01,"independent C1 fixture exposes blocked reverse sweep instead of inserting through lip")
+	report.experiments.visible_fixture=fixture.data.duplicate(true)
+	fixture.set_blocker("NONE")
+	for index in int(1.7*hz):await physics_frame
+	check(fixture.legs.achieved_flex<.001 and fixture.legs.clearance_diagnostics().max_penetration_estimate_m<.004,"independent C1 fixture safely restores after real blocker removal")
+	fixture.queue_free()
+	await physics_frame
 	report["physics_hz"]=hz
 	report["passed"]=passed
 	report["failed"]=failed
 	report["engine"]=Engine.get_version_info()
 	var file:=FileAccess.open("res://builds/mantle_leg_clearance_%dhz.json"%hz,FileAccess.WRITE)
 	file.store_string(JSON.stringify(report,"\t"))
-	print("RESULTS: ",passed," passed, ",failed," failed")
+	print("MANTLE LEG CLEARANCE RESULTS: %d checks, %d failures"%[passed+failed,failed])
 	quit(1 if failed else 0)

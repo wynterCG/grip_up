@@ -32,6 +32,7 @@ func configure(grips:Node,motor:Node,arena:Node3D,lower_shape:CollisionShape3D,f
 	lower=lower_shape
 	sole=foot_shape
 	legs.configure(body,lower,sole,controller.tuning)
+	legs.set_pose_mode("HEEL_BACK")
 	body.set_meta("adaptive_legs",legs)
 	body.max_contacts_reported=16
 	process_physics_priority=-20
@@ -82,30 +83,30 @@ func _candidate()->Dictionary:
 	return {"eligible":false,"top_bearing":"UNKNOWN","palm_region":"UNKNOWN","standing_destination":"UNKNOWN","hand_route":"UNKNOWN","body_path":"UNKNOWN","path_reason":"NO_ACTUAL_LEDGE_SUPPORT"}
 
 func _lower_load(delta:float)->float:
-	var load:=0.0
+	var lower_load:=0.0
 	var state:=PhysicsServer3D.body_get_direct_state(body.get_rid())
 	if state!=null:
 		for i in state.get_contact_count():
 			var shape_index:int=state.get_contact_local_shape(i)
 			if shape_index<0 or shape_index>=PhysicsServer3D.body_get_shape_count(body.get_rid()):continue
-			var owner:int=body.shape_find_owner(shape_index)
-			var shape_node:Object=body.shape_owner_get_owner(owner)
-			if shape_node==lower or shape_node==sole or shape_node==legs.shin:load+=maxf(0.0,state.get_contact_impulse(i).dot(Vector3.UP))/maxf(.001,delta)
+			var shape_owner_id:int=body.shape_find_owner(shape_index)
+			var shape_node:Object=body.shape_owner_get_owner(shape_owner_id)
+			if shape_node==lower or shape_node==sole or shape_node==legs.shin:lower_load+=maxf(0.0,state.get_contact_impulse(i).dot(Vector3.UP))/maxf(.001,delta)
 	if controller.feet_solver!=null:
-		for foot in controller.feet_solver.feet:load+=Vector3(foot.force).length()
-	return load
+		for foot in controller.feet_solver.feet:lower_load+=Vector3(foot.force).length()
+	return lower_load
 
 func _physics_process(delta:float)->void:
 	if not is_instance_valid(body):return
 	var enabled:bool=controller.physics_mantle_v08_enabled and controller.control_profile==4
 	var hands:Array=[]
 	var palms:=0
-	var load:=0.0
+	var hand_load:=0.0
 	for id in 2:
 		var hand:Dictionary=controller.hands[id]
 		if hand.state=="ATTACHED" and hand.anchor!=null and hand.anchor.is_valid():
 			hands.append(id)
-			load+=Vector3(hand.force).length()
+			hand_load+=Vector3(hand.force).length()
 			if hand.get("contact_mode","")=="PALM_CONTACT" and Vector3(hand.force).length()>1:palms+=1
 	candidate=_candidate() if enabled else {"eligible":false,"path_reason":"FEATURE_DISABLED"}
 	var upward:bool=enabled and controller.intent_locomotion.requested.y>.01
@@ -113,7 +114,7 @@ func _physics_process(delta:float)->void:
 	var top_ground:bool=ground.grounded and is_instance_valid(ground.support_body) and ground.support_body.get_instance_id()==int(candidate.get("support_id",0))
 	# Keep material identity once genuinely identified, including after hand release.
 	if enabled and level.get("platform")!=null:top_ground=ground.grounded and ground.support_body==level.platform
-	var suspended:bool=not ground.grounded and not hands.is_empty() and load>body.mass*9.8*.5
+	var suspended:bool=not ground.grounded and not hands.is_empty() and hand_load>body.mass*9.8*.5
 	suspended_run=suspended_run+delta if suspended else 0.0
 	if suspended_run>=.2:had_hanging_start=true
 	var near_lip:bool=candidate.has("point") and absf(body.global_position.y-Vector3(candidate.point).y)<.9
@@ -132,7 +133,7 @@ func _physics_process(delta:float)->void:
 			guarded.append(body.global_transform*(controller.feet_solver._rest[id]+shift))
 	if controller.feet_solver!=null:controller.feet_solver.collision_pose_guard=guarded
 	body.set_meta("mantle_v08_request",{"enabled":active,"inward":candidate.get("inward",Vector3.ZERO),"phase":phase,"candidate_eligible":candidate.get("eligible",false)})
-	var no_hands:bool=controller.hands.all(func(hand):return hand.state in ["FREE","RELEASED"])
+	var no_hands:bool=controller.hands.all(func(hand):return hand.state in ["FREE","RELEASED"]) and not Input.is_action_pressed("grip_left") and not Input.is_action_pressed("grip_right")
 	var upright:bool=body.global_basis.y.dot(Vector3.UP)>.94 and body.angular_velocity.length()<.5
 	var standing:bool=legs.achieved_flex<.001 and not legs.blocked
 	var support_stable:bool=enabled and top_ground and no_hands and upright and standing and had_hanging_start

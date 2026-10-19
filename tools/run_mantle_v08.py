@@ -13,6 +13,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('milestone')
 parser.add_argument('suites', nargs='+')
 parser.add_argument('--saved', action='store_true')
+parser.add_argument('--counterbalance', action='store_true')
 args = parser.parse_args()
 assert re.fullmatch(r'[a-z0-9_]+', args.milestone)
 assert all(re.fullmatch(r'[a-z0-9_]+', name) for name in args.suites)
@@ -33,8 +34,10 @@ for suite in args.suites:
     for hz in [120,60]:
         command = [sys.executable,str(root/'tools/project.py'),
                    'test-saved' if args.saved else 'test','test_'+suite]
-        if hz==60:
-            command += ['--','--60hz']
+        flags=[]
+        if hz==60:flags.append('--60hz')
+        if args.counterbalance:flags.append('--counterbalance')
+        if flags:command += ['--']+flags
         result = subprocess.run(command,capture_output=True,timeout=210)
         output = (result.stdout+result.stderr).decode('utf-8',errors='replace').replace('\r','')
         (out/f'{suite}_{hz}hz.txt').write_text(output,encoding='utf-8')
@@ -42,6 +45,7 @@ for suite in args.suites:
         passed = result.returncode==0 and footer is not None and int(footer[2])==0 and 'SCRIPT ERROR:' not in output and 'FAIL ' not in output
         row = {'suite':suite,'hz':hz,'passed':bool(passed),'checks':int(footer[1]) if footer else 0,
                'failures':int(footer[2]) if footer else None,'exit_code':result.returncode}
+        row['flags']=flags
         report['runs'].append(row)
         artifact = source/f'builds/{suite}_{hz}hz.json'
         if artifact.exists():

@@ -19,6 +19,10 @@ var fixed_inertia := Vector3.ZERO
 var requested_flex := 0.0
 var achieved_flex := 0.0
 var active := false
+var _pose_mode:="SYMMETRIC_TUCK"
+var pose_mode:String:
+	get:return _pose_mode
+	set(value):set_pose_mode(value)
 var blocked := false
 var reason := "DISABLED"
 var blocked_requests := 0
@@ -50,13 +54,22 @@ func configure(target: RigidBody3D, lower_capsule: CollisionShape3D, foot: Colli
 func request_flex(value: float) -> void:
 	requested_flex=clampf(value,0.0,1.0)
 
+func set_pose_mode(value:String)->bool:
+	if value not in ["SYMMETRIC_TUCK","HEEL_BACK"]:return false
+	if achieved_flex>.000001:
+		reason="POSE_MODE_CHANGE_REQUIRES_STANDING"
+		return false
+	_pose_mode=value
+	return true
+
 func pose_for(flex: float) -> Dictionary:
-	var a:float=deg_to_rad(75.0)*clampf(flex,0.0,1.0)
-	# Hip flex75°, knee flex150°: shin inclines75° rearward from down.
-	var b:float=deg_to_rad(75.0)*clampf(flex,0.0,1.0)
+	var a:float=deg_to_rad(0.0 if _pose_mode=="HEEL_BACK" else 75.0)*clampf(flex,0.0,1.0)
+	# Symmetric: hip75°, knee150°, shin75° rearward from down.
+	# Heel back: hip0°, knee150°, shin150° rearward from down.
+	var b:float=deg_to_rad(150.0 if _pose_mode=="HEEL_BACK" else 75.0)*clampf(flex,0.0,1.0)
 	var knee:Vector3=hip+Vector3(0,-cos(a),-sin(a))*length
 	var ankle:Vector3=knee+Vector3(0,-cos(b),sin(b))*length
-	return {"thigh":_segment(hip,knee),"shin":_segment(knee,ankle),"sole":Transform3D(original_sole_transform.basis,ankle+ankle_to_sole),"hip":hip,"knee":knee,"ankle":ankle}
+	return {"thigh":_segment(hip,knee),"shin":_segment(knee,ankle),"sole":Transform3D(original_sole_transform.basis,ankle+ankle_to_sole),"hip":hip,"knee":knee,"ankle":ankle,"pose_mode":_pose_mode}
 
 func _segment(start: Vector3, end: Vector3) -> Transform3D:
 	var axis:Vector3=(start-end).normalized()
@@ -66,7 +79,8 @@ func _segment(start: Vector3, end: Vector3) -> Transform3D:
 func _motion_bound(flex_span: float) -> float:
 	# Maximum motion of any proxy point over this interval, from arc-length
 	# bounds, including capsule radius under rotation. Sole stays level.
-	return absf(flex_span)*(length+radius)*(deg_to_rad(75.0)+deg_to_rad(75.0))
+	# Both variants have total absolute segment-angle variation150°.
+	return absf(flex_span)*(length+radius)*deg_to_rad(150.0)
 
 func _inflated(shape: Shape3D, padding: float) -> Shape3D:
 	if shape is CapsuleShape3D:
@@ -95,7 +109,7 @@ func _query(shape: Shape3D, local_pose: Transform3D, padding: float = 0.0) -> Ar
 
 func audit_pose(flex: float, padding: float = QUERY_SKIN) -> Dictionary:
 	var pose:Dictionary=pose_for(flex)
-	var probes:Array=[{"name":"thigh","shape":segment_shape,"pose":pose.thigh,"moving":true},{"name":"shin","shape":segment_shape,"pose":pose.shin,"moving":true},{"name":"sole","shape":sole.shape,"pose":pose.sole,"moving":true}]
+	var probes:Array=[{"name":"thigh","shape":segment_shape,"pose":pose.thigh,"moving":_pose_mode!="HEEL_BACK"},{"name":"shin","shape":segment_shape,"pose":pose.shin,"moving":true},{"name":"sole","shape":sole.shape,"pose":pose.sole,"moving":true}]
 	for child in body.get_children():
 		if child is CollisionShape3D and child!=leg and child!=sole and child!=shin and not child.disabled:
 			probes.append({"name":str(child.name),"shape":child.shape,"pose":child.transform,"moving":false})
@@ -115,11 +129,11 @@ func audit_path(from_flex: float, to_flex: float) -> Dictionary:
 	# pose (rotation included); this is not merely endpoint sampling.
 	for index in count:
 		var midpoint:float=lerpf(from_flex,to_flex,(index+0.5)/float(count))
-		var result:Dictionary=audit_pose(midpoint,padding)
-		if not result.clear:
-			result["last_safe_flex"]=lerpf(from_flex,to_flex,index/float(count))
-			result["substeps"]=count
-			return result
+		var sample_result:Dictionary=audit_pose(midpoint,padding)
+		if not sample_result.clear:
+			sample_result["last_safe_flex"]=lerpf(from_flex,to_flex,index/float(count))
+			sample_result["substeps"]=count
+			return sample_result
 	var result:Dictionary=audit_pose(to_flex)
 	result["last_safe_flex"]=to_flex if result.clear else from_flex
 	result["substeps"]=count
@@ -232,7 +246,7 @@ func clearance_diagnostics() -> Dictionary:
 		query.exclude=[body.get_rid()]
 		query.margin=0.0
 		var pairs:PackedVector3Array=body.get_world_3d().direct_space_state.collide_shape(query,32)
-		pairs_count+=pairs.size()/2
+		pairs_count+=int(pairs.size()*.5)
 		for index in range(0,pairs.size()-1,2):
 			maximum_penetration=maxf(maximum_penetration,pairs[index].distance_to(pairs[index+1]))
 	var lower_bound:=0.0
@@ -248,4 +262,4 @@ func clearance_diagnostics() -> Dictionary:
 	return {"max_penetration_estimate_m":maximum_penetration,"contact_pairs":pairs_count,"separation_lower_bound_m":lower_bound,"not_native_solved_contact":true}
 
 func telemetry() -> Dictionary:
-	return {"enabled_shape_configuration":active,"desired_leg_flex":requested_flex,"actual_leg_flex":achieved_flex,"blocked":blocked,"reason":reason,"blocked_requests":blocked_requests,"path":last_audit.duplicate(true),"contacts":contact_diagnostics.duplicate(true),"foot_local_transform":sole.transform,"fixed_inertia":fixed_inertia,"body_mass":body.mass,"representation":"SAME_BODY_TWO_SAGITTAL_CAPSULES","force_authority_n":0.0,"minimum_query_skin_m":QUERY_SKIN}
+	return {"enabled_shape_configuration":active,"pose_mode":_pose_mode,"desired_leg_flex":requested_flex,"actual_leg_flex":achieved_flex,"blocked":blocked,"reason":reason,"blocked_requests":blocked_requests,"path":last_audit.duplicate(true),"contacts":contact_diagnostics.duplicate(true),"foot_local_transform":sole.transform,"fixed_inertia":fixed_inertia,"body_mass":body.mass,"representation":"SAME_BODY_TWO_SAGITTAL_CAPSULES","force_authority_n":0.0,"minimum_query_skin_m":QUERY_SKIN}

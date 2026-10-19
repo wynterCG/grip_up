@@ -17,7 +17,7 @@ func _ready()->void:
 	# vertical press lifts the body instead of spending its work tipping it.
 	# This is NOT a demonstrated hanging/ordinary mantle starting posture.
 	var balance_shoulder:=Vector3(0,.5241,.0153) if definition.get("two",false) else Vector3(-.1919,.5241,.0153)
-	body.quaternion=Quaternion(balance_shoulder.normalized(),Vector3.DOWN)
+	if not definition.get("wrist",false):body.quaternion=Quaternion(balance_shoulder.normalized(),Vector3.DOWN)
 	body.mass=12
 	body.gravity_scale=0
 	body.center_of_mass_mode=RigidBody3D.CENTER_OF_MASS_MODE_CUSTOM
@@ -44,10 +44,13 @@ func _ready()->void:
 	controller.intent_climb_enabled=true
 	controller.physics_mantle_v08_enabled=definition.get("master",true)
 	controller.palm_compression_enabled=definition.get("enabled",true)
+	controller.palm_wrist_support_enabled=definition.get("wrist",false)
 	var left_shoulder:Vector3=controller.get_shoulder_world(0)
 	var right_shoulder:Vector3=controller.get_shoulder_world(1)
 	var top:float=left_shoulder.y-.42
-	support=RigidBody3D.new() if definition.get("moving",false) else StaticBody3D.new()
+	if definition.get("wrist",false):top=left_shoulder.y+.18
+	if definition.get("moving",false):support=RigidBody3D.new()
+	else:support=StaticBody3D.new()
 	support.position=Vector3(0,top-.1,0)
 	support.collision_layer=2
 	support.collision_mask=7
@@ -68,11 +71,15 @@ func _ready()->void:
 		support.center_of_mass=Vector3.ZERO
 	var box:=BoxShape3D.new()
 	box.size=Vector3(2,.20,1.50)
+	if definition.get("wrist",false):box.size.z=.70
 	var solid:=CollisionShape3D.new()
 	solid.shape=box
 	support.add_child(solid)
 	add_child(support)
 	points=[Vector3(left_shoulder.x,top,left_shoulder.z),Vector3(right_shoulder.x,top,right_shoulder.z)]
+	if definition.get("wrist",false):
+		points[0].z=.27
+		points[1].z=.27
 	points[0].z+=float(definition.get("offset_z",0.0))
 	if definition.get("corner",false):points[0].z=.74
 	if definition.get("air",false):points[0].y+=.03
