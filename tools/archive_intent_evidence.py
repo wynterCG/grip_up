@@ -4,13 +4,14 @@ import gzip,hashlib,json,shutil,subprocess,sys
 
 root=Path(__file__).resolve().parents[1]
 version=sys.argv[1] if len(sys.argv)>1 else 'v07'
-assert version in ['v07','v071','v072','v073']
-native_prefix={'v07':'intent','v071':'intent_refinement','v072':'reachable_grip','v073':'climbing_route'}[version]
-labels={'v07':['step_false','step_true','traverse','hang'],'v071':['step_false','step_true','first_handoff','second_handoff','hang'],'v072':['reach_0_03','reach_0_15'],'v073':['route_start','route_climb','route_traverse','route_finish']}[version]
+assert version in ['v07','v071','v072','v073','v074']
+native_prefix={'v07':'intent','v071':'intent_refinement','v072':'reachable_grip','v073':'climbing_route','v074':'mantle'}[version]
+labels={'v07':['step_false','step_true','traverse','hang'],'v071':['step_false','step_true','first_handoff','second_handoff','hang'],'v072':['reach_0_03','reach_0_15'],'v073':['route_start','route_climb','route_traverse','route_finish'],'v074':['ledge_start_false','ledge_attempt_false','ledge_start_true','ledge_attempt_true']}[version]
 test_names=['intent_locomotion','intent_swing','intent_integration','intent_arenas']
-if version in ['v071','v072','v073']:test_names+=['intent_reversal','intent_progress','intent_handoffs','intent_frame_sign']
-if version in ['v072','v073']:test_names+=['reachable_grip','reach_visual']
-if version=='v073':test_names+=['route_progress','climbing_route']
+if version in ['v071','v072','v073','v074']:test_names+=['intent_reversal','intent_progress','intent_handoffs','intent_frame_sign']
+if version in ['v072','v073','v074']:test_names+=['reachable_grip','reach_visual']
+if version in ['v073','v074']:test_names+=['route_progress','climbing_route']
+if version=='v074':test_names+=['intent_mantle','mantle_integration']
 out=root/f'docs/validation/{version}/final'
 out.mkdir(exist_ok=True)
 user=Path.home()/'AppData/Roaming/Godot/app_userdata/GRIP UP'
@@ -29,7 +30,7 @@ for hz in [120,60]:
         shutil.copy2(root/f'builds/v04_{hz}hz_{version}_{label}.png',out/f'{hz}hz_{label}.png')
     for name in test_names:
         shutil.copy2(root/f'builds/{name}_{hz}hz.json',out/f'{name}_{hz}hz.json')
-if version!='v072':
+if version not in ['v072','v074']:
     frame_count=json.loads((out/'rendered_120hz.json').read_text())['demo_frames']
     subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-framerate','15','-i',str(root/f'builds/{version}_candidate_frames/%05d.jpg'),'-frames:v',str(frame_count),'-c:v','libx264','-crf','24','-pix_fmt','yuv420p',str(out/'scripted_candidate.mp4')],check=True)
 manifest={str(p.relative_to(out)).replace('\\','/'):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(out.rglob('*')) if p.is_file() and p.name!='manifest.json'}

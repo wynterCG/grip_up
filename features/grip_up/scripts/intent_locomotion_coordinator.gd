@@ -133,6 +133,10 @@ func step(controller: Node, delta: float, enabled: bool) -> void:
 	# The material support frame transports intent. Camera orbit alone cannot
 	# rotate it; real support geometry may change it through the finite filter.
 	var direction: Vector3 = (frame.right*input.x+frame.up*input.y).limit_length(1.0)
+	if controller.intent_auto_mantle_enabled and controller.ledge_transfer.active:
+		# Opt-in M6 geometric intent only. Existing finite axial actuators and
+		# paired swing torque decide whether this inward transfer is possible.
+		direction=(direction+controller.ledge_transfer.inward*maxf(0.0,input.y)*.5).limit_length(1.0)
 	var desired: Vector3 = direction*tuning.traversal_speed_m_s
 	var relative_velocity: Vector3 = controller.torso.linear_velocity-support_velocity/maxf(.000001,support_weight)
 	var acceleration: Vector3 = ((desired-relative_velocity.slide(frame.normal))*tuning.traversal_velocity_response).limit_length(tuning.traversal_plan_max_acceleration)

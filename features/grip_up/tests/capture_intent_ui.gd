@@ -6,8 +6,8 @@ func _ready() -> void:
 func run() -> void:
 	var app=get_parent()
 	Engine.physics_ticks_per_second=120
-	app._open_intent_arena(10 if evidence_prefix=="v073" else 6,true)
-	if evidence_prefix in ["v071","v072","v073"]:app._set_distant_targeting(true)
+	app._open_intent_arena(11 if evidence_prefix=="v074" else 10 if evidence_prefix=="v073" else 6,true)
+	if evidence_prefix in ["v071","v072","v073","v074"]:app._set_distant_targeting(true)
 	app.debug_visible=false
 	app.settings.show()
 	await get_tree().process_frame

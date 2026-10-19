@@ -17,6 +17,7 @@ const PostureRefinement = preload("res://features/grip_up/scripts/supported_post
 const IntentLocomotion = preload("res://features/grip_up/scripts/intent_locomotion_coordinator.gd")
 const PendingGripTarget = preload("res://features/grip_up/scripts/pending_grip_target.gd")
 const ReachableGripResolver = preload("res://features/grip_up/scripts/reachable_grip_resolver.gd")
+const LedgeTransfer = preload("res://features/grip_up/scripts/ledge_transfer.gd")
 var _held_targets: Dictionary = {}
 var _held_target_serial := 0
 var transfer_assist_enabled := false
@@ -53,6 +54,8 @@ var free_foot_positions: Array[Vector3] = []
 var grounded_for_walking := false
 var intent_climb_enabled := false
 var intent_locomotion = IntentLocomotion.new()
+var intent_auto_mantle_enabled := false
+var ledge_transfer = LedgeTransfer.new()
 var control_profile := 0
 var posture_policy := 0
 var independent_aim_enabled := true
@@ -86,6 +89,7 @@ func configure(body: RigidBody3D, configuration: Resource = null) -> void:
 	reset_state()
 
 func reset_state() -> void:
+	ledge_transfer.reset()
 	intent_locomotion.reset()
 	_held_targets.clear()
 	_twist_refinement.reset()
@@ -158,6 +162,7 @@ func set_control_profile(profile: int) -> void:
 		if _held_targets[hand_id].active and get_hand_state(hand_id)=="REACHING":
 			release_grip(hand_id,"input_released")
 	control_profile = next
+	ledge_transfer.reset()
 	intent_locomotion.reset()
 	_twist_refinement.reset()
 	_posture_refinement.reset()
@@ -841,6 +846,7 @@ func _physics_process(delta: float) -> void:
 	_advance_launch(delta)
 	var attached: Array[int] = _attached_ids()
 	if control_profile == 4:
+		ledge_transfer.step(self,delta,intent_auto_mantle_enabled and intent_climb_enabled and _launch_state=="IDLE")
 		intent_locomotion.step(self,delta,intent_climb_enabled and _launch_state=="IDLE")
 	if control_profile == 3:
 		_update_independent_posture(attached,delta)
@@ -912,6 +918,7 @@ func _physics_process(delta: float) -> void:
 		moments += (get_shoulder_world(id) - center).cross(forces[id])
 	_arm_deltas.clear()
 	var assist: Vector3 = _compute_attitude_assist(attached,forces,center,sum_force)
+	var mantle_assist:=Vector3.ZERO
 	var diagnostic_attitude: Vector3 = assist if _transfer_enabled() else Vector3.ZERO
 	var before_tilt_assist := assist
 	var baseline_tilt_request := Vector3.ZERO
@@ -980,6 +987,12 @@ func _physics_process(delta: float) -> void:
 		var requested_swing: Vector3 = _supported_swing.evaluate(delta,requested,lever,torso.angular_velocity-support_spin,engagement,tuning)
 		assist = (base_assist+requested_swing).limit_length(tuning.max_attitude_torque)
 		_swing_torque = assist-base_assist
+	# M6 is the final incremental attitude contribution, sharing the same20Nm
+	# cap and the existing actual-anchor reaction pair. No separate torso motor.
+	if control_profile==4 and intent_auto_mantle_enabled and not attached.is_empty():
+		var before_mantle:=assist
+		assist=(assist+ledge_transfer.torque).limit_length(tuning.max_attitude_torque)
+		mantle_assist=assist-before_mantle
 	var foot_requests: Array[Dictionary] = []
 	var leg_force := 0.0
 	var leg_moment := Vector3.ZERO
@@ -1069,6 +1082,8 @@ func _physics_process(delta: float) -> void:
 		"torso_position": torso.global_position, "linear_velocity": torso.linear_velocity,
 		"angular_velocity": torso.angular_velocity, "metrics": metrics.duplicate()}
 	if control_profile==4:
+		_diagnostics["ledge_transfer"]=ledge_transfer.data.duplicate(true)
+		_diagnostics["ledge_transfer"]["applied_torque"]=mantle_assist*scale_factor
 		_diagnostics["combined_ground_climb_torque"] = Vector3(intent_locomotion.ground.get("applied_torque",Vector3.ZERO))+(moments+leg_moment+assist)*scale_factor
 	if control_profile==3:
 		_diagnostics["transfer_posture"] = {"enabled":transfer_assist_enabled,"variant":posture_variant,
@@ -1076,7 +1091,7 @@ func _physics_process(delta: float) -> void:
 			"twist":_twist_refinement.diagnostics(),"posture":_posture_refinement.diagnostics()}
 	if _transfer_enabled():
 		transfer_journal.sample(self,delta,{"attitude":diagnostic_attitude*scale_factor,"posture_tilt":_posture_tilt_torque*scale_factor,
-			"swing":_swing_torque*scale_factor,"assist":assist*scale_factor,"shoulder_moment":moments*scale_factor,
+			"swing":_swing_torque*scale_factor,"mantle":mantle_assist*scale_factor,"assist":assist*scale_factor,"shoulder_moment":moments*scale_factor,
 			"leg_moment":leg_moment*scale_factor,"total_moment":(moments+leg_moment+assist)*scale_factor,
 			"raw_hand_force_sum":sum_force,"hand_force_sum":sum_force*scale_factor,"force_limit":tuning.total_pull_force_budget,
 			"assist_limit":tuning.max_attitude_torque,"total_moment_limit":tuning.max_total_torque,"allocator_scale":scale_factor,

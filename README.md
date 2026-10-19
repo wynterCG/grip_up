@@ -1,10 +1,34 @@
-# GRIP UP / physics climbing lab 0.7.3 candidate
+# GRIP UP / physics climbing lab 0.7.4 ledge experiment
 
-Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v0.7.3.exe`.
+Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v0.7.4.exe`.
 PC mouse and keyboard. Resizable 1920x1080 reference canvas; initial window 1440x810.
 Integrated Jolt, 120 Hz. Core and complete routes also tested at 60 Hz.
 
 This is a separate prototype. The Janga object grabber and its project are unchanged.
+
+## v0.7.4 ledge capability experiment — M6 gate not met
+
+**Controls / Ledge experiment / hands + feet** opens a solid platform with
+two low foot lips. Hold the edge using LMB/RMB and request travel with W.
+The hands-only button provides the same geometry without physical foot forces.
+This is an isolated engineering experiment, not a finished mantle mechanic.
+
+The system identifies a real bearing top on the gripped material, checks the
+standing destination for obstruction, and requests a finite reacted lean inside
+the existing 20 Nm attitude and 150 Nm common moment limits. All translations
+still come from the existing contact forces. It does not certify a continuous
+collision-free route; actual intermediate body collisions remain authoritative.
+
+**The character cannot yet complete an ordinary top-out.** Traction-only arms
+and the fixed calf/sole compound prevent the required support and leg clearance.
+The next physical capability needs to be designed and tested explicitly; there
+is no hidden lift, body animation, collider removal or larger strength budget.
+Completion requires actual platform ground, hands free, then 30 cm of walking.
+Gripping an edge never reports success.
+
+The designer's "muito bom" feedback applies to the v0.7.3 course. That course
+remains available via **PLAY / The first route**, with the mantle experiment OFF.
+See the [M6 decision and limitations](docs/validation/m6/decision.md).
 
 ## v0.7.3 the first route
 

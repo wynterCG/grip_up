@@ -6,8 +6,8 @@ import hashlib,json,re,shutil,subprocess,sys
 root=Path(__file__).resolve().parents[1]
 dest=Path(r'E:\Godot Games\grip_up')
 version=sys.argv[1] if len(sys.argv)>1 else 'v07'
-assert version in ['v07','v071','v072','v073']
-exe_name={'v07':'GripUp-v0.7.exe','v071':'GripUp-v0.7.1.exe','v072':'GripUp-v0.7.2.exe','v073':'GripUp-v0.7.3.exe'}[version]
+assert version in ['v07','v071','v072','v073','v074']
+exe_name={'v07':'GripUp-v0.7.exe','v071':'GripUp-v0.7.1.exe','v072':'GripUp-v0.7.2.exe','v073':'GripUp-v0.7.3.exe','v074':'GripUp-v0.7.4.exe'}[version]
 folder=root/f'docs/validation/{version}'
 final=folder/'final'
 aggregate=json.loads((folder/'results.json').read_text())
@@ -72,6 +72,16 @@ if version=='v073':
     report['refinement_baseline_ref']='a78ecb0'
     report['native_route']={hz:run['route'] for hz,run in native.items()}
     assert all(run['route']['completed'] for run in native.values())
+    for target in [root/'builds/verification.json',final/'verification.json']:
+        target.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+if version=='v074':
+    report['decision']='M6 acceptance gate NOT MET; retain only as an isolated physical feasibility experiment, do not promote to approved route'
+    report['human_feedback_received']='Designer: muito bom on v0.7.3 route; M6 not human evaluated'
+    report['refinement_baseline_ref']='0d34607'
+    report['native_mantle_capability']={hz:run['capability'] for hz,run in native.items()}
+    report['mantle_acceptance_gate_met']=all(row['acceptance_gate_met'] for run in native.values() for row in run['capability'])
+    assert not report['mantle_acceptance_gate_met'],'Update the decision if physical capability changes'
+    report['known_limits'] += ['Traction-only arms and fixed compound calf/sole do not complete an ordinary ledge top-out','Destination occupancy is checked; no continuous collision-free mantle trajectory is certified']
     for target in [root/'builds/verification.json',final/'verification.json']:
         target.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
 for source_name,target_name in [(f'{version}_ui_final.json','ui_final.json'),(f'{version}_controls_final.png','controls_final.png'),('export00000002.png','export_smoke.png')]:shutil.copy2(root/'builds'/source_name,final/target_name)

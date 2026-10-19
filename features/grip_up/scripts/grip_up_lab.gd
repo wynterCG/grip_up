@@ -15,7 +15,7 @@ const TransferProgress = preload("res://features/grip_up/scripts/transfer_route_
 const ClimbingRouteProgress = preload("res://features/grip_up/scripts/climbing_route_progress.gd")
 const ReachAssessment = preload("res://features/grip_up/scripts/reach_assessment.gd")
 const ContextualInput = preload("res://features/grip_up/scripts/contextual_arm_input.gd")
-const LEVELS = [preload("res://features/grip_up/scenes/static_climb.tscn"), preload("res://features/grip_up/scenes/swing_and_catch.tscn"), preload("res://features/grip_up/scenes/reactive_structure.tscn"), preload("res://features/grip_up/scenes/foot_support.tscn"),preload("res://features/grip_up/scenes/transfer_lab.tscn"),preload("res://features/grip_up/scenes/swing_reach_lab.tscn"),preload("res://features/grip_up/scenes/intent_step.tscn"),preload("res://features/grip_up/scenes/intent_hang.tscn"),preload("res://features/grip_up/scenes/intent_traverse.tscn"),preload("res://features/grip_up/scenes/intent_corner.tscn"),preload("res://features/grip_up/scenes/climbing_route.tscn")]
+const LEVELS = [preload("res://features/grip_up/scenes/static_climb.tscn"), preload("res://features/grip_up/scenes/swing_and_catch.tscn"), preload("res://features/grip_up/scenes/reactive_structure.tscn"), preload("res://features/grip_up/scenes/foot_support.tscn"),preload("res://features/grip_up/scenes/transfer_lab.tscn"),preload("res://features/grip_up/scenes/swing_reach_lab.tscn"),preload("res://features/grip_up/scenes/intent_step.tscn"),preload("res://features/grip_up/scenes/intent_hang.tscn"),preload("res://features/grip_up/scenes/intent_traverse.tscn"),preload("res://features/grip_up/scenes/intent_corner.tscn"),preload("res://features/grip_up/scenes/climbing_route.tscn"),preload("res://features/grip_up/scenes/mantle.tscn")]
 const COLORS = [Color("65dfcc"), Color("f0b85c")]
 var torso: RigidBody3D
 var controller: Node
@@ -92,6 +92,11 @@ var transfer_route_spacing := .12
 var transfer_session_id := ""
 var transfer_progress = TransferProgress.new()
 var climbing_route = ClimbingRouteProgress.new()
+var mantle_standing:=false
+var mantle_stable:=0.0
+var mantle_walk_origin:=Vector3.ZERO
+var mantle_completed:=false
+var mantle_attempted:=false
 var transfer_diagnostics_toggle: CheckButton
 var posture_choice: OptionButton
 var experimental_launch_enabled := false
@@ -232,6 +237,10 @@ func load_test(index: int, use_checkpoint := false) -> void:
 	transfer_session_id="%s_%d_%d" % [Time.get_datetime_string_from_system(true).replace(":","-"),OS.get_process_id(),Time.get_ticks_usec()]
 	transfer_progress=TransferProgress.new()
 	climbing_route=ClimbingRouteProgress.new()
+	mantle_standing=false
+	mantle_stable=0.0
+	mantle_completed=false
+	mantle_attempted=false
 	checkpoint_active = checkpoint_active and use_checkpoint and index == 0
 	world = Node3D.new()
 	world.name = "TrialWorld"
@@ -300,6 +309,7 @@ func load_test(index: int, use_checkpoint := false) -> void:
 	controller.name = "ClimbingController"
 	world.add_child(controller)
 	controller.configure(torso,profile)
+	controller.intent_auto_mantle_enabled=index==11
 	controller.transfer_event.connect(_on_transfer_event)
 	controller.set_control_profile(input_profile)
 	_apply_independent_settings()
@@ -596,13 +606,28 @@ func _physics_process(delta: float) -> void:
 	if level_id>=6:
 		goal=controller.hands.any(func(hand):return hand.state=="ATTACHED" and Vector3(hand.anchor_world).distance_to(level.finish_point)<.12) and torso.linear_velocity.length()<1.0
 	if level_id==10:goal=climbing_route.completed
+	if level_id==11:
+		# A grip on the edge is not a top-out. Only real top ground may qualify.
+		var top_ground:bool=ground_motor.grounded and ground_motor.support_body==level.platform
+		var hands_free:bool=controller._attached_ids().is_empty() and not ground_motor.has_climbing_intent()
+		mantle_attempted=mantle_attempted or controller.hands.any(func(hand):return hand.state=="ATTACHED" and hand.support==level.platform and hand.anchor_world.y<=level.top_y+.03)
+		if not top_ground and not mantle_completed:mantle_standing=false
+		mantle_stable=mantle_stable+delta if top_ground and hands_free and mantle_attempted else 0.0
+		if mantle_stable>=.3 and not mantle_standing:
+			mantle_standing=true
+			mantle_walk_origin=torso.global_position
+		if top_ground and hands_free and mantle_standing and ground_motor.walking:
+			mantle_completed=mantle_completed or torso.global_position.slide(Vector3.UP).distance_to(mantle_walk_origin.slide(Vector3.UP))>=.30
+		goal=mantle_completed
 	stable_goal = stable_goal + delta if goal else 0.0
 	if stable_goal > 0.5 and not won:
 		won = true
 		trial.goal_seconds = trial.elapsed
 		_save_trial("goal")
-		if level_id==10:
-			message("ROUTE COMPLETE / R to try again. You kept control through the whole climb.")
+		if level_id in [10,11]:
+			if level_id==11:message("TOP-OUT COMPLETE / Actual support restored. R to retry.")
+			else:
+				message("ROUTE COMPLETE / R to try again. You kept control through the whole climb.")
 		else:
 			rating_panel.show()
 			message("Test complete. Rate the feel, retry, or select another test.")
@@ -749,6 +774,9 @@ func _process(delta: float) -> void:
 			var zone:Dictionary=level.route_zones[climbing_route.stage]
 			status_label.text=zone.hint if input_profile==4 else "COMPARE / Choose grips with the mouse. Existing posture policy moves the body; WASD requests supported swing."
 	debug_label.visible = debug_visible
+	if level_id==11:
+		checkpoint_label.text="TOP-OUT COMPLETE / R to retry" if mantle_completed else "LEDGE EXPERIMENT / R to retry"
+		status_label.text="Release the hands and walk across the top." if mantle_standing else "Hold the edge and press W to try. Physical limits can stop this experiment."
 	if debug_visible:
 		debug_label.text = "PHYSICS / %d Hz  |  step %d  |  %.2f ms  |  %d fps\nBody %s  |  rotation %s\nv %s  /  spin %s" % [Engine.physics_ticks_per_second,session_ticks,Performance.get_monitor(Performance.TIME_PHYSICS_PROCESS)*1000,Engine.get_frames_per_second(),str(torso.position),str(torso.rotation),str(torso.linear_velocity),str(torso.angular_velocity)]
 		for i in 2:
@@ -772,6 +800,9 @@ func _process(delta: float) -> void:
 			var movement:Dictionary=launch.get("intent_locomotion",{})
 			debug_label.text="INTENT-DRIVEN / %s | %s\nRequest %s | desired v %s\nActual v %s | position %s\nGround authority %s | targets %s\nFrame %s" % [movement.get("support_mode","PENDING"),movement.get("movement_block_reason",""),str(movement.get("movement_intent_world",Vector3.ZERO)),str(movement.get("desired_com_velocity",Vector3.ZERO)),str(movement.get("actual_relative_velocity",torso.linear_velocity)),str(torso.global_position),str(ground_motor.motor_authority),str(movement.get("planned_arm_rest_lengths",{})),str(movement.get("frame",{}))]
 			debug_label.text+="\nHands %.1f /360 N | feet %.1f /180 N\nCombined moment %s /150 Nm" % [launch.get("total_force",0),launch.get("leg_force",0),str(launch.get("combined_ground_climb_torque",launch.get("torque",Vector3.ZERO)))]
+			if level_id==11:
+				var ledge:Dictionary=launch.get("ledge_transfer",{})
+				debug_label.text+="\nLedge / %s | %s\nDestination free %s | top ground %s | walked away %s"%[ledge.get("status",""),ledge.get("reason",""),str(ledge.get("destination_clear",false)),str(ground_motor.grounded and ground_motor.support_body==level.platform),str(mantle_completed)]
 
 func _transfer_debug_text(data: Dictionary) -> String:
 	var out: String="TRANSFER DIAGNOSTICS / %d Hz | aim never changes length\nBody v %s | spin %s" % [Engine.physics_ticks_per_second,str(torso.linear_velocity),str(torso.angular_velocity)]
@@ -840,6 +871,7 @@ func _on_transfer_event(event: Dictionary) -> void:
 	row.attempt_assessment=attempt_assessments[event_hand].duplicate(true) if event_hand in [0,1] else {}
 	row.route=transfer_progress.diagnostics() if level_id==4 else {}
 	row.climbing_route=climbing_route.diagnostics() if level_id==10 else {}
+	row.ledge_transfer=controller.telemetry().get("ledge_transfer",{})
 	DirAccess.make_dir_recursive_absolute("user://transfer_sessions")
 	var path: String="user://transfer_sessions/%s.jsonl" % transfer_session_id
 	var file:=FileAccess.open(path,FileAccess.READ_WRITE if FileAccess.file_exists(path) else FileAccess.WRITE)
@@ -861,6 +893,8 @@ func _save_trial(outcome: String) -> void:
 	row.transfer_diagnostics_enabled=transfer_diagnostics_enabled
 	row.transfer_route=transfer_progress.diagnostics() if level_id==4 else {}
 	row.climbing_route=climbing_route.diagnostics() if level_id==10 else {}
+	row.ledge_transfer=controller.telemetry().get("ledge_transfer",{})
+	row.mantle_gate={"standing":mantle_standing,"completed":mantle_completed} if level_id==11 else {}
 	row.intent_climb_enabled=intent_climb_enabled and input_profile==4
 	row.intent_locomotion=controller.telemetry().get("intent_locomotion",{})
 	row.posture_policy=posture_policy
@@ -895,6 +929,7 @@ func _record_capture(delta: float) -> void:
 		"intent_climb_enabled":intent_climb_enabled and input_profile==4,"intent_locomotion":controller.telemetry().get("intent_locomotion",{}),
 		"transfer_posture":contextual_data.get("transfer_posture",{}),"transfer_assist_enabled":transfer_assist_enabled,"posture_variant":posture_variant,"transfer_session":transfer_session_id,"transfer_diagnostics":controller.transfer_diagnostics(),"transfer_route":transfer_progress.diagnostics() if level_id==4 else {},
 		"climbing_route":climbing_route.diagnostics() if level_id==10 else {},
+		"ledge_transfer":contextual_data.get("ledge_transfer",{}),"mantle_gate":{"standing":mantle_standing,"completed":mantle_completed} if level_id==11 else {},
 		"posture_policy":posture_policy if input_profile in [3,4] else -1,"posture":contextual_data.get("posture",{}),
 		"contextual_filtered":[filtered.x,filtered.y],"contextual_actuation_m_s":[actuation.x,actuation.y],
 		"camera_right":capture_trace.vector(camera.global_basis.x),"camera_forward":capture_trace.vector(Vector3.UP.cross(camera.global_basis.x).normalized()),
@@ -1088,6 +1123,10 @@ func _setup_ui() -> void:
 	_button("The Traverse",func():_open_intent_arena(8,false),intent_row)
 	_button("The Corner",func():_open_intent_arena(9,false),intent_row)
 	_button("PLAY / The first route",func():_open_intent_arena(10,true);_set_distant_targeting(true),settings_box)
+	var ledge_row:=HBoxContainer.new()
+	settings_box.add_child(ledge_row)
+	_button("Ledge experiment / hands",func():_open_intent_arena(11,false);_set_distant_targeting(true),ledge_row)
+	_button("Ledge experiment / hands + feet",func():_open_intent_arena(11,true);_set_distant_targeting(true),ledge_row)
 	var intent_compare_row:=HBoxContainer.new()
 	settings_box.add_child(intent_compare_row)
 	_button("v0.7 / Beam",func():_open_intent_arena(2,false),intent_compare_row)
