@@ -97,6 +97,11 @@ func diagnostics() -> Dictionary:
 		"gesture_directions":gestures.duplicate(),"pointer_distance_px":pointer_distance,"eligible_vertical_distance_px":eligible_vertical_distance,
 		"requested_length":requested_length.duplicate(),"motion_events":motion_events,"rebases":rebase_events,"boundary_events":boundary_events}
 
+func traversal_input() -> Vector2:
+	# Profile 4 only: positive Y means surface-up, not camera-forward swing.
+	if owner not in ["GAME","CAMERA"]:return Vector2.ZERO
+	return Vector2(Input.get_axis("bias_left","bias_right"),Input.get_axis("extend","contract")).limit_length(1.0)
+
 func setup() -> void:
 	for action in DEFAULTS:
 		if not InputMap.has_action(action):

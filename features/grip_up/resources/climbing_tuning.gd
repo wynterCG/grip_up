@@ -83,3 +83,17 @@ extends Resource
 @export var launch_contraction_speed: float = 0.0
 @export var launch_duration: float = 0.30
 @export var launch_cooldown: float = 0.45
+
+@export_group("v0.7 intent-driven locomotion experiment")
+## Virtual planning envelope, never a new body force or strength allowance.
+@export var traversal_speed_m_s: float = 0.25
+@export var traversal_input_ramp_s: float = 0.12
+@export var traversal_velocity_response: float = 4.0
+@export var traversal_plan_max_acceleration: float = 1.0
+@export var traversal_prediction_s: float = 0.18
+@export var traversal_max_target_offset: float = 0.055
+@export var traversal_target_max_rate: float = 0.24
+@export var traversal_target_max_acceleration: float = 0.9
+@export var traversal_hold_tolerance: float = 0.025
+@export var traversal_tracking_tolerance: float = 0.065
+@export var traversal_stall_confirm_s: float = 0.35

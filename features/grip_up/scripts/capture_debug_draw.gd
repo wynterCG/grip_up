@@ -52,4 +52,13 @@ func update_state(controller: Node, predictions: Array[Dictionary], show_debug: 
 				var normal: Vector3 = (foot.support.global_basis.inverse().transposed()*Vector3(foot.local_normal)).normalized()
 				segment(point,point+normal*0.15,Color.LIME_GREEN)
 				segment(point,point+Vector3(foot.force)*0.003,Color.MAGENTA)
+	if controller.control_profile==4:
+		var intent:Dictionary=controller.telemetry().get("intent_locomotion",{})
+		var support_frame:Dictionary=intent.get("frame",{})
+		if support_frame.get("valid",false):
+			var origin:Vector3=controller.torso.global_position
+			segment(origin,origin+Vector3(support_frame.up)*.45,Color.GREEN)
+			segment(origin,origin+Vector3(support_frame.right)*.45,Color.RED)
+			segment(origin,origin+Vector3(support_frame.normal)*.45,Color.BLUE)
+			segment(origin,origin+Vector3(intent.get("movement_intent_world",Vector3.ZERO))*.60,Color.YELLOW)
 	lines.surface_end()

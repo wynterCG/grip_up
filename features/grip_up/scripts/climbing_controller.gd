@@ -14,6 +14,7 @@ const TargetCoordinator = preload("res://features/grip_up/scripts/arm_target_coo
 const TransferDiagnostics = preload("res://features/grip_up/scripts/transfer_diagnostics.gd")
 const TwistRefinement = preload("res://features/grip_up/scripts/supported_twist_refinement.gd")
 const PostureRefinement = preload("res://features/grip_up/scripts/supported_posture_refinement.gd")
+const IntentLocomotion = preload("res://features/grip_up/scripts/intent_locomotion_coordinator.gd")
 const PendingGripTarget = preload("res://features/grip_up/scripts/pending_grip_target.gd")
 var _held_targets: Dictionary = {}
 var _held_target_serial := 0
@@ -49,6 +50,8 @@ var capture_evaluator = CaptureEvaluator.new()
 var feet_solver: RefCounted
 var free_foot_positions: Array[Vector3] = []
 var grounded_for_walking := false
+var intent_climb_enabled := false
+var intent_locomotion = IntentLocomotion.new()
 var control_profile := 0
 var posture_policy := 0
 var independent_aim_enabled := true
@@ -82,6 +85,7 @@ func configure(body: RigidBody3D, configuration: Resource = null) -> void:
 	reset_state()
 
 func reset_state() -> void:
+	intent_locomotion.reset()
 	_held_targets.clear()
 	_twist_refinement.reset()
 	_posture_refinement.reset()
@@ -129,7 +133,7 @@ func configure_feet(hips: Array[Vector3], rest_feet: Array[Vector3], lengths: Ar
 	feet_solver.configure(torso,FootProfile.new(),hips,rest_feet,lengths,clearances)
 
 func set_climb_intent(contract: float, extend: float, bias: float, view_right: Vector3 = Vector3.RIGHT) -> void:
-	if control_profile in [1,2,3]:
+	if control_profile in [1,2,3,4]:
 		_intent_target = Vector3.ZERO
 		_contract = 0.0
 		_extend = 0.0
@@ -146,13 +150,14 @@ func set_climb_intent(contract: float, extend: float, bias: float, view_right: V
 			_view_right = horizontal.normalized()
 
 func set_control_profile(profile: int) -> void:
-	var next := clampi(profile,0,3)
+	var next := clampi(profile,0,4)
 	if next == control_profile:
 		return
 	for hand_id in _held_targets.keys():
 		if _held_targets[hand_id].active and get_hand_state(hand_id)=="REACHING":
 			release_grip(hand_id,"input_released")
 	control_profile = next
+	intent_locomotion.reset()
 	_twist_refinement.reset()
 	_posture_refinement.reset()
 	transfer_journal.reset()
@@ -172,6 +177,12 @@ func set_control_profile(profile: int) -> void:
 	_extend = 0.0
 	_bias = 0.0
 	cancel_launch()
+
+func set_traversal_input(value: Vector2, camera_right: Vector3 = Vector3.RIGHT) -> void:
+	intent_locomotion.set_input(value,camera_right)
+
+func set_ground_support(snapshot: Dictionary) -> void:
+	intent_locomotion.ground = snapshot.duplicate(true)
 
 func set_posture_policy(policy: int) -> void:
 	var next := clampi(policy,0,2)
@@ -227,7 +238,7 @@ func _clear_contextual_state() -> void:
 	_free_hand_targets.clear()
 
 func set_contextual_effort(effort: Vector2, reference_right: Vector3 = Vector3.RIGHT) -> void:
-	if control_profile == 3:
+	if control_profile in [3,4]:
 		return
 	_contextual_requested = effort.limit_length(1.0) if effort.is_finite() else Vector2.ZERO
 	if reference_right.is_finite():
@@ -298,7 +309,7 @@ func get_shoulder_world(id: int) -> Vector3:
 	return (torso.global_transform if torso.is_inside_tree() else torso.transform) * local
 
 func request_launch_charge(pressed: bool) -> bool:
-	if control_profile in [1,2,3] and not experimental_launch_enabled:
+	if control_profile in [1,2,3,4] and not experimental_launch_enabled:
 		return false
 	if pressed:
 		if _launch_state!="IDLE" or tuning.launch_contraction_speed<=0.0:
@@ -715,7 +726,7 @@ func _update_hand(id: int, delta: float) -> void:
 			hand["departing_surface"] = false
 		elif hand.get("approaching_surface", false) and next.distance_to(destination) < 0.001:
 			hand["approaching_surface"] = false
-		elif not hand.get("approaching_surface", false) and next.distance_to(point) <= (0.000001 if tuning.predictive_grip or control_profile in [1,2,3] else tuning.attach_distance_tolerance):
+		elif not hand.get("approaching_surface", false) and next.distance_to(point) <= (0.000001 if tuning.predictive_grip or control_profile in [1,2,3,4] else tuning.attach_distance_tolerance):
 			if tuning.predictive_grip:
 				var capture: Dictionary = capture_evaluator.evaluate(self,id)
 				if not capture.accepted:
@@ -807,9 +818,11 @@ func _physics_process(delta: float) -> void:
 				_publish_transfer_events()
 	_advance_launch(delta)
 	var attached: Array[int] = _attached_ids()
+	if control_profile == 4:
+		intent_locomotion.step(self,delta,intent_climb_enabled and _launch_state=="IDLE")
 	if control_profile == 3:
 		_update_independent_posture(attached,delta)
-	if control_profile in [1,2,3]:
+	if control_profile in [1,2,3,4]:
 		if attached.is_empty():
 			_experimental_heading_active = false
 			_supported_swing.reset()
@@ -909,7 +922,7 @@ func _physics_process(delta: float) -> void:
 	var support_torque_weights: Dictionary = {}
 	var diagnostic_swing_lever := Vector3.ZERO
 	var diagnostic_swing_engagement := 0.0
-	if control_profile in [1,2,3] and not attached.is_empty():
+	if control_profile in [1,2,3,4] and not attached.is_empty():
 		var lever := Vector3.ZERO
 		var support_spin := Vector3.ZERO
 		var engaged_weight := 0.0
@@ -936,6 +949,8 @@ func _physics_process(delta: float) -> void:
 			diagnostic_swing_engagement = engagement
 		var base_assist := assist
 		var requested := _swing_requested
+		if control_profile == 4:
+			requested = intent_locomotion.swing if supported_wasd_swing_enabled else Vector3.ZERO
 		if control_profile == 3 and not supported_wasd_swing_enabled:
 			requested = Vector3.ZERO
 		if control_profile == 2:
@@ -953,7 +968,18 @@ func _physics_process(delta: float) -> void:
 			feet_solver.set_free_foot_world(id,free_foot_positions[id])
 		var climbing: bool = hands.any(func(hand):return hand.state in ["REACHING","ATTACHED","SLIPPING"] and not hand.get("held_target_pending",false))
 		var foot_stance: bool = feet_solver.feet.any(func(foot):return foot.state in ["SUPPORTING","SLIDING"]) and not grounded_for_walking
-		foot_requests = feet_solver.prepare(delta,_contract,_extend,_bias,tuning.physical_feet and (climbing or foot_stance) and _launch_state=="IDLE",climbing)
+		if control_profile == 4:
+			climbing = intent_climb_enabled and attached.any(func(hand_id):return hands[hand_id].state=="ATTACHED")
+			var foot_w: float = intent_locomotion.foot_contract
+			var foot_s: float = intent_locomotion.foot_extend
+			foot_requests = feet_solver.prepare(delta,foot_w,foot_s,0.0,tuning.physical_feet and (climbing or foot_stance) and _launch_state=="IDLE",climbing)
+			if intent_locomotion.ground.get("grounded",false):
+				var ground_id: int = int(intent_locomotion.ground.get("support_id",0))
+				# One contact owner: commit consumes this exact same request list.
+				foot_requests = foot_requests.filter(func(request):return request.support.get_instance_id()!=ground_id)
+				feet_solver._pending = foot_requests
+		else:
+			foot_requests = feet_solver.prepare(delta,_contract,_extend,_bias,tuning.physical_feet and (climbing or foot_stance) and _launch_state=="IDLE",climbing)
 		leg_budget = feet_solver.tuning.total_force_budget
 		for request in foot_requests:
 			leg_force += Vector3(request.force).length()
@@ -962,6 +988,15 @@ func _physics_process(delta: float) -> void:
 		leg_moment *= leg_scale
 	# Reused magnitude-sum / resultant-torque allocation from physics_grabber.
 	var scale_factor: float = minf(1.0, minf(tuning.total_pull_force_budget / maxf(sum_force, 0.000001), tuning.max_total_torque / maxf((moments + leg_moment + assist).length(), 0.000001)))
+	if control_profile==4:
+		var ground_torque: Vector3 = intent_locomotion.ground.get("applied_torque",Vector3.ZERO)
+		var climb_torque := moments+leg_moment+assist
+		if (ground_torque+climb_torque*scale_factor).length()>tuning.max_total_torque and climb_torque.length_squared()>.000001:
+			# Solve |ground + s*climb| <= cap with ground already applied this tick.
+			var b: float = 2.0*ground_torque.dot(climb_torque)
+			var c: float = ground_torque.length_squared()-tuning.max_total_torque*tuning.max_total_torque
+			var feasible_scale: float = (-b+sqrt(maxf(0.0,b*b-4.0*climb_torque.length_squared()*c)))/(2.0*climb_torque.length_squared())
+			scale_factor = minf(scale_factor,maxf(0.0,feasible_scale))
 	if feet_solver!=null:
 		feet_solver.commit(leg_scale*scale_factor)
 	var diagnostic_applied: Array[Dictionary] = []
@@ -985,7 +1020,7 @@ func _physics_process(delta: float) -> void:
 				"torque_weight":float(support_torque_weights.get(id,0.0)),"point_velocity":hand["anchor"].point_velocity()})
 		if support is RigidBody3D:
 			support.apply_force(-force, hand["anchor_world"] - support.global_position)
-			if control_profile in [1,2,3]:
+			if control_profile in [1,2,3,4]:
 				support.apply_torque(-assist * scale_factor * float(support_torque_weights.get(id,1.0/float(attached.size()))))
 			else:
 				support.apply_torque(-assist * scale_factor / float(attached.size()))
@@ -995,8 +1030,8 @@ func _physics_process(delta: float) -> void:
 		torso.apply_torque(assist * scale_factor)
 		torso.sleeping = false
 	_diagnostics = {"step": _step, "physics_delta": delta, "attached_count": attached.size(),
-		"control_profile":control_profile,"swing_intent":_supported_swing.intent if control_profile in [1,2,3] else Vector3.ZERO,"swing_requested":_swing_requested,"swing_torque":_swing_torque*scale_factor,
-		"aim_input_does_not_change_length":control_profile==3,"posture_policy":posture_policy,"posture_assist_enabled":posture_assist_enabled,"supported_wasd_swing_enabled":supported_wasd_swing_enabled,
+		"control_profile":control_profile,"swing_intent":_supported_swing.intent if control_profile in [1,2,3,4] else Vector3.ZERO,"swing_requested":_swing_requested,"swing_torque":_swing_torque*scale_factor,
+		"intent_locomotion":intent_locomotion.data.duplicate(true) if control_profile==4 else {},"aim_input_does_not_change_length":control_profile in [3,4],"posture_policy":posture_policy,"posture_assist_enabled":posture_assist_enabled,"supported_wasd_swing_enabled":supported_wasd_swing_enabled,
 		"posture":posture_coordinator.diagnostics(self) if control_profile==3 else {},
 		"posture_tilt_assist_enabled":posture_tilt_assist_enabled,"posture_tilt_torque":_posture_tilt_torque*scale_factor,
 		"contextual_requested":_contextual_requested,"contextual_filtered":_contextual_filtered,"contextual_actuation":_contextual_actuation,
@@ -1011,6 +1046,8 @@ func _physics_process(delta: float) -> void:
 		"budget_scale": scale_factor, "control_right": _view_right, "hands": hands.duplicate(true),
 		"torso_position": torso.global_position, "linear_velocity": torso.linear_velocity,
 		"angular_velocity": torso.angular_velocity, "metrics": metrics.duplicate()}
+	if control_profile==4:
+		_diagnostics["combined_ground_climb_torque"] = Vector3(intent_locomotion.ground.get("applied_torque",Vector3.ZERO))+(moments+leg_moment+assist)*scale_factor
 	if control_profile==3:
 		_diagnostics["transfer_posture"] = {"enabled":transfer_assist_enabled,"variant":posture_variant,
 			"available":true,"status":"P2" if _posture_refinement.blend>0.0 else "P1" if _twist_refinement.blend>0.0 else "P0",
@@ -1056,7 +1093,7 @@ func telemetry() -> Dictionary:
 	return _diagnostics
 
 func _transfer_enabled() -> bool:
-	return control_profile==3 and transfer_diagnostics_enabled
+	return control_profile in [3,4] and transfer_diagnostics_enabled
 
 func _publish_transfer_events() -> void:
 	for event in transfer_journal.drain_events():

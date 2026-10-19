@@ -14,7 +14,7 @@ const GripFeedback = preload("res://features/grip_up/scripts/grip_feedback.gd")
 const TransferProgress = preload("res://features/grip_up/scripts/transfer_route_progress.gd")
 const ReachAssessment = preload("res://features/grip_up/scripts/reach_assessment.gd")
 const ContextualInput = preload("res://features/grip_up/scripts/contextual_arm_input.gd")
-const LEVELS = [preload("res://features/grip_up/scenes/static_climb.tscn"), preload("res://features/grip_up/scenes/swing_and_catch.tscn"), preload("res://features/grip_up/scenes/reactive_structure.tscn"), preload("res://features/grip_up/scenes/foot_support.tscn"),preload("res://features/grip_up/scenes/transfer_lab.tscn"),preload("res://features/grip_up/scenes/swing_reach_lab.tscn")]
+const LEVELS = [preload("res://features/grip_up/scenes/static_climb.tscn"), preload("res://features/grip_up/scenes/swing_and_catch.tscn"), preload("res://features/grip_up/scenes/reactive_structure.tscn"), preload("res://features/grip_up/scenes/foot_support.tscn"),preload("res://features/grip_up/scenes/transfer_lab.tscn"),preload("res://features/grip_up/scenes/swing_reach_lab.tscn"),preload("res://features/grip_up/scenes/intent_step.tscn"),preload("res://features/grip_up/scenes/intent_hang.tscn"),preload("res://features/grip_up/scenes/intent_traverse.tscn"),preload("res://features/grip_up/scenes/intent_corner.tscn")]
 const COLORS = [Color("65dfcc"), Color("f0b85c")]
 var torso: RigidBody3D
 var controller: Node
@@ -73,6 +73,7 @@ var reach_advice: Array[Dictionary] = [{},{}]
 var attempt_assessments: Array[Dictionary] = [{},{}]
 var physical_feet_enabled := false
 var input_profile := 2
+var intent_climb_enabled := false
 var contextual = ContextualInput.new()
 var contextual_paused := false
 var contextual_owner := "GAME"
@@ -248,7 +249,7 @@ func load_test(index: int, use_checkpoint := false) -> void:
 	var profile := BipedProfile.new()
 	profile.predictive_grip = _capture_buffer_active()
 	profile.allow_out_of_reach_grip_targets=_distant_targeting_active()
-	if input_profile==3 and catch_buffer_enabled:profile.capture_intent_buffer_duration=catch_buffer_duration
+	if input_profile in [3,4] and catch_buffer_enabled:profile.capture_intent_buffer_duration=catch_buffer_duration
 	profile.physical_feet = physical_feet_enabled
 	profile.arm_drag_sensitivity_m_per_px = arm_drag_sensitivity
 	profile.arm_target_max_rate_m_s = arm_target_rate
@@ -305,6 +306,7 @@ func load_test(index: int, use_checkpoint := false) -> void:
 	ground_motor.name = "GroundLocomotion"
 	world.add_child(ground_motor)
 	ground_motor.configure(torso,controller,camera)
+	ground_motor.process_physics_priority=-10 if input_profile==4 else 0
 	biped = BipedVisual.new()
 	biped.name = "BipedVisual"
 	world.add_child(biped)
@@ -362,7 +364,7 @@ func _input(event: InputEvent) -> void:
 		_refresh_pointer_capture()
 		get_viewport().set_input_as_handled()
 		return
-	if input_profile in [1,3] and event is InputEventMouseMotion:
+	if input_profile in [1,3,4] and event is InputEventMouseMotion:
 		pointer = event.position
 		var next_owner := _control_owner()
 		if next_owner!="GAME":
@@ -465,7 +467,7 @@ func request_hand(hand: int) -> bool:
 		trial.misses += 1
 		message("Aim at a visible grabbable surface. Hold LMB / RMB to remember that exact point." if _distant_targeting_active() else "Aim at a solid surface within arm's reach. Hold LMB / RMB to grip that exact point.")
 		return false
-	if input_profile==3 and (reach_prediction_enabled or catch_buffer_enabled):
+	if input_profile in [3,4] and (reach_prediction_enabled or catch_buffer_enabled):
 		attempt_assessments[hand]=reach_assessor.evaluate(controller,hand,hit.collider,hit.position,hit.normal).duplicate(true)
 	var ok: bool
 	if _distant_targeting_active() and hold_mode:
@@ -486,7 +488,7 @@ func _physics_process(delta: float) -> void:
 		return
 	session_ticks += 1
 	trial.elapsed += delta
-	var blocked := settings.visible or binding_action != "" or (input_profile==2 and contextual_paused) or (input_profile in [2,3] and rating_panel.visible)
+	var blocked := settings.visible or binding_action != "" or (input_profile==2 and contextual_paused) or (input_profile in [2,3,4] and rating_panel.visible)
 	if blocked:
 		controller.cancel_launch()
 		grip_intents.clear(controller)
@@ -527,10 +529,15 @@ func _physics_process(delta: float) -> void:
 			for id in 2:
 				var hit: Dictionary=contextual.candidate(id,controller,camera)
 				controller.set_free_hand_target(id,hit.position if not hit.is_empty() else contextual.target(id,controller,camera))
-	else:
+	elif input_profile==3:
 		# Independent aim never calls either mouse-effort or arm-drag APIs.
 		controller.set_climb_intent(0,0,0,camera.global_basis.x)
 		controller.set_swing_intent(Vector3.ZERO if blocked or not supported_wasd_swing_enabled else router.swing_direction(camera.global_basis.x),camera.global_basis.x)
+	else:
+		controller.set_climb_intent(0,0,0,camera.global_basis.x)
+		controller.set_swing_intent(Vector3.ZERO,camera.global_basis.x)
+		router.set_owner("UI" if blocked else "GAME")
+		controller.set_traversal_input(Vector2.ZERO if blocked else router.traversal_input(),camera.global_basis.x)
 	trial.max_speed = maxf(trial.max_speed,torso.linear_velocity.length())
 	trial.max_spin = maxf(trial.max_spin,torso.angular_velocity.length())
 	if session_ticks > 3 and torso.position.distance_to(previous_position) > 0.8:
@@ -581,6 +588,8 @@ func _physics_process(delta: float) -> void:
 		goal=goal and torso.position.x>-.15
 	else:
 		goal = goal and torso.position.x > 0.4
+	if level_id>=6:
+		goal=controller.hands.any(func(hand):return hand.state=="ATTACHED" and Vector3(hand.anchor_world).distance_to(level.finish_point)<.12) and torso.linear_velocity.length()<1.0
 	stable_goal = stable_goal + delta if goal else 0.0
 	if stable_goal > 0.5 and not won:
 		won = true
@@ -608,18 +617,18 @@ func _process(delta: float) -> void:
 	prediction_clock -= delta
 	if not candidate.is_empty() and (candidate.collider.get_instance_id()!=prediction_support_id or Vector3(candidate.position).distance_to(prediction_point)>0.02):
 		prediction_clock = 0.0
-	if (predictive_grip_enabled or (input_profile==3 and reach_prediction_enabled)) and not candidate.is_empty() and prediction_clock<=0.0:
+	if (predictive_grip_enabled or (input_profile in [3,4] and reach_prediction_enabled)) and not candidate.is_empty() and prediction_clock<=0.0:
 		for id in 2:
 			var prediction_hit: Dictionary=contextual.candidate(id,controller,camera) if input_profile==2 else candidate
 			capture_predictions[id] = controller.capture_predictor.evaluate(controller,id,prediction_hit.collider,prediction_hit.position,prediction_hit.normal) if not prediction_hit.is_empty() else {}
-			reach_advice[id]=reach_assessor.evaluate(controller,id,prediction_hit.collider,prediction_hit.position,prediction_hit.normal) if input_profile==3 and reach_prediction_enabled and not prediction_hit.is_empty() else {}
+			reach_advice[id]=reach_assessor.evaluate(controller,id,prediction_hit.collider,prediction_hit.position,prediction_hit.normal) if input_profile in [3,4] and reach_prediction_enabled and not prediction_hit.is_empty() else {}
 		prediction_clock = 0.05
 		prediction_support_id = candidate.collider.get_instance_id()
 		prediction_point = candidate.position
 	if candidate.is_empty():
 		capture_predictions = [{},{}]
 		reach_advice = [{},{}]
-	capture_debug.update_state(controller,reach_advice if input_profile==3 and reach_prediction_enabled else capture_predictions,debug_visible)
+	capture_debug.update_state(controller,reach_advice if input_profile in [3,4] and reach_prediction_enabled else capture_predictions,debug_visible)
 	prediction_label.visible = predictive_grip_enabled and not _distant_targeting_active() and not settings.visible and not candidate.is_empty()
 	target_marker.visible = not candidate.is_empty() and not settings.visible
 	if target_marker.visible:
@@ -627,11 +636,11 @@ func _process(delta: float) -> void:
 		var reachable := false
 		var selectable_hands:=0
 		for i in 2:
-			if input_profile==3 and controller.get_hand_state(i) not in ["FREE","RELEASED"]:continue
+			if input_profile in [3,4] and controller.get_hand_state(i) not in ["FREE","RELEASED"]:continue
 			selectable_hands+=1
 			if controller.get_shoulder_world(i).distance_to(candidate.position) <= controller.get_max_reach():
 				reachable = true
-		target_marker.material_override.albedo_color = Color("8b9297") if input_profile==3 and selectable_hands==0 else Color("b1f5d8") if reachable else Color("e66d68")
+		target_marker.material_override.albedo_color = Color("8b9297") if input_profile in [3,4] and selectable_hands==0 else Color("b1f5d8") if reachable else Color("e66d68")
 		if _distant_targeting_active() and selectable_hands>0 and not reachable:target_marker.material_override.albedo_color=Color("f0b85c")
 		if predictive_grip_enabled and not _distant_targeting_active():
 			var status := "UNAVAILABLE"
@@ -645,7 +654,7 @@ func _process(delta: float) -> void:
 					eta = forecast.get("predicted_entry_time",-1.0)
 			target_marker.material_override.albedo_color = Color("b1f5d8") if status=="NOW" else Color("f0b85c") if status=="SOON" else Color("e66d68")
 			prediction_label.text = "TARGET / "+status+("  %.2f s" % eta if eta>=0 and status=="SOON" else "")
-	if input_profile==3 and transfer_diagnostics_enabled and debug_visible and not candidate.is_empty() and not settings.visible:
+	if input_profile in [3,4] and transfer_diagnostics_enabled and debug_visible and not candidate.is_empty() and not settings.visible:
 		prediction_label.visible=true
 		var hints: Array[String]=[]
 		for id in 2:
@@ -653,7 +662,7 @@ func _process(delta: float) -> void:
 				var distance: float=controller.get_shoulder_world(id).distance_to(candidate.position)
 				hints.append(("L" if id==0 else "R")+" / "+("IN RANGE" if distance<=controller.get_max_reach() else "NEEDS SWING")+" %.3f m" % distance)
 		prediction_label.text="GEOMETRY ONLY / "+" | ".join(hints)
-	if input_profile==3 and reach_prediction_enabled and not candidate.is_empty() and not settings.visible:
+	if input_profile in [3,4] and reach_prediction_enabled and not candidate.is_empty() and not settings.visible:
 		prediction_label.visible=true
 		var advice_hints: Array[String]=[]
 		for id in 2:
@@ -689,11 +698,11 @@ func _process(delta: float) -> void:
 			pending_markers[i].global_basis=Basis(Quaternion(Vector3.UP,contact_normal.normalized()))
 			pending_markers[i].scale=Vector3.ONE*(1.25 if pending.get("substate","")=="PENDING_OUT_OF_REACH" else .85)
 			pending_markers[i].material_override.albedo_color=COLORS[i].lerp(Color("8b9297"),.55) if pending.get("blocked",false) else COLORS[i]
-		if hand.state in ["ATTACHED","SLIPPING"]:
+		if hand.state in ["ATTACHED","SLIPPING"] and input_profile!=4:
 			hand_labels[i].text += "\n%.2f m  /  %.0f N" % [hand.actual_length,controller.get_arm_force(i).length()]
 			if input_profile>=1:
 				hand_labels[i].text += "\nTarget / %.2f m" % hand.rest_length
-			if input_profile==3:
+			if input_profile in [3,4]:
 				var planned: Dictionary=controller.telemetry().get("posture",{})
 				hand_labels[i].text += "\nPlan / %.2f m" % planned.get("planned_lengths",{}).get(i,hand.rest_length)
 	status_label.text = hint if hint_time > 0 else ("WASD / Walk relative to camera. MMB / Orbit. Hold LMB / RMB on any surface to climb." if ground_motor.grounded and not ground_motor.has_climbing_intent() else "Grip anywhere within reach. W / Pull. S / Lower. Keep the other hand attached while transferring.")
@@ -703,16 +712,20 @@ func _process(delta: float) -> void:
 		var count: int=controller._attached_ids().size()
 		status_label.text=["Move mouse / aim free hands. Hold LMB or RMB / grip. WASD / walk.","ONE GRIP / Aim the free hand. Mouse down / pull; up / extend with supported effort.","TWO GRIPS / Mouse down / pull; up / extend; sideways / posture. WASD / 3D swing."][count]
 		if contextual_paused:status_label.text="Click to resume. Escape / Controls."
-	elif input_profile==3 and hint_time<=0:
+	elif input_profile in [3,4] and hint_time<=0:
 		status_label.text="AIM ONLY / Pick the next surface freely. Hold LMB / RMB. Supports drive bounded posture; WASD swings."
-	if input_profile==3 and level_id==4 and hint_time<=0:
+	if input_profile in [3,4] and level_id==4 and hint_time<=0:
 		status_label.text=("TEN TRANSFERS COMPLETE / R retries; Controls compares variants." if transfer_progress.transfers>=10 else "TRANSFER %d / 10 | Next painted guide %02d | Recoveries %d | Tab / diagnosis" % [transfer_progress.transfers,transfer_progress.next_contact,transfer_progress.recoveries])
+	if input_profile==4 and hint_time<=0:
+		status_label.text="CHOOSE YOUR SUPPORTS / Hold LMB or RMB. W/S up-down; A/D across. Release a hand to choose its next contact."
 	feet_panel.visible = physical_feet_enabled and controller.feet_solver!=null
 	if feet_panel.visible:
 		feet_label.text = "FEET / AUTOMATIC"
 		for i in 2:
 			var foot: Dictionary = controller.feet_solver.feet[i]
-			feet_label.text += "\n%s / %s  %.0f N" % ["L" if i==0 else "R",foot.state,Vector3(foot.force).length()]
+			if input_profile==4:
+				feet_label.text += "\n%s / %s" % ["L" if i==0 else "R","PLANTED" if foot.state=="SUPPORTING" and Vector3(foot.force).length()>1 else "SLIPPING" if foot.state=="SLIDING" else "REACHING" if foot.state=="PLANTING" else "FREE"]
+			else:feet_label.text += "\n%s / %s  %.0f N" % ["L" if i==0 else "R",foot.state,Vector3(foot.force).length()]
 	var launch: Dictionary = controller.telemetry()
 	if launch.get("launch_state")=="CHARGING":
 		status_label.text = "LAUNCH / %d%% — release %s to pull and let go." % [int(launch.get("launch_charge",0.0)*100.0),router.prompt("launch")]
@@ -734,11 +747,15 @@ func _process(delta: float) -> void:
 			debug_label.text += "\n\nPROFILE 1 / HOLD + DRAG | Input %s\nSwing request %s | torque %s\nCamera right %s | forward %s\nLast arm requests %s | acquisitions %d" % [router.owner,str(launch.get("swing_requested",Vector3.ZERO)),str(launch.get("swing_torque",Vector3.ZERO)),str(camera.global_basis.x),str(Vector3.UP.cross(camera.global_basis.x).normalized()),str(router.last_displacements),controller.metrics.attaches]
 		elif input_profile==2:
 			debug_label.text += "\n\nCONTEXTUAL / %s | effort %s\nVirtual hand offsets %s\nActual mouse mode %s" % [_control_owner(),str(contextual.effort),str(contextual.offsets),str(Input.mouse_mode)]
-		elif input_profile==3:
+		elif input_profile in [3,4]:
 			var plan: Dictionary=launch.get("posture",{})
 			debug_label.text += "\n\nINDEPENDENT AIM / %s | mouse never commands length\n%s / %s | event %s\nBody error %s | target rates %s\nTarget acceleration %s | load shares %s" % [["A","B","C"][posture_policy],plan.get("state","IDLE"),plan.get("reason","none"),str(plan.get("event",0)),str(plan.get("body_error",Vector3.ZERO)),str(plan.get("rates",{})),str(plan.get("accelerations",{})),str(plan.get("allocations",{}))]
-		if input_profile==3 and transfer_diagnostics_enabled:
+		if input_profile in [3,4] and transfer_diagnostics_enabled:
 			debug_label.text=_transfer_debug_text(launch)
+		if input_profile==4:
+			var movement:Dictionary=launch.get("intent_locomotion",{})
+			debug_label.text="INTENT-DRIVEN / %s | %s\nRequest %s | desired v %s\nActual v %s | position %s\nGround authority %s | targets %s\nFrame %s" % [movement.get("support_mode","PENDING"),movement.get("movement_block_reason",""),str(movement.get("movement_intent_world",Vector3.ZERO)),str(movement.get("desired_com_velocity",Vector3.ZERO)),str(movement.get("actual_relative_velocity",torso.linear_velocity)),str(torso.global_position),str(ground_motor.motor_authority),str(movement.get("planned_arm_rest_lengths",{})),str(movement.get("frame",{}))]
+			debug_label.text+="\nHands %.1f /360 N | feet %.1f /180 N\nCombined moment %s /150 Nm" % [launch.get("total_force",0),launch.get("leg_force",0),str(launch.get("combined_ground_climb_torque",launch.get("torque",Vector3.ZERO)))]
 
 func _transfer_debug_text(data: Dictionary) -> String:
 	var out: String="TRANSFER DIAGNOSTICS / %d Hz | aim never changes length\nBody v %s | spin %s" % [Engine.physics_ticks_per_second,str(torso.linear_velocity),str(torso.angular_velocity)]
@@ -774,10 +791,25 @@ func _open_distant_lab(index:int) -> void:
 	_update_objective()
 	message("Early target study / hold a visible destination; the free hand waits for real reach and contact.")
 
+func _open_intent_arena(index:int,feet_on:bool=false) -> void:
+	_set_input_profile(4)
+	_set_physical_feet(feet_on)
+	_set_experimental_launch(false)
+	transfer_assist_enabled=false
+	_set_posture_variant(0)
+	_set_posture_policy(1)
+	transfer_diagnostics_enabled=true
+	transfer_diagnostics_toggle.set_pressed_no_signal(true)
+	settings.hide()
+	load_test(index)
+	message("Choose a grip and hold its button. W/S asks to go up/down; A/D asks to cross. Physics decides what the supports can do.")
+
 func _on_transfer_event(event: Dictionary) -> void:
 	var row: Dictionary=event.duplicate(true)
 	row.session_id=transfer_session_id
 	row.scene=level_id
+	row.intent_climb_enabled=intent_climb_enabled and input_profile==4
+	row.intent_locomotion=controller.telemetry().get("intent_locomotion",{})
 	row.posture_policy=posture_policy
 	row.posture_variant=posture_variant
 	row.transfer_assist_enabled=transfer_assist_enabled
@@ -811,6 +843,8 @@ func _save_trial(outcome: String) -> void:
 	row.transfer_session=transfer_session_id
 	row.transfer_diagnostics_enabled=transfer_diagnostics_enabled
 	row.transfer_route=transfer_progress.diagnostics() if level_id==4 else {}
+	row.intent_climb_enabled=intent_climb_enabled and input_profile==4
+	row.intent_locomotion=controller.telemetry().get("intent_locomotion",{})
 	row.posture_policy=posture_policy
 	row.posture_variant=posture_variant
 	row.transfer_assist_enabled=transfer_assist_enabled
@@ -822,7 +856,7 @@ func _save_trial(outcome: String) -> void:
 	row.out_of_reach_targeting_active=_distant_targeting_active()
 	row.pending_targets=_pending_target_snapshots()
 	var summary_path: String="user://trials.jsonl"
-	if input_profile==3 and transfer_diagnostics_enabled:
+	if input_profile in [3,4] and transfer_diagnostics_enabled:
 		DirAccess.make_dir_recursive_absolute("user://transfer_sessions")
 		summary_path="user://transfer_sessions/%s_summary.jsonl" % transfer_session_id
 	var file := FileAccess.open(summary_path,FileAccess.READ_WRITE if FileAccess.file_exists(summary_path) else FileAccess.WRITE)
@@ -839,9 +873,10 @@ func _record_capture(delta: float) -> void:
 	capture_trace.sample(delta,controller,{"scene":level_id,"launch_state":controller.telemetry().get("launch_state","IDLE"),
 		"control_profile":input_profile,"space_comparison":experimental_launch_enabled,"input_control":router.diagnostics(),
 		"contextual_input":contextual.diagnostics() if input_profile==2 else {},
-		"aim_input_does_not_change_length":input_profile==3,
+		"aim_input_does_not_change_length":input_profile in [3,4],
+		"intent_climb_enabled":intent_climb_enabled and input_profile==4,"intent_locomotion":controller.telemetry().get("intent_locomotion",{}),
 		"transfer_posture":contextual_data.get("transfer_posture",{}),"transfer_assist_enabled":transfer_assist_enabled,"posture_variant":posture_variant,"transfer_session":transfer_session_id,"transfer_diagnostics":controller.transfer_diagnostics(),"transfer_route":transfer_progress.diagnostics() if level_id==4 else {},
-		"posture_policy":posture_policy if input_profile==3 else -1,"posture":contextual_data.get("posture",{}),
+		"posture_policy":posture_policy if input_profile in [3,4] else -1,"posture":contextual_data.get("posture",{}),
 		"contextual_filtered":[filtered.x,filtered.y],"contextual_actuation_m_s":[actuation.x,actuation.y],
 		"camera_right":capture_trace.vector(camera.global_basis.x),"camera_forward":capture_trace.vector(Vector3.UP.cross(camera.global_basis.x).normalized()),
 		"swing_requested":capture_trace.vector(controller.telemetry().get("swing_requested",Vector3.ZERO)),
@@ -999,6 +1034,7 @@ func _setup_ui() -> void:
 	profile_choice.add_item("1 / Hold + arm drag + 3D swing (experimental)")
 	profile_choice.add_item("2 / Contextual arms + virtual hand aim (experimental)")
 	profile_choice.add_item("3 / v0.4 Independent aim + physical posture (opt-in)")
+	profile_choice.add_item("4 / v0.7 Intent-driven climb (opt-in)")
 	profile_choice.select(input_profile)
 	profile_choice.item_selected.connect(_set_input_profile)
 	settings_box.add_child(profile_choice)
@@ -1021,6 +1057,21 @@ func _setup_ui() -> void:
 	settings_box.add_child(distant_row)
 	_button("v0.6 / Early targets: swing",func():_open_distant_lab(5),distant_row)
 	_button("v0.6 / Early targets: moving beam",func():_open_distant_lab(2),distant_row)
+	_label("v0.7 / Choose grips, request body travel",18,settings_box,COLORS[0])
+	var step_row:=HBoxContainer.new()
+	settings_box.add_child(step_row)
+	_button("The Step / hands only",func():_open_intent_arena(6,false),step_row)
+	_button("The Step / physical feet ON",func():_open_intent_arena(6,true),step_row)
+	var intent_row:=HBoxContainer.new()
+	settings_box.add_child(intent_row)
+	_button("The Hang",func():_open_intent_arena(7,false),intent_row)
+	_button("The Traverse",func():_open_intent_arena(8,false),intent_row)
+	_button("The Corner",func():_open_intent_arena(9,false),intent_row)
+	var intent_compare_row:=HBoxContainer.new()
+	settings_box.add_child(intent_compare_row)
+	_button("v0.7 / Beam",func():_open_intent_arena(2,false),intent_compare_row)
+	_button("v0.7 / Ten transfers",func():_open_intent_arena(4,false),intent_compare_row)
+	_button("Compare v0.6 / current arena",func():_set_input_profile(3);load_test(level_id);settings.hide(),settings_box)
 	transfer_diagnostics_toggle=CheckButton.new()
 	transfer_diagnostics_toggle.text="v0.5 diagnostics + per-attempt JSONL / no added strength"
 	transfer_diagnostics_toggle.button_pressed=transfer_diagnostics_enabled
@@ -1183,7 +1234,7 @@ func _setup_ui() -> void:
 	rating_panel.add_child(rating_box)
 	_label("TEST COMPLETE",27,rating_box,COLORS[0])
 	_label("Optional feel ratings  /  1 low - 5 high",17,rating_box)
-	for metric in ["precision","comfort","weight","fairness","retry","agency","recovery","readability"]:
+	for metric in ["precision","comfort","weight","fairness","retry","agency","recovery","readability","control","physical_credibility","clarity","skill_expression","would_play_another_level"]:
 		var key: String = metric
 		var line := HBoxContainer.new()
 		rating_box.add_child(line)
@@ -1193,6 +1244,10 @@ func _setup_ui() -> void:
 			var score := value
 			_button(str(score),func():trial.ratings[key]=score,line)
 	_button("Save ratings & continue",func():_save_trial("rated");rating_panel.hide(),rating_box)
+	var experience:=LineEdit.new()
+	experience.placeholder_text="What did you feel you were controlling?"
+	experience.text_changed.connect(func(value:String):trial["felt_in_control_of"]=value)
+	rating_box.add_child(experience)
 	rating_panel.hide()
 	settings.visibility_changed.connect(_refresh_pointer_capture)
 	rating_panel.visibility_changed.connect(_refresh_pointer_capture)
@@ -1211,6 +1266,8 @@ func _set_hold_mode(on: bool) -> void:
 	message("Hold each mouse button to grip; release it to let go." if on else "Toggle mode: click to grip, click again to let go.")
 
 func _controls_hint() -> String:
+	if input_profile==4:
+		return "Mouse / Choose grips    Hold LMB / RMB / Grip    W/S / Up-down    A/D / Traverse    MMB / Orbit    Esc / Controls"
 	if input_profile==3:
 		return "Mouse / Aim only    Hold LMB / RMB / Grip    WASD / Supported swing or walk    MMB / Orbit    Wheel / Dolly    Esc / Controls"
 	if input_profile==2:
@@ -1237,7 +1294,8 @@ func _control_owner() -> String:
 	return "UI" if hovered!=null else "GAME"
 
 func _set_input_profile(profile: int) -> void:
-	input_profile = clampi(profile,0,3)
+	input_profile = clampi(profile,0,4)
+	intent_climb_enabled = input_profile==4
 	router.reset_control_input()
 	contextual.reset()
 	contextual_paused=false
@@ -1259,9 +1317,10 @@ func _set_input_profile(profile: int) -> void:
 	controls_label.text = _controls_hint()
 	_update_objective()
 	_refresh_pointer_capture()
-	message(["Baseline / W pulls, S lowers, A/D biases, Space charges a launch.","Hold to grip. Drag up to pull, down to lower. WASD swings through your grips.","Contextual arms / relative mouse aims and requests supported effort.","Independent aim / mouse selects contacts only. Hold LMB / RMB; WASD swings."][input_profile])
+	message(["Baseline / W pulls, S lowers, A/D biases, Space charges a launch.","Hold to grip. Drag up to pull, down to lower. WASD swings through your grips.","Contextual arms / relative mouse aims and requests supported effort.","Independent aim / mouse selects contacts only. Hold LMB / RMB; WASD swings.","Intent-driven / Choose grips. W/S up/down; A/D traverse through real supports."][input_profile])
 	if input_profile==2:message("Relative mouse aims free hands and requests supported effort. Hold LMB / RMB. Escape / Controls.")
 	if input_profile==3:message("v0.4 / Mouse aims only. Acquire supports to test bounded posture. WASD / supported swing. Space comparison is OFF by default.")
+	if input_profile==4:message("Choose your grips. W/S requests up/down; A/D requests traverse. Aiming never pulls the body.")
 
 func _update_objective() -> void:
 	objective_label.text = level.objective
@@ -1272,20 +1331,24 @@ func _update_objective() -> void:
 			objective_label.text = "Hold the two targets and drag to change arm length.\nFoot contacts are optional; baseline profile 0 retains the W-driven feet comparison."
 	elif input_profile==2:
 		objective_label.text="Move the L / R virtual aims onto reachable surfaces. Hold that hand's button.\nMouse down / pull; up / extend through supported effort. WASD swings."
-	elif input_profile==3:
+	elif input_profile in [3,4]:
 		objective_label.text="Aim at any reachable surface. Hold LMB / RMB, then choose the next contact.\nAiming never commands arm length; compare posture policies A / B / C in Controls."
-	if input_profile==3 and level_id==4:
+	if input_profile in [3,4] and level_id==4:
 		objective_label.text="Start with left hand on guide 00, then right on 01; alternate up to 10.\nWait for a reachable shoulder position. Tab shows reach; all wall surfaces remain grippable."
-	elif input_profile==3 and level_id==5:
+	elif input_profile in [3,4] and level_id==5:
 		objective_label.text="The far contact is outside static reach. Use supported A/D or W/S swing.\nTime the catch and release deliberately; Tab separates reach, transit and grip load."
 	if _distant_targeting_active():
 		objective_label.text="Hold LMB / RMB on a visible destination, even beyond reach.\nMove or swing into real contact; mouse-up cancels. The selected point stays fixed on its surface."
+	if input_profile==4:
+		objective_label.text=level.objective if level_id>=6 else "Choose and hold real contacts. W/S requests up/down; A/D requests traverse.\nMovement needs support; pointing at a new grip never pulls you toward it."
 
 func _apply_independent_settings() -> void:
 	if not is_instance_valid(controller):return
-	controller.independent_aim_enabled=input_profile==3
-	controller.transfer_diagnostics_enabled=transfer_diagnostics_enabled and input_profile==3
-	controller.transfer_assist_enabled=transfer_assist_enabled and input_profile==3
+	controller.intent_climb_enabled=intent_climb_enabled and input_profile==4
+	if is_instance_valid(ground_motor):ground_motor.process_physics_priority=-10 if input_profile==4 else 0
+	controller.independent_aim_enabled=input_profile in [3,4]
+	controller.transfer_diagnostics_enabled=transfer_diagnostics_enabled and input_profile in [3,4]
+	controller.transfer_assist_enabled=transfer_assist_enabled and input_profile in [3,4]
 	controller.set_posture_variant(posture_variant)
 	controller.posture_assist_enabled=posture_assist_enabled
 	controller.posture_tilt_assist_enabled=posture_tilt_assist_enabled
@@ -1295,7 +1358,7 @@ func _apply_independent_settings() -> void:
 	_apply_pending_settings()
 
 func _distant_targeting_active() -> bool:
-	return input_profile==3 and allow_out_of_reach_grip_targets
+	return input_profile in [3,4] and allow_out_of_reach_grip_targets
 
 func _pending_target_snapshots() -> Array:
 	return [controller.pending_diagnostics(0),controller.pending_diagnostics(1)]
@@ -1357,7 +1420,7 @@ func _set_predictive_grip(on: bool) -> void:
 	_apply_capture_settings()
 
 func _capture_buffer_active() -> bool:
-	return predictive_grip_enabled or (input_profile==3 and catch_buffer_enabled)
+	return predictive_grip_enabled or (input_profile in [3,4] and catch_buffer_enabled)
 
 func _set_catch_buffer(on: bool) -> void:
 	catch_buffer_enabled=on
@@ -1366,7 +1429,7 @@ func _set_catch_buffer(on: bool) -> void:
 func _apply_capture_settings() -> void:
 	if is_instance_valid(controller):
 		controller.tuning.predictive_grip = _capture_buffer_active()
-		controller.tuning.capture_intent_buffer_duration=catch_buffer_duration if input_profile==3 and catch_buffer_enabled else .15
+		controller.tuning.capture_intent_buffer_duration=catch_buffer_duration if input_profile in [3,4] and catch_buffer_enabled else .15
 		if not _capture_buffer_active():
 			for id in 2:
 				if controller.get_hand_state(id)=="REACHING" and controller.hands[id].get("predictive_wait",false):
