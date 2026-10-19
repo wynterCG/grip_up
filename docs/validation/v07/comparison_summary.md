@@ -105,13 +105,13 @@ Não foi feito um novo ensaio fechado de conservação com mão e pé simultanea
 |M2|Coordenador Tier1 implementado; subida/descida/lateral e recusas físicas medidas|
 |M3|Pés e handoff de chão integrados; StepOFF/ON comparado|
 |M4|Balanço e reações auditados; timing humano ainda não validado|
-|M5|Pendente: comparação humana Step/Hang/Traverse e decisão de game feel|
+|M5|Primeiro retorno humano positivo recebido; comparação Step/Hang/Traverse ainda em aberto|
 |M6|Não iniciado: mantle/top-out condicionado aM5|
 |M7|Não iniciado: desafio reativo novo condicionado aM5|
 
 A regra da spec exige física **e** compreensão/melhoria humana para encerrar um milestone de controlo. Por isso M1–M4 são candidatos com gates técnicos passados; não se apresentam como aceitação humana concluída.
 
-**Decisão: REVISE / experimentar com humanos, manter opt-in.** Existe um primeiro movimento funcional e uma diferença verificável de apoio dos pés. Não há ainda evidência de que escalar ficou interessante. O [protocolo](human_playtest_protocol.md) recolhe Control, Physical Credibility, Clarity, Comfort, Skill Expression, Would Play Another Level e uma resposta livre.
+**Decisão: REVISE / continuar a comparação humana, manter opt-in.** Existe um primeiro movimento funcional e uma diferença verificável de apoio dos pés. O designer respondeu “sim está melhor”: é o primeiro retorno humano positivo e apoia esta direção de controlo, sem fechar a avaliação de interesse/flow de todos os cenários. Ver [registo de feedback](human_feedback.md). O [protocolo](human_playtest_protocol.md) recolhe Control, Physical Credibility, Clarity, Comfort, Skill Expression, Would Play Another Level e uma resposta livre.
 
 ## Ficheiros e reprodução
 

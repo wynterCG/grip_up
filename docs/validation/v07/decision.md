@@ -2,7 +2,7 @@
 
 Os gates técnicos do candidato M1–M4 passam:3348 verificações automáticas,30 checks com imagem, limites e perfis antigos preservados. A coordenação de pés no Step permite o contacto superior que os comparadores mãos-only não atingem nessa tentativa.
 
-O resultado não prova que escalar ficou interessante. Há diferença de resposta mãos-only entre60/120Hz, retenção adversa em apoio móvel, descida no limite e travagem dependente de timing. A evidência humana solicitada ainda não foi fornecida.
+O designer já deu o primeiro retorno humano positivo: “sim está melhor”. Esse feedback apoia continuar esta direção de controlo; o registo está em [human_feedback.md](human_feedback.md). Ainda não identifica a dimensão da melhoria nem conclui a comparação M5. Há diferença de resposta mãos-only entre60/120Hz, retenção adversa em apoio móvel, descida no limite e travagem dependente de timing.
 
 Manter perfil4 opt-in; arranque perfil2 e pésOFF. O editor foi deliberadamente deixado no Step com pésON para o designer experimentar. Não promover a experiência a default.
 
