@@ -1,10 +1,25 @@
-# GRIP UP / physics climbing lab 0.7.1 candidate
+# GRIP UP / physics climbing lab 0.7.2 candidate
 
-Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v0.7.1.exe`.
+Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v0.7.2.exe`.
 PC mouse and keyboard. Resizable 1920x1080 reference canvas; initial window 1440x810.
 Integrated Jolt, 120 Hz. Core and complete routes also tested at 60 Hz.
 
 This is a separate prototype. The Janga object grabber and its project are unchanged.
+
+## v0.7.2 reach toward a surface
+
+Choose **Controls / The Step / max reach + feet**. Hold LMB/RMB toward a wall.
+When a click overshoots arm reach, profile4 can resolve an actual reachable
+contact on the same surface and move the hand there at its existing finite speed.
+The arm uses its complete anatomical reach; contact must happen before force.
+If no eligible surface is reachable, the hand remains pending and unladen.
+
+The chosen contact stays fixed on its material after selection. Camera or body
+motion cannot slide an attached hand around the wall. Profile3 retains the older
+exact-point early-target comparison. Grounded pending hands now visibly extend
+while the legs keep their ordinary gait. Physics gains and limits are unchanged.
+
+See the [v0.7.2 report](docs/validation/v072/comparison_summary.md).
 
 ## v0.7.1 control refinement
 

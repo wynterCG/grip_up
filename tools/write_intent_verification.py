@@ -6,8 +6,8 @@ import hashlib,json,re,shutil,subprocess,sys
 root=Path(__file__).resolve().parents[1]
 dest=Path(r'E:\Godot Games\grip_up')
 version=sys.argv[1] if len(sys.argv)>1 else 'v07'
-assert version in ['v07','v071']
-exe_name='GripUp-v0.7.1.exe' if version=='v071' else 'GripUp-v0.7.exe'
+assert version in ['v07','v071','v072']
+exe_name={'v07':'GripUp-v0.7.exe','v071':'GripUp-v0.7.1.exe','v072':'GripUp-v0.7.2.exe'}[version]
 folder=root/f'docs/validation/{version}'
 final=folder/'final'
 aggregate=json.loads((folder/'results.json').read_text())
@@ -45,7 +45,7 @@ report={'revision':version+' intent-driven locomotion technical candidate','reco
  'automated_checks':aggregate['total_checks'],'suite_runs':len(aggregate['suites']),'automated_failures':0,
  'native_scripted_checks':sum(len(r['checks']) for r in native.values()),'native_scripted_failures':0,
  'native_provenance':'Godot MCP Pro scripted input; not human flow/comfort evaluation',
- 'native_step':{hz:[{k:row[k] for k in ['feet','rise','higher_caught','hand_load_integral','foot_load_integral']} for row in run['steps']] for hz,run in native.items()},
+ 'native_step':{hz:[{k:row[k] for k in ['feet','rise','higher_caught','hand_load_integral','foot_load_integral']} for row in run.get('steps',[])] for hz,run in native.items()},
  'editor_errors_or_warnings':errors['count'],'smoke_frames':3,
  'exe_name':exe.name,'exe_sha256':sha(exe),'e_copy_matches':True,'legacy_grabber_unchanged_sha256':legacy,
  'defaults':{'input_profile':2,'intent_climb_enabled':False,'physical_feet':False,'distant_targets':False,'posture_variant':0,'Space_experimental':False},
@@ -57,12 +57,13 @@ report={'revision':version+' intent-driven locomotion technical candidate','reco
  'source_sha256':source}
 for p in [root/'builds/verification.json',final/'verification.json']:
     p.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
-if version=='v071':
+if version in ['v071','v072']:
     report['decision']='KEEP as control refinement candidate; new human comparison remains open; no default promotion'
     report['known_limits'].append('Continuous W can peak then oscillate or lose height; no monotonic climb guarantee')
     report['human_feedback_received']='Designer: sim está melhor (v0.7 baseline); new refinement not yet human validated'
-    report['refinement_baseline_ref']='cea4ae0'
+    report['refinement_baseline_ref']='ec89ebd' if version=='v072' else 'cea4ae0'
     report['native_handoffs']={hz:run.get('second_handoff',{}) for hz,run in native.items()}
+    if version=='v072':report['native_reachable_grips']={hz:run['trials'] for hz,run in native.items()}
     for target in [root/'builds/verification.json',final/'verification.json']:
         target.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
 for source_name,target_name in [(f'{version}_ui_final.json','ui_final.json'),(f'{version}_controls_final.png','controls_final.png'),('export00000002.png','export_smoke.png')]:shutil.copy2(root/'builds'/source_name,final/target_name)

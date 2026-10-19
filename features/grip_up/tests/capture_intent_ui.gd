@@ -7,7 +7,7 @@ func run() -> void:
 	var app=get_parent()
 	Engine.physics_ticks_per_second=120
 	app._open_intent_arena(6,true)
-	if evidence_prefix=="v071":app._set_distant_targeting(true)
+	if evidence_prefix in ["v071","v072"]:app._set_distant_targeting(true)
 	app.debug_visible=false
 	app.settings.show()
 	await get_tree().process_frame

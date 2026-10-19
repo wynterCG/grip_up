@@ -113,7 +113,8 @@ func _update_ground_animation(delta: float) -> void:
 	ik.influence = lerpf(ik.influence,weight,1.0-exp(-24.0*delta))
 	if absf(ik.influence-weight)<0.001:
 		ik.influence = weight
-	var aim_weight := 1.0 if on_ground and controller.control_profile==2 else 0.0
+	var reaching: bool = controller.control_profile in [3,4] and controller.hands.any(func(hand):return hand.state=="REACHING")
+	var aim_weight := 1.0 if on_ground and (controller.control_profile==2 or reaching) else 0.0
 	free_aim_ik.influence=lerpf(free_aim_ik.influence,aim_weight,1.0-exp(-24.0*delta))
 	hand_pose.influence = maxf(ik.influence,free_aim_ik.influence)
 

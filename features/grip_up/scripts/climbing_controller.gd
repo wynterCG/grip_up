@@ -16,6 +16,7 @@ const TwistRefinement = preload("res://features/grip_up/scripts/supported_twist_
 const PostureRefinement = preload("res://features/grip_up/scripts/supported_posture_refinement.gd")
 const IntentLocomotion = preload("res://features/grip_up/scripts/intent_locomotion_coordinator.gd")
 const PendingGripTarget = preload("res://features/grip_up/scripts/pending_grip_target.gd")
+const ReachableGripResolver = preload("res://features/grip_up/scripts/reachable_grip_resolver.gd")
 var _held_targets: Dictionary = {}
 var _held_target_serial := 0
 var transfer_assist_enabled := false
@@ -399,6 +400,14 @@ func request_held_grip(id: int, support: PhysicsBody3D, world_point: Vector3, no
 		return _reject("surface_not_grippable")
 	if not world_point.is_finite() or not normal.is_finite() or normal.length_squared()<.5:
 		return _reject("invalid_surface_point")
+	var original_point := world_point
+	var original_normal := normal.normalized()
+	var resolution: Dictionary = {}
+	if control_profile==4:
+		resolution = ReachableGripResolver.new().resolve(torso,get_shoulder_world(id),support,world_point,normal,get_max_reach(),tuning.allowed_grip_surface_mask)
+		if resolution.resolved:
+			world_point = resolution.point
+			normal = resolution.normal
 	var hand: Dictionary = hands[id]
 	var selected = Anchor.new(support,world_point,normal.normalized())
 	selected.use_actual_center_of_mass = true
@@ -406,6 +415,14 @@ func request_held_grip(id: int, support: PhysicsBody3D, world_point: Vector3, no
 	_held_target_serial += 1
 	var journal_attempt: int = int(transfer_journal.last_by_hand.get(id,{}).get("attempt_id",-1)) if _transfer_enabled() else -1
 	pending.configure(selected,Transform3D(torso.global_basis.orthonormalized(),get_shoulder_world(id)),hand.hand_world,simulation_time,_held_target_serial,get_max_reach(),journal_attempt)
+	if control_profile==4:
+		pending.snapshot.merge({"original_selection_world":original_point,"original_selection_local":support.to_local(original_point),
+			"original_selection_normal_local":support.global_basis.inverse()*original_normal,"original_selection_distance":get_shoulder_world(id).distance_to(original_point),
+			"contact_resolution_applied":resolution.resolved,"contact_resolution_reason":resolution.reason,
+			"contact_resolution_blocker_id":resolution.blocker_id,"selection_policy":"REACHABLE_SAME_COLLIDER_ON_REQUEST"},true)
+		if resolution.resolved:
+			pending.snapshot["resolved_contact_world_at_selection"] = world_point
+			pending.snapshot["resolved_contact_distance"] = resolution.distance
 	if Vector3(hand.get("release_normal",Vector3.ZERO)).length_squared()>.5 and Vector3(hand.hand_world).distance_to(hand.anchor_world)<.015:
 		pending.set_departure(hand.hand_world,hand.release_normal,tuning.hand_surface_approach_distance)
 	_held_targets[id] = pending
@@ -417,9 +434,14 @@ func request_held_grip(id: int, support: PhysicsBody3D, world_point: Vector3, no
 	hand["capture"] = {"input_time":simulation_time,"buffered":false,"persistent_target":true,"out_of_reach_selection":hand.actual_length>get_max_reach(),
 		"predicted_entry_time":-1.0,"predicted_contact_time":-1.0,"predicted_target":world_point,
 		"predicted_target_time":-1.0,"actual_arrival":-1.0,"failure_reason":""}
+	if control_profile==4:
+		hand["capture"].merge({"out_of_reach_selection":get_shoulder_world(id).distance_to(original_point)>get_max_reach(),
+			"original_selection_world":original_point,"original_selection_local":support.to_local(original_point),
+			"contact_resolution_applied":resolution.resolved,"contact_resolution_reason":resolution.reason},true)
 	last_rejection = ""
 	if _transfer_enabled():
-		transfer_journal.observe(self,id,"TARGET_SELECTED_OUT_OF_REACH" if hand.actual_length>get_max_reach() else "TARGET_SELECTED_IN_REACH","TRANSIT","held_material_target_selected",{"pending":pending.diagnostics()})
+		var selection_distance: float = get_shoulder_world(id).distance_to(original_point) if control_profile==4 else hand.actual_length
+		transfer_journal.observe(self,id,"TARGET_SELECTED_OUT_OF_REACH" if selection_distance>get_max_reach() else "TARGET_SELECTED_IN_REACH","TRANSIT","held_material_target_selected",{"pending":pending.diagnostics()})
 		_publish_transfer_events()
 	return true
 

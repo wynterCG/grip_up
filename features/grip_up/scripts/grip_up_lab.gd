@@ -1064,7 +1064,7 @@ func _setup_ui() -> void:
 	settings_box.add_child(step_row)
 	_button("The Step / hands only",func():_open_intent_arena(6,false),step_row)
 	_button("The Step / physical feet ON",func():_open_intent_arena(6,true),step_row)
-	_button("The Step / early grips + feet",func():_open_intent_arena(6,true);_set_distant_targeting(true),step_row)
+	_button("The Step / max reach + feet",func():_open_intent_arena(6,true);_set_distant_targeting(true),step_row)
 	var intent_row:=HBoxContainer.new()
 	settings_box.add_child(intent_row)
 	_button("The Hang",func():_open_intent_arena(7,false),intent_row)
