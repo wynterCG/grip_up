@@ -1,6 +1,7 @@
 extends Resource
 @export_group("v0.6 held distant target experiment")
 @export var allow_out_of_reach_grip_targets: bool = false
+@export var pending_reach_label_hysteresis: float = 0.003
 @export_group("v0.5 transfer twist experiment")
 @export var transfer_twist_blend_time: float = 0.20
 @export var transfer_twist_frame_max_rate: float = 2.5

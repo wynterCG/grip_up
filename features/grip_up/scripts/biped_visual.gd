@@ -180,6 +180,12 @@ func _update_targets(delta: float = 1.0) -> void:
 		var shoulder: Vector3 = render_correction * controller.get_shoulder_world(i)
 		var palm: Vector3 = render_correction * controller.get_hand_world(i)
 		var hand: Dictionary = controller.hands[i]
+		var pending:Dictionary=controller.pending_diagnostics(i)
+		if not pending.get("endpoint_valid",true):
+			# An impossible swept-workspace conflict cancels the attempt. Show a
+			# passive pose, never the invalid historical endpoint as a real hand.
+			var passive_offset:Vector3=controller.tuning.free_hand_rest_left if i==0 else controller.tuning.free_hand_rest_right
+			palm=shoulder+(global_basis*passive_offset).limit_length(controller.get_max_reach())
 		if hand.state in ["ATTACHED","SLIPPING"] and hand.anchor != null and hand.anchor.is_valid():
 			var support: PhysicsBody3D = hand.anchor.support_body()
 			palm = support.get_global_transform_interpolated() * hand.anchor.local_point

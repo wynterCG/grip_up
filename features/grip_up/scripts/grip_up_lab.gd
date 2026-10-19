@@ -463,7 +463,7 @@ func request_hand(hand: int) -> bool:
 	if hit.is_empty():
 		controller.record_unselected_attempt(hand,"no_surface")
 		trial.misses += 1
-		message("Aim at a solid surface within arm's reach. Hold LMB / RMB to grip that exact point.")
+		message("Aim at a visible grabbable surface. Hold LMB / RMB to remember that exact point." if _distant_targeting_active() else "Aim at a solid surface within arm's reach. Hold LMB / RMB to grip that exact point.")
 		return false
 	if input_profile==3 and (reach_prediction_enabled or catch_buffer_enabled):
 		attempt_assessments[hand]=reach_assessor.evaluate(controller,hand,hit.collider,hit.position,hit.normal).duplicate(true)
@@ -620,7 +620,7 @@ func _process(delta: float) -> void:
 		capture_predictions = [{},{}]
 		reach_advice = [{},{}]
 	capture_debug.update_state(controller,reach_advice if input_profile==3 and reach_prediction_enabled else capture_predictions,debug_visible)
-	prediction_label.visible = predictive_grip_enabled and not settings.visible and not candidate.is_empty()
+	prediction_label.visible = predictive_grip_enabled and not _distant_targeting_active() and not settings.visible and not candidate.is_empty()
 	target_marker.visible = not candidate.is_empty() and not settings.visible
 	if target_marker.visible:
 		target_marker.global_position = candidate.position + candidate.normal * 0.025
@@ -632,7 +632,8 @@ func _process(delta: float) -> void:
 			if controller.get_shoulder_world(i).distance_to(candidate.position) <= controller.get_max_reach():
 				reachable = true
 		target_marker.material_override.albedo_color = Color("8b9297") if input_profile==3 and selectable_hands==0 else Color("b1f5d8") if reachable else Color("e66d68")
-		if predictive_grip_enabled:
+		if _distant_targeting_active() and selectable_hands>0 and not reachable:target_marker.material_override.albedo_color=Color("f0b85c")
+		if predictive_grip_enabled and not _distant_targeting_active():
 			var status := "UNAVAILABLE"
 			var eta := -1.0
 			for forecast in capture_predictions:
@@ -676,9 +677,15 @@ func _process(delta: float) -> void:
 		var committed:bool=_distant_targeting_active() and pending.get("active",false) and hand.state=="REACHING"
 		pending_markers[i].visible=committed and pending_grip_feedback_enabled
 		if committed:
-			hand_labels[i].text=("LEFT / CYAN" if i==0 else "RIGHT / AMBER")+"\n"+str(pending.get("substate","PENDING"))
+			var presentation:String="TARGET PENDING\nPATH BLOCKED" if pending.get("blocked",false) else "TARGET PENDING\nOUT OF REACH" if pending.get("substate","")=="PENDING_OUT_OF_REACH" else "REACHING"
+			hand_labels[i].text=("LEFT / CYAN" if i==0 else "RIGHT / AMBER")+"\n"+presentation
 			var contact_normal:Vector3=pending.get("normal_world",Vector3.FORWARD)
-			pending_markers[i].global_position=Vector3(pending.get("target_world",hand.target_world))+contact_normal*.012
+			var render_target:Vector3=pending.get("target_world",hand.target_world)
+			if hand.anchor!=null and hand.anchor.is_valid():
+				var support_pose:Transform3D=hand.anchor.support_body().get_global_transform_interpolated()
+				render_target=support_pose*hand.anchor.local_point
+				contact_normal=(support_pose.basis.inverse().transposed()*hand.anchor.local_normal).normalized()
+			pending_markers[i].global_position=render_target+contact_normal*.012
 			pending_markers[i].global_basis=Basis(Quaternion(Vector3.UP,contact_normal.normalized()))
 			pending_markers[i].scale=Vector3.ONE*(1.25 if pending.get("substate","")=="PENDING_OUT_OF_REACH" else .85)
 			pending_markers[i].material_override.albedo_color=COLORS[i].lerp(Color("8b9297"),.55) if pending.get("blocked",false) else COLORS[i]
