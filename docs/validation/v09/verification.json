@@ -1,0 +1,76 @@
+{
+  "revision": "v0.9 hybrid animation-assisted static mantle, opt-in technical prototype",
+  "recorded_utc": "2026-10-19T21:45:49.095522+00:00",
+  "source_commit": "45a3120fe4609e3520e10d47fe9347deeec1e0bc",
+  "baseline_commit": "14bb778c05cf30f37c8102003d7a3cba40d8c0be",
+  "branch": "feature/v0.9-hybrid-mantle",
+  "engine": "Godot4.7.2 / integrated Jolt",
+  "default_hz": 120,
+  "comparison_hz": 60,
+  "jolt_penetration_slop_m": 0.0199999995529652,
+  "automated_checks": 4356,
+  "suite_runs": 139,
+  "automated_failures": 0,
+  "functional_static_mantle_gate_met": true,
+  "native_scripted_checks": 26,
+  "native_scripted_failures": 0,
+  "native_functional_gate_met_at_both_hz": true,
+  "native_provenance": "Godot MCP Pro rendered in-app mouse/actions from ordinary authored approach, not human evaluation",
+  "native_walk_distances_m": {
+    "120": {
+      "LOW": 0.303618457168341,
+      "HIGH": 0.303593984805048
+    },
+    "60": {
+      "LOW": 0.316089510917664,
+      "HIGH": 0.31607776414603
+    }
+  },
+  "editor_errors_or_warnings": 0,
+  "smoke_frames": 3,
+  "test_screen_index": 0,
+  "exe_name": "GripUp-v0.9-experimental.exe",
+  "exe_sha256": "700b17d946cbe6da19b4f942e9ad2b160dae792df36a344fbe57dd06e07eab98",
+  "e_copy_matches": true,
+  "saved_source_files_match": true,
+  "source_manifest": "docs/validation/v09/source_sha256.json",
+  "legacy_grabber_unchanged_sha256": "8ab923ac1d903e8dcc8ed2a2e4f9f8c5cec326a3217cb4a9d8f00036557e7dad",
+  "defaults": {
+    "profile": 2,
+    "intent_climb": false,
+    "physical_feet": false,
+    "distant_targets": false,
+    "posture_variant": 0,
+    "Space_experimental": false,
+    "hybrid_mantle_v09_enabled": false,
+    "v08_features": false
+  },
+  "prepared_human_session": {
+    "actual_ground": true,
+    "adaptive_v08": false,
+    "frozen": false,
+    "hybrid_enabled": true,
+    "jolt_slop": 0.0199999995529652,
+    "level": 14,
+    "palms": false,
+    "physics_hz": 120,
+    "profile": 4,
+    "project": "E:/Godot Games/grip_up/",
+    "require_native_ground": true,
+    "scenario": "LOW",
+    "screen": 0,
+    "state": "DYNAMIC",
+    "v08_master": false
+  },
+  "human_gate_complete": false,
+  "decision": "GO for opt-in static technical prototype; M6/F10 human UX acceptance pending; do not promote into approved route",
+  "known_limits": [
+    "Assisted crossing visibly reads as a lift/transfer, with early hand release and about25cm tucked-foot clearance",
+    "Only static eligible ledges; dynamic and moving supports rejected",
+    "Blocked continuation can require explicit R reset at last validated pose",
+    "Current approach floorY-.55m differs from oldv08pad; no universal low-obstacle mantle claim",
+    "Human trigger clarity, comfort, consistency and control-return ratings not collected",
+    "Still frames and automated replay do not establish human temporal smoothness"
+  ],
+  "report": "docs/validation/v09/report.md"
+}
