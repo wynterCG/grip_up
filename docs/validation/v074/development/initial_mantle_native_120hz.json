@@ -1,0 +1,1860 @@
+{
+	"capability": [
+		{
+			"acceptance_gate_met": false,
+			"actual_top_ground_seen": false,
+			"end": "(0.020242, 1.355167, 0.255145)",
+			"ledge_transfer": {
+				"applied_torque": "(-7.991554, -0.301036, -0.210788)",
+				"destination_clear": true,
+				"enabled": true,
+				"inward": "(0.0, 0.0, -1.0)",
+				"path_clear": false,
+				"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+				"physical_completion": false,
+				"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+				"requested_target_up": "(0.0, 0.573577, -0.819152)",
+				"requested_torque": "(-7.991554, -0.301036, -0.210788)",
+				"status": "ATTEMPTING",
+				"support_id": 183878290011,
+				"top_normal": "(0.0, 1.0, 0.0)",
+				"top_point": "(-0.2, 2.1, -0.08)",
+				"torque_cap": 8.0
+			},
+			"max_foot_force": 0.0,
+			"peak_y": 1.35581421852112,
+			"physical_feet": false,
+			"samples": [
+				{
+					"feet_force": 0.0,
+					"hand_force": 1.48612248897552,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "EXPLICIT_UPWARD_INPUT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "AVAILABLE",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)"
+					},
+					"position": "(0.000066, 1.166692, 0.400006)",
+					"t": 0.0
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(-4.0, 0.000016, 0.000011)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-4.0, 0.000016, 0.000011)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(-0.013042, 1.166706, 0.341374)",
+					"t": 0.1
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(-8.0, 0.000002, 0.000001)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-8.0, 0.000002, 0.000001)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(-0.0491, 1.1667, 0.22)",
+					"t": 0.2
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(-8.0, 0.0, 0.0)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-8.0, 0.0, 0.0)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(-0.072835, 1.1667, 0.22)",
+					"t": 0.3
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(-8.0, 0.0, 0.0)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-8.0, 0.0, 0.0)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(-0.090554, 1.1667, 0.22)",
+					"t": 0.4
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 2.44573903083801,
+					"ledge": {
+						"applied_torque": "(-8.0, 0.0, 0.0)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-8.0, 0.0, 0.0)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(-0.104825, 1.1667, 0.22)",
+					"t": 0.5
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 51.7642430588603,
+					"ledge": {
+						"applied_torque": "(-7.999997, -0.00588, -0.004117)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.999997, -0.00588, -0.004117)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(-0.108621, 1.166802, 0.219997)",
+					"t": 0.6
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 132.847797393799,
+					"ledge": {
+						"applied_torque": "(-7.999999, 0.004463, 0.003125)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.999999, 0.004463, 0.003125)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(-0.107693, 1.166903, 0.220004)",
+					"t": 0.7
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 160.811431884766,
+					"ledge": {
+						"applied_torque": "(-7.995934, 0.208912, 0.146282)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.995934, 0.208913, 0.146282)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(-0.093618, 1.171838, 0.221702)",
+					"t": 0.8
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 164.185546875,
+					"ledge": {
+						"applied_torque": "(-7.965938, 0.604079, 0.422981)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.965938, 0.604079, 0.422981)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(-0.065082, 1.184298, 0.226004)",
+					"t": 0.9
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 159.076515197754,
+					"ledge": {
+						"applied_torque": "(-7.937288, 0.818931, 0.573421)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.937288, 0.818931, 0.573421)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(-0.035406, 1.203404, 0.231825)",
+					"t": 1.0
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 155.865859985352,
+					"ledge": {
+						"applied_torque": "(-7.958061, 0.670136, 0.469234)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.958061, 0.670136, 0.469234)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(-0.014564, 1.222009, 0.238708)",
+					"t": 1.1
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 171.650512695313,
+					"ledge": {
+						"applied_torque": "(-7.994801, 0.236228, 0.165409)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.994801, 0.236228, 0.165409)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(-0.002622, 1.236242, 0.246668)",
+					"t": 1.2
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 180.193283081055,
+					"ledge": {
+						"applied_torque": "(-7.995664, -0.215743, -0.151065)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.995664, -0.215743, -0.151065)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(0.007073, 1.252064, 0.255145)",
+					"t": 1.3
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 176.164558410645,
+					"ledge": {
+						"applied_torque": "(-7.979239, -0.4718, -0.330358)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.979239, -0.4718, -0.330358)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(0.019293, 1.270618, 0.26338)",
+					"t": 1.4
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 183.067245483398,
+					"ledge": {
+						"applied_torque": "(-7.974992, -0.517755, -0.362536)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.974992, -0.517754, -0.362536)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(0.032445, 1.287581, 0.270664)",
+					"t": 1.5
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 193.791862487793,
+					"ledge": {
+						"applied_torque": "(-7.978463, -0.480526, -0.336468)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.978463, -0.480526, -0.336468)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(0.040984, 1.302931, 0.276587)",
+					"t": 1.6
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 199.852096557617,
+					"ledge": {
+						"applied_torque": "(-7.979343, -0.470624, -0.329535)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.979343, -0.470625, -0.329535)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(0.041572, 1.317399, 0.280956)",
+					"t": 1.7
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 207.548286437988,
+					"ledge": {
+						"applied_torque": "(-7.978085, -0.484731, -0.339413)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.978085, -0.484731, -0.339413)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(0.036124, 1.330059, 0.283675)",
+					"t": 1.8
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 215.753280639648,
+					"ledge": {
+						"applied_torque": "(-7.980303, -0.459575, -0.321798)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.980303, -0.459575, -0.321798)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(0.02891, 1.340648, 0.284725)",
+					"t": 1.9
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 221.456512451172,
+					"ledge": {
+						"applied_torque": "(-7.987015, -0.37323, -0.261339)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.987015, -0.37323, -0.261339)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(0.022401, 1.348727, 0.284275)",
+					"t": 2.0
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 225.26456451416,
+					"ledge": {
+						"applied_torque": "(-7.993453, -0.265068, -0.185602)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.993453, -0.265068, -0.185602)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(0.016732, 1.353419, 0.282557)",
+					"t": 2.1
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 227.577209472656,
+					"ledge": {
+						"applied_torque": "(-7.997051, -0.177921, -0.124582)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.997051, -0.177921, -0.124582)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(0.012165, 1.354487, 0.279743)",
+					"t": 2.2
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 231.960784912109,
+					"ledge": {
+						"applied_torque": "(-7.998532, -0.125561, -0.087918)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.998532, -0.125561, -0.087918)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(0.009679, 1.352889, 0.275944)",
+					"t": 2.3
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 235.83113861084,
+					"ledge": {
+						"applied_torque": "(-7.998705, -0.1179, -0.082554)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.998705, -0.1179, -0.082554)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(0.009345, 1.351092, 0.271364)",
+					"t": 2.4
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 234.466484069824,
+					"ledge": {
+						"applied_torque": "(-7.997726, -0.156214, -0.109383)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.997726, -0.156215, -0.109383)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(0.010573, 1.350782, 0.266419)",
+					"t": 2.5
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 232.424102783203,
+					"ledge": {
+						"applied_torque": "(-7.995601, -0.217297, -0.152153)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.995601, -0.217297, -0.152153)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(0.01312, 1.351088, 0.261633)",
+					"t": 2.6
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 234.002365112305,
+					"ledge": {
+						"applied_torque": "(-7.992844, -0.277117, -0.19404)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.992844, -0.277117, -0.19404)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(0.016644, 1.350942, 0.257436)",
+					"t": 2.7
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 235.86743927002,
+					"ledge": {
+						"applied_torque": "(-7.989937, -0.328586, -0.230078)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.989937, -0.328586, -0.230078)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(0.020166, 1.350796, 0.254097)",
+					"t": 2.8
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 236.084159851074,
+					"ledge": {
+						"applied_torque": "(-7.987321, -0.368798, -0.258235)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.987321, -0.368798, -0.258235)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(0.022854, 1.351292, 0.251774)",
+					"t": 2.9
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 235.327095031738,
+					"ledge": {
+						"applied_torque": "(-7.985637, -0.392511, -0.274839)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.985637, -0.392511, -0.274839)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(0.024473, 1.352247, 0.250523)",
+					"t": 3.0
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 234.905563354492,
+					"ledge": {
+						"applied_torque": "(-7.985215, -0.39823, -0.278843)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.985215, -0.39823, -0.278843)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(0.025014, 1.353017, 0.250301)",
+					"t": 3.1
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 234.710250854492,
+					"ledge": {
+						"applied_torque": "(-7.985928, -0.388521, -0.272046)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.985928, -0.388521, -0.272046)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(0.024587, 1.353381, 0.250958)",
+					"t": 3.2
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 233.617515563965,
+					"ledge": {
+						"applied_torque": "(-7.987384, -0.367887, -0.257597)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.987384, -0.367887, -0.257597)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(0.023377, 1.353894, 0.252172)",
+					"t": 3.3
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 232.087089538574,
+					"ledge": {
+						"applied_torque": "(-7.989131, -0.34148, -0.239107)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.989131, -0.34148, -0.239107)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(0.021794, 1.354513, 0.253633)",
+					"t": 3.4
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 230.751853942871,
+					"ledge": {
+						"applied_torque": "(-7.990818, -0.313881, -0.219782)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.990818, -0.313881, -0.219782)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(0.020285, 1.355111, 0.255021)",
+					"t": 3.5
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 229.839096069336,
+					"ledge": {
+						"applied_torque": "(-7.992099, -0.291178, -0.203885)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.992099, -0.291177, -0.203885)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(0.019153, 1.355565, 0.256064)",
+					"t": 3.6
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 229.428695678711,
+					"ledge": {
+						"applied_torque": "(-7.992793, -0.278115, -0.194738)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.992793, -0.278115, -0.194738)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(0.018584, 1.355794, 0.256585)",
+					"t": 3.7
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 229.593475341797,
+					"ledge": {
+						"applied_torque": "(-7.992875, -0.276515, -0.193618)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.992875, -0.276515, -0.193618)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(0.018655, 1.35577, 0.25653)",
+					"t": 3.8
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 230.247451782227,
+					"ledge": {
+						"applied_torque": "(-7.992398, -0.28561, -0.199987)",
+						"destination_clear": true,
+						"enabled": true,
+						"inward": "(0.0, 0.0, -1.0)",
+						"path_clear": false,
+						"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+						"physical_completion": false,
+						"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+						"requested_target_up": "(0.0, 0.573577, -0.819152)",
+						"requested_torque": "(-7.992398, -0.28561, -0.199987)",
+						"status": "ATTEMPTING",
+						"support_id": 183878290011,
+						"top_normal": "(0.0, 1.0, 0.0)",
+						"top_point": "(-0.2, 2.1, -0.08)",
+						"torque_cap": 8.0
+					},
+					"position": "(0.019297, 1.355526, 0.255971)",
+					"t": 3.9
+				}
+			],
+			"start": "(0.000066, 1.166692, 0.400006)"
+		},
+		{
+			"acceptance_gate_met": false,
+			"actual_top_ground_seen": false,
+			"end": "(-0.109037, 1.167002, 0.219966)",
+			"ledge_transfer": {
+				"applied_torque": "(0.0, 0.0, 0.0)",
+				"destination_clear": false,
+				"enabled": true,
+				"path_clear": false,
+				"physical_completion": false,
+				"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+				"requested_torque": "(0.0, 0.0, 0.0)",
+				"status": "SEARCHING",
+				"top_normal": "(0.0, 0.0, 0.0)",
+				"top_point": "(0.0, 0.0, 0.0)"
+			},
+			"max_foot_force": 0.0,
+			"peak_y": 1.16716599464417,
+			"physical_feet": true,
+			"samples": [
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(0.000071, 1.166692, 0.400044)",
+					"t": 0.0
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.013276, 1.166693, 0.341504)",
+					"t": 0.1
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.04964, 1.166699, 0.219997)",
+					"t": 0.2
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.073559, 1.166699, 0.219997)",
+					"t": 0.3
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.091382, 1.166699, 0.219997)",
+					"t": 0.4
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.105816, 1.166699, 0.219997)",
+					"t": 0.5
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109187, 1.167087, 0.219963)",
+					"t": 0.6
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109033, 1.167002, 0.219962)",
+					"t": 0.7
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109033, 1.167002, 0.219962)",
+					"t": 0.8
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109033, 1.167002, 0.219962)",
+					"t": 0.9
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109033, 1.167002, 0.219962)",
+					"t": 1.0
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109034, 1.167002, 0.219963)",
+					"t": 1.1
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109034, 1.167002, 0.219963)",
+					"t": 1.2
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109034, 1.167002, 0.219963)",
+					"t": 1.3
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109034, 1.167002, 0.219963)",
+					"t": 1.4
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109034, 1.167002, 0.219963)",
+					"t": 1.5
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109034, 1.167002, 0.219964)",
+					"t": 1.6
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109035, 1.167002, 0.219964)",
+					"t": 1.7
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109035, 1.167002, 0.219964)",
+					"t": 1.8
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109035, 1.167002, 0.219964)",
+					"t": 1.9
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109035, 1.167002, 0.219964)",
+					"t": 2.0
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109035, 1.167002, 0.219964)",
+					"t": 2.1
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109035, 1.167002, 0.219965)",
+					"t": 2.2
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109035, 1.167002, 0.219965)",
+					"t": 2.3
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109035, 1.167002, 0.219965)",
+					"t": 2.4
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109035, 1.167002, 0.219965)",
+					"t": 2.5
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109035, 1.167002, 0.219965)",
+					"t": 2.6
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109035, 1.167002, 0.219965)",
+					"t": 2.7
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109036, 1.167002, 0.219965)",
+					"t": 2.8
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109036, 1.167002, 0.219966)",
+					"t": 2.9
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109036, 1.167002, 0.219966)",
+					"t": 3.0
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109036, 1.167002, 0.219966)",
+					"t": 3.1
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109036, 1.167002, 0.219966)",
+					"t": 3.2
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109036, 1.167002, 0.219966)",
+					"t": 3.3
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109036, 1.167002, 0.219966)",
+					"t": 3.4
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109036, 1.167002, 0.219966)",
+					"t": 3.5
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109036, 1.167002, 0.219966)",
+					"t": 3.6
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109036, 1.167002, 0.219966)",
+					"t": 3.7
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109037, 1.167002, 0.219966)",
+					"t": 3.8
+				},
+				{
+					"feet_force": 0.0,
+					"hand_force": 0.0,
+					"ledge": {
+						"applied_torque": "(0.0, 0.0, 0.0)",
+						"destination_clear": false,
+						"enabled": true,
+						"path_clear": false,
+						"physical_completion": false,
+						"reason": "TWO_HANDS_OR_HAND_AND_LOADED_FOOT_REQUIRED",
+						"requested_torque": "(0.0, 0.0, 0.0)",
+						"status": "SEARCHING",
+						"top_normal": "(0.0, 0.0, 0.0)",
+						"top_point": "(0.0, 0.0, 0.0)"
+					},
+					"position": "(-0.109037, 1.167002, 0.219966)",
+					"t": 3.9
+				}
+			],
+			"start": "(0.000071, 1.166692, 0.400044)"
+		}
+	],
+	"checks": [
+		{
+			"label": "native ledge explicitly enables the experiment feetfalse",
+			"passed": true
+		},
+		{
+			"label": "native left finite ledge contact feetfalse",
+			"passed": true
+		},
+		{
+			"label": "native right finite ledge contact feetfalse",
+			"passed": true
+		},
+		{
+			"label": "native edge contact never masquerades as a top-out",
+			"passed": true
+		},
+		{
+			"label": "native completion requires real platform ground",
+			"passed": true
+		},
+		{
+			"label": "native release removes both hand loads",
+			"passed": true
+		},
+		{
+			"label": "native release removes mantle torque",
+			"passed": true
+		},
+		{
+			"label": "native ledge explicitly enables the experiment feettrue",
+			"passed": true
+		},
+		{
+			"label": "native left finite ledge contact feettrue",
+			"passed": true
+		},
+		{
+			"label": "native right finite ledge contact feettrue",
+			"passed": true
+		},
+		{
+			"label": "native edge contact never masquerades as a top-out",
+			"passed": true
+		},
+		{
+			"label": "native completion requires real platform ground",
+			"passed": true
+		},
+		{
+			"label": "native release removes both hand loads",
+			"passed": true
+		},
+		{
+			"label": "native release removes mantle torque",
+			"passed": true
+		},
+		{
+			"label": "native unchanged hand feet and combined moment limits",
+			"passed": true
+		}
+	],
+	"complete": true,
+	"focus_events": [
+		{
+			"policy": 1,
+			"scene": 11,
+			"step": 131
+		}
+	],
+	"physics_hz": 120,
+	"provenance": "Godot MCP Pro real held mouse/actions; M6 capability experiment, not human feel evidence",
+	"snapshots": [
+		{
+			"hands": [
+				{
+					"actual": 0.54988157749176,
+					"force": 1.48640298843384,
+					"reason": "",
+					"state": "ATTACHED",
+					"target": 0.54925537109375
+				},
+				{
+					"actual": 0.548463404178619,
+					"force": 0.0,
+					"reason": "",
+					"state": "ATTACHED",
+					"target": 0.548631548881531
+				}
+			],
+			"label": "v074_ledge_start_false",
+			"policy": 1,
+			"position": "(0.000066, 1.166692, 0.400006)",
+			"posture": {},
+			"velocity": "(-0.0, 0.0, -0.000005)"
+		},
+		{
+			"hands": [
+				{
+					"actual": 0.32034108042717,
+					"force": 114.390899658203,
+					"reason": "",
+					"state": "ATTACHED",
+					"target": 0.271163432840237
+				},
+				{
+					"actual": 0.263482362031937,
+					"force": 116.730804443359,
+					"reason": "",
+					"state": "ATTACHED",
+					"target": 0.214742002524003
+				}
+			],
+			"label": "v074_ledge_attempt_false",
+			"policy": 1,
+			"position": "(0.020242, 1.355167, 0.255145)",
+			"posture": {},
+			"velocity": "(0.011364, -0.004319, -0.009973)"
+		},
+		{
+			"hands": [
+				{
+					"actual": 0.549762725830078,
+					"force": 0.0,
+					"reason": "input_focus_lost",
+					"state": "FREE",
+					"target": 0.549255192279816
+				},
+				{
+					"actual": 0.548630774021149,
+					"force": 0.0,
+					"reason": "input_focus_lost",
+					"state": "FREE",
+					"target": 0.548631250858307
+				}
+			],
+			"label": "v074_ledge_start_true",
+			"policy": 1,
+			"position": "(0.000071, 1.166692, 0.400044)",
+			"posture": {},
+			"velocity": "(0.0, 0.0, 0.0)"
+		},
+		{
+			"hands": [
+				{
+					"actual": 0.549762725830078,
+					"force": 0.0,
+					"reason": "input_focus_lost",
+					"state": "FREE",
+					"target": 0.549255192279816
+				},
+				{
+					"actual": 0.548630774021149,
+					"force": 0.0,
+					"reason": "input_focus_lost",
+					"state": "FREE",
+					"target": 0.548631250858307
+				}
+			],
+			"label": "v074_ledge_attempt_true",
+			"policy": 1,
+			"position": "(-0.109037, 1.167002, 0.219966)",
+			"posture": {},
+			"velocity": "(-0.0, -0.000005, 0.000001)"
+		}
+	],
+	"variants": []
+}

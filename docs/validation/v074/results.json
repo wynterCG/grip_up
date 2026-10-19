@@ -1,0 +1,853 @@
+{
+  "suites": [
+    {
+      "suite": "physics",
+      "hz": 120,
+      "passed": true,
+      "checks": 45,
+      "failures": 0
+    },
+    {
+      "suite": "physics",
+      "hz": 60,
+      "passed": true,
+      "checks": 45,
+      "failures": 0
+    },
+    {
+      "suite": "platform_probe",
+      "hz": 120,
+      "passed": true,
+      "checks": 42,
+      "failures": 0
+    },
+    {
+      "suite": "platform_probe",
+      "hz": 60,
+      "passed": true,
+      "checks": 42,
+      "failures": 0
+    },
+    {
+      "suite": "wall_clearance",
+      "hz": 120,
+      "passed": true,
+      "checks": 6,
+      "failures": 0
+    },
+    {
+      "suite": "wall_clearance",
+      "hz": 60,
+      "passed": true,
+      "checks": 6,
+      "failures": 0
+    },
+    {
+      "suite": "biped_profile",
+      "hz": 120,
+      "passed": true,
+      "checks": 58,
+      "failures": 0
+    },
+    {
+      "suite": "biped_profile",
+      "hz": 60,
+      "passed": true,
+      "checks": 58,
+      "failures": 0
+    },
+    {
+      "suite": "playthrough",
+      "hz": 120,
+      "passed": true,
+      "checks": 19,
+      "failures": 0
+    },
+    {
+      "suite": "playthrough",
+      "hz": 60,
+      "passed": true,
+      "checks": 19,
+      "failures": 0
+    },
+    {
+      "suite": "swing_playthrough",
+      "hz": 120,
+      "passed": true,
+      "checks": 10,
+      "failures": 0
+    },
+    {
+      "suite": "swing_playthrough",
+      "hz": 60,
+      "passed": true,
+      "checks": 10,
+      "failures": 0
+    },
+    {
+      "suite": "integration",
+      "hz": 120,
+      "passed": true,
+      "checks": 27,
+      "failures": 0
+    },
+    {
+      "suite": "integration",
+      "hz": 60,
+      "passed": true,
+      "checks": 27,
+      "failures": 0
+    },
+    {
+      "suite": "biped_visual",
+      "hz": 120,
+      "passed": true,
+      "checks": 15,
+      "failures": 0
+    },
+    {
+      "suite": "biped_visual",
+      "hz": 60,
+      "passed": true,
+      "checks": 15,
+      "failures": 0
+    },
+    {
+      "suite": "idle_hang",
+      "hz": 120,
+      "passed": true,
+      "checks": 13,
+      "failures": 0
+    },
+    {
+      "suite": "idle_hang",
+      "hz": 60,
+      "passed": true,
+      "checks": 13,
+      "failures": 0
+    },
+    {
+      "suite": "ground_locomotion",
+      "hz": 120,
+      "passed": true,
+      "checks": 24,
+      "failures": 0
+    },
+    {
+      "suite": "ground_locomotion",
+      "hz": 60,
+      "passed": true,
+      "checks": 24,
+      "failures": 0
+    },
+    {
+      "suite": "climb_direction",
+      "hz": 120,
+      "passed": true,
+      "checks": 43,
+      "failures": 0
+    },
+    {
+      "suite": "climb_direction",
+      "hz": 60,
+      "passed": true,
+      "checks": 43,
+      "failures": 0
+    },
+    {
+      "suite": "leg_motion",
+      "hz": 120,
+      "passed": true,
+      "checks": 20,
+      "failures": 0
+    },
+    {
+      "suite": "leg_motion",
+      "hz": 60,
+      "passed": true,
+      "checks": 20,
+      "failures": 0
+    },
+    {
+      "suite": "pendulum",
+      "hz": 120,
+      "passed": true,
+      "checks": 63,
+      "failures": 0
+    },
+    {
+      "suite": "pendulum",
+      "hz": 60,
+      "passed": true,
+      "checks": 63,
+      "failures": 0
+    },
+    {
+      "suite": "free_climb",
+      "hz": 120,
+      "passed": true,
+      "checks": 22,
+      "failures": 0
+    },
+    {
+      "suite": "free_climb",
+      "hz": 60,
+      "passed": true,
+      "checks": 24,
+      "failures": 0
+    },
+    {
+      "suite": "launch",
+      "hz": 120,
+      "passed": true,
+      "checks": 60,
+      "failures": 0
+    },
+    {
+      "suite": "launch",
+      "hz": 60,
+      "passed": true,
+      "checks": 60,
+      "failures": 0
+    },
+    {
+      "suite": "full_reach",
+      "hz": 120,
+      "passed": true,
+      "checks": 7,
+      "failures": 0
+    },
+    {
+      "suite": "full_reach",
+      "hz": 60,
+      "passed": true,
+      "checks": 7,
+      "failures": 0
+    },
+    {
+      "suite": "biped_asset",
+      "hz": 120,
+      "passed": true,
+      "checks": 12,
+      "failures": 0
+    },
+    {
+      "suite": "m0_instrumentation",
+      "hz": 120,
+      "passed": true,
+      "checks": 5,
+      "failures": 0
+    },
+    {
+      "suite": "m0_instrumentation",
+      "hz": 60,
+      "passed": true,
+      "checks": 5,
+      "failures": 0
+    },
+    {
+      "suite": "capture_input",
+      "hz": 120,
+      "passed": true,
+      "checks": 9,
+      "failures": 0
+    },
+    {
+      "suite": "capture_input",
+      "hz": 60,
+      "passed": true,
+      "checks": 9,
+      "failures": 0
+    },
+    {
+      "suite": "capture_matrix",
+      "hz": 120,
+      "passed": true,
+      "checks": 56,
+      "failures": 0
+    },
+    {
+      "suite": "capture_matrix",
+      "hz": 60,
+      "passed": true,
+      "checks": 56,
+      "failures": 0
+    },
+    {
+      "suite": "foot_support",
+      "hz": 120,
+      "passed": true,
+      "checks": 50,
+      "failures": 0
+    },
+    {
+      "suite": "foot_support",
+      "hz": 60,
+      "passed": true,
+      "checks": 50,
+      "failures": 0
+    },
+    {
+      "suite": "foot_integration",
+      "hz": 120,
+      "passed": true,
+      "checks": 17,
+      "failures": 0
+    },
+    {
+      "suite": "foot_integration",
+      "hz": 60,
+      "passed": true,
+      "checks": 17,
+      "failures": 0
+    },
+    {
+      "suite": "feet_routes",
+      "hz": 120,
+      "passed": true,
+      "checks": 19,
+      "failures": 0
+    },
+    {
+      "suite": "feet_routes",
+      "hz": 60,
+      "passed": true,
+      "checks": 19,
+      "failures": 0
+    },
+    {
+      "suite": "feet_swing",
+      "hz": 120,
+      "passed": true,
+      "checks": 10,
+      "failures": 0
+    },
+    {
+      "suite": "feet_swing",
+      "hz": 60,
+      "passed": true,
+      "checks": 10,
+      "failures": 0
+    },
+    {
+      "suite": "drag_input",
+      "hz": 120,
+      "passed": true,
+      "checks": 30,
+      "failures": 0
+    },
+    {
+      "suite": "drag_input",
+      "hz": 60,
+      "passed": true,
+      "checks": 30,
+      "failures": 0
+    },
+    {
+      "suite": "drag_swing_physics",
+      "hz": 120,
+      "passed": true,
+      "checks": 101,
+      "failures": 0
+    },
+    {
+      "suite": "drag_swing_physics",
+      "hz": 60,
+      "passed": true,
+      "checks": 101,
+      "failures": 0
+    },
+    {
+      "suite": "contextual_input",
+      "hz": 120,
+      "passed": true,
+      "checks": 30,
+      "failures": 0
+    },
+    {
+      "suite": "contextual_input",
+      "hz": 60,
+      "passed": true,
+      "checks": 30,
+      "failures": 0
+    },
+    {
+      "suite": "contextual_physics",
+      "hz": 120,
+      "passed": true,
+      "checks": 65,
+      "failures": 0
+    },
+    {
+      "suite": "contextual_physics",
+      "hz": 60,
+      "passed": true,
+      "checks": 65,
+      "failures": 0
+    },
+    {
+      "suite": "independent_input",
+      "hz": 120,
+      "passed": true,
+      "checks": 35,
+      "failures": 0
+    },
+    {
+      "suite": "independent_input",
+      "hz": 60,
+      "passed": true,
+      "checks": 35,
+      "failures": 0
+    },
+    {
+      "suite": "independent_physics",
+      "hz": 120,
+      "passed": true,
+      "checks": 89,
+      "failures": 0
+    },
+    {
+      "suite": "independent_physics",
+      "hz": 60,
+      "passed": true,
+      "checks": 89,
+      "failures": 0
+    },
+    {
+      "suite": "independent_routes",
+      "hz": 120,
+      "passed": true,
+      "checks": 12,
+      "failures": 0
+    },
+    {
+      "suite": "independent_routes",
+      "hz": 60,
+      "passed": true,
+      "checks": 12,
+      "failures": 0
+    },
+    {
+      "suite": "transfer_diagnostics",
+      "hz": 120,
+      "passed": true,
+      "checks": 54,
+      "failures": 0
+    },
+    {
+      "suite": "transfer_diagnostics",
+      "hz": 60,
+      "passed": true,
+      "checks": 54,
+      "failures": 0
+    },
+    {
+      "suite": "transfer_routes",
+      "hz": 120,
+      "passed": true,
+      "checks": 14,
+      "failures": 0
+    },
+    {
+      "suite": "transfer_routes",
+      "hz": 60,
+      "passed": true,
+      "checks": 14,
+      "failures": 0
+    },
+    {
+      "suite": "transfer_routes_p1",
+      "hz": 120,
+      "passed": true,
+      "checks": 14,
+      "failures": 0
+    },
+    {
+      "suite": "transfer_routes_p1",
+      "hz": 60,
+      "passed": true,
+      "checks": 14,
+      "failures": 0
+    },
+    {
+      "suite": "transfer_routes_p2",
+      "hz": 120,
+      "passed": true,
+      "checks": 14,
+      "failures": 0
+    },
+    {
+      "suite": "transfer_routes_p2",
+      "hz": 60,
+      "passed": true,
+      "checks": 14,
+      "failures": 0
+    },
+    {
+      "suite": "posture_study",
+      "hz": 120,
+      "passed": true,
+      "checks": 110,
+      "failures": 0
+    },
+    {
+      "suite": "posture_study",
+      "hz": 60,
+      "passed": true,
+      "checks": 110,
+      "failures": 0
+    },
+    {
+      "suite": "swing_diagnostics",
+      "hz": 120,
+      "passed": true,
+      "checks": 67,
+      "failures": 0
+    },
+    {
+      "suite": "swing_diagnostics",
+      "hz": 60,
+      "passed": true,
+      "checks": 67,
+      "failures": 0
+    },
+    {
+      "suite": "transfer_swing",
+      "hz": 120,
+      "passed": true,
+      "checks": 24,
+      "failures": 0
+    },
+    {
+      "suite": "transfer_swing",
+      "hz": 60,
+      "passed": true,
+      "checks": 24,
+      "failures": 0
+    },
+    {
+      "suite": "reach_assessment",
+      "hz": 120,
+      "passed": true,
+      "checks": 39,
+      "failures": 0
+    },
+    {
+      "suite": "reach_assessment",
+      "hz": 60,
+      "passed": true,
+      "checks": 39,
+      "failures": 0
+    },
+    {
+      "suite": "transfer_capture",
+      "hz": 120,
+      "passed": true,
+      "checks": 25,
+      "failures": 0
+    },
+    {
+      "suite": "transfer_capture",
+      "hz": 60,
+      "passed": true,
+      "checks": 25,
+      "failures": 0
+    },
+    {
+      "suite": "distant_baseline",
+      "hz": 120,
+      "passed": true,
+      "checks": 4,
+      "failures": 0
+    },
+    {
+      "suite": "distant_baseline",
+      "hz": 60,
+      "passed": true,
+      "checks": 4,
+      "failures": 0
+    },
+    {
+      "suite": "pending_grip",
+      "hz": 120,
+      "passed": true,
+      "checks": 32,
+      "failures": 0
+    },
+    {
+      "suite": "pending_grip",
+      "hz": 60,
+      "passed": true,
+      "checks": 32,
+      "failures": 0
+    },
+    {
+      "suite": "pending_motion",
+      "hz": 120,
+      "passed": true,
+      "checks": 32,
+      "failures": 0
+    },
+    {
+      "suite": "pending_motion",
+      "hz": 60,
+      "passed": true,
+      "checks": 32,
+      "failures": 0
+    },
+    {
+      "suite": "pending_contact",
+      "hz": 120,
+      "passed": true,
+      "checks": 47,
+      "failures": 0
+    },
+    {
+      "suite": "pending_contact",
+      "hz": 60,
+      "passed": true,
+      "checks": 47,
+      "failures": 0
+    },
+    {
+      "suite": "distant_input",
+      "hz": 120,
+      "passed": true,
+      "checks": 27,
+      "failures": 0
+    },
+    {
+      "suite": "distant_input",
+      "hz": 60,
+      "passed": true,
+      "checks": 27,
+      "failures": 0
+    },
+    {
+      "suite": "distant_routes",
+      "hz": 120,
+      "passed": true,
+      "checks": 16,
+      "failures": 0
+    },
+    {
+      "suite": "distant_routes",
+      "hz": 60,
+      "passed": true,
+      "checks": 16,
+      "failures": 0
+    },
+    {
+      "suite": "distant_swing",
+      "hz": 120,
+      "passed": true,
+      "checks": 30,
+      "failures": 0
+    },
+    {
+      "suite": "distant_swing",
+      "hz": 60,
+      "passed": true,
+      "checks": 30,
+      "failures": 0
+    },
+    {
+      "suite": "intent_locomotion",
+      "hz": 120,
+      "passed": true,
+      "checks": 49,
+      "failures": 0
+    },
+    {
+      "suite": "intent_locomotion",
+      "hz": 60,
+      "passed": true,
+      "checks": 49,
+      "failures": 0
+    },
+    {
+      "suite": "intent_swing",
+      "hz": 120,
+      "passed": true,
+      "checks": 30,
+      "failures": 0
+    },
+    {
+      "suite": "intent_swing",
+      "hz": 60,
+      "passed": true,
+      "checks": 30,
+      "failures": 0
+    },
+    {
+      "suite": "intent_integration",
+      "hz": 120,
+      "passed": true,
+      "checks": 19,
+      "failures": 0
+    },
+    {
+      "suite": "intent_integration",
+      "hz": 60,
+      "passed": true,
+      "checks": 19,
+      "failures": 0
+    },
+    {
+      "suite": "intent_arenas",
+      "hz": 120,
+      "passed": true,
+      "checks": 18,
+      "failures": 0
+    },
+    {
+      "suite": "intent_arenas",
+      "hz": 60,
+      "passed": true,
+      "checks": 18,
+      "failures": 0
+    },
+    {
+      "suite": "intent_reversal",
+      "hz": 120,
+      "passed": true,
+      "checks": 37,
+      "failures": 0
+    },
+    {
+      "suite": "intent_reversal",
+      "hz": 60,
+      "passed": true,
+      "checks": 37,
+      "failures": 0
+    },
+    {
+      "suite": "intent_progress",
+      "hz": 120,
+      "passed": true,
+      "checks": 14,
+      "failures": 0
+    },
+    {
+      "suite": "intent_progress",
+      "hz": 60,
+      "passed": true,
+      "checks": 14,
+      "failures": 0
+    },
+    {
+      "suite": "intent_handoffs",
+      "hz": 120,
+      "passed": true,
+      "checks": 10,
+      "failures": 0
+    },
+    {
+      "suite": "intent_handoffs",
+      "hz": 60,
+      "passed": true,
+      "checks": 10,
+      "failures": 0
+    },
+    {
+      "suite": "intent_frame_sign",
+      "hz": 120,
+      "passed": true,
+      "checks": 17,
+      "failures": 0
+    },
+    {
+      "suite": "intent_frame_sign",
+      "hz": 60,
+      "passed": true,
+      "checks": 17,
+      "failures": 0
+    },
+    {
+      "suite": "reachable_grip",
+      "hz": 120,
+      "passed": true,
+      "checks": 27,
+      "failures": 0
+    },
+    {
+      "suite": "reachable_grip",
+      "hz": 60,
+      "passed": true,
+      "checks": 27,
+      "failures": 0
+    },
+    {
+      "suite": "reach_visual",
+      "hz": 120,
+      "passed": true,
+      "checks": 12,
+      "failures": 0
+    },
+    {
+      "suite": "reach_visual",
+      "hz": 60,
+      "passed": true,
+      "checks": 12,
+      "failures": 0
+    },
+    {
+      "suite": "route_progress",
+      "hz": 120,
+      "passed": true,
+      "checks": 12,
+      "failures": 0
+    },
+    {
+      "suite": "route_progress",
+      "hz": 60,
+      "passed": true,
+      "checks": 12,
+      "failures": 0
+    },
+    {
+      "suite": "climbing_route",
+      "hz": 120,
+      "passed": true,
+      "checks": 15,
+      "failures": 0
+    },
+    {
+      "suite": "climbing_route",
+      "hz": 60,
+      "passed": true,
+      "checks": 15,
+      "failures": 0
+    },
+    {
+      "suite": "intent_mantle",
+      "hz": 120,
+      "passed": true,
+      "checks": 45,
+      "failures": 0
+    },
+    {
+      "suite": "intent_mantle",
+      "hz": 60,
+      "passed": true,
+      "checks": 45,
+      "failures": 0
+    },
+    {
+      "suite": "mantle_integration",
+      "hz": 120,
+      "passed": true,
+      "checks": 17,
+      "failures": 0
+    },
+    {
+      "suite": "mantle_integration",
+      "hz": 60,
+      "passed": true,
+      "checks": 17,
+      "failures": 0
+    }
+  ],
+  "total_checks": 3760,
+  "all_passed": true
+}

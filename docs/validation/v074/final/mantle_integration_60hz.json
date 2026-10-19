@@ -1,0 +1,60 @@
+{
+	"checks": 17,
+	"failures": 0,
+	"physics_hz": 60,
+	"runs": [],
+	"variants": [
+		{
+			"acceptance_gate_met": false,
+			"actual_top_ground_seen": false,
+			"end": "(0.029353, 1.320203, 0.245701)",
+			"ledge_transfer": {
+				"applied_torque": "(-7.981474, -0.445718, -0.312095)",
+				"destination_clear": true,
+				"enabled": true,
+				"inward": "(0.0, 0.0, -1.0)",
+				"path_clear": false,
+				"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+				"physical_completion": false,
+				"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+				"requested_target_up": "(0.0, 0.573577, -0.819152)",
+				"requested_torque": "(-7.981474, -0.445718, -0.312095)",
+				"status": "ATTEMPTING",
+				"support_id": 81033955895,
+				"top_normal": "(0.0, 1.0, 0.0)",
+				"top_point": "(-0.2, 2.1, -0.08)",
+				"torque_cap": 8.0
+			},
+			"max_foot_force": 0.0,
+			"peak_y": 1.32094037532806,
+			"physical_feet": false,
+			"start": "(-0.000182, 1.166679, 0.40005)"
+		},
+		{
+			"acceptance_gate_met": false,
+			"actual_top_ground_seen": false,
+			"end": "(-0.009802, 1.463764, 0.467333)",
+			"ledge_transfer": {
+				"applied_torque": "(-5.446035, -0.161701, -0.113225)",
+				"destination_clear": true,
+				"enabled": true,
+				"inward": "(0.0, 0.0, -1.0)",
+				"path_clear": false,
+				"path_scope": "unknown continuous path; standing destination occupancy only, actual intermediate collisions remain authoritative",
+				"physical_completion": false,
+				"reason": "FINITE_ARM_TRACTION_AND_REACTED_TILT_ONLY",
+				"requested_target_up": "(0.0, 0.573577, -0.819152)",
+				"requested_torque": "(-5.446035, -0.161701, -0.113225)",
+				"status": "ATTEMPTING",
+				"support_id": 253470181730,
+				"top_normal": "(0.0, 1.0, 0.0)",
+				"top_point": "(-0.2, 2.1, -0.08)",
+				"torque_cap": 8.0
+			},
+			"max_foot_force": 103.114520072937,
+			"peak_y": 1.46618926525116,
+			"physical_feet": true,
+			"start": "(-0.000182, 1.166679, 0.40005)"
+		}
+	]
+}

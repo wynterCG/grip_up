@@ -1,0 +1,158 @@
+{
+	"checks": 14,
+	"failures": 0,
+	"hz": 60,
+	"report": {
+		"blocked": {
+			"body_displacement": 0.0208240170031786,
+			"hold": 0.512486577033997,
+			"peak_speed_after_open": 0.0523979142308235,
+			"released_rest": 0.512361577033997,
+			"rest": 0.463861192119525
+		},
+		"trials": [
+			{
+				"final_rest": 0.483803459353472,
+				"initial_rest": 0.53150737285614,
+				"max_acceleration": 0.9,
+				"max_rate": 0.0810041160878083,
+				"mode": "continuous_w",
+				"neutral_drift": 0.0,
+				"old_latch": true,
+				"peak_error": 0.0584674951258296,
+				"peak_force": 265.602279663086,
+				"retained": true,
+				"reverse_rest": 0.0884926262523986,
+				"reverse_y": -0.0863089561462402,
+				"rise": 0.0876355171203613,
+				"samples": [
+					{
+						"actual": 0.574466466903687,
+						"direction": 0,
+						"height": 0.0,
+						"hold": 0.53150737285614,
+						"reference_actual": 0.0,
+						"rest": 0.53125737285614,
+						"time": 0.0
+					},
+					{
+						"actual": 0.57128518819809,
+						"direction": 0,
+						"height": 0.00585508346557617,
+						"hold": 0.53150737285614,
+						"reference_actual": 0.0,
+						"rest": 0.518372736202152,
+						"time": 0.5
+					},
+					{
+						"actual": 0.532459557056427,
+						"direction": 0,
+						"height": 0.0830259323120117,
+						"hold": 0.53150737285614,
+						"reference_actual": 0.0,
+						"rest": 0.487228306300469,
+						"time": 1.0
+					},
+					{
+						"actual": 0.529576539993286,
+						"direction": 0,
+						"height": 0.0908632278442383,
+						"hold": 0.53150737285614,
+						"reference_actual": 0.0,
+						"rest": 0.484160861423611,
+						"time": 1.5
+					},
+					{
+						"actual": 0.547355830669403,
+						"direction": 0,
+						"height": 0.0503137111663818,
+						"hold": 0.53150737285614,
+						"reference_actual": 0.0,
+						"rest": 0.492113279971009,
+						"time": 2.0
+					},
+					{
+						"actual": 0.54222571849823,
+						"direction": 0,
+						"height": 0.0605299472808838,
+						"hold": 0.53150737285614,
+						"reference_actual": 0.0,
+						"rest": 0.48769118329588,
+						"time": 2.5
+					}
+				]
+			},
+			{
+				"final_rest": 0.372792945951022,
+				"initial_rest": 0.53150737285614,
+				"max_acceleration": 0.900000000000001,
+				"max_rate": 0.211195897769979,
+				"mode": "continuous_w",
+				"neutral_drift": 0.0,
+				"old_latch": false,
+				"peak_error": 0.0999865603846809,
+				"peak_force": 360.0,
+				"retained": true,
+				"reverse_rest": 0.0651642958616917,
+				"reverse_y": -0.084693431854248,
+				"rise": 0.183113098144531,
+				"samples": [
+					{
+						"actual": 0.574466466903687,
+						"direction": -1,
+						"height": 0.0,
+						"hold": 0.53150737285614,
+						"reference_actual": 0.574466466903687,
+						"rest": 0.53125737285614,
+						"time": 0.0
+					},
+					{
+						"actual": 0.518599927425385,
+						"direction": -1,
+						"height": 0.0669174194335938,
+						"hold": 0.475640833377838,
+						"reference_actual": 0.574466466903687,
+						"rest": 0.455054222003252,
+						"time": 0.5
+					},
+					{
+						"actual": 0.460558027029037,
+						"direction": -1,
+						"height": 0.213392496109009,
+						"hold": 0.417598932981491,
+						"reference_actual": 0.574466466903687,
+						"rest": 0.394111687567438,
+						"time": 1.0
+					},
+					{
+						"actual": 0.427292972803116,
+						"direction": -1,
+						"height": 0.33491039276123,
+						"hold": 0.384333878755569,
+						"reference_actual": 0.574466466903687,
+						"rest": 0.355092509521176,
+						"time": 1.5
+					},
+					{
+						"actual": 0.432567268610001,
+						"direction": -1,
+						"height": 0.314100503921509,
+						"hold": 0.382493048906326,
+						"reference_actual": 0.574466466903687,
+						"rest": 0.353592509521176,
+						"time": 2.0
+					},
+					{
+						"actual": 0.456181973218918,
+						"direction": -1,
+						"height": 0.229073286056519,
+						"hold": 0.382493048906326,
+						"reference_actual": 0.574466466903687,
+						"rest": 0.35699913087795,
+						"time": 2.5
+					}
+				]
+			}
+		]
+	}
+}

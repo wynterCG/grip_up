@@ -1,0 +1,33 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS explicit drag/swing profile shows the matching selection
+PASS actual held LMB attaches in experimental profile
+PASS profile 1 mandates hold-to-grip with explicit A/B choice
+PASS actual contact triggers a short generated feedback cue
+PASS toggle cannot silently replace experimental hold semantics
+PASS upward vertical drag contracts; horizontal aiming does not double the delta
+PASS stationary mouse holds the last target without queued tail
+PASS downward mouse movement extends the arm
+PASS RMB press starts a separate finite reach
+PASS starting RMB reach neither jumps nor applies drag twice
+PASS supporting arm responds to aiming motion before and during the other reach
+PASS the other hand reaches actual contact
+PASS one shared drag changes both attached targets by the same displacement
+PASS mouse-up immediately releases only its own hand
+PASS remaining arm keeps its target and responds after the other hand releases
+PASS released hand can immediately request a new finite catch with one press
+PASS rapid regrab reaches the actual surface without an extra release click
+PASS MMB orbit owns mouse movement without dropping the grip or changing length
+PASS MMB release discards camera movement without hidden contraction
+PASS fresh drag resumes immediately after camera ownership
+PASS W requests swing without shortening the arm target
+PASS held W keeps its captured world direction across camera rotation
+PASS a new W gesture captures the updated camera frame
+PASS S requests swing without extending the arm target
+PASS Space launch is opt-in in the new profile
+PASS UI motion cannot accumulate a delayed arm request
+PASS leaving and reentering the window rebases boundary motion
+PASS new deliberate movement resumes after boundary rebasing
+PASS focus loss releases grips and clears pending motion
+PASS reset preserves profile and clears old gesture/anchor references
+DRAG INPUT RESULTS: 30 checks, 0 failures
