@@ -6,6 +6,9 @@ Integrated Jolt, 120 Hz. Core and complete routes also tested at 60 Hz.
 
 This is a separate prototype. The Janga object grabber and its project are unchanged.
 
+Consolidated Portuguese implementation report before the v0.7 M7 reactive
+challenge: [system state, physics, controls, top-out, evidence and remaining work](docs/reports/SISTEMA_IMPLEMENTADO_PRE_M7_PT.md).
+
 ## PLAY / The first ascent
 
 Controls / **PLAY / The first ascent** opens a continuous greybox: climb the
