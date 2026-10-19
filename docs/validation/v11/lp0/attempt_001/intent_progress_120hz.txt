@@ -1,0 +1,20 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS finite actual contact acquired for 2 hands / moving false
+PASS continuousW oldLatchtrue preserves real support, force and goal derivative bounds
+PASS oldLatchtrue no-input/camera-only state cannot ratchet achieved posture
+PASS oldLatchtrue explicitS can reverse active contraction into extension
+PROGRESS_MEASURE {"final_rest":0.483238517348542,"initial_rest":0.53150737285614,"max_acceleration":0.900000000000001,"max_rate":0.0962342762706125,"mode":"continuous_w","neutral_drift":0.0,"old_latch":true,"peak_error":0.0566065733605199,"peak_force":299.477081298828,"retained":true,"reverse_rest":0.0884926271438599,"reverse_y":-0.0963413715362549,"rise":0.060821533203125,"samples":[{"actual":0.569463014602661,"direction":0,"height":0.0,"hold":0.53150737285614,"reference_actual":0.0,"rest":0.53150737285614,"time":0.0},{"actual":0.553121984004974,"direction":0,"height":0.0232596397399902,"hold":0.53150737285614,"reference_actual":0.0,"rest":0.502913184392335,"time":0.5},{"actual":0.514066457748413,"direction":0,"height":0.10797905921936,"hold":0.53150737285614,"reference_actual":0.0,"rest":0.484740012112295,"time":1.0},{"actual":0.534640729427338,"direction":0,"height":0.060096263885498,"hold":0.53150737285614,"reference_actual":0.0,"rest":0.483221412091625,"time":1.5},{"actual":0.532824099063873,"direction":0,"height":0.0630793571472168,"hold":0.53150737285614,"reference_actual":0.0,"rest":0.483242148880481,"time":2.0},{"actual":0.521620154380798,"direction":0,"height":0.0899965763092041,"hold":0.53150737285614,"reference_actual":0.0,"rest":0.484169787606209,"time":2.5}]}
+PASS finite actual contact acquired for 2 hands / moving false
+PASS continuousW oldLatchfalse preserves real support, force and goal derivative bounds
+PASS oldLatchfalse no-input/camera-only state cannot ratchet achieved posture
+PASS oldLatchfalse explicitS can reverse active contraction into extension
+PROGRESS_MEASURE {"final_rest":0.383299167653276,"initial_rest":0.53150737285614,"max_acceleration":0.900000000000001,"max_rate":0.216642267253924,"mode":"continuous_w","neutral_drift":0.0,"old_latch":false,"peak_error":0.0964944626747586,"peak_force":360.0,"retained":true,"reverse_rest":0.0507027620333126,"reverse_y":-0.038999080657959,"rise":0.156878709793091,"samples":[{"actual":0.569463014602661,"direction":0,"height":0.0,"hold":0.53150737285614,"reference_actual":0.0,"rest":0.53150737285614,"time":0.0},{"actual":0.513398408889771,"direction":-1,"height":0.0695829391479492,"hold":0.47482305765152,"reference_actual":0.570082724094391,"rest":0.456848052705153,"time":0.5},{"actual":0.451847493648529,"direction":-1,"height":0.233232975006104,"hold":0.413272142410278,"reference_actual":0.570082724094391,"rest":0.391929914003233,"time":1.0},{"actual":0.421113252639771,"direction":-1,"height":0.350835561752319,"hold":0.38253790140152,"reference_actual":0.570082724094391,"rest":0.357047675860329,"time":1.5},{"actual":0.431459248065948,"direction":-1,"height":0.309270858764648,"hold":0.381827920675278,"reference_actual":0.570082724094391,"rest":0.357047675860329,"time":2.0},{"actual":0.461591243743896,"direction":-1,"height":0.202438116073608,"hold":0.381827920675278,"reference_actual":0.570082724094391,"rest":0.365921583895947,"time":2.5}]}
+PASS loaded fixture genuinely exceeds the historical fixed25mm capture tolerance
+PASS capturing actual progress permits useful continuousW beyond one virtual55mm request
+PASS activeS physically lowers an already contracted body instead of merely changing targets
+PASS finite actual contact acquired for 2 hands / moving false
+PASS six seconds blocked cannot integrate tiny oscillations into a fully-contracted future posture
+PASS removing obstruction after inputrelease cannot reveal hidden target displacement
+PROGRESS_BLOCKED {"body_displacement":0.0208593588322401,"hold":0.511974453926086,"peak_speed_after_open":0.0730454176664352,"released_rest":0.511943203926086,"rest":0.462908108456981}
+INTENT PROGRESS RESULTS: 14 checks, 0 failures

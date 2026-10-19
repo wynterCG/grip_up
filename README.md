@@ -9,6 +9,15 @@ This is a separate prototype. The Janga object grabber and its project are uncha
 Consolidated Portuguese implementation report before the v0.7 M7 reactive
 challenge: [system state, physics, controls, top-out, evidence and remaining work](docs/reports/SISTEMA_IMPLEMENTADO_PRE_M7_PT.md).
 
+## v1.1 pre-M7 baseline preparation
+
+The locomotion-refinement experiment starts from the preserved
+`baseline/pre-v1.1-locomotion` tag. LP0 targeted baseline regression passes
+782 checks / 28 runs at 60 and 120 Hz. Gameplay is unchanged; a genuine designer
+baseline is still required before new movement variants. See the
+[v1.1 milestone status](docs/validation/v11/status.md) and
+[short baseline session](docs/validation/v11/LP0_PLAYTEST_PT.md).
+
 ## PLAY / The first ascent
 
 Controls / **PLAY / The first ascent** opens a continuous greybox: climb the

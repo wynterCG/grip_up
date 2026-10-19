@@ -1,0 +1,32 @@
+{
+  "recorded_utc": "2026-10-19T23:40:31.905562+00:00",
+  "source_commit": "6646cdeda0a0104b723c483905a9a4fc36e00674",
+  "implementation_commit_reported_by_spec": "d4fcaec07e050593236fc5f81ff5ca51f3b0576f",
+  "rollback_tag": "baseline/pre-v1.1-locomotion",
+  "branch": "feature/v1.1-locomotion-refinement",
+  "spec_sha256": "d5d6cb2a7920c0127f2941c4740e9fc680dfc8858c375ff375ba2ff8ab55608f",
+  "source_manifest": "lp0/attempt_001/results.json#source_sha256",
+  "source_files_with_configs": 357,
+  "C_E_source_parity": true,
+  "source_unchanged": true,
+  "checks": 782,
+  "runs": 28,
+  "failures": 0,
+  "frequencies": [
+    120,
+    60
+  ],
+  "baseline_exe": "GripUp-v1.0-pre-v1.1.exe",
+  "baseline_exe_sha256": "79c592e0dcaffdfe185cd9c4115a74a7f0e98f21c8f3705e4869807b11aa8293",
+  "human_gate": "PENDING",
+  "human_ratings": null,
+  "human_observed_issues": [],
+  "prepared_session": "prepared_session.json",
+  "runtime_audit": "runtime_before_lp0.json",
+  "gameplay_changes": [],
+  "new_variants_implemented": [],
+  "LP0_complete": false,
+  "LP1_started": false,
+  "M7_started": false,
+  "decision": "Reference technically reproducible. Await genuine designer observations before rewriting, per supplied LP0 gate."
+}

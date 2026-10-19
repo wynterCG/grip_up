@@ -1,0 +1,40 @@
+{
+	"checks": 27,
+	"failures": 0,
+	"hz": 60,
+	"report": {
+		"runs": [
+			{
+				"contact_time": 0.283333333333333,
+				"mode": "full_extension_wall",
+				"original_distance": 0.694622337818146,
+				"peak_force": 52.2554588317871,
+				"reach": 0.65708,
+				"resolved_distance": 0.657080054283142,
+				"state": "ATTACHED"
+			},
+			{
+				"blocker": 0,
+				"mode": "plane_outside",
+				"reason": "clicked_surface_plane_outside_reach"
+			},
+			{
+				"blocker": 0,
+				"mode": "missing_surface",
+				"reason": "no_actual_surface_at_reachable_projection"
+			},
+			{
+				"blocker": 61236839915,
+				"mode": "other_collider",
+				"reason": "reachable_projection_obstructed"
+			},
+			{
+				"mode": "moving_material",
+				"momentum_residual": 0.000000238418579101563,
+				"original_local": "(0.0, 0.0, 0.05)",
+				"resolved_local": "(0.0, -0.038894, 0.05)",
+				"state": "ATTACHED"
+			}
+		]
+	}
+}
