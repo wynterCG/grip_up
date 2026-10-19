@@ -11,7 +11,8 @@
   "rig_joints": 65,
   "animation_count": 43,
   "collision_role": "visual only; no changes to climbing physics",
-  "status": "Godot import and 12 rig/animation checks passed; climbing IK integration pending",
+  "status": "Integrated render-only biped with arm/leg IK and Idle/Walk; one physical body, no ragdoll. See docs/reports/SISTEMA_IMPLEMENTADO_V06_PT.md.",
   "triangles": 13744,
-  "visual_validation": "Rendered and reviewed in Godot 4.7.2 via MCP Pro"
+  "visual_validation": "Rendered and reviewed in Godot 4.7.2 via MCP Pro",
+  "initial_acquisition_status": "Godot import and 12 rig/animation checks passed; climbing IK integration pending"
 }

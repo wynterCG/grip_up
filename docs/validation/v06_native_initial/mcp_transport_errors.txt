@@ -1,0 +1,16 @@
+{
+  "count": 10,
+  "errors": [
+    "DEBUGGER: 0:05:41:012 mcp_game_inspector_service.gd:112 @ _handle_request(): Parse JSON failed. Error at line 0: Invalid escape sequence",
+    "DEBUGGER:   <C++ Error> Condition \"error != Error::OK\" is true. Returning: Variant()",
+    "DEBUGGER:   <C++ Source> core/io/json.cpp:629 @ parse_string()",
+    "DEBUGGER:   <Stack Trace> mcp_game_inspector_service.gd:112 @ _handle_request()",
+    "DEBUGGER:   mcp_game_inspector_service.gd:88 @ _process()",
+    "DEBUGGER: 0:05:57:122 mcp_game_inspector_service.gd:112 @ _handle_request(): Parse JSON failed. Error at line 0: Invalid escape sequence",
+    "DEBUGGER:   <C++ Error> Condition \"error != Error::OK\" is true. Returning: Variant()",
+    "DEBUGGER:   <C++ Source> core/io/json.cpp:629 @ parse_string()",
+    "DEBUGGER:   <Stack Trace> mcp_game_inspector_service.gd:112 @ _handle_request()",
+    "DEBUGGER:   mcp_game_inspector_service.gd:88 @ _process()"
+  ]
+}
+Waiting for Godot on port 6510... connected!

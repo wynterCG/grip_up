@@ -12,19 +12,21 @@ names = ['physics','platform_probe','wall_clearance','biped_profile','playthroug
          'climb_direction','leg_motion','pendulum','free_climb','launch','full_reach','biped_asset']
 label = sys.argv[1] if len(sys.argv)>1 else 'regressions'
 selected = sys.argv[2:]
-if label in ['m1','m2','v03','contextual','v04','v05']:
+if label in ['m1','m2','v03','contextual','v04','v05','v06']:
     names += ['m0_instrumentation','capture_input','capture_matrix']
-if label in ['m2','v03','contextual','v04','v05']:
+if label in ['m2','v03','contextual','v04','v05','v06']:
     names += ['foot_support','foot_integration','feet_routes','feet_swing']
-if label in ['v03','contextual','v04','v05']:
+if label in ['v03','contextual','v04','v05','v06']:
     names += ['drag_input','drag_swing_physics']
-if label in ['contextual','v04','v05']:
+if label in ['contextual','v04','v05','v06']:
     names += ['contextual_input','contextual_physics']
-if label in ['v04','v05']:
+if label in ['v04','v05','v06']:
     names += ['independent_input','independent_physics','independent_routes']
-if label == 'v05':
+if label in ['v05','v06']:
     names += ['transfer_diagnostics','transfer_routes','transfer_routes_p1','transfer_routes_p2',
               'posture_study','swing_diagnostics','transfer_swing','reach_assessment','transfer_capture']
+if label == 'v06':
+    names += ['distant_baseline','pending_grip','pending_motion','pending_contact','distant_input','distant_routes','distant_swing']
 assert all(name in names for name in selected)
 dest = root/'docs'/'validation'/label
 dest.mkdir(parents=True,exist_ok=True)
@@ -32,9 +34,11 @@ dest.mkdir(parents=True,exist_ok=True)
 def run(item):
     name, slow = item
     aliases = {'feet_routes':'playthrough','feet_swing':'swing_playthrough',
-               'transfer_routes_p1':'transfer_routes','transfer_routes_p2':'transfer_routes'}
+               'transfer_routes_p1':'transfer_routes','transfer_routes_p2':'transfer_routes',
+               'distant_routes':'transfer_routes','distant_swing':'transfer_swing'}
     command = ['python',str(root/'tools'/'project.py'),'test','test_'+aliases.get(name,name)]
     flags = ['--feet'] if name in ['feet_routes','feet_swing'] else []
+    if name in ['distant_routes','distant_swing']:flags += ['--distant']
     if name.startswith('transfer_routes_p'):flags += ['--'+name.rsplit('_',1)[1]]
     if slow:
         flags += ['--60hz']

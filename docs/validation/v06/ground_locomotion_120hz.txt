@@ -1,0 +1,31 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS standing free biped detects its actual supporting floor
+PASS W action drives camera-forward displacement through rigid-body forces
+PASS ground target speed is finite and walking feedback activates
+PASS releasing WASD brakes naturally without assigning velocity
+PASS five-second grounded idle stays upright and does not drift
+PASS rotating camera ninety degrees rotates W movement direction
+PASS W+D uses normalized camera-relative diagonal
+PASS diagonal input cannot multiply maximum walk speed
+PASS A lateral input walks and turns without toppling
+PASS S backward input walks and turns without toppling
+PASS ground movement accelerates to useful speed within 250 ms
+GROUND RESPONSE heading_error=0.01792222447693 speed=2.48396420478821
+PASS 180-degree ground turn settles within 650 ms instead of sliding sideways
+PASS releasing movement brakes within 300 ms and 35 cm
+PASS five-centimetre foot gap is airborne, even when a ray sees the floor
+PASS airborne WASD matches uncontrolled freefall with no drive or attitude torque
+PASS real grounded hand request starts finite reach
+PASS priority fixture exercises real reach, attachment and deterministic slipping
+PASS REACHING ATTACHED and SLIPPING suppress every ground force and torque
+GROUND DYNAMIC momentum=0.00000002980232 angular=0.09218789637089 player_v=(2.106513, 0.007211, -0.000071) support_v=(-0.315977, -0.001082, 0.000011)
+PASS walking applies a real opposite reaction to movable ground
+PASS paired ground force and wrench conserve linear and angular momentum
+PASS idle braking uses moving support velocity instead of braking against world space
+PASS actual app reset destroys old ground motor and rigid body
+PASS reset clears walking input and leaves new grounded body idle
+PASS every measured walk force and attitude torque stays within finite profile budgets
+GROUND LOCOMOTION RESULTS: 24 checks, 0 failures
+WARNING: Jolt Physics job system exceeded the maximum number of jobs. This should not happen. Please report this. Waiting for jobs to become available...
+   at: CreateJob (modules/jolt_physics/spaces/jolt_job_system.cpp:123)

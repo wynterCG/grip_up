@@ -1,0 +1,28 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS advisory false cannot enable physical prediction/buffering
+PASS valid current request starts finite reach without pose jump
+PASS finite contact retains and respects shared physical budgets
+PASS advisory true cannot enable physical prediction/buffering
+PASS valid current request starts finite reach without pose jump
+PASS finite contact retains and respects shared physical budgets
+PASS advisory OFF/ON produces exactly identical contact and physical trajectory
+PASS early press with buffer OFF is rejected, never sticky
+PASS advisory never automatically retries an early rejected input
+PASS buffer ON accepts held near-future material point without requiring advisory
+PASS 120ms pending input preserves body pose and momentum
+PASS pointer and hover update cannot rewrite intentional press assessment
+PASS held buffered target still requires and completes real finite contact
+PASS buffer retains original selected material-local point
+PASS pending intent cancels on release
+PASS cancelled intent cannot later attach: release
+PASS pending intent cancels on ui
+PASS cancelled intent cannot later attach: ui
+PASS pending intent cancels on focus
+PASS cancelled intent cannot later attach: focus
+PASS pending intent cancels on disabled
+PASS cancelled intent cannot later attach: disabled
+PASS legacy toggle OFF cannot override explicitly enabled v0.5 buffer
+PASS v0.5 buffer remains scoped to independent aim
+PASS returning to independent aim restores explicit buffer flag
+TRANSFER CAPTURE RESULTS: 25 checks, 0 failures

@@ -1,10 +1,28 @@
-# GRIP UP / physics climbing lab 0.5
+# GRIP UP / physics climbing lab 0.6
 
-Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v0.5.exe`.
+Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v0.6.exe`.
 PC mouse and keyboard. Resizable 1920x1080 reference canvas; initial window 1440x810.
 Integrated Jolt, 120 Hz. Core and complete routes also tested at 60 Hz.
 
 This is a separate prototype. The Janga object grabber and its project are unchanged.
+
+## v0.6 early target selection (opt-in)
+
+In Controls, open **v0.6 / Early targets: swing** or **moving beam**.
+Hold LMB/RMB on a visible grabbable destination, even outside anatomical reach.
+The selected material point persists while held; walk or swing into real contact.
+Pending hands exert no force. Pointer movement never retargets a held selection;
+mouse-up cancels/releases, including over UI. Force, torque and reach limits are unchanged.
+
+The checkbox is OFF by default and applies only to independent-aim profile3.
+Startup profile2 and earlier comparison modes remain available. The full matrix
+passes **3116 automated checks**, plus **46 scripted native checks** at60/120Hz.
+These are technical results; the v0.6 comparative human pilot remains pending.
+
+See the [complete Portuguese system report](docs/reports/SISTEMA_IMPLEMENTADO_V06_PT.md),
+[physics supplement](docs/reports/FISICA_IMPLEMENTADA_V06_PT.md),
+[v0.6 evidence and decision](docs/validation/V06.md) and
+[human comparison protocol](docs/playtests/V06_PILOT.md).
 
 ## v0.5 transfer, posture and reach study
 
