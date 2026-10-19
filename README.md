@@ -29,7 +29,7 @@ folding and blocked unfolding with gravity and controller forces disabled.
 See the [v0.8 milestone ledger](docs/validation/v08/status.md) and
 [implementation, evidence and missing capability](docs/validation/v08/report.md).
 Automated safety passes are distinct from the deliberately failed full mantle
-gate and from a human playtest. Test/editor windows use monitor 2 locally.
+gate and from a human playtest. Test/editor windows use monitor 1 locally.
 
 ## v0.7.4 ledge capability experiment — M6 gate not met
 

@@ -54,7 +54,7 @@ elif args.task == 'sync':
 elif args.task == 'editor':
     log = ROOT/'builds'/'editor.log'
     handle = log.open('wb')
-    process = subprocess.Popen([str(ENGINE),'--editor','--path',str(DEST),'--screen','1','--rendering-method','gl_compatibility'],stdout=handle,stderr=handle,startupinfo=startup)
+    process = subprocess.Popen([str(ENGINE),'--editor','--path',str(DEST),'--screen','0','--rendering-method','gl_compatibility'],stdout=handle,stderr=handle,startupinfo=startup)
     print('Editor PID',process.pid,'project',DEST)
 elif args.task == 'mcp':
     request = json.loads(Path(args.extra[0]).read_text(encoding='utf-8-sig'))
@@ -75,7 +75,7 @@ else:
         command=[str(ENGINE),'--headless','--path',str(DEST if args.task=='test-saved' else ROOT),'--script',f'res://features/grip_up/tests/{script}.gd','--fixed-fps','120','--quit-after','20000']
         if len(args.extra)>1: command += ['--'] + args.extra[1:]
     elif args.task == 'smoke':
-        command=[str(ROOT/'builds'/BUILD_NAME),'--screen','1','--write-movie',str(ROOT/'builds'/'export.png'),'--fixed-fps','60','--quit-after','3']
+        command=[str(ROOT/'builds'/BUILD_NAME),'--screen','0','--write-movie',str(ROOT/'builds'/'export.png'),'--fixed-fps','60','--quit-after','3']
     else:
         command=[str(ENGINE),'--headless','--path',str(ROOT),'--export-debug','Windows PC',str(ROOT/'builds'/BUILD_NAME)]
     result=subprocess.run(command,capture_output=True,startupinfo=startup,timeout=180)

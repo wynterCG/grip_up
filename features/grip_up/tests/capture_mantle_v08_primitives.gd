@@ -3,6 +3,8 @@ extends Node
 var hz:=120
 var report:={"checks":[],"complete":false,"provenance":"Godot MCP Pro rendered isolated primitives; not human mantle evidence","palm":[],"leg":{}}
 var fixture:Node3D
+signal watch_stage(label:String)
+var watch_seconds:=0.0
 
 func _ready()->void:
 	hz=Engine.physics_ticks_per_second
@@ -26,8 +28,13 @@ func replace_scene(path:String,definition:Dictionary={})->void:
 	await ticks(.1)
 
 func shot(label:String)->void:
+	watch_stage.emit(label)
 	await RenderingServer.frame_post_draw
 	get_viewport().get_texture().get_image().save_png("C:/Users/Wynter/grip_up/builds/v08_%dhz_%s.png"%[hz,label])
+	if watch_seconds>0:
+		get_tree().paused=true
+		await get_tree().create_timer(watch_seconds,true,false,true).timeout
+		get_tree().paused=false
 
 func render_palm()->void:
 	for physical in [fixture.body,fixture.support]:

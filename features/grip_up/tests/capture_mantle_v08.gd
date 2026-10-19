@@ -3,6 +3,8 @@ extends "res://features/grip_up/tests/capture_intent_candidate.gd"
 var active_row:Dictionary={}
 var elapsed:=0.0
 var sample_next:=0.0
+signal watch_stage(label:String)
+var watch_seconds:=0.0
 
 func observe(delta:float)->void:
 	if active_row.is_empty():return
@@ -16,12 +18,17 @@ func observe(delta:float)->void:
 		active_row.samples.append({"time":elapsed,"position":app.torso.position,"velocity":app.torso.linear_velocity,"hands":app.controller.hands.map(func(hand):return {"state":hand.state,"reason":hand.reason,"mode":hand.get("contact_mode",""),"force":hand.force,"palm":hand.get("palm",{})}),"support":app.mantle_v08.data.duplicate(true),"visual_foot_error":app.biped.physical_foot_mismatch})
 
 func image_evidence(label:String)->void:
+	watch_stage.emit(label)
 	await RenderingServer.frame_post_draw
 	get_viewport().get_texture().get_image().save_png("C:/Users/Wynter/grip_up/builds/v08_%dhz_%s.png"%[hz,label])
+	if watch_seconds>0:
+		get_tree().paused=true
+		await get_tree().create_timer(watch_seconds,true,false,true).timeout
+		get_tree().paused=false
 
 func run()->void:
 	report.physics_hz=hz
-	report.provenance="Godot MCP Pro in-app held mouse/actions on monitor2; configured hanging fixture; not human ordinary approach"
+	report.provenance="Godot MCP Pro in-app held mouse/actions; configured hanging fixture; not human ordinary approach"
 	report.window_screen=get_window().current_screen
 	report.trials=[]
 	for index in [12,13]:
