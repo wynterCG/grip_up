@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 
 root = Path(__file__).resolve().parents[1]
 builds = root/'builds'
-validation = root/'docs'/'validation'/'v03'
+validation = root/'docs'/'validation'/'contextual'
 aggregate = json.loads((validation/'results.json').read_text())
 suites = {}
 for item in aggregate['suites']:
@@ -24,23 +24,23 @@ assert aggregate['all_passed'] and aggregate['total_checks']==sum(sum(rates.valu
 smoke = (builds/'smoke_export.log').read_text(encoding='utf-8')
 assert '3 frames at 60 FPS' in smoke and 'SCRIPT ERROR:' not in smoke
 report = {
-    'revision':'v0.3: hold-to-grip, mouse arm drag and supported 3D swing',
+    'revision':'Contextual Arm Control: anatomical virtual hands and transient supported effort',
     'recorded_utc':datetime.now(timezone.utc).isoformat(),
     'engine':'4.7.2.stable.ed1daf0bf','backend':'Jolt Physics','default_hz':120,
     'suites':suites,'total_checks':sum(sum(rates.values()) for rates in suites.values()),'failures':0,
     'legacy':{'unchanged_grabber_sha256':legacy_hash,'previous_smoke_checks':72},
     'baseline_ref':'v0.1-baseline',
-    'previous_milestone_ref':'v0.2-M2',
-    'default_input_profile':1,
-    'default_profile_reason':'User requested the new arm controls active at startup; feel comparison remains pending',
+    'previous_milestone_ref':'b6bc249',
+    'default_input_profile':2,
+    'default_profile_reason':'User requested contextual relative hand aim and supported effort instead of pixel-driven arm lengths',
     'experimental_space_launch':False,
-    'arm_drag_mapping':'mouse up contracts / mouse down extends (user override)',
+    'mouse_mapping':'Relative anatomical free-hand aim; downward effort contracts, upward effort extends; hold only achieved posture',
     'default_flags':dict.fromkeys(['predictive_grip','physical_feet','posture_solver','directional_grip_quality','reactive_challenge'],False),
-    'exe_name':'GripUp-v0.3.exe',
-    'exe_sha256':hashlib.sha256((builds/'GripUp-v0.3.exe').read_bytes()).hexdigest(),
+    'exe_name':'GripUp-contextual.exe',
+    'exe_sha256':hashlib.sha256((builds/'GripUp-contextual.exe').read_bytes()).hexdigest(),
     'mcp_project':'E:/Godot Games/grip_up/',
     'rendered_controls':{str(hz):json.loads((validation/f'rendered_{hz}hz.json').read_text()) for hz in [120,60]},
-    'export_smoke_frames':3,'human_playtest':'v0.3 M4: 10-15 minute coordination, fatigue and enjoyment comparison pending',
+    'export_smoke_frames':3,'human_playtest':'Contextual coordination, fatigue, precision and enjoyment comparison pending',
     'future_milestones':['v0.2 M3 support-aware posture','v0.2 M4 directional grips','v0.2 M5 reactive challenge','v0.2 M6 mantle']
 }
 assert all(item['passed'] for run in report['rendered_controls'].values() for item in run['checks'])

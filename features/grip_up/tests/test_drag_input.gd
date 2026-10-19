@@ -45,9 +45,10 @@ func camera_button(pressed: bool) -> void:
 
 func setup() -> void:
 	app=Lab.new()
+	app.input_profile=1 # Preserve the explicit earlier drag-profile comparison.
 	root.add_child(app)
 	current_scene=app
-	check(app.input_profile==1 and app.controller.control_profile==1 and app.profile_choice.selected==1,"app starts in drag/swing profile and shows the matching selection")
+	check(app.input_profile==1 and app.controller.control_profile==1 and app.profile_choice.selected==1,"explicit drag/swing profile shows the matching selection")
 	app.load_test(3)
 	await ticks(int(.4*hz))
 	app.pointer=app.camera.unproject_position(app.level.holds[0].global_position)

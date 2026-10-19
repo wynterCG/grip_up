@@ -1,0 +1,22 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS two fixed physical hand targets are selectable, feet=false
+PASS both real hands remain independent, feet=false
+FOOT INTEGRATION SAMPLE {"climb_height":0.185518383979797,"enabled":false,"hand_load":137.799335797628,"hands_retained":true,"height":1.35219502449036,"leg_load":0.0,"leg_positive_work":0.0,"planted_samples":0,"settle_drift":-0.000559806823730469,"upward":0.000292062759399414}
+PASS two fixed physical hand targets are selectable, feet=true
+PASS both real hands remain independent, feet=true
+FOOT INTEGRATION SAMPLE {"climb_height":0.280994892120361,"enabled":true,"hand_load":43.3948977202177,"hands_retained":true,"height":1.44766902923584,"leg_load":84.1094652811686,"leg_positive_work":20.9504049244026,"planted_samples":120,"settle_drift":-0.000556707382202148,"upward":0.000940203666687012}
+PASS releasing hands preserves a physically valid independent foot stance
+PASS real footholds establish loaded physical foot support
+PASS planted feet measurably reduce hand demand on identical fixed geometry
+PASS W lets real planted feet contribute positive work to upward movement
+PASS physical foot presentation preserves measured leg lengths
+PASS combined arm/leg allocator respects 360 N hands, 180 N feet and 150 Nm total
+PASS two fixed physical hand targets are selectable, feet=true
+PASS both real hands remain independent, feet=true
+PASS original arm launch still starts with automatic feet enabled
+PASS launch preparation disengages legs without adding a launch impulse
+PASS turning feet off preserves attached hands and removes foot forces
+PASS reset preserves the experiment choice and clears both old foot contacts
+PASS free-hand ground walking does not receive a second leg motor
+FOOT INTEGRATION RESULTS: 17 checks, 0 failures

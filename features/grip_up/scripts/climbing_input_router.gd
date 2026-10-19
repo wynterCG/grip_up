@@ -3,7 +3,8 @@ extends RefCounted
 const DEFAULTS := {"grip_left": MOUSE_BUTTON_LEFT, "grip_right": MOUSE_BUTTON_RIGHT,
 	"contract": KEY_W, "extend": KEY_S, "bias_left": KEY_A, "bias_right": KEY_D,
 	"launch": KEY_SPACE,
-	"restart": KEY_R, "debug_overlay": KEY_TAB, "fixed_beam": KEY_F}
+	"restart": KEY_R, "debug_overlay": KEY_TAB, "fixed_beam": KEY_F,
+	"controls_menu": KEY_ESCAPE}
 
 var owner := "GAME"
 var pending_y: Array[float] = [0.0,0.0]

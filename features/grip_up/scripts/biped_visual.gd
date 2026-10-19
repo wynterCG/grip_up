@@ -17,6 +17,7 @@ var leg_motion = LegMotion.new()
 var foot_clearance: Array[float] = []
 var toe_offsets: Array[Vector2] = []
 var ik: TwoBoneIK3D
+var free_aim_ik: TwoBoneIK3D
 var hand_pose: SkeletonModifier3D
 var animation: AnimationPlayer
 var animation_clip := "A_TPose"
@@ -73,6 +74,20 @@ func configure(body: RigidBody3D, physical_controller: Node) -> void:
 		ik.set_target_node(i, ik.get_path_to(targets[i]))
 		ik.set_pole_node(i, ik.get_path_to(poles[i]))
 		ik.set_extend_end_bone(i, false)
+	# Ground locomotion keeps its authored legs while contextual hands can aim.
+	free_aim_ik = TwoBoneIK3D.new()
+	free_aim_ik.name = "ContextualGroundArms"
+	free_aim_ik.influence = 0.0
+	skeleton.add_child(free_aim_ik)
+	free_aim_ik.setting_count = 2
+	for i in 2:
+		var side := "l" if i==0 else "r"
+		free_aim_ik.set_root_bone_name(i,"upperarm_"+side)
+		free_aim_ik.set_middle_bone_name(i,"lowerarm_"+side)
+		free_aim_ik.set_end_bone_name(i,"hand_"+side)
+		free_aim_ik.set_target_node(i,free_aim_ik.get_path_to(targets[i]))
+		free_aim_ik.set_pole_node(i,free_aim_ik.get_path_to(poles[i]))
+		free_aim_ik.set_extend_end_bone(i,false)
 	var Pose = load("res://features/grip_up/scripts/biped_hand_pose.gd")
 	hand_pose = Pose.new()
 	hand_pose.name = "PalmAlignment"
@@ -98,7 +113,9 @@ func _update_ground_animation(delta: float) -> void:
 	ik.influence = lerpf(ik.influence,weight,1.0-exp(-24.0*delta))
 	if absf(ik.influence-weight)<0.001:
 		ik.influence = weight
-	hand_pose.influence = ik.influence
+	var aim_weight := 1.0 if on_ground and controller.control_profile==2 else 0.0
+	free_aim_ik.influence=lerpf(free_aim_ik.influence,aim_weight,1.0-exp(-24.0*delta))
+	hand_pose.influence = maxf(ik.influence,free_aim_ik.influence)
 
 func _physics_process(delta: float) -> void:
 	if not is_instance_valid(torso):

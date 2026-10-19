@@ -38,6 +38,13 @@ var _swing_reference_right := Vector3.RIGHT
 var _experimental_heading_active := false
 var _supported_swing = SupportedSwing.new()
 var _swing_torque := Vector3.ZERO
+var _contextual_requested := Vector2.ZERO
+var _contextual_filtered := Vector2.ZERO
+var _contextual_actuation := Vector2.ZERO
+var _contextual_right := Vector3.RIGHT
+var _contextual_world_filtered := Vector3.ZERO
+var _contextual_holds: Dictionary = {}
+var _free_hand_targets: Dictionary = {}
 
 func configure(body: RigidBody3D, configuration: Resource = null) -> void:
 	torso = body
@@ -46,6 +53,7 @@ func configure(body: RigidBody3D, configuration: Resource = null) -> void:
 	reset_state()
 
 func reset_state() -> void:
+	_clear_contextual_state()
 	_arm_deltas.clear()
 	_swing_requested = Vector3.ZERO
 	_supported_swing.reset()
@@ -83,7 +91,7 @@ func configure_feet(hips: Array[Vector3], rest_feet: Array[Vector3], lengths: Ar
 	feet_solver.configure(torso,FootProfile.new(),hips,rest_feet,lengths,clearances)
 
 func set_climb_intent(contract: float, extend: float, bias: float, view_right: Vector3 = Vector3.RIGHT) -> void:
-	if control_profile == 1:
+	if control_profile in [1,2]:
 		_intent_target = Vector3.ZERO
 		_contract = 0.0
 		_extend = 0.0
@@ -100,10 +108,11 @@ func set_climb_intent(contract: float, extend: float, bias: float, view_right: V
 			_view_right = horizontal.normalized()
 
 func set_control_profile(profile: int) -> void:
-	var next := clampi(profile,0,1)
+	var next := clampi(profile,0,2)
 	if next == control_profile:
 		return
 	control_profile = next
+	_clear_contextual_state()
 	_arm_deltas.clear()
 	_swing_requested = Vector3.ZERO
 	_supported_swing.reset()
@@ -130,6 +139,70 @@ func clear_drag_requests(id: int = -1) -> void:
 	else:
 		_arm_deltas.erase(id)
 
+func _clear_contextual_state() -> void:
+	_contextual_requested = Vector2.ZERO
+	_contextual_filtered = Vector2.ZERO
+	_contextual_actuation = Vector2.ZERO
+	_contextual_world_filtered = Vector3.ZERO
+	_contextual_holds.clear()
+	_free_hand_targets.clear()
+
+func set_contextual_effort(effort: Vector2, reference_right: Vector3 = Vector3.RIGHT) -> void:
+	_contextual_requested = effort.limit_length(1.0) if effort.is_finite() else Vector2.ZERO
+	if reference_right.is_finite():
+		var right := reference_right.slide(Vector3.UP)
+		if right.length_squared()>0.0001:
+			_contextual_right = right.normalized()
+
+func set_free_hand_target(id: int, world_point: Vector3) -> bool:
+	if control_profile != 2 or id < 0 or id >= hands.size() or hands[id]["state"] not in ["FREE","RELEASED"] or not world_point.is_finite():
+		return false
+	_free_hand_targets[id] = world_point
+	return true
+
+func clear_free_hand_targets(id: int = -1) -> void:
+	if id < 0:
+		_free_hand_targets.clear()
+	else:
+		_free_hand_targets.erase(id)
+
+func _apply_contextual_arm(id: int, delta: float) -> void:
+	var hand: Dictionary = hands[id]
+	if not _contextual_holds.has(id) or _contextual_holds[id].anchor != hand["anchor"]:
+		_contextual_holds[id] = {"anchor":hand["anchor"],"length":hand["rest_length"],"direction":0}
+	var hold: Dictionary = _contextual_holds[id]
+	# Capture only geometry already reached, allowing the existing elastic
+	# deformation under load. An obstructed torso cannot wind the target down
+	# indefinitely. Pointer displacement is never integrated into this length.
+	var tolerance: float = minf(maxf(0.0,tuning.contextual_hold_tolerance),tuning.max_elastic_extension)
+	var effort := _contextual_filtered.y
+	if absf(effort)>0.001:
+		hold.direction = 1 if effort>0.0 else -1
+	if hold.direction>0 and hand["actual_length"] <= hand["rest_length"]+tolerance:
+		hold.length = minf(hold.length,hand["rest_length"])
+	elif hold.direction<0:
+		# A longer requested rope is not an achieved lowering. Capture only
+		# the actual extension, excluding loaded elastic stretch; a floor or
+		# obstacle therefore cannot wind up a future drop.
+		hold.length = maxf(hold.length,minf(hand["rest_length"],hand["actual_length"]-tolerance))
+	var target: float = hold.length
+	if effort>0.001:
+		target = minf(hold.length,hand["actual_length"]-effort*tuning.contextual_pull_offset)
+	elif effort< -0.001:
+		target = maxf(hold.length,hand["actual_length"]-effort*tuning.contextual_pull_offset)
+	target = clampf(target,tuning.min_arm_length,tuning.max_arm_length)
+	var previous: float = hand["rest_length"]
+	var rate: float = tuning.arm_target_max_rate_m_s
+	if target>previous:
+		rate = minf(rate,tuning.contextual_extension_max_rate_m_s)
+		if effort< -0.001:
+			# Gravity already supplies the lowering work. Fade the allowed
+			# extension rate with transient effort, so a tiny filter tail cannot
+			# keep following the loaded arm at full lowering speed.
+			rate *= absf(effort)
+	hand["rest_length"] = move_toward(previous,target,maxf(0.0,rate)*delta)
+	_contextual_actuation[id] = (hand["rest_length"]-previous)/delta
+
 func set_swing_intent(world_dir: Vector3, reference_right: Vector3 = Vector3.RIGHT) -> void:
 	_swing_requested = world_dir.slide(Vector3.UP).limit_length(1.0) if world_dir.is_finite() else Vector3.ZERO
 	if reference_right.is_finite():
@@ -144,7 +217,7 @@ func get_shoulder_world(id: int) -> Vector3:
 	return (torso.global_transform if torso.is_inside_tree() else torso.transform) * local
 
 func request_launch_charge(pressed: bool) -> bool:
-	if control_profile == 1 and not experimental_launch_enabled:
+	if control_profile in [1,2] and not experimental_launch_enabled:
 		return false
 	if pressed:
 		if _launch_state!="IDLE" or tuning.launch_contraction_speed<=0.0:
@@ -247,8 +320,28 @@ func _request_grip(id: int, support: PhysicsBody3D, world_point: Vector3, normal
 		return _reject("surface_obstructed")
 	var hand: Dictionary = hands[id]
 	var departure_normal: Vector3 = hand.get("release_normal",Vector3.ZERO)
+	_free_hand_targets.erase(id)
 	hand["departing_surface"] = departure_normal.length_squared()>0.5 and Vector3(hand["hand_world"]).distance_to(hand["anchor_world"])<0.015
 	hand["departure_world"] = hand["hand_world"]+departure_normal*tuning.hand_surface_approach_distance
+	hand["strict_departure_sweep"] = false
+	if control_profile == 2 and not hand["departing_surface"]:
+		var shoulder := get_shoulder_world(id)
+		var previous: Vector3 = hand["hand_world"]
+		var approach: Vector3 = world_point+normal.normalized()*tuning.hand_surface_approach_distance
+		approach = shoulder+(approach-shoulder).limit_length(get_max_reach())
+		var query := PhysicsRayQueryParameters3D.create(previous,approach)
+		query.exclude = [torso.get_rid()]
+		query.collision_mask = tuning.allowed_grip_surface_mask
+		query.hit_from_inside = true
+		var hit := torso.get_world_3d().direct_space_state.intersect_ray(query)
+		if not hit.is_empty() and previous.distance_to(world_point)>0.003:
+			# A FREE hand may be beside a rounded hold while the newly selected
+			# point is on its front. The diagonal to that front approach can cut
+			# through the flank. Fold back along the existing free arm first, then
+			# approach from the shoulder-visible side. Every actual leg is swept.
+			hand["departure_world"] = shoulder+(previous-shoulder).normalized()*minf(tuning.min_arm_length,previous.distance_to(shoulder)*0.5)
+			hand["departing_surface"] = true
+			hand["strict_departure_sweep"] = true
 	hand["anchor"] = Anchor.new(support, world_point, normal.normalized())
 	hand["support"] = support
 	hand["state"] = "REACHING"
@@ -273,6 +366,8 @@ func release_grip(id: int, reason: String = "manual") -> void:
 		return
 	var hand: Dictionary = hands[id]
 	_arm_deltas.erase(id)
+	_contextual_holds.erase(id)
+	_free_hand_targets.erase(id)
 	if hand.has("capture") and reason not in ["manual","launch"]:
 		hand["capture"]["failure_reason"] = reason
 		if tuning.predictive_grip and reason=="arm_extension_limit" and hand["capture"].get("load_risk",false):
@@ -314,6 +409,8 @@ func _update_hand(id: int, delta: float) -> void:
 	if hand["state"] == "FREE":
 		var rest_offset: Vector3 = tuning.free_hand_rest_left if id == 0 else tuning.free_hand_rest_right
 		var rest: Vector3 = shoulder + torso.global_basis * rest_offset
+		if control_profile == 2 and _free_hand_targets.has(id):
+			rest = shoulder+(Vector3(_free_hand_targets[id])-shoulder).limit_length(get_max_reach())
 		var space: PhysicsDirectSpaceState3D = torso.get_world_3d().direct_space_state
 		# A resting virtual hand must remain on the free side of walls/platforms.
 		# Otherwise a fallen/rotated torso parks it inside a solid and every later
@@ -324,6 +421,8 @@ func _update_hand(id: int, delta: float) -> void:
 		var rest_hit: Dictionary = space.intersect_ray(rest_query)
 		if not rest_hit.is_empty():
 			rest = rest_hit.position + rest_hit.normal * 0.025
+		if control_profile == 2:
+			rest = shoulder+(rest-shoulder).limit_length(get_max_reach())
 		var previous: Vector3 = hand["hand_world"]
 		var next: Vector3 = previous.move_toward(rest, tuning.hand_reach_speed * delta)
 		var sweep := PhysicsRayQueryParameters3D.create(previous, next)
@@ -335,6 +434,9 @@ func _update_hand(id: int, delta: float) -> void:
 		var hit: Dictionary = space.intersect_ray(sweep)
 		if not hit.is_empty():
 			next = hit.position + hit.normal * 0.025
+			if control_profile == 2:
+				# Contact clearance must not add a hidden jump to a finite gesture.
+				next = previous+(next-previous).limit_length(tuning.hand_reach_speed*delta)
 		hand["hand_world"] = next
 		return
 	var anchor = hand["anchor"]
@@ -383,7 +485,7 @@ func _update_hand(id: int, delta: float) -> void:
 		query.collision_mask = tuning.allowed_grip_surface_mask
 		# A just-released surface first gets a short outward-normal clearance
 		# leg, before traversing to the new approach point. No through-wall ray.
-		query.hit_from_inside = not hand.get("departing_surface",false)
+		query.hit_from_inside = not hand.get("departing_surface",false) or hand.get("strict_departure_sweep",false)
 		var hit: Dictionary = torso.get_world_3d().direct_space_state.intersect_ray(query)
 		if not hit.is_empty() and (hit.collider != anchor.support_body() or hit.position.distance_to(point) > 0.06):
 			if OS.get_cmdline_user_args().has("--debug-reach"):
@@ -399,7 +501,7 @@ func _update_hand(id: int, delta: float) -> void:
 			hand["departing_surface"] = false
 		elif hand.get("approaching_surface", false) and next.distance_to(destination) < 0.001:
 			hand["approaching_surface"] = false
-		elif not hand.get("approaching_surface", false) and next.distance_to(point) <= (0.000001 if tuning.predictive_grip or control_profile == 1 else tuning.attach_distance_tolerance):
+		elif not hand.get("approaching_surface", false) and next.distance_to(point) <= (0.000001 if tuning.predictive_grip or control_profile in [1,2] else tuning.attach_distance_tolerance):
 			if tuning.predictive_grip:
 				var capture: Dictionary = capture_evaluator.evaluate(self,id)
 				if not capture.accepted:
@@ -478,13 +580,25 @@ func _physics_process(delta: float) -> void:
 		_update_hand(id, delta)
 	_advance_launch(delta)
 	var attached: Array[int] = _attached_ids()
-	if control_profile == 1:
+	if control_profile in [1,2]:
 		if attached.is_empty():
 			_experimental_heading_active = false
 			_supported_swing.reset()
 		elif not _experimental_heading_active:
 			_view_right = _swing_reference_right
 			_experimental_heading_active = true
+	_contextual_actuation = Vector2.ZERO
+	if control_profile == 2:
+		if attached.is_empty():
+			_contextual_filtered = Vector2.ZERO
+			_contextual_world_filtered = Vector3.ZERO
+			_contextual_holds.clear()
+		else:
+			var response: float = 1.0-exp(-delta/maxf(0.001,tuning.contextual_response_time))
+			_contextual_filtered = _contextual_filtered.lerp(_contextual_requested,response)
+			# Filter lateral effort in world space: orbiting a camera while a
+			# released gesture decays must not rotate that residual effort.
+			_contextual_world_filtered = _contextual_world_filtered.lerp(_contextual_right*_contextual_requested.x,response)
 	var forces: Array[Vector3] = [Vector3.ZERO, Vector3.ZERO]
 	var raw_tensions: Array[float] = [0.0, 0.0]
 	var center: Vector3 = torso.global_transform * torso.center_of_mass
@@ -514,6 +628,8 @@ func _physics_process(delta: float) -> void:
 		if control_profile == 1 and _arm_deltas.has(id) and _arm_deltas[id].anchor == hand["anchor"]:
 			var change: float = clampf(_arm_deltas[id].metres,-maxf(0.0,tuning.arm_target_max_rate_m_s)*delta,maxf(0.0,tuning.arm_target_max_rate_m_s)*delta)
 			hand["rest_length"] = clampf(hand["rest_length"]+change,tuning.min_arm_length,tuning.max_arm_length)
+		if control_profile == 2 and _launch_state == "IDLE":
+			_apply_contextual_arm(id,delta)
 		hand["blend_elapsed"] += delta
 		var blend: float = smoothstep(0.0, maxf(0.001, tuning.grip_blend_duration), hand["blend_elapsed"])
 		var effort: float = hand["allocation"]
@@ -530,7 +646,7 @@ func _physics_process(delta: float) -> void:
 	var assist: Vector3 = _compute_attitude_assist(attached,forces,center,sum_force)
 	_swing_torque = Vector3.ZERO
 	var support_torque_weights: Dictionary = {}
-	if control_profile == 1 and not attached.is_empty():
+	if control_profile in [1,2] and not attached.is_empty():
 		var lever := Vector3.ZERO
 		var support_spin := Vector3.ZERO
 		var engaged_weight := 0.0
@@ -553,7 +669,10 @@ func _physics_process(delta: float) -> void:
 			support_torque_weights[id] /= maxf(engaged_weight,0.000001)
 		var engagement: float = engaged_weight/maxf(allocation_weight,0.000001)
 		var base_assist := assist
-		var requested_swing: Vector3 = _supported_swing.evaluate(delta,_swing_requested,lever,torso.angular_velocity-support_spin,engagement,tuning)
+		var requested := _swing_requested
+		if control_profile == 2:
+			requested = (requested+_contextual_world_filtered).limit_length(1.0)
+		var requested_swing: Vector3 = _supported_swing.evaluate(delta,requested,lever,torso.angular_velocity-support_spin,engagement,tuning)
 		assist = (base_assist+requested_swing).limit_length(tuning.max_attitude_torque)
 		_swing_torque = assist-base_assist
 	var foot_requests: Array[Dictionary] = []
@@ -586,7 +705,7 @@ func _physics_process(delta: float) -> void:
 		var support: PhysicsBody3D = hand["anchor"].support_body()
 		if support is RigidBody3D:
 			support.apply_force(-force, hand["anchor_world"] - support.global_position)
-			if control_profile == 1:
+			if control_profile in [1,2]:
 				support.apply_torque(-assist * scale_factor * float(support_torque_weights.get(id,1.0/float(attached.size()))))
 			else:
 				support.apply_torque(-assist * scale_factor / float(attached.size()))
@@ -596,7 +715,9 @@ func _physics_process(delta: float) -> void:
 		torso.apply_torque(assist * scale_factor)
 		torso.sleeping = false
 	_diagnostics = {"step": _step, "physics_delta": delta, "attached_count": attached.size(),
-		"control_profile":control_profile,"swing_intent":_supported_swing.intent if control_profile==1 else Vector3.ZERO,"swing_requested":_swing_requested,"swing_torque":_swing_torque*scale_factor,
+		"control_profile":control_profile,"swing_intent":_supported_swing.intent if control_profile in [1,2] else Vector3.ZERO,"swing_requested":_swing_requested,"swing_torque":_swing_torque*scale_factor,
+		"contextual_requested":_contextual_requested,"contextual_filtered":_contextual_filtered,"contextual_actuation":_contextual_actuation,
+		"contextual_world_effort":_contextual_world_filtered,
 		"simulation_time":simulation_time,"input_intent":Vector3(_contract,_extend,_bias),"requested_intent":_intent_target,
 		"features":{"predictive_grip":tuning.predictive_grip,"physical_feet":tuning.physical_feet,"posture_solver":tuning.posture_solver,"directional_grip_quality":tuning.directional_grip_quality,"reactive_challenge":tuning.reactive_challenge},
 		"launch_state":_launch_state,"launch_elapsed":_launch_elapsed,"launch_charge":_launch_charge,

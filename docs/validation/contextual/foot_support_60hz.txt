@@ -1,0 +1,55 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS two independent current floor contacts plant
+PASS ankle clearance differs from actual force contact
+PASS prepare alone applies no force
+PASS neutral preload generates finite compressive support
+PASS W lengthens bounded leg rest target
+PASS S unloads by shortening rest target
+PASS inactive releases both feet immediately
+PASS reset removes all cached contact forces
+PASS invalid foot index rejected
+PASS nonfinite passive endpoint rejected
+PASS out of anatomy passive endpoint rejected
+PASS one missing foothold does not disable the other leg
+PASS disappearing support loses contact without residual force
+PASS floor beyond natural leg reach cannot plant
+PASS occluding nonsupport geometry blocks legs and planting paths
+PASS sloped real surfaces plant independently
+PASS surface normal is geometric rather than invented up
+PASS vertical wall permits only compressive contact
+PASS untransmissible tangential wall effort enters SLIDING then unloads
+PASS frictionless vertical wall gives zero upward support and no suction
+PASS dynamic material body accepted
+PASS global sum of leg force magnitudes clamps to 180N
+PASS same-point force pairs conserve full external wrench
+PASS commit scale bounded and duplicate commit cannot apply twice
+PASS actual Jolt bodies receive opposite leg reaction
+PASS actual paired impulses conserve linear momentum
+PASS actual paired impulses conserve angular momentum
+MEASURE reaction momentum_error=0.00000023841858 angular_error=0.0
+PASS translating rotating support remains locally sticky
+PASS contact follows actual support transform
+PASS contact damping includes support angular point velocity
+PASS moving support force remains finite
+PASS moving support force remains finite
+PASS actual 12kg body settles on finite leg compression under gravity
+PASS neutral legs carry measured gravity load without hand forces
+PASS bounded W leg extension does actual positive upward work
+MEASURE loaded_leg rise=0.13323986530304 work=16.1128377609265 final_force=118.810501098633
+PASS real raised ledges preferred over nearby wall/floor
+PASS independent lateral step search finds outside footholds
+PASS reaction fixture isolates an eccentric single leg
+PASS eccentric contact creates real torso rotation rather than central thrust
+PASS eccentric dynamic force pair conserves linear and angular momentum
+PASS hands-free mode never begins a new automatic plant
+PASS left foot can plant without right support
+PASS hands-free stance preserves existing foot without acquiring the other
+PASS disabling support collision loses plant immediately
+PASS unloaded overlong leg never pulls or brakes its support
+PASS every fixture obeys leg magnitude budget
+PASS every force obeys unilateral friction cone
+PASS no force while FREE SEARCHING or PLANTING
+PASS plant gestures obey 2m/s including final contact frame
+PASS prepare never changes torso pose or velocities
+FOOT SUPPORT RESULTS: 50 checks, 0 failures

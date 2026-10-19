@@ -58,8 +58,9 @@ func drag(pixels: float) -> void:
 		await wait_seconds(.015)
 
 func run() -> void:
+	app._set_input_profile(1) # Preserved earlier drag-profile comparison.
 	report.physics_hz=hz
-	check(app.input_profile==1 and app.controller.control_profile==1,"fresh app starts with mouse arm drag")
+	check(app.input_profile==1 and app.controller.control_profile==1,"explicit profile selects mouse arm drag")
 	app._set_predictive_grip(false)
 	app._set_physical_feet(false)
 	app.capture_trace.path="user://v03_rendered_%dhz.jsonl" % hz

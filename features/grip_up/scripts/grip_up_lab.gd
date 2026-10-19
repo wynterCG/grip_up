@@ -11,6 +11,7 @@ const CaptureTrace = preload("res://features/grip_up/scripts/capture_trace.gd")
 const GripIntentBuffer = preload("res://features/grip_up/scripts/grip_intent_buffer.gd")
 const CaptureDebugDraw = preload("res://features/grip_up/scripts/capture_debug_draw.gd")
 const GripFeedback = preload("res://features/grip_up/scripts/grip_feedback.gd")
+const ContextualInput = preload("res://features/grip_up/scripts/contextual_arm_input.gd")
 const LEVELS = [preload("res://features/grip_up/scenes/static_climb.tscn"), preload("res://features/grip_up/scenes/swing_and_catch.tscn"), preload("res://features/grip_up/scenes/reactive_structure.tscn"), preload("res://features/grip_up/scenes/foot_support.tscn")]
 const COLORS = [Color("65dfcc"), Color("f0b85c")]
 var torso: RigidBody3D
@@ -59,7 +60,12 @@ var capture_trace = CaptureTrace.new()
 var grip_intents = GripIntentBuffer.new()
 var predictive_grip_enabled := false
 var physical_feet_enabled := false
-var input_profile := 1
+var input_profile := 2
+var contextual = ContextualInput.new()
+var contextual_paused := false
+var contextual_owner := "GAME"
+var contextual_rebase := false
+var aim_labels: Array[Label] = []
 var experimental_launch_enabled := false
 var profile_choice: OptionButton
 var hold_toggle: CheckButton
@@ -101,17 +107,28 @@ func _ready() -> void:
 			router.rebase_next_motion = true
 	)
 	get_window().focus_entered.connect(func():
+		if input_profile==2:
+			contextual.clear_motion()
+			contextual_rebase=true
+			message("Click to resume. Escape / Controls.")
 		if input_profile==1:
 			router.reset_control_input()
 			router.rebase_next_motion = true
 			controller.clear_drag_requests()
 	)
 	get_window().size_changed.connect(func():
+		contextual.clear_motion()
+		contextual_rebase=true
 		if input_profile==1:
 			router.clear_motion()
 			controller.clear_drag_requests()
 	)
 	get_window().focus_exited.connect(func():
+		if input_profile==2:
+			contextual_paused=true
+			contextual.clear_motion()
+			controller.clear_free_hand_targets()
+			_refresh_pointer_capture()
 		orbiting = false
 		router.reset_control_input("FOCUS")
 		controller.clear_drag_requests()
@@ -162,6 +179,8 @@ func _mesh(parent: Node3D, geometry: Mesh, color: Color, at := Vector3.ZERO) -> 
 	return mesh
 
 func load_test(index: int, use_checkpoint := false) -> void:
+	contextual.reset()
+	contextual_owner="GAME"
 	capture_trace.close()
 	router.reset_control_input()
 	orbiting = false
@@ -292,6 +311,12 @@ func message(text: String) -> void:
 	hint_time = 4.0
 
 func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("controls_menu") and not event.is_echo() and binding_action=="":
+		contextual_paused=false
+		settings.visible=not settings.visible
+		_refresh_pointer_capture()
+		get_viewport().set_input_as_handled()
+		return
 	if input_profile==1 and event is InputEventMouseMotion:
 		pointer = event.position
 		var next_owner := _control_owner()
@@ -329,18 +354,33 @@ func _input(event: InputEvent) -> void:
 				controller.release_grip(hand)
 
 func _unhandled_input(event: InputEvent) -> void:
+	if input_profile==2 and contextual_paused and event is InputEventMouseButton and event.pressed:
+		contextual_paused=false
+		_refresh_pointer_capture()
+		get_viewport().set_input_as_handled()
+		return
 	if event.is_action_pressed("launch") and not event.is_echo() and not settings.visible:
 		if not _launch_allowed():
 			message("Space launch is an optional comparison in Controls.")
 		elif not controller.request_launch_charge(true):
 			message("Grip a surface first, then hold %s to prepare a launch." % router.prompt("launch"))
 	if event is InputEventMouseMotion:
-		pointer = event.position
+		if input_profile!=2:pointer = event.position
 		if orbiting:
 			camera.orbit(event.relative)
 		if input_profile==1:
 			router.set_owner(_control_owner())
 			router.capture_motion(event.screen_relative,controller,_held_grips())
+		elif input_profile==2:
+			var next_owner := _control_owner()
+			if next_owner!=contextual_owner:
+				contextual.clear_motion()
+				contextual_owner=next_owner
+			if next_owner=="GAME":
+				if contextual_rebase:
+					contextual_rebase=false
+				else:
+					contextual.capture_motion(event.screen_relative,controller,camera)
 	if event is InputEventMouseButton:
 		pointer = event.position
 		if event.button_index == MOUSE_BUTTON_MIDDLE:
@@ -348,6 +388,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			router.set_owner(_control_owner())
 			router.clear_motion()
 			controller.clear_drag_requests()
+			contextual.clear_motion()
 		if event.pressed and event.button_index in [MOUSE_BUTTON_WHEEL_UP,MOUSE_BUTTON_WHEEL_DOWN]:
 			camera.dolly(-0.65 if event.button_index==MOUSE_BUTTON_WHEEL_UP else 0.65)
 	for hand in 2:
@@ -372,7 +413,7 @@ func request_hand(hand: int) -> bool:
 		message(("Left" if hand==0 else "Right") + " hand released")
 		return true
 	trial.attempts += 1
-	var hit: Dictionary = targeting.candidate(camera,pointer,torso)
+	var hit: Dictionary = contextual.candidate(hand,controller,camera) if input_profile==2 else targeting.candidate(camera,pointer,torso)
 	if hit.is_empty():
 		trial.misses += 1
 		message("Aim at a solid surface within arm's reach. Hold LMB / RMB to grip that exact point.")
@@ -392,12 +433,13 @@ func _physics_process(delta: float) -> void:
 		return
 	session_ticks += 1
 	trial.elapsed += delta
-	var blocked := settings.visible or binding_action != ""
+	var blocked := settings.visible or binding_action != "" or (input_profile==2 and (contextual_paused or rating_panel.visible))
 	if blocked:
 		controller.cancel_launch()
 		grip_intents.clear(controller)
 		router.reset_control_input("UI")
 		controller.clear_drag_requests()
+		contextual.clear_motion()
 	if predictive_grip_enabled:
 		for hand in 2:
 			if not Input.is_action_pressed("grip_left" if hand==0 else "grip_right"):
@@ -407,13 +449,25 @@ func _physics_process(delta: float) -> void:
 	ground_motor.move_intent = Input.get_vector("bias_left","bias_right","contract","extend")
 	if input_profile==0:
 		controller.set_climb_intent(0.0 if blocked else Input.get_action_strength("contract"),0.0 if blocked else Input.get_action_strength("extend"),0.0 if blocked else Input.get_axis("bias_left","bias_right"),camera.global_basis.x)
-	else:
+	elif input_profile==1:
 		controller.set_climb_intent(0,0,0,camera.global_basis.x)
 		var direction := Vector3.ZERO if blocked else router.swing_direction(camera.global_basis.x)
 		controller.set_swing_intent(direction,camera.global_basis.x)
 		var displacements: Array[float] = router.consume_drag(controller,_held_grips())
 		for id in 2:
 			controller.queue_arm_length_delta(id,displacements[id])
+	else:
+		controller.set_climb_intent(0,0,0,camera.global_basis.x)
+		controller.set_swing_intent(Vector3.ZERO if blocked else router.swing_direction(camera.global_basis.x),camera.global_basis.x)
+		var input_owner := _control_owner()
+		if input_owner!="GAME":contextual.clear_motion()
+		controller.set_contextual_effort(contextual.consume_effort(delta),camera.global_basis.x)
+		contextual.synchronize(controller,camera)
+		controller.clear_free_hand_targets()
+		if not blocked:
+			for id in 2:
+				var hit: Dictionary=contextual.candidate(id,controller,camera)
+				controller.set_free_hand_target(id,hit.position if not hit.is_empty() else contextual.target(id,controller,camera))
 	trial.max_speed = maxf(trial.max_speed,torso.linear_velocity.length())
 	trial.max_spin = maxf(trial.max_spin,torso.angular_velocity.length())
 	if session_ticks > 3 and torso.position.distance_to(previous_position) > 0.8:
@@ -423,7 +477,7 @@ func _physics_process(delta: float) -> void:
 	var total_force := 0.0
 	for i in 2:
 		var state: String = controller.get_hand_state(i)
-		if input_profile==1 and sound_feedback_enabled:
+		if input_profile>=1 and sound_feedback_enabled:
 			if state=="ATTACHED" and previous_states[i]=="REACHING":grip_feedback.cue(i,true)
 			elif state=="RELEASED" and previous_states[i] in ["ATTACHED","SLIPPING"]:grip_feedback.cue(i,false)
 		if state in ["ATTACHED","SLIPPING"]:
@@ -470,13 +524,25 @@ func _process(delta: float) -> void:
 	if not is_instance_valid(controller):
 		return
 	hint_time = maxf(0,hint_time-delta)
-	candidate = targeting.candidate(camera,pointer,torso)
+	if input_profile==2:
+		candidate={}
+		for id in 2:
+			var free: bool=controller.get_hand_state(id) in ["FREE","RELEASED"]
+			var hit: Dictionary=contextual.candidate(id,controller,camera)
+			aim_labels[id].visible=free and not settings.visible and not contextual_paused
+			aim_labels[id].position=camera.unproject_position(hit.position if not hit.is_empty() else contextual.target(id,controller,camera))-Vector2(15,16)
+			aim_labels[id].modulate=COLORS[id] if not hit.is_empty() else Color("8b9297")
+			if candidate.is_empty() and free:candidate=hit
+	else:
+		candidate = targeting.candidate(camera,pointer,torso)
+		for label in aim_labels:label.hide()
 	prediction_clock -= delta
 	if not candidate.is_empty() and (candidate.collider.get_instance_id()!=prediction_support_id or Vector3(candidate.position).distance_to(prediction_point)>0.02):
 		prediction_clock = 0.0
 	if predictive_grip_enabled and not candidate.is_empty() and prediction_clock<=0.0:
 		for id in 2:
-			capture_predictions[id] = controller.capture_predictor.evaluate(controller,id,candidate.collider,candidate.position,candidate.normal)
+			var prediction_hit: Dictionary=contextual.candidate(id,controller,camera) if input_profile==2 else candidate
+			capture_predictions[id] = controller.capture_predictor.evaluate(controller,id,prediction_hit.collider,prediction_hit.position,prediction_hit.normal) if not prediction_hit.is_empty() else {}
 		prediction_clock = 0.05
 		prediction_support_id = candidate.collider.get_instance_id()
 		prediction_point = candidate.position
@@ -516,11 +582,15 @@ func _process(delta: float) -> void:
 		hand_labels[i].text = ("LEFT / CYAN" if i==0 else "RIGHT / AMBER") + "\n" + hand.state + warning
 		if hand.state in ["ATTACHED","SLIPPING"]:
 			hand_labels[i].text += "\n%.2f m  /  %.0f N" % [hand.actual_length,controller.get_arm_force(i).length()]
-			if input_profile==1:
+			if input_profile>=1:
 				hand_labels[i].text += "\nTarget / %.2f m" % hand.rest_length
 	status_label.text = hint if hint_time > 0 else ("WASD / Walk relative to camera. MMB / Orbit. Hold LMB / RMB on any surface to climb." if ground_motor.grounded and not ground_motor.has_climbing_intent() else "Grip anywhere within reach. W / Pull. S / Lower. Keep the other hand attached while transferring.")
 	if input_profile==1 and hint_time<=0 and ground_motor.has_climbing_intent():
 		status_label.text = "Hold each grip. Drag up / pull; down / lower, also while aiming. WASD / supported 3D swing."
+	if input_profile==2 and hint_time<=0:
+		var count: int=controller._attached_ids().size()
+		status_label.text=["Move mouse / aim free hands. Hold LMB or RMB / grip. WASD / walk.","ONE GRIP / Aim the free hand. Mouse down / pull; up / extend with supported effort.","TWO GRIPS / Mouse down / pull; up / extend; sideways / posture. WASD / 3D swing."][count]
+		if contextual_paused:status_label.text="Click to resume. Escape / Controls."
 	feet_panel.visible = physical_feet_enabled and controller.feet_solver!=null
 	if feet_panel.visible:
 		feet_label.text = "FEET / AUTOMATIC"
@@ -546,6 +616,8 @@ func _process(delta: float) -> void:
 				debug_label.text += "\nFoot %s / N %.1f / T %.1f / %s" % [foot.state,foot.normal_force,Vector3(foot.tangent_force).length(),foot.reason]
 		if input_profile==1:
 			debug_label.text += "\n\nPROFILE 1 / HOLD + DRAG | Input %s\nSwing request %s | torque %s\nCamera right %s | forward %s\nLast arm requests %s | acquisitions %d" % [router.owner,str(launch.get("swing_requested",Vector3.ZERO)),str(launch.get("swing_torque",Vector3.ZERO)),str(camera.global_basis.x),str(Vector3.UP.cross(camera.global_basis.x).normalized()),str(router.last_displacements),controller.metrics.attaches]
+		elif input_profile==2:
+			debug_label.text += "\n\nCONTEXTUAL / %s | effort %s\nVirtual hand offsets %s\nActual mouse mode %s" % [_control_owner(),str(contextual.effort),str(contextual.offsets),str(Input.mouse_mode)]
 
 func _save_trial(outcome: String) -> void:
 	if trial.is_empty():
@@ -565,8 +637,13 @@ func _save_trial(outcome: String) -> void:
 func _record_capture(delta: float) -> void:
 	if not capture_trace.enabled:
 		return
+	var contextual_data: Dictionary=controller.telemetry()
+	var filtered: Vector2=contextual_data.get("contextual_filtered",Vector2.ZERO)
+	var actuation: Vector2=contextual_data.get("contextual_actuation",Vector2.ZERO)
 	capture_trace.sample(delta,controller,{"scene":level_id,"launch_state":controller.telemetry().get("launch_state","IDLE"),
 		"control_profile":input_profile,"space_comparison":experimental_launch_enabled,"input_control":router.diagnostics(),
+		"contextual_input":contextual.diagnostics() if input_profile==2 else {},
+		"contextual_filtered":[filtered.x,filtered.y],"contextual_actuation_m_s":[actuation.x,actuation.y],
 		"camera_right":capture_trace.vector(camera.global_basis.x),"camera_forward":capture_trace.vector(Vector3.UP.cross(camera.global_basis.x).normalized()),
 		"swing_requested":capture_trace.vector(controller.telemetry().get("swing_requested",Vector3.ZERO)),
 		"swing_torque":capture_trace.vector(controller.telemetry().get("swing_torque",Vector3.ZERO)),
@@ -643,13 +720,20 @@ func _setup_ui() -> void:
 	branding.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	row.add_child(branding)
 	_label("GRIP UP",36,branding,Color("edf4e9"))
-	_label("PHYSICS CLIMBING LAB  /  0.3 CONTROLS",15,branding,COLORS[0])
+	_label("PHYSICS CLIMBING LAB  /  CONTEXTUAL ARMS",15,branding,COLORS[0])
 	for i in LEVELS.size():
 		var index := i
 		var button := _button(["01  STATIC CLIMB","02  SWING & CATCH","03  REACTIVE STRUCTURE","04  FOOT SUPPORT"][i],func():load_test(index),row)
 		button.toggle_mode = true
 		mode_buttons.append(button)
-	_button("Controls",func():settings.visible=not settings.visible,row)
+	_button("Controls / Esc",func():settings.visible=not settings.visible,row)
+	for id in 2:
+		var aim := _label("+ L" if id==0 else "+ R",22,hud,COLORS[id])
+		aim.mouse_filter=Control.MOUSE_FILTER_IGNORE
+		aim.add_theme_color_override("font_outline_color",Color.BLACK)
+		aim.add_theme_constant_override("outline_size",5)
+		aim.hide()
+		aim_labels.append(aim)
 	var mission := VBoxContainer.new()
 	mission.position = Vector2(40,132)
 	mission.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -712,21 +796,22 @@ func _setup_ui() -> void:
 	profile_choice = OptionButton.new()
 	profile_choice.add_item("0 / Baseline: W/S pull, A/D bias, Space launch")
 	profile_choice.add_item("1 / Hold + arm drag + 3D swing (experimental)")
+	profile_choice.add_item("2 / Contextual arms + virtual hand aim (experimental)")
 	profile_choice.select(input_profile)
 	profile_choice.item_selected.connect(_set_input_profile)
 	settings_box.add_child(profile_choice)
 	hold_toggle = CheckButton.new()
-	hold_toggle.text = "Hold to grip / mandatory in profile 1"
+	hold_toggle.text = "Hold to grip / mandatory in experimental profiles"
 	hold_toggle.button_pressed = hold_mode
 	hold_toggle.toggled.connect(_set_hold_mode)
 	settings_box.add_child(hold_toggle)
 	launch_toggle = CheckButton.new()
-	launch_toggle.text = "Enable Space launch in profile 1 / optional A/B comparison"
+	launch_toggle.text = "Enable Space launch / optional comparison"
 	launch_toggle.disabled = input_profile==0
 	launch_toggle.toggled.connect(_set_experimental_launch)
 	settings_box.add_child(launch_toggle)
 	var sounds := CheckButton.new()
-	sounds.text = "Grip contact sounds / profile 1"
+	sounds.text = "Grip contact sounds"
 	sounds.button_pressed = sound_feedback_enabled
 	sounds.toggled.connect(func(on:bool):sound_feedback_enabled=on)
 	settings_box.add_child(sounds)
@@ -744,6 +829,14 @@ func _setup_ui() -> void:
 		if is_instance_valid(controller):controller.tuning.arm_drag_sensitivity_m_per_px=value
 	)
 	sensitivity_row.add_child(sensitivity)
+	var aim_sensitivity := SpinBox.new()
+	_label("Virtual hand sensitivity / m per pixel",17,settings_box)
+	aim_sensitivity.min_value=.0002
+	aim_sensitivity.max_value=.006
+	aim_sensitivity.step=.0002
+	aim_sensitivity.value=contextual.sensitivity
+	aim_sensitivity.value_changed.connect(func(value:float):contextual.sensitivity=value)
+	settings_box.add_child(aim_sensitivity)
 	var rate_row := HBoxContainer.new()
 	settings_box.add_child(rate_row)
 	_label("Arm target maximum speed / m per second",17,rate_row)
@@ -807,9 +900,11 @@ func _setup_ui() -> void:
 			_button(str(score),func():trial.ratings[key]=score,line)
 	_button("Save ratings & continue",func():_save_trial("rated");rating_panel.hide(),rating_box)
 	rating_panel.hide()
+	settings.visibility_changed.connect(_refresh_pointer_capture)
+	rating_panel.visibility_changed.connect(_refresh_pointer_capture)
 
 func _set_hold_mode(on: bool) -> void:
-	if input_profile==1 and not on:
+	if input_profile>=1 and not on:
 		hold_toggle.set_pressed_no_signal(true)
 		return
 	hold_mode = on
@@ -822,6 +917,8 @@ func _set_hold_mode(on: bool) -> void:
 	message("Hold each mouse button to grip; release it to let go." if on else "Toggle mode: click to grip, click again to let go.")
 
 func _controls_hint() -> String:
+	if input_profile==2:
+		return "Mouse / Virtual hands + supported effort    Hold LMB / RMB / Grip    WASD / Swing or walk    MMB / Orbit    Esc / Controls"
 	if input_profile==1:
 		return "Hold LMB / RMB + drag up / Pull; down / Lower    WASD / 3D swing or walk    MMB / Orbit    Wheel / Dolly    R / Retry"
 	return "WASD / Walk or climb    Hold LMB / RMB / Grip    %s / Hold to load, release to launch    MMB / Orbit    Wheel / Dolly" % router.prompt("launch")
@@ -837,20 +934,23 @@ func _control_owner() -> String:
 		return "UI"
 	if orbiting:
 		return "CAMERA"
+	if input_profile==2:return "FOCUS" if contextual_paused else "GAME"
 	if not get_viewport().get_visible_rect().has_point(pointer):
 		return "BOUNDARY"
 	var hovered := get_viewport().gui_get_hovered_control()
 	return "UI" if hovered!=null else "GAME"
 
 func _set_input_profile(profile: int) -> void:
-	input_profile = clampi(profile,0,1)
+	input_profile = clampi(profile,0,2)
 	router.reset_control_input()
+	contextual.reset()
+	contextual_paused=false
 	if is_instance_valid(profile_choice):
 		profile_choice.select(input_profile)
-	if input_profile==1 and not hold_mode:
+	if input_profile>=1 and not hold_mode:
 		_set_hold_mode(true)
 	if is_instance_valid(hold_toggle):
-		hold_toggle.disabled = input_profile==1
+		hold_toggle.disabled = input_profile>=1
 		hold_toggle.set_pressed_no_signal(hold_mode)
 	if is_instance_valid(launch_toggle):
 		launch_toggle.disabled = input_profile==0
@@ -861,7 +961,9 @@ func _set_input_profile(profile: int) -> void:
 		trial.control_profile = input_profile
 	controls_label.text = _controls_hint()
 	_update_objective()
+	_refresh_pointer_capture()
 	message("Hold to grip. Drag up to pull, down to lower. WASD swings through your grips." if input_profile==1 else "Baseline / W pulls, S lowers, A/D biases, Space charges a launch.")
+	if input_profile==2:message("Relative mouse aims free hands and requests supported effort. Hold LMB / RMB. Escape / Controls.")
 
 func _update_objective() -> void:
 	objective_label.text = level.objective
@@ -870,12 +972,28 @@ func _update_objective() -> void:
 			objective_label.text = "Hold your grip and drag up to pull. WASD swings in 3D.\nBuild momentum, release and catch the next reachable surface."
 		elif level_id==3:
 			objective_label.text = "Hold the two targets and drag to change arm length.\nFoot contacts are optional; baseline profile 0 retains the W-driven feet comparison."
+	elif input_profile==2:
+		objective_label.text="Move the L / R virtual aims onto reachable surfaces. Hold that hand's button.\nMouse down / pull; up / extend through supported effort. WASD swings."
+
+func _refresh_pointer_capture() -> void:
+	if not is_instance_valid(settings) or not is_instance_valid(rating_panel):return
+	var capture: bool=input_profile==2 and not contextual_paused and not settings.visible and not rating_panel.visible
+	contextual.clear_motion()
+	contextual_rebase=true
+	if DisplayServer.get_name()!="headless":
+		Input.mouse_mode=Input.MOUSE_MODE_CAPTURED if capture else Input.MOUSE_MODE_VISIBLE
+	if is_instance_valid(controller) and input_profile==2:
+		controller.set_contextual_effort(Vector2.ZERO,camera.global_basis.x)
+		controller.clear_free_hand_targets()
+
+func _exit_tree() -> void:
+	if input_profile==2 and DisplayServer.get_name()!="headless":Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
 
 func _set_experimental_launch(on: bool) -> void:
 	experimental_launch_enabled = on
 	if is_instance_valid(controller):
 		controller.experimental_launch_enabled = on
-		if not on and input_profile==1:
+		if not on and input_profile>=1:
 			controller.cancel_launch()
 
 func _set_predictive_grip(on: bool) -> void:

@@ -1,15 +1,41 @@
 # GRIP UP / physics climbing lab 0.3
 
-Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v0.3.exe`.
+Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-contextual.exe`.
 PC mouse and keyboard. Resizable 1920x1080 reference canvas; initial window 1440x810.
 Integrated Jolt, 120 Hz. Core and complete routes also tested at 60 Hz.
 
 This is a separate prototype. The Janga object grabber and its project are unchanged.
 
-## 0.3: hold, drag and supported swing
+## Contextual Arm Control (current default)
 
-The game now opens in **Profile 1**, following the user's request to use the
-new controls immediately. Hold LMB/RMB to keep each hand attached. Move the
+The game now opens in **Profile 2**. Relative mouse movement directs anatomical
+virtual targets for FREE hands; L/R reticles mark each hand's aim. Real raycasts,
+finite hand travel and obstacle checks determine whether a surface can be caught.
+Hold LMB/RMB to acquire and retain each grip; mouse-up releases that hand.
+
+With one grip the mouse aims the other hand and requests supported effort.
+With two grips it requests supported posture and pull. **Drag down to pull**,
+following the user's latest inversion request. **Move up to request supported extension/lowering** as well as aim higher.
+The controller retains physically achieved contraction or extension, using
+geometry and bounded effort rather than accumulated cursor displacement.
+W/S retains depth swing; A/D retains lateral swing. Ground walking stays active
+when hands are free, with arm-only aiming IK layered over the authored gait.
+
+The cursor is captured for relative motion without screen edges. **Escape**
+opens/closes Controls and frees/recaptures the cursor. MMB orbits, wheel dollies.
+Focus loss releases grips; the first resume click is consumed. No aiming clutch
+or extra modifier is required. Profiles 0 and 1 remain explicit comparisons.
+Space launch, predictive catches and physical feet remain optional and OFF.
+
+With one attached hand, aiming and physical effort share mouse movement, as
+requested in the contextual design. Virtual hand aims use a camera-facing plane
+with anatomical reach limits.
+Human comfort and long-session coordination still need playtesting.
+See `docs/validation/CONTEXTUAL.md` and `docs/specs/contextual_arm_control.md`.
+
+## Earlier 0.3: hold, drag and supported swing
+
+**Profile 1** preserves the earlier pixel-driven arm-drag experiment for comparison. Hold LMB/RMB to keep each hand attached. Move the
 mouse up to shorten attached arm targets; move down to extend them. With both
 hands attached the same drag changes both targets. Aiming for the next grip
 intentionally keeps changing the supporting arm. A hand still reaching never
@@ -91,17 +117,20 @@ The M1-only snapshot remains tagged `v0.2-M1`.
 |---|---|
 | Hold left / right mouse button | Hold cyan / amber hand; releasing the button lets go |
 | WASD, grounded and hands free | Walk relative to camera, with braking and turn-to-move |
-| Hold grip + mouse up / down | Shorten / extend attached arm targets |
+| Relative mouse, no grips | Aim the two free anatomical hand targets |
+| Relative mouse, one grip | Aim the free hand and request supported effort |
+| Relative mouse, two grips | Request supported posture and effort |
+| Mouse down / up, gripping | Request physical contraction / extension |
 | W / S, gripping | Request forward / backward supported swing |
 | A / D, gripping | Request left / right supported swing |
-| Space | Disabled by default in profile 1; optional launch comparison in Controls |
+| Space | Disabled by default in experimental profiles; optional launch comparison |
 | Middle mouse drag / wheel | Orbit / dolly |
 | R | Immediate retry from checkpoint or start |
 | Tab | Physics diagnostics |
 | F, reactive test | Restart same geometry fixed or hinged |
 
 Controls opens remapping with conflict checks and saved bindings. Hold-to-grip is
-mandatory in profile 1; select baseline profile 0 before comparing toggle mode. Mouse-up cancels a
+mandatory in experimental profiles; select baseline profile 0 before comparing toggle mode. Mouse-up cancels a
 pending reach too, including over UI. Losing window focus releases held grips.
 Neither hand gives any midair steering when unattached.
 
@@ -174,7 +203,7 @@ depends on the available arm stroke, support motion and nearby geometry.
 ## Original three experiments
 
 These preserved route instructions use **baseline profile 0** in Controls.
-Profile 1 replaces their W/S arm commands with mouse drag.
+Profiles 1 and 2 replace their W/S arm commands; the route timings below are baseline results.
 
 1. **Static climb:** choose any wall point within reach and alternate hands to climb. The small rounded holds provide an optional route: aim at hold 01 and attach cyan. Hold W. Catch 02 with amber,
    wait until ATTACHED and let both hands stabilize. To reach 03, release only
@@ -221,7 +250,8 @@ Detailed provenance, joint comparison and limitations:
 
 ## Repeatable checks
 
-The complete v0.3 run has 1,556 passing checks: `python tools/run_regressions.py v03`.
+Run the current complete suite with `python tools/run_regressions.py contextual`.
+The earlier v0.3 archive contains 1,556 passing checks in `docs/validation/v03/`.
 The new input and physics suites are `test_drag_input.gd` and
 `test_drag_swing_physics.gd`, each supporting 60/120 Hz.
 

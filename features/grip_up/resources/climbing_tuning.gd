@@ -6,6 +6,11 @@ extends Resource
 @export var swing_max_support_torque: float = 18.0
 @export var swing_input_ramp_s: float = 0.10
 @export var swing_max_relative_speed: float = 1.8
+@export_group("Contextual relative effort experiment")
+@export var contextual_response_time: float = 0.08
+@export var contextual_pull_offset: float = 0.10
+@export var contextual_hold_tolerance: float = 0.03
+@export var contextual_extension_max_rate_m_s: float = 0.35
 @export_group("v0.2 experiments")
 @export var predictive_grip: bool = false
 @export var physical_feet: bool = false
