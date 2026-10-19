@@ -34,3 +34,23 @@ O envelope de atrito **não foi ampliado**. Em produção o corpo mantém μ=.12
 Preservação: `development/intent_reversal_baseline_120hz.json`, `_60hz.json`, logs `reversal_baseline_*`, fonte `coordinator_before_reversal.gd.txt` e fonte/checkpoint `coordinator_after_reversal_only.gd.txt`. Os dados iniciais mostram o brake que injeta energia, sem apagar a falha de design. Uma primeira execução do novo teste teve erro de inferência de tipo em variável local e foi corrigida antes de medir produção; não é um resultado físico passado.
 
 Decisão deste checkpoint: **KEEP como refinamento de resposta delimitado, sujeito a native/humano**. Não altera o arranque aprovado nem interpreta neutral como um pedido autónomo de travar.
+
+## Adenda final: passagem breve pelo neutro e interação com progresso
+
+O checkpoint acima foi isolado pelo principal em `1f075b7`. Depois da correção de [progresso](progress_physics.md), a dinâmica de fase mudou. A120, o guião reativo atravessou um tickZERO entre A/D: deixou de ser detetado como reversão direta e ficou exatamente igual ao controlo serial. Isto corresponde a um caso real de key-up/key-down, não justifica afrouxar o teste.
+
+A versão final reconhece o **último comando explicitamente oposto** através de uma lacuna de até à rampa existente .12 s. Não cria comando durante essa lacuna: ZERO continua ZERO. Após neutral longo, um novo gesto usa o arranque anterior. Nenhum valor de omega decide a direção na produção. O script de investigação usa omega apenas para representar a escolha de teclas de um guião de brake.
+
+Novo runner final: **37 checks / zero falhas em ambas as frequências**, incluindo oposição direta, ZERO1tick entre teclas, neutral.4 s com igualdade exata ao controlo, libertação curta sem cauda antiga, suporte perdido e par dinâmico. O resultado anterior27 fica histórico.
+
+| Medida final com a mesma correção de progresso nos dois controlos | 120 Hz: serial → revisto | 60 Hz: serial → revisto |
+|---|---:|---:|
+| Latência direta | .2083 → .0750 s | .2000 → .0833 s |
+| Impulso errado250 ms | 1.6048 → .3383 N·m·s | 1.4860 → .2860 N·m·s |
+| Latência após ZERO1tick | .2000 → .0750 s | .1833 → .0833 s |
+| Brake reativo5 s, sem antecipação | +3.5061 → −2.0349 J | +3.5037 → −2.4384 J |
+| Energia cinética relativa máxima no brake | 1.6847 → .9885 J | 1.8141 → 1.0185 J |
+
+Os resultados finais mostram trabalho negativo neste guião e resposta mais cedo. Não demonstram travagem universal para qualquer fase/apoio ou feedback humano. O trabalho de uma reversão isolada depende da evolução da velocidade e não é um critério universal de sucesso. Os orçamentos e os valores da rampa física permanecem iguais.
+
+No par dinâmico do runner final, a120 `dp=4.78e−7 kg·m/s`, `dL=7.70e−6 kg·m²/s`; a60 `dp=4.81e−7`, `dL=1.14e−6`. Momento swing efetivamente aplicado ~15 N·m, com reação oposta. São inércias isotrópicas de ensaio e zero gravidade/damping; não uma afirmação de conservação ideal de todo o jogo com contactos externos.

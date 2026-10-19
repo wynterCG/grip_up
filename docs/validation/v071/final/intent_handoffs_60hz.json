@@ -1,0 +1,4704 @@
+{
+	"checks": 10,
+	"continuous_support": true,
+	"end_position": "(-0.108926, 1.58641, 0.22)",
+	"failures": 0,
+	"final_intent": {
+		"actual_com_displacement": "(-0.109882, 0.418563, -0.18)",
+		"actual_foot_count": 2,
+		"actual_hand_ids": [
+			0,
+			1
+		],
+		"actual_height_gain": 0.41856324672699,
+		"actual_relative_velocity": "(0.057291, -0.137155, 0.000001)",
+		"actuator_saturated": false,
+		"aim_input_does_not_change_length": true,
+		"desired_com_velocity": "(0.0, 0.0, 0.0)",
+		"enabled": true,
+		"frame": {
+			"normal": "(0.0, 0.0, 1.0)",
+			"quality": "WEIGHTED_NORMAL_HAND_TANGENT_WITH_FEET",
+			"right": "(1.0, 0.0, 0.0)",
+			"support_ids": [
+				59408124391,
+				59408124391,
+				59408124391,
+				59408124391
+			],
+			"up": "(0.0, 1.0, 0.0)",
+			"valid": true
+		},
+		"ground": {
+			"applied_force": "(0.0, 0.0, 0.0)",
+			"applied_torque": "(0.0, 0.0, 0.0)",
+			"authority": 0.0,
+			"grounded": false,
+			"measured_other_support_load": 111.628452301025,
+			"motor_authority": 0.0,
+			"normal": "(0.0, 1.0, 0.0)",
+			"point": "(0.0, 0.0, 0.0)",
+			"point_velocity": "(0.0, 0.0, 0.0)",
+			"support_id": 0,
+			"velocity": "(0.0, 0.0, 0.0)"
+		},
+		"input_frame_id": 4,
+		"input_ramp_s": 0.12,
+		"input_timestamp": 7.46666666666665,
+		"intent_strength": 0.0,
+		"movement_block_reason": "HOLD_ACHIEVED_POSTURE",
+		"movement_intent_local": "(0.0, 0.0)",
+		"movement_intent_world": "(0.0, 0.0, 0.0)",
+		"originating_support_frame": {
+			"normal": "(0.0, 0.0, 1.0)",
+			"quality": "WEIGHTED_NORMAL",
+			"right": "(1.0, 0.0, 0.0)",
+			"support_ids": [
+				59408124391,
+				59408124391
+			],
+			"up": "(0.0, 1.0, 0.0)",
+			"valid": true
+		},
+		"planned_arm_rest_lengths": {
+			"0": 0.321295589208603,
+			"1": 0.62
+		},
+		"planned_foot_action": "(0.0, 0.0)",
+		"planner_cpu_usec": 60,
+		"recommended_climb_share": 1.0,
+		"requested_input": "(0.0, 0.0)",
+		"support_mode": "CLIMB_HANDS_FEET",
+		"swing_request_world": "(0.0, 0.0, 0.0)",
+		"swing_reversal_active": false,
+		"target_accelerations": {
+			"0": -0.850208116343837,
+			"1": 0.0
+		},
+		"target_rates": {
+			"0": 0.120979195138277,
+			"1": 0.0
+		},
+		"tier": 1,
+		"virtual_acceleration": "(-0.229165, 0.548622, 0.0)",
+		"voluntary_reversals": 0
+	},
+	"final_pending": {
+		"acquisition_load": 0.0,
+		"acquisition_load_scope": "instant contact before existing force blend",
+		"active": true,
+		"attempt_id": 4,
+		"blocked": false,
+		"blocker_id": 0,
+		"capture": {
+			"accepted": true,
+			"actual_arrival": 2.73333333333332,
+			"available_work_upper_bound": 2.8908754348755,
+			"buffered": false,
+			"failure_reason": "",
+			"input_time": 4.71666666666666,
+			"load_risk": false,
+			"out_of_reach_selection": true,
+			"persistent_target": true,
+			"predicted_contact_time": -1.0,
+			"predicted_entry_time": -1.0,
+			"predicted_target": "(0.240001, 2.64, 0.0)",
+			"predicted_target_time": -1.0,
+			"prediction_error": -1.0,
+			"radial_speed": -0.163877248764038,
+			"reason": "contact_valid",
+			"relative_speed": 0.191906824707985,
+			"stopping_energy": 0.0
+		},
+		"contact_distance": 0.651969790458679,
+		"contact_rest_length": 0.62,
+		"contact_time": 7.44999999999998,
+		"contact_validated": true,
+		"current_force": 40.2642364501953,
+		"distance": 0.637609124183655,
+		"endpoint_valid": true,
+		"first_applied_load": 0.618090152740479,
+		"gesture_speed": 2.71728801727295,
+		"gesture_velocity": "(0.101612, -0.215278, -2.706841)",
+		"hand_goal": "(0.240001, 2.64, 0.0)",
+		"hand_world": "(0.240001, 2.64, 0.0)",
+		"held": true,
+		"label_in_reach": true,
+		"last_window_duration": -1.0,
+		"last_window_reason": "",
+		"local_normal": "(0.0, 0.0, 1.0)",
+		"local_point": "(0.240001, 0.34, 0.2)",
+		"missed_window_count": 0,
+		"motion_scope": "shoulder-frame transport plus finite relative gesture; full world sweep",
+		"normal_world": "(0.0, 0.0, 1.0)",
+		"peak_blend_load": 19.5727767944336,
+		"pending_time": 2.73333333333332,
+		"phase": "ATTACHED",
+		"physical_in_reach": true,
+		"physical_transition_count": 1,
+		"reach_margin": 0.0194708758163452,
+		"reason": "contact_valid",
+		"requested_gesture_speed": 2.71728801727295,
+		"requested_gesture_velocity": "(0.101612, -0.215278, -2.706841)",
+		"selected_time": 4.71666666666666,
+		"shoulder_world": "(0.156467, 2.075124, 0.283695)",
+		"substate": "ATTACHED",
+		"support_id": 59408124391,
+		"target_relative_speed": 2.70000004768372,
+		"target_selection_id": 4,
+		"target_velocity": "(0.0, 0.0, 0.0)",
+		"target_world": "(0.240001, 2.64, 0.0)",
+		"transition_count": 1,
+		"transport_speed": 0.238151729106903,
+		"transport_velocity": "(-0.101612, 0.215278, 0.006841)",
+		"workspace_valid": true,
+		"world_speed": 2.70000004768372,
+		"world_velocity": "(0.0, 0.0, -2.7)"
+	},
+	"first_caught": true,
+	"physics_hz": 60,
+	"samples": [
+		{
+			"force": 1.47075891494751,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.000189, 1.166678, 0.400069)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.05,
+			"velocity": "(-0.000021, -0.000006, -0.000033)"
+		},
+		{
+			"force": 1.44922545098234,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.000189, 1.166679, 0.40007)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.06666666666667,
+			"velocity": "(0.000033, 0.000014, 0.000091)"
+		},
+		{
+			"force": 1.41760816960596,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.000188, 1.166679, 0.400071)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.08333333333333,
+			"velocity": "(0.000065, 0.000015, 0.000077)"
+		},
+		{
+			"force": 1.38352949614637,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.000187, 1.166679, 0.400072)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.1,
+			"velocity": "(0.000043, 0.000007, 0.00003)"
+		},
+		{
+			"force": 1.35662417346612,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.000187, 1.166679, 0.400072)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.11666666666667,
+			"velocity": "(0.000002, 0.000003, 0.000018)"
+		},
+		{
+			"force": 1.4034640789032,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.000187, 1.166679, 0.400071)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.13333333333333,
+			"velocity": "(-0.000027, 0.000011, -0.000066)"
+		},
+		{
+			"force": 1.38806641101837,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.000188, 1.166679, 0.400068)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.15,
+			"velocity": "(-0.000058, -0.000004, -0.000161)"
+		},
+		{
+			"force": 1.37731397151947,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.00019, 1.166679, 0.400066)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.16666666666667,
+			"velocity": "(-0.000073, -0.000005, -0.000157)"
+		},
+		{
+			"force": 1.36926889419556,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.000191, 1.166679, 0.400064)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.18333333333333,
+			"velocity": "(-0.000056, -0.000001, -0.000118)"
+		},
+		{
+			"force": 1.35977685451508,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.000191, 1.166679, 0.400062)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.2,
+			"velocity": "(-0.000034, 0.000002, -0.000089)"
+		},
+		{
+			"force": 1.35003471374512,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.000192, 1.166679, 0.400061)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.21666666666667,
+			"velocity": "(-0.000024, 0.000002, -0.000076)"
+		},
+		{
+			"force": 1.34078085422516,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.000192, 1.166679, 0.40006)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.23333333333333,
+			"velocity": "(-0.000023, 0.000001, -0.000069)"
+		},
+		{
+			"force": 1.33243024349213,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.000192, 1.166679, 0.400059)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.25,
+			"velocity": "(-0.000023, 0.000001, -0.00006)"
+		},
+		{
+			"force": 1.32475531101227,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.000193, 1.166679, 0.400058)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.26666666666667,
+			"velocity": "(-0.000021, 0.000001, -0.000052)"
+		},
+		{
+			"force": 1.31783533096313,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.000193, 1.166679, 0.400057)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.28333333333333,
+			"velocity": "(-0.000018, 0.000001, -0.000045)"
+		},
+		{
+			"force": 1.31139349937439,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.000193, 1.166679, 0.400057)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.3,
+			"velocity": "(-0.000016, 0.000001, -0.00004)"
+		},
+		{
+			"force": 1.30540668964386,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.000193, 1.166679, 0.400056)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.31666666666667,
+			"velocity": "(-0.000014, 0.000001, -0.000035)"
+		},
+		{
+			"force": 1.30015337467194,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.000194, 1.166679, 0.400056)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.33333333333333,
+			"velocity": "(-0.000013, 0.000001, -0.000031)"
+		},
+		{
+			"force": 1.29535746574402,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.000194, 1.166679, 0.400055)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.35,
+			"velocity": "(-0.000012, 0.000001, -0.000028)"
+		},
+		{
+			"force": 2.03841498494148,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.000194, 1.166679, 0.400055)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.36666666666667,
+			"velocity": "(-0.000011, 0.000001, -0.000024)"
+		},
+		{
+			"force": 6.86319541931152,
+			"mode": "FOOT_TRANSITION",
+			"position": "(-0.001057, 1.166687, 0.396356)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.38333333333333,
+			"velocity": "(-0.051752, 0.000458, -0.221929)"
+		},
+		{
+			"force": 0.0,
+			"mode": "FOOT_TRANSITION",
+			"position": "(-0.002682, 1.166693, 0.389042)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.4,
+			"velocity": "(-0.097508, 0.000416, -0.438804)"
+		},
+		{
+			"force": 0.0,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.00507, 1.16669, 0.378399)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.41666666666667,
+			"velocity": "(-0.14329, -0.000205, -0.638607)"
+		},
+		{
+			"force": 0.0,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.008274, 1.166689, 0.364307)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.43333333333333,
+			"velocity": "(-0.19223, -0.000056, -0.845503)"
+		},
+		{
+			"force": 0.0,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.01231, 1.166693, 0.346791)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.45,
+			"velocity": "(-0.242166, 0.000236, -1.050987)"
+		},
+		{
+			"force": 0.0,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.01719, 1.166697, 0.325866)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.46666666666667,
+			"velocity": "(-0.292821, 0.00022, -1.255484)"
+		},
+		{
+			"force": 0.0,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.022922, 1.1667, 0.301547)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.48333333333333,
+			"velocity": "(-0.343939, 0.000207, -1.459127)"
+		},
+		{
+			"force": 0.0,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.029512, 1.166703, 0.273847)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.5,
+			"velocity": "(-0.395388, 0.000141, -1.662002)"
+		},
+		{
+			"force": 0.0,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.035784, 1.169566, 0.250717)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.51666666666667,
+			"velocity": "(-0.376331, 0.171792, -1.387802)"
+		},
+		{
+			"force": 0.0,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.041793, 1.174133, 0.23258)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.53333333333333,
+			"velocity": "(-0.360498, 0.274055, -1.088238)"
+		},
+		{
+			"force": 0.0,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.046554, 1.174855, 0.232527)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.55,
+			"velocity": "(-0.285686, 0.043318, -0.003191)"
+		},
+		{
+			"force": 0.0,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.051485, 1.173296, 0.232557)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.56666666666667,
+			"velocity": "(-0.295828, -0.093578, 0.001794)"
+		},
+		{
+			"force": 0.0,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.055908, 1.173466, 0.232553)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.58333333333333,
+			"velocity": "(-0.265405, 0.010218, -0.000246)"
+		},
+		{
+			"force": 0.0,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.060402, 1.172251, 0.23258)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.6,
+			"velocity": "(-0.269638, -0.072876, 0.00164)"
+		},
+		{
+			"force": 0.0,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.06449, 1.172296, 0.232579)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.61666666666667,
+			"velocity": "(-0.245293, 0.00267, -0.000066)"
+		},
+		{
+			"force": 0.0,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.068491, 1.171831, 0.232589)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.63333333333333,
+			"velocity": "(-0.240034, -0.027875, 0.0006)"
+		},
+		{
+			"force": 0.0,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.072494, 1.171126, 0.232604)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.65,
+			"velocity": "(-0.240204, -0.042287, 0.00091)"
+		},
+		{
+			"force": 0.0,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.076181, 1.171549, 0.232593)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.66666666666667,
+			"velocity": "(-0.221214, 0.025368, -0.00063)"
+		},
+		{
+			"force": 0.0,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.079716, 1.17174, 0.232589)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.68333333333333,
+			"velocity": "(-0.212076, 0.011466, -0.000288)"
+		},
+		{
+			"force": 0.0,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.083111, 1.171738, 0.232589)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.7,
+			"velocity": "(-0.203727, -0.000173, 0.000003)"
+		},
+		{
+			"force": 0.0,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.0864, 1.171564, 0.232593)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.71666666666667,
+			"velocity": "(-0.197336, -0.010398, 0.00026)"
+		},
+		{
+			"force": 0.0,
+			"mode": "FOOT_TRANSITION",
+			"position": "(-0.08962, 1.171242, 0.232601)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.73333333333333,
+			"velocity": "(-0.1932, -0.019328, 0.000482)"
+		},
+		{
+			"force": 0.0,
+			"mode": "FOOT_TRANSITION",
+			"position": "(-0.092706, 1.171155, 0.232603)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.75,
+			"velocity": "(-0.185166, -0.005228, 0.000127)"
+		},
+		{
+			"force": 0.0,
+			"mode": "FOOT_TRANSITION",
+			"position": "(-0.095686, 1.171156, 0.232603)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.76666666666667,
+			"velocity": "(-0.178787, 0.000065, 0.0)"
+		},
+		{
+			"force": 0.0,
+			"mode": "FOOT_TRANSITION",
+			"position": "(-0.098586, 1.171158, 0.232603)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.78333333333333,
+			"velocity": "(-0.173981, 0.000132, -0.000008)"
+		},
+		{
+			"force": 0.0,
+			"mode": "FOOT_TRANSITION",
+			"position": "(-0.101419, 1.171163, 0.232603)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.8,
+			"velocity": "(-0.169999, 0.000259, -0.000006)"
+		},
+		{
+			"force": 2.17582845687866,
+			"mode": "FOOT_TRANSITION",
+			"position": "(-0.1042, 1.171166, 0.232603)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.81666666666667,
+			"velocity": "(-0.16686, 0.000212, -0.00001)"
+		},
+		{
+			"force": 2.08557987213135,
+			"mode": "FOOT_TRANSITION",
+			"position": "(-0.10693, 1.17117, 0.232603)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.83333333333333,
+			"velocity": "(-0.163773, 0.000222, -0.000005)"
+		},
+		{
+			"force": 6.79403042793274,
+			"mode": "FOOT_TRANSITION",
+			"position": "(-0.10961, 1.171172, 0.232603)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.85,
+			"velocity": "(-0.160848, 0.000125, -0.000007)"
+		},
+		{
+			"force": 6.94010281562805,
+			"mode": "FOOT_TRANSITION",
+			"position": "(-0.112283, 1.171176, 0.232602)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.86666666666666,
+			"velocity": "(-0.160335, 0.000236, -0.000007)"
+		},
+		{
+			"force": 11.8530473709106,
+			"mode": "FOOT_TRANSITION",
+			"position": "(-0.115018, 1.17118, 0.232602)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.88333333333333,
+			"velocity": "(-0.164127, 0.000271, -0.000008)"
+		},
+		{
+			"force": 22.0068411827087,
+			"mode": "FOOT_TRANSITION",
+			"position": "(-0.117928, 1.17101, 0.232607)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.9,
+			"velocity": "(-0.174616, -0.010198, 0.000252)"
+		},
+		{
+			"force": 33.1932735443115,
+			"mode": "FOOT_TRANSITION",
+			"position": "(-0.121031, 1.17101, 0.232607)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.91666666666666,
+			"velocity": "(-0.186187, -0.000032, -0.0)"
+		},
+		{
+			"force": 55.3246059417725,
+			"mode": "FOOT_TRANSITION",
+			"position": "(-0.12434, 1.171004, 0.232607)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.93333333333333,
+			"velocity": "(-0.198518, -0.000379, 0.00001)"
+		},
+		{
+			"force": 76.3281326293945,
+			"mode": "FOOT_TRANSITION",
+			"position": "(-0.127846, 1.171065, 0.232605)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.95,
+			"velocity": "(-0.210346, 0.003674, -0.000074)"
+		},
+		{
+			"force": 93.7408638000488,
+			"mode": "FOOT_TRANSITION",
+			"position": "(-0.131561, 1.171341, 0.2326)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.96666666666666,
+			"velocity": "(-0.222889, 0.016578, -0.000345)"
+		},
+		{
+			"force": 105.553665161133,
+			"mode": "FOOT_TRANSITION",
+			"position": "(-0.135434, 1.17212, 0.232583)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 1.98333333333333,
+			"velocity": "(-0.232393, 0.046736, -0.001013)"
+		},
+		{
+			"force": 111.286861419678,
+			"mode": "FOOT_TRANSITION",
+			"position": "(-0.1394, 1.173632, 0.232549)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.0,
+			"velocity": "(-0.237947, 0.090697, -0.002002)"
+		},
+		{
+			"force": 111.551010131836,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.14339, 1.175985, 0.232497)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.01666666666666,
+			"velocity": "(-0.239392, 0.141221, -0.003148)"
+		},
+		{
+			"force": 107.414619445801,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.14735, 1.179164, 0.232475)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.03333333333333,
+			"velocity": "(-0.237627, 0.190697, -0.00131)"
+		},
+		{
+			"force": 100.914108276367,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.151281, 1.183035, 0.23248)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.05,
+			"velocity": "(-0.23585, 0.232311, 0.00027)"
+		},
+		{
+			"force": 93.4673080444336,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.155194, 1.187424, 0.232506)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.06666666666666,
+			"velocity": "(-0.234788, 0.26331, 0.001565)"
+		},
+		{
+			"force": 86.1746311187744,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.159108, 1.19214, 0.232549)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.08333333333333,
+			"velocity": "(-0.23484, 0.282943, 0.002576)"
+		},
+		{
+			"force": 80.5403347015381,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.163043, 1.197005, 0.232604)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.1,
+			"velocity": "(-0.236105, 0.291945, 0.003304)"
+		},
+		{
+			"force": 76.5932235717773,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.167014, 1.201885, 0.232667)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.11666666666666,
+			"velocity": "(-0.238257, 0.292764, 0.003774)"
+		},
+		{
+			"force": 74.1267518997192,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.171031, 1.206682, 0.232733)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.13333333333333,
+			"velocity": "(-0.241013, 0.287825, 0.004002)"
+		},
+		{
+			"force": 73.0527248382568,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.1751, 1.211336, 0.2328)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.15,
+			"velocity": "(-0.244167, 0.279232, 0.003996)"
+		},
+		{
+			"force": 73.1561307907104,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.179225, 1.215817, 0.232862)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.16666666666666,
+			"velocity": "(-0.247492, 0.268886, 0.003739)"
+		},
+		{
+			"force": 74.1500940322876,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.183405, 1.220123, 0.232916)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.18333333333333,
+			"velocity": "(-0.250779, 0.258327, 0.003209)"
+		},
+		{
+			"force": 75.9319953918457,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.187636, 1.224275, 0.232964)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.2,
+			"velocity": "(-0.253865, 0.249121, 0.002885)"
+		},
+		{
+			"force": 78.3929529190063,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.191911, 1.228305, 0.233004)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.21666666666666,
+			"velocity": "(-0.256502, 0.2418, 0.002396)"
+		},
+		{
+			"force": 81.1979522705078,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.196218, 1.23225, 0.233026)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.23333333333333,
+			"velocity": "(-0.258411, 0.236737, 0.001357)"
+		},
+		{
+			"force": 84.0946731567383,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.200541, 1.236148, 0.233016)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.25,
+			"velocity": "(-0.259415, 0.233891, -0.000602)"
+		},
+		{
+			"force": 86.7852439880371,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.204865, 1.240043, 0.232967)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.26666666666666,
+			"velocity": "(-0.259439, 0.233677, -0.002988)"
+		},
+		{
+			"force": 89.121639251709,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.209173, 1.243971, 0.23287)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.28333333333333,
+			"velocity": "(-0.258472, 0.235657, -0.005792)"
+		},
+		{
+			"force": 91.034496307373,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.213449, 1.247958, 0.23272)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.3,
+			"velocity": "(-0.256559, 0.23924, -0.009)"
+		},
+		{
+			"force": 119.016153335571,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.21739, 1.249721, 0.234273)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.31666666666666,
+			"velocity": "(-0.23643, 0.10581, 0.093192)"
+		},
+		{
+			"force": 128.250642776489,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.221122, 1.251579, 0.236373)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.33333333333333,
+			"velocity": "(-0.223913, 0.111489, 0.125974)"
+		},
+		{
+			"force": 130.301736831665,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.224693, 1.254091, 0.238719)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.35,
+			"velocity": "(-0.214298, 0.150713, 0.140756)"
+		},
+		{
+			"force": 129.285800933838,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.228097, 1.257241, 0.241291)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.36666666666666,
+			"velocity": "(-0.204254, 0.188977, 0.154319)"
+		},
+		{
+			"force": 125.663509368896,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.231336, 1.260987, 0.244053)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.38333333333333,
+			"velocity": "(-0.194298, 0.22474, 0.165745)"
+		},
+		{
+			"force": 119.899877548218,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.234419, 1.265272, 0.24697)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.4,
+			"velocity": "(-0.184994, 0.257147, 0.175006)"
+		},
+		{
+			"force": 112.683010101318,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.237365, 1.270012, 0.249996)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.41666666666666,
+			"velocity": "(-0.176761, 0.284349, 0.181546)"
+		},
+		{
+			"force": 104.692132949829,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.240198, 1.275095, 0.253081)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.43333333333333,
+			"velocity": "(-0.169963, 0.304991, 0.185137)"
+		},
+		{
+			"force": 96.5371551513672,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.242946, 1.2804, 0.256178)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.45,
+			"velocity": "(-0.16492, 0.31831, 0.185791)"
+		},
+		{
+			"force": 89.58909034729,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.245645, 1.285803, 0.259239)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.46666666666666,
+			"velocity": "(-0.161914, 0.324167, 0.183667)"
+		},
+		{
+			"force": 83.8031568527222,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.248326, 1.291263, 0.262164)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.48333333333333,
+			"velocity": "(-0.160844, 0.327607, 0.175514)"
+		},
+		{
+			"force": 80.1158638000488,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.251007, 1.296637, 0.264962)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.5,
+			"velocity": "(-0.160879, 0.322432, 0.167902)"
+		},
+		{
+			"force": 78.4262580871582,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.2537, 1.301833, 0.26764)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.51666666666666,
+			"velocity": "(-0.161601, 0.311765, 0.160636)"
+		},
+		{
+			"force": 78.4866647720337,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.256409, 1.306807, 0.270199)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.53333333333333,
+			"velocity": "(-0.16254, 0.298435, 0.153536)"
+		},
+		{
+			"force": 79.9609603881836,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.25913, 1.311554, 0.272639)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.55,
+			"velocity": "(-0.163224, 0.284824, 0.146435)"
+		},
+		{
+			"force": 82.0727701187134,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.26185, 1.3161, 0.274959)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.56666666666666,
+			"velocity": "(-0.163205, 0.272783, 0.139185)"
+		},
+		{
+			"force": 84.3452711105347,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.264555, 1.320486, 0.277154)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.58333333333333,
+			"velocity": "(-0.16234, 0.263172, 0.131725)"
+		},
+		{
+			"force": 86.4915475845337,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.267233, 1.324757, 0.279222)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.6,
+			"velocity": "(-0.160655, 0.256244, 0.124044)"
+		},
+		{
+			"force": 88.3124752044678,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.269871, 1.328955, 0.281158)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.61666666666666,
+			"velocity": "(-0.158262, 0.251892, 0.116163)"
+		},
+		{
+			"force": 89.6926422119141,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.27246, 1.333118, 0.28296)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.63333333333333,
+			"velocity": "(-0.155334, 0.249763, 0.108123)"
+		},
+		{
+			"force": 90.5910043716431,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.274994, 1.337274, 0.284626)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.65,
+			"velocity": "(-0.15208, 0.249361, 0.099984)"
+		},
+		{
+			"force": 91.02783203125,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.277473, 1.341443, 0.286156)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.66666666666666,
+			"velocity": "(-0.148717, 0.250147, 0.091809)"
+		},
+		{
+			"force": 91.0672016143799,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.279897, 1.345636, 0.287551)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.68333333333333,
+			"velocity": "(-0.145453, 0.251605, 0.083662)"
+		},
+		{
+			"force": 90.8002662658691,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.282272, 1.349858, 0.288811)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.7,
+			"velocity": "(-0.14247, 0.253297, 0.075602)"
+		},
+		{
+			"force": 90.4309101104736,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.284592, 1.354087, 0.289938)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.71666666666666,
+			"velocity": "(-0.139197, 0.253746, 0.067625)"
+		},
+		{
+			"force": 90.731876373291,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.286777, 1.358178, 0.290928)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.73333333333333,
+			"velocity": "(-0.131107, 0.245477, 0.059419)"
+		},
+		{
+			"force": 91.8061103820801,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.288759, 1.362024, 0.291777)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.75,
+			"velocity": "(-0.118911, 0.230729, 0.050914)"
+		},
+		{
+			"force": 93.6002635955811,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.290481, 1.365553, 0.292478)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.76666666666666,
+			"velocity": "(-0.10333, 0.211741, 0.042078)"
+		},
+		{
+			"force": 95.9632225036621,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.2919, 1.368729, 0.293027)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.78333333333333,
+			"velocity": "(-0.085126, 0.190579, 0.032912)"
+		},
+		{
+			"force": 98.686408996582,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.292984, 1.371546, 0.293417)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.79999999999999,
+			"velocity": "(-0.065082, 0.169031, 0.023439)"
+		},
+		{
+			"force": 101.532804489136,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.293717, 1.374022, 0.293646)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.81666666666666,
+			"velocity": "(-0.04394, 0.14851, 0.013702)"
+		},
+		{
+			"force": 104.270053863525,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.294089, 1.376188, 0.293709)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.83333333333333,
+			"velocity": "(-0.022345, 0.129975, 0.00377)"
+		},
+		{
+			"force": 106.705072402954,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.294103, 1.378086, 0.293604)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.84999999999999,
+			"velocity": "(-0.000853, 0.113908, -0.006254)"
+		},
+		{
+			"force": 108.708841323853,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.293769, 1.379759, 0.293334)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.86666666666666,
+			"velocity": "(0.020029, 0.100393, -0.016239)"
+		},
+		{
+			"force": 110.061088562012,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.293106, 1.381247, 0.2929)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.88333333333333,
+			"velocity": "(0.039832, 0.089256, -0.026041)"
+		},
+		{
+			"force": 110.746244430542,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.292138, 1.382581, 0.292308)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.89999999999999,
+			"velocity": "(0.058064, 0.080038, -0.035507)"
+		},
+		{
+			"force": 110.909538269043,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.290899, 1.383785, 0.291566)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.91666666666666,
+			"velocity": "(0.0743, 0.072242, -0.044506)"
+		},
+		{
+			"force": 110.701854705811,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.289429, 1.384877, 0.290684)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.93333333333333,
+			"velocity": "(0.088251, 0.065494, -0.052946)"
+		},
+		{
+			"force": 110.258232116699,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.287766, 1.385869, 0.289671)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.94999999999999,
+			"velocity": "(0.099768, 0.059543, -0.060776)"
+		},
+		{
+			"force": 109.686138153076,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.285952, 1.386773, 0.288538)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.96666666666666,
+			"velocity": "(0.108824, 0.05424, -0.067981)"
+		},
+		{
+			"force": 109.062654495239,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.284027, 1.387598, 0.287295)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.98333333333333,
+			"velocity": "(0.115499, 0.049507, -0.074569)"
+		},
+		{
+			"force": 108.437557220459,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.282028, 1.388353, 0.285952)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 2.99999999999999,
+			"velocity": "(0.119954, 0.045303, -0.080578)"
+		},
+		{
+			"force": 107.831684112549,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.279988, 1.389047, 0.284517)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.01666666666666,
+			"velocity": "(0.122418, 0.041609, -0.086086)"
+		},
+		{
+			"force": 107.262943267822,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.277935, 1.389687, 0.282998)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.03333333333333,
+			"velocity": "(0.123149, 0.038402, -0.091136)"
+		},
+		{
+			"force": 106.741832733154,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.275895, 1.390281, 0.281402)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.04999999999999,
+			"velocity": "(0.122424, 0.035665, -0.09578)"
+		},
+		{
+			"force": 106.272449493408,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.273886, 1.390837, 0.279734)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.06666666666666,
+			"velocity": "(0.120524, 0.03338, -0.100072)"
+		},
+		{
+			"force": 105.857330322266,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.271924, 1.391363, 0.278)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.08333333333333,
+			"velocity": "(0.11772, 0.031526, -0.104064)"
+		},
+		{
+			"force": 105.495746612549,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.27002, 1.391864, 0.276203)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.09999999999999,
+			"velocity": "(0.114263, 0.030076, -0.107808)"
+		},
+		{
+			"force": 105.186943054199,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.26818, 1.392347, 0.274347)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.11666666666666,
+			"velocity": "(0.110379, 0.028992, -0.111351)"
+		},
+		{
+			"force": 104.929004669189,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.266409, 1.392818, 0.272435)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.13333333333333,
+			"velocity": "(0.106265, 0.028228, -0.114732)"
+		},
+		{
+			"force": 104.721145629883,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.264707, 1.39328, 0.270468)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.14999999999999,
+			"velocity": "(0.102093, 0.027729, -0.117987)"
+		},
+		{
+			"force": 104.561656951904,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.263074, 1.393737, 0.268449)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.16666666666666,
+			"velocity": "(0.098005, 0.027431, -0.121143)"
+		},
+		{
+			"force": 104.449039459229,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.261505, 1.394192, 0.266379)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.18333333333333,
+			"velocity": "(0.094122, 0.027272, -0.124224)"
+		},
+		{
+			"force": 104.38090133667,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.259996, 1.394645, 0.264258)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.19999999999999,
+			"velocity": "(0.090544, 0.027191, -0.127247)"
+		},
+		{
+			"force": 104.19799041748,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.258532, 1.395125, 0.262117)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.21666666666666,
+			"velocity": "(0.087823, 0.028823, -0.128461)"
+		},
+		{
+			"force": 103.855480194092,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.257098, 1.395656, 0.259989)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.23333333333333,
+			"velocity": "(0.086075, 0.031851, -0.127701)"
+		},
+		{
+			"force": 103.332611083984,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.255675, 1.396255, 0.257908)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.24999999999999,
+			"velocity": "(0.085358, 0.035917, -0.124846)"
+		},
+		{
+			"force": 103.794574737549,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.254362, 1.396895, 0.256992)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.26666666666666,
+			"velocity": "(0.078783, 0.038414, -0.054973)"
+		},
+		{
+			"force": 104.326787948608,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.253077, 1.397659, 0.256857)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.28333333333333,
+			"velocity": "(0.07712, 0.045853, -0.008059)"
+		},
+		{
+			"force": 104.026561737061,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.251706, 1.398595, 0.256857)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.29999999999999,
+			"velocity": "(0.082249, 0.056159, -0.000022)"
+		},
+		{
+			"force": 103.086433410645,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.250228, 1.399677, 0.257026)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.31666666666666,
+			"velocity": "(0.088658, 0.064905, 0.01012)"
+		},
+		{
+			"force": 101.85466003418,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.248638, 1.400854, 0.25737)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.33333333333333,
+			"velocity": "(0.09541, 0.070593, 0.020682)"
+		},
+		{
+			"force": 100.584842681885,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.246936, 1.402075, 0.257891)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.34999999999999,
+			"velocity": "(0.102111, 0.073296, 0.03127)"
+		},
+		{
+			"force": 99.4530181884766,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.245127, 1.403302, 0.25859)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.36666666666666,
+			"velocity": "(0.108578, 0.073602, 0.041903)"
+		},
+		{
+			"force": 98.5615272521973,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.243215, 1.404504, 0.259466)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.38333333333333,
+			"velocity": "(0.114678, 0.072115, 0.052594)"
+		},
+		{
+			"force": 97.9398574829102,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.24121, 1.405661, 0.260522)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.39999999999999,
+			"velocity": "(0.120304, 0.069438, 0.063355)"
+		},
+		{
+			"force": 97.568920135498,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.239121, 1.406763, 0.261759)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.41666666666666,
+			"velocity": "(0.125371, 0.066128, 0.07419)"
+		},
+		{
+			"force": 97.4271507263184,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.236957, 1.407808, 0.263177)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.43333333333333,
+			"velocity": "(0.129815, 0.062664, 0.085099)"
+		},
+		{
+			"force": 97.5274200439453,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.23473, 1.408798, 0.264778)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.44999999999999,
+			"velocity": "(0.133602, 0.059437, 0.096074)"
+		},
+		{
+			"force": 97.8167152404785,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.232452, 1.409744, 0.266563)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.46666666666666,
+			"velocity": "(0.136719, 0.056763, 0.107104)"
+		},
+		{
+			"force": 98.1344337463379,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.230132, 1.410658, 0.268533)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.48333333333333,
+			"velocity": "(0.139188, 0.054849, 0.11817)"
+		},
+		{
+			"force": 98.453182220459,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.22778, 1.411554, 0.270687)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.49999999999999,
+			"velocity": "(0.141104, 0.05374, 0.129242)"
+		},
+		{
+			"force": 98.8114852905273,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.225404, 1.412444, 0.273025)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.51666666666666,
+			"velocity": "(0.142593, 0.053388, 0.14029)"
+		},
+		{
+			"force": 99.1871147155762,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.223007, 1.413339, 0.275547)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.53333333333333,
+			"velocity": "(0.143774, 0.053723, 0.151288)"
+		},
+		{
+			"force": 99.5552635192871,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.220595, 1.41425, 0.27825)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.54999999999999,
+			"velocity": "(0.144754, 0.054646, 0.162205)"
+		},
+		{
+			"force": 99.8958740234375,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.218168, 1.415184, 0.281133)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.56666666666666,
+			"velocity": "(0.145628, 0.056048, 0.173005)"
+		},
+		{
+			"force": 100.195953369141,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.215727, 1.416148, 0.284194)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.58333333333333,
+			"velocity": "(0.146464, 0.057832, 0.183644)"
+		},
+		{
+			"force": 99.7922210693359,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.213234, 1.417198, 0.287411)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.59999999999999,
+			"velocity": "(0.149584, 0.063011, 0.192983)"
+		},
+		{
+			"force": 99.0701789855957,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.210674, 1.41834, 0.290772)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.61666666666666,
+			"velocity": "(0.153551, 0.068475, 0.201663)"
+		},
+		{
+			"force": 98.1307125091553,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.20804, 1.419567, 0.294267)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.63333333333333,
+			"velocity": "(0.15807, 0.073621, 0.209699)"
+		},
+		{
+			"force": 97.0012130737305,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.205321, 1.420873, 0.297883)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.64999999999999,
+			"velocity": "(0.163114, 0.078385, 0.216972)"
+		},
+		{
+			"force": 95.7098331451416,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.202511, 1.422251, 0.301606)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.66666666666666,
+			"velocity": "(0.168639, 0.082707, 0.223371)"
+		},
+		{
+			"force": 94.2820377349854,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.199601, 1.423694, 0.305419)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.68333333333333,
+			"velocity": "(0.174594, 0.086539, 0.228798)"
+		},
+		{
+			"force": 93.0310554504395,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.19658, 1.425153, 0.309316)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.69999999999999,
+			"velocity": "(0.181228, 0.087578, 0.23384)"
+		},
+		{
+			"force": 92.2582626342773,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.193441, 1.426591, 0.313292)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.71666666666666,
+			"velocity": "(0.188337, 0.086253, 0.238574)"
+		},
+		{
+			"force": 91.7547607421875,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.190179, 1.427979, 0.317343)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.73333333333333,
+			"velocity": "(0.195742, 0.083299, 0.243021)"
+		},
+		{
+			"force": 91.5099792480469,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.186789, 1.429301, 0.321463)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.74999999999999,
+			"velocity": "(0.203413, 0.079324, 0.247181)"
+		},
+		{
+			"force": 91.5799999237061,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.183267, 1.430549, 0.325647)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.76666666666666,
+			"velocity": "(0.211319, 0.074865, 0.251046)"
+		},
+		{
+			"force": 91.9110469818115,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.17961, 1.431723, 0.32989)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.78333333333332,
+			"velocity": "(0.219393, 0.070409, 0.254598)"
+		},
+		{
+			"force": 92.3666019439697,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.175818, 1.432828, 0.334187)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.79999999999999,
+			"velocity": "(0.227565, 0.066325, 0.257815)"
+		},
+		{
+			"force": 92.8809261322021,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.171888, 1.433875, 0.338531)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.81666666666666,
+			"velocity": "(0.235777, 0.062807, 0.260677)"
+		},
+		{
+			"force": 93.4096031188965,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.167822, 1.434874, 0.342917)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.83333333333332,
+			"velocity": "(0.243975, 0.059937, 0.263164)"
+		},
+		{
+			"force": 93.9218978881836,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.16362, 1.435835, 0.347338)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.84999999999999,
+			"velocity": "(0.25211, 0.057708, 0.265258)"
+		},
+		{
+			"force": 94.4008121490479,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.159284, 1.43677, 0.351787)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.86666666666666,
+			"velocity": "(0.260137, 0.056054, 0.26694)"
+		},
+		{
+			"force": 94.8397903442383,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.154817, 1.437684, 0.356257)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.88333333333332,
+			"velocity": "(0.268019, 0.054868, 0.268196)"
+		},
+		{
+			"force": 95.241792678833,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.150222, 1.438585, 0.360741)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.89999999999999,
+			"velocity": "(0.275727, 0.054022, 0.269011)"
+		},
+		{
+			"force": 95.6163024902344,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.145501, 1.439474, 0.36523)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.91666666666666,
+			"velocity": "(0.283243, 0.053387, 0.269375)"
+		},
+		{
+			"force": 95.9777374267578,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.140658, 1.440355, 0.369718)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.93333333333332,
+			"velocity": "(0.290558, 0.05284, 0.269279)"
+		},
+		{
+			"force": 96.3422908782959,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.135697, 1.441226, 0.374197)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.94999999999999,
+			"velocity": "(0.297672, 0.052276, 0.268715)"
+		},
+		{
+			"force": 96.6927738189697,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.130628, 1.44207, 0.378638)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.96666666666666,
+			"velocity": "(0.304124, 0.05062, 0.26647)"
+		},
+		{
+			"force": 105.154354095459,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.125431, 1.442888, 0.383302)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.98333333333332,
+			"velocity": "(0.311866, 0.049075, 0.279845)"
+		},
+		{
+			"force": 104.960048675537,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.120146, 1.443644, 0.38757)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 3.99999999999999,
+			"velocity": "(0.317109, 0.045378, 0.256034)"
+		},
+		{
+			"force": 103.898246765137,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.114801, 1.444303, 0.391375)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.01666666666666,
+			"velocity": "(0.320674, 0.039539, 0.228333)"
+		},
+		{
+			"force": 102.830312728882,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.109404, 1.444862, 0.394738)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.03333333333332,
+			"velocity": "(0.3238, 0.033507, 0.201762)"
+		},
+		{
+			"force": 101.752868652344,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.103959, 1.445315, 0.397675)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.04999999999999,
+			"velocity": "(0.326697, 0.027224, 0.176244)"
+		},
+		{
+			"force": 100.668760299683,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.098466, 1.445661, 0.400203)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.06666666666666,
+			"velocity": "(0.329614, 0.02072, 0.151683)"
+		},
+		{
+			"force": 99.6063556671143,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.092921, 1.445895, 0.402339)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.08333333333332,
+			"velocity": "(0.3327, 0.014043, 0.128126)"
+		},
+		{
+			"force": 98.6047096252441,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.087323, 1.446016, 0.4041)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.09999999999999,
+			"velocity": "(0.335865, 0.007299, 0.105657)"
+		},
+		{
+			"force": 97.8765239715576,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.081675, 1.446028, 0.405505)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.11666666666666,
+			"velocity": "(0.338877, 0.000711, 0.084328)"
+		},
+		{
+			"force": 97.2941246032715,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.075983, 1.445939, 0.406573)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.13333333333332,
+			"velocity": "(0.341508, -0.005327, 0.064083)"
+		},
+		{
+			"force": 97.0618629455566,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.070266, 1.445737, 0.407332)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.14999999999999,
+			"velocity": "(0.343014, -0.012146, 0.04553)"
+		},
+		{
+			"force": 97.0343475341797,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.06454, 1.445426, 0.407804)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.16666666666666,
+			"velocity": "(0.343599, -0.01865, 0.028343)"
+		},
+		{
+			"force": 97.1355018615723,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.058816, 1.445019, 0.408011)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.18333333333332,
+			"velocity": "(0.343447, -0.024407, 0.012403)"
+		},
+		{
+			"force": 97.4713096618652,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.053106, 1.44453, 0.407987)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.19999999999999,
+			"velocity": "(0.342594, -0.029378, -0.001464)"
+		},
+		{
+			"force": 98.492301940918,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.047423, 1.443981, 0.407828)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.21666666666666,
+			"velocity": "(0.34094, -0.032915, -0.009506)"
+		},
+		{
+			"force": 99.7279090881348,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.041866, 1.443434, 0.407614)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.23333333333332,
+			"velocity": "(0.333443, -0.032819, -0.012832)"
+		},
+		{
+			"force": 101.13716506958,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.036525, 1.442937, 0.407414)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.24999999999999,
+			"velocity": "(0.320446, -0.029826, -0.01201)"
+		},
+		{
+			"force": 102.462947845459,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.03145, 1.442533, 0.407253)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.26666666666666,
+			"velocity": "(0.304538, -0.024219, -0.009678)"
+		},
+		{
+			"force": 103.426082611084,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.026626, 1.442258, 0.407117)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.28333333333332,
+			"velocity": "(0.289397, -0.016513, -0.008157)"
+		},
+		{
+			"force": 104.175380706787,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.021943, 1.44207, 0.407018)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.29999999999999,
+			"velocity": "(0.281021, -0.011278, -0.00594)"
+		},
+		{
+			"force": 104.906253814697,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.017364, 1.441964, 0.406954)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.31666666666666,
+			"velocity": "(0.274691, -0.006358, -0.003844)"
+		},
+		{
+			"force": 105.585060119629,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.012866, 1.441935, 0.40692)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.33333333333332,
+			"velocity": "(0.269931, -0.001774, -0.002008)"
+		},
+		{
+			"force": 62.0879402160645,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.008428, 1.441975, 0.406911)",
+			"states": [
+				"REACHING",
+				"ATTACHED"
+			],
+			"time": 4.34999999999999,
+			"velocity": "(0.266258, 0.002403, -0.000552)"
+		},
+		{
+			"force": 62.2780075073242,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.003796, 1.441567, 0.406986)",
+			"states": [
+				"REACHING",
+				"ATTACHED"
+			],
+			"time": 4.36666666666666,
+			"velocity": "(0.277932, -0.024485, 0.004479)"
+		},
+		{
+			"force": 62.5479354858398,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.001034, 1.440844, 0.407135)",
+			"states": [
+				"REACHING",
+				"ATTACHED"
+			],
+			"time": 4.38333333333332,
+			"velocity": "(0.289771, -0.043362, 0.008927)"
+		},
+		{
+			"force": 63.1168899536133,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.006069, 1.439951, 0.407387)",
+			"states": [
+				"REACHING",
+				"ATTACHED"
+			],
+			"time": 4.39999999999999,
+			"velocity": "(0.302133, -0.053585, 0.015122)"
+		},
+		{
+			"force": 63.5237617492676,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.011322, 1.439039, 0.407789)",
+			"states": [
+				"REACHING",
+				"ATTACHED"
+			],
+			"time": 4.41666666666666,
+			"velocity": "(0.315136, -0.054741, 0.024158)"
+		},
+		{
+			"force": 63.6319122314453,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.016805, 1.438242, 0.408396)",
+			"states": [
+				"REACHING",
+				"ATTACHED"
+			],
+			"time": 4.43333333333332,
+			"velocity": "(0.328985, -0.047789, 0.03638)"
+		},
+		{
+			"force": 63.7296485900879,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.022536, 1.437674, 0.409283)",
+			"states": [
+				"REACHING",
+				"ATTACHED"
+			],
+			"time": 4.44999999999999,
+			"velocity": "(0.343867, -0.034083, 0.053244)"
+		},
+		{
+			"force": 60.7709295302629,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.028532, 1.437417, 0.4105)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.46666666666666,
+			"velocity": "(0.35979, -0.015458, 0.073041)"
+		},
+		{
+			"force": 59.6968752145767,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.034789, 1.437468, 0.412094)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.48333333333332,
+			"velocity": "(0.375408, 0.003113, 0.095633)"
+		},
+		{
+			"force": 61.7487831115723,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.04129, 1.437802, 0.414044)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.49999999999999,
+			"velocity": "(0.390079, 0.020026, 0.116992)"
+		},
+		{
+			"force": 66.5417594909668,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.048018, 1.438424, 0.416301)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.51666666666666,
+			"velocity": "(0.403683, 0.037289, 0.135419)"
+		},
+		{
+			"force": 72.3391361236572,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.05495, 1.43937, 0.4188)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.53333333333332,
+			"velocity": "(0.4159, 0.056801, 0.149938)"
+		},
+		{
+			"force": 76.5516014099121,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.062052, 1.440671, 0.421466)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.54999999999999,
+			"velocity": "(0.426099, 0.078023, 0.159941)"
+		},
+		{
+			"force": 78.9730072021484,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.069281, 1.442289, 0.424225)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.56666666666666,
+			"velocity": "(0.43377, 0.09713, 0.165546)"
+		},
+		{
+			"force": 81.9110240936279,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.076597, 1.444134, 0.427011)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.58333333333332,
+			"velocity": "(0.438932, 0.110646, 0.167187)"
+		},
+		{
+			"force": 85.5814971923828,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.083958, 1.446115, 0.429759)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.59999999999999,
+			"velocity": "(0.441674, 0.118912, 0.164865)"
+		},
+		{
+			"force": 90.391227722168,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.091305, 1.448114, 0.432341)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.61666666666666,
+			"velocity": "(0.440821, 0.119931, 0.154886)"
+		},
+		{
+			"force": 96.1140937805176,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.09858, 1.450047, 0.43464)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.63333333333332,
+			"velocity": "(0.436525, 0.115989, 0.13799)"
+		},
+		{
+			"force": 102.029411315918,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.105749, 1.451919, 0.436621)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.64999999999999,
+			"velocity": "(0.430139, 0.11228, 0.118834)"
+		},
+		{
+			"force": 107.930027008057,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.112772, 1.453738, 0.438243)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.66666666666666,
+			"velocity": "(0.421343, 0.109145, 0.097297)"
+		},
+		{
+			"force": 113.725734710693,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.119604, 1.455514, 0.439471)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.68333333333332,
+			"velocity": "(0.409919, 0.106591, 0.073721)"
+		},
+		{
+			"force": 119.343254089355,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.126202, 1.457256, 0.440278)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.69999999999999,
+			"velocity": "(0.395874, 0.104506, 0.048423)"
+		},
+		{
+			"force": 124.719795227051,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.132525, 1.45897, 0.44064)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 4.71666666666666,
+			"velocity": "(0.379413, 0.102847, 0.021714)"
+		},
+		{
+			"force": 85.6303176879883,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.138538, 1.460666, 0.440537)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 4.73333333333332,
+			"velocity": "(0.360768, 0.101766, -0.006181)"
+		},
+		{
+			"force": 102.134506225586,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.144101, 1.461765, 0.440236)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 4.74999999999999,
+			"velocity": "(0.333795, 0.065898, -0.018086)"
+		},
+		{
+			"force": 116.579170227051,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.149126, 1.462537, 0.439651)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 4.76666666666666,
+			"velocity": "(0.301479, 0.046346, -0.035071)"
+		},
+		{
+			"force": 128.090133666992,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.153541, 1.463201, 0.43871)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 4.78333333333332,
+			"velocity": "(0.264918, 0.039848, -0.056474)"
+		},
+		{
+			"force": 136.11100769043,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.157297, 1.46391, 0.43735)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 4.79999999999999,
+			"velocity": "(0.225375, 0.042506, -0.081585)"
+		},
+		{
+			"force": 140.440933227539,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.160365, 1.464748, 0.435522)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 4.81666666666665,
+			"velocity": "(0.184044, 0.050298, -0.109668)"
+		},
+		{
+			"force": 141.239791870117,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.162731, 1.465737, 0.433191)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 4.83333333333332,
+			"velocity": "(0.141959, 0.059318, -0.139876)"
+		},
+		{
+			"force": 138.96240234375,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.164398, 1.466838, 0.430337)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 4.84999999999999,
+			"velocity": "(0.100033, 0.066111, -0.171241)"
+		},
+		{
+			"force": 134.269180297852,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.165383, 1.467972, 0.426958)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 4.86666666666665,
+			"velocity": "(0.059076, 0.068013, -0.20276)"
+		},
+		{
+			"force": 127.908210754395,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.165712, 1.469028, 0.423066)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 4.88333333333332,
+			"velocity": "(0.01978, 0.063378, -0.233483)"
+		},
+		{
+			"force": 127.420433044434,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.16539, 1.469792, 0.419543)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 4.89999999999999,
+			"velocity": "(-0.019331, 0.045831, -0.211439)"
+		},
+		{
+			"force": 122.324119567871,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.164447, 1.470315, 0.415867)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 4.91666666666665,
+			"velocity": "(-0.056614, 0.031355, -0.22053)"
+		},
+		{
+			"force": 116.678413391113,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.162919, 1.470528, 0.412014)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 4.93333333333332,
+			"velocity": "(-0.091627, 0.012827, -0.231208)"
+		},
+		{
+			"force": 111.078178405762,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.160851, 1.470372, 0.407999)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 4.94999999999999,
+			"velocity": "(-0.124134, -0.009388, -0.240846)"
+		},
+		{
+			"force": 105.713790893555,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.158284, 1.469805, 0.403845)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 4.96666666666665,
+			"velocity": "(-0.154009, -0.034026, -0.249246)"
+		},
+		{
+			"force": 100.679000854492,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.155264, 1.468809, 0.399574)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 4.98333333333332,
+			"velocity": "(-0.18119, -0.059723, -0.256272)"
+		},
+		{
+			"force": 95.9890289306641,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.151836, 1.46739, 0.39521)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 4.99999999999999,
+			"velocity": "(-0.205652, -0.085167, -0.26184)"
+		},
+		{
+			"force": 91.5977020263672,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.148047, 1.46557, 0.390778)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.01666666666665,
+			"velocity": "(-0.227392, -0.1092, -0.265925)"
+		},
+		{
+			"force": 89.1812744140625,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.14395, 1.463434, 0.386352)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.03333333333332,
+			"velocity": "(-0.245808, -0.128169, -0.265558)"
+		},
+		{
+			"force": 87.982292175293,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.139595, 1.461114, 0.382008)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.04999999999999,
+			"velocity": "(-0.261288, -0.139226, -0.260662)"
+		},
+		{
+			"force": 87.3368911743164,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.135024, 1.458761, 0.377819)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.06666666666665,
+			"velocity": "(-0.274281, -0.141141, -0.251338)"
+		},
+		{
+			"force": 86.7736511230469,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.130269, 1.456524, 0.373856)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.08333333333332,
+			"velocity": "(-0.28529, -0.134243, -0.23778)"
+		},
+		{
+			"force": 86.0168151855469,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.125357, 1.454524, 0.370185)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.09999999999999,
+			"velocity": "(-0.294737, -0.120002, -0.220271)"
+		},
+		{
+			"force": 84.9399337768555,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.120308, 1.452849, 0.366863)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.11666666666665,
+			"velocity": "(-0.302922, -0.100491, -0.199275)"
+		},
+		{
+			"force": 83.5650863647461,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.11514, 1.451549, 0.36394)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.13333333333332,
+			"velocity": "(-0.310061, -0.077987, -0.175398)"
+		},
+		{
+			"force": 82.0881423950195,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.109863, 1.450603, 0.36141)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.14999999999999,
+			"velocity": "(-0.316654, -0.056768, -0.151781)"
+		},
+		{
+			"force": 80.7758865356445,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.104481, 1.44996, 0.359254)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.16666666666665,
+			"velocity": "(-0.322879, -0.038586, -0.129368)"
+		},
+		{
+			"force": 79.8342590332031,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.099001, 1.449562, 0.357448)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.18333333333332,
+			"velocity": "(-0.328818, -0.023892, -0.108398)"
+		},
+		{
+			"force": 79.385383605957,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.093425, 1.449352, 0.355963)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.19999999999999,
+			"velocity": "(-0.334543, -0.012606, -0.089047)"
+		},
+		{
+			"force": 79.4799270629883,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.087756, 1.449279, 0.354772)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.21666666666665,
+			"velocity": "(-0.340125, -0.004332, -0.071471)"
+		},
+		{
+			"force": 80.1154632568359,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.081996, 1.449304, 0.353843)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.23333333333332,
+			"velocity": "(-0.345627, 0.001479, -0.055771)"
+		},
+		{
+			"force": 81.2491607666016,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.076144, 1.449394, 0.353142)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.24999999999999,
+			"velocity": "(-0.351122, 0.005416, -0.042056)"
+		},
+		{
+			"force": 82.8168487548828,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.070199, 1.449528, 0.352635)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.26666666666665,
+			"velocity": "(-0.35669, 0.00803, -0.030431)"
+		},
+		{
+			"force": 84.7502517700195,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.064159, 1.449691, 0.352285)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.28333333333332,
+			"velocity": "(-0.362428, 0.009796, -0.020964)"
+		},
+		{
+			"force": 86.9731903076172,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.058018, 1.449877, 0.352056)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.29999999999999,
+			"velocity": "(-0.368451, 0.011123, -0.013775)"
+		},
+		{
+			"force": 88.3617248535156,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.05177, 1.450083, 0.351906)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.31666666666665,
+			"velocity": "(-0.374871, 0.012353, -0.008955)"
+		},
+		{
+			"force": 89.129508972168,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.045409, 1.450291, 0.351798)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.33333333333332,
+			"velocity": "(-0.381673, 0.012523, -0.006518)"
+		},
+		{
+			"force": 89.5263137817383,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.038928, 1.450477, 0.351691)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.34999999999999,
+			"velocity": "(-0.38882, 0.011127, -0.006377)"
+		},
+		{
+			"force": 89.7150115966797,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.032324, 1.450618, 0.351558)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.36666666666665,
+			"velocity": "(-0.396253, 0.008463, -0.007992)"
+		},
+		{
+			"force": 89.7567596435547,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.025593, 1.450713, 0.351393)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.38333333333332,
+			"velocity": "(-0.40388, 0.005729, -0.009892)"
+		},
+		{
+			"force": 89.7152862548828,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.018731, 1.450763, 0.351194)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.39999999999999,
+			"velocity": "(-0.411713, 0.002949, -0.011976)"
+		},
+		{
+			"force": 89.646614074707,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.011734, 1.450765, 0.350957)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.41666666666665,
+			"velocity": "(-0.419795, 0.000177, -0.014197)"
+		},
+		{
+			"force": 89.6033630371094,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(0.004598, 1.450724, 0.350682)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.43333333333332,
+			"velocity": "(-0.428188, -0.002508, -0.016496)"
+		},
+		{
+			"force": 89.6160888671875,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.002685, 1.45064, 0.350368)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.44999999999999,
+			"velocity": "(-0.436962, -0.004999, -0.018873)"
+		},
+		{
+			"force": 89.7085037231445,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.010121, 1.45052, 0.350013)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.46666666666665,
+			"velocity": "(-0.44619, -0.007197, -0.021301)"
+		},
+		{
+			"force": 89.9015960693359,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.01772, 1.45037, 0.349616)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.48333333333332,
+			"velocity": "(-0.455941, -0.009011, -0.023796)"
+		},
+		{
+			"force": 90.2121734619141,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.025492, 1.450197, 0.349177)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.49999999999999,
+			"velocity": "(-0.466279, -0.010363, -0.026369)"
+		},
+		{
+			"force": 90.6433181762695,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.033446, 1.450011, 0.348692)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.51666666666665,
+			"velocity": "(-0.477257, -0.011184, -0.029075)"
+		},
+		{
+			"force": 91.20068359375,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.041595, 1.449821, 0.34816)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.53333333333332,
+			"velocity": "(-0.488915, -0.011429, -0.031946)"
+		},
+		{
+			"force": 91.8749008178711,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.049949, 1.449636, 0.347575)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.54999999999999,
+			"velocity": "(-0.501265, -0.011054, -0.03507)"
+		},
+		{
+			"force": 92.6507339477539,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.05852, 1.449469, 0.346933)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.56666666666665,
+			"velocity": "(-0.514281, -0.010016, -0.038539)"
+		},
+		{
+			"force": 93.4933853149414,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.067318, 1.449332, 0.346225)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.58333333333332,
+			"velocity": "(-0.52785, -0.008258, -0.042477)"
+		},
+		{
+			"force": 94.3355941772461,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.076346, 1.449236, 0.34544)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.59999999999999,
+			"velocity": "(-0.541681, -0.005724, -0.047077)"
+		},
+		{
+			"force": 95.1098175048828,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.085599, 1.449194, 0.344566)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.61666666666665,
+			"velocity": "(-0.555204, -0.002538, -0.052486)"
+		},
+		{
+			"force": 95.8456115722656,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.095061, 1.449205, 0.343587)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.63333333333332,
+			"velocity": "(-0.567734, 0.000666, -0.058727)"
+		},
+		{
+			"force": 96.7288055419922,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.104712, 1.449254, 0.342491)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.64999999999999,
+			"velocity": "(-0.579006, 0.002957, -0.065722)"
+		},
+		{
+			"force": 97.959602355957,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.114531, 1.449319, 0.341269)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.66666666666665,
+			"velocity": "(-0.589158, 0.003898, -0.073359)"
+		},
+		{
+			"force": 99.6312713623047,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.124503, 1.44938, 0.339908)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.68333333333332,
+			"velocity": "(-0.598349, 0.003641, -0.081642)"
+		},
+		{
+			"force": 101.753051757813,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.134614, 1.449423, 0.338398)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.69999999999999,
+			"velocity": "(-0.606658, 0.002599, -0.090612)"
+		},
+		{
+			"force": 104.09252166748,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.144853, 1.449465, 0.336748)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.71666666666665,
+			"velocity": "(-0.614313, 0.002473, -0.098999)"
+		},
+		{
+			"force": 106.644577026367,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.155206, 1.449515, 0.334964)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.73333333333332,
+			"velocity": "(-0.6212, 0.003003, -0.10705)"
+		},
+		{
+			"force": 109.415718078613,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.165659, 1.44958, 0.333046)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.74999999999998,
+			"velocity": "(-0.627154, 0.003918, -0.115074)"
+		},
+		{
+			"force": 112.424598693848,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.176192, 1.449663, 0.33099)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.76666666666665,
+			"velocity": "(-0.631978, 0.004985, -0.123358)"
+		},
+		{
+			"force": 115.682273864746,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.186783, 1.449764, 0.328786)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.78333333333332,
+			"velocity": "(-0.635461, 0.006032, -0.132209)"
+		},
+		{
+			"force": 119.194137573242,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.197406, 1.44988, 0.326421)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.79999999999998,
+			"velocity": "(-0.637379, 0.006961, -0.141916)"
+		},
+		{
+			"force": 122.950500488281,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.208031, 1.450009, 0.323876)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.81666666666665,
+			"velocity": "(-0.637513, 0.007748, -0.152724)"
+		},
+		{
+			"force": 126.774780273438,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.218631, 1.450162, 0.321123)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.83333333333332,
+			"velocity": "(-0.636027, 0.009218, -0.16516)"
+		},
+		{
+			"force": 129.883544921875,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.229204, 1.450413, 0.318144)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.84999999999998,
+			"velocity": "(-0.634364, 0.015034, -0.178737)"
+		},
+		{
+			"force": 132.203125,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.239745, 1.450816, 0.314921)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.86666666666665,
+			"velocity": "(-0.632464, 0.0242, -0.193353)"
+		},
+		{
+			"force": 133.745300292969,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.250249, 1.45141, 0.31144)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.88333333333332,
+			"velocity": "(-0.630211, 0.03564, -0.208865)"
+		},
+		{
+			"force": 134.58073425293,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.260705, 1.452215, 0.307688)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.89999999999998,
+			"velocity": "(-0.627403, 0.048318, -0.22512)"
+		},
+		{
+			"force": 134.650161743164,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.271105, 1.453248, 0.303668)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.91666666666665,
+			"velocity": "(-0.624, 0.06197, -0.241208)"
+		},
+		{
+			"force": 134.015640258789,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.281433, 1.454513, 0.29939)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.93333333333332,
+			"velocity": "(-0.619648, 0.075871, -0.256711)"
+		},
+		{
+			"force": 132.862854003906,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.291657, 1.455994, 0.294863)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.94999999999998,
+			"velocity": "(-0.613444, 0.088897, -0.271605)"
+		},
+		{
+			"force": 131.532302856445,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.301729, 1.457652, 0.290098)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.96666666666665,
+			"velocity": "(-0.604316, 0.099454, -0.285897)"
+		},
+		{
+			"force": 130.504486083984,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.311607, 1.459423, 0.28511)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.98333333333332,
+			"velocity": "(-0.592712, 0.106235, -0.299304)"
+		},
+		{
+			"force": 130.619201660156,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.321309, 1.46121, 0.279929)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 5.99999999999998,
+			"velocity": "(-0.582078, 0.107275, -0.310842)"
+		},
+		{
+			"force": 131.088821411133,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.330812, 1.463004, 0.274566)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.01666666666665,
+			"velocity": "(-0.570206, 0.107623, -0.321746)"
+		},
+		{
+			"force": 131.850555419922,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.3401, 1.464796, 0.269034)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.03333333333332,
+			"velocity": "(-0.557243, 0.107484, -0.331964)"
+		},
+		{
+			"force": 132.883575439453,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.349158, 1.466577, 0.263345)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.04999999999998,
+			"velocity": "(-0.543517, 0.106868, -0.341352)"
+		},
+		{
+			"force": 134.105316162109,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.357993, 1.468351, 0.257514)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.06666666666665,
+			"velocity": "(-0.530082, 0.106474, -0.349842)"
+		},
+		{
+			"force": 135.230850219727,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.3666, 1.470139, 0.251554)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.08333333333332,
+			"velocity": "(-0.516434, 0.107239, -0.357569)"
+		},
+		{
+			"force": 136.11604309082,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.374973, 1.471959, 0.245479)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.09999999999998,
+			"velocity": "(-0.502347, 0.109227, -0.364543)"
+		},
+		{
+			"force": 136.701034545898,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.3831, 1.473829, 0.2393)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.11666666666665,
+			"velocity": "(-0.487664, 0.112218, -0.370723)"
+		},
+		{
+			"force": 136.760604858398,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.39097, 1.475764, 0.233018)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.13333333333332,
+			"velocity": "(-0.472161, 0.116059, -0.376938)"
+		},
+		{
+			"force": 137.197311401367,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.398566, 1.477754, 0.22671)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.14999999999998,
+			"velocity": "(-0.455751, 0.119453, -0.378435)"
+		},
+		{
+			"force": 139.526885986328,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.405783, 1.479758, 0.221181)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.16666666666665,
+			"velocity": "(-0.433062, 0.120224, -0.331783)"
+		},
+		{
+			"force": 153.645889282227,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.412125, 1.481604, 0.220702)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.18333333333332,
+			"velocity": "(-0.3805, 0.110748, -0.028737)"
+		},
+		{
+			"force": 148.7080078125,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.418004, 1.483896, 0.220514)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.19999999999998,
+			"velocity": "(-0.352737, 0.137522, -0.011265)"
+		},
+		{
+			"force": 143.050765991211,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.423421, 1.486529, 0.220554)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.21666666666665,
+			"velocity": "(-0.325033, 0.157958, 0.002432)"
+		},
+		{
+			"force": 137.742156982422,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.428385, 1.489381, 0.22075)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.23333333333332,
+			"velocity": "(-0.297856, 0.171159, 0.011743)"
+		},
+		{
+			"force": 133.43212890625,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.432907, 1.49234, 0.22104)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.24999999999998,
+			"velocity": "(-0.271312, 0.1775, 0.017392)"
+		},
+		{
+			"force": 130.417114257813,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.436996, 1.495309, 0.221379)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.26666666666665,
+			"velocity": "(-0.245307, 0.178175, 0.020316)"
+		},
+		{
+			"force": 128.543746948242,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.440657, 1.498222, 0.221733)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.28333333333332,
+			"velocity": "(-0.219667, 0.174747, 0.021277)"
+		},
+		{
+			"force": 127.67357635498,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.443894, 1.501032, 0.222081)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.29999999999998,
+			"velocity": "(-0.19424, 0.168596, 0.020884)"
+		},
+		{
+			"force": 127.695922851563,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.446708, 1.503712, 0.222403)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.31666666666665,
+			"velocity": "(-0.168851, 0.160794, 0.019303)"
+		},
+		{
+			"force": 128.39794921875,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.449098, 1.506252, 0.222692)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.33333333333332,
+			"velocity": "(-0.143386, 0.152424, 0.017311)"
+		},
+		{
+			"force": 129.486465454102,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.451062, 1.508659, 0.222944)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.34999999999998,
+			"velocity": "(-0.117828, 0.144402, 0.015127)"
+		},
+		{
+			"force": 130.717758178711,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.452599, 1.510947, 0.22316)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.36666666666665,
+			"velocity": "(-0.092219, 0.137282, 0.012959)"
+		},
+		{
+			"force": 131.900619506836,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.453709, 1.513135, 0.223342)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.38333333333332,
+			"velocity": "(-0.066636, 0.13132, 0.010919)"
+		},
+		{
+			"force": 132.897750854492,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.454396, 1.515244, 0.223493)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.39999999999998,
+			"velocity": "(-0.041178, 0.126541, 0.009053)"
+		},
+		{
+			"force": 133.634140014648,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.454662, 1.517291, 0.223615)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.41666666666665,
+			"velocity": "(-0.015954, 0.122803, 0.007371)"
+		},
+		{
+			"force": 134.080856323242,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.454513, 1.519289, 0.223713)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.43333333333332,
+			"velocity": "(0.008928, 0.119865, 0.005863)"
+		},
+		{
+			"force": 134.250793457031,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.453957, 1.521246, 0.223789)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.44999999999998,
+			"velocity": "(0.033366, 0.11744, 0.004528)"
+		},
+		{
+			"force": 134.186767578125,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.453002, 1.523167, 0.223844)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.46666666666665,
+			"velocity": "(0.057272, 0.115241, 0.003343)"
+		},
+		{
+			"force": 133.953308105469,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.451659, 1.52505, 0.223883)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.48333333333332,
+			"velocity": "(0.080563, 0.113013, 0.002319)"
+		},
+		{
+			"force": 133.613754272461,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.44994, 1.526893, 0.223907)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.49999999999998,
+			"velocity": "(0.103154, 0.110574, 0.001472)"
+		},
+		{
+			"force": 133.230773925781,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.447857, 1.52869, 0.223921)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.51666666666665,
+			"velocity": "(0.124963, 0.107821, 0.000801)"
+		},
+		{
+			"force": 132.773330688477,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.445426, 1.530436, 0.223926)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.53333333333332,
+			"velocity": "(0.145917, 0.104726, 0.000313)"
+		},
+		{
+			"force": 132.230361938477,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.44266, 1.532123, 0.223926)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.54999999999998,
+			"velocity": "(0.165943, 0.101225, 0.000008)"
+		},
+		{
+			"force": 131.672393798828,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.439577, 1.533743, 0.223924)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.56666666666665,
+			"velocity": "(0.184971, 0.097241, -0.00014)"
+		},
+		{
+			"force": 131.196105957031,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.436194, 1.53529, 0.223922)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.58333333333332,
+			"velocity": "(0.202953, 0.092781, -0.000134)"
+		},
+		{
+			"force": 130.895492553711,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.43253, 1.536756, 0.223922)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.59999999999998,
+			"velocity": "(0.219859, 0.087969, 0.000022)"
+		},
+		{
+			"force": 130.752410888672,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.428602, 1.53814, 0.223927)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.61666666666665,
+			"velocity": "(0.235685, 0.083034, 0.00033)"
+		},
+		{
+			"force": 130.741317749023,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.424428, 1.539443, 0.22394)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.63333333333332,
+			"velocity": "(0.250436, 0.078178, 0.000776)"
+		},
+		{
+			"force": 130.832412719727,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.420026, 1.540669, 0.223963)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.64999999999998,
+			"velocity": "(0.264127, 0.073561, 0.001334)"
+		},
+		{
+			"force": 130.920501708984,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.415409, 1.54183, 0.223996)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.66666666666665,
+			"velocity": "(0.277012, 0.069658, 0.002009)"
+		},
+		{
+			"force": 131.005172729492,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.410591, 1.542936, 0.224042)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.68333333333331,
+			"velocity": "(0.289075, 0.066362, 0.002734)"
+		},
+		{
+			"force": 131.094589233398,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.405586, 1.543995, 0.224099)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.69999999999998,
+			"velocity": "(0.300306, 0.063561, 0.003455)"
+		},
+		{
+			"force": 131.205291748047,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.400408, 1.545014, 0.224168)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.71666666666665,
+			"velocity": "(0.310705, 0.061151, 0.004135)"
+		},
+		{
+			"force": 131.354690551758,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.39507, 1.545998, 0.224247)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.73333333333331,
+			"velocity": "(0.320277, 0.059047, 0.004734)"
+		},
+		{
+			"force": 131.559860229492,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.389586, 1.546952, 0.224334)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.74999999999998,
+			"velocity": "(0.329029, 0.057189, 0.005245)"
+		},
+		{
+			"force": 131.808288574219,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.38397, 1.547877, 0.224429)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.76666666666665,
+			"velocity": "(0.33697, 0.05554, 0.005653)"
+		},
+		{
+			"force": 132.520446777344,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.378231, 1.548762, 0.224512)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.78333333333331,
+			"velocity": "(0.344324, 0.053093, 0.004986)"
+		},
+		{
+			"force": 133.766708374023,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.372377, 1.549595, 0.224567)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.79999999999998,
+			"velocity": "(0.351272, 0.050004, 0.003331)"
+		},
+		{
+			"force": 135.410629272461,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.366412, 1.550377, 0.224586)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.81666666666665,
+			"velocity": "(0.357894, 0.046879, 0.001141)"
+		},
+		{
+			"force": 137.050872802734,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.360341, 1.551124, 0.224574)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.83333333333331,
+			"velocity": "(0.364226, 0.044852, -0.000751)"
+		},
+		{
+			"force": 138.333312988281,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.354172, 1.551867, 0.224544)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.84999999999998,
+			"velocity": "(0.370139, 0.044536, -0.00179)"
+		},
+		{
+			"force": 139.242797851563,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.347912, 1.552626, 0.224506)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.86666666666665,
+			"velocity": "(0.375641, 0.045583, -0.002268)"
+		},
+		{
+			"force": 139.857147216797,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.341569, 1.553416, 0.224467)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.88333333333331,
+			"velocity": "(0.380543, 0.047367, -0.00235)"
+		},
+		{
+			"force": 140.227935791016,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.335154, 1.554243, 0.224431)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.89999999999998,
+			"velocity": "(0.384887, 0.049621, -0.00219)"
+		},
+		{
+			"force": 140.426818847656,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.328677, 1.555111, 0.224399)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.91666666666665,
+			"velocity": "(0.388657, 0.052061, -0.0019)"
+		},
+		{
+			"force": 140.511093139648,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.322145, 1.55602, 0.224373)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.93333333333331,
+			"velocity": "(0.391903, 0.054559, -0.00156)"
+		},
+		{
+			"force": 140.562652587891,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.31557, 1.556967, 0.224353)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.94999999999998,
+			"velocity": "(0.394486, 0.056829, -0.001199)"
+		},
+		{
+			"force": 140.614624023438,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.308962, 1.557949, 0.224339)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.96666666666665,
+			"velocity": "(0.396467, 0.05892, -0.000853)"
+		},
+		{
+			"force": 140.694625854492,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.302332, 1.558963, 0.22433)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.98333333333331,
+			"velocity": "(0.397839, 0.06084, -0.000534)"
+		},
+		{
+			"force": 140.817474365234,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.295689, 1.560007, 0.224326)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 6.99999999999998,
+			"velocity": "(0.398597, 0.062628, -0.000245)"
+		},
+		{
+			"force": 140.984970092773,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.289043, 1.561079, 0.224326)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 7.01666666666665,
+			"velocity": "(0.398731, 0.064343, 0.000015)"
+		},
+		{
+			"force": 141.187805175781,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.282405, 1.562181, 0.22433)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 7.03333333333331,
+			"velocity": "(0.398268, 0.066079, 0.000241)"
+		},
+		{
+			"force": 141.425796508789,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.275786, 1.563311, 0.224338)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 7.04999999999998,
+			"velocity": "(0.397128, 0.067809, 0.000454)"
+		},
+		{
+			"force": 141.682983398438,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.269197, 1.564471, 0.224348)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 7.06666666666665,
+			"velocity": "(0.395336, 0.069616, 0.000645)"
+		},
+		{
+			"force": 141.947723388672,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.262649, 1.565663, 0.224362)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 7.08333333333331,
+			"velocity": "(0.392883, 0.071525, 0.000816)"
+		},
+		{
+			"force": 142.209335327148,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.256153, 1.566889, 0.224378)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 7.09999999999998,
+			"velocity": "(0.389761, 0.073546, 0.000967)"
+		},
+		{
+			"force": 142.458648681641,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.249721, 1.56815, 0.224396)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 7.11666666666665,
+			"velocity": "(0.385963, 0.075675, 0.0011)"
+		},
+		{
+			"force": 142.688537597656,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.243363, 1.569448, 0.224417)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 7.13333333333331,
+			"velocity": "(0.381486, 0.077899, 0.001215)"
+		},
+		{
+			"force": 142.652481079102,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.237087, 1.570798, 0.224444)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 7.14999999999998,
+			"velocity": "(0.37656, 0.081003, 0.001648)"
+		},
+		{
+			"force": 142.470657348633,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.230901, 1.572205, 0.224479)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 7.16666666666665,
+			"velocity": "(0.371137, 0.084429, 0.002109)"
+		},
+		{
+			"force": 142.261642456055,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.224815, 1.573668, 0.224519)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 7.18333333333331,
+			"velocity": "(0.365172, 0.087761, 0.002406)"
+		},
+		{
+			"force": 142.111251831055,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.218838, 1.57518, 0.224561)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 7.19999999999998,
+			"velocity": "(0.358606, 0.090722, 0.002487)"
+		},
+		{
+			"force": 142.083084106445,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.212981, 1.576733, 0.2246)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 7.21666666666665,
+			"velocity": "(0.3514, 0.09317, 0.00234)"
+		},
+		{
+			"force": 142.2158203125,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.207258, 1.578316, 0.224633)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 7.23333333333331,
+			"velocity": "(0.343424, 0.094969, 0.001987)"
+		},
+		{
+			"force": 142.533660888672,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.201681, 1.579918, 0.224658)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 7.24999999999998,
+			"velocity": "(0.334623, 0.096129, 0.00151)"
+		},
+		{
+			"force": 142.995452880859,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.196264, 1.581532, 0.224676)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 7.26666666666665,
+			"velocity": "(0.32498, 0.096846, 0.001052)"
+		},
+		{
+			"force": 143.344329833984,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.191018, 1.583166, 0.22469)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 7.28333333333331,
+			"velocity": "(0.31478, 0.098029, 0.000887)"
+		},
+		{
+			"force": 143.672866821289,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.185953, 1.584819, 0.224704)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 7.29999999999998,
+			"velocity": "(0.303901, 0.099188, 0.000795)"
+		},
+		{
+			"force": 143.930160522461,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.181078, 1.586494, 0.224717)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 7.31666666666665,
+			"velocity": "(0.292506, 0.100529, 0.000778)"
+		},
+		{
+			"force": 144.071929931641,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.176402, 1.588195, 0.224732)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 7.33333333333331,
+			"velocity": "(0.280545, 0.102028, 0.000945)"
+		},
+		{
+			"force": 144.230804443359,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.171936, 1.589915, 0.22475)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 7.34999999999998,
+			"velocity": "(0.267963, 0.103222, 0.001059)"
+		},
+		{
+			"force": 144.368011474609,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.167687, 1.591655, 0.22477)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 7.36666666666665,
+			"velocity": "(0.254926, 0.104368, 0.001184)"
+		},
+		{
+			"force": 144.346343994141,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.163662, 1.593417, 0.224794)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 7.38333333333331,
+			"velocity": "(0.241537, 0.105753, 0.001469)"
+		},
+		{
+			"force": 144.335586547852,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.159869, 1.595191, 0.224821)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 7.39999999999998,
+			"velocity": "(0.227544, 0.106426, 0.001599)"
+		},
+		{
+			"force": 144.19123840332,
+			"mode": "HANG_ONE_HAND",
+			"position": "(-0.156312, 1.596979, 0.22485)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 7.41666666666665,
+			"velocity": "(0.213457, 0.107269, 0.001747)"
+		},
+		{
+			"force": 144.118133544922,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.152999, 1.598765, 0.224881)",
+			"states": [
+				"ATTACHED",
+				"REACHING"
+			],
+			"time": 7.43333333333331,
+			"velocity": "(0.198762, 0.107201, 0.001875)"
+		},
+		{
+			"force": 139.577883243561,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.14993, 1.600554, 0.224915)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 7.44999999999998,
+			"velocity": "(0.184126, 0.107336, 0.002015)"
+		},
+		{
+			"force": 137.743749856949,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.147105, 1.602247, 0.224954)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 7.46666666666665,
+			"velocity": "(0.169506, 0.101571, 0.002379)"
+		},
+		{
+			"force": 138.453693389893,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.144505, 1.603805, 0.224986)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 7.48333333333331,
+			"velocity": "(0.155989, 0.093472, 0.001889)"
+		},
+		{
+			"force": 140.026243209839,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.142097, 1.605239, 0.224984)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 7.49999999999998,
+			"velocity": "(0.144512, 0.086014, -0.000132)"
+		},
+		{
+			"force": 140.341535568237,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.139838, 1.606574, 0.224922)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 7.51666666666665,
+			"velocity": "(0.135544, 0.080111, -0.003729)"
+		},
+		{
+			"force": 137.761665344238,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.137695, 1.607811, 0.224788)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 7.53333333333331,
+			"velocity": "(0.128584, 0.074216, -0.008019)"
+		},
+		{
+			"force": 133.582744598389,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.135649, 1.608896, 0.224592)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 7.54999999999998,
+			"velocity": "(0.122706, 0.065087, -0.011759)"
+		},
+		{
+			"force": 129.970136642456,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.133696, 1.609744, 0.224355)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 7.56666666666665,
+			"velocity": "(0.117192, 0.050886, -0.014227)"
+		},
+		{
+			"force": 127.289781570435,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.131829, 1.610283, 0.224093)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 7.58333333333331,
+			"velocity": "(0.112005, 0.032341, -0.015682)"
+		},
+		{
+			"force": 125.705051422119,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.130041, 1.610462, 0.223821)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 7.59999999999998,
+			"velocity": "(0.107336, 0.010735, -0.016317)"
+		},
+		{
+			"force": 125.140760421753,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.128305, 1.610261, 0.223553)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 7.61666666666664,
+			"velocity": "(0.104145, -0.012055, -0.016087)"
+		},
+		{
+			"force": 123.724048614502,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.126528, 1.609833, 0.223309)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 7.63333333333331,
+			"velocity": "(0.106619, -0.025694, -0.01464)"
+		},
+		{
+			"force": 121.610900878906,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.124805, 1.609285, 0.223024)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 7.64999999999998,
+			"velocity": "(0.103345, -0.032828, -0.017128)"
+		},
+		{
+			"force": 119.934301376343,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.123155, 1.60858, 0.222704)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 7.66666666666664,
+			"velocity": "(0.09905, -0.042301, -0.019218)"
+		},
+		{
+			"force": 118.789236068726,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.121585, 1.607684, 0.222356)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 7.68333333333331,
+			"velocity": "(0.094148, -0.05381, -0.020884)"
+		},
+		{
+			"force": 118.192974090576,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.120104, 1.606571, 0.221984)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 7.69999999999998,
+			"velocity": "(0.088914, -0.066753, -0.022272)"
+		},
+		{
+			"force": 118.103050231934,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.11871, 1.60523, 0.221593)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 7.71666666666664,
+			"velocity": "(0.083585, -0.080456, -0.02349)"
+		},
+		{
+			"force": 118.285591125488,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.117396, 1.603671, 0.221184)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 7.73333333333331,
+			"velocity": "(0.078874, -0.093536, -0.024557)"
+		},
+		{
+			"force": 118.914472579956,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.116163, 1.601886, 0.220758)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 7.74999999999998,
+			"velocity": "(0.073974, -0.107092, -0.025519)"
+		},
+		{
+			"force": 120.186668395996,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.115004, 1.59989, 0.220316)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 7.76666666666664,
+			"velocity": "(0.069549, -0.119809, -0.026507)"
+		},
+		{
+			"force": 122.091491699219,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.113898, 1.597743, 0.22)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 7.78333333333331,
+			"velocity": "(0.066331, -0.128821, -0.018995)"
+		},
+		{
+			"force": 124.568351745605,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.112844, 1.595494, 0.22)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 7.79999999999998,
+			"velocity": "(0.063249, -0.134937, -0.000006)"
+		},
+		{
+			"force": 127.540245056152,
+			"mode": "CLIMB_TWO_HANDS",
+			"position": "(-0.111821, 1.593182, 0.22)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 7.81666666666664,
+			"velocity": "(0.061396, -0.138684, 0.000013)"
+		},
+		{
+			"force": 130.733509063721,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.110837, 1.590849, 0.22)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 7.83333333333331,
+			"velocity": "(0.05904, -0.139986, -0.000001)"
+		},
+		{
+			"force": 133.68359375,
+			"mode": "CLIMB_HANDS_FEET",
+			"position": "(-0.109882, 1.588563, 0.22)",
+			"states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"time": 7.84999999999998,
+			"velocity": "(0.057291, -0.137155, 0.000001)"
+		}
+	],
+	"second_caught": true,
+	"second_selection": {
+		"acquisition_load": 0.0,
+		"active": true,
+		"attempt_id": 4,
+		"blocked": false,
+		"blocker_id": 0,
+		"contact_time": -1.0,
+		"distance": 0.71927797794342,
+		"endpoint_valid": true,
+		"gesture_speed": 0.0,
+		"gesture_velocity": "(0.0, 0.0, 0.0)",
+		"hand_goal": "(0.238754, 2.579576, 0.014696)",
+		"hand_world": "(0.24, 2.1, 0.0)",
+		"held": true,
+		"label_in_reach": false,
+		"last_window_duration": -1.0,
+		"last_window_reason": "",
+		"local_normal": "(0.0, 0.0, 1.0)",
+		"local_point": "(0.240001, 0.34, 0.2)",
+		"missed_window_count": 0,
+		"motion_scope": "shoulder-frame transport plus finite relative gesture; full world sweep",
+		"normal_world": "(0.0, 0.0, 1.0)",
+		"pending_time": 0.0,
+		"phase": "APPROACH",
+		"physical_in_reach": false,
+		"physical_transition_count": 0,
+		"reach_margin": -0.0621979779434204,
+		"reason": "",
+		"selected_time": 4.71666666666666,
+		"shoulder_world": "(0.225582, 1.941238, 0.169955)",
+		"substate": "PENDING_OUT_OF_REACH",
+		"support_id": 59408124391,
+		"target_relative_speed": 0.0,
+		"target_selection_id": 4,
+		"target_world": "(0.240001, 2.64, 0.0)",
+		"transition_count": 0,
+		"transport_speed": 0.0,
+		"transport_velocity": "(0.0, 0.0, 0.0)",
+		"workspace_valid": true,
+		"world_speed": 0.0,
+		"world_velocity": "(0.0, 0.0, 0.0)"
+	}
+}

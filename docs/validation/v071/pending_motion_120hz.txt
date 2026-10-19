@@ -1,0 +1,36 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS actual rigid-body translation/rotation transports the shoulder workspace
+PASS transport exactly uses actual successive physical shoulder frames and gesture remains finite/anatomical
+PASS natural shoulder transport creates no premature grip, effort or effective support
+PASS selection ID is distinct from the real journal attempt ID after prior attempts
+PASS natural incoming body velocity brings the same selected point into current reach
+PASS one uninterrupted held gesture reaches the exact point finitely, with attachment still disabled at M2
+PASS reversible pending transitions never poison the attempt as an old reach failure
+PASS a real translating dynamic support brings its selected material point into reach
+PASS translating point remains material-local and finite hand arrival passes actual contact evaluator without attaching
+PASS moving support receives no precontact reaction or fabricated attachment
+PASS real Jolt hinge rotation brings an initially distant point into reach
+PASS rotating target keeps exact local position/normal and reaches real contact finitely, without retargeting/attachment
+PASS hinge motion alone never authorizes an early physical grip
+PASS temporary occluder pauses the same held attempt beyond legacy timeout
+PASS full swept path cannot tunnel through the temporary occluder
+PASS removing obstruction resumes finite approach to the original point without new click or reset
+PASS blocked/clear are observations, not permanent transfer failures
+PASS 3mm hysteresis prevents label chatter while physical reach eligibility still changes exactly
+PASS a retained reachable label never inflates actual physical contact range
+PASS departure fixture first establishes a real existing surface grip
+PASS released wall point gets a finite outward-normal departure instead of an inside-solid bypass
+PASS departure then normal approach reaches the exact new material point without attachment at M2
+PASS rounded presurface hand first retracts along a clear swept route without penetrating the flank
+PASS rounded hold front is reached finitely without stale hand_path_obstructed cancellation or effort
+PASS impossible finite-workspace intersection reports invalid historical sample instead of a clamp/snap
+PASS controller explicitly cancels impossible segment with no anchor and a persistent invalid-pose diagnostic
+PASS impossible-case cancellation never writes torso pose/velocity or adds effort
+PASS passive finite FREE recovery restores endpoint validity only upon actual workspace reentry
+PASS real asymmetric AUTO-COM body demonstrates legacy angular material-point velocity error
+PENDING_AUTO_COM {"actual_com":"(0.101415, 4.871439, 0.0353)","hz":120,"point_velocity_error":0.323110014200211,"property_com":"(-0.18875, 4.729297, 0.1153)","spin":"(0.0, 0.0, 1.0)"}
+PASS only new held anchor uses actual AUTO COM; legacy angular-velocity expression remains exactly unchanged
+PASS pending material-point telemetry agrees with actual rotating AUTO-COM body at the same physical sample
+PASS every M2 sample remains zero preattachment effort and within original360N/150Nm budgets
+PENDING MOTION RESULTS: 32 checks, 0 failures

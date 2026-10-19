@@ -19,6 +19,7 @@ marks a hand close to anatomical reach. Physics budgets and startup defaults
 are preserved. The previous v0.7 executable remains available for comparison.
 
 See the [v0.7.1 changes and validation](docs/validation/v071/comparison_summary.md).
+**3504 automated checks +32 scripted native checks pass at60/120Hz.**
 The positive human feedback concerns the v0.7 baseline; this refinement still
 needs hands-on comparison. Mantle and the new reactive challenge remain later gates.
 

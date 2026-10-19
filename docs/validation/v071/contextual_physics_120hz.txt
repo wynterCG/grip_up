@@ -1,0 +1,76 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS finite physical grip establishes test anchor
+CONTEXT PULL dual=false rise=0.30089282989502 target=0.18 actual=0.20285953581333
+PASS transient positive effort produces actual bounded ascent; dual=false
+PASS achieved contracted posture persists after gesture ends; dual=false
+CONTEXT RETAIN dual=false high=3.24960899353027 held=3.24581980705261 reverse=2.92983436584473 target_delta=0.32343302194029
+PASS negative contextual effort actively extends and physically lowers; dual=false
+CONTEXT EXTENDED SETTLE dual=false dy=-0.03066039085388 target_delta=0.01990860518068 state=ATTACHED
+PASS achieved extended posture persists after gesture ends; dual=false
+PASS extended suspension retains target for2s without passive drift; dual=false
+PASS camera-only reference change preserves extended posture; dual=false
+PASS full contextual extension remains inside anatomical cap; dual=false
+PASS contextual profile refuses old pixel/displacement arm API
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+CONTEXT PULL dual=true rise=0.30853962898254 target=0.18 actual=0.19993537664413
+PASS transient positive effort produces actual bounded ascent; dual=true
+PASS achieved contracted posture persists after gesture ends; dual=true
+CONTEXT RETAIN dual=true high=3.28074431419373 held=3.27814531326294 reverse=2.96466159820557 target_delta=0.32343302194029
+PASS negative contextual effort actively extends and physically lowers; dual=true
+CONTEXT EXTENDED SETTLE dual=true dy=-0.02827620506287 target_delta=0.01835357960314 state=ATTACHED
+PASS achieved extended posture persists after gesture ends; dual=true
+PASS extended suspension retains target for2s without passive drift; dual=true
+PASS camera-only reference change preserves extended posture; dual=true
+PASS full contextual extension remains inside anatomical cap; dual=true
+PASS contextual profile refuses old pixel/displacement arm API
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS negative vertical effort extends both real arm targets and lowers torso
+PASS no gesture holds actuator target rather than tracking passive motion
+PASS nonfinite contextual request is rejected
+PASS effort setter never writes body pose or momentum
+PASS camera rotation cannot redirect the decaying effort of a completed gesture
+PASS finite physical grip establishes test anchor
+PASS invalid free hand targets rejected
+PASS virtual FREE endpoint follows anatomical target at finite4m/s
+PASS free-hand aim and effort supply no air force or stored effort
+PASS distant free-hand request clamps to existing anatomical reach
+PASS FREE target cannot drive endpoint through a wall
+PASS reset clears virtual targets and contextual telemetry
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS contextual lateral effort gives bounded supported rightward momentum
+PASS contextual effort can reverse supported lateral direction
+PASS existing WASD depth swing remains active in contextual profile
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS contextual pull and swing retain exact opposite dynamic beam reactions
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+CONTEXT BLOCKED rise=0.00518655776978 initial_actual=0.50838756561279 early=0.40034798383713 late=0.40237700343132 actual=0.502376973629
+PASS real ceiling prevents progression and effort does not wind target toward minimum
+PASS unachieved blocked pull request relaxes instead of becoming stored contraction
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS real floor blocks lowering while extension target remains geometry bounded
+CONTEXT BLOCKED EXTEND initialrest=0.48662078380585 late=0.61235249638557 held=0.48662078380585 actual=0.50923007726669 dy=-0.0007951259613
+PASS unachieved extension is not stored as a future drop
+PASS finite physical grip establishes test anchor
+PASS unattached second hand accepts virtual aim
+PASS virtual free hand can begin real surface reach
+PASS REACHING locks its selected surface and clears free aim override
+PASS new grip and effort request add no instantaneous catch impulse
+PASS contextual supporting effort continues through finite second-hand capture
+PASS surviving hand retains its physically reached posture after transfer
+PASS finite physical grip establishes test anchor
+PASS rounded transfer fixture uses an actual queried front surface
+PASS original FREE-to-front diagonal genuinely intersects rounded flank
+PASS contextual transfer selects a strictly swept folded-arm clearance leg
+PASS finite swept rounded-surface transfer catches while supporting arm remains attached
+PASS all contextual trials obey360N hands20Nm assist150Nm combined
+PASS contextual catches keep existing finite hand speed
+CONTEXTUAL PHYSICS RESULTS: 65 checks, 0 failures

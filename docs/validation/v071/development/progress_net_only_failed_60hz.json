@@ -1,0 +1,46 @@
+{
+	"checks": 14,
+	"failures": 1,
+	"hz": 60,
+	"report": {
+		"blocked": {
+			"body_displacement": 0.0126493507996202,
+			"hold": 0.520041346549988,
+			"peak_speed_after_open": 0.0568262077867985,
+			"released_rest": 0.519916346549988,
+			"rest": 0.508125440597534
+		},
+		"trials": [
+			{
+				"final_rest": 0.483803459353472,
+				"initial_rest": 0.53150737285614,
+				"max_acceleration": 0.9,
+				"max_rate": 0.0810041160878083,
+				"mode": "continuous_w",
+				"neutral_drift": 0.0,
+				"old_latch": true,
+				"peak_error": 0.0584674951258296,
+				"peak_force": 265.602279663086,
+				"retained": true,
+				"reverse_rest": 0.0884926262523986,
+				"reverse_y": -0.0863089561462402,
+				"rise": 0.0876355171203613
+			},
+			{
+				"final_rest": 0.479468709243383,
+				"initial_rest": 0.53150737285614,
+				"max_acceleration": 0.9,
+				"max_rate": 0.0810068004484188,
+				"mode": "continuous_w",
+				"neutral_drift": 0.0,
+				"old_latch": false,
+				"peak_error": 0.0584674951258296,
+				"peak_force": 265.72575378418,
+				"retained": true,
+				"reverse_rest": 0.0895883192802081,
+				"reverse_y": -0.0786941051483154,
+				"rise": 0.077686071395874
+			}
+		]
+	}
+}

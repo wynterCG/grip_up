@@ -58,6 +58,8 @@ report={'revision':version+' intent-driven locomotion technical candidate','reco
 for p in [root/'builds/verification.json',final/'verification.json']:
     p.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
 if version=='v071':
+    report['decision']='KEEP as control refinement candidate; new human comparison remains open; no default promotion'
+    report['known_limits'].append('Continuous W can peak then oscillate or lose height; no monotonic climb guarantee')
     report['human_feedback_received']='Designer: sim está melhor (v0.7 baseline); new refinement not yet human validated'
     report['refinement_baseline_ref']='cea4ae0'
     report['native_handoffs']={hz:run.get('second_handoff',{}) for hz,run in native.items()}
