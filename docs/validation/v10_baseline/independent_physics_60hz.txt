@@ -1,0 +1,104 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS independent aim refuses direct arm drag and virtual hand targets
+PASS aim/API setters preserve body pose and both velocities
+PASS HOLD_LENGTH cursor traffic never changes either target
+PASS independent assertion and zero unintended supported effort are explicit
+PASS legacy charged impulse remains explicit opt-in
+PASS HOLD_LENGTH transfer preserves surviving hand target
+PASS supported swing flag disables new effort independently of posture
+PASS finite physical grip establishes test anchor
+INDEPENDENT AUTO policy=0 dual=false rise=-0.00681805610657 plan={ "state": "HOLD", "reason": "hold_current_length", "elapsed": 0.0, "braking_advance": 0.0, "event": 0, "planned_lengths": {  }, "rates": {  }, "accelerations": {  }, "allocations": {  } }
+PASS posture targets obey .25m/s and1m/s²; policy0 dualfalse
+PASS finite physical grip establishes test anchor
+INDEPENDENT AUTO policy=1 dual=false rise=0.16313719749451 plan={ "state": "COMPLETE", "reason": "absolute_arm_targets_reached", "elapsed": 1.0, "braking_advance": 0.0, "event": 1, "planned_lengths": { 0: 0.31199991703033 }, "rates": { 0: -0.00001486015124 }, "accelerations": { 0: 0.04134597035169 }, "allocations": { 0: 1.0 }, &"desired_posture": [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 3.300651, 0.1753)], &"body_error": (0.140402, 0.19346, 0.254176), &"actual_movement": (0.220558, 0.163289, 0.014388), &"length_errors": { 0: 0.02863463759422 }, &"requested_lengths": { 0: 0.31213880602964 } }
+PASS posture targets obey .25m/s and1m/s²; policy1 dualfalse
+PASS absolute supported auto-plan creates actual physical rise; policy1 dualfalse
+PASS comfortable target is geometric and distinct from minimum contraction
+PASS unchanged support cannot continuously replan or climb
+PASS posture flag independently restores current-length holding
+PASS B adds supported rise compared with A at identical strength
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+INDEPENDENT AUTO policy=0 dual=true rise=-0.00028324127197 plan={ "state": "HOLD", "reason": "hold_current_length", "elapsed": 0.0, "braking_advance": 0.0, "event": 0, "planned_lengths": {  }, "rates": {  }, "accelerations": {  }, "allocations": {  } }
+PASS posture targets obey .25m/s and1m/s²; policy0 dualtrue
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+INDEPENDENT AUTO policy=1 dual=true rise=0.1752917766571 plan={ "state": "COMPLETE", "reason": "absolute_arm_targets_reached", "elapsed": 1.0, "braking_advance": 0.0, "event": 1, "planned_lengths": { 0: 0.31199991703033, 1: 0.31199991703033 }, "rates": { 0: -0.00001486015124, 1: -0.00001486015124 }, "accelerations": { 0: 0.04134597035169, 1: 0.04134597035169 }, "allocations": { 0: 0.5, 1: 0.5 }, &"desired_posture": [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 3.300651, 0.1753)], &"body_error": (-0.000242, 0.156172, 0.277745), &"actual_movement": (0.000263, 0.175321, -0.007994), &"length_errors": { 0: 0.02481833100319, 1: 0.02473536133766 }, &"requested_lengths": { 0: 0.31213880602964, 1: 0.31213880602964 } }
+PASS posture targets obey .25m/s and1m/s²; policy1 dualtrue
+PASS absolute supported auto-plan creates actual physical rise; policy1 dualtrue
+PASS comfortable target is geometric and distinct from minimum contraction
+PASS unchanged support cannot continuously replan or climb
+PASS posture flag independently restores current-length holding
+PASS B adds supported rise compared with A at identical strength
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS C gives greater shared allocation to support with higher geometric load capacity
+PASS load-aware allocation never duplicates strength or loses healthy grips
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+INDEPENDENT BLOCKED { "state": "ABORTED", "reason": "actuator_saturation", "elapsed": 0.58333333333333, "braking_advance": 0.05833333333333, "event": 1, "planned_lengths": { 0: 0.31199991703033, 1: 0.31199991703033 }, "rates": { 0: -0.0, 1: -0.0 }, "accelerations": { 0: 1.0, 1: 1.0 }, "allocations": { 0: 0.5, 1: 0.5 }, &"desired_posture": [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 3.300651, 0.1753)], &"body_error": (-0.000135, 0.293392, 0.028597), &"actual_movement": (0.000156, 0.038101, 0.241155), &"length_errors": { 0: 0.18635228276253, 1: 0.18633657693863 }, &"requested_lengths": { 0: 0.40328745047251, 1: 0.40328745047251 } }
+PASS real obstructed body aborts bounded automatic settling
+PASS safety braking adds at most finite stopping-distance target advance
+PASS aborted blocked plan cannot keep winding actuator target
+PASS finite physical grip establishes test anchor
+PASS real overloaded grip stops automatic target advancement with explicit slip reason
+PASS finite physical grip establishes test anchor
+PASS infeasible comfortable body geometry is rejected without corrective teleport
+PASS finite physical grip establishes test anchor
+PASS fresh actual regrip begins finite approach for blend regression
+PASS fresh blend waits rather than falsely completing unadvanced target
+PASS same material point regrips reuse exactly the same absolute target
+PASS five same-point regrips cannot grant repeated height increments
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS automatic posture work retains opposite forces and torques on moving shared beam
+PASS automatic pull moves the finite-mass support instead of treating it as world
+PASS finite physical grip establishes test anchor
+INDEPENDENT TILT enabled=false mode=passive {"amplitude":0.0648504644632339,"retained":true,"speed":0.19669596850872,"tilt":0.43306453440498}
+PASS finite physical grip establishes test anchor
+INDEPENDENT TILT enabled=true mode=passive {"amplitude":0.122954003512859,"retained":true,"speed":0.130940660834312,"tilt":0.210799076804321}
+PASS finite physical grip establishes test anchor
+INDEPENDENT TILT enabled=true mode=pump {"amplitude":0.357176378369331,"retained":true,"speed":1.26630544662476,"tilt":0.924312360057186}
+PASS bounded optional tilt assistance measurably reduces unsupported roll
+PASS WASD can still pump real pendular motion with automatic posture enabled
+PASS finite physical grip establishes test anchor
+INDEPENDENT BRAKE active=false velocity=0.29420042037964
+PASS finite physical grip establishes test anchor
+INDEPENDENT BRAKE active=true velocity=-0.34536704421043
+PASS opposite supported WASD still brakes momentum with automatic posture enabled
+PASS finite physical grip establishes test anchor
+PASS independent WASD without supports cannot supply airborne propulsion
+PASS finite physical grip establishes test anchor
+PASS Space OFF cannot initiate charge in independent profile
+PASS profile3 Space request preserves instantaneous pose and momentum
+PASS Space ON explicitly opts independent profile into preserved charged actuator
+PASS profile3 preload retains its original real material anchor
+PASS profile3 Space request preserves instantaneous pose and momentum
+PASS Space release begins real finite pulling phase
+PASS new mid-pull grip request adds no position or velocity impulse
+INDEPENDENT SPACE moving_catch_speed=2.25545930862427 new_state=ATTACHED old_state=RELEASED launch=COOLDOWN
+PASS profile3 completes launch and catches through finite hand motion while body is moving
+PASS launch releases only original identities and preserves newly acquired anchor
+PASS new profile3 catch remains supported after launch timer and cooldown
+PASS focus-style safety release clears all new-catch force and torque
+PASS Space ON still cannot create another airborne launch without a grip
+PASS reset clears launch/posture references without changing body momentum
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS independent feature flag disables automatic planning while maintaining current grips
+PASS UI-style single-hand release preserves survivor and exact instantaneous body state
+PASS all-owner release during active plan cancels posture without residual effort
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS profile3 Space request preserves instantaneous pose and momentum
+PASS profile3 Space ON charges while both hands share a dynamic beam
+PASS profile3 Space request preserves instantaneous pose and momentum
+PASS dynamic supported charge begins preserved finite pull
+INDEPENDENT SPACE DYNAMIC dp=0.00000384438408 dL=0.0000066757475 support_dv=0.1406170129776
+PASS profile3 opted launch preserves complete dynamic action/reaction momentum
+PASS opted launch actually moves shared dynamic support
+PASS independent HOLD_LENGTH keeps360N20Nm150Nm
+INDEPENDENT PHYSICS RESULTS: 89 checks, 0 failures

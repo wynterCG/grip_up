@@ -1,7 +1,15 @@
 # GRIP UP — avaliação manual inicial v1.0
 
 Versão: v0.9 sem alterações, tag `baseline/v0.9-pre-contextual-v1.0`.
-Estado: **PENDING — ainda não existem respostas humanas registadas.**
+Estado: **PENDING — faltam as três sessões e classificações estruturadas.**
+
+Feedback informal registado: a base pareceu igual; depois da melhoria v1.0, o
+jogador disse "não está mega realista mas está bom". Isto apoia manter uma única
+variante, mas não preenche as fichas nem constitui três sessões documentadas.
+
+Para comparar agora, usa os botões `v1.0 / Climb Up` nos controlos e alterna com
+os da v0.9. A janela preparada usa explicitamente a v1.0; as instruções abaixo
+continuam a servir para recolher a avaliação comparável das duas versões.
 
 A janela fica preparada no monitor 1, plataforma baixa, 120 Hz. Agarra com LMB /
 RMB mantidos, usa W para subir e iniciar a passagem junto à borda. Após o início

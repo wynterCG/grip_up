@@ -11,7 +11,9 @@ names = ['physics','platform_probe','wall_clearance','biped_profile','playthroug
          'swing_playthrough','integration','biped_visual','idle_hang','ground_locomotion',
          'climb_direction','leg_motion','pendulum','free_climb','launch','full_reach','biped_asset']
 label = sys.argv[1] if len(sys.argv)>1 else 'regressions'
-requested_label = label
+evidence_label = label
+requested_label = 'v09' if label == 'v10_baseline' else label
+label = requested_label
 if label == 'v07_baseline':label = 'v06'
 if label in ['v07','v071','v072','v073','v074','v08','v09']:label = 'v06'
 selected = sys.argv[2:]
@@ -47,7 +49,7 @@ if requested_label in ['v08','v09']:
 if requested_label == 'v09':
     names += ['hybrid_motor','hybrid_animation','hybrid_mantle','hybrid_sequence','hybrid_resilience']
 assert all(name in names for name in selected)
-dest = root/'docs'/'validation'/requested_label
+dest = root/'docs'/'validation'/evidence_label
 dest.mkdir(parents=True,exist_ok=True)
 
 def run(item):

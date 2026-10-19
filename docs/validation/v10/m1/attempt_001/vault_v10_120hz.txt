@@ -1,0 +1,182 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS hybrid independent of v08 palm/leg experiment
+PASS ordinary approach earns two actual finite grips
+FAIL ledge-specific W commits from real geometry and actual hanging grip
+FAIL actual top ground restores dynamic body and walking authority
+FAIL FULL static top-out then30cm ordinary ground walk
+PASS no old hand/foot/ground force while assisted authority owns body
+FAIL commit and restore occur exactly once
+PASS hybrid independent of v08 palm/leg experiment
+PASS ordinary approach earns two actual finite grips
+FAIL ledge-specific W commits from real geometry and actual hanging grip
+FAIL actual top ground restores dynamic body and walking authority
+FAIL FULL static top-out then30cm ordinary ground walk
+PASS no old hand/foot/ground force while assisted authority owns body
+FAIL commit and restore occur exactly once
+SCRIPT ERROR: Invalid assignment of property or key 'contextual_vault_v10_enabled' with value of type 'bool' on a base object of type 'Node (hybrid_mantle_controller.gd)'.
+   at: load_test (res://features/grip_up/scripts/grip_up_lab.gd:370)
+   GDScript backtrace (most recent call first):
+       [0] load_test (res://features/grip_up/scripts/grip_up_lab.gd:370)
+       [1] _open_intent_arena (res://features/grip_up/scripts/grip_up_lab.gd:924)
+       [2] _open_hybrid_mantle (res://features/grip_up/scripts/grip_up_lab.gd:945)
+       [3] _open_hybrid_mantle (res://features/grip_up/tests/vault_test_lab.gd:4)
+       [4] ascent (res://features/grip_up/tests/test_hybrid_mantle.gd:28)
+       [5] fresh (res://features/grip_up/tests/test_vault_v10.gd:13)
+       [6] ticks (res://features/grip_up/tests/test_intent_integration.gd:27)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+SCRIPT ERROR: Invalid call. Nonexistent function 'update_state' in base 'previously freed'.
+   at: _process (res://features/grip_up/scripts/grip_up_lab.gd:717)
+
+[Development failure log preview. Complete original in vault_v10_120hz.txt.gz; original SHA256 4c047bf08ee9b4e87cd4ee6994424e8776bb040500cf116dc4c2cc71d5986f2f.]

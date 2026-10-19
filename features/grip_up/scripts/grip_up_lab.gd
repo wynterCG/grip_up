@@ -111,6 +111,7 @@ var mantle_hanging_fixture_start:=false
 var mantle_v08:Node
 var mantle_overlay:Node3D
 var hybrid_mantle_v09_enabled:=false
+var contextual_vault_v10_enabled:=false
 var hybrid_mantle:Node
 var transfer_diagnostics_toggle: CheckButton
 var posture_choice: OptionButton
@@ -366,6 +367,7 @@ func load_test(index: int, use_checkpoint := false) -> void:
 	if index>=14:
 		hybrid_mantle=HybridMantle.new()
 		world.add_child(hybrid_mantle)
+		hybrid_mantle.contextual_vault_v10_enabled=contextual_vault_v10_enabled
 		hybrid_mantle.configure(controller,ground_motor,biped,camera)
 		hybrid_mantle.enabled=hybrid_mantle_v09_enabled and input_profile==4
 		ground_motor.require_native_support=hybrid_mantle.enabled
@@ -405,7 +407,7 @@ func load_test(index: int, use_checkpoint := false) -> void:
 	stable_goal = 0
 	won = false
 	rating_panel.hide()
-	title_label.text = level.title
+	title_label.text = "CLIMB UP / "+level.scenario if level_id>=14 and contextual_vault_v10_enabled else level.title
 	_update_objective()
 	beam_button.visible = index == 2
 	beam_button.text = "F  /  " + ("FIXED BEAM" if fixed_beam else "HINGED BEAM")
@@ -931,8 +933,9 @@ func _open_mantle_v08(index:int,adaptive:bool=true,palms:bool=true,wrist:bool=tr
 	_open_intent_arena(index,true)
 	_set_distant_targeting(true)
 
-func _open_hybrid_mantle(scenario:int=0)->void:
+func _open_hybrid_mantle(scenario:int=0,use_vault_presentation:bool=false)->void:
 	hybrid_mantle_v09_enabled=true
+	contextual_vault_v10_enabled=use_vault_presentation
 	physics_mantle_v08_enabled=false
 	palm_compression_enabled=false
 	palm_wrist_support_enabled=false
@@ -941,7 +944,7 @@ func _open_hybrid_mantle(scenario:int=0)->void:
 	mantle_hanging_fixture_start=false
 	_open_intent_arena(14+scenario,false)
 	_set_distant_targeting(true)
-	message("Grip near the top edge and hold W to mantle. Release the mouse buttons after you begin; walking resumes on top.")
+	message("Grip near the top edge and hold W to climb up. Release the mouse buttons after you begin; walking resumes on top.")
 
 func _on_transfer_event(event: Dictionary) -> void:
 	var row: Dictionary=event.duplicate(true)
@@ -1232,6 +1235,11 @@ func _setup_ui() -> void:
 	_button("v0.9 / Mantle 1.25 m",func():_open_hybrid_mantle(0),hybrid_row)
 	_button("v0.9 / Mantle 2.10 m",func():_open_hybrid_mantle(1),hybrid_row)
 	_button("v0.9 / Two ledges",func():_open_hybrid_mantle(6),hybrid_row)
+	var vault_row:=HBoxContainer.new()
+	settings_box.add_child(vault_row)
+	_button("v1.0 / Climb Up 1.25 m",func():_open_hybrid_mantle(0,true),vault_row)
+	_button("v1.0 / Climb Up 2.10 m",func():_open_hybrid_mantle(1,true),vault_row)
+	_button("v1.0 / Two ledges",func():_open_hybrid_mantle(6,true),vault_row)
 	var hybrid_adverse:=HBoxContainer.new()
 	settings_box.add_child(hybrid_adverse)
 	_button("v0.9 / Narrow",func():_open_hybrid_mantle(2),hybrid_adverse)

@@ -1,0 +1,91 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS real finite hand approach establishes pendulum anchor
+PENDULUM PASSIVE {"dual":false,"max_length":0.528249442577362,"max_speed":0.792507171630859,"peak_times":[1.15833333333333,2.325,3.48333333333333,4.65,5.80833333333333,6.975],"peaks_rad":[0.237344967749558,0.188867141504271,0.150235362920114,0.119420338147831,0.0948808618063385,0.0753651470760297],"retained":true,"third_to_first":0.632983139876973,"variant":"baseline"}
+PASS passive swing keeps anatomical reach and physical attachment
+PASS real finite hand approach establishes pendulum anchor
+PASS real finite hand approach establishes pendulum anchor
+PENDULUM PASSIVE {"dual":true,"max_length":0.546709716320038,"max_speed":0.715567588806152,"peak_times":[0.825,1.65,2.46666666666667,3.29166666666667,4.10833333333333,4.93333333333333,5.75,6.56666666666667,7.38333333333333],"peaks_rad":[0.170352576650421,0.14807578395937,0.129726982113083,0.113724168124283,0.0996453090992186,0.0873603229981933,0.0765970555748124,0.0671486328326359,0.0588812847817444],"retained":true,"third_to_first":0.761520516236716,"variant":"baseline"}
+PASS passive swing keeps anatomical reach and physical attachment
+PASS real finite hand approach establishes pendulum anchor
+PASS real finite hand approach establishes pendulum anchor
+PASS dual-to-single event preserves pose and both velocities
+PENDULUM TRANSFER {"peak_acceleration":7.05543947219849,"peak_force_delta":19.5459289550781,"peak_jerk":195.648651123047,"rest_length":0.18,"retained":true,"variant":"baseline"}
+PASS contraction and hand transfer remain finite and attached
+PASS real finite hand approach establishes pendulum anchor
+PENDULUM INPUT {"command_window_jerk":187.580723762512,"dual":false,"peak_assist_delta":18.0734272003174,"peak_jerk":187.580723762512,"retained":true,"variant":"baseline"}
+PASS A/D starts, stops and reversals preserve the material grips
+PASS real finite hand approach establishes pendulum anchor
+PASS real finite hand approach establishes pendulum anchor
+PENDULUM INPUT {"command_window_jerk":309.512872695923,"dual":true,"peak_assist_delta":0.150156170129776,"peak_jerk":309.512872695923,"retained":true,"variant":"baseline"}
+PASS A/D starts, stops and reversals preserve the material grips
+PASS real finite hand approach establishes pendulum anchor
+PENDULUM FRESH {"initial_length":0.605309838016862,"peak_force_delta":25.5283432006836,"peak_length":0.632449805736542,"reason":"","retained":true,"variant":"baseline"}
+PASS fresh near-maximum hanging catch preserves anatomical reach
+PASS real finite hand approach establishes pendulum anchor
+PENDULUM FRESH {"initial_length":0.62,"peak_force_delta":25.5622634887695,"peak_length":0.647096753120422,"reason":"","retained":true,"variant":"baseline"}
+PASS fresh near-maximum hanging catch preserves anatomical reach
+PASS real finite hand approach establishes pendulum anchor
+PENDULUM TWIST {"final_yaw_error":1.51632630825043,"initial_yaw":1.5707963267949,"peak_assist":3.40289855003357,"retained":true,"spin":0.437261343002319,"variant":"baseline"}
+PASS twist recovery preserves loaded grip and bounded assistance
+PASS real finite hand approach establishes pendulum anchor
+PENDULUM TWIST {"final_yaw_error":1.53238379955292,"initial_yaw":-1.5707963267949,"peak_assist":3.21111083030701,"retained":true,"spin":0.439055740833282,"variant":"baseline"}
+PASS twist recovery preserves loaded grip and bounded assistance
+PASS real finite hand approach establishes pendulum anchor
+PENDULUM TWIST {"final_yaw_error":3.13893818855286,"initial_yaw":3.14159265358979,"peak_assist":3.40571570396423,"retained":true,"spin":0.389496654272079,"variant":"baseline"}
+PASS twist recovery preserves loaded grip and bounded assistance
+PASS real finite hand approach establishes pendulum anchor
+PENDULUM TWIST {"final_yaw_error":3.13893795013428,"initial_yaw":-3.14159265358979,"peak_assist":3.40571570396423,"retained":true,"spin":0.389496654272079,"variant":"baseline"}
+PASS twist recovery preserves loaded grip and bounded assistance
+PASS real finite hand approach establishes pendulum anchor
+PENDULUM PASSIVE {"dual":false,"max_length":0.528249621391296,"max_speed":0.792352318763733,"peak_times":[1.15833333333333,2.325,3.48333333333333,4.65,5.80833333333333,6.975],"peaks_rad":[0.237270292786819,0.188809463436465,0.150183009082583,0.119374347740929,0.0948408575290308,0.0753312063780484],"retained":true,"third_to_first":0.632961705060642,"variant":"live"}
+PASS passive swing keeps anatomical reach and physical attachment
+PASS real finite hand approach establishes pendulum anchor
+PASS real finite hand approach establishes pendulum anchor
+PENDULUM PASSIVE {"dual":true,"max_length":0.549259305000305,"max_speed":0.705483198165894,"peak_times":[0.833333333333333,1.65,2.475,3.29166666666667,4.11666666666667,4.93333333333333,5.75,6.575,7.39166666666667],"peaks_rad":[0.168368170474668,0.146212212836727,0.128105686728606,0.112297640237395,0.0984331476284255,0.0863014469486912,0.0756626397169053,0.0663476119981435,0.0581884785986246],"retained":true,"third_to_first":0.760866417728765,"variant":"live"}
+PASS passive swing keeps anatomical reach and physical attachment
+PASS real finite hand approach establishes pendulum anchor
+PASS real finite hand approach establishes pendulum anchor
+PASS dual-to-single event preserves pose and both velocities
+PENDULUM TRANSFER {"peak_acceleration":4.11225032806396,"peak_force_delta":26.5080070495605,"peak_jerk":88.9478588104248,"rest_length":0.192080216782943,"retained":true,"variant":"live"}
+PASS contraction and hand transfer remain finite and attached
+PASS real finite hand approach establishes pendulum anchor
+PENDULUM INPUT {"command_window_jerk":41.1114835739136,"dual":false,"peak_assist_delta":1.28211033344269,"peak_jerk":42.0030784606934,"retained":true,"variant":"live"}
+PASS A/D starts, stops and reversals preserve the material grips
+PASS real finite hand approach establishes pendulum anchor
+PASS real finite hand approach establishes pendulum anchor
+PENDULUM INPUT {"command_window_jerk":72.4090361595154,"dual":true,"peak_assist_delta":0.0896933078765869,"peak_jerk":72.4090361595154,"retained":true,"variant":"live"}
+PASS A/D starts, stops and reversals preserve the material grips
+PASS real finite hand approach establishes pendulum anchor
+PENDULUM FRESH {"initial_length":0.605309838016862,"peak_force_delta":26.6870994567871,"peak_length":0.634326815605164,"reason":"","retained":true,"variant":"live"}
+PASS fresh near-maximum hanging catch preserves anatomical reach
+PASS real finite hand approach establishes pendulum anchor
+PENDULUM FRESH {"initial_length":0.62,"peak_force_delta":26.7224445343018,"peak_length":0.649021208286285,"reason":"","retained":true,"variant":"live"}
+PASS fresh near-maximum hanging catch preserves anatomical reach
+PASS real finite hand approach establishes pendulum anchor
+PENDULUM TWIST {"final_yaw_error":0.00966783240437508,"initial_yaw":1.5707963267949,"peak_assist":10.9050607681274,"retained":true,"spin":0.37793642282486,"variant":"live"}
+PASS twist recovery preserves loaded grip and bounded assistance
+PASS camera-referenced loaded twist settles from rotated torso without locking swing
+PASS real finite hand approach establishes pendulum anchor
+PENDULUM TWIST {"final_yaw_error":0.0126064084470272,"initial_yaw":-1.5707963267949,"peak_assist":10.9050607681274,"retained":true,"spin":0.385551184415817,"variant":"live"}
+PASS twist recovery preserves loaded grip and bounded assistance
+PASS camera-referenced loaded twist settles from rotated torso without locking swing
+PASS real finite hand approach establishes pendulum anchor
+PENDULUM TWIST {"final_yaw_error":0.00149916962254792,"initial_yaw":3.14159265358979,"peak_assist":7.22221899032593,"retained":true,"spin":0.127646282315254,"variant":"live"}
+PASS twist recovery preserves loaded grip and bounded assistance
+PASS camera-referenced loaded twist settles from rotated torso without locking swing
+PASS real finite hand approach establishes pendulum anchor
+PENDULUM TWIST {"final_yaw_error":0.000243900693021715,"initial_yaw":-3.14159265358979,"peak_assist":7.12585544586182,"retained":true,"spin":0.113241709768772,"variant":"live"}
+PASS twist recovery preserves loaded grip and bounded assistance
+PASS camera-referenced loaded twist settles from rotated torso without locking swing
+PASS live hand transfer reduces measured jerk by at least 20 percent
+PASS live A/D starts and stops reduce single/dual command jerk by at least 20 percent
+PASS single-grip input torque ramps instead of stepping on key events
+PASS twist stabilization preserves passive pendular amplitude decay
+PASS actual reactive beam front catch is accessible
+PENDULUM REACTIVE {"arm_length":0.188808724284172,"assist":"(-0.199082, -4.158821, -0.147044)","force":26.5468635559082,"heading_error":0.262305229902267,"position":"(0.21471, 1.161712, 0.33579)","rest_length":0.18,"rotation":"(0.024776, 0.501718, -0.024935)"}
+PASS actual short-arm reactive pose retains controllable heading
+PASS all measured swings and transfers preserve 360 N / 150 Nm limits
+PENDULUM RESULTS: 63 checks, 0 failures
+WARNING: Jolt Physics job system exceeded the maximum number of jobs. This should not happen. Please report this. Waiting for jobs to become available...
+   at: CreateJob (modules/jolt_physics/spaces/jolt_job_system.cpp:123)

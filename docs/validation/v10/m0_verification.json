@@ -1,0 +1,50 @@
+{
+  "recorded_utc": "2026-10-19T21:59:04.277874+00:00",
+  "milestone": "v1.0 M0 audit only",
+  "baseline_commit": "99eb1040ecf45c389757bd07544fda6a4a68d508",
+  "baseline_tag": "baseline/v0.9-pre-contextual-v1.0",
+  "branch": "feature/v1.0-contextual-vault",
+  "baseline_feature_files": 334,
+  "all_baseline_feature_hashes_match_in_C_and_E": true,
+  "native_scripted": {
+    "120": {
+      "checks": 13,
+      "failures": 0,
+      "window_screen": 0,
+      "walk_m": {
+        "LOW": 0.302565418649465,
+        "HIGH": 0.302551687229425
+      }
+    },
+    "60": {
+      "checks": 13,
+      "failures": 0,
+      "window_screen": 0,
+      "walk_m": {
+        "LOW": 0.314465415664017,
+        "HIGH": 0.31607963796705
+      }
+    }
+  },
+  "saved_project_sequence": {
+    "120": {
+      "checks": 12,
+      "failures": 0
+    },
+    "60": {
+      "checks": 12,
+      "failures": 0
+    }
+  },
+  "new_automated_checks": 50,
+  "new_automated_failures": 0,
+  "editor_errors": 0,
+  "human_sessions": [],
+  "human_baseline_assessment": "PENDING",
+  "human_acceptance": "PENDING",
+  "presentation_changes": false,
+  "retiming": false,
+  "second_style": false,
+  "default_promotion": false,
+  "report": "report.md"
+}

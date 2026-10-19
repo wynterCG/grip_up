@@ -1,8 +1,12 @@
 extends Node
 ## Presentation only. Option B: root/motor owns all world displacement and time.
 const Clip=preload("res://features/grip_up/resources/mantle_authored.tres")
+const VaultClip=preload("res://features/grip_up/resources/mantle_vault_v10.tres")
 const PalmPose=preload("res://features/grip_up/scripts/biped_hand_pose.gd")
 const CLIP_NAME="HybridMantle"
+const VAULT_CLIP_NAME="HybridVaultV10"
+var contextual_vault_v10_enabled:=false
+var active_v10:=false
 var visual:Node3D
 var body:RigidBody3D
 var player:AnimationPlayer
@@ -31,6 +35,16 @@ var last_visual_target:=Transform3D.IDENTITY
 var simulation_pose_at_visual_update:=Transform3D.IDENTITY
 var visual_target_recorded:=false
 var last_measurement:Dictionary={}
+var source_hand_ids:Array[int]=[]
+var anchor_support_ids:Array[int]=[0,0]
+var anchor_local_points:Array[Vector3]=[Vector3.INF,Vector3.INF]
+var actual_arm_lengths:Array[float]=[0.0,0.0]
+var actual_shoulder_distances:Array[float]=[-1.0,-1.0]
+var wrist_target_distances:Array[float]=[-1.0,-1.0]
+var anatomical_weights:Array[float]=[0.0,0.0]
+var latched_hand_weights:Array[float]=[1.0,1.0]
+var release_reasons:Array[String]=["NO_CONTACT","NO_CONTACT"]
+var last_weight_progress:Array[float]=[-1.0,-1.0]
 
 func configure(biped:Node3D,physical_body:RigidBody3D)->void:
 	visual=biped
@@ -43,8 +57,16 @@ func configure(biped:Node3D,physical_body:RigidBody3D)->void:
 	player.callback_mode_process=AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL
 	var library:=AnimationLibrary.new()
 	library.add_animation(CLIP_NAME,Clip)
+	library.add_animation(VAULT_CLIP_NAME,VaultClip)
 	player.add_animation_library("",library)
 	for id in 2:
+		var upper:int=visual.skeleton.find_bone("upperarm_l" if id==0 else "upperarm_r")
+		var lower:int=visual.skeleton.find_bone("lowerarm_l" if id==0 else "lowerarm_r")
+		var wrist:int=visual.skeleton.find_bone("hand_l" if id==0 else "hand_r")
+		var upper_position:Vector3=visual.skeleton.get_bone_global_rest(upper).origin
+		var lower_position:Vector3=visual.skeleton.get_bone_global_rest(lower).origin
+		var wrist_position:Vector3=visual.skeleton.get_bone_global_rest(wrist).origin
+		actual_arm_lengths[id]=(visual.skeleton.global_basis*(lower_position-upper_position)).length()+(visual.skeleton.global_basis*(wrist_position-lower_position)).length()
 		var solver:=TwoBoneIK3D.new()
 		solver.name="MantleVisualHand%d"%id
 		solver.influence=0.0
@@ -84,19 +106,26 @@ func is_driving()->bool:
 func begin(candidate:Dictionary)->void:
 	if mode=="ASSISTED":return
 	if mode=="EXIT_BLEND":visual.animation.callback_mode_process=ordinary_callback_mode
+	active_v10=contextual_vault_v10_enabled
 	entry_pose.clear()
 	for index in visual.skeleton.get_bone_count():
 		entry_pose.append(visual.observed_pose_rotations[index] if visual.observed_pose_rotations.size()==visual.skeleton.get_bone_count() else visual.skeleton.get_bone_pose_rotation(index))
 	anchors=[Vector3.INF,Vector3.INF]
 	var supplied:Array=candidate.get("hand_anchors_world",[])
-	for id in 2:
-		if supplied.size()>id and supplied[id] is Vector3:
-			anchors[id]=supplied[id]
-		elif visual.controller.hands[id].state=="ATTACHED":
-			anchors[id]=visual.controller.get_hand_world(id)
+	if active_v10:
+		_capture_material_anchors(candidate,supplied)
+	else:
+		for id in 2:
+			if supplied.size()>id and supplied[id] is Vector3:
+				anchors[id]=supplied[id]
+			elif visual.controller.hands[id].state=="ATTACHED":
+				anchors[id]=visual.controller.get_hand_world(id)
 	mode="ASSISTED"
 	release_start=clampf(float(candidate.get("hand_release_start",.48)),0.0,.95)
 	release_end=clampf(float(candidate.get("hand_release_end",.78)),release_start+.01,1.0)
+	if active_v10:
+		release_start=clampf(float(candidate.get("vault_hand_release_start",.27)),0.0,.95)
+		release_end=clampf(float(candidate.get("vault_hand_release_end",.34)),release_start+.01,1.0)
 	progress=0.0
 	collision_flex=0.0
 	collision_pose={}
@@ -105,8 +134,46 @@ func begin(candidate:Dictionary)->void:
 	ordinary_callback_mode=visual.animation.callback_mode_process
 	visual.animation.callback_mode_process=AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL
 	visual.animation.pause()
-	player.play(CLIP_NAME)
+	player.play(VAULT_CLIP_NAME if active_v10 else CLIP_NAME)
 	set_progress(0.0)
+
+func _capture_material_anchors(candidate:Dictionary,supplied:Array)->void:
+	source_hand_ids.clear()
+	anchor_support_ids=[0,0]
+	anchor_local_points=[Vector3.INF,Vector3.INF]
+	latched_hand_weights=[1.0,1.0]
+	last_weight_progress=[-1.0,-1.0]
+	anatomical_weights=[0.0,0.0]
+	actual_shoulder_distances=[-1.0,-1.0]
+	wrist_target_distances=[-1.0,-1.0]
+	release_reasons=["NO_CONTACT","NO_CONTACT"]
+	var ids:Array=candidate.get("source_hands",[])
+	if ids.is_empty():
+		for id in 2:
+			if visual.controller.hands[id].state=="ATTACHED":ids.append(id)
+		# Explicit two-hand fixture data remains a supported presentation-only API.
+		if ids.is_empty() and supplied.size()==2:ids=[0,1]
+	for index in ids.size():
+		var id:int=int(ids[index])
+		if id<0 or id>1 or source_hand_ids.has(id):continue
+		var hand:Dictionary=visual.controller.hands[id]
+		var support:Node3D
+		if hand.state=="ATTACHED" and hand.anchor!=null and hand.anchor.is_valid():
+			support=hand.anchor.support_body()
+			anchors[id]=hand.anchor.world_point()
+		elif supplied.size()>index and supplied[index] is Vector3:
+			anchors[id]=supplied[index]
+			var candidate_support:Object=candidate.get("support")
+			if candidate_support is Node3D:support=candidate_support
+			elif int(candidate.get("support_id",0))!=0:
+				var resolved:Object=instance_from_id(int(candidate.support_id))
+				if resolved is Node3D:support=resolved
+		if not anchors[id].is_finite():continue
+		source_hand_ids.append(id)
+		release_reasons[id]="BRACE"
+		if is_instance_valid(support):
+			anchor_support_ids[id]=support.get_instance_id()
+			anchor_local_points[id]=support.to_local(anchors[id])
 
 func set_collision_pose(flex:float,pose:Dictionary={})->void:
 	collision_flex=clampf(flex,0.0,1.0)
@@ -119,7 +186,7 @@ func set_progress(value:float,_dt:float=0.0)->void:
 	_update_targets()
 
 func _apply_authored_pose()->void:
-	player.seek(progress*Clip.length,true)
+	player.seek(progress*(VaultClip.length if active_v10 else Clip.length),true)
 	var blend:=smoothstep(0.0,.15,progress)
 	for index in visual.skeleton.get_bone_count():
 		var authored:Quaternion=visual.skeleton.get_bone_pose_rotation(index)
@@ -134,6 +201,7 @@ func update_visual(delta:float)->void:
 		_update_targets()
 	elif mode=="EXIT_BLEND":
 		exit_elapsed+=delta
+		if active_v10:_select_exit_animation()
 		visual.animation.advance(delta)
 		var blend:=smoothstep(0.0,.18,exit_elapsed)
 		for index in visual.skeleton.get_bone_count():
@@ -158,17 +226,41 @@ func _update_targets()->void:
 	visual_target_recorded=true
 	var frame:Transform3D=visual.global_transform
 	release_weight=1.0-smoothstep(release_start,release_end,progress) if mode=="ASSISTED" else 0.0
+	var per_hand_weights:Array[float]=[0.0,0.0]
 	for id in 2:
 		var sign_side:float=-1.0 if id==0 else 1.0
+		if active_v10 and anchor_support_ids[id]!=0:
+			var support:Object=instance_from_id(anchor_support_ids[id])
+			if support is Node3D:
+				anchors[id]=support.get_global_transform_interpolated()*anchor_local_points[id]
+			else:
+				anchors[id]=Vector3.INF
+				release_reasons[id]="SUPPORT_INVALIDATED"
 		if anchors[id].is_finite():
 			var shoulder_local:Vector3=visual.controller.tuning.shoulder_left if id==0 else visual.controller.tuning.shoulder_right
 			var shoulder:Vector3=frame*shoulder_local
+			if active_v10:
+				var upper:int=visual.skeleton.find_bone("upperarm_l" if id==0 else "upperarm_r")
+				shoulder=visual.skeleton.global_transform*visual.skeleton.get_bone_global_pose(upper).origin
 			var direction:Vector3=(anchors[id]-shoulder).normalized()
 			visual.palms[id]=anchors[id]
 			visual.hand_directions[id]=direction
 			visual.targets[id].global_position=anchors[id]-direction*visual.controller.tuning.palm_contact_offset
 			visual.poles[id].global_position=shoulder+frame.basis*Vector3(sign_side*.35,-.18,.25)
 			hand_ik[id].influence=release_weight
+			if active_v10:
+				actual_shoulder_distances[id]=shoulder.distance_to(anchors[id])
+				wrist_target_distances[id]=shoulder.distance_to(visual.targets[id].global_position)
+				var arm_length:float=actual_arm_lengths[id]
+				anatomical_weights[id]=1.0-smoothstep(maxf(0,arm_length-.05),maxf(.001,arm_length-.005),wrist_target_distances[id])
+				var admitted:float=minf(release_weight,anatomical_weights[id])
+				if progress>last_weight_progress[id]+.0000001:
+					latched_hand_weights[id]=minf(latched_hand_weights[id],admitted)
+					last_weight_progress[id]=progress
+				hand_ik[id].influence=minf(latched_hand_weights[id],admitted) if mode=="ASSISTED" else 0.0
+				per_hand_weights[id]=hand_ik[id].influence
+				if mode=="ASSISTED":
+					release_reasons[id]="ANATOMICAL_RELEASE" if anatomical_weights[id]<release_weight else ("AUTHORED_RELEASE" if release_weight<1.0 else "BRACE")
 		else:hand_ik[id].influence=0.0
 		var sole:Transform3D=collision_pose.get("sole",Transform3D(Basis.IDENTITY,visual.controller.tuning.foot_base_offset))
 		var shift:Vector3=sole.origin-visual.controller.tuning.foot_base_offset
@@ -176,7 +268,12 @@ func _update_targets()->void:
 		var knee:Vector3=collision_pose.get("knee",Vector3(0,-.4967,0))
 		visual.poles[id+2].global_position=frame*(knee+Vector3(sign_side*.10,0,-.12))
 	if mode=="ASSISTED":leg_ik.influence=smoothstep(0.0,.15,progress)
-	palm_pose.influence=release_weight
+	if active_v10:
+		palm_pose.hand_weights.assign(per_hand_weights)
+		palm_pose.influence=1.0 if per_hand_weights.max()>0.0 else 0.0
+	else:
+		palm_pose.hand_weights.clear()
+		palm_pose.influence=release_weight
 
 func finish()->void:
 	if mode!="ASSISTED":return
@@ -202,16 +299,30 @@ func _start_exit(reason:String)->void:
 	exit_pose.clear()
 	for index in visual.skeleton.get_bone_count():exit_pose.append(visual.skeleton.get_bone_pose_rotation(index))
 	anchors=[Vector3.INF,Vector3.INF]
+	if active_v10:
+		anchor_support_ids=[0,0]
+		anchor_local_points=[Vector3.INF,Vector3.INF]
+		palm_pose.hand_weights.assign([0.0,0.0])
 	for solver in hand_ik:solver.influence=0.0
 	palm_pose.influence=0.0
 	release_weight=0.0
 	player.pause()
 	visual.animation_clip="Idle"
 	visual.animation.play("Idle")
+	if active_v10:_select_exit_animation()
 	visual.animation.advance(0.0)
 	exit_elapsed=0.0
 	mode="EXIT_BLEND"
 	last_reason=reason
+
+func _select_exit_animation()->void:
+	var grounded:bool=is_instance_valid(visual.ground_motor) and visual.ground_motor.grounded
+	var speed:float=body.linear_velocity.slide(Vector3.UP).length()
+	var wanted:String=("Walk" if speed>.12 else "Idle") if grounded else "A_TPose"
+	if visual.animation_clip!=wanted:
+		visual.animation_clip=wanted
+		visual.animation.play(wanted,.08)
+	visual.animation.speed_scale=clampf(speed/visual.controller.tuning.walk_speed,.25,1.5) if wanted=="Walk" else 1.0
 
 func _measure()->void:
 	if not is_driving():return
@@ -221,7 +332,8 @@ func _measure()->void:
 		var hand:int=visual.skeleton.find_bone("hand_"+suffix)
 		var wrist:Vector3=visual.skeleton.global_transform*visual.skeleton.get_bone_global_pose(hand).origin
 		var palm:Vector3=wrist+visual.hand_directions[id]*visual.controller.tuning.palm_contact_offset
-		hand_contact_error[id]=palm.distance_to(anchors[id]) if anchors[id].is_finite() and release_weight>.01 else -1.0
+		var contact_weight:float=hand_ik[id].influence if active_v10 else release_weight
+		hand_contact_error[id]=palm.distance_to(anchors[id]) if anchors[id].is_finite() and contact_weight>.01 else -1.0
 		var foot:int=visual.skeleton.find_bone("foot_"+suffix)
 		var ankle:Vector3=visual.skeleton.global_transform*visual.skeleton.get_bone_global_pose(foot).origin
 		physical_foot_error[id]=ankle.distance_to(visual.targets[id+2].global_position)
@@ -233,5 +345,16 @@ func _measure()->void:
 		if mode=="ASSISTED" and leg_ik.influence>=.999:corrected_foot_errors[id]=physical_foot_error[id]
 	last_measurement={"mode":mode,"progress":progress,"hand_ik_weights":[hand_ik[0].influence,hand_ik[1].influence],"leg_ik_weight":leg_ik.influence,"anchored_hand_error_threshold":.99,"anchored_hand_error_m":anchored_errors,"collision_corrected_foot_error_m":corrected_foot_errors,"frame":Engine.get_process_frames()}
 
+func presentation_phase()->String:
+	if mode=="EXIT_BLEND":return "STAND_LOCOMOTION_BLEND"
+	if mode!="ASSISTED":return "INACTIVE"
+	if progress<.10:return "GRIP_BRACE"
+	if progress<.20:return "APPROACH_CLEARANCE"
+	if progress<.27:return "LOAD_PRETRAVERSE"
+	if progress<.50:return "LEG_TUCK"
+	if progress<.77:return "CROSS_LIP"
+	if progress<.95:return "FOOT_PRESENTATION_UNFOLD"
+	return "STAND_LOCOMOTION_BLEND"
+
 func telemetry()->Dictionary:
-	return {"mode":mode,"clip":CLIP_NAME,"duration_s":Clip.length,"progress":progress,"animation_time_s":player.current_animation_position if player.is_playing() else progress*Clip.length,"collision_flex":collision_flex,"visual_root_error":visual.global_position.distance_to(body.get_global_transform_interpolated().origin),"visual_target_recorded":visual_target_recorded,"visual_target_measurement_scope":mode if is_driving() else "STALE_OR_UNMEASURED","visual_vs_assigned_interpolated_target_error_m":visual.global_position.distance_to(last_visual_target.origin) if visual_target_recorded and is_driving() else -1.0,"body_interpolation_lag_at_visual_update_m":last_visual_target.origin.distance_to(simulation_pose_at_visual_update.origin) if visual_target_recorded else -1.0,"interpolated_target_change_since_visual_update_m":last_visual_target.origin.distance_to(body.get_global_transform_interpolated().origin) if visual_target_recorded and is_driving() else -1.0,"hand_contact_error":hand_contact_error.duplicate(),"physical_foot_error":physical_foot_error.duplicate(),"last_measurement":last_measurement.duplicate(true),"measured_frames":measured_frames,"hand_ik_weight":release_weight,"started_count":started_count,"finished_count":finished_count,"reason":last_reason,"root_motion":false,"body_authority":false}
+	return {"mode":mode,"presentation_phase":presentation_phase(),"clip":VAULT_CLIP_NAME if active_v10 else CLIP_NAME,"duration_s":VaultClip.length if active_v10 else Clip.length,"progress":progress,"animation_time_s":player.current_animation_position if player.is_playing() else progress*Clip.length,"collision_flex":collision_flex,"visual_root_error":visual.global_position.distance_to(body.get_global_transform_interpolated().origin),"visual_target_recorded":visual_target_recorded,"visual_target_measurement_scope":mode if is_driving() else "STALE_OR_UNMEASURED","visual_vs_assigned_interpolated_target_error_m":visual.global_position.distance_to(last_visual_target.origin) if visual_target_recorded and is_driving() else -1.0,"body_interpolation_lag_at_visual_update_m":last_visual_target.origin.distance_to(simulation_pose_at_visual_update.origin) if visual_target_recorded else -1.0,"interpolated_target_change_since_visual_update_m":last_visual_target.origin.distance_to(body.get_global_transform_interpolated().origin) if visual_target_recorded and is_driving() else -1.0,"hand_contact_error":hand_contact_error.duplicate(),"physical_foot_error":physical_foot_error.duplicate(),"last_measurement":last_measurement.duplicate(true),"measured_frames":measured_frames,"hand_ik_weight":release_weight,"started_count":started_count,"finished_count":finished_count,"reason":last_reason,"root_motion":false,"body_authority":false,"contextual_vault_v10_enabled":contextual_vault_v10_enabled,"active_v10":active_v10,"hand_release_window":[release_start,release_end],"source_hand_ids":source_hand_ids.duplicate(),"anchor_support_ids":anchor_support_ids.duplicate(),"anchor_local_points":anchor_local_points.duplicate(),"actual_arm_lengths_m":actual_arm_lengths.duplicate(),"actual_shoulder_to_palm_target_m":actual_shoulder_distances.duplicate(),"wrist_target_distances_m":wrist_target_distances.duplicate(),"anatomical_hand_weights":anatomical_weights.duplicate(),"release_reasons":release_reasons.duplicate(),"per_hand_palm_weights":palm_pose.hand_weights.duplicate()}

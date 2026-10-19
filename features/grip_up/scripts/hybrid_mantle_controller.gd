@@ -4,6 +4,7 @@ const Detector=preload("res://features/grip_up/scripts/mantle_candidate_detector
 const Route=preload("res://features/grip_up/scripts/hybrid_mantle_route.gd")
 const AnimationDriver=preload("res://features/grip_up/scripts/mantle_animation_driver.gd")
 var enabled:=false
+var contextual_vault_v10_enabled:=false
 var state:="DYNAMIC"
 var body:RigidBody3D
 var controller:Node
@@ -49,6 +50,7 @@ func configure(grips:Node,motor_ground:Node,visual:Node3D,view:Camera3D)->void:
 	motor.configure(body)
 	detector.configure(controller,ground,camera,motor)
 	animation_driver=AnimationDriver.new()
+	animation_driver.contextual_vault_v10_enabled=contextual_vault_v10_enabled
 	add_child(animation_driver)
 	animation_driver.configure(biped,body)
 
@@ -74,9 +76,28 @@ func _same_support()->bool:
 	var support=instance_from_id(int(candidate.get("support_id",0)))
 	return support is StaticBody3D and not support is AnimatableBody3D and support.global_transform.is_equal_approx(candidate.support_transform) and support.constant_linear_velocity.length()<.0001 and support.constant_angular_velocity.length()<.0001
 
+func _hold_invalid_restore_support()->void:
+	# end_dynamic already restored the original standing shapes. Freeze the
+	# current solved pose, without replaying a route pose, rebuilding geometry,
+	# restoring old velocities or restarting the kinematic motor. The material
+	# snapshot is invalid, so only explicit reset may relinquish this ownership.
+	body.freeze_mode=RigidBody3D.FREEZE_MODE_KINEMATIC
+	body.freeze=true
+	controller.assisted_motion_owned=true
+	ground.assisted_authority_suspended=true
+	standing_clear_at_restore=false
+	completed=false
+	walk_distance=0
+	interrupted=true
+	blocked_time=.4
+	result="BLOCKED / R TO RESTART"
+	transition("BLOCKED_RECOVERY","SUPPORT_INVALIDATED")
+
 func _commit()->void:
 	if state!="COMMIT" or motor.active or controller.assisted_motion_owned:return
 	incoming={"transform":body.global_transform,"linear_velocity":body.linear_velocity,"angular_velocity":body.angular_velocity,"hands":controller.hands.duplicate(true)}
+	if contextual_vault_v10_enabled:
+		candidate.approach_context={"body_origin_to_lip_height":Vector3(candidate.top_reference_world).y-body.global_position.y,"body_to_face_distance":(body.global_position-Vector3(candidate.top_reference_world)).dot(candidate.outward_world),"linear_velocity_relative_to_static_support":body.linear_velocity,"upward_speed":body.linear_velocity.dot(Vector3.UP),"inward_speed":body.linear_velocity.dot(candidate.inward_world),"angular_velocity":body.angular_velocity,"attached_hand_count":candidate.source_hands.size(),"selected_style":"VAULT_STYLE","style_choice_reason":"Single refined vault experiment; no contextual classifier or second style"}
 	animation_driver.begin(candidate)
 	controller.retire_for_assisted_motion()
 	ground.assisted_authority_suspended=true
@@ -195,7 +216,9 @@ func _physics_process(delta:float)->void:
 					else:transition("BLOCKED_RECOVERY","STANDING_COLLISION_BLOCKED")
 	elif state=="RESTORE_DYNAMIC":
 		restore_time+=delta
-		if _native_ground() and _standing_supported_clear() and body.global_basis.y.dot(Vector3.UP)>.94:
+		if contextual_vault_v10_enabled and not _same_support():
+			_hold_invalid_restore_support()
+		elif _native_ground() and _standing_supported_clear() and body.global_basis.y.dot(Vector3.UP)>.94:
 			animation_driver.finish()
 			controller.assisted_motion_owned=false
 			ground.assisted_authority_suspended=false

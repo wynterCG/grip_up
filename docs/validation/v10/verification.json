@@ -1,50 +1,35 @@
 {
-  "recorded_utc": "2026-10-19T21:59:04.277874+00:00",
-  "milestone": "v1.0 M0 audit only",
+  "recorded_utc": "2026-10-19T22:26:53.660918+00:00",
+  "milestone": "v1.0 M1 single vault presentation, human qualitative KEEP",
   "baseline_commit": "99eb1040ecf45c389757bd07544fda6a4a68d508",
-  "baseline_tag": "baseline/v0.9-pre-contextual-v1.0",
   "branch": "feature/v1.0-contextual-vault",
-  "baseline_feature_files": 334,
-  "all_baseline_feature_hashes_match_in_C_and_E": true,
-  "native_scripted": {
-    "120": {
-      "checks": 13,
-      "failures": 0,
-      "window_screen": 0,
-      "walk_m": {
-        "LOW": 0.302565418649465,
-        "HIGH": 0.302551687229425
-      }
-    },
-    "60": {
-      "checks": 13,
-      "failures": 0,
-      "window_screen": 0,
-      "walk_m": {
-        "LOW": 0.314465415664017,
-        "HIGH": 0.31607963796705
-      }
-    }
-  },
-  "saved_project_sequence": {
-    "120": {
-      "checks": 12,
-      "failures": 0
-    },
-    "60": {
-      "checks": 12,
-      "failures": 0
-    }
-  },
-  "new_automated_checks": 50,
-  "new_automated_failures": 0,
+  "baseline_checks": 4356,
+  "new_checks": 372,
+  "total_distinct_checks": 4728,
+  "suite_runs": 147,
+  "failures": 0,
+  "repeat_cleanup_checks": 140,
+  "native_scripted_checks": 26,
+  "native_failures": 0,
+  "frequencies": [
+    120,
+    60
+  ],
+  "screen_index": 0,
   "editor_errors": 0,
-  "human_sessions": [],
-  "human_baseline_assessment": "PENDING",
-  "human_acceptance": "PENDING",
-  "presentation_changes": false,
-  "retiming": false,
-  "second_style": false,
+  "smoke_frames": 3,
+  "source_files": 347,
+  "C_E_sources_match": true,
+  "source_manifest": "m1_source_sha256.json",
+  "exe_name": "GripUp-v1.0-experimental.exe",
+  "exe_sha256": "5fb47837a4cc9f816d865db94c7ff46506aa91516a440a76c60391909a3252ac",
+  "E_build_matches": true,
+  "baseline_exe_sha256": "700b17d946cbe6da19b4f942e9ad2b160dae792df36a344fbe57dd06e07eab98",
+  "janga_grabber_sha256": "8ab923ac1d903e8dcc8ed2a2e4f9f8c5cec326a3217cb4a9d8f00036557e7dad",
+  "human_feedback": "User: not mega realistic but good; requests next gameplay route",
+  "human_three_session_gate_complete": false,
   "default_promotion": false,
-  "report": "report.md"
+  "second_style": false,
+  "route_duration_s": 1.15,
+  "decision": "KEEP V opt-in; proceed to short continuous gameplay route"
 }

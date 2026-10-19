@@ -1,0 +1,68 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS scenario2 refusal starts from genuine finite actual grips
+PASS scenario2 exposes live geometry/static-support rejection reason
+PASS scenario2 refused geometry never captures authority or declares completion
+PASS scenario3 refusal starts from genuine finite actual grips
+PASS scenario3 exposes live geometry/static-support rejection reason
+PASS scenario3 refused geometry never captures authority or declares completion
+PASS scenario4 refusal starts from genuine finite actual grips
+PASS scenario4 exposes live geometry/static-support rejection reason
+PASS scenario4 refused geometry never captures authority or declares completion
+PASS scenario5 refusal starts from genuine finite actual grips
+PASS scenario5 exposes live geometry/static-support rejection reason
+PASS scenario5 refused geometry never captures authority or declares completion
+PASS AnimatableBody fixture earns actual grips without pretending it is static world
+PASS AnimatableBody support explicitly rejected even at zero authored velocity
+PASS precommit release fixture starts from actual held grips
+PASS F6 release before commitment preserves immediate hold-to-grip release
+PASS precommit focus fixture starts from actual held grips
+PASS repeated focus loss before commitment releases actions and creates no assisted start
+PASS pause/rearm trial commits from ordinary low-ledge grip and W
+PASS Esc pause holds collision-body pose and validated route progress together
+PASS pause holds animation pose progress without a second commit
+PASS camera orbit/dolly cannot rewrite committed ledge/body route
+PASS repeated COMMIT callbacks cannot reinitialize active route or animation
+PASS paused committed action resumes and restores dynamic authority once
+PASS stale held grip buttons cannot reattach at restored ledge
+PASS fresh grip release rearms normal acquisition after committed travel
+PASS fresh real grip press reaches ordinary acquisition path after handoff
+PASS rapid release/fresh grip input never duplicates mantle animation ownership
+PASS F5 release-after-commit fixture starts from real grip/W transition
+PASS F5 releasing both grip buttons and W after commitment does not drop the coherent action
+PASS committed visual hand ownership never recreates old physical grip authority
+PASS active traversal R creates fresh dynamic body without old assisted authority
+PASS active traversal R clears phase progress counters and pending route
+PASS active traversal R restores full baseline shapes and keeps v08 capabilities OFF
+PASS active traversal R restores normal mass collision filters gravity and ground authority
+PASS runtime blocker trial commits from ordinary valid geometry
+PASS runtime geometry stops route before false animation/ground completion
+PASS blocked recovery preserves last safe collider and synchronized animation pose
+PASS persistent blocker exposes controlled reset without deep shape insertion
+PASS runtime obstacle R creates fresh dynamic body without old assisted authority
+PASS runtime obstacle R clears phase progress counters and pending route
+PASS runtime obstacle R restores full baseline shapes and keeps v08 capabilities OFF
+PASS runtime obstacle R restores normal mass collision filters gravity and ground authority
+PASS midcommit focus fixture starts from real input
+PASS repeated focus loss midcommit retains one safe owned pose without auto-restart
+PASS focus clears input and old grip authority while retaining synchronized authored pose
+PASS focus loss R creates fresh dynamic body without old assisted authority
+PASS focus loss R clears phase progress counters and pending route
+PASS focus loss R restores full baseline shapes and keeps v08 capabilities OFF
+PASS focus loss R restores normal mass collision filters gravity and ground authority
+PASS support invalidation fixture starts from actual input commitment
+PASS destroyed support cannot retain eligibility or false completion
+PASS invalidated support retains controlled safe-reset ownership instead of uncontrolled dynamic release
+PASS invalid support R creates fresh dynamic body without old assisted authority
+PASS invalid support R clears phase progress counters and pending route
+PASS invalid support R restores full baseline shapes and keeps v08 capabilities OFF
+PASS invalid support R restores normal mass collision filters gravity and ground authority
+PASS all observed assisted ticks have zero old hand foot ground force authority
+PASS v09 actual ground authority always has matched native sole load and was positively exercised
+HYBRID RESILIENCE RESULTS: 59 checks, 0 failures
+SCRIPT ERROR: Invalid assignment of property or key 'hand_weights' with value of type 'Array' on a base object of type 'SkeletonModifier3D (biped_hand_pose.gd)'.
+   at: _start_exit (res://features/grip_up/scripts/mantle_animation_driver.gd:305)
+   GDScript backtrace (most recent call first):
+       [0] _start_exit (res://features/grip_up/scripts/mantle_animation_driver.gd:305)
+       [1] finish (res://features/grip_up/scripts/mantle_animation_driver.gd:281)
+       [2] _physics_process (res://features/grip_up/scripts/hybrid_mantle_controller.gd:201)

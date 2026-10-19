@@ -1,0 +1,13 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS Step starts with two actually held low contacts
+PASS first release preserves supporting right anchor, pose and momentum
+PASS left hand actually reaches the first higher selected point
+PASS second release preserves new left support without a handoff snap
+PASS one right press remembers the second higher contact
+PASS W with a brief deliberate D request earns the second higher right contact
+PASS the right request never retargets the chosen material point
+PASS both higher handoffs retain at least one real support throughout
+PASS future right target never contributes force or allocation before contact
+PASS handoffs preserve same shared hands, feet and combined moment caps
+INTENT HANDOFFS RESULTS: 10 checks, 0 failures

@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DEST = Path(r'E:\Godot Games\grip_up')
 ENGINE = Path(r'C:\Users\Wynter\WrapRush\tools\godot.exe')
 CLI = Path(r'C:\Users\Wynter\Downloads\godot-mcp-pro-v1.17.1\server\build\cli.js')
-BUILD_NAME = 'GripUp-v0.9-experimental.exe'
+BUILD_NAME = 'GripUp-v1.0-experimental.exe'
 
 parser = argparse.ArgumentParser()
 parser.add_argument('task', choices=['sync','test','test-saved','editor','mcp','export','cleanup','smoke'])

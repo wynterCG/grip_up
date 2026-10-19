@@ -5,6 +5,11 @@ var sample_after:=0.0
 var shots_done:Array[String]=[]
 var saving_shot:=false
 var collision_overlay_enabled:=false
+var contextual_vault_experiment:=false
+var comparison_orbit:=Vector2.ZERO
+
+func evidence_prefix()->String:
+	return "v10" if contextual_vault_experiment else "v09"
 
 func observe(_delta:float)->void:
 	if current_row.is_empty():return
@@ -18,19 +23,19 @@ func _process(delta:float)->void:
 	super._process(delta)
 	if collision_overlay_enabled and is_instance_valid(app.mantle_overlay):app.mantle_overlay.visible=true
 	if current_row.is_empty() or saving_shot:return
-	for threshold in [.30,.60,.90]:
+	for threshold in ([.15,.27,.34,.60,.90] if contextual_vault_experiment else [.30,.60,.90]):
 		var key:="%s_%.2f"%[current_row.scenario,threshold]
 		if app.hybrid_mantle.active() and app.hybrid_mantle.progress>=threshold and not shots_done.has(key):
 			shots_done.append(key)
 			saving_shot=true
 			await RenderingServer.frame_post_draw
-			get_viewport().get_texture().get_image().save_png("C:/Users/Wynter/grip_up/builds/v09_%dhz_%s.png"%[hz,key])
+			get_viewport().get_texture().get_image().save_png("C:/Users/Wynter/grip_up/builds/%s_%dhz_%s.png"%[evidence_prefix(),hz,key])
 			saving_shot=false
 			break
 
 func image_evidence(label:String)->void:
 	await RenderingServer.frame_post_draw
-	get_viewport().get_texture().get_image().save_png("C:/Users/Wynter/grip_up/builds/v09_%dhz_%s.png"%[hz,label])
+	get_viewport().get_texture().get_image().save_png("C:/Users/Wynter/grip_up/builds/%s_%dhz_%s.png"%[evidence_prefix(),hz,label])
 
 func select_again(id:int,point:Vector3)->bool:
 	button(MOUSE_BUTTON_LEFT if id==0 else MOUSE_BUTTON_RIGHT,false)
@@ -38,6 +43,8 @@ func select_again(id:int,point:Vector3)->bool:
 
 func run()->void:
 	report.physics_hz=hz
+	report.contextual_vault_v10_enabled=contextual_vault_experiment
+	report.comparison_camera_orbit=str(comparison_orbit)
 	report.window_screen=get_window().current_screen
 	report.engine=Engine.get_version_info()
 	report.jolt_penetration_slop=ProjectSettings.get_setting("physics/jolt_physics_3d/simulation/penetration_slop",-1)
@@ -46,7 +53,8 @@ func run()->void:
 	for scenario in [0,1]:
 		for id in [MOUSE_BUTTON_LEFT,MOUSE_BUTTON_RIGHT]:button(id,false)
 		for action in ["contract","extend","bias_left","bias_right"]:Input.action_release(action)
-		app._open_hybrid_mantle(scenario)
+		app._open_hybrid_mantle(scenario,contextual_vault_experiment)
+		if comparison_orbit!=Vector2.ZERO:app.camera.orbit(comparison_orbit)
 		app.won=false
 		app.controller.sample_ready.connect(audit)
 		app.controller.sample_ready.connect(observe)
@@ -93,8 +101,8 @@ func run()->void:
 	check(caps_ok,"native original dynamic hand/foot/torque limits preserved")
 	report.functional_gate_met=report.trials.all(func(row):return row.final.mantle_complete)
 	report.complete=true
-	FileAccess.open("C:/Users/Wynter/grip_up/builds/hybrid_native_%dhz.json"%hz,FileAccess.WRITE).store_string(JSON.stringify(report,"\t"))
+	FileAccess.open("C:/Users/Wynter/grip_up/builds/%s_native_%dhz.json"%["vault" if contextual_vault_experiment else "hybrid",hz],FileAccess.WRITE).store_string(JSON.stringify(report,"\t"))
 	Engine.physics_ticks_per_second=120
-	app._open_hybrid_mantle(0)
+	app._open_hybrid_mantle(0,contextual_vault_experiment)
 	app.hint_time=0
 	queue_free()

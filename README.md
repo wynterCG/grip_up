@@ -1,10 +1,23 @@
-# GRIP UP / physics climbing lab 0.9 experimental
+# GRIP UP / physics climbing lab 1.0 experimental
 
-Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v0.9-experimental.exe`.
+Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v1.0-experimental.exe`.
 PC mouse and keyboard. Resizable 1920x1080 reference canvas; initial window 1440x810.
 Integrated Jolt, 120 Hz. Core and complete routes also tested at 60 Hz.
 
 This is a separate prototype. The Janga object grabber and its project are unchanged.
+
+## v1.0 vault presentation experiment ? explicit A/B
+
+Choose **Controls / v1.0 / Climb Up 1.25 m**, **2.10 m**, or **Two ledges**.
+The experiment has its own authored arm/torso sequence, hand-specific material
+contacts, anatomical release limits and immediate visual Walk selection during
+handoff. A support becoming invalid during RESTORE now holds a controlled reset.
+The body route remains 1.15 s with the same swept motor and collision profiles.
+
+The v0.9 buttons restore the baseline. `contextual_vault_v10_enabled` defaults
+false; this is a presentation/safety experiment, without retiming, a second style
+or default promotion. Human comparison remains pending. See the
+[v1.0 report](docs/validation/v10/report.md) for receipts and known limits.
 
 ## v0.9 hybrid mantle — static technical gates pass
 

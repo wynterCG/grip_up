@@ -1,0 +1,241 @@
+{
+	"checks": 34,
+	"failures": 0,
+	"fixtures": [
+		{
+			"final": {
+				"active_v10": true,
+				"actual_arm_lengths_m": [
+					0.547080874443054,
+					0.547080755233765
+				],
+				"actual_shoulder_to_palm_target_m": [
+					0.310031026601791,
+					-1.0
+				],
+				"anatomical_hand_weights": [
+					1.0,
+					0.0
+				],
+				"anchor_local_points": [
+					"(-0.192036, 1.790764, 0.165426)",
+					"(inf, inf, inf)"
+				],
+				"anchor_support_ids": [
+					87828728448,
+					0
+				],
+				"animation_time_s": 1.05,
+				"body_authority": false,
+				"body_interpolation_lag_at_visual_update_m": 0.0,
+				"clip": "HybridVaultV10",
+				"collision_flex": 0.0,
+				"contextual_vault_v10_enabled": true,
+				"duration_s": 1.05,
+				"finished_count": 0,
+				"hand_contact_error": [
+					-1.0,
+					-1.0
+				],
+				"hand_ik_weight": 0.0,
+				"hand_release_window": [
+					0.27,
+					0.34
+				],
+				"interpolated_target_change_since_visual_update_m": 0.0,
+				"last_measurement": {},
+				"measured_frames": 0,
+				"mode": "ASSISTED",
+				"per_hand_palm_weights": [
+					0.0,
+					0.0
+				],
+				"physical_foot_error": [
+					0.0,
+					0.0
+				],
+				"presentation_phase": "STAND_LOCOMOTION_BLEND",
+				"progress": 1.0,
+				"reason": "ACTIVE_PRESENTATION_ONLY",
+				"release_reasons": [
+					"AUTHORED_RELEASE",
+					"NO_CONTACT"
+				],
+				"root_motion": false,
+				"source_hand_ids": [
+					0
+				],
+				"started_count": 1,
+				"visual_root_error": 0.0,
+				"visual_target_measurement_scope": "ASSISTED",
+				"visual_target_recorded": true,
+				"visual_vs_assigned_interpolated_target_error_m": 0.0,
+				"wrist_target_distances_m": [
+					0.200031116604805,
+					-1.0
+				]
+			},
+			"source_hands": [
+				0
+			]
+		},
+		{
+			"final": {
+				"active_v10": true,
+				"actual_arm_lengths_m": [
+					0.547080874443054,
+					0.547080755233765
+				],
+				"actual_shoulder_to_palm_target_m": [
+					-1.0,
+					0.339412212371826
+				],
+				"anatomical_hand_weights": [
+					0.0,
+					1.0
+				],
+				"anchor_local_points": [
+					"(inf, inf, inf)",
+					"(0.191764, 1.790798, 0.165406)"
+				],
+				"anchor_support_ids": [
+					0,
+					87828728448
+				],
+				"animation_time_s": 1.05,
+				"body_authority": false,
+				"body_interpolation_lag_at_visual_update_m": 0.0,
+				"clip": "HybridVaultV10",
+				"collision_flex": 0.0,
+				"contextual_vault_v10_enabled": true,
+				"duration_s": 1.05,
+				"finished_count": 1,
+				"hand_contact_error": [
+					-1.0,
+					-1.0
+				],
+				"hand_ik_weight": 0.0,
+				"hand_release_window": [
+					0.27,
+					0.34
+				],
+				"interpolated_target_change_since_visual_update_m": 0.0,
+				"last_measurement": {},
+				"measured_frames": 0,
+				"mode": "ASSISTED",
+				"per_hand_palm_weights": [
+					0.0,
+					0.0
+				],
+				"physical_foot_error": [
+					0.0,
+					0.0
+				],
+				"presentation_phase": "STAND_LOCOMOTION_BLEND",
+				"progress": 1.0,
+				"reason": "ACTIVE_PRESENTATION_ONLY",
+				"release_reasons": [
+					"NO_CONTACT",
+					"AUTHORED_RELEASE"
+				],
+				"root_motion": false,
+				"source_hand_ids": [
+					1
+				],
+				"started_count": 2,
+				"visual_root_error": 0.0,
+				"visual_target_measurement_scope": "ASSISTED",
+				"visual_target_recorded": true,
+				"visual_vs_assigned_interpolated_target_error_m": 0.0,
+				"wrist_target_distances_m": [
+					-1.0,
+					0.229412227869034
+				]
+			},
+			"source_hands": [
+				1
+			]
+		},
+		{
+			"final": {
+				"active_v10": true,
+				"actual_arm_lengths_m": [
+					0.547080874443054,
+					0.547080755233765
+				],
+				"actual_shoulder_to_palm_target_m": [
+					0.307682633399963,
+					0.339327096939087
+				],
+				"anatomical_hand_weights": [
+					1.0,
+					1.0
+				],
+				"anchor_local_points": [
+					"(-0.192036, 1.790764, 0.165426)",
+					"(0.191764, 1.790798, 0.165406)"
+				],
+				"anchor_support_ids": [
+					87828728448,
+					87828728448
+				],
+				"animation_time_s": 1.05,
+				"body_authority": false,
+				"body_interpolation_lag_at_visual_update_m": 0.0,
+				"clip": "HybridVaultV10",
+				"collision_flex": 0.0,
+				"contextual_vault_v10_enabled": true,
+				"duration_s": 1.05,
+				"finished_count": 2,
+				"hand_contact_error": [
+					-1.0,
+					-1.0
+				],
+				"hand_ik_weight": 0.0,
+				"hand_release_window": [
+					0.27,
+					0.34
+				],
+				"interpolated_target_change_since_visual_update_m": 0.0,
+				"last_measurement": {},
+				"measured_frames": 0,
+				"mode": "ASSISTED",
+				"per_hand_palm_weights": [
+					0.0,
+					0.0
+				],
+				"physical_foot_error": [
+					0.0,
+					0.0
+				],
+				"presentation_phase": "STAND_LOCOMOTION_BLEND",
+				"progress": 1.0,
+				"reason": "ACTIVE_PRESENTATION_ONLY",
+				"release_reasons": [
+					"AUTHORED_RELEASE",
+					"AUTHORED_RELEASE"
+				],
+				"root_motion": false,
+				"source_hand_ids": [
+					0,
+					1
+				],
+				"started_count": 3,
+				"visual_root_error": 0.0,
+				"visual_target_measurement_scope": "ASSISTED",
+				"visual_target_recorded": true,
+				"visual_vs_assigned_interpolated_target_error_m": 0.0,
+				"wrist_target_distances_m": [
+					0.197682544589043,
+					0.229327157139778
+				]
+			},
+			"source_hands": [
+				0,
+				1
+			]
+		}
+	],
+	"physics_hz": 60,
+	"provenance": "Isolated authored presentation fixtures; no physical support or human acceptance claim"
+}

@@ -1,124 +1,149 @@
-# GRIP UP v1.0 — M0 baseline audit
+# GRIP UP v1.0 - M1 refined vault presentation
 
-Status: **M0 technical reproduction complete; human baseline assessment PENDING.**
-Decision: **KEEP v0.9 unchanged for the baseline pilot.** This is not delivery or
-acceptance of a refined v1.0 animation.
+Decision: **KEEP the opt-in Style V candidate for human A/B; no default promotion.**
+M1 implementation and technical validation are complete. The user judged the new
+candidate good despite limited realism. Structured human acceptance is still
+**PENDING**. This is an animation-assisted crossing; ordinary
+climbing and walking remain physical.
 
-## Source and checkpoint
+## Baseline and human observation
 
-- Working project: `E:\Godot Games\grip_up`.
-- Branch: `feature/v1.0-contextual-vault`.
-- Recoverable baseline: annotated tag `baseline/v0.9-pre-contextual-v1.0`, pointing
-  to `99eb1040ecf45c389757bd07544fda6a4a68d508`.
-- Source implementation commit: `45a3120fe4609e3520e10d47fe9347deeec1e0bc`.
-- User specification archived verbatim at `../../specs/grip_up_v1.0.md`.
-- Existing verification and full regression evidence remain under `../v09/`.
+Branch: `feature/v1.0-contextual-vault`. The recoverable unmodified v0.9 baseline
+is tag `baseline/v0.9-pre-contextual-v1.0`, commit `99eb1040ecf45c389757bd07544fda6a4a68d508`.
+The earlier audit and its pending ratings are archived in `m0_audit.md` and `m0/`.
 
-The 334 feature files match the v0.9 SHA256 manifest in both the working mirror
-and E: project. No gameplay scripts, animation resources, input, route duration,
-collision profiles, default flags, or builds were changed for M0.
+After trying that unchanged baseline, the user reported that the feel seemed the
+same. This is limited qualitative feedback on the baseline, not numeric ratings,
+three completed manual sessions, a high/slow contextual mismatch, or acceptance
+of v1.0. It motivated delivering an actual presentation comparison.
 
-The spec section 1 explicitly requires: “Preserve v0.9 unmodified as an opt-in
-baseline and collect a small human quality assessment first.” Automated playback
-below does not meet that human requirement. A feedback request is pending.
+After the new candidate, the user said: "não está mega realista mas está bom"
+and asked what comes next. This supports retaining the refined single style for
+the next gameplay iteration. It does not supply three recorded sessions,
+frequency/context breakdowns or numerical acceptance scores. No human sessions
+or comfort scores have been invented.
 
-## Fresh automated reproduction
+## What changed
 
-Godot 4.7.2 / integrated Jolt, baseline feature profile, monitor 1 (screen index 0).
+- `contextual_vault_v10_enabled=false` on lab, transition controller and animation
+  driver. Controls now offer explicit v0.9 and v1.0 low/high/two-ledge buttons;
+  R retains the selected experiment. Normal startup remains the old profile.
+- A separate `mantle_vault_v10.tres` has 17 rotational bone tracks, 1.05 s,
+  altered arm/torso poses, and no independent root translation. All six original
+  leg tracks and their keys remain unchanged. The certified body route is still
+  1.15 s; this is not a faster physical lift or new locomotion solver.
+- Contacts are mapped by hand identity, fixing the compact right-only anchor
+  array creating a false left-hand contact. Each real hand stores its support
+  identity and material-local point; visual world targets use the interpolated
+  support frame. This does not authorize moving-platform top-outs.
+- Palm alignment now has per-hand weights. The free hand does not inherit an
+  old contact direction. Ordinary modifiers keep their original empty-array
+  behavior when the experiment is off.
+- A brace/release blend at approved progress .27-.34 is further limited per arm
+  using actual rendered shoulder position and the imported rig's arm lengths.
+  Release cannot pin a wrist beyond reach. It advances on the approved progress
+  clock, without a separate playback timer or force source.
+- The first authored revision dropped hands toward the hips too abruptly.
+  Render review rejected that presentation despite functional success. Revision
+  2 keeps the hands forward/up on release and lowers them progressively during
+  crossing. Both revisions' evidence remains available.
+- Exit immediately selects Walk for actual supported horizontal movement rather
+  than forcing Idle throughout the existing .18 s pose blend. Temporary hand
+  contacts clear and leg IK fades out before ordinary gait fully resumes.
+- A support becoming invalid specifically during RESTORE_DYNAMIC now freezes
+  the current solved pose under the v1.0 flag, retains original standing shapes,
+  and exposes R. It does not rewind, rebuild the motor or return walking authority
+  on a newly moving/deleted support. Completed ordinary walking stays dynamic.
+- Commit telemetry records body-relative lip distance, incoming velocity,
+  angular velocity and real hand count. Presentation telemetry labels the seven
+  phases, real arm reach, per-hand weights and release reasons. There is one
+  refined style; the logged choice explicitly says no classifier exists.
 
-| Session | 120 Hz | 60 Hz | Evidence |
-|---|---:|---:|---|
-| Rendered MCP Pro low/high approaches, real grips, W commit, dynamic restore, native upper support, ordinary 30 cm walk | 13/13 | 13/13 | `m0/hybrid_native_*hz.json` and `m0/v09_*hz_*.png` |
-| Headless saved E: project, left/right approaches and two successive ledges without resetting body | 12/12 | 12/12 | `m0/hybrid_sequence_*hz.json` and `m0/test-saved_*.txt` |
+The 12 kg body, dynamic grip/foot/torque budgets, Jolt settings, swept motor,
+3 mm certificate bound, HEEL_BACK profile, narrowly scoped native-contact
+recovery, static eligibility and native top-ground/30 cm finish are preserved.
+The original v0.8 full physical top-out remains a documented failure.
 
-**50 fresh checks, zero failures.** These are targeted baseline reruns, not an
-additional full 4,356-check certification or human playtest. The prior full
-matrix remains recorded as 4,356 checks / 139 runs / zero failures in v0.9.
-Current editor diagnostic query returned zero errors. Rendered scripted tests
-used in-application input; no person supplied their controls or quality ratings.
+## Validation
 
-The new receipts were generated on 2026-10-19 around 21:57 UTC. Both native runs
-completed before their final receipts and screenshots were archived. Screenshots
-cover approach, approved progress .30/.60/.90, standing, and normal walking.
-They are still evidence, not a measured assessment of temporal smoothness.
+| Final accepted coverage | 120 Hz | 60 Hz |
+|---|---:|---:|
+| New presentation/material-point/one-hand/exit fixtures | 41 | 41 |
+| Low/high, left/right approaches, two successive ledges | 29 | 29 |
+| Pause, camera, rearm, obstacle, focus/reset and refusal contracts | 59 | 59 |
+| Exact RESTORE support-invalidation guard, OFF/ON controls | 57 | 57 |
 
-## Concrete findings for M1
+**372 new checks / 8 runs / zero failures**, plus the complete preserved baseline
+matrix **4,356 checks / 139 runs / zero failures**. Total distinct accepted
+headless coverage: **4,728 checks / 147 runs**. The later parameter-shadowing
+cleanup was checked again with 140 targeted presentation/functional checks; these
+repeat coverage and are not added to that total.
 
-### Unilateral right-hand anchor mapping defect
+Receipts: `m1/attempt_004/`, `final_check/attempt_001/`, and `../v10_baseline/`.
+Earlier attempts are not silently discarded. Attempt 001 ran during development
+and caught an incomplete flag integration plus typed-array assignments that
+parse-only checks missed. Complete large failed logs are retained as gzip with
+readable previews. Attempts 002/003 passed earlier presentation revisions.
 
-`mantle_candidate_detector.gd` compacts `hand_anchors_world` in `source_hands`
-order. `mantle_animation_driver.gd:begin` instead reads that array by anatomical
-left/right index. With only right hand ATTACHED (`source_hands=[1]`), the one
-supplied anchor is assigned to the left hand; the attached-right fallback then
-assigns the same contact to the right hand. This can create a false two-hand
-presentation. It does not create a second physical grip in the retired motor.
+The exact RESTORE defect was reproduced before fixing it: OFF could hand walking
+to a support with nonzero material velocity. The pre-fix runner reports 13
+failures per frequency; its development receipts also contain the then-unfixed
+presentation array error and are labelled accordingly in `restore_reproduction/`.
+Final guard tests have no script errors and validate velocity/move/delete faults,
+no body transport, shape-resource identity, zero old forces, explicit R recovery,
+valid native top support plus 30 cm walking, and ordinary post-handoff physics.
 
-Both physics and animation audits independently found this source mismatch.
-Existing two-hand animation fixtures do not cover it. **Not fixed in M0**, so
-the baseline remains reproducible. The next experiment needs explicit hand-ID
-mapping, support-local contacts, and left-only/right-only/both-hand cases.
+Final rendered MCP Pro evidence is `native/attempt_002/`: 13 checks per frequency,
+both low/high complete from normal input, actual native ground and normal walk.
+120 Hz uses an oblique camera and cyan physical-collider overlay; 60 Hz uses the
+normal view. These are scripted inputs, not human sessions or quality ratings.
 
-### Reach limits constrain the release window
+| Final rendered measurement | 120 Hz low/high | 60 Hz low/high |
+|---|---:|---:|
+| Ordinary post-restore walk | .31389 / .31376 m | .31609 / .31608 m |
+| Assigned interpolated visual-root error | 0 / 0 m | 0 / 0 m |
+| Sampled anchored palm error, actual IK weight >= .99 | 16.35 / 11.90 mm | 20.46 / 12.76 mm |
+| Sampled fully corrected foot error | 1.71 / 2.12 mm | 1.55 / 2.18 mm |
 
-The certified route duration is 1.15 s. Current contact release blends over
-progress .25–.38 (about .288–.437 s). The body rises during .20–.50; crossing
-starts at .50 (about .575 s). Simply retaining wrist IK until crossing would
-stretch arms beyond their reach.
+Raw errors outside intended contact remain in logs; released hands and walking
+feet versus an old sole target are not reported as continuing planted contacts.
+Screenshots support frame review, not proof of temporal smoothness or comfort.
+Windows export and a three-frame startup smoke pass. Final editor diagnostics,
+source/build hashes and the prepared monitor-1 session are in `verification.json`.
 
-The animation specialist's approximation from archived v0.9 native samples,
-using physical shoulder positions, found low-entry shoulder-to-palm distances
-growing from about .471 m at p=.319 to .703 m at p=.362. High-entry samples grew
-from about .394 m at p=.304 to .623 m at p=.355 and .987 m at p=.406. The current
-maximum reach is about .657 m. These are audit estimates, not a certificate for
-every admissible initial posture or a justification for new global thresholds.
+## Files and reproduction
 
-M1 should clarify brace and release within the actually reachable interval and
-audit each real hand separately. Holding contacts longer would require a
-compatible separately certified route. No timing value has been selected or
-validated for v1.0 yet.
+Production changes: `scripts/grip_up_lab.gd`, `hybrid_mantle_controller.gd`,
+`mantle_animation_driver.gd`, `biped_hand_pose.gd`, plus
+`resources/mantle_vault_v10.tres` under `features/grip_up/`. Authoring source:
+`tools/author_vault_v10_clip.gd`. Build metadata and task helpers select
+`GripUp-v1.0-experimental.exe`; the v0.9 executable is preserved.
 
-### Entry, feet, exit and authority
+Tests: `test_vault_presentation.gd`, `test_vault_v10.gd`,
+`test_vault_resilience.gd`, `test_vault_restore_guard.gd`, `vault_test_lab.gd`,
+and `capture_contextual_vault.gd`. The old native helper gains opt-in capture
+parameters with unchanged defaults. `tools/run_contextual_vault.py` preserves
+numbered receipts; `run_regressions.py v10_baseline` archives the full old matrix
+separately rather than overwriting v0.9 evidence.
 
-The authored resource has rotational bone tracks and no independent root travel.
-Approved route progress drives both presentation and the swept motor. The
-motor's 3 mm travel bound, original shapes, restricted native-proven outward
-recovery, static-support guard, and native-ground/walking finish are retained.
+```
+python tools/run_contextual_vault.py m1 vault_presentation vault_v10 vault_resilience vault_restore_guard
+python tools/run_regressions.py v10_baseline
+python tools/project.py export
+python tools/project.py smoke
+```
 
-Hands blend away from remembered world positions in v0.9; explicit per-hand
-support-local snapshots remain M1 work. Exit clears hand targets and fades leg
-IK over .18 s. Old raw foot errors after contact ends must remain labelled stale;
-they do not prove a continuing planted-foot error. Tucked-foot clearance and the
-vault silhouette remain visual questions for the human pilot. Existing v0.8
-pure-physics top-out failure remains accurately reported as a failure.
+## Remaining decision
 
-Two further presentation findings need coverage in the next flagged experiment:
-the palm-alignment modifier has one shared weight and can orient an unattached
-hand using a stale direction; the exit blend selects Idle for .18 s before the
-ordinary biped chooses Walk, even if physical walking has already resumed. These
-are source-level findings, not a measured human complaint. Neither changes
-physical grip forces. Foot IK dominates the authored leg keys after p=.15, so
-editing only those keys would not reliably change the final leg silhouette.
+The new candidate is left ready on monitor 1 at 120 Hz, low static ledge, v1.0
+enabled explicitly. Compare Controls / v1.0 against v0.9; input remains held
+LMB/RMB, W to climb up, MMB orbit, scroll dolly, R retry. The same physical route
+means overall ascent timing and ordinary grip feel deliberately remain similar;
+the change is contact presentation and return to gait.
 
-The physics audit also identified an **unreproduced inspection risk**:
-`_same_support()` is checked during `ASSISTED_TRAVERSE`, while
-`RESTORE_DYNAMIC` checks sole contact, clearance and uprightness without another
-explicit static-transform check. A support beginning to move specifically after
-unfreeze and before native support confirmation needs an adversarial test. The
-existing passing moving-support tests must not be claimed as proof of that exact
-window. No runtime reproduction or correction is claimed in M0.
-
-## Human assessment and next decision
-
-Use `pilot.md` for three brief labelled manual sessions covering low, high,
-near-stationary/off-centre entries and the two-ledge course. All ratings and
-counts are intentionally blank; no automated session is labelled human.
-
-After baseline feedback: refine the single Style V presentation in an opt-in
-experiment, retain the certified body route first, and compare against this tag.
-Retiming needs its own flagged A/B and new safety validation. Style C requires
-repeated human-observed high/slow mismatch **after** tuning V. No classifier,
-second style, altered route, or default promotion has been implemented.
-
-This milestone adds only the archived specification, audit/pilot documents and
-fresh evidence under `docs/validation/v10/`. Recommendation: **KEEP baseline;
-await human observation before presentation changes.**
+**No retime, Style C, contextual classifier or default promotion.** A second
+style still needs repeated human-observed mismatch after this refinement. The
+three-session low/high/two-ledge human gate and numerical ratings remain pending
+in `pilot.md`. Safety/functional tests passing do not establish player enjoyment.
+Recommendation: **KEEP V as an opt-in candidate. Next, exercise it in a short
+continuous gameplay route; no current player evidence justifies Style C.**
