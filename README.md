@@ -21,6 +21,7 @@ actual suspension, with no ground or meaningful foot load, on the finish materia
 This adds an authored M5 comparison route. The v0.7.2 maximum-reach controller,
 physical budgets and earlier labs are preserved. There is no new mantle or launch.
 See the [route report](docs/validation/v073/comparison_summary.md).
+**3636 automated checks +34 scripted Godot MCP Pro checks pass at60/120Hz.**
 
 ## v0.7.2 reach toward a surface
 

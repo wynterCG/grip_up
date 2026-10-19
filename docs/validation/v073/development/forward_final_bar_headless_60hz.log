@@ -1,0 +1,21 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS initial left finite wall contact
+PASS initial right finite wall contact
+PASS higher left wall transfer
+PASS higher right wall transfer
+PASS left transfer into crossing region
+PASS right transfer toward wall edge
+PASS left finite contact on first hanging bar
+PASS right finite intermediate contact on first hanging bar
+PASS left finite aligning contact on first hanging bar
+ROUTE BLOCK 9 position (1.347498, 1.69932, 0.199325) state REACHING pending { "active": true, "held": true, "attempt_id": 10, "target_selection_id": 10, "selected_time": 11.0500000000001, "substate": "PENDING_OBSTRUCTED", "support_id": 61270395406, "local_point": (0.000001, -0.02, 0.12), "local_normal": (0.0, 0.0, 1.0), "target_world": (1.750001, 2.68, 0.32), "normal_world": (0.0, 0.0, 1.0), "shoulder_world": (1.596913, 2.192723, 0.118359), "hand_world": (1.450001, 2.65, 0.245), "hand_goal": (1.450001, 2.65, 0.245), "distance": 0.54912108182907, "reach_margin": 0.10795891817093, "pending_time": 3.00000000000015, "transition_count": 0, "blocked": true, "blocker_id": 61270395406, "world_speed": 0.00000089406961, "gesture_speed": 0.09042835235596, "transport_speed": 0.0904291793704, "world_velocity": (0.0, 0.0, 0.000001), "gesture_velocity": (-0.029418, 0.017509, -0.083697), "transport_velocity": (0.029418, -0.017509, 0.083698), "target_relative_speed": 0.00000089406961, "workspace_valid": true, "endpoint_valid": true, "physical_in_reach": true, "label_in_reach": true, "physical_transition_count": 0, "phase": "DEPARTURE", "missed_window_count": 0, "last_window_duration": -1.0, "last_window_reason": "", "reason": "hand_path_blocked", "contact_time": -1.0, "acquisition_load": 0.0, "motion_scope": "shoulder-frame transport plus finite relative gesture; full world sweep", "original_selection_world": (1.750001, 2.68, 0.32), "original_selection_local": (0.000001, -0.02, 0.12), "original_selection_normal_local": (0.0, 0.0, 1.0), "original_selection_distance": 0.59083753824234, "contact_resolution_applied": false, "contact_resolution_reason": "clicked_point_already_reachable", "contact_resolution_blocker_id": 0, "selection_policy": "REACHABLE_SAME_COLLIDER_ON_REQUEST", "requested_gesture_velocity": (-0.029418, 0.017509, -0.083697), "requested_gesture_speed": 0.09042835235596, "target_velocity": (0.0, 0.0, 0.0) }
+FAIL right finite contact on finish hanging bar
+FAIL all three broad stages physically completed
+PASS one real supporting hand retained through every transfer
+PASS finish elevated above safe floor with actual suspension
+FAIL finish has continuous actual arm-only suspension for at least200ms
+PASS hand leg and combined actuator moment budgets respected
+CLIMBING ROUTE RESULTS: 15 checks, 3 failures
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)

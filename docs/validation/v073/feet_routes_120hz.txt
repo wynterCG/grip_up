@@ -1,0 +1,43 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+REQUEST Hold_01 hand=0 point=(-0.325482, 2.104997, 0.130894) normal=(0.08959, -0.566893, 0.818905) body=(0.000039, 1.1667, 0.399924)
+PASS static hold 1 acquired via a real visible surface
+STATIC AT 1 torso=(-0.537225, 1.385128, 0.22) state=ATTACHED
+REQUEST Hold_02 hand=1 point=(0.313298, 2.317092, 0.115062) normal=(-0.222255, -0.887303, 0.404099) body=(-0.306508, 1.379037, 0.359171)
+PASS static hold 2 acquired via a real visible surface
+STATIC AT 2 torso=(0.173139, 1.606331, 0.283789) state=ATTACHED
+REQUEST Hold_03 hand=0 point=(-0.320491, 2.536551, 0.117414) normal=(0.115714, -0.853595, 0.507923) body=(0.162176, 1.605332, 0.298533)
+PASS static hold 3 acquired via a real visible surface
+STATIC AT 3 torso=(-0.124249, 1.807126, 0.279149) state=ATTACHED
+REQUEST Hold_04 hand=1 point=(0.318408, 2.756621, 0.116839) normal=(-0.222255, -0.887303, 0.404099) body=(-0.113641, 1.810139, 0.292735)
+PASS static hold 4 acquired via a real visible surface
+STATIC AT 4 torso=(0.111746, 2.032009, 0.26539) state=ATTACHED
+REQUEST Hold_05 hand=0 point=(-0.320269, 2.977286, 0.118599) normal=(0.115714, -0.853595, 0.507923) body=(0.10367, 2.037869, 0.282305)
+PASS static hold 5 acquired via a real visible surface
+STATIC AT 5 torso=(-0.144131, 2.243787, 0.297937) state=ATTACHED
+REQUEST Hold_06 hand=1 point=(0.319489, 3.195687, 0.11538) normal=(-0.222255, -0.887303, 0.404099) body=(-0.140941, 2.242016, 0.295506)
+PASS static hold 6 acquired via a real visible surface
+STATIC AT 6 torso=(0.144627, 2.493138, 0.332323) state=ATTACHED
+PASS static climb completed with alternating material anchors and W
+PASS static route contains no torso teleport or fall reset
+PASS rounded holds remain real colliders against dynamic torso
+STATIC BODY CONTACTS { "Hold_02": 194, "Hold_01": 194, "Hold_03": 124, "Hold_04": 56 } longest_seconds=1.03333333333333
+PASS reactive beam front surface is initially reachable
+PASS reactive beam reaches before transferring any load
+REACTIVE LOADED torso=(0.215573, 1.162079, 0.336173) beam_z=-0.20000386238098
+PASS actual player load rotates hinged beam
+REQUEST Hinged_Beam hand=0 point=(0.507195, 1.703386, 0.040002) normal=(-0.198673, -0.980066, 0.000002) body=(0.215573, 1.162079, 0.336173)
+PASS second hand regrips farther along actual beam geometry
+REQUEST Hinged_Beam hand=1 point=(0.752211, 1.653717, 0.039998) normal=(-0.198674, -0.980066, 0.000002) body=(0.536756, 0.96412, -0.068688)
+PASS right hand advances using an intermediate uncrossed physical transfer
+REQUEST Hinged_Beam hand=0 point=(0.781613, 1.647755, 0.04) normal=(-0.198674, -0.980066, -0.000005) body=(0.827043, 0.893771, 0.04845)
+PASS left hand advances without relying on uncontrolled torso yaw
+REACTIVE SHIFTED torso=(0.961818, 0.929032, -0.012877) beam=-0.20000410079956
+REQUEST Hold_EXIT hand=1 point=(1.126325, 1.75, 0.091678) normal=(0.0, -1.0, 0.0) body=(0.961818, 0.929032, -0.012877)
+PASS free hand reaches an actual accessible EXIT surface
+PASS reactive structure completes through physical grip transfer
+PASS reactive route contains no torso teleport or fall reset
+PASS all static and reactive work respects shared force and resultant torque budgets
+REACTIVE END torso=(1.000424, 1.001174, 0.149947) beam_z=0.27541461586952
+PLAYTHROUGH MEASURE Hz=120 peak_force=360.000N peak_torque=150.000Nm peak_speed=1.466m/s
+PLAYTHROUGH RESULTS: 19 checks, 0 failures

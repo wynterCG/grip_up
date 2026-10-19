@@ -1,0 +1,18 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS far hold is initially beyond finite reach
+PASS first hold can be reached from launch platform
+PASS first hand physically reaches its anchor
+SWING frame=0 torso=(-0.549526, 1.166673, 0.399612) reach=0.89044725894928 states=ATTACHED/FREE reject=
+CATCH REQUEST frame=46 reach=0.60617351531982 torso=(-0.360964, 1.337802, 0.085216)
+SWING frame=60 torso=(-0.35416, 1.424154, 0.053177) reach=0.53607827425003 states=ATTACHED/REACHING reject=
+CATCH frame=63 torso=(-0.357046, 1.424142, 0.050474) velocity=(-0.081713, -0.003724, -0.050444)
+PASS physical lateral motion opens a finite reach window for catch 02
+PASS one successful catch request completes its reach without retrying an aborted hand path
+PASS transfer releases first grip only after second attaches
+PASS bounded anchored work produces useful swing displacement and lateral speed
+PASS entire swing and catch remain within shared force and resultant torque limits
+PASS original SWING & CATCH geometry completes with live torso physics
+PASS no detected torso teleport in complete swing trajectory
+SWING MEASURE x_span=1.3390 peak_vx=2.2542 nearest_reach=0.1996 requests=1 accepted=1 final=(0.789465, 1.53469, 0.176847)
+SWING PLAYTHROUGH RESULTS: 10 checks, 0 failures

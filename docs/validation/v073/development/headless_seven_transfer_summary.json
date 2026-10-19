@@ -1,0 +1,49 @@
+{
+  "artifact_type": "retrospective_observation_summary",
+  "provenance": "Values copied from the agent tool outputs of the failed headless experiments. Original complete per-run log and JSON files were overwritten before the archive request. This file is not a raw replay, complete trace, or replacement for those missing artifacts.",
+  "sequence": "Initial L/R, then L02,R03,L04,R05,L06,R07 on first bar,L08 on finish bar. Seven transfers after initial supports.",
+  "initial_variant": {
+    "inputs_after_L06": "0.3s W+D; R07; 0.3s W+D; L08; keep W+D while pending for up to3s",
+    "120hz": {
+      "checks": 14,
+      "failures": 4,
+      "failed_final_contact": true,
+      "final_pending_shoulder": [0.965581,1.875292,0.349151],
+      "final_pending_target": [1.75,2.68,0.2],
+      "anatomical_distance": 1.13362848758698,
+      "max_reach": 0.65708,
+      "reason": "out_of_reach",
+      "support_continuity": true
+    },
+    "60hz": {
+      "checks": 14,
+      "failures": 3,
+      "failed_final_contact": true,
+      "final_pending_shoulder": [1.122139,2.136251,0.324885],
+      "final_pending_target": [1.750001,2.68,0.2],
+      "anatomical_distance": 0.83992213010788,
+      "max_reach": 0.65708,
+      "reason": "out_of_reach",
+      "support_continuity": true
+    }
+  },
+  "pause_variant": {
+    "inputs_after_R07": "release D; W1s; L08 while continuing W, no D until after capture attempt",
+    "120hz": {
+      "checks": 14,
+      "failures": 4,
+      "anatomical_distance_after3s_pending": 1.04934799671173,
+      "final_pending_shoulder": [0.970166,1.994431,0.351605],
+      "reason": "out_of_reach"
+    },
+    "60hz": {
+      "checks": 14,
+      "failures": 3,
+      "anatomical_distance_after3s_pending": 0.75134712457657,
+      "final_pending_shoulder": [1.12037,2.317254,0.391059],
+      "reason": "out_of_reach"
+    }
+  },
+  "diagnosis": "Right intermediate contact succeeded. Advancing the left hand across to the final bar remained outside anatomical reach for these poses. A pause alone did not resolve the crossed posture. The final eight-transfer sequence adds a left aligning contact at1.20,2.63,0.20 on the first bar, then advances the right hand to the final bar. It preserves actual forces, speed, reach and support continuity.",
+  "production_changes_for_these_experiments": "None to actuator/controller/force budgets. Root integrated route geometry and indicated targets separately."
+}

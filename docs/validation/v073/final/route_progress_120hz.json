@@ -1,0 +1,35 @@
+{
+	"checks": 12,
+	"failures": 0,
+	"route": {
+		"completed": true,
+		"elapsed": 1.0,
+		"events": [
+			{
+				"code": "ROUTE_STAGE_COMPLETE",
+				"label": "Climb",
+				"stage": 0,
+				"time": 1.1
+			},
+			{
+				"code": "ROUTE_INTERRUPTED",
+				"time": 1.4
+			},
+			{
+				"code": "ROUTE_STAGE_COMPLETE",
+				"label": "Climb",
+				"stage": 0,
+				"time": 2.0
+			},
+			{
+				"code": "ROUTE_STAGE_COMPLETE",
+				"label": "Hang",
+				"stage": 1,
+				"time": 3.0
+			}
+		],
+		"recoveries": 1,
+		"stage": 2,
+		"started": true
+	}
+}

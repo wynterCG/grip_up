@@ -1,0 +1,19 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS initial left finite wall contact
+PASS initial right finite wall contact
+PASS higher left wall transfer
+PASS higher right wall transfer
+PASS left transfer into crossing region
+PASS right transfer toward wall edge
+PASS left finite contact on first hanging bar
+PASS right finite intermediate contact on first hanging bar
+PASS left finite aligning contact on first hanging bar
+ROUTE BLOCK 9 position (1.149532, 1.925588, 0.49415) state REACHING pending { "active": true, "held": true, "attempt_id": 10, "target_selection_id": 10, "selected_time": 11.4916666666667, "substate": "PENDING_OBSTRUCTED", "support_id": 61253618190, "local_point": (-0.000001, -0.02, 0.119999), "local_normal": (0.0, 0.0, 1.0), "target_world": (1.749999, 2.68, 0.319999), "normal_world": (0.0, 0.0, 1.0), "shoulder_world": (1.520366, 2.181281, 0.164151), "hand_world": (1.602176, 2.259941, 0.263778), "hand_goal": (1.602176, 2.259941, 0.263778), "distance": 0.57073718309402, "reach_margin": 0.08634281690598, "pending_time": 2.99999999999983, "transition_count": 2, "blocked": true, "blocker_id": 61253618190, "world_speed": 0.0, "gesture_speed": 0.0388262681663, "transport_speed": 0.0388262681663, "world_velocity": (0.0, 0.0, 0.0), "gesture_velocity": (0.007524, -0.037251, -0.007954), "transport_velocity": (-0.007524, 0.037251, 0.007954), "target_relative_speed": 0.0, "workspace_valid": true, "endpoint_valid": true, "physical_in_reach": true, "label_in_reach": true, "physical_transition_count": 2, "phase": "RETRACT", "missed_window_count": 1, "last_window_duration": 0.23333333333332, "last_window_reason": "PATH_OBSTRUCTED", "reason": "hand_path_blocked", "contact_time": -1.0, "acquisition_load": 0.0, "motion_scope": "shoulder-frame transport plus finite relative gesture; full world sweep", "original_selection_world": (1.749999, 2.68, 0.319999), "original_selection_local": (-0.000001, -0.02, 0.119999), "original_selection_normal_local": (0.0, 0.0, 1.0), "original_selection_distance": 0.60973525047302, "contact_resolution_applied": false, "contact_resolution_reason": "clicked_point_already_reachable", "contact_resolution_blocker_id": 0, "selection_policy": "REACHABLE_SAME_COLLIDER_ON_REQUEST", "requested_gesture_velocity": (0.007524, -0.037251, -0.007954), "requested_gesture_speed": 0.0388262681663, "target_velocity": (0.0, 0.0, 0.0) }
+FAIL right finite contact on finish hanging bar
+FAIL all three broad stages physically completed
+PASS one real supporting hand retained through every transfer
+PASS finish elevated above safe floor with actual suspension
+FAIL finish has continuous actual arm-only suspension for at least200ms
+PASS hand leg and combined actuator moment budgets respected
+CLIMBING ROUTE RESULTS: 15 checks, 3 failures

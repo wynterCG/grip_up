@@ -1,0 +1,604 @@
+{
+	"checks": [
+		{
+			"label": "native course selects intended existing locomotion and maximum-reach setup",
+			"passed": true
+		},
+		{
+			"label": "native initial left wall contact",
+			"passed": true
+		},
+		{
+			"label": "native initial right wall contact",
+			"passed": true
+		},
+		{
+			"label": "native higher left wall transfer",
+			"passed": true
+		},
+		{
+			"label": "native higher right wall transfer",
+			"passed": true
+		},
+		{
+			"label": "native left transfer across wall",
+			"passed": true
+		},
+		{
+			"label": "native right transfer toward hanging section",
+			"passed": true
+		},
+		{
+			"label": "native first bar finite contact",
+			"passed": true
+		},
+		{
+			"label": "native right hand advances along the first bar",
+			"passed": true
+		},
+		{
+			"label": "native left hand advances on the same real bar",
+			"passed": true
+		},
+		{
+			"label": "native finish bar finite contact",
+			"passed": true
+		},
+		{
+			"label": "native real contacts complete all three broad regions and finish",
+			"passed": true
+		},
+		{
+			"label": "native route retains at least one real grip throughout",
+			"passed": true
+		},
+		{
+			"label": "native finish includes at least200ms of real elevated suspension with total feet load at most1N",
+			"passed": true
+		},
+		{
+			"label": "native finish leaves movement and mouse control available",
+			"passed": true
+		},
+		{
+			"label": "native course uses unchanged hands feet and common moment caps",
+			"passed": true
+		},
+		{
+			"label": "native release still removes hand actuation after finish",
+			"passed": true
+		}
+	],
+	"complete": true,
+	"demo_frames": 0,
+	"finish_telemetry": {
+		"aim_input_does_not_change_length": true,
+		"angular_velocity": "(-0.368631, -0.053549, -0.197946)",
+		"assist_torque": "(-4.919182, -0.075909, -0.040798)",
+		"attached_count": 2,
+		"budget_scale": 1.0,
+		"combined_force": 270.727851867676,
+		"combined_ground_climb_torque": "(40.72686, -0.553246, 1.022001)",
+		"contextual_actuation": "(0.0, 0.0)",
+		"contextual_filtered": "(0.0, 0.0)",
+		"contextual_requested": "(0.0, 0.0)",
+		"contextual_world_effort": "(0.0, 0.0, 0.0)",
+		"control_profile": 4,
+		"control_right": "(0.971338, 0.0, -0.237703)",
+		"features": {
+			"directional_grip_quality": false,
+			"physical_feet": true,
+			"posture_solver": false,
+			"predictive_grip": false,
+			"reactive_challenge": false
+		},
+		"force_budget": 360.0,
+		"hands": [
+			{
+				"actual_length": 0.367489069700241,
+				"allocation": 0.50001993796456,
+				"anchor": "<RefCounted#-9223371501493810845>",
+				"anchor_world": "(1.2, 2.63, 0.2)",
+				"blend_elapsed": 2.38333333333333,
+				"capture": {
+					"accepted": true,
+					"actual_arrival": 0.0833333333333375,
+					"available_work_upper_bound": 55.7747460365296,
+					"buffered": false,
+					"contact_resolution_applied": false,
+					"contact_resolution_reason": "clicked_point_already_reachable",
+					"failure_reason": "",
+					"input_time": 11.4166666666668,
+					"load_risk": false,
+					"original_selection_local": "(0.0, -0.03, 0.12)",
+					"original_selection_world": "(1.2, 2.63, 0.2)",
+					"out_of_reach_selection": false,
+					"persistent_target": true,
+					"predicted_contact_time": -1.0,
+					"predicted_entry_time": -1.0,
+					"predicted_target": "(1.2, 2.63, 0.2)",
+					"predicted_target_time": -1.0,
+					"prediction_error": -1.0,
+					"radial_speed": -0.134138807654381,
+					"reason": "contact_valid",
+					"relative_speed": 0.882462501525879,
+					"stopping_energy": 0.0
+				},
+				"elapsed": 2.45,
+				"force": "(-25.91344, 141.8315, -4.223454)",
+				"force_axis": "(-0.179654, 0.983294, -0.02928)",
+				"grip_limit": 460.0,
+				"hand_world": "(1.2, 2.63, 0.2)",
+				"held_target_pending": false,
+				"overload_time": 0.0,
+				"predictive_wait": false,
+				"reaction_force": "(25.91344, -141.8315, 4.223454)",
+				"reason": "",
+				"recovery_time": 0.0,
+				"release_normal": "(0.0, 0.0, 1.0)",
+				"rest_length": 0.301719706190391,
+				"slip_elapsed": 0.0,
+				"state": "ATTACHED",
+				"support": "First hanging bar:<StaticBody3D#151380822622>",
+				"target_world": "(1.2, 2.63, 0.2)"
+			},
+			{
+				"actual_length": 0.47556671500206,
+				"allocation": 0.499979847753755,
+				"anchor": "<RefCounted#-9223371488491468448>",
+				"anchor_world": "(1.75, 2.68, 0.079999)",
+				"blend_elapsed": 1.41666666666667,
+				"capture": {
+					"accepted": true,
+					"actual_arrival": 0.6666666666667,
+					"available_work_upper_bound": 63.6434889793396,
+					"buffered": false,
+					"contact_resolution_applied": false,
+					"contact_resolution_reason": "no_actual_surface_at_reachable_projection",
+					"failure_reason": "",
+					"input_time": 11.8000000000002,
+					"load_risk": false,
+					"original_selection_local": "(-0.0, -0.02, 0.119999)",
+					"original_selection_world": "(1.75, 2.68, 0.079999)",
+					"out_of_reach_selection": true,
+					"persistent_target": true,
+					"predicted_contact_time": -1.0,
+					"predicted_entry_time": -1.0,
+					"predicted_target": "(1.75, 2.68, 0.079999)",
+					"predicted_target_time": -1.0,
+					"prediction_error": -1.0,
+					"radial_speed": -0.345124006271362,
+					"reason": "contact_valid",
+					"relative_speed": 0.539090275764465,
+					"stopping_energy": 0.0
+				},
+				"elapsed": 2.06666666666666,
+				"force": "(29.43243, 122.1228, -14.78613)",
+				"force_axis": "(0.232692, 0.965499, -0.116899)",
+				"grip_limit": 460.0,
+				"hand_world": "(1.75, 2.68, 0.079999)",
+				"held_target_pending": false,
+				"overload_time": 0.0,
+				"predictive_wait": false,
+				"reaction_force": "(-29.43243, -122.1228, 14.78613)",
+				"reason": "",
+				"recovery_time": 0.0,
+				"release_normal": "(0.0, -1.0, 0.0)",
+				"rest_length": 0.420601783782377,
+				"slip_elapsed": 0.0,
+				"state": "ATTACHED",
+				"support": "Finish hanging bar:<StaticBody3D#151481485924>",
+				"target_world": "(1.75, 2.68, 0.079999)"
+			}
+		],
+		"input_intent": "(0.0, 0.0, 0.0)",
+		"intent_locomotion": {
+			"actual_com_displacement": "(1.433325, 0.59443, -0.017451)",
+			"actual_foot_count": 0,
+			"actual_hand_ids": [
+				0,
+				1
+			],
+			"actual_height_gain": 0.594429850578308,
+			"actual_relative_velocity": "(-0.137143, 0.126051, 0.092039)",
+			"actuator_saturated": false,
+			"aim_input_does_not_change_length": true,
+			"desired_com_velocity": "(0.0, 0.25, 0.0)",
+			"enabled": true,
+			"frame": {
+				"normal": "(0.0, -0.0, 1.0)",
+				"quality": "WEIGHTED_NORMAL",
+				"right": "(1.0, 0.0, 0.0)",
+				"support_ids": [
+					151380822622,
+					151481485924
+				],
+				"up": "(0.0, 1.0, 0.0)",
+				"valid": true
+			},
+			"ground": {
+				"applied_force": "(0.0, 0.0, 0.0)",
+				"applied_torque": "(0.0, 0.0, 0.0)",
+				"authority": 0.0,
+				"grounded": false,
+				"measured_other_support_load": 262.970054626465,
+				"motor_authority": 0.0,
+				"normal": "(0.0, 1.0, 0.0)",
+				"point": "(0.0, 0.0, 0.0)",
+				"point_velocity": "(0.0, 0.0, 0.0)",
+				"support_id": 0,
+				"velocity": "(0.0, 0.0, 0.0)"
+			},
+			"input_frame_id": 5,
+			"input_ramp_s": 0.12,
+			"input_timestamp": 13.0833333333336,
+			"intent_strength": 1.0,
+			"movement_block_reason": "BOUNDED_TARGET_TRACKING",
+			"movement_intent_local": "(0.0, 1.0)",
+			"movement_intent_world": "(0.0, 1.0, 0.0)",
+			"originating_support_frame": {
+				"normal": "(0.0, -0.000002, 1.0)",
+				"quality": "WEIGHTED_NORMAL",
+				"right": "(1.0, 0.0, 0.0)",
+				"support_ids": [
+					151380822622,
+					151481485924
+				],
+				"up": "(0.0, 1.0, 0.000002)",
+				"valid": true
+			},
+			"planned_arm_rest_lengths": {
+				"0": 0.293150514364243,
+				"1": 0.42056671500206
+			},
+			"planned_foot_action": "(1.0, 0.0)",
+			"planner_cpu_usec": 74,
+			"recommended_climb_share": 1.0,
+			"requested_input": "(0.0, 1.0)",
+			"support_mode": "CLIMB_TWO_HANDS",
+			"swing_request_world": "(0.0, 1.0, 0.0)",
+			"swing_reversal_active": false,
+			"target_accelerations": {
+				"0": -0.100096026768033,
+				"1": 0.0
+			},
+			"target_rates": {
+				"0": -0.123286435941136,
+				"1": 0.0
+			},
+			"tier": 1,
+			"virtual_acceleration": "(0.548572, 0.495796, 0.0)",
+			"voluntary_reversals": 0
+		},
+		"launch_charge": 0.0,
+		"launch_elapsed": 0.0,
+		"launch_state": "IDLE",
+		"leg_force": 0.0,
+		"leg_force_budget": 180.0,
+		"leg_torque": "(0.0, 0.0, 0.0)",
+		"linear_velocity": "(-0.137143, 0.126051, 0.092039)",
+		"metrics": {
+			"attaches": 10,
+			"attempts": 10,
+			"misses": 0,
+			"releases": 8,
+			"slips": 0
+		},
+		"physics_delta": 0.0166666666666667,
+		"posture": {},
+		"posture_assist_enabled": true,
+		"posture_policy": 1,
+		"posture_tilt_assist_enabled": true,
+		"posture_tilt_torque": "(0.0, 0.0, 0.0)",
+		"requested_intent": "(0.0, 0.0, 0.0)",
+		"simulation_time": 13.8666666666669,
+		"step": 832,
+		"supported_wasd_swing_enabled": true,
+		"swing_intent": "(0.000359, 0.999851, 0.0)",
+		"swing_requested": "(0.0, 0.0, 0.0)",
+		"swing_torque": "(-5.648987, 0.00203, -0.517349)",
+		"torque": "(40.72686, -0.553246, 1.022001)",
+		"torso_position": "(1.433325, 1.76443, 0.382549)",
+		"total_force": 270.727851867676,
+		"transfer_diagnostics": {
+			"enabled": true,
+			"event_capacity": 256,
+			"event_count": 52,
+			"last_by_hand": {
+				"0": {
+					"actual_length": 0.505070149898529,
+					"anatomical_distance": 0.505070149898529,
+					"attempt_id": 9,
+					"body_pose": "[X: (0.86291, -0.442301, -0.244452), Y: (0.273194, 0.815223, -0.510663), Z: (0.42515, 0.373874, 0.824298), O: (1.216764, 1.645318, 0.600908)]",
+					"body_spin": "(-0.671801, -0.618826, -0.117184)",
+					"body_velocity": "(0.437196, 0.494392, 0.866635)",
+					"candidate_world": "(1.2, 2.63, 0.2)",
+					"certainty": "observed",
+					"closed": false,
+					"code": "SUCCESS",
+					"contact_time": 11.5000000000002,
+					"elapsed": 0.0833333333333375,
+					"force": "(0.0, 0.0, 0.0)",
+					"force_magnitude": 0.0,
+					"grip_limit": 460.0,
+					"hand": 0,
+					"hand_remaining_distance": 0.0,
+					"hand_world": "(1.2, 2.63, 0.2)",
+					"has_candidate": true,
+					"in_range_time": 0.0666666666666667,
+					"input_distance": 0.524749994277954,
+					"input_hand": "(0.95, 2.63, 0.2)",
+					"input_shoulder": "(1.148027, 2.135485, 0.367678)",
+					"input_time": 11.4166666666668,
+					"local_point": "(0.0, -0.03, 0.12)",
+					"max_reach": 0.65708,
+					"minimum_remaining_hand_time": 0.0,
+					"normal": "(0.0, 0.0, 1.0)",
+					"predicted_contact_time": -1.0,
+					"prediction": "not_evaluated",
+					"primary_failure": "",
+					"radial_speed": -0.134138807654381,
+					"reach_margin": 0.152009850101471,
+					"reason": "physical_surface_contact",
+					"relative_speed": 0.882462501525879,
+					"relative_velocity": "(0.626669, 0.356444, 0.508895)",
+					"requested_hand": 0,
+					"session": 3,
+					"shoulder_world": "(1.200857, 2.163174, 0.392792)",
+					"stage": "CONTACT",
+					"state": "ATTACHED",
+					"step": 690,
+					"support_id": 151380822622,
+					"support_name": "First hanging bar",
+					"target_length": 0.505070149898529,
+					"time": 11.5000000000002,
+					"travel_distance": 0.341139987111092,
+					"window_remaining": -1.0
+				},
+				"1": {
+					"actual_length": 0.483212530612946,
+					"anatomical_distance": 0.483212530612946,
+					"attempt_id": 10,
+					"body_pose": "[X: (0.893785, 0.029775, -0.447507), Y: (-0.113766, 0.980211, -0.162001), Z: (0.433827, 0.195705, 0.879485), O: (1.461657, 1.705189, 0.241196)]",
+					"body_spin": "(1.498699, -0.543007, 0.471722)",
+					"body_velocity": "(-0.05309, 0.15907, -0.643411)",
+					"candidate_world": "(1.75, 2.68, 0.079999)",
+					"certainty": "observed",
+					"closed": false,
+					"code": "SUCCESS",
+					"contact_time": 12.4666666666669,
+					"elapsed": 0.6666666666667,
+					"force": "(0.0, 0.0, 0.0)",
+					"force_magnitude": 0.0,
+					"grip_limit": 460.0,
+					"hand": 1,
+					"hand_remaining_distance": 0.0,
+					"hand_world": "(1.75, 2.68, 0.079999)",
+					"has_candidate": true,
+					"in_range_time": 0.333333333333333,
+					"input_distance": 0.752222299575806,
+					"input_hand": "(1.375337, 2.6, 0.198108)",
+					"input_shoulder": "(1.518027, 2.015929, 0.346525)",
+					"input_time": 11.8000000000002,
+					"local_point": "(-0.0, -0.02, 0.119999)",
+					"max_reach": 0.65708,
+					"minimum_remaining_hand_time": 0.0,
+					"normal": "(0.0, 0.0, 1.0)",
+					"predicted_contact_time": -1.0,
+					"prediction": "not_evaluated",
+					"primary_failure": "",
+					"radial_speed": -0.345124006271362,
+					"reach_margin": 0.173867469387054,
+					"reason": "physical_surface_contact",
+					"relative_speed": 0.539090275764465,
+					"relative_velocity": "(-0.214106, 0.450767, 0.203926)",
+					"requested_hand": 1,
+					"session": 3,
+					"shoulder_world": "(1.580187, 2.227625, 0.083871)",
+					"stage": "CONTACT",
+					"state": "ATTACHED",
+					"step": 748,
+					"support_id": 151481485924,
+					"support_name": "Finish hanging bar",
+					"target_length": 0.483212530612946,
+					"time": 12.4666666666669,
+					"travel_distance": 0.56011982774362,
+					"window_remaining": -1.0
+				}
+			},
+			"motion": {
+				"anchor_center": "(1.474989, 2.654999, 0.140002)",
+				"arm_power": 14.0281441807747,
+				"budget": {
+					"allocator_scale": 1.0,
+					"assist": "(-4.919182, -0.075909, -0.040798)",
+					"assist_limit": 20.0,
+					"attitude": "(0.729805, -0.077939, 0.476551)",
+					"force_limit": 360.0,
+					"hand_force_sum": 270.727851867676,
+					"leg_moment": "(0.0, 0.0, 0.0)",
+					"posture_tilt": "(0.0, 0.0, 0.0)",
+					"raw_hand_force_sum": 270.727851867676,
+					"shoulder_moment": "(45.64604, -0.477337, 1.062799)",
+					"swing": "(-5.648987, 0.00203, -0.517349)",
+					"swing_engagement": 1.0,
+					"swing_lever": "(0.019347, 0.480317, -0.209371)",
+					"total_moment": "(40.72686, -0.553246, 1.022001)",
+					"total_moment_limit": 150.0,
+					"weights": {
+						"0": 0.500020045109698,
+						"1": 0.499979954890302
+					}
+				},
+				"energy_scope": "body_relative_to_weighted_support; excludes gravity/contact/joint/drag work and support kinetic energy",
+				"estimated_arm_work": 91.8632745231982,
+				"estimated_grip_moment_work": -32.5643835112893,
+				"estimated_swing_work": 1.27589828691032,
+				"grip_moment_power": 1.82550251483917,
+				"pendulum_angle": 0.269611013128294,
+				"pendulum_angular_speed": 0.202075779438019,
+				"pendulum_angular_velocity": "(-0.13183, -0.034473, -0.149221)",
+				"pendulum_valid": true,
+				"relative_rotation_energy": 0.248977601528168,
+				"relative_spin": "(-0.368631, -0.053549, -0.197946)",
+				"relative_translation_energy": 0.259009949862957,
+				"relative_velocity": "(-0.137143, 0.126051, 0.092039)",
+				"support_reactions": {
+					"151380822622": {
+						"dynamic": false,
+						"force": "(25.91344, -141.8315, 4.223454)",
+						"name": "First hanging bar",
+						"support_id": 151380822622,
+						"torque": "(2.459689, 0.037956, 0.0204)"
+					},
+					"151481485924": {
+						"dynamic": false,
+						"force": "(-29.43243, -122.1228, 14.78613)",
+						"name": "Finish hanging bar",
+						"support_id": 151481485924,
+						"torque": "(2.459492, 0.037953, 0.020398)"
+					}
+				},
+				"support_valid": true,
+				"swing_phase": "PUMPING",
+				"swing_phase_epsilon_w": 0.01,
+				"swing_power": 2.18468904495239,
+				"swing_relative_spin": "(-0.368631, -0.053549, -0.197946)",
+				"swing_work_scope": "incremental_swing_after_common_cap; actual_blended_reaction_weighted_support_spin",
+				"trunk_axis": "(0.036914, 0.916068, -0.39932)",
+				"trunk_tilt": 0.440461856305069,
+				"trunk_twist": -0.00977252516895533,
+				"trunk_twist_rate": 0.0163816437125206,
+				"twist_valid": true
+			},
+			"session": 3
+		}
+	},
+	"focus_events": [],
+	"height_gain": 0.599699854850769,
+	"longest_suspension": 0.616666666666667,
+	"physics_hz": 60,
+	"provenance": "Godot MCP Pro scripted route, not human flow evaluation",
+	"route": {
+		"completed": true,
+		"elapsed": 11.9666666666669,
+		"events": [
+			{
+				"code": "ROUTE_STAGE_COMPLETE",
+				"label": "CLIMB",
+				"stage": 0,
+				"time": 4.68333333333332
+			},
+			{
+				"code": "ROUTE_STAGE_COMPLETE",
+				"label": "TRAVERSE",
+				"stage": 1,
+				"time": 7.04999999999998
+			},
+			{
+				"code": "ROUTE_STAGE_COMPLETE",
+				"label": "SUSPENSION",
+				"stage": 2,
+				"time": 12.7166666666669
+			}
+		],
+		"recoveries": 0,
+		"stage": 3,
+		"started": true
+	},
+	"snapshots": [
+		{
+			"hands": [
+				{
+					"actual": 0.585756123065948,
+					"force": 1.30015361309052,
+					"reason": "",
+					"state": "ATTACHED",
+					"target": 0.585109233856201
+				},
+				{
+					"actual": 0.584352314472198,
+					"force": 0.0,
+					"reason": "",
+					"state": "ATTACHED",
+					"target": 0.584447085857391
+				}
+			],
+			"label": "v073_route_start",
+			"policy": 1,
+			"position": "(-0.000194, 1.166679, 0.400055)",
+			"posture": {},
+			"velocity": "(-0.000012, 0.000001, -0.000028)"
+		},
+		{
+			"hands": [
+				{
+					"actual": 0.440638691186905,
+					"force": 55.8871612548828,
+					"reason": "",
+					"state": "ATTACHED",
+					"target": 0.408730969206979
+				},
+				{
+					"actual": 0.515961825847626,
+					"force": 92.5135955810547,
+					"reason": "",
+					"state": "ATTACHED",
+					"target": 0.469696692453233
+				}
+			],
+			"label": "v073_route_climb",
+			"policy": 1,
+			"position": "(0.002109, 1.574875, 0.220577)",
+			"posture": {},
+			"velocity": "(0.181218, 0.151598, 0.02025)"
+		},
+		{
+			"hands": [
+				{
+					"actual": 0.472731113433838,
+					"force": 109.74690246582,
+					"reason": "",
+					"state": "ATTACHED",
+					"target": 0.431339862739576
+				},
+				{
+					"actual": 0.480855673551559,
+					"force": 0.0,
+					"reason": "",
+					"state": "ATTACHED",
+					"target": 0.580456274032593
+				}
+			],
+			"label": "v073_route_traverse",
+			"policy": 1,
+			"position": "(0.632252, 1.599095, 0.344215)",
+			"posture": {},
+			"velocity": "(1.226732, -0.213675, 0.213556)"
+		},
+		{
+			"hands": [
+				{
+					"actual": 0.367489069700241,
+					"force": 144.241180419922,
+					"reason": "",
+					"state": "ATTACHED",
+					"target": 0.301719706190391
+				},
+				{
+					"actual": 0.47556671500206,
+					"force": 126.486671447754,
+					"reason": "",
+					"state": "ATTACHED",
+					"target": 0.420601783782377
+				}
+			],
+			"label": "v073_route_finish",
+			"policy": 1,
+			"position": "(1.431045, 1.766379, 0.384054)",
+			"posture": {},
+			"velocity": "(-0.13681, 0.116936, 0.090313)"
+		}
+	],
+	"variants": []
+}

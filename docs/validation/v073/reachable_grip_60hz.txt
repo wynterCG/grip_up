@@ -1,0 +1,30 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS profile4 accepts a click just outside anatomy for reachable same-surface resolution
+PASS diagnostics preserve original click separately from actual resolved material contact
+PASS resolved wall contact uses full existing anatomical reach, without90percent/artificial margin
+PASS resolution itself neither attaches nor writes torso pose/velocity
+PASS actual endpoint arrival at resolved full-extension surface passes unchanged capture evaluator
+PASS full-extension gesture reaches and retains a real contact finitely at4m/s
+PASS unattached reach exerts zero force; actual resolved contact can then transmit bounded axial traction
+PASS resolution stays fixed on the same material and preserves all shared caps
+PASS button-up releases resolved attachment immediately
+PASS profile3 retains original v0.6 distant selection
+PASS profile3 keeps exact clicked point and zero-force pending instead of new clamping
+PASS profile3 exact unreachable point cannot supply a force
+PASS flagOFF retains original anatomical request rejection
+PASS cancelled resolved reach never attaches or applies delayed effort
+PASS unresolvable plane_outside remains a legitimate exact pending request
+PASS plane_outside cannot attach to an imaginary plane or substitute another collider
+PASS plane_outside supplies zero force and no invented current contact
+PASS unresolvable missing_surface remains a legitimate exact pending request
+PASS missing_surface cannot attach to an imaginary plane or substitute another collider
+PASS missing_surface supplies zero force and no invented current contact
+PASS unresolvable other_collider remains a legitimate exact pending request
+PASS other_collider cannot attach to an imaginary plane or substitute another collider
+PASS other_collider supplies zero force and no invented current contact
+PASS resolved point stays fixed in moving material instead of sliding/re-resolving as body or support moves
+PASS moving resolved material still needs finite actual contact before support force
+PASS traction after moving resolved contact preserves complete opposite linear reaction
+PASS capture metadata retains original out-of-range selection after resolved contact succeeds
+REACHABLE GRIP RESULTS: 27 checks, 0 failures
