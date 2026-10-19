@@ -1,0 +1,12 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS actual held LMB prepares a currently out-of-reach SOON target
+PASS buffering input never moves or propels the body
+PASS pending hand stays inside real reach and applies no force
+PASS mouse-up over UI immediately cancels the buffered hand
+PASS expired held intention cannot automatically retry or reattach
+PASS focus loss cancels a pending prediction and clears held state
+PASS reset drops buffered targets and old support references
+PASS optional debug overlay exposes physical contacts, reach and force vectors
+PASS debug vectors stay disabled in ordinary gameplay
+CAPTURE INPUT RESULTS: 9 checks, 0 failures
