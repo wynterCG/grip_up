@@ -36,6 +36,9 @@ func _virtual_scope(value:Dictionary)->String:
 
 func _virtual_benchmark(_value:Dictionary)->String:return "benchmark_eval_virtual_cursor_v1"
 func _virtual_tick_limit()->int:return 2048
+func _prepare_projection_size(requested_size:Array)->String:
+	get_window().size=Vector2i(int(requested_size[0]),int(requested_size[1]))
+	return ""
 func _configure_virtual_fixture(definition:Dictionary)->void:
 	_course=Course.new();add_child(_course);_course.apply_segment(app,int(definition.segment))
 
@@ -79,7 +82,8 @@ func _fresh(definition:Dictionary)->void:
 		notice.queue_free()
 	if manifest.has("projection_config"):
 		var requested_size:Array=manifest.projection_config.window_size
-		get_window().size=Vector2i(int(requested_size[0]),int(requested_size[1]))
+		var size_error:String=_prepare_projection_size(requested_size)
+		if not size_error.is_empty():_trace_integrity_reason=size_error;return
 		await post_completed
 		await post_completed
 		projection_setup={"requested_size":requested_size,"actual_size":[get_window().size.x,get_window().size.y],"before_world":not is_instance_valid(app),"clock_delta":_post_delta}

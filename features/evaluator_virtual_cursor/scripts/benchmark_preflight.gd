@@ -9,12 +9,14 @@ class Surface extends Node:
 	var camera:Camera3D
 func _initialize()->void:run.call_deferred()
 func run()->void:
-	var args:Array=OS.get_cmdline_user_args();var output:="";var hz:=120
+	var args:Array=OS.get_cmdline_user_args();var output:="";var hz:=120;var manifest_path:=""
 	for i in args.size()-1:
 		if args[i]=="--output":output=args[i+1]
 		if args[i]=="--hz":hz=int(args[i+1])
+		if args[i]=="--manifest":manifest_path=args[i+1]
 	if output.is_empty() or hz not in [60,120]:quit(2);return
-	var backing:Dictionary=Backing.initialize(root)
+	var manifest:Variant=JSON.parse_string(FileAccess.get_file_as_string(manifest_path)) if FileAccess.file_exists(manifest_path) else {}
+	var backing:Dictionary=Backing.initialize(root,manifest.get("projection_config") if manifest is Dictionary else null)
 	var result:Dictionary={"scope":"PREFLIGHT_ONLY_NO_GAMEPLAY_BODIES_NO_TASK_OUTCOME","gameplay_bodies_created":0,"requested_hz":hz,"engine":Engine.get_version_info(),"binary_sha256":FileAccess.get_sha256(OS.get_executable_path()),"actual_size":[root.size.x,root.size.y],"window_position":[root.position.x,root.position.y],"screen":root.current_screen,"window_mode":root.mode,"status":"ENVIRONMENT_NOT_COMPARABLE","reason":"BACKING_SIZE"}
 	result["backing_initialization"]=backing
 	result.reason=backing.reason

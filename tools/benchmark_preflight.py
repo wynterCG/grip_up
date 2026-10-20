@@ -15,9 +15,12 @@ def main(campaign_id='benchmark_v133_r1'):
         for hz,mode,r,size,negative in cases:
             d=BASE/'preflight'/f'{mode}_{hz}_{r}_{"negative" if negative else "positive"}';d.mkdir(parents=True,exist_ok=False)
             flags=['--headless','--fixed-fps','120'] if mode=='headless' else ['--screen','0','--position','80,80']
-            command=[str(ENGINE),*flags,'--resolution','x'.join(map(str,size)),'--path',str(ROOT),'--script','res://features/evaluator_virtual_cursor/scripts/benchmark_preflight.gd','--','--backing-size','x'.join(map(str,size)),'--hz',str(hz),'--output',str(d/'result.json')]
+            transport={'projection_config':{'window_size':size,'logical_viewport_size':[1920,1080],'probe_enabled':True}}
+            atomic_json(d/'transport_manifest.json',transport)
+            command=[str(ENGINE),*flags,'--resolution','x'.join(map(str,size)),'--path',str(ROOT),'--script','res://features/evaluator_virtual_cursor/scripts/benchmark_preflight.gd','--','--backing-size','x'.join(map(str,size)),'--manifest',str(d/'transport_manifest.json'),'--hz',str(hz),'--output',str(d/'result.json')]
             if negative:
                 manifest={'scenario_ids':['swing_catch_train'],'campaign_id':campaign_id,'run_id':'NEGATIVE_CANONICAL_BACKING','output_dir':str(d),'input_lane':'NEGATIVE_SETUP_ONLY','physics_hz':hz,'engine_mode':mode,'virtual_mode':'REPLAY','expected_source_hashes':frozen['source_hashes'],'engine_identity':frozen['engine_identity']}
+                manifest['projection_config']=transport['projection_config']
                 atomic_json(d/'driver_manifest.json',manifest)
                 command=[str(ENGINE),*flags,'--resolution','1440x810','--path',str(ROOT),'--script','res://features/evaluator_virtual_cursor/scripts/benchmark_runner.gd','--','--backing-size','1440x810','--virtual-cursor-evaluator','--benchmark-qualification','--manifest',str(d/'driver_manifest.json'),'--result',str(d/'result.json')]
             atomic_json(d/'manifest.json',{'command':command,'source':frozen,'hz':hz,'mode':mode,'repeat':r,'requested_size':size,'negative':negative,'gameplay_bodies_expected':0,'utc':utc_now()})
@@ -28,7 +31,7 @@ def main(campaign_id='benchmark_v133_r1'):
             try:
                 result=read_json(d/'result.json');expected='BLOCKED_SETUP' if negative else 'PREFLIGHT_PASS'
                 ok=result['status']==expected and code==(1 if negative else 0)
-                if negative:ok=ok and result['reason']=='ENVIRONMENT_NOT_COMPARABLE:CANONICAL_BACKING' and result['world_creation_record']=={} and read_json(d/'benchmark_audit.json')=={'frames':[],'ticks':[]}
+                if negative:ok=ok and result['reason']=='ENVIRONMENT_NOT_COMPARABLE:INVALID_SCHEMA:WRONG_DIMENSIONS' and result['world_creation_record']=={} and read_json(d/'benchmark_audit.json')=={'frames':[],'ticks':[]}
                 else:ok=ok and result['gameplay_bodies_created']==0
             except (OSError,ValueError,KeyError):result={};ok=False
             rows.append({'hz':hz,'mode':mode,'repeat':r,'negative':negative,'exit_code':code,'pass':ok,'directory':str(d),'result':result});passed=passed and ok

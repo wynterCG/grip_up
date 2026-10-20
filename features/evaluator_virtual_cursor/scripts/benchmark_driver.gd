@@ -23,17 +23,14 @@ func _virtual_scope(value:Dictionary)->String:
 	var ids:Array=["swing_catch_train"]
 	for d:Dictionary in _additional_qualification_scenarios():ids.append(d.id)
 	if str(value.scenario_ids[0]) not in ids:return "UNKNOWN_BENCHMARK_SCENARIO"
-	if value.has("projection_config"):
-		var config:Variant=value.projection_config
-		if not config is Dictionary or not config.get("window_size") is Array:return "ENVIRONMENT_NOT_COMPARABLE:CANONICAL_BACKING"
-		var size:Array=config.window_size
-		# JSON uses floats; compare exact scalar values without rounding dimensions.
-		if size.size()!=2:return "ENVIRONMENT_NOT_COMPARABLE:CANONICAL_BACKING"
-		if typeof(size[0]) not in [TYPE_INT,TYPE_FLOAT] or typeof(size[1]) not in [TYPE_INT,TYPE_FLOAT]:return "ENVIRONMENT_NOT_COMPARABLE:CANONICAL_BACKING"
-		if size[0]!=1024.0 or size[1]!=576.0:return "ENVIRONMENT_NOT_COMPARABLE:CANONICAL_BACKING"
-	backing_initialization=Backing.initialize(get_window())
+	backing_initialization=Backing.initialize(get_window(),value.get("projection_config"))
 	if not backing_initialization.reason.is_empty():return "ENVIRONMENT_NOT_COMPARABLE:"+backing_initialization.reason
 	return ""
+
+func _prepare_projection_size(requested_size:Array)->String:
+	# Admission already configured headless. Never repair a changed rendered size.
+	if get_window().size!=Vector2i(1024,576):return "ENVIRONMENT_NOT_COMPARABLE:CANONICAL_BACKING"
+	return "" if requested_size.size()==2 and requested_size[0]==1024 and requested_size[1]==576 else "INVALID_SCHEMA:PROJECTION_SIZE"
 
 func _configure_virtual_fixture(definition:Dictionary)->void:
 	if definition.id=="swing_catch_train":super._configure_virtual_fixture(definition);return
@@ -54,6 +51,8 @@ func start(value:Dictionary)->Dictionary:
 	result["benchmark_source_catalog_sha256"]=FileAccess.get_sha256(BCATALOG)
 	result["world_creation_record"]=_world_creation.duplicate(true)
 	result["backing_initialization"]=backing_initialization.duplicate(true)
+	_precise_json(str(value.output_dir).path_join("godot_parsed_projection_config.json"),backing_initialization.get("projection_schema",{}))
+	_precise_json(str(value.output_dir).path_join("schema_results.json"),backing_initialization.get("projection_schema",{}))
 	result["benchmark_performance"]={"pre_driver_usec":pre_driver_usec,"post_enrichment_usec":enrichment_usec,"render_cadence":_phase_costs.duplicate(true),"scope":"Pre driver includes input and projection probe; post enrichment is read/copy only; existing trace cost separate. Per-row Performance.TIME_PHYSICS_PROCESS is engine monitor of prior physics processing, not a stopwatch of this current solver tick."}
 	return result
 

@@ -27,6 +27,16 @@ class TapeAdmission(unittest.TestCase):
     def test_original_accepted(self):
         self.assertEqual(self.check(self.tape), self.tape)
 
+    def test_manifest_mutation_does_not_mutate_source_identity(self):
+        source={'source_hashes':{'a':'sha'},'engine_identity':{'version':'pinned'},'repository_commit':'base'}
+        with patch.object(campaign,'make_candidate',return_value={'source_hashes':source['source_hashes']}),patch.object(campaign,'baseline',return_value={}),patch.object(campaign,'parameter_resource',return_value={}),patch.object(campaign,'file_hash',return_value='sha'):
+            manifest,_=campaign.build_manifest('swing_catch_train',120,'headless','case',Path('.'),'reference',source,{})
+        manifest['expected_source_hashes']['a']='negative'
+        manifest['engine_identity']['version']='negative'
+        self.assertEqual(source['source_hashes'],{'a':'sha'})
+        self.assertEqual(manifest['baseline_candidate']['source_hashes'],{'a':'sha'})
+        self.assertEqual(source['engine_identity'],{'version':'pinned'})
+
     def test_domain_swap_rejected(self):
         with self.assertRaisesRegex(ValueError, 'TAPE_SCENARIO'):
             self.check(self.tape, 'asymmetric_pull_clean')

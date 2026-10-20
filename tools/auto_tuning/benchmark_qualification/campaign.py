@@ -36,6 +36,24 @@ def tape_check(path,hz,source,scenario,negative=False):
     if digest(normalized)!=tape['tape_content_sha256'] or any(f['tape_sha256']!=tape['tape_content_sha256'] for f in tape['frames']):raise ValueError('TAPE_CONTENT_HASH')
     return tape
 
+def build_manifest(scenario,hz,mode,run_id,directory,group,source,plan,tape_path=None,probe=True,negative=''):
+    lane='FIXED_VIRTUAL_REPLAY' if tape_path else 'ADAPTIVE_CAPTURE_SOURCE'
+    m={'schema_version':'1.3.3','benchmark':'benchmark_eval_v133','run_id':run_id,'campaign_id':BASE.name,'physics_hz':hz,'engine_mode':mode,'lane':'A','input_lane':lane,'virtual_mode':'REPLAY' if tape_path else 'CAPTURE','scenario_ids':[scenario],'recorder_enabled':True,'existing_observer_enabled':True,'output_dir':str(directory),'run_seed':101,'expected_source_hashes':source['source_hashes'],'code_commit':source['repository_commit'],'dirty_tree':source.get('repository_dirty',False),'engine_identity':source['engine_identity'],'timeout_s':100,'budget_group':group,'negative_case':negative,'local_override_sha256':'ABSENT','projection_config':{'window_size':[1024,576],'logical_viewport_size':[1920,1080],'probe_enabled':probe},'virtual_tape_sha256':'CAPTURE_SOURCE_IDENTITY','catalog_sha256':file_hash(CATALOG),'run_plan_sha256':file_hash(DOC/'run_plan.json')}
+    m['baseline_candidate']=make_candidate(baseline(parameter_resource()),[scenario],trial_id=run_id,hz=hz,seed=101,timeout=100,provenance=source,input_trace_id='benchmark_eval_v133_r1')
+    tape=None
+    if tape_path:
+        tape=tape_check(tape_path,hz,source,scenario,bool(negative));m.update(virtual_tape_path=str(tape_path),virtual_tape_sha256=file_hash(tape_path),projection_capture_source_hashes=tape['source_hashes'])
+        m['capture_runtime_source_delta']={p:{'capture_sha256':tape['source_hashes'].get(p),'runtime_sha256':source['source_hashes'].get(p)} for p in sorted(tape['source_hashes'].keys()|source['source_hashes'].keys()) if tape['source_hashes'].get(p)!=source['source_hashes'].get(p)}
+    m['source_snapshot_sha256']=digest(source['source_hashes'])
+    m['dirty_tree_policy']=source.get('dirty_tree_policy','SOURCE_BYTES_FROZEN; generated evidence may be untracked')
+    m['budget_ledger']=source.get('budget_ledger','PRIMARY_QUALIFICATION')
+    # Negative transport cases may mutate a manifest, never its source registry.
+    m=copy.deepcopy(m)
+    # Keep the two independent admission guards independently testable too.
+    m['expected_source_hashes']=copy.deepcopy(m['expected_source_hashes'])
+    return m,copy.deepcopy(tape)
+
+
 def execute(scenario,hz,mode,repeat,group,tape_path=None,probe=True,negative=''):
     source=identity();plan=read_json(DOC/'run_plan.json')
     previous=[read_json(p) for p in (BASE/'attempts').glob('*/manifest.json')]
@@ -44,14 +62,10 @@ def execute(scenario,hz,mode,repeat,group,tape_path=None,probe=True,negative='')
     if sum(m['budget_group']==group for m in previous)>=maximum:raise ValueError('GROUP_BUDGET_EXHAUSTED')
     run_id=f'{scenario}_{hz}_{mode}_r{repeat}_{uuid.uuid4().hex[:8]}'
     directory=BASE/'attempts'/run_id;directory.mkdir(parents=True,exist_ok=False)
-    lane='FIXED_VIRTUAL_REPLAY' if tape_path else 'ADAPTIVE_CAPTURE_SOURCE'
-    m={'schema_version':'1.3.3','benchmark':'benchmark_eval_v133','run_id':run_id,'campaign_id':BASE.name,'physics_hz':hz,'engine_mode':mode,'lane':'A','input_lane':lane,'virtual_mode':'REPLAY' if tape_path else 'CAPTURE','scenario_ids':[scenario],'recorder_enabled':True,'existing_observer_enabled':True,'output_dir':str(directory),'run_seed':101,'expected_source_hashes':source['source_hashes'],'code_commit':source['repository_commit'],'dirty_tree':False,'engine_identity':source['engine_identity'],'timeout_s':100,'budget_group':group,'negative_case':negative,'local_override_sha256':'ABSENT','projection_config':{'window_size':[1024,576],'probe_enabled':probe},'virtual_tape_sha256':'CAPTURE_SOURCE_IDENTITY','catalog_sha256':file_hash(CATALOG),'run_plan_sha256':file_hash(DOC/'run_plan.json')}
-    m['baseline_candidate']=make_candidate(baseline(parameter_resource()),[scenario],trial_id=run_id,hz=hz,seed=101,timeout=100,provenance=source,input_trace_id='benchmark_eval_v133_r1')
-    tape=None
-    if tape_path:
-        tape=tape_check(tape_path,hz,source,scenario,bool(negative));m.update(virtual_tape_path=str(tape_path),virtual_tape_sha256=file_hash(tape_path),projection_capture_source_hashes=tape['source_hashes'])
-        m['capture_runtime_source_delta']={p:{'capture_sha256':tape['source_hashes'].get(p),'runtime_sha256':source['source_hashes'].get(p)} for p in sorted(tape['source_hashes'].keys()|source['source_hashes'].keys()) if tape['source_hashes'].get(p)!=source['source_hashes'].get(p)}
+    m,tape=build_manifest(scenario,hz,mode,run_id,directory,group,source,plan,tape_path,probe,negative)
+    lane=m['input_lane']
     atomic_json(directory/'manifest.json',m)
+    atomic_json(directory/'serialized_projection_config.json',m['projection_config'])
     flags=['--headless','--fixed-fps','120'] if mode=='headless' else ['--screen','0','--position','80,80']
     command=[str(ENGINE),*flags,'--resolution','1024x576','--path',str(ROOT),'--script',ENTRY,'--','--backing-size','1024x576','--virtual-cursor-evaluator','--benchmark-qualification','--manifest',str(directory/'manifest.json'),'--result',str(directory/'engine_result.json')]
     atomic_json(directory/'execution.json',{'command':command,'utc':utc_now(),'workers':1,'input_lane':lane})
@@ -65,6 +79,7 @@ def execute(scenario,hz,mode,repeat,group,tape_path=None,probe=True,negative='')
         result=read_json(directory/'engine_result.json')
         logs='\n'.join((directory/name).read_text(errors='replace') for name in ['stdout.txt','stderr.txt'])
         if any(word in logs for word in ['SCRIPT ERROR:','Parse Error:','ERROR: Failed to load']):raise ValueError('ENGINE_SCRIPT_ERROR')
+        atomic_json(directory/'admission_receipt.json',{'engine_status':result.get('status'),'reason':result.get('reason'),'backing':result.get('backing_initialization'),'clock':result.get('clock_startup'),'world_creation':result.get('world_creation_record'),'manifest_sha256':file_hash(directory/'manifest.json'),'source_snapshot_sha256':m['source_snapshot_sha256']})
         if code!=0 or result['status']!='completed':raise ValueError(result.get('reason') or 'RUNTIME_NOT_COMPLETED')
         if result['manifest_file_sha256']!=file_hash(directory/'manifest.json'):raise ValueError('MANIFEST_IDENTITY')
         if source_hashes()!=source['source_hashes']:raise ValueError('SOURCE_CHANGED_DURING_RUN')

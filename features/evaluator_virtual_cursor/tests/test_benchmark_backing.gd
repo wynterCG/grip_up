@@ -18,9 +18,9 @@ func run()->void:
 	var cases:Array=[{"size":[1024,576],"accept":true},{"size":[1024.0,576.0],"accept":true},{"size":parsed,"accept":true},{"size":[1024.0,576],"accept":true},{"size":[1024,576.0],"accept":true},{"size":[1024.00001,576],"accept":false},{"size":[1024,576.00001],"accept":false},{"size":[1440,810],"accept":false},{"size":[576,1024],"accept":false},{"size":[1024],"accept":false},{"size":[],"accept":false},{"size":null,"accept":false},{"size":["1024",576],"accept":false}]
 	for entry:Dictionary in cases:
 		var size:Variant=entry.size
-		var value:Dictionary={"scenario_ids":["swing_catch_train"],"campaign_id":"benchmark_v133_r2_diagnostic","projection_config":{"window_size":size}}
+		var value:Dictionary={"scenario_ids":["swing_catch_train"],"campaign_id":"benchmark_v133_r2_diagnostic","projection_config":{"window_size":size,"logical_viewport_size":[1920,1080],"probe_enabled":true}}
 		var result:String=driver._virtual_scope(value)
-		check(result.is_empty() if entry.accept else result=="ENVIRONMENT_NOT_COMPARABLE:CANONICAL_BACKING","Projection config admission: "+str(size))
+		check(result.is_empty() if entry.accept else result.begins_with("ENVIRONMENT_NOT_COMPARABLE:INVALID_SCHEMA:"),"Projection config admission: "+str(size))
 	check(root.size==Vector2i(1024,576),"Actual backing after valid startup")
 	check(root.get_visible_rect().size==Vector2(1920,1080),"Actual logical viewport")
 	var record:Dictionary={"checks":checks,"failures":failures,"old_array_comparison":old_array_comparison,"json_numeric_type":typeof(parsed[0]),"gameplay_bodies_created":0,"scope":"PURE_ADMISSION_CONTRACT_NOT_QUALIFICATION"}

@@ -1,0 +1,28 @@
+{
+  "status": "APPROVED_FOR_PRIMARY",
+  "reviewer_role": "independent_physics_jolt_specialist",
+  "candidate": 3,
+  "source_snapshot_sha256": "a6bd333c5f4fc8f8571d5c907db09f858da9429852befc20e2777f9dc9b36986",
+  "review_path": "docs/validation/auto_tuning/benchmark_v133_r3/specialist/preflight_physics_review.md",
+  "review_sha256": "4033e9e3a7b81ec165cfa217c434f5a65d8691e1aff0af80a351de7bdc128386",
+  "results_sha256": "fba4fcd119595f4b7c5c8a955d47ab8043baca1c670bc37cd440a5b6d98ed180",
+  "engine_binary_sha256": "12310c74bdda7dcd43f28e971f33047dcecadd436b68169d61ce41009006df38",
+  "preflight_physical_processes_reviewed": 4,
+  "post_samples_reviewed": 1598,
+  "primary_processes_consumed_at_review": 0,
+  "strict_pairs": {"120": "STRICT_MATCH", "60": "STRICT_MATCH"},
+  "scope": "Physics boundary PC2 approval to attempt the separately gated R3 primary benchmark; not benchmark eligibility, tuning authorization or general Jolt determinism.",
+  "conditions": [
+    "Freeze identical source/helper bytes and verify the same engine, original frequency-specific tapes, catalog, bindings and canonical backing before primary.",
+    "Complete independent measurement/integration sign-offs and the separately budgeted gameplay regression gates.",
+    "Do not reuse preflight or historical diagnostic results as primary reference/domain passes.",
+    "Maintain all primary hard stops and original force, reach, authority and typed metric contracts."
+  ],
+  "limits": [
+    "One matched pair per frequency is preflight certification, not primary n3 repeatability.",
+    "Catch tapes include real B1 feet and ground contributions; not arm-only.",
+    "No new movement-domain onsets, dynamic-support angular conservation, human feel, holdout or optimization is qualified.",
+    "Legacy representation-self-comparison output is retained; typed cursor semantics do not canonicalize ray, material or physics fields."
+  ],
+  "review_method": "Read-only source and raw artifact inspection plus offline numeric/hash checks; no engine, Git, source changes or synchronization performed by this reviewer."
+}
