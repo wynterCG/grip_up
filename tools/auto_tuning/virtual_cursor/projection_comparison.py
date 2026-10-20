@@ -3,6 +3,7 @@ import json,math,struct,sys
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from common import ROOT,read_json,file_hash
+from metric_binary64 import norm3, dot3
 
 ALLOWED={
  'features/grip_up/scripts/grip_targeting.gd',
@@ -80,7 +81,7 @@ def load_picks(directory):
     if not rows:raise ValueError('EMPTY_PROJECTION_TRACE')
     return rows
 
-def norm(a,b):return math.sqrt(sum((x-y)**2 for x,y in zip(a,b)))
+def norm(a,b):return norm3([x-y for x,y in zip(a,b)])
 
 def semantic(v):
     if isinstance(v,dict):return {k:semantic(x) for k,x in v.items() if k not in {'runtime_id','active_camera_runtime_id'}}
@@ -133,7 +134,7 @@ def pair(left,right):
                 dist=norm(hu['material_point'],hv['material_point'])
                 if dist and 'material_anchor' not in first:first['material_anchor']={'tick':x['tick'],'distance_m':dist,'distance_um':dist*1e6}
             d=norm(u['world_normal_used'],v['world_normal_used']);locald=norm(u['local_normal_adjacent'],v['local_normal_adjacent'])
-            angle=math.atan2(norm([u['world_normal_used'][1]*v['world_normal_used'][2]-u['world_normal_used'][2]*v['world_normal_used'][1],u['world_normal_used'][2]*v['world_normal_used'][0]-u['world_normal_used'][0]*v['world_normal_used'][2],u['world_normal_used'][0]*v['world_normal_used'][1]-u['world_normal_used'][1]*v['world_normal_used'][0]],[0,0,0]),sum(aa*bb for aa,bb in zip(u['world_normal_used'],v['world_normal_used'])))
+            angle=math.atan2(norm([u['world_normal_used'][1]*v['world_normal_used'][2]-u['world_normal_used'][2]*v['world_normal_used'][1],u['world_normal_used'][2]*v['world_normal_used'][0]-u['world_normal_used'][0]*v['world_normal_used'][2],u['world_normal_used'][0]*v['world_normal_used'][1]-u['world_normal_used'][1]*v['world_normal_used'][0]],[0,0,0]),dot3(u['world_normal_used'],v['world_normal_used']))
             magnitudes.append({'tick':x['tick'],'ray_index':u['query_index'],'world_delta':d,'local_delta':locald,'angle_radians':angle})
     from layered_comparison import compare_layers
     la=read_json(Path(left)/'virtual_audit.json');ra=read_json(Path(right)/'virtual_audit.json')

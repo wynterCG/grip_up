@@ -2,8 +2,9 @@
 from __future__ import annotations
 
 import math
+from metric_binary64 import norm3, dot3
 
-VERSION = "benchmark_eval_v131_stop_v1"
+VERSION = "benchmark_eval_v135a_stop_v1"
 STATUSES = {"MEASURED", "CENSORED_TIMEOUT", "INTERRUPTED", "PRECONDITION_NOT_MET", "INVALID_MEASUREMENT", "NOT_APPLICABLE"}
 DEFAULTS = {
     "settle_linear_m_s": .1, "settle_angular_rad_s": .2, "settle_hold_s": .25,
@@ -35,11 +36,11 @@ def _sub(a, b):
 
 
 def _norm(a):
-    return math.sqrt(sum(x * x for x in a))
+    return norm3(a)
 
 
 def _dot(a, b):
-    return sum(x * y for x, y in zip(a, b))
+    return dot3(a, b)
 
 
 def _outcome(name, unit, status, reason, value=None, **extra):

@@ -105,7 +105,7 @@ def _result(disposition, reasons, dimensions=None, values=None, practical=False,
             "scope": "two fixed tapes at 120Hz; no statistical significance, transfer or human acceptance"}
 
 
-def project_score(candidate, reference, quality_contract):
+def project_score(candidate, reference, quality_contract, *, physics_hz=120):
     """Project root-verified evidence, preserving summarize() typed objects.
 
     candidate: lane='FIXED_TAPE', physics_hz=120, booleans run_valid,
@@ -126,7 +126,7 @@ def project_score(candidate, reference, quality_contract):
         dimensions = {"directed_progress": {}, "movement_fidelity": {},
                       "physics_control_quality": {}, "reliability": {}}
         for label, envelope in (("baseline", reference), ("candidate", candidate)):
-            if not isinstance(envelope, dict) or envelope.get("lane") != "FIXED_TAPE" or envelope.get("physics_hz") != 120:
+            if physics_hz not in (60,120) or not isinstance(envelope, dict) or envelope.get("lane") != "FIXED_TAPE" or envelope.get("physics_hz") != physics_hz:
                 raise ValueError(f"{label}: wrong scoring lane/frequency")
             if set(envelope.get("scenarios", {})) != set(TRAIN_IDS):
                 raise ValueError(f"{label}: missing/extra training domains; no holdout data accepted")
@@ -231,13 +231,20 @@ class ProposalStudy:
     Root must provide authentic MB2 evidence, freeze identity and audit ledger
     before resume. Unresolved RUNNING trials stop; they are never auto-retried.
     """
-    def __init__(self, directory, identity, registry, qualification):
+    def __init__(self, directory, identity, registry, qualification, *, plan=None, sensitivity_queue=None):
         self.directory, self.identity, self.registry = Path(directory), identity, registry
+        self.plan = copy.deepcopy(PLAN if plan is None else plan)
+        self.sensitivity_queue=copy.deepcopy(sensitivity_proposals(registry) if sensitivity_queue is None else sensitivity_queue)
+        if (set(self.plan)!={"sensitivity","random","tpe"}
+                or any(type(v) is not int or v<0 for v in self.plan.values())
+                or self.plan["sensitivity"]!=len(self.sensitivity_queue) or sum(self.plan.values())>18):
+            raise ValueError("invalid frozen proposal allocation")
         if qualification.get("decision") != "GO_MINIMAL_BENCHMARK" or qualification.get("identity_sha256") != digest(identity):
             raise ValueError("MB2 GO matching frozen study identity required")
         if type(identity.get("seed")) is not int or not 0 <= identity["seed"] <= 2**31-1:
             raise ValueError("invalid optimizer seed")
-        self.guard = digest({"identity": identity, "registry": registry, "plan": PLAN, "version": VERSION})
+        self.guard = digest({"identity": identity, "registry": registry, "plan": self.plan, "version": VERSION,
+            **({"sensitivity_queue":self.sensitivity_queue} if sensitivity_queue is not None else {})})
         self.lock = StudyLock(self.directory)
 
     def __enter__(self):
@@ -250,7 +257,7 @@ class ProposalStudy:
             storage = "sqlite:///" + (self.directory / "study.sqlite3").resolve().as_posix()
             from sqlalchemy.pool import NullPool
             self.storage = optuna.storages.RDBStorage(storage, engine_kwargs={"poolclass": NullPool})
-            self.study = optuna.create_study(storage=self.storage, study_name="minimal_v135", directions=["maximize"]*2, load_if_exists=True)
+            self.study = optuna.create_study(storage=self.storage, study_name=self.identity.get("campaign_id","minimal_v135"), directions=["maximize"]*2, load_if_exists=True)
             old = self.study.user_attrs.get("identity_sha256")
             if old is not None and old != self.guard:
                 raise ValueError("resume identity/registry/plan/score mismatch")
@@ -280,15 +287,15 @@ class ProposalStudy:
         if any(t.state in (state.RUNNING, state.WAITING) for t in trials):
             raise ValueError("unresolved prior trial; audit receipts before continuing")
         index = len(trials)
-        if index >= sum(PLAN.values()):
+        if index >= sum(self.plan.values()):
             return None
-        phase = "sensitivity" if index < 8 else "random" if index < 14 else "tpe"
+        phase = "sensitivity" if index < self.plan["sensitivity"] else "random" if index < self.plan["sensitivity"]+self.plan["random"] else "tpe"
         if phase == "tpe" and tpe_ready is not True:
             raise ValueError("informative eligible pilot gate required before TPE")
         seed = (self.identity["seed"] + index) % (2**32)
         self.study.sampler = (self.optuna.samplers.TPESampler(seed=seed, n_startup_trials=0, constant_liar=False) if phase == "tpe" else self.optuna.samplers.RandomSampler(seed=seed))
         if phase == "sensitivity":
-            self.study.enqueue_trial(sensitivity_proposals(self.registry)[index]["parameter_overrides"])
+            self.study.enqueue_trial(self.sensitivity_queue[index]["parameter_overrides"])
         trial = self.study.ask()
         self.live_trials[trial.number] = trial
         values = {key: round(trial.suggest_float(key, parameter_rows(self.registry)[key]["min"], parameter_rows(self.registry)[key]["max"]), 8) for key in PARAMETER_IDS}

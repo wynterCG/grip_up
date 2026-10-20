@@ -26,11 +26,27 @@ TRAIN=['vertical_pull_clean_v134_r2','lateral_clean_right_v134_r2']
 HELPERS=['tools/minimal_benchmark.py','tools/project.py','tools/run_contextual_vault.py','tools/benchmark_safety.py','tools/benchmark_r3.py','tools/virtual_cursor_native_safety.py','tools/virtual_cursor_report.py']
 parameters=None
 current_phase=''
+CAMPAIGN='minimal_v135_r4'
+
+def select_campaign(name):
+    global B,D,CAMPAIGN
+    if name=='minimal_v135_r4':return
+    if name!='minimal_v135a_r1':raise ValueError('UNKNOWN_CAMPAIGN')
+    from minimal_v135 import deterministic_campaign as dc
+    CAMPAIGN=name;B=ROOT/'builds/eval_virtual_cursor'/name;D=ROOT/'docs/validation/auto_tuning/deterministic_v135a'
+    e.BASE=B;e.DOC=D
+    HELPERS.append('tools/auto_tuning/tests/test_deterministic_campaign.py')
+    HELPERS.append('tools/auto_tuning/tests/test_metric_binary64.py')
+    dc.require_environment()
 
 def helper_hashes():return {p:file_hash(ROOT/p) for p in HELPERS}
 
 def guard(source=None):
     s=source or read_json(B/'source_identity.json')
+    if CAMPAIGN=='minimal_v135a_r1':
+        from minimal_v135 import deterministic_campaign as dc
+        dc.require_environment(s.get('python_environment'))
+        if s.get('metric_reducer_sha256')!=file_hash(ROOT/'tools/auto_tuning/metric_binary64.py'):raise ValueError('METRIC_REDUCER_CHANGED')
     if source_hashes()!=s['source_hashes'] or source_hashes(DEST)!=s['source_hashes']:raise ValueError('MEASURED_SOURCE_CHANGED')
     if helper_hashes()!=s['helper_hashes']:raise ValueError('MEASURED_HELPER_CHANGED')
     if engine_identity()!=s['engine_identity']:raise ValueError('ENGINE_CHANGED')
@@ -50,6 +66,11 @@ def freeze():
     assert not (B/'source_identity.json').exists(),'Source is immutable after registration'
     s={**git_identity(),'source_hashes':source_hashes(),'helper_hashes':helper_hashes(),'engine_identity':engine_identity(),'run_plan_sha256':file_hash(D/'run_plan.json'),'tapes':read_json(D/'run_plan.json')['reference_tapes'],'dirty_tree_policy':'Exact public source/helper bytes frozen; generated evidence may change working-tree status. No gameplay writes.','budget_ledger':'MINIMAL_V135_PROSPECTIVE'}
     s['snapshot_sha256']=digest({'source_hashes':s['source_hashes'],'helper_hashes':s['helper_hashes']})
+    if CAMPAIGN=='minimal_v135a_r1':
+        from minimal_v135 import deterministic_campaign as dc
+        s.update(python_environment=dc.require_environment(),metric_reducer_sha256=file_hash(ROOT/'tools/auto_tuning/metric_binary64.py'),budget_ledger='DETERMINISTIC_V135A_PROSPECTIVE')
+        from metric_binary64 import canonical_metric_contract_id
+        s['metric_reducer']=canonical_metric_contract_id()
     guard(s)
     atomic_json(B/'source_identity.json',s);atomic_json(D/'source_identity.json',s)
     import virtual_cursor_report as ar
@@ -61,8 +82,12 @@ def tape_check(path,hz,source,scenario,negative=False):
     if scenario=='swing_catch_train':return historical.tape_check(path,hz,source,scenario,negative)
     tape=read_json(path)
     old=read_json(D/'run_plan.json').get('protected_public_tapes',{}).get(f'{scenario}:{hz}')
-    if old is not None and str(path)==old['path']:
-        if file_hash(path)!=old['sha256'] or tape['benchmark']!='fixture_feasibility_v134' or tape['scenario_id']!=scenario or tape['scenario_catalog_sha256']!=old['catalog_sha256'] or digest(tape['source_hashes'])!=old['source_map_sha256']:raise ValueError('PROTECTED_HISTORICAL_TAPE_IDENTITY')
+    training=read_json(D/'run_plan.json').get('historical_training_tapes',{}).get(f'{scenario}:{hz}') if CAMPAIGN=='minimal_v135a_r1' else None
+    if training is not None and (Path(path).resolve()==Path(training['path']).resolve() or Path(path).resolve()==(B/'tapes'/f'{scenario}_{hz}.json').resolve()):
+        if (file_hash(path)!=training['sha256'] or tape['benchmark']!='benchmark_minimal_v135_r1' or tape['scenario_id']!=scenario or tape['scenario_catalog_sha256']!=file_hash(CAT) or digest(tape['source_hashes'])!=training['source_map_sha256']):raise ValueError('HISTORICAL_TRAINING_TAPE_IDENTITY')
+        if current_phase not in ['preflight','baseline','negative_canary','impaired_canary','optimizer','sensitivity','random','confirmation','finalist_protected','dry_run']:raise ValueError('HISTORICAL_TRAINING_WRONG_PHASE')
+    elif old is not None and str(path)==old['path']:
+        if file_hash(path)!=old['sha256'] or tape['benchmark']!=old.get('benchmark','fixture_feasibility_v134') or tape['scenario_id']!=scenario or tape['scenario_catalog_sha256']!=old['catalog_sha256'] or digest(tape['source_hashes'])!=old['source_map_sha256']:raise ValueError('PROTECTED_HISTORICAL_TAPE_IDENTITY')
         if current_phase!='finalist_protected':raise ValueError('PROTECTED_TAPE_OUTSIDE_FINALIST_STAGE')
     elif tape['benchmark']!='benchmark_minimal_v135_r1' or tape['scenario_id']!=scenario or tape['scenario_catalog_sha256']!=file_hash(CAT) or tape['source_hashes']!=source['source_hashes']:raise ValueError('MINIMAL_TAPE_SOURCE_CATALOG')
     if tape['physics_hz']!=hz or tape['engine_identity']!=source['engine_identity'] or tape['camera_mode']!='V0_PHYSICS_FOLLOW':raise ValueError('MINIMAL_TAPE_ENVIRONMENT')
@@ -77,6 +102,10 @@ def manifest(scenario,hz,mode,run_id,directory,group,source,plan,tape_path=None,
     candidate=make_candidate(values,[scenario],trial_id=run_id,hz=hz,seed=101,timeout=100,provenance=source,input_trace_id='benchmark_minimal_v135_r1')
     m={'schema_version':'1.3.5','benchmark':'benchmark_minimal_v135_r1','run_id':run_id,'campaign_id':B.name,'phase':current_phase,'physics_hz':hz,'engine_mode':mode,'lane':'A','input_lane':'FIXED_TAPE' if tape_path else 'ADAPTIVE_CAPTURE','virtual_mode':'REPLAY' if tape_path else 'CAPTURE','scenario_ids':[scenario],'recorder_enabled':True,'existing_observer_enabled':True,'output_dir':str(directory),'run_seed':101,'expected_source_hashes':copy.deepcopy(source['source_hashes']),'code_commit':source['repository_commit'],'dirty_tree':source.get('repository_dirty',False),'engine_identity':source['engine_identity'],'timeout_s':100,'budget_group':group,'negative_case':negative,'local_override_sha256':'ABSENT','projection_config':{'window_size':[1024,576],'logical_viewport_size':[1920,1080],'probe_enabled':probe},'virtual_tape_sha256':'CAPTURE_SOURCE_IDENTITY','catalog_sha256':file_hash(CAT),'minimal_catalog_sha256':file_hash(CAT),'transfer_catalog_sha256':file_hash(TRANSFER),'run_plan_sha256':file_hash(D/'run_plan.json'),'baseline_candidate':candidate,'pick_contract_version':'1.3.4','source_snapshot_sha256':source['snapshot_sha256'],'dirty_tree_policy':source['dirty_tree_policy'],'budget_ledger':source['budget_ledger']}
     tape=None
+    if CAMPAIGN=='minimal_v135a_r1':
+        from minimal_v135 import deterministic_campaign as dc
+        m.update(python_environment=dc.require_environment(source['python_environment']),python_environment_sha256=source['python_environment']['sha256'],metric_reducer_sha256=source['metric_reducer_sha256'],metric_contract='ordered_binary64_sequential_v1')
+        m['metric_reducer']=copy.deepcopy(source['metric_reducer'])
     if tape_path:
         tape=tape_check(tape_path,hz,source,scenario,bool(negative))
         m.update(virtual_tape_path=str(tape_path),virtual_tape_sha256=file_hash(tape_path),projection_capture_source_hashes=tape['source_hashes'])
@@ -94,7 +123,8 @@ def ledger():
     out['groups']['finalist']+=len(batches)+len(capabilities)
     out['prior_physical_preflight_failures']=read_json(D/'run_plan.json').get('prior_preflight_physical',0)
     out['cumulative_evaluation_processes']=out['evaluation_processes']+out['prior_physical_preflight_failures']
-    assert out['cumulative_evaluation_processes']<=128 and out['groups']['finalist']<=48
+    limits=read_json(D/'run_plan.json')['budget_limits']
+    assert out['cumulative_evaluation_processes']<=limits.get('total_evaluation',128) and out['groups']['finalist']<=limits['finalist']
     atomic_json(B/'budget_ledger.json',out);return out
 
 def one(scenario,hz,mode,group,tape=None,negative='',values=None,phase=None):
@@ -240,7 +270,8 @@ def negatives():
         except ValueError as error:reason=str(error)
         controls.append({'case':label,'pass':bool(reason),'reason':reason,'source_directory':str(original),'corruption':'READ_ONLY_COPY_NO_PHYSICS'})
     pending=[h for r in audit['ticks'] for h in r['hands'] if h['state'] not in ['ATTACHED','SLIPPING']]
-    controls.append({'case':'free_pending_zero_force','pass':bool(pending) and all(sum(x*x for x in h['force_n'])==0 for h in pending),'observations':len(pending),'source_directory':str(original)})
+    from metric_binary64 import norm3
+    controls.append({'case':'free_pending_zero_force','pass':bool(pending) and all(norm3(h['force_n'])==0 for h in pending),'observations':len(pending),'source_directory':str(original)})
     atomic_json(B/'raw_negative_contracts.json',{'pass':all(c['pass'] for c in controls),'controls':controls,'extra_physical_processes':0})
     if not all(c['pass'] for c in controls):session.update(status='NO_GO',reason='RAW_NEGATIVE_CONTRACT_FAILED');save();return
     session.update(status='NEGATIVES_PASS_REVIEW_REQUIRED' if sensitive else 'NO_GO',reason='' if sensitive else 'CONTINUOUS_CANARY_SENSITIVITY_NOT_DEMONSTRATED');save()
@@ -333,10 +364,17 @@ def first_ascent_capability(values,hz,shortlist):
     definition=next(d for d in catalog['scenarios'] if d.get('implementation_id',d['id'])=='first_ascent')
     source=guard();source={**source,'source_hashes':source_hashes(include_holdout=True)}
     freeze={'frozen':True,'frozen_at_utc':utc_now(),'candidates':shortlist,'baseline':{'candidate_id':__import__('candidate_schema').candidate_id(baseline(parameter_resource())),'parameter_overrides':baseline(parameter_resource())},'provenance':{'repository_commit':source['repository_commit'],'engine_identity':source['engine_identity'],'source_hashes':source['source_hashes']},'training_repeat_validation':{'passed':True,'repeats_per_frequency':3,'frequencies':[60,120]}}
+    if CAMPAIGN=='minimal_v135a_r1':
+        confirmation=read_json(B/'optimizer/confirmation/result.json')
+        assert confirmation.get('passed') and len(confirmation['runs'])==24 and len(confirmation['pairs'])==28
+        freeze['training_repeat_validation']={key:confirmation[key] for key in ['passed','repeats_per_frequency','frequencies']}
+        freeze['training_repeat_validation']['confirmation_sha256']=file_hash(B/'optimizer/confirmation/result.json')
+        freeze['provenance']['python_environment']=source['python_environment']
     freeze['freeze_sha256']=digest(freeze)
     path=B/'capability_freezes'/f'{uuid.uuid4().hex}.json';atomic_json(path,freeze)
     candidate=make_candidate(values,[definition['id']],trial_id=f'capability_ascent_{hz}_{uuid.uuid4().hex[:8]}',hz=hz,split='holdout',provenance=source,input_trace_id=catalog['input_trace_id'])
-    outcome,directory=run_trial(candidate,B/'capability_first_ascent',shortlist_path=path)
+    kwargs={'audit_environment':source['python_environment']} if CAMPAIGN=='minimal_v135a_r1' else {}
+    outcome,directory=run_trial(candidate,B/'capability_first_ascent',shortlist_path=path,**kwargs)
     ledger()
     return {'status':outcome['status'],'completed':outcome.get('engine_result',{}).get('scenarios',[{}])[0].get('completed') is True,'directory':str(directory),'scope':'Non-training existing FirstAscent/hybrid route; no continuous reward'}
 
@@ -438,13 +476,17 @@ def validate_shortlist():
     session.update(status='HUMAN_REVIEW_PENDING',reason='Final primary and protected evidence require independent review and separate human agreement');save()
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('stage',nargs='?',choices=['freeze','pure','preflight','baseline','negatives','quality-freeze','gate','search','validate']);p.add_argument('--preflight-only',action='store_true');p.add_argument('--baseline-only',action='store_true');p.add_argument('--sensitivity-only',action='store_true');p.add_argument('--random-only',action='store_true');p.add_argument('--tpe-only',action='store_true');p.add_argument('--validate-shortlist',action='store_true');p.add_argument('--resume',action='store_true');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('stage',nargs='?',choices=['prepare','freeze','pure','preflight','baseline','negatives','quality-freeze','gate','search','validate']);p.add_argument('--campaign',default='minimal_v135_r4',choices=['minimal_v135_r4','minimal_v135a_r1']);p.add_argument('--preflight-only',action='store_true');p.add_argument('--baseline-only',action='store_true');p.add_argument('--sensitivity-only',action='store_true');p.add_argument('--random-only',action='store_true');p.add_argument('--tpe-only',action='store_true');p.add_argument('--validate-shortlist',action='store_true');p.add_argument('--resume',action='store_true');a=p.parse_args()
+    select_campaign(a.campaign)
     if a.preflight_only:a.stage='preflight'
     if a.baseline_only:a.stage='baseline'
     if a.validate_shortlist:a.stage='validate'
     phase=next((name for name in ['sensitivity','random','tpe'] if getattr(a,name+'_only')),None)
     if phase:a.stage='search'
     if not a.stage:p.error('Choose an explicit stage')
+    if CAMPAIGN=='minimal_v135a_r1':
+        from minimal_v135 import deterministic_campaign as dc
+        return dc.dispatch(sys.modules[__name__],a.stage,phase,a.resume)
     if a.stage=='freeze':return freeze()
     with StudyLock(ROOT/'builds/eval_virtual_cursor'):
         if a.stage=='search':return search(phase,a.resume)

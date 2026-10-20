@@ -1,0 +1,183 @@
+{
+  "authorization": "GRIP_UP_Deterministic_Metric_Reduction_Auto_Tuning_v1_3_5a_EN.md",
+  "auxiliary_safety": {
+    "physical_worlds_reserved": 4,
+    "scope": "normal startup/MCP LIVE/release smoke/isolated pack; never scoring"
+  },
+  "baseline_schedule": "2tasks x2Hz x3H/Rfixedpairs =24 processes;12H/R+16within-mode comparisons",
+  "budget_limits": {
+    "baseline": 24,
+    "development": 2,
+    "finalist": 24,
+    "negative_canary": 8,
+    "optimizer": 40,
+    "optimizer_episodes": 40,
+    "preflight": 8,
+    "regression": 34,
+    "total_evaluation": 106
+  },
+  "canary_gate": "Both repeats task-valid in >=1domain; degradation>=max(.010m,5%A0); no safety violation. Task failure alone is not continuous sensitivity. No canary retune.",
+  "canary_parameters": {
+    "traversal_input_ramp_s": 0.2,
+    "traversal_speed_m_s": 0.18,
+    "traversal_target_max_acceleration": 0.6,
+    "traversal_target_max_rate": 0.16
+  },
+  "confirmation": "At most1; initial4H +20missingcells =24candidateprocesses,3H/R\u00d74cells; no retry",
+  "confirmation_reserved_processes": 20,
+  "finalist_schedule": {
+    "asym_left_A0_candidate_120": 4,
+    "catch_A0_candidate_HR_bothHz": 8,
+    "first_ascent_A0_candidate_bothHz": 4,
+    "maximum": 1,
+    "process_limit": 24,
+    "right_independent_policy": "NOT_RUN unless existing certified tape is frozen in this plan; no replacement jobs",
+    "right_independent_reserved": 2,
+    "stop_A0_candidate_bothHz": 4,
+    "vertical_novel_A0_candidate_120": 2
+  },
+  "frequency_order": [
+    120,
+    60
+  ],
+  "frozen_before_results_utc": "2026-10-20T22:14:00.082285+00:00",
+  "global_stop": [
+    "metric",
+    "input",
+    "source",
+    "environment",
+    "physics",
+    "restore",
+    "mandatory_baseline"
+  ],
+  "historical_R4_decision": "NO_GO_MINIMAL_BENCHMARK_IMMUTABLE",
+  "historical_quality_policy": {
+    "path": "C:\\Users\\Wynter\\grip_up\\docs\\validation\\auto_tuning\\minimal_v135\\r4\\quality_contract.json",
+    "sha256": "279f739e74674e11b695fb8e15592e883c680ebb9c8869c055b0629aeb5fb496"
+  },
+  "historical_training_tapes": {
+    "lateral_clean_right_v134_r2:120": {
+      "admission": "Exact immutable tape bytes; explicit capture/runtime source delta; fresh full replay required",
+      "catalog_sha256": "f5ccf075bf35f2c591bb5fd6560a356c8f2d2aa53a8891a0b3bb9a84cb3439ed",
+      "path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\minimal_v135_r4\\tapes\\lateral_clean_right_v134_r2_120.json",
+      "sha256": "79f9c3773c10ada52620bba6547a8f9413e285619de66375af7df9a65d1406ae",
+      "source_map_sha256": "e50cc368a19f22ed533e0d2dd0e30807d87c5465fc30e7be3f789e7b5a3b8dd2"
+    },
+    "lateral_clean_right_v134_r2:60": {
+      "admission": "Exact immutable tape bytes; explicit capture/runtime source delta; fresh full replay required",
+      "catalog_sha256": "f5ccf075bf35f2c591bb5fd6560a356c8f2d2aa53a8891a0b3bb9a84cb3439ed",
+      "path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\minimal_v135_r4\\tapes\\lateral_clean_right_v134_r2_60.json",
+      "sha256": "c6113c1aea19bbcde441b1b44adc04e6c7f91e05a699de1a32d985454b997eb3",
+      "source_map_sha256": "e50cc368a19f22ed533e0d2dd0e30807d87c5465fc30e7be3f789e7b5a3b8dd2"
+    },
+    "vertical_pull_clean_v134_r2:120": {
+      "admission": "Exact immutable tape bytes; explicit capture/runtime source delta; fresh full replay required",
+      "catalog_sha256": "f5ccf075bf35f2c591bb5fd6560a356c8f2d2aa53a8891a0b3bb9a84cb3439ed",
+      "path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\minimal_v135_r4\\tapes\\vertical_pull_clean_v134_r2_120.json",
+      "sha256": "142e22a7f1bdb07ef75e1d0d6018cf3749d616c1967073437c354dd0fb05bfc7",
+      "source_map_sha256": "e50cc368a19f22ed533e0d2dd0e30807d87c5465fc30e7be3f789e7b5a3b8dd2"
+    },
+    "vertical_pull_clean_v134_r2:60": {
+      "admission": "Exact immutable tape bytes; explicit capture/runtime source delta; fresh full replay required",
+      "catalog_sha256": "f5ccf075bf35f2c591bb5fd6560a356c8f2d2aa53a8891a0b3bb9a84cb3439ed",
+      "path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\minimal_v135_r4\\tapes\\vertical_pull_clean_v134_r2_60.json",
+      "sha256": "4997bf56ff6712039fd0c8e70b1f8700b3f26bd60318a73d6268742562de09ea",
+      "source_map_sha256": "e50cc368a19f22ed533e0d2dd0e30807d87c5465fc30e7be3f789e7b5a3b8dd2"
+    }
+  },
+  "id": "minimal_v135a_r1",
+  "independent_regression": {
+    "processes": 34,
+    "scope": "mandatory safety suite; never training"
+  },
+  "max_proposals": 5,
+  "max_qualification_attempts": 106,
+  "missing_required_coverage": [
+    "one_hand_hang_release_brake_60",
+    "one_hand_hang_release_brake_certified_wrapper",
+    "right_independent_start"
+  ],
+  "negative_schedule": {
+    "N1_bothHz": 2,
+    "impaired_canary_2tasks_120_n2": 4,
+    "other_controls": "pure contracts/exact raw mutation with original evidence retained",
+    "public_ground_and_clearance_diagnostics_60": 2
+  },
+  "no_default_promotion": true,
+  "no_scoring_holdouts": true,
+  "optimizer_seed": 135101,
+  "overall_physical_process_ceiling": 144,
+  "preflight_schedule": {
+    "A0_candidate_dry_run_two_tasks_bothHz": 4,
+    "protected_catch_bothHz": 2,
+    "pure_transport_environment": "separate zero-world process ledger",
+    "reserve": 2
+  },
+  "prior_preflight_physical": 0,
+  "processes_per_proposal": 4,
+  "proposal_schedule": {
+    "random": 1,
+    "sensitivity": 4,
+    "tpe": 0
+  },
+  "protected_public_tapes": {
+    "asymmetric_pull_clean_v134_r2:120": {
+      "admission": "ONLY_FINALIST_PROTECTED; historical-source delta explicit; fulltask revalidated noheader rewrite",
+      "catalog_sha256": "5ac75d6ce44a62e494d8bfe3076d6d0568e71dc3105eca246d5ca96c0451b7a8",
+      "path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\fixture_feasibility_v134_r1\\tapes\\asymmetric_pull_clean_v134_r2_120.json",
+      "sha256": "7236b637bbebf8a825e2b9a4689493ef8efe67a359b2783bfc756b7693602f24",
+      "source_map_sha256": "7e08936c8e5206a6225a5373c0ae2da5318fd92717a862a1312617c2d3a17dc3"
+    },
+    "lateral_clean_left_v134_r2:120": {
+      "admission": "ONLY_FINALIST_PROTECTED; historical-source delta explicit; fulltask revalidated noheader rewrite",
+      "catalog_sha256": "5ac75d6ce44a62e494d8bfe3076d6d0568e71dc3105eca246d5ca96c0451b7a8",
+      "path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\fixture_feasibility_v134_r1\\tapes\\lateral_clean_left_v134_r2_120.json",
+      "sha256": "96e6c1255c203f254f3c3b268f3a6129bd0307b67114bfeabbc4a80f82db8c41",
+      "source_map_sha256": "7e08936c8e5206a6225a5373c0ae2da5318fd92717a862a1312617c2d3a17dc3"
+    },
+    "two_hand_release_stop_v134_r2:120": {
+      "admission": "ONLY_FINALIST_PROTECTED; historical-source delta explicit; fulltask revalidated noheader rewrite",
+      "catalog_sha256": "5ac75d6ce44a62e494d8bfe3076d6d0568e71dc3105eca246d5ca96c0451b7a8",
+      "path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\fixture_feasibility_v134_r1\\tapes\\two_hand_release_stop_v134_r2_120.json",
+      "sha256": "4ec3623e0fc7d35dae601468a9187162b3e77dbbe9072ebc04ef8f22dd5b9579",
+      "source_map_sha256": "7e08936c8e5206a6225a5373c0ae2da5318fd92717a862a1312617c2d3a17dc3"
+    },
+    "two_hand_release_stop_v134_r2:60": {
+      "admission": "ONLY_FINALIST_PROTECTED; historical-source delta explicit; fulltask revalidated noheader rewrite",
+      "catalog_sha256": "5ac75d6ce44a62e494d8bfe3076d6d0568e71dc3105eca246d5ca96c0451b7a8",
+      "path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\fixture_feasibility_v134_r1\\tapes\\two_hand_release_stop_v134_r2_60.json",
+      "sha256": "207ef1769f67edc28cb187cf001cdab05d0a6a338f17a249451234f829810eaa",
+      "source_map_sha256": "7e08936c8e5206a6225a5373c0ae2da5318fd92717a862a1312617c2d3a17dc3"
+    },
+    "vertical_novel_v135_r1:120": {
+      "benchmark": "benchmark_minimal_v135_r1",
+      "catalog_sha256": "f5ccf075bf35f2c591bb5fd6560a356c8f2d2aa53a8891a0b3bb9a84cb3439ed",
+      "path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\minimal_v135_r4\\tapes\\vertical_novel_v135_r1_120.json",
+      "sha256": "884e7fd1b74d69df7b2871bfc5537c98b8abe53eddcbeb84cb93e89578614497",
+      "source_map_sha256": "e50cc368a19f22ed533e0d2dd0e30807d87c5465fc30e7be3f789e7b5a3b8dd2"
+    }
+  },
+  "reference_tapes": {
+    "120": {
+      "path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\requal_20261020_r1\\capture\\tapes\\catch_120.json",
+      "sha256": "d09f2569cbbafb4db2d3571b806dc804622fe4efda3c6ba9d8790a51bdb2991b"
+    },
+    "60": {
+      "path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\requal_20261020_r1\\capture\\tapes\\catch_60.json",
+      "sha256": "a711b9cb2792890fddd3782db0705a003fdccae4fad67fa3085f895c0a2a2e9d"
+    }
+  },
+  "sensitivity_indices": [
+    1,
+    2,
+    4,
+    6
+  ],
+  "shortlist": "max1; all four cells; worst Hz per task; no averaging losses",
+  "task_order": [
+    "vertical_pull_clean_v134_r2",
+    "lateral_clean_right_v134_r2"
+  ],
+  "tpe": "NOT_REACHED_BY_PREREGISTERED_BUDGET",
+  "version": "deterministic_two_frequency_v135a_r1"
+}

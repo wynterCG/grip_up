@@ -8,8 +8,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from metric_contracts import STATUSES, analyze
+from metric_binary64 import norm3, dot3, sum_binary64_ordered, CONTRACT as REDUCER_CONTRACT
 
-VERSION = "benchmark_eval_v133_metrics_r1"
+VERSION = "benchmark_eval_v135a_metrics_r1"
 UNITS = {
     "signed_progress_m": "m", "latency_to_useful_motion_s": "s",
     "directional_efficiency": "dimensionless", "overshoot_after_release_m": "m",
@@ -35,11 +36,11 @@ def vector(value):
 
 
 def norm(value):
-    return math.sqrt(sum(x*x for x in value))
+    return norm3(value)
 
 
 def dot(a, b):
-    return sum(x*y for x, y in zip(a, b))
+    return dot3(a, b)
 
 
 def sub(a, b):
@@ -102,7 +103,9 @@ def _support_reason(row, anchors):
 def _validate_rows(ticks):
     if not isinstance(ticks, list) or not ticks:
         raise ValueError("EMPTY_TRACE")
-    rows = [copy.deepcopy(row) for row in ticks if row.get("sample_phase") == "post_control"]
+    if any(row.get("sample_phase") != "post_control" for row in ticks):
+        raise ValueError("MIXED_OR_NON_POST_PHASE")
+    rows = copy.deepcopy(ticks)
     if not rows:
         raise ValueError("MISSING_POST_CONTROL")
     hz = rows[0].get("physics_hz")
@@ -164,7 +167,7 @@ def summarize(ticks, definition, onset_certificate):
             raise ValueError("ONSET_CERTIFICATE_NOT_RECORDED_POST")
         first = matching[0]
         anchors = [hand["anchor_runtime_id"] for hand in first["hands"]]
-        if not all(anchors) or _support_reason(first, anchors) or sum(norm(vector(h["force_n"])) for h in first["hands"]) <= 1:
+        if not all(anchors) or _support_reason(first, anchors) or sum_binary64_ordered((norm(vector(h["force_n"])) for h in first["hands"]), nonnegative=True) <= 1:
             return _blank("PRECONDITION_NOT_MET", "ACTUAL_TWO_HAND_LOADED_ONSET_REQUIRED", onset)
         if definition.get("require_foot_load", False) and _foot_load(first) <= 1:
             return _blank("PRECONDITION_NOT_MET", "ACTUAL_COMPRESSIVE_FOOT_LOAD_REQUIRED", onset)
@@ -183,7 +186,7 @@ def summarize(ticks, definition, onset_certificate):
                 relative = sub(vector(row["body"]["linear_velocity_m_s"]), vector(row["support"]["point_velocity_m_s"]))
                 spin = vector(row["body"]["angular_velocity_rad_s"])
                 if (_support_reason(row, anchors) or abs(dot(relative, axis)) > .1 or norm(spin) > .2
-                        or sum(norm(vector(h["force_n"])) for h in row["hands"]) <= 1
+                        or sum_binary64_ordered((norm(vector(h["force_n"])) for h in row["hands"]), nonnegative=True) <= 1
                         or definition["require_foot_load"] and _foot_load(row) <= 1):
                     return _blank("PRECONDITION_NOT_MET", "QUIET_DWELL_OR_ACCEPTED_ONSET_NOT_ELIGIBLE", onset)
         else:
@@ -220,7 +223,7 @@ def summarize(ticks, definition, onset_certificate):
         if requested_end is not None and (type(requested_end) is not int or requested_end != end):
             raise ValueError("END_CERTIFICATE_NOT_ACTUAL_AUTHORIZED_END")
         positions = [vector(row["body"]["com_m"]) for row in selected]
-        path = sum(norm(sub(b, a)) for a, b in zip(positions, positions[1:]))
+        path = sum_binary64_ordered((norm(sub(b, a)) for a, b in zip(positions, positions[1:])), nonnegative=True)
         progress = dot(sub(positions[-1], positions[0]), axis)
         result = _blank("NOT_APPLICABLE", "NOT_DEFINED_FOR_TASK", onset)
         metrics = result["metrics"]
@@ -262,12 +265,12 @@ def summarize(ticks, definition, onset_certificate):
         foot_integral = hand_integral = 0.
         for row in selected[1:]:
             foot_integral += _foot_load(row)/hz
-            hand_integral += sum(max(0., vector(h["force_n"])[1]) for h in row["hands"])/hz
+            hand_integral += sum_binary64_ordered((max(0., vector(h["force_n"])[1]) for h in row["hands"]), nonnegative=True)/hz
         if definition.get("physical_feet", False):
             total = foot_integral+hand_integral
             put("foot_load_contribution", status if total > 1e-6 else "PRECONDITION_NOT_MET", "COMPRESSIVE_FOOT_IMPULSE_OVER_FOOT_PLUS_UPWARD_HAND_IMPULSE" if total > 1e-6 else "NO_OBSERVED_SUPPORT_LOAD", foot_integral/total if total > 1e-6 else None)
         if selected and all(row.get("benchmark_extra", {}).get("twist_frame_valid") is True and number(row["benchmark_extra"].get("twist_rad")) for row in selected):
-            put("twist_rms_rad", status, "DECLARED_SUPPORT_RELATIVE_TWIST" if complete else why, math.sqrt(sum(row["benchmark_extra"]["twist_rad"]**2 for row in selected)/len(selected)))
+            put("twist_rms_rad", status, "DECLARED_SUPPORT_RELATIVE_TWIST" if complete else why, math.sqrt(sum_binary64_ordered((float(row["benchmark_extra"]["twist_rad"])**2 for row in selected), nonnegative=True)/len(selected)))
         violations = []
         for row in rows:
             for hand in row["hands"]:

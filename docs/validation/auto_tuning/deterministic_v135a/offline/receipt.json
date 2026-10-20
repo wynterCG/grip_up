@@ -1,0 +1,111 @@
+{
+  "earlier_development_failure": {
+    "error": "WinError32 temporary stderr inherited by venv redirector child after wrapper killed",
+    "fix": "reap owned Windows process tree; final fallback always kills and waits root; no gameplay change",
+    "physical_worlds": 0,
+    "test": "test_timeout_is_never_ranked_as_completion"
+  },
+  "pass": false,
+  "physics_worlds": 0,
+  "python": {
+    "architecture": "AMD64",
+    "binary64_bytes": 8,
+    "byteorder": "little",
+    "dependency_lock_sha256": "da2991951fb7a56ad0e108b51e6a09e6aaf28366e49947949585b42ac0f32822",
+    "executable": "C:\\Users\\Wynter\\grip_up\\tools\\auto_tuning\\.venv\\Scripts\\python.exe",
+    "executable_sha256": "3ca806b3c7dc6f967da11546bff3c5f2681eb4e782e8ede6e6c3a9a571efa686",
+    "float_info": "sys.float_info(max=1.7976931348623157e+308, max_exp=1024, max_10_exp=308, min=2.2250738585072014e-308, min_exp=-1021, min_10_exp=-307, dig=15, mant_dig=53, epsilon=2.220446049250313e-16, radix=2, rounds=1)",
+    "locale": [
+      "Portuguese_Portugal",
+      "1252"
+    ],
+    "packages": {
+      "Mako": "1.4.3",
+      "MarkupSafe": "3.0.4",
+      "PyYAML": "6.0.3",
+      "SQLAlchemy": "2.1.5",
+      "alembic": "1.20.0",
+      "colorama": "0.4.6",
+      "colorlog": "6.12.0",
+      "contourpy": "1.4.0",
+      "cycler": "0.12.1",
+      "fonttools": "4.67.0",
+      "kiwisolver": "1.5.1",
+      "matplotlib": "3.10.8",
+      "numpy": "2.5.4",
+      "optuna": "5.0.0",
+      "packaging": "26.3",
+      "pillow": "13.0.0",
+      "pyparsing": "3.3.3",
+      "python-dateutil": "2.9.0.post0",
+      "six": "1.17.0",
+      "tqdm": "4.70.1",
+      "typing_extensions": "4.16.0"
+    },
+    "platform": "Windows-11-10.0.26200-SP0",
+    "pointer_bits": 64,
+    "reducer": {
+      "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+      "id": "ordered_binary64_sequential_v1",
+      "schema": "metric_binary64_audit_v1",
+      "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+    },
+    "sha256": "490e60b644d076302b2db48005c94c4cfc54298b657b81d11649d4c026cf7ff1",
+    "sqlite_version": "3.53.1",
+    "sys_version": "3.13.13 (main, Jun  2 2026, 22:38:31) [MSC v.1944 64 bit (AMD64)]",
+    "version": "3.13.13"
+  },
+  "runs": [
+    {
+      "command": [
+        "C:\\Users\\Wynter\\grip_up\\tools\\auto_tuning\\.venv\\Scripts\\python.exe",
+        "tools/auto_tuning/tests/test_metric_binary64.py"
+      ],
+      "label": "metric_py313",
+      "returncode": 0,
+      "stderr_sha256": "9cda289e64500324c7fe0b3bf01ad219ca9870484b9d9a73967faa528ff44012",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "python",
+        "tools/auto_tuning/tests/test_metric_binary64.py"
+      ],
+      "label": "metric_py311",
+      "returncode": 0,
+      "stderr_sha256": "2af0379d29175ba54835b84e47449e3225f69af03b0506a847f01fa2ba4c9b1f",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "C:\\Users\\Wynter\\grip_up\\tools\\auto_tuning\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/auto_tuning/benchmark_qualification/tests",
+        "-q"
+      ],
+      "label": "benchmark_contracts",
+      "returncode": 0,
+      "stderr_sha256": "4a7b9a28629268e9d9c74919dd2cc0959e6f23192e1bfec07177f31019150ff8",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "C:\\Users\\Wynter\\grip_up\\tools\\auto_tuning\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/auto_tuning/tests",
+        "-q"
+      ],
+      "label": "tooling_contracts",
+      "returncode": 1,
+      "stderr_sha256": "b5332bdcb6cc2eca085285328ed061b1461b12bee82f10830394b55ec27ce71f",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "schema": "metric_offline_tests_v1"
+}

@@ -1,0 +1,1260 @@
+{
+  "all_exact": true,
+  "python": {
+    "architecture": "AMD64",
+    "binary64_bytes": 8,
+    "byteorder": "little",
+    "dependency_lock_sha256": "da2991951fb7a56ad0e108b51e6a09e6aaf28366e49947949585b42ac0f32822",
+    "executable": "C:\\Users\\Wynter\\grip_up\\tools\\auto_tuning\\.venv\\Scripts\\python.exe",
+    "executable_sha256": "3ca806b3c7dc6f967da11546bff3c5f2681eb4e782e8ede6e6c3a9a571efa686",
+    "float_info": "sys.float_info(max=1.7976931348623157e+308, max_exp=1024, max_10_exp=308, min=2.2250738585072014e-308, min_exp=-1021, min_10_exp=-307, dig=15, mant_dig=53, epsilon=2.220446049250313e-16, radix=2, rounds=1)",
+    "locale": [
+      "Portuguese_Portugal",
+      "1252"
+    ],
+    "packages": {
+      "Mako": "1.4.3",
+      "MarkupSafe": "3.0.4",
+      "PyYAML": "6.0.3",
+      "SQLAlchemy": "2.1.5",
+      "alembic": "1.20.0",
+      "colorama": "0.4.6",
+      "colorlog": "6.12.0",
+      "contourpy": "1.4.0",
+      "cycler": "0.12.1",
+      "fonttools": "4.67.0",
+      "kiwisolver": "1.5.1",
+      "matplotlib": "3.10.8",
+      "numpy": "2.5.4",
+      "optuna": "5.0.0",
+      "packaging": "26.3",
+      "pillow": "13.0.0",
+      "pyparsing": "3.3.3",
+      "python-dateutil": "2.9.0.post0",
+      "six": "1.17.0",
+      "tqdm": "4.70.1",
+      "typing_extensions": "4.16.0"
+    },
+    "platform": "Windows-11-10.0.26200-SP0",
+    "pointer_bits": 64,
+    "reducer": {
+      "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+      "id": "ordered_binary64_sequential_v1",
+      "schema": "metric_binary64_audit_v1",
+      "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+    },
+    "sha256": "490e60b644d076302b2db48005c94c4cfc54298b657b81d11649d4c026cf7ff1",
+    "sqlite_version": "3.53.1",
+    "sys_version": "3.13.13 (main, Jun  2 2026, 22:38:31) [MSC v.1944 64 bit (AMD64)]",
+    "version": "3.13.13"
+  },
+  "runs": [
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH_RAW_PARTIAL_NOT_SCORE",
+        "float_hex": "0x1.704b6b9a848f5p-13",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "37d701dc7fc27610ded52f796ff7a86e930edd16efd9604be0441f7ef871606a"
+        },
+        "published_binary64_bits": "3f2704b6b9a848f5",
+        "reason_code": "GROUND_CLEARANCE_NOT_CERTIFIED",
+        "recomputed_binary64_bits": "3f2704b6b9a848f5",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 5,
+        "segment_stream_sha256": "6e8de2b837118ba3b9a2ea1754808c66157664961fdb1a160d0748186673cfa3",
+        "sequence_sha256": "b6c852147b6872f259df7d14454f090212387cc45e9d1ec82bafbe600cdc169e",
+        "status": "INTERRUPTED",
+        "unit": "m",
+        "value": null,
+        "window": {
+          "first_tick": 232,
+          "last_tick": 237,
+          "phase": "POST"
+        }
+      },
+      "run": "asymmetric_pull_clean_v134_r2_60_headless_r7_dc9d7eb3"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH_RAW_PARTIAL_NOT_SCORE",
+        "float_hex": "0x1.be770276a8174p-5",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "893d2e92581630b5f298aea6c6ab6251ffffd0896a3108862c4342f8505de2de"
+        },
+        "published_binary64_bits": "3fabe770276a8174",
+        "reason_code": "NATIVE_GROUND_AUTHORITY_CHANGED_TASK",
+        "recomputed_binary64_bits": "3fabe770276a8174",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 22,
+        "segment_stream_sha256": "f5b8322d504e804233cbd251781b716e69716661bd53b1898670f3644c1ddd1c",
+        "sequence_sha256": "4b2f8fe98f13a5f2e4e9d0d498c131bf330d197a62c7abdfcf0fe7615b8aaef2",
+        "status": "INTERRUPTED",
+        "unit": "m",
+        "value": null,
+        "window": {
+          "first_tick": 242,
+          "last_tick": 264,
+          "phase": "POST"
+        }
+      },
+      "run": "lateral_clean_left_v134_r2_60_headless_r8_89c18cda"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.2b2e9a8f7681ep-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "98481843ef452e654376f2b56e7fc42bededed04b07f0d10b06675849eb64d99"
+        },
+        "published_binary64_bits": "3fc2b2e9a8f7681e",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fc2b2e9a8f7681e",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 120,
+        "segment_stream_sha256": "eb6c9cb4eb9383897b43da8b7d2b78e9b5e4b39474cb8adc99fb545266e7dccb",
+        "sequence_sha256": "02595c52a483ef15adc3b8f604b82066b021d3758be368f18aa1c8c512c91a00",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.14608498335184178,
+        "window": {
+          "first_tick": 425,
+          "last_tick": 545,
+          "phase": "POST"
+        }
+      },
+      "run": "lateral_clean_right_v134_r2_120_headless_r11_1e3858e7"
+    },
+    {
+      "audit": {
+        "audit_result": "TYPED_NULL_NO_AUTHORIZED_WINDOW",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "c90e0ae4c1660917495176f63e916fc98a6d72313d95320db1c9b038e08a697a"
+        },
+        "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 0,
+        "status": "PRECONDITION_NOT_MET",
+        "unit": "m",
+        "value": null,
+        "window": {
+          "first_tick": null,
+          "last_tick": null,
+          "phase": "POST"
+        }
+      },
+      "run": "lateral_clean_right_v134_r2_120_headless_r2_066e78ef"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.2b2e9a8f7681ep-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "8ae4d2bc758fe1bb2e14c38410a4bdf2de010e5b3341f3b98a2f2e9403da6f32"
+        },
+        "published_binary64_bits": "3fc2b2e9a8f7681e",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fc2b2e9a8f7681e",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 120,
+        "segment_stream_sha256": "eb6c9cb4eb9383897b43da8b7d2b78e9b5e4b39474cb8adc99fb545266e7dccb",
+        "sequence_sha256": "dad075843ba7469d36bec963f14b79d839878788c4164e5190296916d2ccd1a4",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.14608498335184178,
+        "window": {
+          "first_tick": 425,
+          "last_tick": 545,
+          "phase": "POST"
+        }
+      },
+      "run": "lateral_clean_right_v134_r2_120_headless_r4_c5a42af1"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH_RAW_PARTIAL_NOT_SCORE",
+        "float_hex": "0x1.4480ae10850adp-12",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "d996e913b5e9579e0a71f634f4813353380d69d9afb7ea992e94a4d0682f2aff"
+        },
+        "published_binary64_bits": "3f34480ae10850ad",
+        "reason_code": "GROUND_CLEARANCE_NOT_CERTIFIED",
+        "recomputed_binary64_bits": "3f34480ae10850ad",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 23,
+        "segment_stream_sha256": "702399c7bef7dbb8cb0037ac5f19dede54253c5c3ec9127df6190d107ca6db66",
+        "sequence_sha256": "32c7899d386f6723308d4831afc4b330902c2289627dae2d76788aa50bdfb46a",
+        "status": "INTERRUPTED",
+        "unit": "m",
+        "value": null,
+        "window": {
+          "first_tick": 425,
+          "last_tick": 448,
+          "phase": "POST"
+        }
+      },
+      "run": "lateral_clean_right_v134_r2_120_headless_r5_f841ce22"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH_RAW_PARTIAL_NOT_SCORE",
+        "float_hex": "0x1.4480ae10850adp-12",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "3115b6165687a0e89cd825b7081f618dd01a50a48caba4a02e2591155111dbbb"
+        },
+        "published_binary64_bits": "3f34480ae10850ad",
+        "reason_code": "GROUND_CLEARANCE_NOT_CERTIFIED",
+        "recomputed_binary64_bits": "3f34480ae10850ad",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 23,
+        "segment_stream_sha256": "702399c7bef7dbb8cb0037ac5f19dede54253c5c3ec9127df6190d107ca6db66",
+        "sequence_sha256": "52265b2c005f2697b24aa31a55e127d76271d87a69550fe0fb284a4c28dd015c",
+        "status": "INTERRUPTED",
+        "unit": "m",
+        "value": null,
+        "window": {
+          "first_tick": 425,
+          "last_tick": 448,
+          "phase": "POST"
+        }
+      },
+      "run": "lateral_clean_right_v134_r2_120_headless_r6_a607b2af"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.2b2e9a8f7681ep-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "6d4db6b3d6dbea1194e36fbe971e3dbefe59855b73cf59458ecd0d674817c9bf"
+        },
+        "published_binary64_bits": "3fc2b2e9a8f7681e",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fc2b2e9a8f7681e",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 120,
+        "segment_stream_sha256": "eb6c9cb4eb9383897b43da8b7d2b78e9b5e4b39474cb8adc99fb545266e7dccb",
+        "sequence_sha256": "61e9f2f387d6cc9db4a36c81ff827e7fed170c4d788e09c63d44c16c48528fd8",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.14608498335184178,
+        "window": {
+          "first_tick": 425,
+          "last_tick": 545,
+          "phase": "POST"
+        }
+      },
+      "run": "lateral_clean_right_v134_r2_120_headless_r7_daa8209d"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.2b2e9a8f7681ep-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "14180257a192074e39bc214f60326e9601d29c24957e7a7959c9f200c6074074"
+        },
+        "published_binary64_bits": "3fc2b2e9a8f7681e",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fc2b2e9a8f7681e",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 120,
+        "segment_stream_sha256": "eb6c9cb4eb9383897b43da8b7d2b78e9b5e4b39474cb8adc99fb545266e7dccb",
+        "sequence_sha256": "1393d79255cdaab7c77ecc9266bb3220d4244af1ae5149b94d00b4a773879707",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.14608498335184178,
+        "window": {
+          "first_tick": 425,
+          "last_tick": 545,
+          "phase": "POST"
+        }
+      },
+      "run": "lateral_clean_right_v134_r2_120_headless_r9_678c3d86"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.2b2e9a8f7681ep-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "1bfdb330bfdfebfa7f5ae81776a1fa1c38599914ef96e3f289dc1d042cb2cde4"
+        },
+        "published_binary64_bits": "3fc2b2e9a8f7681e",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fc2b2e9a8f7681e",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 120,
+        "segment_stream_sha256": "eb6c9cb4eb9383897b43da8b7d2b78e9b5e4b39474cb8adc99fb545266e7dccb",
+        "sequence_sha256": "3c37d03ae0faab62c91823a9930206103c1d27344271cd595c44914adb4810d5",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.14608498335184178,
+        "window": {
+          "first_tick": 425,
+          "last_tick": 545,
+          "phase": "POST"
+        }
+      },
+      "run": "lateral_clean_right_v134_r2_120_rendered_scripted_r10_d61bf88c"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.2b2e9a8f7681ep-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "c286d57db99adc251c3d891b5d6e9c6eec49d60ddbc85a0ca52aa9494b5332f4"
+        },
+        "published_binary64_bits": "3fc2b2e9a8f7681e",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fc2b2e9a8f7681e",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 120,
+        "segment_stream_sha256": "eb6c9cb4eb9383897b43da8b7d2b78e9b5e4b39474cb8adc99fb545266e7dccb",
+        "sequence_sha256": "ea032ccc67176d6417e7b385b76cfdea3456238bea3a0bfd6a6dc1007a3cf276",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.14608498335184178,
+        "window": {
+          "first_tick": 425,
+          "last_tick": 545,
+          "phase": "POST"
+        }
+      },
+      "run": "lateral_clean_right_v134_r2_120_rendered_scripted_r12_40d865e1"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.2b2e9a8f7681ep-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "93e7a817b1460708c9a763605f86e19577dd9d253ce6b13181f52a75ed660388"
+        },
+        "published_binary64_bits": "3fc2b2e9a8f7681e",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fc2b2e9a8f7681e",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 120,
+        "segment_stream_sha256": "eb6c9cb4eb9383897b43da8b7d2b78e9b5e4b39474cb8adc99fb545266e7dccb",
+        "sequence_sha256": "d1e2f1030b244a57c4b62f90ada3c50f9903322673a8276cb865f33a22acf667",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.14608498335184178,
+        "window": {
+          "first_tick": 425,
+          "last_tick": 545,
+          "phase": "POST"
+        }
+      },
+      "run": "lateral_clean_right_v134_r2_120_rendered_scripted_r8_51a5e51f"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.27c76722fd6d4p-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "0520091b5442c820942164ec2b6a0142d1831171dbdf0621e4c2f24ea4e961bd"
+        },
+        "published_binary64_bits": "3fc27c76722fd6d4",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fc27c76722fd6d4",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 60,
+        "segment_stream_sha256": "6671ac80d5eab24cfaa870186ca396da111a22a1fda4023160b941ff3903cf19",
+        "sequence_sha256": "650dd744d999586a58db59db54c9e4ba5185835e698d8f91bc5ba8faf7ee0bca",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.1444232995560727,
+        "window": {
+          "first_tick": 236,
+          "last_tick": 296,
+          "phase": "POST"
+        }
+      },
+      "run": "lateral_clean_right_v134_r2_60_headless_r19_b8805f1b"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.27c76722fd6d4p-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "624b91de62fce8096b39dca151c1a0d6a4c7fef9e7e99ef6460ff05cc1fb73dd"
+        },
+        "published_binary64_bits": "3fc27c76722fd6d4",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fc27c76722fd6d4",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 60,
+        "segment_stream_sha256": "6671ac80d5eab24cfaa870186ca396da111a22a1fda4023160b941ff3903cf19",
+        "sequence_sha256": "3af6e268b69d228d3c16ba85606de9d345593850e91fd6640f2d1047e2b94cb8",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.1444232995560727,
+        "window": {
+          "first_tick": 236,
+          "last_tick": 296,
+          "phase": "POST"
+        }
+      },
+      "run": "lateral_clean_right_v134_r2_60_headless_r21_94fffbd5"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.27c76722fd6d4p-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "ce9a1d04af58bef3adbbd14a7e45a43db34920ca4ebe120c12a003206ba48074"
+        },
+        "published_binary64_bits": "3fc27c76722fd6d4",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fc27c76722fd6d4",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 60,
+        "segment_stream_sha256": "6671ac80d5eab24cfaa870186ca396da111a22a1fda4023160b941ff3903cf19",
+        "sequence_sha256": "52e311e0a7306a731f69194403d1c58eb91e11525e6ede2d01f0728a2be7ec4f",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.1444232995560727,
+        "window": {
+          "first_tick": 236,
+          "last_tick": 296,
+          "phase": "POST"
+        }
+      },
+      "run": "lateral_clean_right_v134_r2_60_headless_r23_97461562"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.27c76722fd6d4p-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "e028fa3dba0e198e35344d3203740c5760f06b48d6fc65d1f9856353f2348f96"
+        },
+        "published_binary64_bits": "3fc27c76722fd6d4",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fc27c76722fd6d4",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 60,
+        "segment_stream_sha256": "6671ac80d5eab24cfaa870186ca396da111a22a1fda4023160b941ff3903cf19",
+        "sequence_sha256": "802244daa500044f0f8d055813c39a1ecee0ae872566e5f6a5d51e55c9a2bb38",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.1444232995560727,
+        "window": {
+          "first_tick": 236,
+          "last_tick": 296,
+          "phase": "POST"
+        }
+      },
+      "run": "lateral_clean_right_v134_r2_60_headless_r6_b161609a"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.27c76722fd6d4p-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "8a44003f1dce00aaaa30b18a40a931ee22092ed3bc7f11b1543e248977044673"
+        },
+        "published_binary64_bits": "3fc27c76722fd6d4",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fc27c76722fd6d4",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 60,
+        "segment_stream_sha256": "6671ac80d5eab24cfaa870186ca396da111a22a1fda4023160b941ff3903cf19",
+        "sequence_sha256": "f7b0f48bc40b76928f09e6c2dcf408d2e823a22a7840548e7bb5fa8eee8b802f",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.1444232995560727,
+        "window": {
+          "first_tick": 236,
+          "last_tick": 296,
+          "phase": "POST"
+        }
+      },
+      "run": "lateral_clean_right_v134_r2_60_rendered_scripted_r20_5be717f9"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.27c76722fd6d4p-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "64a4995d89bd6abb88edc0ccc573a40fc311014b43561559370fab1833cfc6b4"
+        },
+        "published_binary64_bits": "3fc27c76722fd6d4",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fc27c76722fd6d4",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 60,
+        "segment_stream_sha256": "6671ac80d5eab24cfaa870186ca396da111a22a1fda4023160b941ff3903cf19",
+        "sequence_sha256": "58f51e04b79323e00042fe80475655b2a69e21d296986fedf113999a039c677e",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.1444232995560727,
+        "window": {
+          "first_tick": 236,
+          "last_tick": 296,
+          "phase": "POST"
+        }
+      },
+      "run": "lateral_clean_right_v134_r2_60_rendered_scripted_r22_2ec31410"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.27c76722fd6d4p-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "f96f7939849b1cabf9db6dc3e51baf9ef0a549ce9399bc11ce2dbf9b1e69f018"
+        },
+        "published_binary64_bits": "3fc27c76722fd6d4",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fc27c76722fd6d4",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 60,
+        "segment_stream_sha256": "6671ac80d5eab24cfaa870186ca396da111a22a1fda4023160b941ff3903cf19",
+        "sequence_sha256": "de8c1885c41196a4507b09427aceea817a24a740f23c3615eb3e22cb56d5f03b",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.1444232995560727,
+        "window": {
+          "first_tick": 236,
+          "last_tick": 296,
+          "phase": "POST"
+        }
+      },
+      "run": "lateral_clean_right_v134_r2_60_rendered_scripted_r24_2696e89f"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.b388500656588p-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "f1f229a8f870fbba0deb6fbaef6dd894e52e9608331ebec1b59402093b23b846"
+        },
+        "published_binary64_bits": "3fcb388500656588",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fcb388500656588",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 120,
+        "segment_stream_sha256": "156323a1f1686e81d62310d600464bdf181d0a6d3c82846664ffcc926ba4cffc",
+        "sequence_sha256": "66150de601caf61cf9774f4ac6e1f9698b5046f370827e37df4d2cce5966bd02",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.2126623393949496,
+        "window": {
+          "first_tick": 453,
+          "last_tick": 573,
+          "phase": "POST"
+        }
+      },
+      "run": "vertical_novel_v135_r1_120_headless_r7_7d6e7b0a"
+    },
+    {
+      "audit": {
+        "audit_result": "TYPED_NULL_NO_AUTHORIZED_WINDOW",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "1c48d5d9ed327f7c67ddea9f34ebe916c25ddc6cea3d168aadf3bbbf4acb65b7"
+        },
+        "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 0,
+        "status": "PRECONDITION_NOT_MET",
+        "unit": "m",
+        "value": null,
+        "window": {
+          "first_tick": null,
+          "last_tick": null,
+          "phase": "POST"
+        }
+      },
+      "run": "vertical_pull_clean_v134_r2_120_headless_r1_0ddeb21a"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.b59de8612e277p-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "f88f69a9766e08a21058e189c82913be405784222d75d586a13c93bc5b3afab3"
+        },
+        "published_binary64_bits": "3fcb59de8612e277",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fcb59de8612e277",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 120,
+        "segment_stream_sha256": "8a8526be52ff99c3d692572e2719fe2aadcb2772fa8afdcbe2b243939f159c90",
+        "sequence_sha256": "922d6879af95497389681692e9701fafa349599eac6cbb1a9fb42a259af363b8",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.2136800913483687,
+        "window": {
+          "first_tick": 425,
+          "last_tick": 545,
+          "phase": "POST"
+        }
+      },
+      "run": "vertical_pull_clean_v134_r2_120_headless_r1_9d21a7be"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.b59de8612e277p-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "92ee4a6d1b4bf70774d26e17a1dcb1056979eb0fcf35d9130f212dd4b0168c5a"
+        },
+        "published_binary64_bits": "3fcb59de8612e277",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fcb59de8612e277",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 120,
+        "segment_stream_sha256": "8a8526be52ff99c3d692572e2719fe2aadcb2772fa8afdcbe2b243939f159c90",
+        "sequence_sha256": "5e0a774d7e29b1f3d6dd6dcd89ff1e76df1821c3a16f59f3d3678818dd9ebb52",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.2136800913483687,
+        "window": {
+          "first_tick": 425,
+          "last_tick": 545,
+          "phase": "POST"
+        }
+      },
+      "run": "vertical_pull_clean_v134_r2_120_headless_r3_2c0249d1"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.b59de8612e277p-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "946244bd7f5d964d0fcd831a3d838c700b7fabbd476487e539cf7c6882d1f87a"
+        },
+        "published_binary64_bits": "3fcb59de8612e277",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fcb59de8612e277",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 120,
+        "segment_stream_sha256": "8a8526be52ff99c3d692572e2719fe2aadcb2772fa8afdcbe2b243939f159c90",
+        "sequence_sha256": "ffa6845f2edf51bf66c207504380375aa4aa9154ea094bf4dd8530c1ffc317d6",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.2136800913483687,
+        "window": {
+          "first_tick": 425,
+          "last_tick": 545,
+          "phase": "POST"
+        }
+      },
+      "run": "vertical_pull_clean_v134_r2_120_headless_r3_49b31d59"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.0bef8c185e775p-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "50bff1d3290cea1e177e58b2dacad0f7bb5fcbe2c0c8817503ed669606784dad"
+        },
+        "published_binary64_bits": "3fc0bef8c185e775",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fc0bef8c185e775",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 120,
+        "segment_stream_sha256": "9b11416397677dc7df461d691fd7fa203fcc2576c6c43ff2548d9da6fd91f6a1",
+        "sequence_sha256": "c5651734ea308aa4a2a5e1c4403da63b8950114aaad81aacb42cdc29f12c8988",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.13082799386375724,
+        "window": {
+          "first_tick": 425,
+          "last_tick": 545,
+          "phase": "POST"
+        }
+      },
+      "run": "vertical_pull_clean_v134_r2_120_headless_r3_b4a4e938"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.cbe1b2b09d8a6p-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "3f9248d21cb57862c029e7b20da3e104fc644067a8bb51f012beaaca5cdd7e7b"
+        },
+        "published_binary64_bits": "3fccbe1b2b09d8a6",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fccbe1b2b09d8a6",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 120,
+        "segment_stream_sha256": "2ef81c7306f293e5d7e22a7d9ad72c30997b9959920dca024e759ba20e8ca104",
+        "sequence_sha256": "84e44a8e2475e047f6d0282107d1bb4f6e6c74ee4bef4d488f4afedf0870cb23",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.2245515785359135,
+        "window": {
+          "first_tick": 425,
+          "last_tick": 545,
+          "phase": "POST"
+        }
+      },
+      "run": "vertical_pull_clean_v134_r2_120_headless_r3_ff1cc7a7"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.0bef8c185e775p-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "edacc3140b9484de098b81145a974bed0b36b6c6e1d7d1003c5ef3c4423c3ff1"
+        },
+        "published_binary64_bits": "3fc0bef8c185e775",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fc0bef8c185e775",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 120,
+        "segment_stream_sha256": "9b11416397677dc7df461d691fd7fa203fcc2576c6c43ff2548d9da6fd91f6a1",
+        "sequence_sha256": "abb2d958be2e9d25673170f639a7d89bd0135819335f658038e2e98f52461cad",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.13082799386375724,
+        "window": {
+          "first_tick": 425,
+          "last_tick": 545,
+          "phase": "POST"
+        }
+      },
+      "run": "vertical_pull_clean_v134_r2_120_headless_r4_36eb426a"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.b59de8612e277p-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "876ab7a2d64b346fd3e437bf53d21e954675f3da1519b50afd82d139439bc8ac"
+        },
+        "published_binary64_bits": "3fcb59de8612e277",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fcb59de8612e277",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 120,
+        "segment_stream_sha256": "8a8526be52ff99c3d692572e2719fe2aadcb2772fa8afdcbe2b243939f159c90",
+        "sequence_sha256": "a6528d310c7c22951e81bc4171d02bf734b25aec6d23da537b522335dd61ab43",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.2136800913483687,
+        "window": {
+          "first_tick": 425,
+          "last_tick": 545,
+          "phase": "POST"
+        }
+      },
+      "run": "vertical_pull_clean_v134_r2_120_headless_r5_199c141a"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.b59de8612e277p-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "573468c78265e338b153b8a4ea27fa01d488fce07fc4346a10fd60ffba76593f"
+        },
+        "published_binary64_bits": "3fcb59de8612e277",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fcb59de8612e277",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 120,
+        "segment_stream_sha256": "8a8526be52ff99c3d692572e2719fe2aadcb2772fa8afdcbe2b243939f159c90",
+        "sequence_sha256": "28d116bd805d359d7bfc13a557a2c9620eaf8161818f766e1fb2c843e5a33685",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.2136800913483687,
+        "window": {
+          "first_tick": 425,
+          "last_tick": 545,
+          "phase": "POST"
+        }
+      },
+      "run": "vertical_pull_clean_v134_r2_120_rendered_scripted_r2_c8497f68"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.b59de8612e277p-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "1ee6cd6c538b5a27bdedca32b0b48d5cfb02dfdca826b058b890eb61b873254c"
+        },
+        "published_binary64_bits": "3fcb59de8612e277",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fcb59de8612e277",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 120,
+        "segment_stream_sha256": "8a8526be52ff99c3d692572e2719fe2aadcb2772fa8afdcbe2b243939f159c90",
+        "sequence_sha256": "f696376c9368f44b236f1db794b40eb65c5c391b0891ba4b4aaa4672abb5f8fc",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.2136800913483687,
+        "window": {
+          "first_tick": 425,
+          "last_tick": 545,
+          "phase": "POST"
+        }
+      },
+      "run": "vertical_pull_clean_v134_r2_120_rendered_scripted_r4_e93a148b"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.b59de8612e277p-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "5732ed834955370172c8c5662efca1dd25ebc95f13f53e3d8ca1dbc6f6af1691"
+        },
+        "published_binary64_bits": "3fcb59de8612e277",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fcb59de8612e277",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 120,
+        "segment_stream_sha256": "8a8526be52ff99c3d692572e2719fe2aadcb2772fa8afdcbe2b243939f159c90",
+        "sequence_sha256": "ba1a057930318af0cecbad1ba614d7b17adde0f7ef659f58bea5257434318d54",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.2136800913483687,
+        "window": {
+          "first_tick": 425,
+          "last_tick": 545,
+          "phase": "POST"
+        }
+      },
+      "run": "vertical_pull_clean_v134_r2_120_rendered_scripted_r6_29a8890a"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.b7291b79cb2d2p-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "40453394d254c261d313c55d153df8aa399fb9d794ce55371d69d57257c702d7"
+        },
+        "published_binary64_bits": "3fcb7291b79cb2d2",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fcb7291b79cb2d2",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 60,
+        "segment_stream_sha256": "cd1e642ced4d6f69fb89fc0259128e514ffeeaccf7ab051650ececc8f53f0798",
+        "sequence_sha256": "3c2e7ebdda2ed8333e7734c24062cbe55b224d7e2a115103584fad5ca3740594",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.21443387475428338,
+        "window": {
+          "first_tick": 236,
+          "last_tick": 296,
+          "phase": "POST"
+        }
+      },
+      "run": "vertical_pull_clean_v134_r2_60_headless_r13_ae2b1010"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.b7291b79cb2d2p-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "bb0f85857a58a1f8f672fb93f0b4c0410fccb7253a88613f4b0aa244aa4de136"
+        },
+        "published_binary64_bits": "3fcb7291b79cb2d2",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fcb7291b79cb2d2",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 60,
+        "segment_stream_sha256": "cd1e642ced4d6f69fb89fc0259128e514ffeeaccf7ab051650ececc8f53f0798",
+        "sequence_sha256": "c6d161ee427a81480b946f35c7c37413525107372cf5c887fb9e5eaabed6e6fb",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.21443387475428338,
+        "window": {
+          "first_tick": 236,
+          "last_tick": 296,
+          "phase": "POST"
+        }
+      },
+      "run": "vertical_pull_clean_v134_r2_60_headless_r15_15d06c94"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.b7291b79cb2d2p-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "954fd3d41d303d511db756068c7b43ad05132e54c9dc06318adb2c91ec7b6530"
+        },
+        "published_binary64_bits": "3fcb7291b79cb2d2",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fcb7291b79cb2d2",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 60,
+        "segment_stream_sha256": "cd1e642ced4d6f69fb89fc0259128e514ffeeaccf7ab051650ececc8f53f0798",
+        "sequence_sha256": "fa223464d4a8791b57687701679f704900c2b8ee96bd319dfab3eaa9887b504f",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.21443387475428338,
+        "window": {
+          "first_tick": 236,
+          "last_tick": 296,
+          "phase": "POST"
+        }
+      },
+      "run": "vertical_pull_clean_v134_r2_60_headless_r17_c4698d45"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.b7291b79cb2d2p-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "980630f39b8e05960380fccfd0884f6cec9f9e46dcc6bc59c8aa061d1abfb6b3"
+        },
+        "published_binary64_bits": "3fcb7291b79cb2d2",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fcb7291b79cb2d2",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 60,
+        "segment_stream_sha256": "cd1e642ced4d6f69fb89fc0259128e514ffeeaccf7ab051650ececc8f53f0798",
+        "sequence_sha256": "195cd73c4aaa2dc39e0e680333d821542d94c6c70ee45b004c4c4fd1427c291f",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.21443387475428338,
+        "window": {
+          "first_tick": 236,
+          "last_tick": 296,
+          "phase": "POST"
+        }
+      },
+      "run": "vertical_pull_clean_v134_r2_60_headless_r5_0c7c53ec"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.b7291b79cb2d2p-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "3c166329e6c4bb7997cc233264ca923e844acd2e6ed97b21812e64a8874f86df"
+        },
+        "published_binary64_bits": "3fcb7291b79cb2d2",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fcb7291b79cb2d2",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 60,
+        "segment_stream_sha256": "cd1e642ced4d6f69fb89fc0259128e514ffeeaccf7ab051650ececc8f53f0798",
+        "sequence_sha256": "44a834a1dfa56e46f6446a935c2638ead21c20b94bf933971303918cf0ebe7c4",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.21443387475428338,
+        "window": {
+          "first_tick": 236,
+          "last_tick": 296,
+          "phase": "POST"
+        }
+      },
+      "run": "vertical_pull_clean_v134_r2_60_rendered_scripted_r14_2aa50ba3"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.b7291b79cb2d2p-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "13bbbeb3c42ee41c702617fcc9a2071f25a7c9b81927839173129c76faffb27c"
+        },
+        "published_binary64_bits": "3fcb7291b79cb2d2",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fcb7291b79cb2d2",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 60,
+        "segment_stream_sha256": "cd1e642ced4d6f69fb89fc0259128e514ffeeaccf7ab051650ececc8f53f0798",
+        "sequence_sha256": "ec5fb1a022c67c7e2797ef0ea304882871ca3d1cc81a03fe332f041d718f70ad",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.21443387475428338,
+        "window": {
+          "first_tick": 236,
+          "last_tick": 296,
+          "phase": "POST"
+        }
+      },
+      "run": "vertical_pull_clean_v134_r2_60_rendered_scripted_r16_058e39a7"
+    },
+    {
+      "audit": {
+        "audit_result": "EXACT_MATCH",
+        "float_hex": "0x1.b7291b79cb2d2p-3",
+        "metric": "path_3d_m",
+        "provenance": {
+          "historical_raw": "070447be1ee9230b1efff51f57960a2f62ea41313ad9d9a1a5def0dc9fa5f5d7"
+        },
+        "published_binary64_bits": "3fcb7291b79cb2d2",
+        "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+        "recomputed_binary64_bits": "3fcb7291b79cb2d2",
+        "reducer_contract": {
+          "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+          "id": "ordered_binary64_sequential_v1",
+          "schema": "metric_binary64_audit_v1",
+          "source_sha256": "816d92d8b839a00e4143bfddac19b9eabdcfc53371dc2f0e838f3b306a26a9d2"
+        },
+        "schema": "metric_binary64_audit_v1",
+        "segment_count": 60,
+        "segment_stream_sha256": "cd1e642ced4d6f69fb89fc0259128e514ffeeaccf7ab051650ececc8f53f0798",
+        "sequence_sha256": "4494f11e3343837a1dfa19595a2b275282a590e699c132739244976ec6e76135",
+        "status": "MEASURED",
+        "unit": "m",
+        "value": 0.21443387475428338,
+        "window": {
+          "first_tick": 236,
+          "last_tick": 296,
+          "phase": "POST"
+        }
+      },
+      "run": "vertical_pull_clean_v134_r2_60_rendered_scripted_r18_6e7ec196"
+    }
+  ],
+  "scope": "OFFLINE_IMMUTABLE_R4_NO_NEW_PHYSICS_NO_REINTERPRETATION_OF_OLD_DECISION"
+}

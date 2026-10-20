@@ -1,0 +1,28 @@
+[I 2026-10-21 00:09:53,603] A new study created in RDB with name: synthetic_api_contract
+[I 2026-10-21 00:09:54,018] A new study created in RDB with name: synthetic_program_contract
+C:\Users\Wynter\grip_up\tools\auto_tuning\optimize.py:101: ExperimentalWarning: optuna.study.study.Study.set_metric_names is experimental (supported from v3.2.0). The interface can change in the future.
+  study.set_metric_names(list(AXES))
+======================================================================
+ERROR: test_additive_study_plan_and_resume_identity (test_deterministic_campaign.BudgetsAndIdentity.test_additive_study_plan_and_resume_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Wynter\grip_up\tools\auto_tuning\tests\test_deterministic_campaign.py", line 93, in test_additive_study_plan_and_resume_identity
+    new=ProposalStudy(Path(td),identity,registry,q,plan=dc.PLAN)
+  File "C:\Users\Wynter\grip_up\tools\auto_tuning\minimal_v135\search.py", line 241, in __init__
+    raise ValueError("invalid frozen proposal allocation")
+ValueError: invalid frozen proposal allocation
+
+======================================================================
+ERROR: test_ten_four_cell_reservations_max40_nonrefundable (test_deterministic_campaign.BudgetsAndIdentity.test_ten_four_cell_reservations_max40_nonrefundable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Wynter\grip_up\tools\auto_tuning\tests\test_deterministic_campaign.py", line 83, in test_ten_four_cell_reservations_max40_nonrefundable
+    r=dc.reserve(rows,str(i));self.assertEqual(len(r['cells']),4)
+  File "C:\Users\Wynter\grip_up\tools\auto_tuning\minimal_v135\deterministic_campaign.py", line 257, in reserve
+    raise ValueError('PROPOSAL_OR_PROCESS_BUDGET_EXHAUSTED')
+ValueError: PROPOSAL_OR_PROCESS_BUDGET_EXHAUSTED
+
+----------------------------------------------------------------------
+Ran 92 tests in 2.943s
+
+FAILED (errors=2)

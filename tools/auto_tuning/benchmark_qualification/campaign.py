@@ -9,6 +9,7 @@ from candidate_schema import baseline,parameter_resource
 from comparison import compare_required
 from metrics import summarize
 from projection_comparison import load_picks
+from metric_binary64 import norm3
 
 DOC=ROOT/'docs/validation/auto_tuning/benchmark_v133'
 BASE=ROOT/'builds/eval_virtual_cursor/benchmark_v133_r1'
@@ -95,7 +96,7 @@ def execute(scenario,hz,mode,repeat,group,tape_path=None,probe=True,negative='')
         for i,row in enumerate(ticks,1):
             if row['tick']!=i or row['sample_phase']!='post_control' or abs(row['delta_s']-1/hz)>1e-7:raise ValueError('TICK_PHASE_CLOCK')
             if row['canonical_input']['requested']!=row['canonical_input']['effective']:raise ValueError('REQUEST_EFFECTIVE_INPUT_MISMATCH')
-            n=lambda v:math.sqrt(sum(x*x for x in v))
+            n=norm3
             if row['body']['mass_kg']!=12 or any(h['reach_m']!=.65708 for h in row['hands']):raise ValueError('PROTECTED_PHYSICS_VALUES')
             if any(h['state'] not in ['ATTACHED','SLIPPING'] and n(h['force_n'])!=0 for h in row['hands']):raise ValueError('FREE_PENDING_HAND_FORCE')
             f=row['force_budget']

@@ -1,0 +1,2335 @@
+{
+  "godot_bits_be": "3fccbe1b2b09d8a6",
+  "godot_published": 0.2245515785359135,
+  "historical_first_offline_prefix_tick": 439,
+  "historical_legacy_313_bits_be": "3fccbe1b2b09d8a7",
+  "original_segment_le_sha256": "2ef81c7306f293e5d7e22a7d9ad72c30997b9959920dca024e759ba20e8ca104",
+  "payload": {
+    "first_tick": 425,
+    "last_tick": 545,
+    "phase": "POST",
+    "provenance": {
+      "godot_formula_file": "features/evaluator_virtual_cursor/scripts/benchmark_driver.gd",
+      "godot_formula_sha256": "f8799d9c3b1ede93e384a251b300046b9975d97833bb55171e9b8888a3a19c72",
+      "manifest_sha256": "b2f6ad9611d222880162173d83d0e5f61d9de2cdce63f9e603f41cccd83fb44b",
+      "raw_audit_path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\minimal_v135_r4\\attempts\\vertical_pull_clean_v134_r2_120_headless_r3_ff1cc7a7\\benchmark_audit.json",
+      "raw_audit_sha256": "3f9248d21cb57862c029e7b20da3e104fc644067a8bb51f012beaaca5cdd7e7b",
+      "raw_runtime_sha256": "77776d2b1dddf19d934386805a15e1a979f1e40f5e6910bd8ee9840cece9afc6",
+      "sampling": "actual direct state COM: post-control before next integration",
+      "source_snapshot_sha256": "cbe93f29aa2f6e47e4aa3fd784bbc1055cfa36bacaa385f7e07baa2bc262d54d"
+    },
+    "reducer_contract": "ordered_binary64_sequential_v1",
+    "schema": "metric_binary64_audit_v1",
+    "segments": [
+      {
+        "bits_be": "3f317447f262c4dd",
+        "float_hex": "0x1.17447f262c4ddp-12",
+        "phase": "POST",
+        "tick": 426,
+        "value": 0.00026633030428076053
+      },
+      {
+        "bits_be": "3f30d0c8632fba7f",
+        "float_hex": "0x1.0d0c8632fba7fp-12",
+        "phase": "POST",
+        "tick": 427,
+        "value": 0.0002565850474515532
+      },
+      {
+        "bits_be": "3f302e0a4dfc78a9",
+        "float_hex": "0x1.02e0a4dfc78a9p-12",
+        "phase": "POST",
+        "tick": 428,
+        "value": 0.0002468848378941549
+      },
+      {
+        "bits_be": "3f2f013b661ea339",
+        "float_hex": "0x1.f013b661ea339p-13",
+        "phase": "POST",
+        "tick": 429,
+        "value": 0.00023654794773377856
+      },
+      {
+        "bits_be": "3f2de66f975e4f1d",
+        "float_hex": "0x1.de66f975e4f1dp-13",
+        "phase": "POST",
+        "tick": 430,
+        "value": 0.0002281199664905192
+      },
+      {
+        "bits_be": "3f2d346c96f9d741",
+        "float_hex": "0x1.d346c96f9d741p-13",
+        "phase": "POST",
+        "tick": 431,
+        "value": 0.00022281480368107658
+      },
+      {
+        "bits_be": "3f2d2000fee6b66d",
+        "float_hex": "0x1.d2000fee6b66dp-13",
+        "phase": "POST",
+        "tick": 432,
+        "value": 0.00022220623163831128
+      },
+      {
+        "bits_be": "3f2dbd8f07b3b52a",
+        "float_hex": "0x1.dbd8f07b3b52ap-13",
+        "phase": "POST",
+        "tick": 433,
+        "value": 0.00022690173123100207
+      },
+      {
+        "bits_be": "3f2f46ab6b963577",
+        "float_hex": "0x1.f46ab6b963577p-13",
+        "phase": "POST",
+        "tick": 434,
+        "value": 0.00023861734898071214
+      },
+      {
+        "bits_be": "3f3119e8e2d91b79",
+        "float_hex": "0x1.119e8e2d91b79p-12",
+        "phase": "POST",
+        "tick": 435,
+        "value": 0.0002609437532083352
+      },
+      {
+        "bits_be": "3f333a30ca151b2a",
+        "float_hex": "0x1.33a30ca151b2ap-12",
+        "phase": "POST",
+        "tick": 436,
+        "value": 0.00029338542124828176
+      },
+      {
+        "bits_be": "3f36056e9c0c4be5",
+        "float_hex": "0x1.6056e9c0c4be5p-12",
+        "phase": "POST",
+        "tick": 437,
+        "value": 0.00033601713589453817
+      },
+      {
+        "bits_be": "3f3980abe68a6567",
+        "float_hex": "0x1.980abe68a6567p-12",
+        "phase": "POST",
+        "tick": 438,
+        "value": 0.00038913914480927795
+      },
+      {
+        "bits_be": "3f3d8d26c60468dd",
+        "float_hex": "0x1.d8d26c60468ddp-12",
+        "phase": "POST",
+        "tick": 439,
+        "value": 0.000450918165385906
+      },
+      {
+        "bits_be": "3f410b6753adf584",
+        "float_hex": "0x1.10b6753adf584p-11",
+        "phase": "POST",
+        "tick": 440,
+        "value": 0.0005201582456348251
+      },
+      {
+        "bits_be": "3f4381a2ac9f6150",
+        "float_hex": "0x1.381a2ac9f6150p-11",
+        "phase": "POST",
+        "tick": 441,
+        "value": 0.000595287733854236
+      },
+      {
+        "bits_be": "3f46226bac23361a",
+        "float_hex": "0x1.6226bac23361ap-11",
+        "phase": "POST",
+        "tick": 442,
+        "value": 0.0006754899734688375
+      },
+      {
+        "bits_be": "3f490086d9f594fd",
+        "float_hex": "0x1.90086d9f594fdp-11",
+        "phase": "POST",
+        "tick": 443,
+        "value": 0.0007630022482031648
+      },
+      {
+        "bits_be": "3f4bec295a0f8211",
+        "float_hex": "0x1.bec295a0f8211p-11",
+        "phase": "POST",
+        "tick": 444,
+        "value": 0.0008521272576410018
+      },
+      {
+        "bits_be": "3f4eded5531c63a6",
+        "float_hex": "0x1.eded5531c63a6p-11",
+        "phase": "POST",
+        "tick": 445,
+        "value": 0.0009420911430623082
+      },
+      {
+        "bits_be": "3f50f8cfc6a50b0c",
+        "float_hex": "0x1.0f8cfc6a50b0cp-10",
+        "phase": "POST",
+        "tick": 446,
+        "value": 0.001035883814055341
+      },
+      {
+        "bits_be": "3f527b60d3200191",
+        "float_hex": "0x1.27b60d3200191p-10",
+        "phase": "POST",
+        "tick": 447,
+        "value": 0.0011280484727650179
+      },
+      {
+        "bits_be": "3f5401817e6d4320",
+        "float_hex": "0x1.401817e6d4320p-10",
+        "phase": "POST",
+        "tick": 448,
+        "value": 0.001221062144129266
+      },
+      {
+        "bits_be": "3f55811cdf788b62",
+        "float_hex": "0x1.5811cdf788b62p-10",
+        "phase": "POST",
+        "tick": 449,
+        "value": 0.0013125211679685046
+      },
+      {
+        "bits_be": "3f56fdc64169b8ea",
+        "float_hex": "0x1.6fdc64169b8eap-10",
+        "phase": "POST",
+        "tick": 450,
+        "value": 0.0014032779778534962
+      },
+      {
+        "bits_be": "3f5872c460e5a519",
+        "float_hex": "0x1.872c460e5a519p-10",
+        "phase": "POST",
+        "tick": 451,
+        "value": 0.0014922063597516187
+      },
+      {
+        "bits_be": "3f59e00684e0f4e1",
+        "float_hex": "0x1.9e00684e0f4e1p-10",
+        "phase": "POST",
+        "tick": 452,
+        "value": 0.0015792907393142252
+      },
+      {
+        "bits_be": "3f5b44f2d5e0254b",
+        "float_hex": "0x1.b44f2d5e0254bp-10",
+        "phase": "POST",
+        "tick": 453,
+        "value": 0.0016643878402667507
+      },
+      {
+        "bits_be": "3f5ca075b9c58803",
+        "float_hex": "0x1.ca075b9c58803p-10",
+        "phase": "POST",
+        "tick": 454,
+        "value": 0.0017472409882306479
+      },
+      {
+        "bits_be": "3f5df3877105e742",
+        "float_hex": "0x1.df3877105e742p-10",
+        "phase": "POST",
+        "tick": 455,
+        "value": 0.0018280813856947496
+      },
+      {
+        "bits_be": "3f5f3b89e7b350aa",
+        "float_hex": "0x1.f3b89e7b350aap-10",
+        "phase": "POST",
+        "tick": 456,
+        "value": 0.0019062849740310397
+      },
+      {
+        "bits_be": "3f603d3c5a09ef7c",
+        "float_hex": "0x1.03d3c5a09ef7cp-9",
+        "phase": "POST",
+        "tick": 457,
+        "value": 0.0019823244804779133
+      },
+      {
+        "bits_be": "3f60d7e6cfba9d03",
+        "float_hex": "0x1.0d7e6cfba9d03p-9",
+        "phase": "POST",
+        "tick": 458,
+        "value": 0.002056074908825091
+      },
+      {
+        "bits_be": "3f616b08aa4ff8ee",
+        "float_hex": "0x1.16b08aa4ff8eep-9",
+        "phase": "POST",
+        "tick": 459,
+        "value": 0.0021262330287746744
+      },
+      {
+        "bits_be": "3f61f3e62b07985a",
+        "float_hex": "0x1.1f3e62b07985ap-9",
+        "phase": "POST",
+        "tick": 460,
+        "value": 0.0021914954634097263
+      },
+      {
+        "bits_be": "3f627100124ac008",
+        "float_hex": "0x1.27100124ac008p-9",
+        "phase": "POST",
+        "tick": 461,
+        "value": 0.0022511483569687164
+      },
+      {
+        "bits_be": "3f62e01845dcb5ec",
+        "float_hex": "0x1.2e01845dcb5ecp-9",
+        "phase": "POST",
+        "tick": 462,
+        "value": 0.0023041223602351304
+      },
+      {
+        "bits_be": "3f63402cfd9f65f9",
+        "float_hex": "0x1.3402cfd9f65f9p-9",
+        "phase": "POST",
+        "tick": 463,
+        "value": 0.0023499373173592156
+      },
+      {
+        "bits_be": "3f6390bc26099cf0",
+        "float_hex": "0x1.390bc26099cf0p-9",
+        "phase": "POST",
+        "tick": 464,
+        "value": 0.0023883509423289137
+      },
+      {
+        "bits_be": "3f61e8424cbb6e24",
+        "float_hex": "0x1.1e8424cbb6e24p-9",
+        "phase": "POST",
+        "tick": 465,
+        "value": 0.0021859450260828407
+      },
+      {
+        "bits_be": "3f3c54300a4b557d",
+        "float_hex": "0x1.c54300a4b557dp-12",
+        "phase": "POST",
+        "tick": 466,
+        "value": 0.00043226406914461513
+      },
+      {
+        "bits_be": "3f3fbd5db1e348f6",
+        "float_hex": "0x1.fbd5db1e348f6p-12",
+        "phase": "POST",
+        "tick": 467,
+        "value": 0.0004843095538379494
+      },
+      {
+        "bits_be": "3f41c69291c0e986",
+        "float_hex": "0x1.1c69291c0e986p-11",
+        "phase": "POST",
+        "tick": 468,
+        "value": 0.0005424705191281888
+      },
+      {
+        "bits_be": "3f4656eaa59b1ae4",
+        "float_hex": "0x1.656eaa59b1ae4p-11",
+        "phase": "POST",
+        "tick": 469,
+        "value": 0.0006817479836279364
+      },
+      {
+        "bits_be": "3f4d45d9cf6e0612",
+        "float_hex": "0x1.d45d9cf6e0612p-11",
+        "phase": "POST",
+        "tick": 470,
+        "value": 0.0008933366324159217
+      },
+      {
+        "bits_be": "3f535e5ffbe3ae59",
+        "float_hex": "0x1.35e5ffbe3ae59p-10",
+        "phase": "POST",
+        "tick": 471,
+        "value": 0.0011821687071983582
+      },
+      {
+        "bits_be": "3f5901db0dbe8f52",
+        "float_hex": "0x1.901db0dbe8f52p-10",
+        "phase": "POST",
+        "tick": 472,
+        "value": 0.0015263213344746851
+      },
+      {
+        "bits_be": "3f5ec6fdd5782cb0",
+        "float_hex": "0x1.ec6fdd5782cb0p-10",
+        "phase": "POST",
+        "tick": 473,
+        "value": 0.0018784979673707562
+      },
+      {
+        "bits_be": "3f620fa0b0b9f08a",
+        "float_hex": "0x1.20fa0b0b9f08ap-9",
+        "phase": "POST",
+        "tick": 474,
+        "value": 0.0022047174914501854
+      },
+      {
+        "bits_be": "3f646f97d5d1c110",
+        "float_hex": "0x1.46f97d5d1c110p-9",
+        "phase": "POST",
+        "tick": 475,
+        "value": 0.002494617989718624
+      },
+      {
+        "bits_be": "3f667b4a370bfdb7",
+        "float_hex": "0x1.67b4a370bfdb7p-9",
+        "phase": "POST",
+        "tick": 476,
+        "value": 0.002744336081718503
+      },
+      {
+        "bits_be": "3f6830084a30da73",
+        "float_hex": "0x1.830084a30da73p-9",
+        "phase": "POST",
+        "tick": 477,
+        "value": 0.002952591124564302
+      },
+      {
+        "bits_be": "3f698a00aaba3c43",
+        "float_hex": "0x1.98a00aaba3c43p-9",
+        "phase": "POST",
+        "tick": 478,
+        "value": 0.003117562582537954
+      },
+      {
+        "bits_be": "3f6a8a0a7a5363fc",
+        "float_hex": "0x1.a8a0a7a5363fcp-9",
+        "phase": "POST",
+        "tick": 479,
+        "value": 0.003239651169320455
+      },
+      {
+        "bits_be": "3f6b33a90c04073f",
+        "float_hex": "0x1.b33a90c04073fp-9",
+        "phase": "POST",
+        "tick": 480,
+        "value": 0.003320532007024562
+      },
+      {
+        "bits_be": "3f6b8e4d288e3c9b",
+        "float_hex": "0x1.b8e4d288e3c9bp-9",
+        "phase": "POST",
+        "tick": 481,
+        "value": 0.0033637530327222504
+      },
+      {
+        "bits_be": "3f6ba02328948f13",
+        "float_hex": "0x1.ba02328948f13p-9",
+        "phase": "POST",
+        "tick": 482,
+        "value": 0.003372257870653325
+      },
+      {
+        "bits_be": "3f6b71013fcafc67",
+        "float_hex": "0x1.b71013fcafc67p-9",
+        "phase": "POST",
+        "tick": 483,
+        "value": 0.0033497833631766396
+      },
+      {
+        "bits_be": "3f6b0b81e23246ce",
+        "float_hex": "0x1.b0b81e23246cep-9",
+        "phase": "POST",
+        "tick": 484,
+        "value": 0.0033013855732598523
+      },
+      {
+        "bits_be": "3f6a7a4d11ca03b0",
+        "float_hex": "0x1.a7a4d11ca03b0p-9",
+        "phase": "POST",
+        "tick": 485,
+        "value": 0.003232145811410146
+      },
+      {
+        "bits_be": "3f69c6bfa1503260",
+        "float_hex": "0x1.9c6bfa1503260p-9",
+        "phase": "POST",
+        "tick": 486,
+        "value": 0.0031465285087562272
+      },
+      {
+        "bits_be": "3f68faf728930d2b",
+        "float_hex": "0x1.8faf728930d2bp-9",
+        "phase": "POST",
+        "tick": 487,
+        "value": 0.003049357158120399
+      },
+      {
+        "bits_be": "3f681f8d091e588f",
+        "float_hex": "0x1.81f8d091e588fp-9",
+        "phase": "POST",
+        "tick": 488,
+        "value": 0.0029447321512164402
+      },
+      {
+        "bits_be": "3f673cdfedb49dc1",
+        "float_hex": "0x1.73cdfedb49dc1p-9",
+        "phase": "POST",
+        "tick": 489,
+        "value": 0.0028366445163958425
+      },
+      {
+        "bits_be": "3f6659c91fa688ac",
+        "float_hex": "0x1.659c91fa688acp-9",
+        "phase": "POST",
+        "tick": 490,
+        "value": 0.002728360004042937
+      },
+      {
+        "bits_be": "3f657c20f55f2deb",
+        "float_hex": "0x1.57c20f55f2debp-9",
+        "phase": "POST",
+        "tick": 491,
+        "value": 0.0026226657600767387
+      },
+      {
+        "bits_be": "3f64a7ccad46a7af",
+        "float_hex": "0x1.4a7ccad46a7afp-9",
+        "phase": "POST",
+        "tick": 492,
+        "value": 0.0025214192957791685
+      },
+      {
+        "bits_be": "3f63e277d091f74f",
+        "float_hex": "0x1.3e277d091f74fp-9",
+        "phase": "POST",
+        "tick": 493,
+        "value": 0.002427324307574453
+      },
+      {
+        "bits_be": "3f632ad81084ac62",
+        "float_hex": "0x1.32ad81084ac62p-9",
+        "phase": "POST",
+        "tick": 494,
+        "value": 0.002339765549682891
+      },
+      {
+        "bits_be": "3f6286ea009b72e0",
+        "float_hex": "0x1.286ea009b72e0p-9",
+        "phase": "POST",
+        "tick": 495,
+        "value": 0.0022615976675822574
+      },
+      {
+        "bits_be": "3f61f4ed7211ec9e",
+        "float_hex": "0x1.1f4ed7211ec9ep-9",
+        "phase": "POST",
+        "tick": 496,
+        "value": 0.002191985855970537
+      },
+      {
+        "bits_be": "3f61796b49ce5b77",
+        "float_hex": "0x1.1796b49ce5b77p-9",
+        "phase": "POST",
+        "tick": 497,
+        "value": 0.0021330924486834785
+      },
+      {
+        "bits_be": "3f6111671639b809",
+        "float_hex": "0x1.111671639b809p-9",
+        "phase": "POST",
+        "tick": 498,
+        "value": 0.002083493558351361
+      },
+      {
+        "bits_be": "3f60c005ebb06a92",
+        "float_hex": "0x1.0c005ebb06a92p-9",
+        "phase": "POST",
+        "tick": 499,
+        "value": 0.002044688762464838
+      },
+      {
+        "bits_be": "3f6081e6f2977475",
+        "float_hex": "0x1.081e6f2977475p-9",
+        "phase": "POST",
+        "tick": 500,
+        "value": 0.0020150671668788763
+      },
+      {
+        "bits_be": "3f60591e113ef181",
+        "float_hex": "0x1.0591e113ef181p-9",
+        "phase": "POST",
+        "tick": 501,
+        "value": 0.001995619511914793
+      },
+      {
+        "bits_be": "3f60426266af1f64",
+        "float_hex": "0x1.0426266af1f64p-9",
+        "phase": "POST",
+        "tick": 502,
+        "value": 0.0019847795387909917
+      },
+      {
+        "bits_be": "3f603d464351335b",
+        "float_hex": "0x1.03d464351335bp-9",
+        "phase": "POST",
+        "tick": 503,
+        "value": 0.001982342941607857
+      },
+      {
+        "bits_be": "3f604acff9c5291e",
+        "float_hex": "0x1.04acff9c5291ep-9",
+        "phase": "POST",
+        "tick": 504,
+        "value": 0.0019887983345700097
+      },
+      {
+        "bits_be": "3f60646b8c6077e6",
+        "float_hex": "0x1.0646b8c6077e6p-9",
+        "phase": "POST",
+        "tick": 505,
+        "value": 0.0020010090402271417
+      },
+      {
+        "bits_be": "3f608aa205f27879",
+        "float_hex": "0x1.08aa205f27879p-9",
+        "phase": "POST",
+        "tick": 506,
+        "value": 0.0020192303196174236
+      },
+      {
+        "bits_be": "3f60bc4b2acf71a3",
+        "float_hex": "0x1.0bc4b2acf71a3p-9",
+        "phase": "POST",
+        "tick": 507,
+        "value": 0.0020429103956145097
+      },
+      {
+        "bits_be": "3f60f4a4990a9abf",
+        "float_hex": "0x1.0f4a4990a9abfp-9",
+        "phase": "POST",
+        "tick": 508,
+        "value": 0.0020697798539289487
+      },
+      {
+        "bits_be": "3f61323b10802f91",
+        "float_hex": "0x1.1323b10802f91p-9",
+        "phase": "POST",
+        "tick": 509,
+        "value": 0.0020991471865325424
+      },
+      {
+        "bits_be": "3f61732893932833",
+        "float_hex": "0x1.1732893932833p-9",
+        "phase": "POST",
+        "tick": 510,
+        "value": 0.002130107165247552
+      },
+      {
+        "bits_be": "3f61b47d13c1db09",
+        "float_hex": "0x1.1b47d13c1db09p-9",
+        "phase": "POST",
+        "tick": 511,
+        "value": 0.0021612589753731187
+      },
+      {
+        "bits_be": "3f61f4c16b37df46",
+        "float_hex": "0x1.1f4c16b37df46p-9",
+        "phase": "POST",
+        "tick": 512,
+        "value": 0.002191903849730811
+      },
+      {
+        "bits_be": "3f6231c672f91989",
+        "float_hex": "0x1.231c672f91989p-9",
+        "phase": "POST",
+        "tick": 513,
+        "value": 0.0022210002860305095
+      },
+      {
+        "bits_be": "3f6269fcf39fbbee",
+        "float_hex": "0x1.269fcf39fbbeep-9",
+        "phase": "POST",
+        "tick": 514,
+        "value": 0.0022478046857865508
+      },
+      {
+        "bits_be": "3f629c6c8a583c0b",
+        "float_hex": "0x1.29c6c8a583c0bp-9",
+        "phase": "POST",
+        "tick": 515,
+        "value": 0.0022718543939457317
+      },
+      {
+        "bits_be": "3f62c818a9d3eebd",
+        "float_hex": "0x1.2c818a9d3eebdp-9",
+        "phase": "POST",
+        "tick": 516,
+        "value": 0.0022926789957845293
+      },
+      {
+        "bits_be": "3f62ec39ce6c8955",
+        "float_hex": "0x1.2ec39ce6c8955p-9",
+        "phase": "POST",
+        "tick": 517,
+        "value": 0.0023099068670415037
+      },
+      {
+        "bits_be": "3f6308cd516f1e88",
+        "float_hex": "0x1.308cd516f1e88p-9",
+        "phase": "POST",
+        "tick": 518,
+        "value": 0.0023235330695319835
+      },
+      {
+        "bits_be": "3f631d90f5be4018",
+        "float_hex": "0x1.31d90f5be4018p-9",
+        "phase": "POST",
+        "tick": 519,
+        "value": 0.002333434224006236
+      },
+      {
+        "bits_be": "3f632ac04b6c024a",
+        "float_hex": "0x1.32ac04b6c024ap-9",
+        "phase": "POST",
+        "tick": 520,
+        "value": 0.0023397212747798034
+      },
+      {
+        "bits_be": "3f63305792737820",
+        "float_hex": "0x1.3305792737820p-9",
+        "phase": "POST",
+        "tick": 521,
+        "value": 0.002342387236793378
+      },
+      {
+        "bits_be": "3f632f56463c8378",
+        "float_hex": "0x1.32f56463c8378p-9",
+        "phase": "POST",
+        "tick": 522,
+        "value": 0.0023419079824553123
+      },
+      {
+        "bits_be": "3f6327f0952e1a48",
+        "float_hex": "0x1.327f0952e1a48p-9",
+        "phase": "POST",
+        "tick": 523,
+        "value": 0.0023383807069337383
+      },
+      {
+        "bits_be": "3f631ae6e1cf74bf",
+        "float_hex": "0x1.31ae6e1cf74bfp-9",
+        "phase": "POST",
+        "tick": 524,
+        "value": 0.002332163754984323
+      },
+      {
+        "bits_be": "3f63093ba27e48e2",
+        "float_hex": "0x1.3093ba27e48e2p-9",
+        "phase": "POST",
+        "tick": 525,
+        "value": 0.0023237385502819933
+      },
+      {
+        "bits_be": "3f62f31bf7808ce4",
+        "float_hex": "0x1.2f31bf7808ce4p-9",
+        "phase": "POST",
+        "tick": 526,
+        "value": 0.00231318914667754
+      },
+      {
+        "bits_be": "3f62d9cc4d0ab886",
+        "float_hex": "0x1.2d9cc4d0ab886p-9",
+        "phase": "POST",
+        "tick": 527,
+        "value": 0.002301119828493961
+      },
+      {
+        "bits_be": "3f62bdc595f1b1d3",
+        "float_hex": "0x1.2bdc595f1b1d3p-9",
+        "phase": "POST",
+        "tick": 528,
+        "value": 0.002287755879981848
+      },
+      {
+        "bits_be": "3f62a00234c46800",
+        "float_hex": "0x1.2a00234c46800p-9",
+        "phase": "POST",
+        "tick": 529,
+        "value": 0.0022735636795347958
+      },
+      {
+        "bits_be": "3f62820924224b71",
+        "float_hex": "0x1.2820924224b71p-9",
+        "phase": "POST",
+        "tick": 530,
+        "value": 0.0022592714822819372
+      },
+      {
+        "bits_be": "3f62633f64ee236f",
+        "float_hex": "0x1.2633f64ee236fp-9",
+        "phase": "POST",
+        "tick": 531,
+        "value": 0.002244590584670573
+      },
+      {
+        "bits_be": "3f6243dc28f9c5bd",
+        "float_hex": "0x1.243dc28f9c5bdp-9",
+        "phase": "POST",
+        "tick": 532,
+        "value": 0.0022296237946697038
+      },
+      {
+        "bits_be": "3f62251e76170a4f",
+        "float_hex": "0x1.2251e76170a4fp-9",
+        "phase": "POST",
+        "tick": 533,
+        "value": 0.002214965338425835
+      },
+      {
+        "bits_be": "3f6207c14cd55820",
+        "float_hex": "0x1.207c14cd55820p-9",
+        "phase": "POST",
+        "tick": 534,
+        "value": 0.00220096353465761
+      },
+      {
+        "bits_be": "3f61eb3696a16ee0",
+        "float_hex": "0x1.1eb3696a16ee0p-9",
+        "phase": "POST",
+        "tick": 535,
+        "value": 0.00218735372349764
+      },
+      {
+        "bits_be": "3f61d034cb59c2fa",
+        "float_hex": "0x1.1d034cb59c2fap-9",
+        "phase": "POST",
+        "tick": 536,
+        "value": 0.0021744757785245846
+      },
+      {
+        "bits_be": "3f61b733c5bc060d",
+        "float_hex": "0x1.1b733c5bc060dp-9",
+        "phase": "POST",
+        "tick": 537,
+        "value": 0.002162552946061386
+      },
+      {
+        "bits_be": "3f61a02c163fcfaa",
+        "float_hex": "0x1.1a02c163fcfaap-9",
+        "phase": "POST",
+        "tick": 538,
+        "value": 0.0021515713760837567
+      },
+      {
+        "bits_be": "3f618b11a8417961",
+        "float_hex": "0x1.18b11a8417961p-9",
+        "phase": "POST",
+        "tick": 539,
+        "value": 0.0021415085666795374
+      },
+      {
+        "bits_be": "3f61779d615a64f3",
+        "float_hex": "0x1.1779d615a64f3p-9",
+        "phase": "POST",
+        "tick": 540,
+        "value": 0.002132232077951651
+      },
+      {
+        "bits_be": "3f616608055fbefe",
+        "float_hex": "0x1.16608055fbefep-9",
+        "phase": "POST",
+        "tick": 541,
+        "value": 0.0021238476428989675
+      },
+      {
+        "bits_be": "3f6156c76f59b7d7",
+        "float_hex": "0x1.156c76f59b7d7p-9",
+        "phase": "POST",
+        "tick": 542,
+        "value": 0.0021165747846714033
+      },
+      {
+        "bits_be": "3f6149190ea8ef58",
+        "float_hex": "0x1.149190ea8ef58p-9",
+        "phase": "POST",
+        "tick": 543,
+        "value": 0.002110051097842385
+      },
+      {
+        "bits_be": "3f613c3a82718a9f",
+        "float_hex": "0x1.13c3a82718a9fp-9",
+        "phase": "POST",
+        "tick": 544,
+        "value": 0.002103914524512376
+      },
+      {
+        "bits_be": "3f6130a69d4ab952",
+        "float_hex": "0x1.130a69d4ab952p-9",
+        "phase": "POST",
+        "tick": 545,
+        "value": 0.002098393839637649
+      }
+    ],
+    "sequence_sha256": "675d0e341c60e8968dcfef323d7cbd2502b8e51abb449161f92af9bf748e5716",
+    "status": "MEASURED",
+    "unit": "m",
+    "value": 0.2245515785359135
+  },
+  "points": [
+    {
+      "body": {
+        "com_m": [
+          -0.03427047282457352,
+          1.2246520519256592,
+          0.2400193214416504
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 425
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.0340188629925251,
+          1.2246800661087036,
+          0.24010202288627625
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 426
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.033777546137571335,
+          1.2247085571289062,
+          0.24018442630767822
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 427
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.03354588523507118,
+          1.224736213684082,
+          0.24026517570018768
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 428
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.03332476690411568,
+          1.2247637510299683,
+          0.2403445690870285
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 429
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.033112842589616776,
+          1.2247945070266724,
+          0.24042318761348724
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 430
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.03290799632668495,
+          1.2248343229293823,
+          0.2405012845993042
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 431
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.03270835056900978,
+          1.2248913049697876,
+          0.2405804693698883
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 432
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.0325118787586689,
+          1.224972128868103,
+          0.240660160779953
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 433
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.03231673315167427,
+          1.2250839471817017,
+          0.2407398670911789
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 434
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.03212152421474457,
+          1.2252366542816162,
+          0.24082151055335999
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 435
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.03192480653524399,
+          1.2254377603530884,
+          0.2409047782421112
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 436
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.03172530233860016,
+          1.2256945371627808,
+          0.24098946154117584
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 437
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.03152187541127205,
+          1.2260147333145142,
+          0.24107618629932404
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 438
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.03131348639726639,
+          1.2264046669006348,
+          0.24116480350494385
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 439
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.031099312007427216,
+          1.226870059967041,
+          0.24125482141971588
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 440
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.03087867796421051,
+          1.2274154424667358,
+          0.2413456290960312
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 441
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.030651064589619637,
+          1.228044867515564,
+          0.24143674969673157
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 442
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.030416199937462807,
+          1.2287646532058716,
+          0.24153119325637817
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 443
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.030173787847161293,
+          1.2295758724212646,
+          0.2416275292634964
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 444
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.029923632740974426,
+          1.2304790019989014,
+          0.24172404408454895
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 445
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.029665788635611534,
+          1.2314773797988892,
+          0.24182310700416565
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 446
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.02940024994313717,
+          1.2325692176818848,
+          0.24192246794700623
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 447
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.029127152636647224,
+          1.233755111694336,
+          0.2420227974653244
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 448
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.028846735134720802,
+          1.235033392906189,
+          0.24212317168712616
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 449
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.028559306636452675,
+          1.236403226852417,
+          0.2422238141298294
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 450
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.028265247121453285,
+          1.2378627061843872,
+          0.24232445657253265
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 451
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.027964994311332703,
+          1.2394099235534668,
+          0.2424250841140747
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 452
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.027659036219120026,
+          1.2410428524017334,
+          0.24252568185329437
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 453
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.027347911149263382,
+          1.2427592277526855,
+          0.24262621998786926
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 454
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.027032196521759033,
+          1.2445570230484009,
+          0.2427269071340561
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 455
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.026712505146861076,
+          1.2464336156845093,
+          0.24282750487327576
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 456
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.026389479637145996,
+          1.2483868598937988,
+          0.24292801320552826
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 457
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.026063790544867516,
+          1.250414490699768,
+          0.2430284321308136
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 458
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.02573614940047264,
+          1.2525129318237305,
+          0.24312874674797058
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 459
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.025407299399375916,
+          1.2546772956848145,
+          0.243228942155838
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 460
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.025078007951378822,
+          1.2569019794464111,
+          0.2433290332555771
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 461
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.024749059230089188,
+          1.2591803073883057,
+          0.2434290051460266
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 462
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.024421265348792076,
+          1.261505126953125,
+          0.24352885782718658
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 463
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.024095451459288597,
+          1.263869047164917,
+          0.243628591299057
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 464
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.023783015087246895,
+          1.266029715538025,
+          0.2437392771244049
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 465
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.023638594895601273,
+          1.2662957906723022,
+          0.24404782056808472
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 466
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.02350253239274025,
+          1.2665988206863403,
+          0.2444002628326416
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 467
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.023374464362859726,
+          1.2669423818588257,
+          0.24480006098747253
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 468
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.023248393088579178,
+          1.2674208879470825,
+          0.2452690154314041
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 469
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.023119376972317696,
+          1.268110752105713,
+          0.2458217293024063
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 470
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.02298322692513466,
+          1.2691047191619873,
+          0.24644704163074493
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 471
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.02283819578588009,
+          1.2704731225967407,
+          0.24710741639137268
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 472
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.022684739902615547,
+          1.2722231149673462,
+          0.24777279794216156
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 473
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.022523827850818634,
+          1.274318814277649,
+          0.24843832850456238
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 474
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.02235615998506546,
+          1.2767184972763062,
+          0.2490990310907364
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 475
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.02218233235180378,
+          1.2793782949447632,
+          0.2497522085905075
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 476
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.022002892568707466,
+          1.2822538614273071,
+          0.2503977417945862
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 477
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.021818403154611588,
+          1.2852998971939087,
+          0.25103557109832764
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 478
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.021629441529512405,
+          1.288472056388855,
+          0.2516656816005707
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 479
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.021436594426631927,
+          1.2917280197143555,
+          0.2522881329059601
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 480
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.02124045044183731,
+          1.2950291633605957,
+          0.25290361046791077
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 481
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.021041568368673325,
+          1.298340082168579,
+          0.2535122036933899
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 482
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.020840473473072052,
+          1.3016293048858643,
+          0.2541135549545288
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 483
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.020637651905417442,
+          1.3048704862594604,
+          0.2547074854373932
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 484
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.02043355256319046,
+          1.3080424070358276,
+          0.2552940249443054
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 485
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.020228583365678787,
+          1.3111283779144287,
+          0.2558731734752655
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 486
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.02002311311662197,
+          1.3141165971755981,
+          0.25644493103027344
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 487
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.01981748640537262,
+          1.3169994354248047,
+          0.25700920820236206
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 488
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.0196120273321867,
+          1.3197733163833618,
+          0.2575659155845642
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 489
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.019407058134675026,
+          1.3224380016326904,
+          0.25811490416526794
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 490
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.01920287497341633,
+          1.3249961137771606,
+          0.25865596532821655
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 491
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.018999800086021423,
+          1.3274521827697754,
+          0.2591889202594757
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 492
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.018798187375068665,
+          1.3298133611679077,
+          0.25971436500549316
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 493
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.018598413094878197,
+          1.3320865631103516,
+          0.26023122668266296
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 494
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.018400901928544044,
+          1.334281325340271,
+          0.2607399821281433
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 495
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.01820610649883747,
+          1.3364067077636719,
+          0.26123958826065063
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 496
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.01801452599465847,
+          1.3384736776351929,
+          0.26173052191734314
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 497
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.017826683819293976,
+          1.3404921293258667,
+          0.2622116804122925
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 498
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.017643140628933907,
+          1.3424731492996216,
+          0.2626835107803345
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 499
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.017464471980929375,
+          1.3444265127182007,
+          0.26314496994018555
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 500
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.017291279509663582,
+          1.3463627099990845,
+          0.26359623670578003
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 501
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.017124172300100327,
+          1.3482908010482788,
+          0.2640365660190582
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 502
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.016963772475719452,
+          1.350219488143921,
+          0.26446565985679626
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 503
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.016810709610581398,
+          1.352157711982727,
+          0.26488420367240906
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 504
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.016665596514940262,
+          1.3541115522384644,
+          0.2652910053730011
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 505
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.01652906835079193,
+          1.3560870885849,
+          0.2656858563423157
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 506
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.016401780769228935,
+          1.3580896854400635,
+          0.26606911420822144
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 507
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.0162844005972147,
+          1.360122561454773,
+          0.26644009351730347
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 508
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.016177598387002945,
+          1.3621881008148193,
+          0.26679864525794983
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 509
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.01608201488852501,
+          1.3642877340316772,
+          0.26714470982551575
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 510
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.01599825918674469,
+          1.3664214611053467,
+          0.26747822761535645
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 511
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.015926899388432503,
+          1.3685885667800903,
+          0.26779916882514954
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 512
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.01586845889687538,
+          1.370787262916565,
+          0.26810765266418457
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 513
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.01582341268658638,
+          1.37301504611969,
+          0.2684035897254944
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 514
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.015792185440659523,
+          1.3752689361572266,
+          0.26868700981140137
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 515
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.01577514410018921,
+          1.3775454759597778,
+          0.26895803213119507
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 516
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.015772605314850807,
+          1.3798408508300781,
+          0.26921671628952026
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 517
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.01578482612967491,
+          1.3821512460708618,
+          0.2694631516933441
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 518
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.01581200584769249,
+          1.3844727277755737,
+          0.2696974575519562
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 519
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.015854286029934883,
+          1.3868014812469482,
+          0.269919753074646
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 520
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.015911748632788658,
+          1.3891336917877197,
+          0.2701301574707031
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 521
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.015984416007995605,
+          1.3914660215377808,
+          0.2703288793563843
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 522
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.01607225462794304,
+          1.3937952518463135,
+          0.27051594853401184
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 523
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.016175173223018646,
+          1.3961185216903687,
+          0.27069148421287537
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 524
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.01629301905632019,
+          1.3984334468841553,
+          0.27085578441619873
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 525
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.01642557978630066,
+          1.4007377624511719,
+          0.27100875973701477
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 526
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.016572589054703712,
+          1.4030297994613647,
+          0.2711505591869354
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 527
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.016733719035983086,
+          1.4053081274032593,
+          0.27128127217292786
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 528
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.016908589750528336,
+          1.407571792602539,
+          0.27140098810195923
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 529
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.017096752300858498,
+          1.409820556640625,
+          0.27151036262512207
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 530
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.01729772426187992,
+          1.4120539426803589,
+          0.27160927653312683
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 531
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.017510954290628433,
+          1.414271593093872,
+          0.2716974914073944
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 532
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.017735842615365982,
+          1.4164737462997437,
+          0.2717750668525696
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 533
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.017971733585000038,
+          1.4186609983444214,
+          0.2718423306941986
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 534
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.01821793243288994,
+          1.420833706855774,
+          0.2718992531299591
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 535
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.01847369410097599,
+          1.4229925870895386,
+          0.2719458043575287
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 536
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.01873823069036007,
+          1.4251385927200317,
+          0.2719820737838745
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 537
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.019010715186595917,
+          1.4272726774215698,
+          0.27200841903686523
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 538
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.019290292635560036,
+          1.4293957948684692,
+          0.2720247805118561
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 539
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.019576070830225945,
+          1.4315087795257568,
+          0.27203112840652466
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 540
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.01986713521182537,
+          1.433612585067749,
+          0.2720275819301605
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 541
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.020162545144557953,
+          1.4357084035873413,
+          0.27201467752456665
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 542
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.02046135812997818,
+          1.4377970695495605,
+          0.2719922959804535
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 543
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.02076260931789875,
+          1.439879059791565,
+          0.2719603478908539
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 544
+    },
+    {
+      "body": {
+        "com_m": [
+          -0.021065331995487213,
+          1.4419550895690918,
+          0.271918922662735
+        ]
+      },
+      "physics_hz": 120,
+      "sample_phase": "post_control",
+      "tick": 545
+    }
+  ],
+  "provenance": {
+    "godot_formula_file": "features/evaluator_virtual_cursor/scripts/benchmark_driver.gd",
+    "godot_formula_sha256": "f8799d9c3b1ede93e384a251b300046b9975d97833bb55171e9b8888a3a19c72",
+    "manifest_sha256": "b2f6ad9611d222880162173d83d0e5f61d9de2cdce63f9e603f41cccd83fb44b",
+    "raw_audit_path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\minimal_v135_r4\\attempts\\vertical_pull_clean_v134_r2_120_headless_r3_ff1cc7a7\\benchmark_audit.json",
+    "raw_audit_sha256": "3f9248d21cb57862c029e7b20da3e104fc644067a8bb51f012beaaca5cdd7e7b",
+    "raw_runtime_sha256": "77776d2b1dddf19d934386805a15e1a979f1e40f5e6910bd8ee9840cece9afc6",
+    "sampling": "actual direct state COM: post-control before next integration",
+    "source_snapshot_sha256": "cbe93f29aa2f6e47e4aa3fd784bbc1055cfa36bacaa385f7e07baa2bc262d54d"
+  },
+  "schema": "r4_original_path_golden_v1"
+}

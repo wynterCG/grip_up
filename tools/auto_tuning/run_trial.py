@@ -20,6 +20,20 @@ REQUIRED_INVARIANTS = {
 }
 
 
+def terminate_owned_process(process):
+    """Reap an owned timeout, including Windows Python venv redirector children."""
+    try:
+        if os.name == "nt":
+            killed = subprocess.run(["taskkill", "/PID", str(process.pid), "/T", "/F"],
+                                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=10)
+            if killed.returncode != 0 and process.poll() is None:
+                raise RuntimeError("OWNED_PROCESS_TREE_CLEANUP_NOT_CERTIFIED")
+    finally:
+        if process.poll() is None:
+            process.kill()
+        process.wait(timeout=10)
+
+
 def make_candidate(overrides, scenarios, *, trial_id, hz=120, seed=101, timeout=180, split="train", project=ROOT, provenance=None, input_trace_id=None):
     provenance = provenance or {**git_identity(), "source_hashes": source_hashes(project), "engine_identity": engine_identity()}
     if input_trace_id is None:
@@ -126,7 +140,8 @@ def validate_shortlist(path: Path | None, candidate: dict | None = None, *, requ
 
 def run_trial(candidate: dict, output_root: Path, *, project: Path = ROOT, engine: Path = ENGINE,
               resource: dict | None = None, command_override: list[str] | None = None,
-              verify_provenance=True, shortlist_path: Path | None = None, visible=False) -> tuple[dict, Path]:
+              verify_provenance=True, shortlist_path: Path | None = None, visible=False,
+              audit_environment: dict | None = None) -> tuple[dict, Path]:
     trial_label = candidate.get("trial_id", "invalid") if isinstance(candidate, dict) else "invalid"
     if not isinstance(trial_label, str) or any(char not in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_.-" for char in trial_label):
         trial_label = "invalid"
@@ -142,6 +157,9 @@ def run_trial(candidate: dict, output_root: Path, *, project: Path = ROOT, engin
         "fixed_render_fps": None if visible else 120,
         "requested_physics_hz": candidate.get("requested_physics_hz") if isinstance(candidate, dict) else None,
     }
+    if audit_environment is not None:
+        manifest["python_environment"] = audit_environment
+        manifest["metric_reducer"] = audit_environment["reducer"]
     # Invalid nonfinite input cannot itself be serialized as JSON. Preserve its repr separately.
     try:
         atomic_json(directory / "manifest.json", manifest)
@@ -153,6 +171,9 @@ def run_trial(candidate: dict, output_root: Path, *, project: Path = ROOT, engin
     code = None
     command = None
     try:
+        if audit_environment is not None:
+            from metric_binary64 import require_environment
+            require_environment(audit_environment)
         validate_candidate(candidate, resource or parameter_resource(project))
         if candidate["evaluation_split"] == "holdout":
             validate_shortlist(shortlist_path, candidate, require_repeats=True)
@@ -184,12 +205,10 @@ def run_trial(candidate: dict, output_root: Path, *, project: Path = ROOT, engin
             try:
                 code = process.wait(timeout=candidate["timeout_seconds"])
             except subprocess.TimeoutExpired:
-                process.kill()
-                process.wait(timeout=10)
+                terminate_owned_process(process)
                 status, reason = "timed_out", "wall_timeout"
             except KeyboardInterrupt:
-                process.kill()
-                process.wait(timeout=10)
+                terminate_owned_process(process)
                 status, reason = "cancelled", "operator_interrupt"
             else:
                 if code != 0:

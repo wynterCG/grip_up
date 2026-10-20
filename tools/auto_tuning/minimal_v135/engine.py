@@ -8,6 +8,7 @@ from candidate_schema import baseline, parameter_resource
 from comparison import compare_required
 from metrics import summarize
 from projection_comparison import load_picks
+from metric_binary64 import norm3, dot3, audit_path_against_godot, require_environment, canonical_metric_contract_id
 
 DOC=ROOT/'docs/validation/auto_tuning/minimal_v135/r4'
 BASE=ROOT/'builds/eval_virtual_cursor/minimal_v135_r4'
@@ -31,9 +32,9 @@ def enrich_quality(metrics,ticks,definition):
     selected=[r for r in ticks if onset<=r['tick']<=end];origin=selected[0]['body']['com_m'];axis=definition['direction_world']
     progress=[];offaxis=[];speed=[]
     for r in selected:
-        delta=[b-a for a,b in zip(origin,r['body']['com_m'])];directed=sum(a*b for a,b in zip(delta,axis))
-        progress.append(directed);offaxis.append(math.sqrt(sum((d-a*directed)**2 for d,a in zip(delta,axis))))
-        speed.append(math.sqrt(sum(x*x for x in r['body']['angular_velocity_rad_s'])))
+        delta=[b-a for a,b in zip(origin,r['body']['com_m'])];directed=dot3(delta,axis)
+        progress.append(directed);offaxis.append(norm3([d-a*directed for d,a in zip(delta,axis)]))
+        speed.append(norm3(r['body']['angular_velocity_rad_s']))
     peak=0.;backwards=0.
     for value in progress:peak=max(peak,value);backwards=max(backwards,peak-value)
     values={'backwards_excursion_m':backwards,'off_axis_excursion_m':max(offaxis),'angular_speed_peak_rad_s':max(speed),'target_saturation_fraction':sum(r['benchmark_extra']['actuator_saturated'] is True for r in selected)/len(selected)}
@@ -41,6 +42,7 @@ def enrich_quality(metrics,ticks,definition):
 
 def execute(scenario,hz,mode,repeat,group,tape_path=None,probe=True,negative=''):
     source=identity();plan=read_json(DOC/'run_plan.json')
+    if BASE.name=='minimal_v135a_r1':require_environment(source['python_environment'])
     previous=[read_json(p) for p in (BASE/'attempts').glob('*/manifest.json')]
     if len(previous)>=plan['max_qualification_attempts']:raise ValueError('GLOBAL_BUDGET_EXHAUSTED')
     maximum=plan['budget_limits'][group]
@@ -66,6 +68,9 @@ def audit_execution(directory,scenario,hz,mode,repeat,group,source,m,tape,starte
     directory=Path(directory);lane=m['input_lane'];run_id=m['run_id'];result={};metrics={};probe=m['projection_config']['probe_enabled'];negative=m.get('negative_case','')
     status='RUN_INVALID'
     try:
+        if m.get('campaign_id')=='minimal_v135a_r1':
+            require_environment(m['python_environment'])
+            if m['python_environment']!=source['python_environment'] or m['metric_reducer']!=canonical_metric_contract_id():raise ValueError('ENVIRONMENT_OR_METRIC_CONTRACT_MISMATCH')
         result=read_json(directory/'engine_result.json')
         logs='\n'.join((directory/name).read_text(errors='replace') for name in ['stdout.txt','stderr.txt'])
         if any(word in logs for word in ['SCRIPT ERROR:','Parse Error:','ERROR: Failed to load']):raise ValueError('ENGINE_SCRIPT_ERROR')
@@ -89,7 +94,7 @@ def audit_execution(directory,scenario,hz,mode,repeat,group,source,m,tape,starte
         for i,row in enumerate(ticks,1):
             if row['tick']!=i or row['sample_phase']!='post_control' or abs(row['delta_s']-1/hz)>1e-7:raise ValueError('TICK_PHASE_CLOCK')
             if row['canonical_input']['requested']!=row['canonical_input']['effective']:raise ValueError('REQUEST_EFFECTIVE_INPUT_MISMATCH')
-            n=lambda v:math.sqrt(sum(x*x for x in v))
+            n=norm3
             if row['body']['mass_kg']!=12 or any(h['reach_m']!=.65708 for h in row['hands']):raise ValueError('PROTECTED_PHYSICS_VALUES')
             if any(h['state'] not in ['ATTACHED','SLIPPING'] and n(h['force_n'])!=0 for h in row['hands']):raise ValueError('FREE_PENDING_HAND_FORCE')
             f=row['force_budget']
@@ -133,8 +138,8 @@ def audit_execution(directory,scenario,hz,mode,repeat,group,source,m,tape,starte
             hard=metrics['metrics']['hard_physical_violations']
             if hard['status']=='MEASURED' and hard['value']>0:raise ValueError('METRIC_HARD_PHYSICAL_VIOLATION')
             rt=precise['runtime_measurement']
-            for key in ['signed_progress_m','path3d_onset_to_end']:
-                if rt.get(key)!=metrics.get(key):raise ValueError('INDEPENDENT_METRIC_RECOMPUTE:'+key)
+            metric_audit=audit_path_against_godot(ticks,metrics,rt,{'source_hash':m['source_snapshot_sha256'],'python_env_hash':m.get('python_environment',{}).get('sha256'),'manifest_sha256':file_hash(directory/'manifest.json'),'raw_audit_sha256':file_hash(directory/'benchmark_audit.json')},observe_s=definition['observe_s'])
+            atomic_json(directory/'metric_binary64_audit.json',metric_audit)
         status='RUN_VALID'
     except (OSError,ValueError,TypeError,KeyError,IndexError) as e:reason=str(e)
     receipt={'run_id':run_id,'directory':str(directory),'scenario_id':scenario,'hz':hz,'mode':mode,'repeat':repeat,'group':group,'input_lane':lane,'probe_enabled':probe,'status':status,'reason':reason,'process_exit_code':code,'elapsed_wall_s':time.monotonic()-started,'engine_result':result,'metrics':metrics,'tape_sha256':m['virtual_tape_sha256'],'source_commit':source['repository_commit']}
