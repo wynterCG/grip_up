@@ -1,0 +1,27 @@
+{
+  "command": [
+    "C:\\Users\\Wynter\\WrapRush\\tools\\godot.exe",
+    "--screen",
+    "0",
+    "--position",
+    "80,80",
+    "--resolution",
+    "1024x576",
+    "--path",
+    "C:\\Users\\Wynter\\grip_up",
+    "--script",
+    "res://features/evaluator_virtual_cursor/scripts/benchmark_runner.gd",
+    "--",
+    "--backing-size",
+    "1024x576",
+    "--virtual-cursor-evaluator",
+    "--benchmark-qualification",
+    "--manifest",
+    "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\benchmark_v133_r2\\attempts\\swing_catch_train_120_rendered_scripted_r1_244b0d01\\manifest.json",
+    "--result",
+    "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\benchmark_v133_r2\\attempts\\swing_catch_train_120_rendered_scripted_r1_244b0d01\\engine_result.json"
+  ],
+  "input_lane": "FIXED_VIRTUAL_REPLAY",
+  "utc": "2026-10-20T15:26:25.938790+00:00",
+  "workers": 1
+}

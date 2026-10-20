@@ -1,0 +1,77 @@
+{
+  "MCP_new_errors": 0,
+  "MCP_profile2_LIVE": "PASS",
+  "budget": {
+    "conservative_attempts_charged": 5,
+    "diagnostic_slots_used": 4,
+    "max": 96,
+    "negative_physical": 0,
+    "new_physical_worlds": 2,
+    "no_budget_reallocation": true
+  },
+  "decision": "NO_GO_BENCHMARK",
+  "diagnostic_final_commit": "7a726febcb5257cac2cef23312c3b01d5cddb39b",
+  "diagnostics": {
+    "attempted": 4,
+    "gameplay_worlds": 2,
+    "hz": [
+      120
+    ],
+    "legacy_result": "CURSOR_OR_CAMERA_MISMATCH_PRESERVED_WITH_REPRESENTATION_SCOPE",
+    "physical_valid": 2,
+    "published_precise_pair": "STRICT_MATCH",
+    "pure_contract_failed": 1,
+    "pure_contract_passed": 1
+  },
+  "export": {
+    "excluded_test_paths": 11,
+    "identity": {
+      "bytes": 110754728,
+      "release": true,
+      "sha256": "595f83edafb24465a9d9f5274387ec8d64517563b6c341b3341097207b051e61",
+      "startup_smoke_only": true
+    },
+    "isolated_debug_engine_pack_inspection": "PASS",
+    "pack_inspection_is_release_template": false,
+    "release_and_plain_smoke": "PASS"
+  },
+  "human_playtests": 0,
+  "new_qualified_domains": 0,
+  "no_automatic_R3": true,
+  "normal_startup": "PASS",
+  "optimizer_RL_Jev_runs": 0,
+  "preflight": {
+    "attempted": 13,
+    "gameplay_worlds": 0,
+    "negative": 1,
+    "passed": 13,
+    "positive": 12
+  },
+  "primary": {
+    "aborted": 0,
+    "attempted": 1,
+    "early_stop_not_run": 83,
+    "gameplay_worlds": 0,
+    "invalid_setup": 1,
+    "new_domain_remaining": 72,
+    "planned": 84,
+    "reference_remaining": 11,
+    "valid": 0
+  },
+  "primary_measured_commit": "3ee5fabb6e2709d94dcc0e0663ba990bed8e75e3",
+  "private_outcomes_accessed": 0,
+  "protection": {
+    "C_E_source_parity": true,
+    "all_verified_unchanged": true,
+    "gameplay_input_physics_camera_tuning_unchanged": true,
+    "historical_raw_files": 954,
+    "historical_tracked_files": 4378,
+    "source_files": 294
+  },
+  "regressions": {
+    "checks": 1146,
+    "passed": true,
+    "processes": 34,
+    "separate_budget": true
+  }
+}

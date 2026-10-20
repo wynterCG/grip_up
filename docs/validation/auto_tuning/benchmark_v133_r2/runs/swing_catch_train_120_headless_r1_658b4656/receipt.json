@@ -1,0 +1,42 @@
+{
+  "directory": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\benchmark_v133_r2\\attempts\\swing_catch_train_120_headless_r1_658b4656",
+  "elapsed_wall_s": 0.9220000000059372,
+  "engine_result": {
+    "backing_initialization": {},
+    "benchmark_performance": {
+      "post_enrichment_usec": 0,
+      "pre_driver_usec": 0,
+      "render_cadence": {
+        "post_calls": 0,
+        "post_usec": 0,
+        "pre_calls": 0,
+        "pre_usec": 0,
+        "render_delta_max_s": 0.0,
+        "render_frames": 0,
+        "tick_wall_gap_max_usec": 0
+      },
+      "scope": "Pre driver includes input and projection probe; post enrichment is read/copy only; existing trace cost separate. Per-row Performance.TIME_PHYSICS_PROCESS is engine monitor of prior physics processing, not a stopwatch of this current solver tick."
+    },
+    "benchmark_source_catalog_sha256": "47462fac8b3340dd0426c631d64ea19b13fb07bf3c6dee89ec80d213bedc2f5d",
+    "benchmark_version": "benchmark_eval_v133_r1",
+    "input_lane": "FIXED_VIRTUAL_REPLAY",
+    "manifest_file_sha256": "eb90611a301d3ee23ae09e839f0825599bc5c553e4ba309065a20a26fc291c6e",
+    "reason": "ENVIRONMENT_NOT_COMPARABLE:CANONICAL_BACKING",
+    "status": "BLOCKED_SETUP",
+    "world_creation_record": {}
+  },
+  "group": "reference",
+  "hz": 120,
+  "input_lane": "FIXED_VIRTUAL_REPLAY",
+  "metrics": {},
+  "mode": "headless",
+  "probe_enabled": true,
+  "process_exit_code": 1,
+  "reason": "ENVIRONMENT_NOT_COMPARABLE:CANONICAL_BACKING",
+  "repeat": 1,
+  "run_id": "swing_catch_train_120_headless_r1_658b4656",
+  "scenario_id": "swing_catch_train",
+  "source_commit": "3ee5fabb6e2709d94dcc0e0663ba990bed8e75e3",
+  "status": "RUN_INVALID",
+  "tape_sha256": "d09f2569cbbafb4db2d3571b806dc804622fe4efda3c6ba9d8790a51bdb2991b"
+}

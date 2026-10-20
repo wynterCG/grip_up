@@ -1,0 +1,36 @@
+{
+  "A0_A1_missing_cell_canary": "Existing34Pythoncontracts pass; no A1 physics run or default change",
+  "external_mouse_click_focus": "NOT_RUN_IN_R2; previous evidence preserved separately",
+  "negative_physical_processes": 0,
+  "new_observer_OFF": "NOT_RUN_EARLY_STOP",
+  "preflight_wrong_size": "PASS_REJECTION",
+  "pure_JSON_contract_failed_attempt_preserved": {
+    "directory": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\benchmark_v133_r2\\attempts\\D1_json_size_contract",
+    "reason": "Invalid string dimension caused script error; retained before numeric-type guard correction",
+    "result": {
+      "checks": 16,
+      "failures": 1,
+      "gameplay_bodies_created": 0,
+      "json_numeric_type": 3,
+      "old_array_comparison": false,
+      "scope": "PURE_ADMISSION_CONTRACT_NOT_QUALIFICATION"
+    },
+    "run_id": "D1_json_size_contract",
+    "source_commit": "dd7f77dc7b7c55011b22432174c93a4c4e9ca3cd",
+    "status": "PURE_CONTRACT_FAILED"
+  },
+  "pure_JSON_contract_final": {
+    "directory": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\benchmark_v133_r2\\attempts\\D2_json_size_contract",
+    "exit_code": 0,
+    "result": {
+      "checks": 16,
+      "failures": 0,
+      "gameplay_bodies_created": 0,
+      "json_numeric_type": 3,
+      "old_array_comparison": false,
+      "scope": "PURE_ADMISSION_CONTRACT_NOT_QUALIFICATION"
+    },
+    "run_id": "D2_json_size_contract",
+    "status": "PURE_CONTRACT_PASS"
+  }
+}

@@ -1,0 +1,575 @@
+{
+  "cause": "Godot JSON float-array versus integer-array equality",
+  "first_failure": "ENVIRONMENT_ADMISSION_FALSE_REJECTION",
+  "manifest_size": [
+    1024,
+    576
+  ],
+  "phase": "BEFORE_BACKING_INITIALIZATION_CLOCK_AND_WORLD",
+  "postfix_pair": {
+    "first_by_layer": {
+      "CONTACT": null,
+      "ENVIRONMENT": null,
+      "INPUT": null,
+      "PHYSICS": null,
+      "PICK": null,
+      "TASK": null
+    },
+    "first_difference": null,
+    "legacy_layers": {
+      "anchor_identity": "per-hand first-seen runtime-anchor ordinal within each process, plus exact stable support/local point/local normal; no runtime-ID equality across processes",
+      "counts": {
+        "actual": 536,
+        "reference": 536,
+        "tape": 536
+      },
+      "first_by_layer": {
+        "camera": null,
+        "cursor": {
+          "difference": {
+            "actual": 480.53497314453125,
+            "expected": 480.534973144531,
+            "field": ".effective_aim_px[1]"
+          },
+          "phase": "pre_control",
+          "tick": 55
+        },
+        "input": null,
+        "material_anchor": null,
+        "physics": null,
+        "raycast": null
+      },
+      "first_overall": {
+        "difference": {
+          "actual": 480.53497314453125,
+          "expected": 480.534973144531,
+          "field": ".effective_aim_px[1]"
+        },
+        "layer": "cursor",
+        "phase": "pre_control",
+        "tick": 55
+      },
+      "first_qualification_gate": {
+        "difference": {
+          "actual": 480.53497314453125,
+          "expected": 480.534973144531,
+          "field": ".effective_aim_px[1]"
+        },
+        "layer": "cursor",
+        "phase": "pre_control",
+        "tick": 55
+      },
+      "physics_comparison": "exact numeric diagnostics; no approved continuous-error envelope; no cross-Hz equality requirement",
+      "status": "CURSOR_OR_CAMERA_MISMATCH"
+    },
+    "native_contact_limit": "Empty native-contact array is not proof of no contacts when max_contacts_reported=0; ground/sweep channels retained independently.",
+    "omitted_metadata": [
+      "anchor_id",
+      "anchor_runtime_id",
+      "blocker_id",
+      "collider_id",
+      "collider_runtime_id",
+      "engine_mode",
+      "event_id",
+      "name",
+      "physics_interpolation_fraction",
+      "run_id",
+      "runtime_id",
+      "support_id",
+      "support_rid",
+      "wall_usec",
+      "window_has_focus"
+    ],
+    "point_of_call": {
+      "continuous_status": "NO_RECORDED_PHYSICS_DIFFERENCE",
+      "first_by_stage": {},
+      "hard_reasons": [],
+      "left_environment": {
+        "camera": {
+          "current": true,
+          "effective_transform": [
+            [
+              0.9713380932807922,
+              0.0,
+              -0.23770220577716827
+            ],
+            [
+              0.014247181825339794,
+              0.9982022047042847,
+              0.05821919068694115
+            ],
+            [
+              0.2372748702764511,
+              -0.05993710458278656,
+              0.9695917963981628
+            ],
+            [
+              0.873729944229126,
+              1.407267689704895,
+              6.217653274536133
+            ]
+          ],
+          "far": 4000.0,
+          "fov": 56.0,
+          "frustum_offset": [
+            0.0,
+            0.0
+          ],
+          "global_transform": [
+            [
+              0.9713380932807922,
+              0.0,
+              -0.23770220577716827
+            ],
+            [
+              0.014247181825339794,
+              0.9982022047042847,
+              0.05821919068694115
+            ],
+            [
+              0.2372748702764511,
+              -0.05993710085749626,
+              0.9695917963981628
+            ],
+            [
+              0.873729944229126,
+              1.407267689704895,
+              6.217653274536133
+            ]
+          ],
+          "h_offset": 0.0,
+          "keep_aspect": 1,
+          "near": 0.07999999821186066,
+          "obstruction_query_result": "NOT_STORED_BY_CAMERA",
+          "projection_matrix": [
+            [
+              1.057908535003662,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.8807263374328613,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              -1.000040054321289,
+              -1.0
+            ],
+            [
+              0.0,
+              0.0,
+              -0.160003200173378,
+              0.0
+            ]
+          ],
+          "projection_type": 0,
+          "runtime_id": 82845894296,
+          "v0_distance": 6.0,
+          "v0_elevation": -0.06,
+          "v0_focus": [
+            -0.5499318838119507,
+            1.7668935060501099,
+            0.40005025267601013
+          ],
+          "v0_source_pose": [
+            [
+              1.0,
+              1.4523314348480199e-05,
+              1.5555042409687303e-05
+            ],
+            [
+              -1.4523432582791429e-05,
+              1.0,
+              7.628034381923499e-06
+            ],
+            [
+              -1.555493327032309e-05,
+              -7.628259936609538e-06,
+              1.0
+            ],
+            [
+              -0.5499273538589478,
+              1.1666957139968872,
+              0.4000535011291504
+            ]
+          ],
+          "v0_yaw": 0.24,
+          "v_offset": 0.0
+        },
+        "viewport": {
+          "active_camera_runtime_id": 82845894296,
+          "camera_coords": "UNAVAILABLE_PUBLIC_API",
+          "camera_rect_size": "UNAVAILABLE_PUBLIC_API",
+          "canvas": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "class": "Window",
+          "final": [
+            [
+              0.5333333611488342,
+              0.0
+            ],
+            [
+              0.0,
+              0.5333333611488342
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "global_canvas": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "path": "/root",
+          "runtime_id": 61505275325,
+          "size_public": [
+            1024,
+            576
+          ],
+          "stretch": [
+            [
+              0.5333333611488342,
+              0.0
+            ],
+            [
+              0.0,
+              0.5333333611488342
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "visible_rect": {
+            "position": [
+              0.0,
+              0.0
+            ],
+            "size": [
+              1920.0,
+              1080.0
+            ]
+          }
+        },
+        "window": {
+          "content_scale_aspect": 4,
+          "content_scale_factor": 1.0,
+          "content_scale_mode": 1,
+          "content_scale_size": [
+            1920,
+            1080
+          ],
+          "content_scale_stretch": 0,
+          "display_server": "headless",
+          "dpi": "UNAVAILABLE_PUBLIC_API",
+          "mode": 1,
+          "os_scale": "UNAVAILABLE_PUBLIC_API",
+          "position": [
+            0,
+            0
+          ],
+          "screen": -1,
+          "size": [
+            1024,
+            576
+          ]
+        }
+      },
+      "published_layers": {
+        "anchor_identity": "per-hand first-seen runtime-anchor ordinal within each process, plus exact stable support/local point/local normal; no runtime-ID equality across processes",
+        "counts": {
+          "actual": 536,
+          "reference": 536,
+          "tape": 536
+        },
+        "first_by_layer": {
+          "camera": null,
+          "cursor": null,
+          "input": null,
+          "material_anchor": null,
+          "physics": null,
+          "raycast": null
+        },
+        "first_overall": null,
+        "first_qualification_gate": null,
+        "physics_comparison": "exact numeric diagnostics; no approved continuous-error envelope; no cross-Hz equality requirement",
+        "status": "PASS_PICKING_REPLAY"
+      },
+      "ray_magnitudes": [
+        {
+          "angle_radians": 0.0,
+          "local_delta": 0.0,
+          "ray_index": 0,
+          "tick": 55,
+          "world_delta": 0.0
+        },
+        {
+          "angle_radians": 0.0,
+          "local_delta": 0.0,
+          "ray_index": 0,
+          "tick": 282,
+          "world_delta": 0.0
+        }
+      ],
+      "right_environment": {
+        "camera": {
+          "current": true,
+          "effective_transform": [
+            [
+              0.9713380932807922,
+              0.0,
+              -0.23770220577716827
+            ],
+            [
+              0.014247181825339794,
+              0.9982022047042847,
+              0.05821919068694115
+            ],
+            [
+              0.2372748702764511,
+              -0.05993710458278656,
+              0.9695917963981628
+            ],
+            [
+              0.873729944229126,
+              1.407267689704895,
+              6.217653274536133
+            ]
+          ],
+          "far": 4000.0,
+          "fov": 56.0,
+          "frustum_offset": [
+            0.0,
+            0.0
+          ],
+          "global_transform": [
+            [
+              0.9713380932807922,
+              0.0,
+              -0.23770220577716827
+            ],
+            [
+              0.014247181825339794,
+              0.9982022047042847,
+              0.05821919068694115
+            ],
+            [
+              0.2372748702764511,
+              -0.05993710085749626,
+              0.9695917963981628
+            ],
+            [
+              0.873729944229126,
+              1.407267689704895,
+              6.217653274536133
+            ]
+          ],
+          "h_offset": 0.0,
+          "keep_aspect": 1,
+          "near": 0.07999999821186066,
+          "obstruction_query_result": "NOT_STORED_BY_CAMERA",
+          "projection_matrix": [
+            [
+              1.057908535003662,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.8807263374328613,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              -1.000040054321289,
+              -1.0
+            ],
+            [
+              0.0,
+              0.0,
+              -0.160003200173378,
+              0.0
+            ]
+          ],
+          "projection_type": 0,
+          "runtime_id": 83382765209,
+          "v0_distance": 6.0,
+          "v0_elevation": -0.06,
+          "v0_focus": [
+            -0.5499318838119507,
+            1.7668935060501099,
+            0.40005025267601013
+          ],
+          "v0_source_pose": [
+            [
+              1.0,
+              1.4523314348480199e-05,
+              1.5555042409687303e-05
+            ],
+            [
+              -1.4523432582791429e-05,
+              1.0,
+              7.628034381923499e-06
+            ],
+            [
+              -1.555493327032309e-05,
+              -7.628259936609538e-06,
+              1.0
+            ],
+            [
+              -0.5499273538589478,
+              1.1666957139968872,
+              0.4000535011291504
+            ]
+          ],
+          "v0_yaw": 0.24,
+          "v_offset": 0.0
+        },
+        "viewport": {
+          "active_camera_runtime_id": 83382765209,
+          "camera_coords": "UNAVAILABLE_PUBLIC_API",
+          "camera_rect_size": "UNAVAILABLE_PUBLIC_API",
+          "canvas": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "class": "Window",
+          "final": [
+            [
+              0.5333333611488342,
+              0.0
+            ],
+            [
+              0.0,
+              0.5333333611488342
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "global_canvas": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "path": "/root",
+          "runtime_id": 62008591807,
+          "size_public": [
+            1024,
+            576
+          ],
+          "stretch": [
+            [
+              0.5333333611488342,
+              0.0
+            ],
+            [
+              0.0,
+              0.5333333611488342
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "visible_rect": {
+            "position": [
+              0.0,
+              0.0
+            ],
+            "size": [
+              1920.0,
+              1080.0
+            ]
+          }
+        },
+        "window": {
+          "content_scale_aspect": 4,
+          "content_scale_factor": 1.0,
+          "content_scale_mode": 1,
+          "content_scale_size": [
+            1920,
+            1080
+          ],
+          "content_scale_stretch": 0,
+          "display_server": "Windows",
+          "dpi": 120,
+          "mode": 0,
+          "os_scale": 1.0,
+          "position": [
+            2400,
+            80
+          ],
+          "screen": 0,
+          "size": [
+            1024,
+            576
+          ]
+        }
+      },
+      "scope": "observed fields only; internal camera coords/rect unavailable; no functional drift envelope",
+      "status": "STRICT_MATCH"
+    },
+    "required_channels": "inputs requested/accepted/applied; camera; actual hands/anchors/rest/forces/reactions; feet; reported native contacts; ground motor authority; body/COM/v/omega; planner rates; original caps; explicit sweep clearance; no process-ID equality",
+    "status": "STRICT_MATCH",
+    "ticks": 536
+  },
+  "reason": "ENVIRONMENT_NOT_COMPARABLE:CANONICAL_BACKING",
+  "representation_note": "Legacy cursor raw scalar versus actual float32 Vector2 differs within both processes identically; do not call this a headless/rendered physical mismatch.",
+  "reproduced_by_D1_and_D2": true,
+  "run_id": "swing_catch_train_120_headless_r1_658b4656",
+  "scenario_tick": null,
+  "source_commit": "3ee5fabb6e2709d94dcc0e0663ba990bed8e75e3",
+  "worlds": 0
+}

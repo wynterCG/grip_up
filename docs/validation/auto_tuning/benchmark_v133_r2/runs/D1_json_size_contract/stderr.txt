@@ -1,0 +1,10 @@
+SCRIPT ERROR: Invalid operands 'String' and 'float' in operator '!='.
+   at: _virtual_scope (res://features/evaluator_virtual_cursor/scripts/benchmark_driver.gd:31)
+   GDScript backtrace (most recent call first):
+       [0] _virtual_scope (res://features/evaluator_virtual_cursor/scripts/benchmark_driver.gd:31)
+       [1] run (res://features/evaluator_virtual_cursor/tests/test_benchmark_backing.gd:22)
+ERROR: Projection config admission: ["1024", 576]
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://features/evaluator_virtual_cursor/tests/test_benchmark_backing.gd:7)
+       [1] run (res://features/evaluator_virtual_cursor/tests/test_benchmark_backing.gd:23)

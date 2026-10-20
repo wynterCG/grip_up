@@ -1,0 +1,3 @@
+# Dataset status
+
+R2 remains public qualification evidence, not training scores. Its six domain/Hz families have no primary outcomes; neither catch diagnostic is a qualified score. Adaptive captures did not run. Future training and public validation are unassigned, private holdout outcomes remain unopened, and human sessions are separate. Keep old unequal-window results, A1 regressions and earlier NO_GOs unchanged. No missing metric becomes zero or a better aggregate. Foot-step and release-stop retain their prospective n1/Hz diagnostic exclusion even if a later campaign runs them; they cannot silently replace n3 primary coverage.
