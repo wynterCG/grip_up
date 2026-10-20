@@ -1,0 +1,26 @@
+{
+  "schema_version": "technical_fixtures_v12_1",
+  "revision": 1,
+  "scope": "New isolated foot candidate geometry only; existing inherited swing/reaction fixtures unchanged",
+  "body": {
+    "spawn": [0.0, 1.0, 0.0],
+    "collision": {"type": "sphere", "radius": 0.05},
+    "mirrored_yaw_rad": 3.141592653589793
+  },
+  "geometries": [
+    {
+      "id": "flat",
+      "candidate_box_size": [0.10, 0.10, 0.8],
+      "candidate_tilt_z_rad": 0.0,
+      "candidate_centers_base": [[-0.16, 0.05, 0.0], [0.16, 0.05, 0.0]],
+      "height_rule": "base_y_plus_tan_tilt_times_x"
+    },
+    {
+      "id": "slope",
+      "candidate_box_size": [0.10, 0.10, 0.8],
+      "candidate_tilt_z_rad": -0.12,
+      "candidate_centers_base": [[-0.16, 0.05, 0.0], [0.16, 0.05, 0.0]],
+      "height_rule": "base_y_plus_tan_tilt_times_x"
+    }
+  ]
+}

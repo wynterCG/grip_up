@@ -1,0 +1,69 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS launch fixture reaches a real visible material surface
+PASS attached biped can start a bounded launch preload
+PASS preload preserves original material anchors
+LAUNCH TRIAL { "hands": 1, "active": false, "detached": true, "velocity": (-0.126748, -0.664573, 0.132237), "apex": 2.85135173797607, "precharge_y": 3.1189432144165, "rise_before_charge": -0.26759147644043, "rise_from_preload": 0.0, "ballistic_rise": 0.0, "peak_force": 0.0, "max_length": 0.0 }
+PASS launch detaches without exceeding anatomical arm reach
+PASS launch fixture reaches a real visible material surface
+PASS attached biped can start a bounded launch preload
+PASS preload preserves original material anchors
+PASS releasing launch input begins an actuator pull
+LAUNCH TRIAL { "hands": 1, "active": true, "detached": true, "velocity": (0.73427, 1.672751, -0.382943), "apex": 3.39572644233704, "precharge_y": 3.11894345283508, "rise_before_charge": 0.27678298950195, "rise_from_preload": 0.5443742275238, "ballistic_rise": 0.13287448883057, "peak_force": 360.0, "max_length": 0.61270970106125 }
+PASS launch detaches without exceeding anatomical arm reach
+PASS launch fixture reaches a real visible material surface
+PASS launch fixture reaches a real visible material surface
+PASS attached biped can start a bounded launch preload
+PASS preload preserves original material anchors
+LAUNCH TRIAL { "hands": 2, "active": false, "detached": true, "velocity": (-0.026247, -0.639707, 0.009786), "apex": 2.87061834335327, "precharge_y": 3.21201634407043, "rise_before_charge": -0.34139800071716, "rise_from_preload": 0.0, "ballistic_rise": 0.0, "peak_force": 0.0, "max_length": 0.0 }
+PASS launch detaches without exceeding anatomical arm reach
+PASS launch fixture reaches a real visible material surface
+PASS launch fixture reaches a real visible material surface
+PASS attached biped can start a bounded launch preload
+PASS preload preserves original material anchors
+PASS releasing launch input begins an actuator pull
+LAUNCH TRIAL { "hands": 2, "active": true, "detached": true, "velocity": (-0.07108, 2.295739, -0.059875), "apex": 3.58896589279175, "precharge_y": 3.21201634407043, "rise_before_charge": 0.37694954872131, "rise_from_preload": 0.71834754943848, "ballistic_rise": 0.25187540054321, "peak_force": 360.0, "max_length": 0.60853564739227 }
+PASS launch detaches without exceeding anatomical arm reach
+PASS single-hand dyno gains real upward velocity and higher apex than normal release
+PASS two-hand dyno gains height using the same shared force budget
+PASS single-hand launch gains height above the pose before charging
+PASS dual-hand launch gains height above the pose before charging
+PASS launch fixture reaches a real visible material surface
+PASS launch can be charged for cancellation checks
+PASS a tap shorter than the minimum charge cannot launch
+PASS short-tap cancellation returns launch state to idle
+PASS cancelled preload can be started again
+PASS destroying support cancels active preload safely
+PASS airborne input cannot start another actuator launch
+PASS reset clears launch state and references
+PASS launch fixture reaches a real visible material surface
+PASS ungripped input is rejected without an impulse
+PASS ungripped biped follows gravity without launch thrust
+PASS launch fixture reaches a real visible material surface
+PASS movable support permits a physical charged pull
+PASS dynamic-support launch starts from the original anchor
+LAUNCH DYNAMIC momentum_error=0.00000023888379 angular_error=0.0000381615464 support_velocity=(0.027236, -0.080316, 0.009245) bodypos=(-0.141463, 3.357287, 0.44158) contacts=[] supportcontacts=[] P0=(0.143689, -0.362462, 0.007235) P1=(0.143689, -0.362462, 0.007235) L0=(0.220626, 0.04086, -0.433981) L1=(0.220623, 0.040865, -0.433943)
+PASS launch transmits opposite force and torque to dynamic material support
+PASS launch fixture reaches a real visible material surface
+PASS launch for mid-pull catch can charge
+PASS mid-pull catch begins during a real launch
+PASS free hand can request another actual surface while pulling
+PASS automatic takeoff releases original anchors and preserves a newly caught grip
+PASS practical launch begins at an actual reachable wall surface
+PASS practical launch begins at an actual reachable wall surface
+PASS practical launch gains its starting height through hand-over-hand physics
+PASS practical launch gains its starting height through hand-over-hand physics
+PASS practical launch gains its starting height through hand-over-hand physics
+PASS practical launch gains its starting height through hand-over-hand physics
+PASS practical launch gains its starting height through hand-over-hand physics
+PASS practical launch gains its starting height through hand-over-hand physics
+PASS higher wall target begins beyond full anatomical reach
+PASS midwall launch charges using the production profile
+PASS midwall launch pulls without a torso impulse
+PASS actual wall launch raises the torso above its precharge pose
+PASS previously unreachable wall target is caught and retained for one second
+PASS practical wall dyno uses continuous physics without reset or teleport
+LAUNCH PRACTICAL initial_distance=0.76443386077881 precharge_gain=0.29928636550903 catch_time=0.50833333333333 retained_1s=true final_position=(-0.05702, 2.629775, 0.22963)
+PASS one/two-hand launch shares the existing 360 N / 150 Nm limits
+PASS charge/release input never assigns body pose or velocities
+LAUNCH RESULTS: 60 checks, 0 failures

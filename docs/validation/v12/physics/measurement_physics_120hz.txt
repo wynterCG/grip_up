@@ -1,0 +1,60 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS T05 flat mirror1 B0 earns finite current support before effort
+PASS T05 flat mirror1 B0 motion is accompanied by real admitted load only when enabled
+PASS T05 flat mirror1 B1 earns finite current support before effort
+PASS T05 flat mirror1 B1 motion is accompanied by real admitted load only when enabled
+PASS T05 flat mirror1 B2 earns finite current support before effort
+PASS T05 flat mirror1 B2 motion is accompanied by real admitted load only when enabled
+PASS T05 flat mirror-1 B0 earns finite current support before effort
+PASS T05 flat mirror-1 B0 motion is accompanied by real admitted load only when enabled
+PASS T05 flat mirror-1 B1 earns finite current support before effort
+PASS T05 flat mirror-1 B1 motion is accompanied by real admitted load only when enabled
+PASS T05 flat mirror-1 B2 earns finite current support before effort
+PASS T05 flat mirror-1 B2 motion is accompanied by real admitted load only when enabled
+PASS FEET_02 flat B0 mirrored geometry/body/input preserves corresponding signed result
+PASS FEET_02 flat B1 mirrored geometry/body/input preserves corresponding signed result
+PASS FEET_02 flat B2 mirrored geometry/body/input preserves corresponding signed result
+PASS T05 flat B2 selected supports actually push both mirrored bodies in the indicated direction
+PASS T05 slope mirror1 B0 earns finite current support before effort
+PASS T05 slope mirror1 B0 motion is accompanied by real admitted load only when enabled
+PASS T05 slope mirror1 B1 earns finite current support before effort
+PASS T05 slope mirror1 B1 motion is accompanied by real admitted load only when enabled
+PASS T05 slope mirror1 B2 earns finite current support before effort
+PASS T05 slope mirror1 B2 motion is accompanied by real admitted load only when enabled
+PASS T05 slope mirror-1 B0 earns finite current support before effort
+PASS T05 slope mirror-1 B0 motion is accompanied by real admitted load only when enabled
+PASS T05 slope mirror-1 B1 earns finite current support before effort
+PASS T05 slope mirror-1 B1 motion is accompanied by real admitted load only when enabled
+PASS T05 slope mirror-1 B2 earns finite current support before effort
+PASS T05 slope mirror-1 B2 motion is accompanied by real admitted load only when enabled
+PASS FEET_02 slope B0 mirrored geometry/body/input preserves corresponding signed result
+PASS FEET_02 slope B1 mirrored geometry/body/input preserves corresponding signed result
+PASS FEET_02 slope B2 mirrored geometry/body/input preserves corresponding signed result
+PASS T05 known inclined B2 adverse result is preserved: loaded motion AGAINST intent, not a locomotion success
+PASS T05 all normal variants preserve finite feet, read-only prepare, friction cone and unchanged effort limit
+PASS finite physical grip establishes test anchor
+PASS T06 pump uses real retained support, finite signed work and 360/20/150 caps
+PASS T06 pump exercises measured torque work rather than a diagnostic-only phase
+PASS finite physical grip establishes test anchor
+PASS T06 coast uses real retained support, finite signed work and 360/20/150 caps
+PASS T06 raw neutral request remains ZERO and existing filters decay to negligible effort, without autonomous brake command
+PASS finite physical grip establishes test anchor
+PASS T06 brake uses real retained support, finite signed work and 360/20/150 caps
+PASS T06 brake exercises measured torque work rather than a diagnostic-only phase
+PASS finite physical grip establishes test anchor
+PASS T06 constant_held uses real retained support, finite signed work and 360/20/150 caps
+PASS T06 constant_held exercises measured torque work rather than a diagnostic-only phase
+PASS finite physical grip establishes test anchor
+PASS releasing a brief opposite gesture requests ZERO instead of resurrecting old-sign traversal tail
+PASS support loss removes reversed intent force and moment on every unsupported tick
+PASS support loss removes reversed intent force and moment on every unsupported tick
+PASS support loss removes reversed intent force and moment on every unsupported tick
+PASS support loss removes reversed intent force and moment on every unsupported tick
+PASS holding reverse after release cannot provide an airborne horizontal motor
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS explicit reversal on shared dynamic material retains equal/opposite force and moment reactions
+MEASUREMENT PHYSICS RESULTS: 55 checks, 0 failures
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)

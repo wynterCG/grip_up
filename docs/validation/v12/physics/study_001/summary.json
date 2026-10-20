@@ -1,0 +1,834 @@
+{
+  "source": "scripted_repeated_existing_fixtures",
+  "schema": "v12_physics_study_1",
+  "engine_sha256": "12310c74bdda7dcd43f28e971f33047dcecadd436b68169d61ce41009006df38",
+  "source_hashes_before": {
+    "features/grip_up/scripts/climbing_controller.gd": "1e7a5add7ae2372bf9adaca0d8e4827689407f0b2cd7539afb30a844b1e333c4",
+    "features/grip_up/scripts/intent_locomotion_coordinator.gd": "d72ae7142bc1f94f8a0c26ffc16b5af784080b39fa0becda90dff679e81ca5f0",
+    "features/grip_up/scripts/constraint_aware_allocation.gd": "2cf7b0f5a6f28a14e9ad636721b37baa4ea4662ed91cbb651cbf47b7bc2b6fbb",
+    "features/grip_up/scripts/foot_contact_solver.gd": "efe3e3c3fe0f2bf9d9de9f35df9a0ea768e9f6e168c9fab22fdc4611c5af4fb0",
+    "features/grip_up/scripts/foothold_candidate_sampler.gd": "a87cf3ccbf13e8fb38c322fe8720cd68219940af1434ba20e49bd9bc87fa3095",
+    "features/grip_up/resources/climbing_tuning.gd": "daca2f518dc0ebd9cd5be79cb94d2e55d359ae760e807a8b0c14f00d9eea96c4",
+    "features/grip_up/resources/biped_tuning.gd": "b8a4f1aaa01c7563144dbbc10b80046fbb4a33fedd7addf75989a028349714c3",
+    "features/grip_up/resources/foot_tuning.gd": "fac341838df47ca0a649d33fb276f28173019254cac251ac0db9d118c875aa72",
+    "features/grip_up/tests/test_locomotion_allocation.gd": "a742f01079e637adbe90a74c3305c22f00b97f2115b4bec28fb51461055b5618",
+    "features/grip_up/tests/test_intent_feet.gd": "ec5ad72ab24495038d46a8364f1461b9fb1b652117ffb479fd75d2e67c69a2e9",
+    "project.godot": "6ae2782544aa70dfb6a099260ead68de0b0bb7007093ef846bbb2dabfc6a86c9"
+  },
+  "source_hashes_after": {
+    "features/grip_up/scripts/climbing_controller.gd": "1e7a5add7ae2372bf9adaca0d8e4827689407f0b2cd7539afb30a844b1e333c4",
+    "features/grip_up/scripts/intent_locomotion_coordinator.gd": "d72ae7142bc1f94f8a0c26ffc16b5af784080b39fa0becda90dff679e81ca5f0",
+    "features/grip_up/scripts/constraint_aware_allocation.gd": "2cf7b0f5a6f28a14e9ad636721b37baa4ea4662ed91cbb651cbf47b7bc2b6fbb",
+    "features/grip_up/scripts/foot_contact_solver.gd": "efe3e3c3fe0f2bf9d9de9f35df9a0ea768e9f6e168c9fab22fdc4611c5af4fb0",
+    "features/grip_up/scripts/foothold_candidate_sampler.gd": "a87cf3ccbf13e8fb38c322fe8720cd68219940af1434ba20e49bd9bc87fa3095",
+    "features/grip_up/resources/climbing_tuning.gd": "daca2f518dc0ebd9cd5be79cb94d2e55d359ae760e807a8b0c14f00d9eea96c4",
+    "features/grip_up/resources/biped_tuning.gd": "b8a4f1aaa01c7563144dbbc10b80046fbb4a33fedd7addf75989a028349714c3",
+    "features/grip_up/resources/foot_tuning.gd": "fac341838df47ca0a649d33fb276f28173019254cac251ac0db9d118c875aa72",
+    "features/grip_up/tests/test_locomotion_allocation.gd": "a742f01079e637adbe90a74c3305c22f00b97f2115b4bec28fb51461055b5618",
+    "features/grip_up/tests/test_intent_feet.gd": "ec5ad72ab24495038d46a8364f1461b9fb1b652117ffb479fd75d2e67c69a2e9",
+    "project.godot": "6ae2782544aa70dfb6a099260ead68de0b0bb7007093ef846bbb2dabfc6a86c9"
+  },
+  "sources_unchanged": true,
+  "runs": [
+    {
+      "hz": 120,
+      "repeat": 1,
+      "suite": "test_locomotion_allocation",
+      "valid": true,
+      "exit_code": 0,
+      "checks": 77,
+      "command": [
+        "C:\\Users\\Wynter\\WrapRush\\tools\\godot.exe",
+        "--headless",
+        "--path",
+        "C:\\Users\\Wynter\\grip_up",
+        "--fixed-fps",
+        "120",
+        "--script",
+        "res://features/grip_up/tests/test_locomotion_allocation.gd",
+        "--quit-after",
+        "15000"
+      ]
+    },
+    {
+      "hz": 120,
+      "repeat": 1,
+      "suite": "test_intent_feet",
+      "valid": true,
+      "exit_code": 0,
+      "checks": 29,
+      "command": [
+        "C:\\Users\\Wynter\\WrapRush\\tools\\godot.exe",
+        "--headless",
+        "--path",
+        "C:\\Users\\Wynter\\grip_up",
+        "--fixed-fps",
+        "120",
+        "--script",
+        "res://features/grip_up/tests/test_intent_feet.gd",
+        "--quit-after",
+        "15000"
+      ]
+    },
+    {
+      "hz": 120,
+      "repeat": 2,
+      "suite": "test_locomotion_allocation",
+      "valid": true,
+      "exit_code": 0,
+      "checks": 77,
+      "command": [
+        "C:\\Users\\Wynter\\WrapRush\\tools\\godot.exe",
+        "--headless",
+        "--path",
+        "C:\\Users\\Wynter\\grip_up",
+        "--fixed-fps",
+        "120",
+        "--script",
+        "res://features/grip_up/tests/test_locomotion_allocation.gd",
+        "--quit-after",
+        "15000"
+      ]
+    },
+    {
+      "hz": 120,
+      "repeat": 2,
+      "suite": "test_intent_feet",
+      "valid": true,
+      "exit_code": 0,
+      "checks": 29,
+      "command": [
+        "C:\\Users\\Wynter\\WrapRush\\tools\\godot.exe",
+        "--headless",
+        "--path",
+        "C:\\Users\\Wynter\\grip_up",
+        "--fixed-fps",
+        "120",
+        "--script",
+        "res://features/grip_up/tests/test_intent_feet.gd",
+        "--quit-after",
+        "15000"
+      ]
+    },
+    {
+      "hz": 120,
+      "repeat": 3,
+      "suite": "test_locomotion_allocation",
+      "valid": true,
+      "exit_code": 0,
+      "checks": 77,
+      "command": [
+        "C:\\Users\\Wynter\\WrapRush\\tools\\godot.exe",
+        "--headless",
+        "--path",
+        "C:\\Users\\Wynter\\grip_up",
+        "--fixed-fps",
+        "120",
+        "--script",
+        "res://features/grip_up/tests/test_locomotion_allocation.gd",
+        "--quit-after",
+        "15000"
+      ]
+    },
+    {
+      "hz": 120,
+      "repeat": 3,
+      "suite": "test_intent_feet",
+      "valid": true,
+      "exit_code": 0,
+      "checks": 29,
+      "command": [
+        "C:\\Users\\Wynter\\WrapRush\\tools\\godot.exe",
+        "--headless",
+        "--path",
+        "C:\\Users\\Wynter\\grip_up",
+        "--fixed-fps",
+        "120",
+        "--script",
+        "res://features/grip_up/tests/test_intent_feet.gd",
+        "--quit-after",
+        "15000"
+      ]
+    },
+    {
+      "hz": 60,
+      "repeat": 1,
+      "suite": "test_locomotion_allocation",
+      "valid": true,
+      "exit_code": 0,
+      "checks": 77,
+      "command": [
+        "C:\\Users\\Wynter\\WrapRush\\tools\\godot.exe",
+        "--headless",
+        "--path",
+        "C:\\Users\\Wynter\\grip_up",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://features/grip_up/tests/test_locomotion_allocation.gd",
+        "--quit-after",
+        "15000",
+        "--",
+        "--60hz"
+      ]
+    },
+    {
+      "hz": 60,
+      "repeat": 1,
+      "suite": "test_intent_feet",
+      "valid": true,
+      "exit_code": 0,
+      "checks": 29,
+      "command": [
+        "C:\\Users\\Wynter\\WrapRush\\tools\\godot.exe",
+        "--headless",
+        "--path",
+        "C:\\Users\\Wynter\\grip_up",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://features/grip_up/tests/test_intent_feet.gd",
+        "--quit-after",
+        "15000",
+        "--",
+        "--60hz"
+      ]
+    },
+    {
+      "hz": 60,
+      "repeat": 2,
+      "suite": "test_locomotion_allocation",
+      "valid": true,
+      "exit_code": 0,
+      "checks": 77,
+      "command": [
+        "C:\\Users\\Wynter\\WrapRush\\tools\\godot.exe",
+        "--headless",
+        "--path",
+        "C:\\Users\\Wynter\\grip_up",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://features/grip_up/tests/test_locomotion_allocation.gd",
+        "--quit-after",
+        "15000",
+        "--",
+        "--60hz"
+      ]
+    },
+    {
+      "hz": 60,
+      "repeat": 2,
+      "suite": "test_intent_feet",
+      "valid": true,
+      "exit_code": 0,
+      "checks": 29,
+      "command": [
+        "C:\\Users\\Wynter\\WrapRush\\tools\\godot.exe",
+        "--headless",
+        "--path",
+        "C:\\Users\\Wynter\\grip_up",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://features/grip_up/tests/test_intent_feet.gd",
+        "--quit-after",
+        "15000",
+        "--",
+        "--60hz"
+      ]
+    },
+    {
+      "hz": 60,
+      "repeat": 3,
+      "suite": "test_locomotion_allocation",
+      "valid": true,
+      "exit_code": 0,
+      "checks": 77,
+      "command": [
+        "C:\\Users\\Wynter\\WrapRush\\tools\\godot.exe",
+        "--headless",
+        "--path",
+        "C:\\Users\\Wynter\\grip_up",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://features/grip_up/tests/test_locomotion_allocation.gd",
+        "--quit-after",
+        "15000",
+        "--",
+        "--60hz"
+      ]
+    },
+    {
+      "hz": 60,
+      "repeat": 3,
+      "suite": "test_intent_feet",
+      "valid": true,
+      "exit_code": 0,
+      "checks": 29,
+      "command": [
+        "C:\\Users\\Wynter\\WrapRush\\tools\\godot.exe",
+        "--headless",
+        "--path",
+        "C:\\Users\\Wynter\\grip_up",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://features/grip_up/tests/test_intent_feet.gd",
+        "--quit-after",
+        "15000",
+        "--",
+        "--60hz"
+      ]
+    }
+  ],
+  "comparisons": {
+    "120": {
+      "asymmetric": {
+        "a0_useful": {
+          "n": 3,
+          "values": [
+            0.208892345428467,
+            0.208892345428467,
+            0.208892345428467
+          ],
+          "mean": 0.208892345428467,
+          "min": 0.208892345428467,
+          "max": 0.208892345428467,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "a1_useful": {
+          "n": 3,
+          "values": [
+            0.188733816146851,
+            0.188733816146851,
+            0.188733816146851
+          ],
+          "mean": 0.188733816146851,
+          "min": 0.188733816146851,
+          "max": 0.188733816146851,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "a0_twist": {
+          "n": 3,
+          "values": [
+            0.0497748926030972,
+            0.0497748926030972,
+            0.0497748926030972
+          ],
+          "mean": 0.0497748926030972,
+          "min": 0.0497748926030972,
+          "max": 0.0497748926030972,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "a1_twist": {
+          "n": 3,
+          "values": [
+            0.0736767283525878,
+            0.0736767283525878,
+            0.0736767283525878
+          ],
+          "mean": 0.0736767283525878,
+          "min": 0.0736767283525878,
+          "max": 0.0736767283525878,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "paired_progress_delta": {
+          "n": 3,
+          "values": [
+            -0.02015852928161599,
+            -0.02015852928161599,
+            -0.02015852928161599
+          ],
+          "mean": -0.02015852928161599,
+          "min": -0.02015852928161599,
+          "max": -0.02015852928161599,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "paired_twist_delta": {
+          "n": 3,
+          "values": [
+            0.023901835749490605,
+            0.023901835749490605,
+            0.023901835749490605
+          ],
+          "mean": 0.023901835749490605,
+          "min": 0.023901835749490605,
+          "max": 0.023901835749490605,
+          "range": 0.0,
+          "sample_sd": 0.0
+        }
+      },
+      "asymmetric_diagonal": {
+        "a0_useful": {
+          "n": 3,
+          "values": [
+            0.108476892113686,
+            0.108476892113686,
+            0.108476892113686
+          ],
+          "mean": 0.108476892113686,
+          "min": 0.108476892113686,
+          "max": 0.108476892113686,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "a1_useful": {
+          "n": 3,
+          "values": [
+            -0.00619661062955856,
+            -0.00619661062955856,
+            -0.00619661062955856
+          ],
+          "mean": -0.00619661062955856,
+          "min": -0.00619661062955856,
+          "max": -0.00619661062955856,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "a0_twist": {
+          "n": 3,
+          "values": [
+            0.0493719177265006,
+            0.0493719177265006,
+            0.0493719177265006
+          ],
+          "mean": 0.0493719177265006,
+          "min": 0.0493719177265006,
+          "max": 0.0493719177265006,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "a1_twist": {
+          "n": 3,
+          "values": [
+            0.0979066097935827,
+            0.0979066097935827,
+            0.0979066097935827
+          ],
+          "mean": 0.0979066097935827,
+          "min": 0.0979066097935827,
+          "max": 0.0979066097935827,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "paired_progress_delta": {
+          "n": 3,
+          "values": [
+            -0.11467350274324456,
+            -0.11467350274324456,
+            -0.11467350274324456
+          ],
+          "mean": -0.11467350274324456,
+          "min": -0.11467350274324456,
+          "max": -0.11467350274324456,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "paired_twist_delta": {
+          "n": 3,
+          "values": [
+            0.04853469206708211,
+            0.04853469206708211,
+            0.04853469206708211
+          ],
+          "mean": 0.04853469206708211,
+          "min": 0.04853469206708211,
+          "max": 0.04853469206708211,
+          "range": 0.0,
+          "sample_sd": 0.0
+        }
+      },
+      "step": {
+        "B0_rise": {
+          "n": 3,
+          "values": [
+            0.159641742706299,
+            0.159641742706299,
+            0.159641742706299
+          ],
+          "mean": 0.159641742706299,
+          "min": 0.159641742706299,
+          "max": 0.159641742706299,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "B1_rise": {
+          "n": 3,
+          "values": [
+            0.272320508956909,
+            0.272320508956909,
+            0.272320508956909
+          ],
+          "mean": 0.272320508956909,
+          "min": 0.272320508956909,
+          "max": 0.272320508956909,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "B2_rise": {
+          "n": 3,
+          "values": [
+            0.271632790565491,
+            0.271632790565491,
+            0.271632790565491
+          ],
+          "mean": 0.271632790565491,
+          "min": 0.271632790565491,
+          "max": 0.271632790565491,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "B1_hand_integral": {
+          "n": 3,
+          "values": [
+            257.136937292417,
+            257.136937292417,
+            257.136937292417
+          ],
+          "mean": 257.136937292417,
+          "min": 257.136937292417,
+          "max": 257.136937292417,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "B2_hand_integral": {
+          "n": 3,
+          "values": [
+            257.330166526636,
+            257.330166526636,
+            257.330166526636
+          ],
+          "mean": 257.330166526636,
+          "min": 257.330166526636,
+          "max": 257.330166526636,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "B1_work": {
+          "n": 3,
+          "values": [
+            20.7213504483031,
+            20.7213504483031,
+            20.7213504483031
+          ],
+          "mean": 20.7213504483031,
+          "min": 20.7213504483031,
+          "max": 20.7213504483031,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "B2_work": {
+          "n": 3,
+          "values": [
+            20.746876747911,
+            20.746876747911,
+            20.746876747911
+          ],
+          "mean": 20.746876747911,
+          "min": 20.746876747911,
+          "max": 20.746876747911,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "paired_B2_B1_progress_delta": {
+          "n": 3,
+          "values": [
+            -0.0006877183914180129,
+            -0.0006877183914180129,
+            -0.0006877183914180129
+          ],
+          "mean": -0.0006877183914180129,
+          "min": -0.0006877183914180129,
+          "max": -0.0006877183914180129,
+          "range": 0.0,
+          "sample_sd": 0.0
+        }
+      }
+    },
+    "60": {
+      "asymmetric": {
+        "a0_useful": {
+          "n": 3,
+          "values": [
+            0.200002908706665,
+            0.200002908706665,
+            0.200002908706665
+          ],
+          "mean": 0.200002908706665,
+          "min": 0.200002908706665,
+          "max": 0.200002908706665,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "a1_useful": {
+          "n": 3,
+          "values": [
+            0.186509847640991,
+            0.186509847640991,
+            0.186509847640991
+          ],
+          "mean": 0.186509847640991,
+          "min": 0.186509847640991,
+          "max": 0.186509847640991,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "a0_twist": {
+          "n": 3,
+          "values": [
+            0.0623028418754342,
+            0.0623028418754342,
+            0.0623028418754342
+          ],
+          "mean": 0.0623028418754342,
+          "min": 0.0623028418754342,
+          "max": 0.0623028418754342,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "a1_twist": {
+          "n": 3,
+          "values": [
+            0.0783253744720745,
+            0.0783253744720745,
+            0.0783253744720745
+          ],
+          "mean": 0.0783253744720745,
+          "min": 0.0783253744720745,
+          "max": 0.0783253744720745,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "paired_progress_delta": {
+          "n": 3,
+          "values": [
+            -0.013493061065674022,
+            -0.013493061065674022,
+            -0.013493061065674022
+          ],
+          "mean": -0.013493061065674022,
+          "min": -0.013493061065674022,
+          "max": -0.013493061065674022,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "paired_twist_delta": {
+          "n": 3,
+          "values": [
+            0.016022532596640292,
+            0.016022532596640292,
+            0.016022532596640292
+          ],
+          "mean": 0.016022532596640292,
+          "min": 0.016022532596640292,
+          "max": 0.016022532596640292,
+          "range": 0.0,
+          "sample_sd": 0.0
+        }
+      },
+      "asymmetric_diagonal": {
+        "a0_useful": {
+          "n": 3,
+          "values": [
+            0.094687782227993,
+            0.094687782227993,
+            0.094687782227993
+          ],
+          "mean": 0.094687782227993,
+          "min": 0.094687782227993,
+          "max": 0.094687782227993,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "a1_useful": {
+          "n": 3,
+          "values": [
+            -0.00704222172498703,
+            -0.00704222172498703,
+            -0.00704222172498703
+          ],
+          "mean": -0.00704222172498703,
+          "min": -0.00704222172498703,
+          "max": -0.00704222172498703,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "a0_twist": {
+          "n": 3,
+          "values": [
+            0.0559169428404889,
+            0.0559169428404889,
+            0.0559169428404889
+          ],
+          "mean": 0.0559169428404889,
+          "min": 0.0559169428404889,
+          "max": 0.0559169428404889,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "a1_twist": {
+          "n": 3,
+          "values": [
+            0.0994867368980273,
+            0.0994867368980273,
+            0.0994867368980273
+          ],
+          "mean": 0.0994867368980273,
+          "min": 0.0994867368980273,
+          "max": 0.0994867368980273,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "paired_progress_delta": {
+          "n": 3,
+          "values": [
+            -0.10173000395298003,
+            -0.10173000395298003,
+            -0.10173000395298003
+          ],
+          "mean": -0.10173000395298003,
+          "min": -0.10173000395298003,
+          "max": -0.10173000395298003,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "paired_twist_delta": {
+          "n": 3,
+          "values": [
+            0.0435697940575384,
+            0.0435697940575384,
+            0.0435697940575384
+          ],
+          "mean": 0.0435697940575384,
+          "min": 0.0435697940575384,
+          "max": 0.0435697940575384,
+          "range": 0.0,
+          "sample_sd": 0.0
+        }
+      },
+      "step": {
+        "B0_rise": {
+          "n": 3,
+          "values": [
+            0.135616421699524,
+            0.135616421699524,
+            0.135616421699524
+          ],
+          "mean": 0.135616421699524,
+          "min": 0.135616421699524,
+          "max": 0.135616421699524,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "B1_rise": {
+          "n": 3,
+          "values": [
+            0.273284435272217,
+            0.273284435272217,
+            0.273284435272217
+          ],
+          "mean": 0.273284435272217,
+          "min": 0.273284435272217,
+          "max": 0.273284435272217,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "B2_rise": {
+          "n": 3,
+          "values": [
+            0.273139357566834,
+            0.273139357566834,
+            0.273139357566834
+          ],
+          "mean": 0.273139357566834,
+          "min": 0.273139357566834,
+          "max": 0.273139357566834,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "B1_hand_integral": {
+          "n": 3,
+          "values": [
+            238.482425063849,
+            238.482425063849,
+            238.482425063849
+          ],
+          "mean": 238.482425063849,
+          "min": 238.482425063849,
+          "max": 238.482425063849,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "B2_hand_integral": {
+          "n": 3,
+          "values": [
+            238.270833386978,
+            238.270833386978,
+            238.270833386978
+          ],
+          "mean": 238.270833386978,
+          "min": 238.270833386978,
+          "max": 238.270833386978,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "B1_work": {
+          "n": 3,
+          "values": [
+            20.529251663511,
+            20.529251663511,
+            20.529251663511
+          ],
+          "mean": 20.529251663511,
+          "min": 20.529251663511,
+          "max": 20.529251663511,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "B2_work": {
+          "n": 3,
+          "values": [
+            20.6451273941047,
+            20.6451273941047,
+            20.6451273941047
+          ],
+          "mean": 20.6451273941047,
+          "min": 20.6451273941047,
+          "max": 20.6451273941047,
+          "range": 0.0,
+          "sample_sd": 0.0
+        },
+        "paired_B2_B1_progress_delta": {
+          "n": 3,
+          "values": [
+            -0.00014507770538302323,
+            -0.00014507770538302323,
+            -0.00014507770538302323
+          ],
+          "mean": -0.00014507770538302323,
+          "min": -0.00014507770538302323,
+          "max": -0.00014507770538302323,
+          "range": 0.0,
+          "sample_sd": 0.0
+        }
+      }
+    }
+  },
+  "decision": {
+    "A1": "REVISE_known_regressions_preserved",
+    "B2": "INCONCLUSIVE_global_locomotion_benefit_not_demonstrated",
+    "default_promotion": false
+  },
+  "limitations": [
+    "Three repeats of one initial state are repeatability evidence, not participant/seed diversity.",
+    "Legacy body-origin projection/twist definitions are preserved, not silently relabelled COM or v12 metrics.",
+    "No human sessions or force/geometry tuning."
+  ]
+}

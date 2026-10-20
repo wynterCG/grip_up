@@ -1,0 +1,55 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS hands_OFF actual finite left contact
+PASS hands_OFF actual finite right contact
+PASS hands_OFF intent setter never writes body pose or velocity
+PASS hands_OFF unchanged finite budgets incl shared reacted mantle request
+PASS hands_OFF no torso attitude effort without actual attached support
+PASS hands_OFF featureOFF has zero mantle contribution
+MANTLE_CAPABILITY {"attempted":false,"ground":false,"label":"hands_OFF","peak_tilt":0.0114304332331694,"peak_y":1.16740715503693,"top":false,"walk":false}
+PASS hands_ON actual finite left contact
+PASS hands_ON actual finite right contact
+PASS hands_ON intent setter never writes body pose or velocity
+PASS hands_ON unchanged finite budgets incl shared reacted mantle request
+PASS hands_ON no torso attitude effort without actual attached support
+MANTLE_CAPABILITY {"attempted":true,"ground":false,"label":"hands_ON","peak_tilt":0.011435646714751,"peak_y":1.16740715503693,"top":true,"walk":false}
+PASS hands_feet_ON actual finite left contact
+PASS hands_feet_ON actual finite right contact
+PASS hands_feet_ON intent setter never writes body pose or velocity
+PASS hands_feet_ON unchanged finite budgets incl shared reacted mantle request
+PASS hands_feet_ON no torso attitude effort without actual attached support
+MANTLE_CAPABILITY {"attempted":true,"ground":false,"label":"hands_feet_ON","peak_tilt":0.789229836879249,"peak_y":1.20300841331482,"top":true,"walk":false}
+PASS real wide top is identified and deliberately attempted with actual hand support
+PASS narrow_lip actual finite left contact
+PASS narrow_lip actual finite right contact
+PASS narrow_lip intent setter never writes body pose or velocity
+PASS narrow_lip unchanged finite budgets incl shared reacted mantle request
+PASS narrow_lip no torso attitude effort without actual attached support
+PASS narrow_lip rejects inadequate bearing top or occupied upright destination
+MANTLE_CAPABILITY {"attempted":false,"ground":false,"label":"narrow_lip","peak_tilt":0.883881104330809,"peak_y":1.20177149772644,"top":false,"walk":false}
+PASS occupied_top actual finite left contact
+PASS occupied_top actual finite right contact
+PASS occupied_top intent setter never writes body pose or velocity
+PASS occupied_top unchanged finite budgets incl shared reacted mantle request
+PASS occupied_top no torso attitude effort without actual attached support
+PASS occupied_top rejects inadequate bearing top or occupied upright destination
+MANTLE_CAPABILITY {"attempted":false,"ground":false,"label":"occupied_top","peak_tilt":0.927075377946291,"peak_y":1.20215964317322,"top":true,"walk":false}
+PASS high_edge_hands actual finite left contact
+PASS high_edge_hands actual finite right contact
+PASS high_edge_hands intent setter never writes body pose or velocity
+PASS high_edge_hands unchanged finite budgets incl shared reacted mantle request
+PASS high_edge_hands no torso attitude effort without actual attached support
+MANTLE_CAPABILITY {"attempted":true,"ground":false,"label":"high_edge_hands","peak_tilt":0.132743333837398,"peak_y":1.35613822937012,"top":true,"walk":false}
+PASS high_edge_feet actual finite left contact
+PASS high_edge_feet actual finite right contact
+PASS high_edge_feet intent setter never writes body pose or velocity
+PASS high_edge_feet unchanged finite budgets incl shared reacted mantle request
+PASS high_edge_feet no torso attitude effort without actual attached support
+MANTLE_CAPABILITY {"attempted":true,"ground":false,"label":"high_edge_feet","peak_tilt":0.459461228672774,"peak_y":1.47970020771027,"top":true,"walk":false}
+PASS real free30kg dynamic ledge acquires two finite grips
+PASS finite mantle attitude produces actual dynamic support angular reaction
+PASS unforced free pair preserves total linear momentum with actual mantle effort
+PASS collinear hand force pairs have negligible net angular wrench; attitude reaction is paired by the existing allocator
+PASS last actual support lost immediately removes all mantle torque
+PASS all steps preserve hand/leg and same-tick common ground+climb moment caps
+INTENT MANTLE RESULTS: 45 checks, 0 failures

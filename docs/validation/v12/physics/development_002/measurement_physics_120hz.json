@@ -1,0 +1,499 @@
+{
+	"checks": 55,
+	"decisions": {
+		"B2": "REVISE_local_inclined_candidate_moves_against_intent; global_benefit_unproven",
+		"B2_benefit_gate_met": false,
+		"brake": "measured_signed_work_not_assumed_success",
+		"default_promotion": false
+	},
+	"failures": 1,
+	"feet": [
+		{
+			"direction": "(-1.0, 0.0, 0.0)",
+			"displacement": "(0.0, 0.0, 0.0)",
+			"geometry": "flat",
+			"last_normal": "(0.0, 1.0, 0.0)",
+			"loaded_samples": 0,
+			"mirror": 1,
+			"mode": "B0",
+			"outcome": "NO_MEASURED_MOVEMENT",
+			"peak_force_n": 0.0,
+			"relative_partial_work_j": 0.0,
+			"scope": "isolated massless foot; tiny sphere body, zero gravity, fixed supports; not full biped gameplay",
+			"selected_point": "(0.0, 0.0, 0.0)",
+			"selection": {
+				"enabled": false,
+				"feet": {},
+				"intent": "(-1.0, 0.0, 0.0)",
+				"policy": "B1_EXISTING",
+				"scope": "local search only; planted contacts are not automatically replaced",
+				"switch_count": 0
+			},
+			"signed_progress": 0.0
+		},
+		{
+			"direction": "(-1.0, 0.0, 0.0)",
+			"displacement": "(0.004264, 0.021318, 0.0)",
+			"geometry": "flat",
+			"last_normal": "(0.0, 1.0, 0.0)",
+			"loaded_samples": 12,
+			"mirror": 1,
+			"mode": "B1",
+			"outcome": "MOVEMENT_AGAINST_INTENT",
+			"peak_force_n": 22.211820602417,
+			"relative_partial_work_j": 0.0569162537654241,
+			"scope": "isolated massless foot; tiny sphere body, zero gravity, fixed supports; not full biped gameplay",
+			"selected_point": "(-0.16, 0.1, 0.0)",
+			"selection": {
+				"enabled": false,
+				"feet": {},
+				"intent": "(-1.0, 0.0, 0.0)",
+				"policy": "B1_EXISTING",
+				"scope": "local search only; planted contacts are not automatically replaced",
+				"switch_count": 0
+			},
+			"signed_progress": -0.00426367064937949
+		},
+		{
+			"direction": "(-1.0, 0.0, 0.0)",
+			"displacement": "(-0.004264, 0.021318, 0.0)",
+			"geometry": "flat",
+			"last_normal": "(0.0, 1.0, 0.0)",
+			"loaded_samples": 12,
+			"mirror": 1,
+			"mode": "B2",
+			"outcome": "MOVEMENT_WITH_INTENT",
+			"peak_force_n": 22.211820602417,
+			"relative_partial_work_j": 0.0569162537654241,
+			"scope": "isolated massless foot; tiny sphere body, zero gravity, fixed supports; not full biped gameplay",
+			"selected_point": "(0.16, 0.1, 0.0)",
+			"selection": {
+				"enabled": true,
+				"feet": {
+					"0": {
+						"candidate_count": 6,
+						"future_contact_authorized": false,
+						"reason": "LOCAL_CANDIDATE_SELECTED",
+						"rejected": {},
+						"selected": {
+							"adjustment": 0.0076184693610669,
+							"baseline_cost": 0.186830538344383,
+							"bearing_quality": 0.980580627918243,
+							"compression_feasible": true,
+							"cost": 0.19444900770545,
+							"drift_penalty_distance": 0.0,
+							"extension_room": 0.0133268946838379,
+							"friction": 0.85,
+							"gesture_time_estimate": 0.0838152691721916,
+							"hysteresis_bonus": 0.0,
+							"normal": "(0.0, 1.0, 0.0)",
+							"normal_per_unit_effort": 0.980580627918243,
+							"point": "(0.16, 0.1, 0.0)",
+							"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+							"relative_support_velocity": "(0.0, 0.0, 0.0)",
+							"signed_push_utility": 0.196116134524345,
+							"support_id": 45583697396,
+							"support_name": "@StaticBody3D@20"
+						}
+					}
+				},
+				"intent": "(-1.0, 0.0, 0.0)",
+				"policy": "B2_INTENT_AWARE",
+				"scope": "local search only; planted contacts are not automatically replaced",
+				"switch_count": 0
+			},
+			"signed_progress": 0.00426367064937949
+		},
+		{
+			"direction": "(1.0, 0.0, 0.0)",
+			"displacement": "(0.0, 0.0, 0.0)",
+			"geometry": "flat",
+			"last_normal": "(0.0, 1.0, 0.0)",
+			"loaded_samples": 0,
+			"mirror": -1,
+			"mode": "B0",
+			"outcome": "NO_MEASURED_MOVEMENT",
+			"peak_force_n": 0.0,
+			"relative_partial_work_j": 0.0,
+			"scope": "isolated massless foot; tiny sphere body, zero gravity, fixed supports; not full biped gameplay",
+			"selected_point": "(0.0, 0.0, 0.0)",
+			"selection": {
+				"enabled": false,
+				"feet": {},
+				"intent": "(1.0, 0.0, 0.0)",
+				"policy": "B1_EXISTING",
+				"scope": "local search only; planted contacts are not automatically replaced",
+				"switch_count": 0
+			},
+			"signed_progress": 0.0
+		},
+		{
+			"direction": "(1.0, 0.0, 0.0)",
+			"displacement": "(-0.004264, 0.021318, 0.0)",
+			"geometry": "flat",
+			"last_normal": "(0.0, 1.0, 0.0)",
+			"loaded_samples": 12,
+			"mirror": -1,
+			"mode": "B1",
+			"outcome": "MOVEMENT_AGAINST_INTENT",
+			"peak_force_n": 22.211820602417,
+			"relative_partial_work_j": 0.0569162537654241,
+			"scope": "isolated massless foot; tiny sphere body, zero gravity, fixed supports; not full biped gameplay",
+			"selected_point": "(0.16, 0.1, -0.0)",
+			"selection": {
+				"enabled": false,
+				"feet": {},
+				"intent": "(1.0, 0.0, 0.0)",
+				"policy": "B1_EXISTING",
+				"scope": "local search only; planted contacts are not automatically replaced",
+				"switch_count": 0
+			},
+			"signed_progress": -0.00426367064937949
+		},
+		{
+			"direction": "(1.0, 0.0, 0.0)",
+			"displacement": "(0.004264, 0.021318, -0.0)",
+			"geometry": "flat",
+			"last_normal": "(0.0, 1.0, 0.0)",
+			"loaded_samples": 12,
+			"mirror": -1,
+			"mode": "B2",
+			"outcome": "MOVEMENT_WITH_INTENT",
+			"peak_force_n": 22.211820602417,
+			"relative_partial_work_j": 0.0569162537654241,
+			"scope": "isolated massless foot; tiny sphere body, zero gravity, fixed supports; not full biped gameplay",
+			"selected_point": "(-0.16, 0.1, 0.0)",
+			"selection": {
+				"enabled": true,
+				"feet": {
+					"0": {
+						"candidate_count": 6,
+						"future_contact_authorized": false,
+						"reason": "LOCAL_CANDIDATE_SELECTED",
+						"rejected": {},
+						"selected": {
+							"adjustment": 0.0076184693610669,
+							"baseline_cost": 0.186830538344383,
+							"bearing_quality": 0.980580627918243,
+							"compression_feasible": true,
+							"cost": 0.19444900770545,
+							"drift_penalty_distance": 0.0,
+							"extension_room": 0.0133268946838379,
+							"friction": 0.85,
+							"gesture_time_estimate": 0.0838152691721916,
+							"hysteresis_bonus": 0.0,
+							"normal": "(0.0, 1.0, 0.0)",
+							"normal_per_unit_effort": 0.980580627918243,
+							"point": "(-0.16, 0.1, 0.0)",
+							"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+							"relative_support_velocity": "(0.0, 0.0, 0.0)",
+							"signed_push_utility": 0.196116134524345,
+							"support_id": 61169731065,
+							"support_name": "@StaticBody3D@36"
+						}
+					}
+				},
+				"intent": "(1.0, 0.0, 0.0)",
+				"policy": "B2_INTENT_AWARE",
+				"scope": "local search only; planted contacts are not automatically replaced",
+				"switch_count": 0
+			},
+			"signed_progress": 0.00426367064937949
+		},
+		{
+			"direction": "(-1.0, 0.0, 0.0)",
+			"displacement": "(0.0, 0.0, 0.0)",
+			"geometry": "slope",
+			"last_normal": "(0.0, 1.0, 0.0)",
+			"loaded_samples": 0,
+			"mirror": 1,
+			"mode": "B0",
+			"outcome": "NO_MEASURED_MOVEMENT",
+			"peak_force_n": 0.0,
+			"relative_partial_work_j": 0.0,
+			"scope": "isolated massless foot; tiny sphere body, zero gravity, fixed supports; not full biped gameplay",
+			"selected_point": "(0.0, 0.0, 0.0)",
+			"selection": {
+				"enabled": false,
+				"feet": {},
+				"intent": "(-1.0, 0.0, 0.0)",
+				"policy": "B1_EXISTING",
+				"scope": "local search only; planted contacts are not automatically replaced",
+				"switch_count": 0
+			},
+			"signed_progress": 0.0
+		},
+		{
+			"direction": "(-1.0, 0.0, 0.0)",
+			"displacement": "(0.010213, 0.053887, 0.0)",
+			"geometry": "slope",
+			"last_normal": "(0.119712, 0.992809, 0.0)",
+			"loaded_samples": 13,
+			"mirror": 1,
+			"mode": "B1",
+			"outcome": "MOVEMENT_AGAINST_INTENT",
+			"peak_force_n": 46.8923149108887,
+			"relative_partial_work_j": 0.378989544510841,
+			"scope": "isolated massless foot; tiny sphere body, zero gravity, fixed supports; not full biped gameplay",
+			"selected_point": "(-0.16, 0.119655, 0.0)",
+			"selection": {
+				"enabled": false,
+				"feet": {},
+				"intent": "(-1.0, 0.0, 0.0)",
+				"policy": "B1_EXISTING",
+				"scope": "local search only; planted contacts are not automatically replaced",
+				"switch_count": 0
+			},
+			"signed_progress": -0.0102128572762012
+		},
+		{
+			"direction": "(-1.0, 0.0, 0.0)",
+			"displacement": "(0.010213, 0.053887, 0.0)",
+			"geometry": "slope",
+			"last_normal": "(0.119712, 0.992809, 0.0)",
+			"loaded_samples": 13,
+			"mirror": 1,
+			"mode": "B2",
+			"outcome": "MOVEMENT_AGAINST_INTENT",
+			"peak_force_n": 46.8923149108887,
+			"relative_partial_work_j": 0.378989544510841,
+			"scope": "isolated massless foot; tiny sphere body, zero gravity, fixed supports; not full biped gameplay",
+			"selected_point": "(-0.16, 0.119655, 0.0)",
+			"selection": {
+				"enabled": true,
+				"feet": {
+					"0": {
+						"candidate_count": 3,
+						"future_contact_authorized": false,
+						"reason": "LOCAL_CANDIDATE_SELECTED",
+						"rejected": {
+							"leg_reach": 3
+						},
+						"selected": {
+							"adjustment": 0.0993917446470261,
+							"baseline_cost": 0.17297009510994,
+							"bearing_quality": 0.982510447502136,
+							"compression_feasible": true,
+							"cost": 0.272361839756966,
+							"drift_penalty_distance": 0.0,
+							"extension_room": 0.0342021102142334,
+							"friction": 0.85,
+							"gesture_time_estimate": 0.0756265595555305,
+							"hysteresis_bonus": 0.0,
+							"normal": "(0.119712, 0.992809, 0.0)",
+							"normal_per_unit_effort": 0.997736155986786,
+							"point": "(-0.16, 0.119655, 0.0)",
+							"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+							"relative_support_velocity": "(0.0, 0.0, 0.0)",
+							"signed_push_utility": -0.186207234859467,
+							"support_id": 76722210305,
+							"support_name": "@StaticBody3D@54"
+						}
+					}
+				},
+				"intent": "(-1.0, 0.0, 0.0)",
+				"policy": "B2_INTENT_AWARE",
+				"scope": "local search only; planted contacts are not automatically replaced",
+				"switch_count": 0
+			},
+			"signed_progress": -0.0102128572762012
+		},
+		{
+			"direction": "(1.0, 0.0, 0.0)",
+			"displacement": "(0.0, 0.0, 0.0)",
+			"geometry": "slope",
+			"last_normal": "(0.0, 1.0, 0.0)",
+			"loaded_samples": 0,
+			"mirror": -1,
+			"mode": "B0",
+			"outcome": "NO_MEASURED_MOVEMENT",
+			"peak_force_n": 0.0,
+			"relative_partial_work_j": 0.0,
+			"scope": "isolated massless foot; tiny sphere body, zero gravity, fixed supports; not full biped gameplay",
+			"selected_point": "(0.0, 0.0, 0.0)",
+			"selection": {
+				"enabled": false,
+				"feet": {},
+				"intent": "(1.0, 0.0, 0.0)",
+				"policy": "B1_EXISTING",
+				"scope": "local search only; planted contacts are not automatically replaced",
+				"switch_count": 0
+			},
+			"signed_progress": 0.0
+		},
+		{
+			"direction": "(1.0, 0.0, 0.0)",
+			"displacement": "(-0.010213, 0.053887, 0.0)",
+			"geometry": "slope",
+			"last_normal": "(-0.119712, 0.992809, 0.0)",
+			"loaded_samples": 13,
+			"mirror": -1,
+			"mode": "B1",
+			"outcome": "MOVEMENT_AGAINST_INTENT",
+			"peak_force_n": 46.8923149108887,
+			"relative_partial_work_j": 0.378989544510841,
+			"scope": "isolated massless foot; tiny sphere body, zero gravity, fixed supports; not full biped gameplay",
+			"selected_point": "(0.16, 0.119655, -0.0)",
+			"selection": {
+				"enabled": false,
+				"feet": {},
+				"intent": "(1.0, 0.0, 0.0)",
+				"policy": "B1_EXISTING",
+				"scope": "local search only; planted contacts are not automatically replaced",
+				"switch_count": 0
+			},
+			"signed_progress": -0.0102128572762012
+		},
+		{
+			"direction": "(1.0, 0.0, 0.0)",
+			"displacement": "(-0.010213, 0.053887, 0.0)",
+			"geometry": "slope",
+			"last_normal": "(-0.119712, 0.992809, 0.0)",
+			"loaded_samples": 13,
+			"mirror": -1,
+			"mode": "B2",
+			"outcome": "MOVEMENT_AGAINST_INTENT",
+			"peak_force_n": 46.8923149108887,
+			"relative_partial_work_j": 0.378989544510841,
+			"scope": "isolated massless foot; tiny sphere body, zero gravity, fixed supports; not full biped gameplay",
+			"selected_point": "(0.16, 0.119655, -0.0)",
+			"selection": {
+				"enabled": true,
+				"feet": {
+					"0": {
+						"candidate_count": 3,
+						"future_contact_authorized": false,
+						"reason": "LOCAL_CANDIDATE_SELECTED",
+						"rejected": {
+							"leg_reach": 3
+						},
+						"selected": {
+							"adjustment": 0.0993917446470261,
+							"baseline_cost": 0.17297009510994,
+							"bearing_quality": 0.982510447502136,
+							"compression_feasible": true,
+							"cost": 0.272361839756966,
+							"drift_penalty_distance": 0.0,
+							"extension_room": 0.0342021102142334,
+							"friction": 0.85,
+							"gesture_time_estimate": 0.0756265595555305,
+							"hysteresis_bonus": 0.0,
+							"normal": "(-0.119712, 0.992809, 0.0)",
+							"normal_per_unit_effort": 0.997736155986786,
+							"point": "(0.16, 0.119655, -0.0)",
+							"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+							"relative_support_velocity": "(0.0, 0.0, 0.0)",
+							"signed_push_utility": -0.186207234859467,
+							"support_id": 92241135097,
+							"support_name": "@StaticBody3D@74"
+						}
+					}
+				},
+				"intent": "(1.0, 0.0, 0.0)",
+				"policy": "B2_INTENT_AWARE",
+				"scope": "local search only; planted contacts are not automatically replaced",
+				"switch_count": 0
+			},
+			"signed_progress": -0.0102128572762012
+		}
+	],
+	"initial_conditions": "fixture initialization only; all swing motion earned through finite support/controller forces",
+	"physics_hz": 120,
+	"reaction": {
+		"dL": 0.00000769883536122506,
+		"dp": 0.000000477767571283039,
+		"peak_swing_torque": 14.9960126876831
+	},
+	"schema": "measurement_physics_v12_1",
+	"source": "scripted_mechanical_probes",
+	"swing": [
+		{
+			"duration_s": 2.0,
+			"earned_initial_spin": "(-0.071401, -0.03557, 0.583374)",
+			"final_incremental_torque_nm": 12.514139175415,
+			"incremental_swing_work_j": 11.572676635161,
+			"mode": "pump",
+			"negative_work_j": -0.0734376615534226,
+			"neutral_request_zero": true,
+			"neutral_tail_torque_nm": 0.0,
+			"peak_incremental_swing_torque_nm": 16.0819282531738,
+			"peak_pendulum_angle_rad": 0.367080149316061,
+			"peak_pendulum_angular_speed_rad_s": 1.00026428699493,
+			"peak_relative_kinetic_energy_proxy_j": 7.34045803546906,
+			"phases": {
+				"BRAKING": 11,
+				"NEUTRAL": 0,
+				"PUMPING": 229
+			},
+			"positive_work_j": 11.6461142967145,
+			"retained": true,
+			"scope": "scripted reactive phase policy, no anticipation; torque work is incremental after common assist cap, not total actuator energy"
+		},
+		{
+			"duration_s": 2.0,
+			"earned_initial_spin": "(-0.071401, -0.03557, 0.583374)",
+			"final_incremental_torque_nm": 0.0,
+			"incremental_swing_work_j": 0.799202897418547,
+			"mode": "coast",
+			"negative_work_j": -0.000752480453748679,
+			"neutral_request_zero": false,
+			"neutral_tail_torque_nm": 0.0013786165509373,
+			"peak_incremental_swing_torque_nm": 12.1742649078369,
+			"peak_pendulum_angle_rad": 0.253720179284556,
+			"peak_pendulum_angular_speed_rad_s": 0.721920430660248,
+			"peak_relative_kinetic_energy_proxy_j": 3.66642317175865,
+			"phases": {
+				"BRAKING": 0,
+				"NEUTRAL": 162,
+				"PUMPING": 78
+			},
+			"positive_work_j": 0.799955377872296,
+			"retained": true,
+			"scope": "scripted reactive phase policy, no anticipation; torque work is incremental after common assist cap, not total actuator energy"
+		},
+		{
+			"duration_s": 2.0,
+			"earned_initial_spin": "(-0.071401, -0.03557, 0.583374)",
+			"final_incremental_torque_nm": 3.25359702110291,
+			"incremental_swing_work_j": -2.26175864227796,
+			"mode": "brake",
+			"negative_work_j": -2.56357538873563,
+			"neutral_request_zero": true,
+			"neutral_tail_torque_nm": 0.0,
+			"peak_incremental_swing_torque_nm": 17.8411483764648,
+			"peak_pendulum_angle_rad": 0.218546412786973,
+			"peak_pendulum_angular_speed_rad_s": 0.712748289108276,
+			"peak_relative_kinetic_energy_proxy_j": 3.44890643283725,
+			"phases": {
+				"BRAKING": 170,
+				"NEUTRAL": 5,
+				"PUMPING": 65
+			},
+			"positive_work_j": 0.301816746457674,
+			"retained": true,
+			"scope": "scripted reactive phase policy, no anticipation; torque work is incremental after common assist cap, not total actuator energy"
+		},
+		{
+			"duration_s": 8.0,
+			"earned_initial_spin": "(-0.071401, -0.03557, 0.583374)",
+			"final_incremental_torque_nm": 17.3531913757324,
+			"incremental_swing_work_j": 0.597390379935194,
+			"mode": "constant_held",
+			"negative_work_j": -9.68398735428541,
+			"neutral_request_zero": true,
+			"neutral_tail_torque_nm": 0.0,
+			"peak_incremental_swing_torque_nm": 17.883659362793,
+			"peak_pendulum_angle_rad": 0.302581729141725,
+			"peak_pendulum_angular_speed_rad_s": 0.728236854076386,
+			"peak_relative_kinetic_energy_proxy_j": 3.80962559580803,
+			"phases": {
+				"BRAKING": 454,
+				"NEUTRAL": 4,
+				"PUMPING": 502
+			},
+			"positive_work_j": 10.2813777342206,
+			"retained": true,
+			"scope": "scripted reactive phase policy, no anticipation; torque work is incremental after common assist cap, not total actuator energy"
+		}
+	]
+}

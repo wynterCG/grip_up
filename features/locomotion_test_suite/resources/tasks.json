@@ -1,0 +1,387 @@
+{
+  "revision": "1",
+  "coordinate_contract": "Physical COM, direction frozen from the first accepted nonzero support-relative intent; explicit world direction for stationary/swing tasks. Body origin recorded separately. No route planner.",
+  "thresholds": {
+    "path_epsilon_m": 0.01,
+    "retention_s": 0.5,
+    "sample_hz": 20,
+    "postroll_s": 0.5,
+    "target_corridor_m": 0.02,
+    "max_duration_s": 90,
+    "ready_timeout_s": 60,
+    "latency_velocity_m_s": 0.02,
+    "latency_persistence_s": 0.05,
+    "settle_linear_m_s": 0.1,
+    "settle_angular_rad_s": 0.2,
+    "settle_hold_s": 0.25
+  },
+  "variants": [
+    {
+      "id": "V0",
+      "label": "V0 / A0 + existing feet",
+      "allocation": 0,
+      "physical_feet": true,
+      "intent_feet": false,
+      "feedback": false
+    },
+    {
+      "id": "V1",
+      "label": "V1 / A0 + intent feet",
+      "allocation": 0,
+      "physical_feet": true,
+      "intent_feet": true,
+      "feedback": false
+    },
+    {
+      "id": "V2",
+      "label": "V2 / A1 diagnostic only",
+      "allocation": 1,
+      "physical_feet": true,
+      "intent_feet": false,
+      "feedback": false
+    },
+    {
+      "id": "V3",
+      "label": "V3 / A0 + feet OFF",
+      "allocation": 0,
+      "physical_feet": false,
+      "intent_feet": false,
+      "feedback": false
+    },
+    {
+      "id": "V4",
+      "label": "V4 / A0 + swing feedback",
+      "allocation": 0,
+      "physical_feet": true,
+      "intent_feet": false,
+      "feedback": true
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Vertical pull",
+      "arena": 6,
+      "revision": "1",
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "ready_hands": 2,
+      "goal": {
+        "kind": "progress",
+        "distance_m": 0.08
+      },
+      "instructions": "Acquire two comfortable real grips on The Step. Press W from a settled supported posture. Reach the upper 8 cm band without losing support.",
+      "start": "Two real attached hands, stable input-neutral posture; physical feet according to variant.",
+      "failures": [
+        "NOT_READY",
+        "SUPPORT_LOST",
+        "NO_PROGRESS",
+        "FALL",
+        "TIME_LIMIT"
+      ],
+      "cases": [
+        "canonical",
+        "left_first",
+        "right_first",
+        "mirror"
+      ],
+      "geometry_source": "res://features/grip_up/scripts/intent_test_level.gd"
+    },
+    {
+      "id": "T02",
+      "name": "Asymmetric pull",
+      "arena": 8,
+      "revision": "1",
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "ready_hands": 2,
+      "goal": {
+        "kind": "progress",
+        "distance_m": 0.06
+      },
+      "instructions": "Select visibly different left/right grip heights on The Traverse. Hold W; compare progress and axial twist. A1 is a diagnostic comparison, not an upgrade.",
+      "start": "Two actual asymmetric material contacts; save selected local points and initial posture.",
+      "failures": [
+        "NOT_READY",
+        "SUPPORT_LOST",
+        "NEGATIVE_PROGRESS",
+        "NO_PROGRESS",
+        "TIME_LIMIT"
+      ],
+      "cases": [
+        "canonical",
+        "left_high",
+        "right_high",
+        "mirror"
+      ],
+      "known_regression": "v1.1 asymmetric A1 loses useful progress and increases twist; controlled fixture study archived separately"
+    },
+    {
+      "id": "T03",
+      "name": "Diagonal and lateral traverse",
+      "arena": 8,
+      "revision": "1",
+      "direction": [
+        1,
+        0,
+        0
+      ],
+      "ready_hands": 2,
+      "goal": {
+        "kind": "progress",
+        "distance_m": 0.08
+      },
+      "instructions": "Choose offset real contacts. Try D, W, then W+D in separate attempts. Direction freezes at accepted command onset. Reach 8 cm in that direction; negative progress stays negative.",
+      "start": "Two attached hands on the same unchanged wall; initial input neutral.",
+      "failures": [
+        "NOT_READY",
+        "NEGATIVE_PROGRESS",
+        "SUPPORT_LOST",
+        "TIME_LIMIT"
+      ],
+      "cases": [
+        "lateral_right",
+        "lateral_left",
+        "vertical",
+        "diagonal_right",
+        "diagonal_left"
+      ],
+      "known_regression": "A1 negative diagonal progress is a mandatory comparison result, not a safety-suite failure to hide"
+    },
+    {
+      "id": "T04",
+      "name": "One-hand recovery",
+      "arena": 7,
+      "revision": "1",
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "ready_hands": 1,
+      "goal": {
+        "kind": "new_retained_grip",
+        "retention_s": 0.5
+      },
+      "instructions": "Climb into a real one-hand hang, release the other hand, then start. Move and aim deliberately; catch a second contact and keep it for 0.5 s. A frozen rigid pose does not demonstrate recovery.",
+      "start": "One actual attached hand; left/right and initial phase are recorded, not silently normalized.",
+      "failures": [
+        "NOT_READY",
+        "POSE_UNREACHABLE",
+        "PATH_OBSTRUCTED",
+        "HAND_TOO_SLOW",
+        "CATCH_OVERLOAD",
+        "GRIP_SLIP",
+        "SUPPORT_LOST",
+        "TIME_LIMIT"
+      ],
+      "cases": [
+        "left_hand",
+        "right_hand",
+        "early_phase",
+        "late_phase"
+      ]
+    },
+    {
+      "id": "T05",
+      "name": "Physical foot contribution",
+      "arena": 3,
+      "revision": "1",
+      "direction": [
+        -1,
+        0,
+        0
+      ],
+      "ready_hands": 1,
+      "goal": {
+        "kind": "progress",
+        "distance_m": 0.04
+      },
+      "instructions": "Use Foot Support. Select a real handhold and request lateral motion over visible ledges. Compare B0/B1, then B1/B2. The independent mirrored two-candidate study measures the same physical push, not just selection.",
+      "start": "At least one actual hand; feet must search and plant through the existing finite solver.",
+      "failures": [
+        "NOT_READY",
+        "FOOT_NOT_PLANTED",
+        "NO_PROGRESS",
+        "SUPPORT_LOST",
+        "TIME_LIMIT"
+      ],
+      "cases": [
+        "left",
+        "right",
+        "mirror",
+        "changed_normal"
+      ],
+      "geometry_note": "Controlled mirrored/normal fixtures belong to the technical foot study; existing arena is unchanged for live trials."
+    },
+    {
+      "id": "T06",
+      "name": "Swing build / brake",
+      "arena": 7,
+      "revision": "1",
+      "direction": [
+        1,
+        0,
+        0
+      ],
+      "ready_hands": 1,
+      "goal": {
+        "kind": "swing_band",
+        "build_angle_rad": 0.3,
+        "brake_angle_rad": 0.12,
+        "hold_s": 0.25
+      },
+      "instructions": "Start with one real hanging hand. BUILD: deliberately reach the 0.30 rad amplitude band. BRAKE: first establish a swing, then reduce it below 0.12 rad for 0.25 s. Neutral, opposite timing and camera orbit are comparison cases; no automatic timing.",
+      "start": "Exactly one real hand, clear pendulum space; brake starts only after the swing exists.",
+      "failures": [
+        "NOT_READY",
+        "SUPPORT_LOST",
+        "NO_PENDULUM_MOTION",
+        "TIME_LIMIT"
+      ],
+      "cases": [
+        "build",
+        "brake",
+        "neutral",
+        "opposite_timing",
+        "camera_orbit",
+        "no_grip"
+      ]
+    },
+    {
+      "id": "T07",
+      "name": "Swing and retained catch",
+      "arena": 5,
+      "revision": "1",
+      "direction": [
+        1,
+        0,
+        0
+      ],
+      "ready_hands": 1,
+      "goal": {
+        "kind": "new_retained_grip",
+        "retention_s": 0.5,
+        "require_outside_static_reach": true
+      },
+      "instructions": "Hold the initial support. Select a destination beyond the free shoulder's current reach, generate motion and catch it. Contact and 0.5 s retained support are separate events. A pending target supplies no load.",
+      "start": "One real support; selected destination initially exceeds actual anatomical shoulder reach, with collision-backed future reach window.",
+      "failures": [
+        "NOT_READY",
+        "POSE_UNREACHABLE",
+        "PATH_OBSTRUCTED",
+        "HAND_TOO_SLOW",
+        "CATCH_OVERLOAD",
+        "GRIP_SLIP",
+        "SUPPORT_LOST",
+        "TIME_LIMIT"
+      ],
+      "cases": [
+        "canonical",
+        "left_hand",
+        "right_hand",
+        "impossible_target"
+      ]
+    },
+    {
+      "id": "T08",
+      "name": "Authority transitions",
+      "arena": 6,
+      "revision": "1",
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "ready_hands": 0,
+      "goal": {
+        "kind": "transition_sequence",
+        "native_walk_m": 0.3
+      },
+      "instructions": "Record walk/reach, finite attach, two-to-one hand, planted feet, landing, or static top-out as separate cases. The top-out case opens the certified low ledge. Use actual native sole support and walk 30 cm after restoration.",
+      "start": "Ordinary ground for reach/attach; supported posture for hand/foot transitions; original static hybrid fixtures for top-out.",
+      "failures": [
+        "INVALID_START",
+        "AUTHORITY_CONFLICT",
+        "NO_NATIVE_GROUND",
+        "INCOMPLETE_HANDOFF",
+        "TIME_LIMIT"
+      ],
+      "cases": [
+        "walk_reach",
+        "attach_load",
+        "two_to_one",
+        "hands_feet",
+        "hang_ground",
+        "hybrid_walk"
+      ]
+    },
+    {
+      "id": "T09",
+      "name": "Camera and aim burden",
+      "arena": 21,
+      "revision": "1",
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "ready_hands": 0,
+      "goal": {
+        "kind": "retained_transfers",
+        "count": 3
+      },
+      "instructions": "Repeat the same reachable sequence in First Ascent. Count pointer distance, manual orbit gestures and aiming failures. Optional inspection overlay changes no camera or target. Missing visibility measurements are labelled, not invented.",
+      "start": "Ordinary floor; unchanged First Ascent and existing camera.",
+      "failures": [
+        "CURSOR_SELECTION",
+        "PATH_OBSTRUCTED",
+        "CAMERA",
+        "SUPPORT_LOST",
+        "TIME_LIMIT"
+      ],
+      "cases": [
+        "baseline",
+        "inspection_aid"
+      ]
+    },
+    {
+      "id": "T10",
+      "name": "Static / dynamic support sanity",
+      "arena": 2,
+      "revision": "1",
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "ready_hands": 1,
+      "goal": {
+        "kind": "material_tracking",
+        "duration_s": 2.0,
+        "anchor_error_m": 0.002
+      },
+      "instructions": "Use equivalent fixed and moving supports in the existing Reactive Structure lab. Observe real local anchors and reciprocal loads. This is a physics regression, not M7. Moving-support hybrid top-out remains refused.",
+      "start": "Actual material grip; no invented latch or prescribed velocity during measurement.",
+      "failures": [
+        "NOT_READY",
+        "SUPPORT_LOST",
+        "MATERIAL_ANCHOR_ERROR",
+        "DYNAMIC_MANTLE_INELIGIBLE",
+        "TIME_LIMIT"
+      ],
+      "cases": [
+        "fixed",
+        "dynamic",
+        "moving_material"
+      ],
+      "negative_regression": "Existing test_vault_resilience verifies dynamic/moving top-out refusal; not an invented live task completion"
+    }
+  ]
+}

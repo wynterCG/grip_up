@@ -1,0 +1,236 @@
+{
+	"cases": [
+		{
+			"case": "linear",
+			"result": {
+				"buffers": {
+					"events": 0,
+					"max_events": 128,
+					"max_samples": 512,
+					"samples": 61
+				},
+				"capture": {
+					"attempts": 0,
+					"contacts": 0,
+					"releases": 0,
+					"retained": 0,
+					"slips": 0
+				},
+				"direction_frame": "fixed_at_start",
+				"direction_world": "(1.0, 0.0, 0.0)",
+				"duration_s": 1.0,
+				"movement": {
+					"directional_efficiency": 0.995037184713847,
+					"efficiency_reason": "DEFINED",
+					"path_length_m": 1.00498756766319,
+					"support_relative_progress_m": null,
+					"support_relative_reason": "MISSING_OR_CHANGED_MATERIAL_REFERENCE",
+					"useful_progress_m": 1.0,
+					"windows": {
+						"0.25": {
+							"interpolated_between_ticks": [
+								14,
+								15
+							],
+							"path_length_m": 0.251246891915798,
+							"support_relative_progress_m": null,
+							"time_s": 0.25,
+							"useful_progress_m": 0.25
+						},
+						"0.5": {
+							"interpolated_between_ticks": [
+								29,
+								30
+							],
+							"path_length_m": 0.502493783831596,
+							"support_relative_progress_m": null,
+							"time_s": 0.5,
+							"useful_progress_m": 0.5
+						},
+						"1.0": {
+							"interpolated_between_ticks": [
+								59,
+								60
+							],
+							"path_length_m": 1.00498756766319,
+							"support_relative_progress_m": null,
+							"time_s": 1.0,
+							"useful_progress_m": 1.0
+						}
+					}
+				},
+				"quality": {
+					"accepted_samples": 61,
+					"event_time_tick_mismatch": 0,
+					"evicted_events": 0,
+					"evicted_samples": 0,
+					"hybrid_cached_force_samples": 0,
+					"invalid_unloaded_force_samples": 0,
+					"rejected_samples": 0,
+					"retention_without_contact": 0,
+					"support_identity_changed": false,
+					"tick_gaps": 0,
+					"time_tick_mismatch": 0
+				},
+				"reference": "com",
+				"response": {
+					"acceleration_threshold_m_s2": 0.5,
+					"corrections": 0,
+					"latency_reason": "NO_SUSTAINED_RESPONSE_OR_VELOCITY_MISSING",
+					"latency_s": null,
+					"mode": "velocity",
+					"onset": {
+						"source": "first_observed_nonzero_intent",
+						"tick": 0,
+						"time": 0.0,
+						"velocity": "(1.0, 0.0, 0.0)"
+					},
+					"persistence_s": 0.05,
+					"reversals": 0,
+					"velocity_threshold_m_s": 0.05
+				},
+				"rotation": {
+					"axis_scope": "support-relative scalar supplied by snapshot; not inferred roll",
+					"twist_coverage_s": 1.0,
+					"twist_peak_rad": 0.2,
+					"twist_rms_rad": 0.2
+				},
+				"saturation": {
+					"duration_s": 0.0,
+					"fraction": 0.0
+				},
+				"schema_version": "movement_metrics_v12_1",
+				"support": {
+					"contact_coverage_s": 1.0,
+					"foot_loaded_duration_s": 0.0,
+					"foot_loaded_time_fraction": 0.0,
+					"foot_upward_load_fraction": null,
+					"observed_partial_work_j": 0.0,
+					"partial_actuator_work_j": 0.0,
+					"relative_actuator_work_j": 0.0,
+					"relative_work_coverage_s": 1.0,
+					"work_coverage_s": 1.0,
+					"work_scope": "signed F dot actual application point velocity; not whole-system energy"
+				}
+			}
+		},
+		{
+			"case": "loads",
+			"result": {
+				"buffers": {
+					"events": 0,
+					"max_events": 128,
+					"max_samples": 512,
+					"samples": 4
+				},
+				"capture": {
+					"attempts": 0,
+					"contacts": 0,
+					"releases": 0,
+					"retained": 0,
+					"slips": 0
+				},
+				"direction_frame": "fixed_at_start",
+				"direction_world": "(0.0, 1.0, 0.0)",
+				"duration_s": 3.0,
+				"movement": {
+					"directional_efficiency": null,
+					"efficiency_reason": "NO_MOVEMENT_OR_NO_DIRECTION",
+					"path_length_m": 0.0,
+					"support_relative_progress_m": null,
+					"support_relative_reason": "MISSING_OR_CHANGED_MATERIAL_REFERENCE",
+					"useful_progress_m": 0.0,
+					"windows": {
+						"0.25": {
+							"interpolated_between_ticks": [
+								0,
+								60
+							],
+							"path_length_m": 0.0,
+							"support_relative_progress_m": null,
+							"time_s": 0.25,
+							"useful_progress_m": 0.0
+						},
+						"0.5": {
+							"interpolated_between_ticks": [
+								0,
+								60
+							],
+							"path_length_m": 0.0,
+							"support_relative_progress_m": null,
+							"time_s": 0.5,
+							"useful_progress_m": 0.0
+						},
+						"1.0": {
+							"interpolated_between_ticks": [
+								0,
+								60
+							],
+							"path_length_m": 0.0,
+							"support_relative_progress_m": null,
+							"time_s": 1.0,
+							"useful_progress_m": 0.0
+						}
+					}
+				},
+				"quality": {
+					"accepted_samples": 4,
+					"event_time_tick_mismatch": 0,
+					"evicted_events": 0,
+					"evicted_samples": 0,
+					"hybrid_cached_force_samples": 0,
+					"invalid_unloaded_force_samples": 1,
+					"rejected_samples": 0,
+					"retention_without_contact": 0,
+					"support_identity_changed": false,
+					"tick_gaps": 3,
+					"time_tick_mismatch": 0
+				},
+				"reference": "com",
+				"response": {
+					"acceleration_threshold_m_s2": 0.5,
+					"corrections": 0,
+					"latency_reason": "NO_SUSTAINED_RESPONSE_OR_VELOCITY_MISSING",
+					"latency_s": null,
+					"mode": "velocity",
+					"onset": {
+						"source": "first_observed_nonzero_intent",
+						"tick": 0,
+						"time": 0.0,
+						"velocity": "(1.0, 0.0, 0.0)"
+					},
+					"persistence_s": 0.05,
+					"reversals": 0,
+					"velocity_threshold_m_s": 0.05
+				},
+				"rotation": {
+					"axis_scope": "support-relative scalar supplied by snapshot; not inferred roll",
+					"twist_coverage_s": 3.0,
+					"twist_peak_rad": 0.2,
+					"twist_rms_rad": 0.2
+				},
+				"saturation": {
+					"duration_s": 0.0,
+					"fraction": 0.0
+				},
+				"schema_version": "movement_metrics_v12_1",
+				"support": {
+					"contact_coverage_s": 2.0,
+					"foot_loaded_duration_s": 1.0,
+					"foot_loaded_time_fraction": 0.5,
+					"foot_upward_load_fraction": 0.4,
+					"observed_partial_work_j": 100.0,
+					"partial_actuator_work_j": null,
+					"relative_actuator_work_j": null,
+					"relative_work_coverage_s": 2.0,
+					"work_coverage_s": 2.0,
+					"work_scope": "signed F dot actual application point velocity; not whole-system energy"
+				}
+			}
+		}
+	],
+	"checks": 48,
+	"failures": 0,
+	"physics_hz": 60,
+	"source": "synthetic_numeric_unit_tests"
+}

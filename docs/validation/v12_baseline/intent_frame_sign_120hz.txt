@@ -1,0 +1,21 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS first horizontal normal(0.0, 1.0, 0.0) yaw0.00 gives camera-right A/D with valid handedness
+PASS established horizontal frame ignores camera-only orbit normal(0.0, 1.0, 0.0) yaw0.00
+PASS first horizontal normal(0.0, 1.0, 0.0) yaw1.57 gives camera-right A/D with valid handedness
+PASS established horizontal frame ignores camera-only orbit normal(0.0, 1.0, 0.0) yaw1.57
+PASS first horizontal normal(0.0, 1.0, 0.0) yaw3.14 gives camera-right A/D with valid handedness
+PASS established horizontal frame ignores camera-only orbit normal(0.0, 1.0, 0.0) yaw3.14
+PASS first horizontal normal(0.0, -1.0, 0.0) yaw0.00 gives camera-right A/D with valid handedness
+PASS established horizontal frame ignores camera-only orbit normal(0.0, -1.0, 0.0) yaw0.00
+PASS first horizontal normal(0.0, -1.0, 0.0) yaw1.57 gives camera-right A/D with valid handedness
+PASS established horizontal frame ignores camera-only orbit normal(0.0, -1.0, 0.0) yaw1.57
+PASS first horizontal normal(0.0, -1.0, 0.0) yaw3.14 gives camera-right A/D with valid handedness
+PASS established horizontal frame ignores camera-only orbit normal(0.0, -1.0, 0.0) yaw3.14
+PASS finite physical grip establishes test anchor
+PASS first horizontal-grip command0.0 retains real grip and force/moment limits
+PASS finite physical grip establishes test anchor
+PASS first horizontal-grip command1.0 retains real grip and force/moment limits
+PASS D on actual first underside grip moves body right relative to the matched neutral trajectory
+FRAME_SIGN_MEASURE {"hz":120,"neutral":{"command":0.0,"dx":0.0307924151420593,"retained":true,"right":"(1.0, 0.0, 0.0)"},"right":{"command":1.0,"dx":0.0442155003547668,"retained":true,"right":"(1.0, 0.0, 0.0)"}}
+INTENT FRAME SIGN RESULTS: 17 checks, 0 failures

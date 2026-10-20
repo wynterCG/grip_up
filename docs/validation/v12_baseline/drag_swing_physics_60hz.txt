@@ -1,0 +1,132 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS both attached arms accept independent drag requests
+PASS queuing drag preserves instantaneous pose and momentum
+PASS fast shared drag clamps each target to .6m/s once per step
+PASS discarded excess never winds up or executes on later frames
+PASS multiple event deltas sum exactly once
+PASS per-hand clear preserves real pending motion of the other arm
+PASS released hand refuses drag
+PASS release discards anchor-specific queued motion without changing survivor
+PASS experimental WASD never contracts or extends arm targets
+PASS experimental charged launch requires explicit opt-in
+PASS nonfinite drag is rejected
+PASS finite physical grip establishes test anchor
+SWING DIRECTION {"dual":false,"dv":"(0.304871, -0.032458, 0.117574)","dx":"(0.043204, -0.006516, 0.007853)","input":"(0.0, 0.0, 0.0)","rotation":"(0.0, 0.0, 0.0)","state":"ATTACHED"}
+PASS finite physical grip establishes test anchor
+SWING DIRECTION {"dual":false,"dv":"(0.575258, 0.043993, 0.117437)","dx":"(0.080891, -0.005509, 0.008008)","input":"(1.0, 0.0, 0.0)","rotation":"(0.0, 0.0, 0.0)","state":"ATTACHED"}
+PASS supported 3D direction creates actual matching momentum; dual=false dir=(1.0, 0.0, 0.0) gain=0.270
+PASS finite physical grip establishes test anchor
+SWING DIRECTION {"dual":false,"dv":"(0.094355, -0.018219, 0.118278)","dx":"(0.018376, 0.013766, 0.008334)","input":"(-1.0, 0.0, 0.0)","rotation":"(0.0, 0.0, 0.0)","state":"ATTACHED"}
+PASS supported 3D direction creates actual matching momentum; dual=false dir=(-1.0, 0.0, 0.0) gain=0.211
+PASS finite physical grip establishes test anchor
+SWING DIRECTION {"dual":false,"dv":"(0.308464, -0.014555, -0.144381)","dx":"(0.043627, 0.002226, -0.032809)","input":"(0.0, 0.0, -1.0)","rotation":"(0.0, 0.0, 0.0)","state":"ATTACHED"}
+PASS supported 3D direction creates actual matching momentum; dual=false dir=(0.0, 0.0, -1.0) gain=0.262
+PASS finite physical grip establishes test anchor
+SWING DIRECTION {"dual":false,"dv":"(0.30716, -0.037686, 0.359519)","dx":"(0.043841, 0.000248, 0.044977)","input":"(0.0, 0.0, 1.0)","rotation":"(0.0, 0.0, 0.0)","state":"ATTACHED"}
+PASS supported 3D direction creates actual matching momentum; dual=false dir=(0.0, 0.0, 1.0) gain=0.242
+PASS finite physical grip establishes test anchor
+SWING DIRECTION {"dual":false,"dv":"(0.50203, 0.031864, -0.066624)","dx":"(0.069734, -0.003808, -0.022507)","input":"(0.707107, 0.0, -0.707107)","rotation":"(0.0, 0.0, 0.0)","state":"ATTACHED"}
+PASS supported 3D direction creates actual matching momentum; dual=false dir=(0.707107, 0.0, -0.707107) gain=0.270
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+SWING DIRECTION {"dual":true,"dv":"(-0.013746, 0.018261, 0.284904)","dx":"(0.003438, -0.000984, 0.008878)","input":"(0.0, 0.0, 0.0)","rotation":"(0.0, 0.0, 0.0)","state":"ATTACHED"}
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+SWING DIRECTION {"dual":true,"dv":"(0.124003, 0.009899, 0.274835)","dx":"(0.026152, 0.000821, 0.007875)","input":"(1.0, 0.0, 0.0)","rotation":"(0.0, 0.0, 0.0)","state":"ATTACHED"}
+PASS supported 3D direction creates actual matching momentum; dual=true dir=(1.0, 0.0, 0.0) gain=0.138
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+SWING DIRECTION {"dual":true,"dv":"(-0.15146, 0.008231, 0.275279)","dx":"(-0.019477, 0.000943, 0.008016)","input":"(-1.0, 0.0, 0.0)","rotation":"(0.0, 0.0, 0.0)","state":"ATTACHED"}
+PASS supported 3D direction creates actual matching momentum; dual=true dir=(-1.0, 0.0, 0.0) gain=0.138
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+SWING DIRECTION {"dual":true,"dv":"(-0.014143, 0.098992, 0.017457)","dx":"(0.003368, 0.01062, -0.029367)","input":"(0.0, 0.0, -1.0)","rotation":"(0.0, 0.0, 0.0)","state":"ATTACHED"}
+PASS supported 3D direction creates actual matching momentum; dual=true dir=(0.0, 0.0, -1.0) gain=0.267
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+SWING DIRECTION {"dual":true,"dv":"(-0.013134, 0.000914, 0.501343)","dx":"(0.003469, 0.00884, 0.038975)","input":"(0.0, 0.0, 1.0)","rotation":"(0.0, 0.0, 0.0)","state":"ATTACHED"}
+PASS supported 3D direction creates actual matching momentum; dual=true dir=(0.0, 0.0, 1.0) gain=0.216
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+SWING DIRECTION {"dual":true,"dv":"(0.081723, 0.083109, 0.089104)","dx":"(0.020203, 0.006472, -0.018444)","input":"(0.707107, 0.0, -0.707107)","rotation":"(0.0, 0.0, 0.0)","state":"ATTACHED"}
+PASS supported 3D direction creates actual matching momentum; dual=true dir=(0.707107, 0.0, -0.707107) gain=0.206
+PASS finite physical grip establishes test anchor
+SWING DIRECTION {"dual":false,"dv":"(-0.127788, 0.035991, -0.202433)","dx":"(0.022758, -0.009416, -0.019608)","input":"(0.0, 0.0, 0.0)","rotation":"(0.0, 1.570796, 0.0)","state":"ATTACHED"}
+PASS finite physical grip establishes test anchor
+SWING DIRECTION {"dual":false,"dv":"(0.155053, 0.190509, -0.211224)","dx":"(0.063072, -0.011209, -0.019025)","input":"(1.0, 0.0, 0.0)","rotation":"(0.0, 1.570796, 0.0)","state":"ATTACHED"}
+PASS world lateral input remains physical under rotated torso (0.0, 1.570796, 0.0)
+PASS finite physical grip establishes test anchor
+SWING DIRECTION {"dual":false,"dv":"(-0.408107, -0.051363, 0.196545)","dx":"(-0.01118, -0.01559, -0.026779)","input":"(0.0, 0.0, 0.0)","rotation":"(0.0, 3.141593, 0.0)","state":"ATTACHED"}
+PASS finite physical grip establishes test anchor
+SWING DIRECTION {"dual":false,"dv":"(-0.126279, 0.060573, 0.210468)","dx":"(0.03231, -0.018266, -0.025382)","input":"(1.0, 0.0, 0.0)","rotation":"(0.0, 3.141593, 0.0)","state":"ATTACHED"}
+PASS world lateral input remains physical under rotated torso (0.0, 3.141593, 0.0)
+PASS finite physical grip establishes test anchor
+SWING DIRECTION {"dual":false,"dv":"(1.158204, -0.453068, 0.079862)","dx":"(0.096605, -0.021919, -0.001126)","input":"(0.0, 0.0, 0.0)","rotation":"(0.0, 0.0, 0.6)","state":"ATTACHED"}
+PASS finite physical grip establishes test anchor
+SWING DIRECTION {"dual":false,"dv":"(1.385127, -0.417828, 0.080574)","dx":"(0.118128, -0.054303, -0.001788)","input":"(1.0, 0.0, 0.0)","rotation":"(0.0, 0.0, 0.6)","state":"ATTACHED"}
+PASS world lateral input remains physical under rotated torso (0.0, 0.0, 0.6)
+PASS finite physical grip establishes test anchor
+SWING DIRECTION {"dual":false,"dv":"(-0.22923, -0.02144, 0.111475)","dx":"(-0.027356, -0.003248, 0.016315)","input":"(0.0, 0.0, 0.0)","rotation":"(0.0, 0.0, -0.6)","state":"ATTACHED"}
+PASS finite physical grip establishes test anchor
+SWING DIRECTION {"dual":false,"dv":"(0.001476, -0.009974, 0.112847)","dx":"(0.00195, 0.0135, 0.017179)","input":"(1.0, 0.0, 0.0)","rotation":"(0.0, 0.0, -0.6)","state":"ATTACHED"}
+PASS world lateral input remains physical under rotated torso (0.0, 0.0, -0.6)
+PASS supported torque governor reaches zero at target relative angular speed
+PASS excessive same-direction angular speed produces bounded braking
+PASS finite physical grip establishes test anchor
+PASS camera-only frame changes cannot retarget attached twist or arm length
+PASS cached world gesture is independent of camera reference changes
+PASS last grip release removes all supported effort immediately
+PASS held input with no anchors provides no air propulsion
+PASS finite physical grip establishes test anchor
+SWING PHASE passive {"amplitude":0.0908055156469345,"retained":true,"rms":0.165951828521079,"speed":0.290530115365982}
+PASS finite physical grip establishes test anchor
+SWING PHASE pump {"amplitude":0.438678994774818,"retained":true,"rms":0.845087966470488,"speed":1.31539821624756}
+PASS timed supported effort measurably increases physical swing amplitude
+PASS finite physical grip establishes test anchor
+SWING BRAKE brake=false {"initial":0.482889026403427,"speed":0.380480051040649}
+PASS finite physical grip establishes test anchor
+SWING BRAKE brake=true {"initial":0.482889026403427,"speed":0.134037926793098}
+PASS opposite supported effort brakes actual existing momentum versus coasting
+PASS finite physical grip establishes test anchor
+SWING LONG HOLD dual=false peak=0.58648604154587 late=0.07558995485306 spin=0.05201853066683
+PASS 12s held input bounded and settles; dual=false
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+SWING LONG HOLD dual=true peak=0.29864847660065 late=0.00724932877347 spin=0.00239149527624
+PASS 12s held input bounded and settles; dual=true
+PASS finite physical grip establishes test anchor
+SWING REACTION dual=false dp=0.00000026656008 dL=0.00000132209493
+PASS dynamic gripped support receives real swing reaction torque; dual=false
+PASS complete dynamic hand/swing pair conserves momentum; dual=false
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+SWING REACTION dual=true dp=0.00000048147126 dL=0.00000060858065
+PASS dynamic gripped support receives real swing reaction torque; dual=true
+PASS complete dynamic hand/swing pair conserves momentum; dual=true
+PASS two anchors on same beam share one attitude cap
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS continuous drag physically raises single-hand body; id=0
+PASS reverse drag physically lowers without downward thruster; id=0
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS continuous drag physically raises single-hand body; id=1
+PASS reverse drag physically lowers without downward thruster; id=1
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS REACHING hand refuses buffered target motion
+PASS supporting arm continuously consumes drag throughout other hand reach
+PASS new attachment never consumes drag rejected during REACHING
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS legacy profile rejects experimental arm drag
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS legacy profile rejects experimental arm drag
+PASS default legacy and explicit profile0 repeat exactly despite experimental API calls
+PASS all trials obey shared360N, attitude20Nm and global150Nm
+PASS all measured reaches retain finite4m/s gesture
+DRAG SWING PHYSICS RESULTS: 101 checks, 0 failures

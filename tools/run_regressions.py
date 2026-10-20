@@ -12,7 +12,7 @@ names = ['physics','platform_probe','wall_clearance','biped_profile','playthroug
          'climb_direction','leg_motion','pendulum','free_climb','launch','full_reach','biped_asset']
 label = sys.argv[1] if len(sys.argv)>1 else 'regressions'
 evidence_label = label
-requested_label = 'v09' if label in ['v10_baseline','v11_baseline'] else label
+requested_label = 'v09' if label in ['v10_baseline','v11_baseline','v12_baseline'] else label
 label = requested_label
 if label == 'v07_baseline':label = 'v06'
 if label in ['v07','v071','v072','v073','v074','v08','v09']:label = 'v06'

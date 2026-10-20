@@ -1,0 +1,48 @@
+{
+  "schema": "grip_up_mastery_geometry_1",
+  "revision": "1",
+  "notes": "New static mastery fixture; no top-out or force changes. Choices are broad surfaces, QA contacts are illustrative only.",
+  "segments": [
+    {
+      "id": "M-A", "title": "MASTERY A / CONTROLLED ASCENT", "base_arena": 6,
+      "objective": "Choose any wall contacts. Alternate hands, rise into the cyan band and retain a real support.",
+      "spawn": [0,1.17,0.40],
+      "primitives": [
+        {"key":"wall","at":[0,2.3,-0.20],"size":[3.6,5.4,0.4],"grippable":true,"color":"314955"},
+        {"key":"floor","at":[0,0.10,1.0],"size":[4.6,0.3,4.0],"grippable":false,"color":"526a72"},
+        {"key":"foot_a","at":[-0.24,0.51,0],"size":[0.38,0.16,0.22],"grippable":true,"foot":true,"color":"8bb88c"},
+        {"key":"foot_b","at":[0.28,0.51,0],"size":[0.38,0.16,0.22],"grippable":true,"foot":true,"color":"8bb88c"}
+      ],
+      "contacts": [[-0.24,2.10,0],[0.24,2.10,0],[-0.24,2.43,0],[0.24,2.64,0]],
+      "goal": {"kind":"ascent","surface":"wall","bounds_at":[-1.1,2.35,-0.03],"bounds_size":[2.2,0.55,0.08],"min_body_y":1.40,"minimum_transfers":1,"retention_s":0.20},
+      "label": [0,3.06,0.10]
+    },
+    {
+      "id":"M-B","title":"MASTERY B / ASYMMETRIC TRAVERSE","base_arena":8,
+      "objective":"Take offset wall contacts, move right through real supports and retain a contact in the amber band. More than one hand sequence works.",
+      "spawn":[0,1.17,0.40],
+      "primitives":[
+        {"key":"wall","at":[0,2.3,-0.20],"size":[4.2,5.4,0.4],"grippable":true,"color":"314955"},
+        {"key":"floor","at":[0,0.10,1.0],"size":[5.0,0.3,4.0],"grippable":false,"color":"526a72"},
+        {"key":"foot_a","at":[0,0.51,0],"size":[0.45,0.16,0.22],"grippable":true,"foot":true,"color":"8bb88c"},
+        {"key":"foot_b","at":[0.65,0.65,0],"size":[0.45,0.16,0.22],"grippable":true,"foot":true,"color":"8bb88c"}
+      ],
+      "contacts":[[-0.24,2.10,0],[0.24,2.26,0],[0.55,2.30,0],[0.85,2.38,0],[1.10,2.44,0]],
+      "goal":{"kind":"traverse","surface":"wall","bounds_at":[0.50,2.15,-0.03],"bounds_size":[0.80,0.65,0.08],"min_body_y":1.25,"min_signed_body_x":0.22,"minimum_transfers":1,"retention_s":0.20},
+      "label":[0.88,2.98,0.10]
+    },
+    {
+      "id":"M-C","title":"MASTERY C / SWING AND CATCH","base_arena":7,
+      "objective":"Start on the cyan support. Load and swing toward the distant amber support, catch it and retain the real grip. Mouse selection alone gives no support.",
+      "spawn":[-0.55,1.17,0.40],
+      "primitives":[
+        {"key":"floor","at":[-0.8,0.10,0.55],"size":[1.0,0.3,2.0],"grippable":false,"color":"526a72"},
+        {"key":"source","at":[-0.55,2.20,0.15],"size":[0.30,0.10,0.18],"grippable":true,"color":"65dfcc"},
+        {"key":"catch","at":[0.35,2.20,0.15],"size":[0.30,0.10,0.18],"grippable":true,"color":"e6ae58"}
+      ],
+      "contacts":[[-0.55,2.149,0.15],[0.35,2.149,0.15]],
+      "goal":{"kind":"catch","surface":"catch","source_surface":"source","retention_s":0.60,"static_reach_margin_m":0.02},
+      "label":[0.35,2.67,0.15]
+    }
+  ]
+}

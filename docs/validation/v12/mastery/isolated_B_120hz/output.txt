@@ -1,0 +1,52 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+
+
+PASS segment1 mirrorfalse explicit fixture setup
+
+PASS A0/B1 profile4 feetON unchanged baseline
+
+PASS manual start has no pre-existing grip
+
+PASS attempt labels scripted separately from human
+
+PASS M-B real asymmetric first grip
+
+PASS M-B real asymmetric second grip
+
+PASS M-B freely chosen lateral contact
+
+PASS M-B optional further hand sequence
+
+PASS M-B mirrorfalse physically completes through real input
+
+PASS M-B mirrorfalse keeps360N hands180N feet150Nm resultant
+
+MASTERY_OUTCOME M-B mirrorfalse {"active":false,"actual_body":"(0.746214, 1.353737, 0.317592)","attempt":1,"catch_started_outside_reach":false,"checkpoint":"SEGMENT_FLOOR_START_ONLY","completed":true,"contacts":[{"id":0,"point":"(0.339772, 2.203367, -0.0)","surface":"wall"},{"id":1,"point":"(0.850001, 2.38, 0.0)","surface":"wall"}],"elapsed_s":3.73333333333332,"end_tick":502,"mirrored":false,"mode":"scored","ok":true,"reason":"COMPLETE","retained_s":0.2,"scenario":"M-B","scenario_revision":"1","scored":true,"source":"scripted","source_observed":false,"start_body":"(0.000098, 1.166693, 0.400116)","start_tick":55,"static_distance_m":null,"transfers":2,"variant":{"allocation":"A0","feet":"B1","physical_feet":true,"profile":4,"swing_feedback":false}}
+
+PASS segment1 mirrortrue explicit fixture setup
+
+PASS A0/B1 profile4 feetON unchanged baseline
+
+PASS manual start has no pre-existing grip
+
+PASS attempt labels scripted separately from human
+
+PASS M-B real asymmetric first grip
+
+PASS M-B real asymmetric second grip
+
+PASS M-B freely chosen lateral contact
+
+PASS M-B optional further hand sequence
+
+PASS M-B mirrortrue physically completes through real input
+
+PASS M-B mirrortrue keeps360N hands180N feet150Nm resultant
+
+MASTERY_OUTCOME M-B mirrortrue {"active":false,"actual_body":"(-0.723338, 1.298957, 0.376947)","attempt":2,"catch_started_outside_reach":false,"checkpoint":"SEGMENT_FLOOR_START_ONLY","completed":true,"contacts":[{"id":0,"point":"(-0.85, 2.38, 0.0)","surface":"wall"},{"id":1,"point":"(-0.391911, 2.17663, 0.0)","surface":"wall"}],"elapsed_s":4.14166666666666,"end_tick":1081,"mirrored":true,"mode":"scored","ok":true,"reason":"COMPLETE","retained_s":0.2,"scenario":"M-B","scenario_revision":"1","scored":true,"source":"scripted","source_observed":false,"start_body":"(0.000098, 1.166693, 0.400116)","start_tick":585,"static_distance_m":null,"transfers":2,"variant":{"allocation":"A0","feet":"B1","physical_feet":true,"profile":4,"swing_feedback":false}}
+
+MASTERY_RESULTS_PATH res://builds/v12_mastery/2026-10-20T00-40-36_42996_120hz
+
+MASTERY RESULTS: 20 checks, 0 failures
+

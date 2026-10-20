@@ -1,0 +1,72 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+
+
+PASS segment2 mirrorfalse explicit fixture setup
+
+PASS A0/B1 profile4 feetON unchanged baseline
+
+PASS manual start has no pre-existing grip
+
+PASS attempt labels scripted separately from human
+
+PASS M-C real initial support from floor
+
+PASS M-C ordinary W raises body into real hanging before swing
+
+PASS M-C selected destination remains outside static reach after W preload before lateral pumping
+
+PASS M-C destination outside actual free shoulder static reach
+
+PASS M-C pending destination gives no support load
+
+PASS M-C physical swing opens and catches anatomical reach window
+
+PASS M-C actual caught material point was outside static reach before lateral pumping
+
+PASS M-C new catch retains load after source released
+
+MASTERY_C_MIN_DISTANCE 0.63861918449402
+
+PASS M-C mirrorfalse physically completes through real input
+
+PASS M-C mirrorfalse keeps360N hands180N feet150Nm resultant
+
+MASTERY_OUTCOME M-C mirrorfalse {"active":false,"actual_body":"(0.03166, 1.091998, 0.121277)","actual_catch_start_distance_m":0.983030319213867,"attempt":1,"catch_started_outside_reach":true,"checkpoint":"SEGMENT_FLOOR_START_ONLY","completed":true,"contacts":[{"id":1,"point":"(0.229215, 2.15, 0.143034)","surface":"catch"}],"elapsed_s":3.59999999999999,"end_tick":242,"mirrored":false,"mode":"scored","ok":true,"reason":"COMPLETE","retained_s":0.6,"scenario":"M-C","scenario_revision":"1","scored":true,"scripted_actual_anchor_pre_swing_distance_m":0.804887115955353,"scripted_pre_swing_distance_m":0.804188787937164,"source":"scripted","source_observed":true,"source_was_ungrounded":true,"start_body":"(-0.55009, 1.166681, 0.40013)","start_tick":27,"static_distance_m":1.06881737709045,"transfers":0,"variant":{"allocation":"A0","feet":"B1","physical_feet":true,"profile":4,"swing_feedback":false}}
+
+PASS segment2 mirrortrue explicit fixture setup
+
+PASS A0/B1 profile4 feetON unchanged baseline
+
+PASS manual start has no pre-existing grip
+
+PASS attempt labels scripted separately from human
+
+PASS M-C real initial support from floor
+
+PASS M-C ordinary W raises body into real hanging before swing
+
+PASS M-C selected destination remains outside static reach after W preload before lateral pumping
+
+PASS M-C destination outside actual free shoulder static reach
+
+PASS M-C pending destination gives no support load
+
+PASS M-C physical swing opens and catches anatomical reach window
+
+PASS M-C actual caught material point was outside static reach before lateral pumping
+
+PASS M-C new catch retains load after source released
+
+MASTERY_C_MIN_DISTANCE 0.60942286252975
+
+PASS M-C mirrortrue physically completes through real input
+
+PASS M-C mirrortrue keeps360N hands180N feet150Nm resultant
+
+MASTERY_OUTCOME M-C mirrortrue {"active":false,"actual_body":"(-0.10145, 1.060833, -0.245067)","actual_catch_start_distance_m":0.710832893848419,"attempt":2,"catch_started_outside_reach":true,"checkpoint":"SEGMENT_FLOOR_START_ONLY","completed":true,"contacts":[{"id":0,"point":"(-0.232614, 2.15, 0.143326)","surface":"catch"}],"elapsed_s":4.04999999999999,"end_tick":513,"mirrored":true,"mode":"scored","ok":true,"reason":"COMPLETE","retained_s":0.6,"scenario":"M-C","scenario_revision":"1","scored":true,"scripted_actual_anchor_pre_swing_distance_m":0.960991263389587,"scripted_pre_swing_distance_m":0.95799046754837,"source":"scripted","source_observed":true,"source_was_ungrounded":true,"start_body":"(0.54991, 1.166681, 0.40013)","start_tick":271,"static_distance_m":0.777995228767395,"transfers":0,"variant":{"allocation":"A0","feet":"B1","physical_feet":true,"profile":4,"swing_feedback":false}}
+
+MASTERY_RESULTS_PATH res://builds/v12_mastery/2026-10-20T00-40-44_3900_60hz
+
+MASTERY RESULTS: 28 checks, 0 failures
+

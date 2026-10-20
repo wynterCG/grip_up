@@ -12,10 +12,10 @@ ROOT = Path(__file__).resolve().parents[1]
 DEST = Path(r'E:\Godot Games\grip_up')
 ENGINE = Path(r'C:\Users\Wynter\WrapRush\tools\godot.exe')
 CLI = Path(r'C:\Users\Wynter\Downloads\godot-mcp-pro-v1.17.1\server\build\cli.js')
-BUILD_NAME = 'GripUp-v1.1-experimental.exe'
+BUILD_NAME = 'GripUp-v1.2-tests.exe'
 
 parser = argparse.ArgumentParser()
-parser.add_argument('task', choices=['sync','test','test-saved','editor','mcp','export','cleanup','smoke'])
+parser.add_argument('task', choices=['sync','test','test-saved','suite-test','suite-test-saved','editor','mcp','export','cleanup','smoke'])
 parser.add_argument('extra', nargs='*')
 args = parser.parse_args()
 startup = subprocess.STARTUPINFO()
@@ -69,10 +69,11 @@ elif args.task == 'mcp':
     print(result.stderr.decode(errors='replace'))
     sys.exit(result.returncode)
 else:
-    if args.task in ['test','test-saved']:
+    if args.task in ['test','test-saved','suite-test','suite-test-saved']:
         script = args.extra[0]
         assert '/' not in script and '\\' not in script
-        command=[str(ENGINE),'--headless','--path',str(DEST if args.task=='test-saved' else ROOT),'--script',f'res://features/grip_up/tests/{script}.gd','--fixed-fps','120','--quit-after','20000']
+        feature='locomotion_test_suite' if args.task.startswith('suite-test') else 'grip_up'
+        command=[str(ENGINE),'--headless','--path',str(DEST if args.task.endswith('-saved') else ROOT),'--script',f'res://features/{feature}/tests/{script}.gd','--fixed-fps','120','--quit-after','100000' if feature=='locomotion_test_suite' else '20000']
         if len(args.extra)>1: command += ['--'] + args.extra[1:]
     elif args.task == 'smoke':
         command=[str(ROOT/'builds'/BUILD_NAME),'--screen','0','--write-movie',str(ROOT/'builds'/'export.png'),'--fixed-fps','60','--quit-after','3']
@@ -83,5 +84,5 @@ else:
     suffix = '_' + '_'.join(value.lstrip('-') for value in args.extra[1:]) if len(args.extra)>1 else ''
     (ROOT/'builds'/f'{args.task}_{args.extra[0] if args.extra else "export"}{suffix}.log').write_text(output,encoding='utf-8')
     print(output if args.task!='export' else output[-2200:])
-    if args.task in ['test','test-saved'] and ('RESULTS:' not in output or 'SCRIPT ERROR:' in output or 'FAIL ' in output): sys.exit(1)
+    if args.task in ['test','test-saved','suite-test','suite-test-saved'] and ('RESULTS:' not in output or 'SCRIPT ERROR:' in output or 'FAIL ' in output): sys.exit(1)
     sys.exit(result.returncode)

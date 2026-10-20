@@ -1,0 +1,61 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS METRIC_01 signed displacement preserves negative direction
+PASS METRIC_01 signed efficiency is projection divided by actual sampled path
+PASS METRIC_02 stationary path is undefined, never 100 percent
+PASS METRIC_02 sub-centimetre path stays below documented epsilon
+PASS METRIC_03 equivalent world rotation/translation preserves signed motion
+PASS METRIC_03 provided axial twist scalar remains separate from world body roll
+PASS METRIC_05 fixed window 0.25 seconds uses physics timestamp
+PASS METRIC_05 fixed window 0.5 seconds uses physics timestamp
+PASS METRIC_05 fixed window 1.0 seconds uses physics timestamp
+PASS named body reference never silently changes to COM
+PASS missing COM fails explicitly instead of falling back to animation/body
+PASS METRIC_04 material point translation excludes platform carry
+PASS METRIC_04 support-relative window uses matching interpolated carry
+PASS METRIC_04 changing support identity invalidates material-relative claim
+PASS METRIC_04 explicit material displacement also excludes rotational carry
+PASS METRIC_04 absent material reference is null, not estimated by integrating speed
+PASS METRIC_05 neutral prelude does not count as accepted input onset
+PASS sustained velocity response reports candidate start after persistence is verified
+PASS METRIC_05 supplied timestamps align with physics ticks
+PASS METRIC_05 duplicate or backwards physics samples are rejected
+PASS METRIC_05 timestamp/tick mismatch is diagnosed without fabricating cadence
+PASS one-frame collision/velocity spike is not a sustained response
+PASS explicit opposite input counts once through neutral; body oscillation does not
+PASS direction remains frozen after command reversal, not reoriented to hide negative progress
+PASS configurable sustained acceleration response uses supplied physics velocity derivative
+PASS saturation integrates known applied-budget boolean duration
+PASS explicit accepted-input event can precede filtered/sampled movement intent without hidden latency
+PASS explicit coincident accepted onset replaces first observed onset and its velocity baseline
+PASS input already held before measurement has unknown latency rather than manufactured zero
+PASS FEET_01 PLANTING is neither loaded nor actuator work even with invalid cached force
+PASS FEET_01 impossible unloaded force is diagnosed
+PASS FEET_01 load duration and positive upward load fraction use real applied contacts
+PASS signed actual point force power integrates work in joules
+PASS SWING_02 negative force dot velocity remains negative braking work
+PASS missing application point velocity returns unknown full work with separately labelled observed subtotal
+PASS absolute and support-relative work are separate actual point velocities
+PASS loaded SLIDING foot counts as physical support
+PASS hybrid cached hand force is flagged and never credited as applied work
+PASS absent contacts/load/work remain null
+PASS requested or unconfirmed forces cannot become applied work implicitly
+PASS missing later contact sample invalidates complete work instead of filling missing interval with zero
+PASS CAPTURE_01 actual contact does not imply retained grip
+PASS CAPTURE_01 retention is explicit and not duplicated per frame
+PASS CAPTURE_01 retention cannot be fabricated for an attempt with no contact event
+PASS METRIC_05 event timestamps carry same physics tick validation as samples
+PASS OBSERVER_03 sample/event buffers are bounded without losing accumulated progress
+PASS bounded ring eviction does not reset aggregate metrics
+PASS analysis retains independent numeric snapshots and never mutates caller transforms
+PASS configured retention limits are included in summary
+PASS reset clears aggregate and bounded capture history
+PASS target overshoot measures excess beyond configured goal corridor, preserving real displacement
+PASS isolated low-speed/contact frame is not sustained settling
+PASS interrupted stability restarts the continuous persistence window
+PASS settling reports beginning of final continuous stable interval relative to first target entry
+PASS missing measured velocity makes current settling unknown, not a fabricated zero speed
+PASS overshoot stays null with NO_TARGET when task has no spatial target
+MEASUREMENT METRICS RESULTS: 56 checks, 0 failures
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)

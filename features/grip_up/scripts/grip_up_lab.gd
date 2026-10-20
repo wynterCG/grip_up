@@ -153,6 +153,11 @@ func _ready() -> void:
 	add_child(grip_feedback)
 	load_test(0)
 	_set_input_profile(input_profile)
+	if OS.get_cmdline_user_args().has("--locomotion-tests-ui"):
+		_open_locomotion_tests()
+		settings.show()
+		if OS.get_cmdline_user_args().has("--locomotion-tests-smoke"):
+			add_child(load("res://features/locomotion_test_suite/scripts/test_ui_smoke.gd").new())
 	get_window().mouse_exited.connect(func():
 		if input_profile==1:
 			router.set_owner("BOUNDARY")
@@ -1127,6 +1132,17 @@ func _panel(parent: Node) -> PanelContainer:
 	parent.add_child(panel)
 	return panel
 
+func _open_locomotion_tests()->void:
+	var controls:Control=settings.find_child("LocomotionTestControls",true,false)
+	var suite:Node=get_node_or_null("LocomotionTestSuite")
+	if suite==null:
+		suite=load("res://features/locomotion_test_suite/scripts/locomotion_test_harness.gd").new()
+		suite.name="LocomotionTestSuite"
+		add_child(suite)
+		suite.configure(self,controls)
+	controls.visible=not controls.visible if controls.get_meta("opened",false) else true
+	controls.set_meta("opened",true)
+
 func _setup_ui() -> void:
 	var canvas := CanvasLayer.new()
 	add_child(canvas)
@@ -1223,6 +1239,10 @@ func _setup_ui() -> void:
 	settings_box.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	scroll.add_child(settings_box)
 	_label("CONTROLS / click a binding to change it",23,settings_box,COLORS[0])
+	_button("v1.2 / Locomotion tests and mastery",_open_locomotion_tests,settings_box)
+	var test_controls:=VBoxContainer.new()
+	test_controls.name="LocomotionTestControls"
+	settings_box.add_child(test_controls)
 	profile_choice = OptionButton.new()
 	profile_choice.add_item("0 / Baseline: W/S pull, A/D bias, Space launch")
 	profile_choice.add_item("1 / Hold + arm drag + 3D swing (experimental)")

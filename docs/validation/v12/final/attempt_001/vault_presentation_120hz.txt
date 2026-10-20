@@ -1,0 +1,44 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS v1.0 remains opt-in at ordinary startup
+PASS contact fixture[0] maps hand0 by identity
+PASS contact fixture[0] remembers actual material point for hand0
+PASS contact fixture[0] IK belongs only to real source hand0
+PASS contact fixture[0] never aligns unheld palm0
+PASS contact fixture[0] maps hand1 by identity
+PASS contact fixture[0] remembers actual material point for hand1
+PASS contact fixture[0] IK belongs only to real source hand1
+PASS contact fixture[0] never aligns unheld palm1
+PASS render time cannot outrun approved progress
+PASS release is bounded and never reattaches after contact ends
+PASS contact fixture[1] maps hand0 by identity
+PASS contact fixture[1] remembers actual material point for hand0
+PASS contact fixture[1] IK belongs only to real source hand0
+PASS contact fixture[1] never aligns unheld palm0
+PASS contact fixture[1] maps hand1 by identity
+PASS contact fixture[1] remembers actual material point for hand1
+PASS contact fixture[1] IK belongs only to real source hand1
+PASS contact fixture[1] never aligns unheld palm1
+PASS render time cannot outrun approved progress
+PASS release is bounded and never reattaches after contact ends
+PASS contact fixture[0, 1] maps hand0 by identity
+PASS contact fixture[0, 1] remembers actual material point for hand0
+PASS contact fixture[0, 1] IK belongs only to real source hand0
+PASS contact fixture[0, 1] never aligns unheld palm0
+PASS contact fixture[0, 1] maps hand1 by identity
+PASS contact fixture[0, 1] remembers actual material point for hand1
+PASS contact fixture[0, 1] IK belongs only to real source hand1
+PASS contact fixture[0, 1] never aligns unheld palm1
+PASS render time cannot outrun approved progress
+PASS release is bounded and never reattaches after contact ends
+PASS presentation never drives body pose or velocities
+PASS impossible rendered arm target releases instead of pinning wrist
+PASS restored moving body selects Walk immediately during exit blend
+PASS exit removes foot IK and hands ordinary locomotion back
+PASS refined real skeleton clip contains only bone rotations
+PASS refined authored poses actually differ from baseline clip
+PASS presentation retains all original authored leg keys for the certified proxy route
+PASS presentation retains original 12kg gameplay body
+PASS explicit A/B v1.0 selection enables experiment
+PASS explicit A/B v0.9 selection restores baseline
+VAULT PRESENTATION RESULTS: 41 checks, 0 failures

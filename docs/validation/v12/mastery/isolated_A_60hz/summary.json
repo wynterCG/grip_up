@@ -1,0 +1,109 @@
+{
+  "body_writes_after_begin": false,
+  "checks": 18,
+  "failures": 0,
+  "geometry_revision": "1",
+  "human_sessions": 0,
+  "mastery": "NOT_EVALUATED",
+  "physics_hz": 60,
+  "schema": "mastery_feasibility_1",
+  "source": "scripted",
+  "runs": [
+    {
+      "attempt": {
+        "active": false,
+        "actual_body": "(-0.01505, 1.449451, 0.400979)",
+        "attempt": 1,
+        "catch_started_outside_reach": false,
+        "checkpoint": "SEGMENT_FLOOR_START_ONLY",
+        "completed": true,
+        "contacts": [
+          {
+            "id": 0,
+            "point": "(-0.24, 2.43, 0.0)",
+            "surface": "wall"
+          },
+          {
+            "id": 1,
+            "point": "(0.24, 2.1, 0.0)",
+            "surface": "wall"
+          }
+        ],
+        "elapsed_s": 3.71666666666666,
+        "end_tick": 249,
+        "mirrored": false,
+        "mode": "scored",
+        "ok": true,
+        "reason": "COMPLETE",
+        "retained_s": 0.2,
+        "scenario": "M-A",
+        "scenario_revision": "1",
+        "scored": true,
+        "source": "scripted",
+        "source_observed": false,
+        "start_body": "(-0.00009, 1.166681, 0.40013)",
+        "start_tick": 27,
+        "static_distance_m": null,
+        "transfers": 1,
+        "variant": {
+          "allocation": "A0",
+          "feet": "B1",
+          "physical_feet": true,
+          "profile": 4,
+          "swing_feedback": false
+        }
+      },
+      "budgets": true,
+      "geometry": "7568f3e54a1ac064ff8c4c78a9b3541853789c74b64f53eaa0292bc589cf4bf1",
+      "label": "M-A mirrorfalse"
+    },
+    {
+      "attempt": {
+        "active": false,
+        "actual_body": "(-0.01628, 1.42381, 0.455876)",
+        "attempt": 2,
+        "catch_started_outside_reach": false,
+        "checkpoint": "SEGMENT_FLOOR_START_ONLY",
+        "completed": true,
+        "contacts": [
+          {
+            "id": 0,
+            "point": "(-0.24, 2.1, 0.0)",
+            "surface": "wall"
+          },
+          {
+            "id": 1,
+            "point": "(0.24, 2.43, 0.0)",
+            "surface": "wall"
+          }
+        ],
+        "elapsed_s": 3.89999999999999,
+        "end_tick": 542,
+        "mirrored": true,
+        "mode": "scored",
+        "ok": true,
+        "reason": "COMPLETE",
+        "retained_s": 0.2,
+        "scenario": "M-A",
+        "scenario_revision": "1",
+        "scored": true,
+        "source": "scripted",
+        "source_observed": false,
+        "start_body": "(-0.00009, 1.166681, 0.40013)",
+        "start_tick": 309,
+        "static_distance_m": null,
+        "transfers": 1,
+        "variant": {
+          "allocation": "A0",
+          "feet": "B1",
+          "physical_feet": true,
+          "profile": 4,
+          "swing_feedback": false
+        }
+      },
+      "budgets": true,
+      "geometry": "7568f3e54a1ac064ff8c4c78a9b3541853789c74b64f53eaa0292bc589cf4bf1",
+      "label": "M-A mirrortrue"
+    }
+  ]
+}

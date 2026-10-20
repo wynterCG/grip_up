@@ -1,0 +1,107 @@
+{
+  "body_writes_after_begin": false,
+  "checks": 28,
+  "failures": 0,
+  "geometry_revision": "1",
+  "human_sessions": 0,
+  "mastery": "NOT_EVALUATED",
+  "physics_hz": 120,
+  "schema": "mastery_feasibility_1",
+  "source": "scripted",
+  "runs": [
+    {
+      "attempt": {
+        "active": false,
+        "actual_body": "(-0.043725, 1.135422, -0.260912)",
+        "actual_catch_start_distance_m": 0.96727180480957,
+        "attempt": 1,
+        "catch_started_outside_reach": true,
+        "checkpoint": "SEGMENT_FLOOR_START_ONLY",
+        "completed": true,
+        "contacts": [
+          {
+            "id": 1,
+            "point": "(0.229212, 2.15, 0.143229)",
+            "surface": "catch"
+          }
+        ],
+        "elapsed_s": 4.87500000000003,
+        "end_tick": 639,
+        "mirrored": false,
+        "mode": "scored",
+        "ok": true,
+        "reason": "COMPLETE",
+        "retained_s": 0.6,
+        "scenario": "M-C",
+        "scenario_revision": "1",
+        "scored": true,
+        "scripted_actual_anchor_pre_swing_distance_m": 0.813143670558929,
+        "scripted_pre_swing_distance_m": 0.813613951206207,
+        "source": "scripted",
+        "source_observed": true,
+        "source_was_ungrounded": true,
+        "start_body": "(-0.549927, 1.166696, 0.400054)",
+        "start_tick": 55,
+        "static_distance_m": 1.05238676071167,
+        "transfers": 0,
+        "variant": {
+          "allocation": "A0",
+          "feet": "B1",
+          "physical_feet": true,
+          "profile": 4,
+          "swing_feedback": false
+        }
+      },
+      "budgets": true,
+      "geometry": "7568f3e54a1ac064ff8c4c78a9b3541853789c74b64f53eaa0292bc589cf4bf1",
+      "label": "M-C mirrorfalse"
+    },
+    {
+      "attempt": {
+        "active": false,
+        "actual_body": "(-0.269102, 1.075516, -0.240641)",
+        "actual_catch_start_distance_m": 0.701604783535004,
+        "attempt": 2,
+        "catch_started_outside_reach": true,
+        "checkpoint": "SEGMENT_FLOOR_START_ONLY",
+        "completed": true,
+        "contacts": [
+          {
+            "id": 0,
+            "point": "(-0.232664, 2.15, 0.143228)",
+            "surface": "catch"
+          }
+        ],
+        "elapsed_s": 4.25,
+        "end_tick": 1206,
+        "mirrored": true,
+        "mode": "scored",
+        "ok": true,
+        "reason": "COMPLETE",
+        "retained_s": 0.6,
+        "scenario": "M-C",
+        "scenario_revision": "1",
+        "scored": true,
+        "scripted_actual_anchor_pre_swing_distance_m": 0.95945006608963,
+        "scripted_pre_swing_distance_m": 0.956370532512665,
+        "source": "scripted",
+        "source_observed": true,
+        "source_was_ungrounded": true,
+        "start_body": "(0.550072, 1.166696, 0.400054)",
+        "start_tick": 697,
+        "static_distance_m": 0.771381556987762,
+        "transfers": 0,
+        "variant": {
+          "allocation": "A0",
+          "feet": "B1",
+          "physical_feet": true,
+          "profile": 4,
+          "swing_feedback": false
+        }
+      },
+      "budgets": true,
+      "geometry": "7568f3e54a1ac064ff8c4c78a9b3541853789c74b64f53eaa0292bc589cf4bf1",
+      "label": "M-C mirrortrue"
+    }
+  ]
+}

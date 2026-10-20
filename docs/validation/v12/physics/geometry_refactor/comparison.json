@@ -1,0 +1,25 @@
+{
+  "scope": "Exact comparison of reported physical outcomes; process-local object IDs/selection diagnostics excluded",
+  "comparisons": [
+    {
+      "physics_hz": 120,
+      "physical_outcomes_exactly_equal": true,
+      "differences": [],
+      "fixture_revision": 1.0,
+      "fixture_sha256": "fdfe4f483171c73e3007b2e26030c4e04cfa8dc12eff9566483392c033b6037a",
+      "outcome_changes_expected": false
+    },
+    {
+      "physics_hz": 60,
+      "physical_outcomes_exactly_equal": true,
+      "differences": [],
+      "fixture_revision": 1.0,
+      "fixture_sha256": "fdfe4f483171c73e3007b2e26030c4e04cfa8dc12eff9566483392c033b6037a",
+      "outcome_changes_expected": false
+    }
+  ],
+  "source_sha256": {
+    "features/locomotion_test_suite/tests/test_measurement_physics.gd": "831dc77effc77df377a7a248531e1283d06d52ec8d52a07c7fe73567fd1c9cf2",
+    "features/locomotion_test_suite/resources/technical_fixtures_r1.json": "fdfe4f483171c73e3007b2e26030c4e04cfa8dc12eff9566483392c033b6037a"
+  }
+}

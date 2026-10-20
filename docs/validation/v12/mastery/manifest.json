@@ -1,0 +1,494 @@
+{
+  "source_hashes": {
+    "features/locomotion_test_suite/scripts/mastery_course.gd": "1abdd63633fc491d9ac26113dc08e5e3049ab2055b803d1201b21df5d97f6f20",
+    "features/locomotion_test_suite/tests/test_mastery_course.gd": "6e94f45dceb354693b251a9feb1d94f848e39ea572a88af9a3fa9423163b08e8",
+    "features/locomotion_test_suite/resources/mastery_course_r1.json": "7568f3e54a1ac064ff8c4c78a9b3541853789c74b64f53eaa0292bc589cf4bf1"
+  },
+  "geometry_revision": "1",
+  "human_sessions": 0,
+  "historical_comparison_validity": "Development receipts preserve failures; historical test source snapshots were not saved per edit, so only final isolated runs have a frozen source identity. No A/B efficacy is claimed.",
+  "development": [
+    {
+      "receipt": "development/2026-10-20T00-31-59_43368_120hz",
+      "checks": 18,
+      "failures": 2,
+      "physics_hz": 120,
+      "completed": [
+        true,
+        false
+      ],
+      "result_sha256": "c31d9e3e78c458a6373003f004b148ebccc433e717b3e0727c715a1cf496a0f6"
+    },
+    {
+      "receipt": "development/2026-10-20T00-32-24_43864_120hz",
+      "checks": 69,
+      "failures": 5,
+      "physics_hz": 120,
+      "completed": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "result_sha256": "c15c4e36f22564193a25b2f8758d8ae83aa5942b32bf7bb8fcdb662b4ff0afa2"
+    },
+    {
+      "receipt": "development/2026-10-20T00-33-06_43392_120hz",
+      "checks": 69,
+      "failures": 5,
+      "physics_hz": 120,
+      "completed": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        false
+      ],
+      "result_sha256": "d5d89a060ac06d79ac8bacd8e52dc0ad0ba936220514aae3d0c6b0d1299800db"
+    },
+    {
+      "receipt": "development/2026-10-20T00-33-35_19816_120hz",
+      "checks": 22,
+      "failures": 4,
+      "physics_hz": 120,
+      "completed": [
+        false,
+        false
+      ],
+      "result_sha256": "c786d345f8309a3852d6011c5da4a3cabd933ba4e77b87d62d02599a8cafcd56"
+    },
+    {
+      "receipt": "development/2026-10-20T00-34-06_39876_120hz",
+      "checks": 24,
+      "failures": 4,
+      "physics_hz": 120,
+      "completed": [
+        false,
+        false
+      ],
+      "result_sha256": "0d862212847f9df088ae62b450877f99f92edb23df8b326ad834afa9a2f0e941"
+    },
+    {
+      "receipt": "development/2026-10-20T00-34-23_10872_120hz",
+      "checks": 24,
+      "failures": 2,
+      "physics_hz": 120,
+      "completed": [
+        true,
+        false
+      ],
+      "result_sha256": "ad51eb3240d7deddf242806e2ce09c05c084ffcffff1af46815a507803eb90d4"
+    },
+    {
+      "receipt": "development/2026-10-20T00-34-33_9396_60hz",
+      "checks": 71,
+      "failures": 4,
+      "physics_hz": 60,
+      "completed": [
+        true,
+        false,
+        true,
+        true,
+        false,
+        true
+      ],
+      "result_sha256": "7879f796e5432833f6f7f515c299cc7d71eb154bbaccf0e716314736d26090de"
+    },
+    {
+      "receipt": "development/2026-10-20T00-35-12_39296_120hz",
+      "checks": 24,
+      "failures": 0,
+      "physics_hz": 120,
+      "completed": [
+        true,
+        true
+      ],
+      "result_sha256": "236db77ee912ad4bbd4dd702f4bfe8bab3e148768b173360d6ede304248f1113"
+    },
+    {
+      "receipt": "development/2026-10-20T00-35-24_22732_60hz",
+      "checks": 71,
+      "failures": 3,
+      "physics_hz": 60,
+      "completed": [
+        true,
+        false,
+        true,
+        true,
+        false,
+        true
+      ],
+      "result_sha256": "3c7c6b6e14162444ad1989817144a321cf4b511500ee6a85604a1f23c2396730"
+    },
+    {
+      "receipt": "development/2026-10-20T00-35-26_21472_120hz",
+      "checks": 71,
+      "failures": 2,
+      "physics_hz": 120,
+      "completed": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "result_sha256": "57ab2df5d162e9a3c7562c995c00dafa4e57b719a03992582a342e4e4e336396"
+    },
+    {
+      "receipt": "development/2026-10-20T00-35-59_39820_60hz",
+      "checks": 71,
+      "failures": 1,
+      "physics_hz": 60,
+      "completed": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "result_sha256": "854b7278fd8c2453a371b85b356834236d390c25d96a5b06055fa40fd9636088"
+    },
+    {
+      "receipt": "development/2026-10-20T00-36-11_42700_120hz",
+      "checks": 71,
+      "failures": 1,
+      "physics_hz": 120,
+      "completed": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        true
+      ],
+      "result_sha256": "bb35bfb62b93706eebb477740a699e22ef1b43354f9cece4c4e98b4a31014892"
+    },
+    {
+      "receipt": "development/2026-10-20T00-36-50_42488_60hz",
+      "checks": 72,
+      "failures": 0,
+      "physics_hz": 60,
+      "completed": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "result_sha256": "f3a704ce9cc24be8779e8babd6da8a597f540228c6ca1e2ace50f400b2edf808"
+    },
+    {
+      "receipt": "development/2026-10-20T00-36-51_2636_120hz",
+      "checks": 72,
+      "failures": 0,
+      "physics_hz": 120,
+      "completed": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "result_sha256": "af7daf5ed4ef95a0f1dfa785ba17c10e556a0f4592dfe504a8822d113a2e9332"
+    },
+    {
+      "receipt": "development/2026-10-20T00-37-45_42432_60hz",
+      "checks": 73,
+      "failures": 0,
+      "physics_hz": 60,
+      "completed": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "result_sha256": "571dc95e8518e2f4f6eb7fb0429a96c25d846632a9696192606818aec3eab9ff"
+    },
+    {
+      "receipt": "development/2026-10-20T00-37-46_32612_120hz",
+      "checks": 73,
+      "failures": 0,
+      "physics_hz": 120,
+      "completed": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "result_sha256": "111e189dcbe6f3d75313597e45934e402d55c8f331a4d3de90ca76e24a74a02d"
+    },
+    {
+      "receipt": "development/2026-10-20T00-38-20_41892_60hz",
+      "checks": 75,
+      "failures": 0,
+      "physics_hz": 60,
+      "completed": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "result_sha256": "77c81c8eb816f6b5afc4d184bddec65f24d804fca95b750d6b37fcc125c07e7a"
+    },
+    {
+      "receipt": "development/2026-10-20T00-38-21_43720_120hz",
+      "checks": 75,
+      "failures": 1,
+      "physics_hz": 120,
+      "completed": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "result_sha256": "4c5d2630dcf527c5ed55a2e4a98742df88378888470afa2fff2ed73d60cdeecd"
+    },
+    {
+      "receipt": "development/2026-10-20T00-39-16_15712_60hz",
+      "checks": 28,
+      "failures": 0,
+      "physics_hz": 60,
+      "completed": [
+        true,
+        true
+      ],
+      "result_sha256": "8d7d0e00d429d8b77becc613735ada2d41a32c45d84ae2dcdbea0816ca11c9b8"
+    },
+    {
+      "receipt": "development/2026-10-20T00-39-16_33960_120hz",
+      "checks": 28,
+      "failures": 0,
+      "physics_hz": 120,
+      "completed": [
+        true,
+        true
+      ],
+      "result_sha256": "75cc2fe16077f9f54d1df754917184e52c6fa53bd856dfcdf5a45760b99a2f28"
+    },
+    {
+      "receipt": "development/2026-10-20T00-39-27_30408_60hz",
+      "checks": 77,
+      "failures": 0,
+      "physics_hz": 60,
+      "completed": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "result_sha256": "c3ca6b2408c59295a44cbf5fc6476cb2e27439f3e7134a110639ce2c070a570c"
+    },
+    {
+      "receipt": "development/2026-10-20T00-39-29_38500_120hz",
+      "checks": 75,
+      "failures": 2,
+      "physics_hz": 120,
+      "completed": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        true
+      ],
+      "result_sha256": "b299fe9feb6709eb7d27fcc9efc003e7fa0c2813dcad6a725a8ec92b8fda2be5"
+    },
+    {
+      "receipt": "development/2026-10-20T00-40-34_2104_120hz",
+      "checks": 18,
+      "failures": 0,
+      "physics_hz": 120,
+      "completed": [
+        true,
+        true
+      ],
+      "result_sha256": "546b3bd1ca7c91e165f7d4fa98e838390fcde699c27e5e538bfe4dd8c6f22722"
+    },
+    {
+      "receipt": "development/2026-10-20T00-40-36_42996_120hz",
+      "checks": 20,
+      "failures": 0,
+      "physics_hz": 120,
+      "completed": [
+        true,
+        true
+      ],
+      "result_sha256": "4cd5057715d2ce39b5bb387c84e65ad440fa418a7bd5b0d74bc6a6dd86fc484b"
+    },
+    {
+      "receipt": "development/2026-10-20T00-40-38_42492_120hz",
+      "checks": 28,
+      "failures": 0,
+      "physics_hz": 120,
+      "completed": [
+        true,
+        true
+      ],
+      "result_sha256": "c57dd25111a3a5d71916c69c3e486bddb0ae3e7a45eec850b2c3b6ec1f15dded"
+    },
+    {
+      "receipt": "development/2026-10-20T00-40-39_10480_120hz",
+      "checks": 11,
+      "failures": 0,
+      "physics_hz": 120,
+      "completed": [],
+      "result_sha256": "424475e6ec49fa2fbe88e8d550a8cd03a2a15a5b58e9c1ef52d55a01dcce820c"
+    },
+    {
+      "receipt": "development/2026-10-20T00-40-41_40624_60hz",
+      "checks": 18,
+      "failures": 0,
+      "physics_hz": 60,
+      "completed": [
+        true,
+        true
+      ],
+      "result_sha256": "64966dc44dbaa4babd8068f23639b9abdcedc7f367a6399634452e9f18ab74d9"
+    },
+    {
+      "receipt": "development/2026-10-20T00-40-42_28916_60hz",
+      "checks": 20,
+      "failures": 0,
+      "physics_hz": 60,
+      "completed": [
+        true,
+        true
+      ],
+      "result_sha256": "c97bf542ed1c0def25ddc70f033773c0999dce2af934c62bbfc1f9be0302084b"
+    },
+    {
+      "receipt": "development/2026-10-20T00-40-44_3900_60hz",
+      "checks": 28,
+      "failures": 0,
+      "physics_hz": 60,
+      "completed": [
+        true,
+        true
+      ],
+      "result_sha256": "c744c60aae7e0649d5ec7ccebf6bade36b775a4b85ce5fd4d3fe64ab2704f42c"
+    },
+    {
+      "receipt": "development/2026-10-20T00-40-45_40552_60hz",
+      "checks": 11,
+      "failures": 0,
+      "physics_hz": 60,
+      "completed": [],
+      "result_sha256": "f69cf2ffab64f81135d91db5c8ef62b56eb71a4e988518e8e5ceb2f86fe28c5e"
+    }
+  ],
+  "isolated": [
+    {
+      "selection": "A",
+      "physics_hz": 120,
+      "checks": 18,
+      "failures": 0,
+      "path": "isolated_A_120hz",
+      "source_hashes": {
+        "features/locomotion_test_suite/scripts/mastery_course.gd": "1abdd63633fc491d9ac26113dc08e5e3049ab2055b803d1201b21df5d97f6f20",
+        "features/locomotion_test_suite/tests/test_mastery_course.gd": "6e94f45dceb354693b251a9feb1d94f848e39ea572a88af9a3fa9423163b08e8",
+        "features/locomotion_test_suite/resources/mastery_course_r1.json": "7568f3e54a1ac064ff8c4c78a9b3541853789c74b64f53eaa0292bc589cf4bf1"
+      }
+    },
+    {
+      "selection": "A",
+      "physics_hz": 60,
+      "checks": 18,
+      "failures": 0,
+      "path": "isolated_A_60hz",
+      "source_hashes": {
+        "features/locomotion_test_suite/scripts/mastery_course.gd": "1abdd63633fc491d9ac26113dc08e5e3049ab2055b803d1201b21df5d97f6f20",
+        "features/locomotion_test_suite/tests/test_mastery_course.gd": "6e94f45dceb354693b251a9feb1d94f848e39ea572a88af9a3fa9423163b08e8",
+        "features/locomotion_test_suite/resources/mastery_course_r1.json": "7568f3e54a1ac064ff8c4c78a9b3541853789c74b64f53eaa0292bc589cf4bf1"
+      }
+    },
+    {
+      "selection": "B",
+      "physics_hz": 120,
+      "checks": 20,
+      "failures": 0,
+      "path": "isolated_B_120hz",
+      "source_hashes": {
+        "features/locomotion_test_suite/scripts/mastery_course.gd": "1abdd63633fc491d9ac26113dc08e5e3049ab2055b803d1201b21df5d97f6f20",
+        "features/locomotion_test_suite/tests/test_mastery_course.gd": "6e94f45dceb354693b251a9feb1d94f848e39ea572a88af9a3fa9423163b08e8",
+        "features/locomotion_test_suite/resources/mastery_course_r1.json": "7568f3e54a1ac064ff8c4c78a9b3541853789c74b64f53eaa0292bc589cf4bf1"
+      }
+    },
+    {
+      "selection": "B",
+      "physics_hz": 60,
+      "checks": 20,
+      "failures": 0,
+      "path": "isolated_B_60hz",
+      "source_hashes": {
+        "features/locomotion_test_suite/scripts/mastery_course.gd": "1abdd63633fc491d9ac26113dc08e5e3049ab2055b803d1201b21df5d97f6f20",
+        "features/locomotion_test_suite/tests/test_mastery_course.gd": "6e94f45dceb354693b251a9feb1d94f848e39ea572a88af9a3fa9423163b08e8",
+        "features/locomotion_test_suite/resources/mastery_course_r1.json": "7568f3e54a1ac064ff8c4c78a9b3541853789c74b64f53eaa0292bc589cf4bf1"
+      }
+    },
+    {
+      "selection": "C",
+      "physics_hz": 120,
+      "checks": 28,
+      "failures": 0,
+      "path": "isolated_C_120hz",
+      "source_hashes": {
+        "features/locomotion_test_suite/scripts/mastery_course.gd": "1abdd63633fc491d9ac26113dc08e5e3049ab2055b803d1201b21df5d97f6f20",
+        "features/locomotion_test_suite/tests/test_mastery_course.gd": "6e94f45dceb354693b251a9feb1d94f848e39ea572a88af9a3fa9423163b08e8",
+        "features/locomotion_test_suite/resources/mastery_course_r1.json": "7568f3e54a1ac064ff8c4c78a9b3541853789c74b64f53eaa0292bc589cf4bf1"
+      }
+    },
+    {
+      "selection": "C",
+      "physics_hz": 60,
+      "checks": 28,
+      "failures": 0,
+      "path": "isolated_C_60hz",
+      "source_hashes": {
+        "features/locomotion_test_suite/scripts/mastery_course.gd": "1abdd63633fc491d9ac26113dc08e5e3049ab2055b803d1201b21df5d97f6f20",
+        "features/locomotion_test_suite/tests/test_mastery_course.gd": "6e94f45dceb354693b251a9feb1d94f848e39ea572a88af9a3fa9423163b08e8",
+        "features/locomotion_test_suite/resources/mastery_course_r1.json": "7568f3e54a1ac064ff8c4c78a9b3541853789c74b64f53eaa0292bc589cf4bf1"
+      }
+    },
+    {
+      "selection": "SAFETY",
+      "physics_hz": 120,
+      "checks": 11,
+      "failures": 0,
+      "path": "isolated_SAFETY_120hz",
+      "source_hashes": {
+        "features/locomotion_test_suite/scripts/mastery_course.gd": "1abdd63633fc491d9ac26113dc08e5e3049ab2055b803d1201b21df5d97f6f20",
+        "features/locomotion_test_suite/tests/test_mastery_course.gd": "6e94f45dceb354693b251a9feb1d94f848e39ea572a88af9a3fa9423163b08e8",
+        "features/locomotion_test_suite/resources/mastery_course_r1.json": "7568f3e54a1ac064ff8c4c78a9b3541853789c74b64f53eaa0292bc589cf4bf1"
+      }
+    },
+    {
+      "selection": "SAFETY",
+      "physics_hz": 60,
+      "checks": 11,
+      "failures": 0,
+      "path": "isolated_SAFETY_60hz",
+      "source_hashes": {
+        "features/locomotion_test_suite/scripts/mastery_course.gd": "1abdd63633fc491d9ac26113dc08e5e3049ab2055b803d1201b21df5d97f6f20",
+        "features/locomotion_test_suite/tests/test_mastery_course.gd": "6e94f45dceb354693b251a9feb1d94f848e39ea572a88af9a3fa9423163b08e8",
+        "features/locomotion_test_suite/resources/mastery_course_r1.json": "7568f3e54a1ac064ff8c4c78a9b3541853789c74b64f53eaa0292bc589cf4bf1"
+      }
+    }
+  ]
+}
