@@ -1,5 +1,6 @@
 """Fresh admission-only validation of headless startup; no climbing campaign."""
 from pathlib import Path
+import argparse
 import subprocess
 import sys
 
@@ -12,7 +13,10 @@ BASE = ROOT / 'builds/eval_virtual_cursor/benchmark_v133_headless_init_r1'
 DOC = ROOT / 'docs/validation/auto_tuning/benchmark_v133_headless_init'
 CAMPAIGN = 'benchmark_v133_headless_init_r1'
 
-def main():
+def main(attempt):
+    global BASE, CAMPAIGN
+    CAMPAIGN = 'benchmark_v133_headless_init_' + attempt
+    BASE = ROOT / 'builds/eval_virtual_cursor' / CAMPAIGN
     assert not BASE.exists(), 'Admission correction results are immutable'
     identity = git_identity()
     assert not identity['repository_dirty'], 'Commit source before admission validation'
@@ -22,7 +26,8 @@ def main():
     delta = {p for p in old['source_hashes'].keys() | hashes.keys() if old['source_hashes'].get(p) != hashes.get(p)}
     assert delta == {'features/evaluator_virtual_cursor/scripts/benchmark_backing.gd',
                      'features/evaluator_virtual_cursor/scripts/benchmark_preflight.gd',
-                     'features/evaluator_virtual_cursor/scripts/benchmark_driver.gd'}, delta
+                     'features/evaluator_virtual_cursor/scripts/benchmark_driver.gd',
+                     'tools/auto_tuning/benchmark_qualification/campaign.py'}, delta
     protected = ROOT / 'docs/validation/auto_tuning/benchmark_v133'
     old_receipts = {str(p.relative_to(ROOT)): file_hash(p) for p in protected.rglob('*') if p.is_file()}
     frozen = {**identity, 'source_hashes': hashes, 'engine_identity': engine_identity(),
@@ -58,6 +63,7 @@ def main():
                            'res://features/evaluator_virtual_cursor/scripts/benchmark_runner.gd','--',
                            '--virtual-cursor-evaluator','--benchmark-qualification',
                            '--manifest',str(directory/'manifest.json'),'--result',str(directory/'result.json')]
+                if resolution: command += ['--backing-size', resolution]
                 atomic_json(directory/'execution.json',{'command':command,'expected_reason':expected})
                 with (directory/'stdout.txt').open('wb') as stdout,(directory/'stderr.txt').open('wb') as stderr:
                     p = subprocess.Popen(command,cwd=ROOT,stdout=stdout,stderr=stderr)
@@ -92,4 +98,6 @@ def main():
     print('PASS: 19 admission checks, zero gameplay worlds, previous campaign preserved.')
 
 if __name__=='__main__':
-    main()
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--attempt',choices=['r1','r2'],required=True)
+    main(parser.parse_args().attempt)

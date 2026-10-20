@@ -15,11 +15,11 @@ def main(campaign_id='benchmark_v133_r1'):
         for hz,mode,r,size,negative in cases:
             d=BASE/'preflight'/f'{mode}_{hz}_{r}_{"negative" if negative else "positive"}';d.mkdir(parents=True,exist_ok=False)
             flags=['--headless','--fixed-fps','120'] if mode=='headless' else ['--screen','0','--position','80,80']
-            command=[str(ENGINE),*flags,'--resolution','x'.join(map(str,size)),'--path',str(ROOT),'--script','res://features/evaluator_virtual_cursor/scripts/benchmark_preflight.gd','--','--hz',str(hz),'--output',str(d/'result.json')]
+            command=[str(ENGINE),*flags,'--resolution','x'.join(map(str,size)),'--path',str(ROOT),'--script','res://features/evaluator_virtual_cursor/scripts/benchmark_preflight.gd','--','--backing-size','x'.join(map(str,size)),'--hz',str(hz),'--output',str(d/'result.json')]
             if negative:
                 manifest={'scenario_ids':['swing_catch_train'],'campaign_id':campaign_id,'run_id':'NEGATIVE_CANONICAL_BACKING','output_dir':str(d),'input_lane':'NEGATIVE_SETUP_ONLY','physics_hz':hz,'engine_mode':mode,'virtual_mode':'REPLAY','expected_source_hashes':frozen['source_hashes'],'engine_identity':frozen['engine_identity']}
                 atomic_json(d/'driver_manifest.json',manifest)
-                command=[str(ENGINE),*flags,'--resolution','1440x810','--path',str(ROOT),'--script','res://features/evaluator_virtual_cursor/scripts/benchmark_runner.gd','--','--virtual-cursor-evaluator','--benchmark-qualification','--manifest',str(d/'driver_manifest.json'),'--result',str(d/'result.json')]
+                command=[str(ENGINE),*flags,'--resolution','1440x810','--path',str(ROOT),'--script','res://features/evaluator_virtual_cursor/scripts/benchmark_runner.gd','--','--backing-size','1440x810','--virtual-cursor-evaluator','--benchmark-qualification','--manifest',str(d/'driver_manifest.json'),'--result',str(d/'result.json')]
             atomic_json(d/'manifest.json',{'command':command,'source':frozen,'hz':hz,'mode':mode,'repeat':r,'requested_size':size,'negative':negative,'gameplay_bodies_expected':0,'utc':utc_now()})
             with (d/'stdout.txt').open('wb') as stdout,(d/'stderr.txt').open('wb') as stderr:
                 p=subprocess.Popen(command,cwd=ROOT,stdout=stdout,stderr=stderr)

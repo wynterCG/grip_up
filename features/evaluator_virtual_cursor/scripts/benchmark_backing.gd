@@ -6,8 +6,9 @@ static func initialize(window:Window)->Dictionary:
 	var reason:=""
 	var requested:Array=[]
 	if DisplayServer.get_name()=="headless":
-		var args:PackedStringArray=OS.get_cmdline_args()
-		var index:int=args.find("--resolution")
+		# Engine options are consumed before OS exposes arguments to scripts.
+		var args:PackedStringArray=OS.get_cmdline_user_args()
+		var index:int=args.find("--backing-size")
 		if index<0 or index+1>=args.size():reason="RESOLUTION_ARGUMENT_REQUIRED"
 		else:
 			var dimensions:PackedStringArray=args[index+1].split("x")

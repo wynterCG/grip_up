@@ -53,7 +53,7 @@ def execute(scenario,hz,mode,repeat,group,tape_path=None,probe=True,negative='')
         m['capture_runtime_source_delta']={p:{'capture_sha256':tape['source_hashes'].get(p),'runtime_sha256':source['source_hashes'].get(p)} for p in sorted(tape['source_hashes'].keys()|source['source_hashes'].keys()) if tape['source_hashes'].get(p)!=source['source_hashes'].get(p)}
     atomic_json(directory/'manifest.json',m)
     flags=['--headless','--fixed-fps','120'] if mode=='headless' else ['--screen','0','--position','80,80']
-    command=[str(ENGINE),*flags,'--resolution','1024x576','--path',str(ROOT),'--script',ENTRY,'--','--virtual-cursor-evaluator','--benchmark-qualification','--manifest',str(directory/'manifest.json'),'--result',str(directory/'engine_result.json')]
+    command=[str(ENGINE),*flags,'--resolution','1024x576','--path',str(ROOT),'--script',ENTRY,'--','--backing-size','1024x576','--virtual-cursor-evaluator','--benchmark-qualification','--manifest',str(directory/'manifest.json'),'--result',str(directory/'engine_result.json')]
     atomic_json(directory/'execution.json',{'command':command,'utc':utc_now(),'workers':1,'input_lane':lane})
     started=time.monotonic();code=None;reason='';result={};metrics={}
     with (directory/'stdout.txt').open('wb') as stdout,(directory/'stderr.txt').open('wb') as stderr:

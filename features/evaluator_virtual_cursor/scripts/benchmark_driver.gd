@@ -23,6 +23,7 @@ func _virtual_scope(value:Dictionary)->String:
 	var ids:Array=["swing_catch_train"]
 	for d:Dictionary in _additional_qualification_scenarios():ids.append(d.id)
 	if str(value.scenario_ids[0]) not in ids:return "UNKNOWN_BENCHMARK_SCENARIO"
+	if value.has("projection_config") and value.projection_config.window_size!=[1024,576]:return "ENVIRONMENT_NOT_COMPARABLE:CANONICAL_BACKING"
 	backing_initialization=Backing.initialize(get_window())
 	if not backing_initialization.reason.is_empty():return "ENVIRONMENT_NOT_COMPARABLE:"+backing_initialization.reason
 	return ""
