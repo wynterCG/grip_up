@@ -24,3 +24,11 @@ uv run --frozen --project tools/auto_tuning python -m unittest discover -s tools
 O novo driver usa probes ordenadas antes/depois dos callbacks físicos existentes. `post_control` significa depois do controlador e antes da integração seguinte; não significa post-solver. Não se misturam amostras de fases diferentes. O comparador localiza diferenças, mas não inventa uma tolerância física ou certificação de igualdade a partir de diferenças pequenas.
 
 As condições de entrada e os estados de métricas fazem parte do contrato, não de uma tentativa de fazer passar todas as metas. Se não houver uma entrada válida ou o corpo não estabilizar, o resultado tem de o dizer. Ver [migração](migration_from_v13.md).
+
+## Revisões preservadas
+
+`catch_001` parou corretamente na primeira execução renderizada de 60 Hz, por delta físico efetivo incorreto durante o arranque. Os 25 recibos e as sete condições por executar não são uma matriz completa. Ver a [investigação de captura](catch_investigation.md) e o [relatório dessa tentativa](reports/phase_startup_001/comparison.md).
+
+A revisão 3 confirma o relógio em mundo vazio, normaliza a criação dos cenários e exige 0,25 s decorridos na preparação quieta. A repetição usa um diretório novo `catch_002`; não retoma nem reetiqueta a primeira matriz. As revisões anteriores dos catálogos e todos os desenvolvimentos continuam arquivados. A definição de `destination_alone` não exclui pés ou contacto transitório com chão.
+
+As [regressões originais](reliability_regression/attempt_001/results.json) passaram nas 24 execuções a 60/120 Hz, com 884 verificações. Não são evidência de melhor feel nem substituem a qualificação do novo avaliador.

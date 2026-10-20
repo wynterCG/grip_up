@@ -1,0 +1,52 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS finite physical grip establishes test anchor
+PASS serial reverse uses actual retained grip and unchanged360/20/150 budgets
+REVERSAL_MEASURE {"latency":0.208333333333333,"mode":"reverse","retained":true,"serial":true,"work":1.37647232332577,"wrong_impulse":1.6048221151034}
+PASS finite physical grip establishes test anchor
+PASS candidate reverse uses actual retained grip and unchanged360/20/150 budgets
+REVERSAL_MEASURE {"latency":0.075,"mode":"reverse","retained":true,"serial":false,"work":1.30559589588083,"wrong_impulse":0.338328600674868}
+PASS finite physical grip establishes test anchor
+PASS serial release_only uses actual retained grip and unchanged360/20/150 budgets
+REVERSAL_MEASURE {"latency":-1.0,"mode":"release_only","retained":true,"serial":true,"work":0.79489864812543,"wrong_impulse":1.87567263444265}
+PASS finite physical grip establishes test anchor
+PASS candidate release_only uses actual retained grip and unchanged360/20/150 budgets
+REVERSAL_MEASURE {"latency":-1.0,"mode":"release_only","retained":true,"serial":false,"work":0.79489864812543,"wrong_impulse":1.87567263444265}
+PASS initial gesture trajectory/force is exactly preserved before first explicit reversal
+PASS release-only gesture preserves complete historical neutral decay and body/arm trajectory exactly
+PASS finite physical grip establishes test anchor
+PASS reactive brake serialtrue preserves real support and capacity
+REVERSAL_PHASE {"anticipation_seconds":0.0,"energy_peak":1.68471041321754,"mode":"reactive_phase_brake","negative_samples":226,"positive_samples":371,"retained":true,"serial_control":true,"work":3.50611524240667}
+PASS finite physical grip establishes test anchor
+PASS reactive brake serialfalse preserves real support and capacity
+REVERSAL_PHASE {"anticipation_seconds":0.0,"energy_peak":0.988526025786996,"mode":"reactive_phase_brake","negative_samples":382,"positive_samples":195,"retained":true,"serial_control":false,"work":-2.03492294417932}
+PASS explicit opposite command produces finite countereffort at least25percent sooner
+PASS reversal reduces wrong-way torque impulse without more maximum torque
+PASS same no-anticipation brake policy reduces injected work without increasing peak energy
+PASS finite physical grip establishes test anchor
+PASS serial reverse uses actual retained grip and unchanged360/20/150 budgets
+REVERSAL_MEASURE {"latency":0.2,"mode":"reverse","retained":true,"serial":true,"work":1.34993195955952,"wrong_impulse":1.50296736583114}
+PASS finite physical grip establishes test anchor
+PASS candidate reverse uses actual retained grip and unchanged360/20/150 budgets
+REVERSAL_MEASURE {"latency":0.075,"mode":"reverse","retained":true,"serial":false,"work":1.30045642138769,"wrong_impulse":0.338727946579456}
+PASS one real neutral tick between opposite keys retains finite faster counter-command
+PASS finite physical grip establishes test anchor
+PASS serial reverse uses actual retained grip and unchanged360/20/150 budgets
+REVERSAL_MEASURE {"latency":0.0249999999999999,"mode":"reverse","retained":true,"serial":true,"work":1.54056532249476,"wrong_impulse":0.00489364638924599}
+PASS finite physical grip establishes test anchor
+PASS candidate reverse uses actual retained grip and unchanged360/20/150 budgets
+REVERSAL_MEASURE {"latency":0.0249999999999999,"mode":"reverse","retained":true,"serial":false,"work":1.54056532249476,"wrong_impulse":0.00489364638924599}
+PASS after long neutral a new opposite gesture exactly preserves historical startup instead of forcing brake mode
+PASS finite physical grip establishes test anchor
+PASS releasing a brief opposite gesture requests ZERO instead of resurrecting old-sign traversal tail
+PASS support loss removes reversed intent force and moment on every unsupported tick
+PASS support loss removes reversed intent force and moment on every unsupported tick
+PASS support loss removes reversed intent force and moment on every unsupported tick
+PASS support loss removes reversed intent force and moment on every unsupported tick
+PASS holding reverse after release cannot provide an airborne horizontal motor
+PASS finite physical grip establishes test anchor
+PASS finite physical grip establishes test anchor
+PASS explicit reversal on shared dynamic material retains equal/opposite force and moment reactions
+INTENT REVERSAL RESULTS: 37 checks, 0 failures
+WARNING: Jolt Physics job system exceeded the maximum number of jobs. This should not happen. Please report this. Waiting for jobs to become available...
+   at: CreateJob (modules/jolt_physics/spaces/jolt_job_system.cpp:123)

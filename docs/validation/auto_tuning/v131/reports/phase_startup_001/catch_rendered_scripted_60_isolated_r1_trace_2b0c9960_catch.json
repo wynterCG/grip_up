@@ -1,0 +1,37 @@
+{
+  "events": [
+    {
+      "code": "FREE",
+      "physics_time_s": 0.0166666666666667,
+      "sample_phase": "post_control",
+      "tick": 1
+    }
+  ],
+  "first_missing_stage": "REQUEST_SELECTED",
+  "maximum_REACHING_admitted_force_n": 0.0,
+  "minimum_observed_hand_target_distance_m": null,
+  "minimum_observed_shoulder_distance_m": null,
+  "observed_pending_gesture_speed_m_s": {
+    "max": null,
+    "mean": null,
+    "min": null,
+    "n": 0,
+    "sample_sd": null
+  },
+  "reach_windows": [],
+  "run_id": "catch_rendered_scripted_60_isolated_r1_trace_2b0c9960",
+  "schema_version": "1.3.1",
+  "scope": "Actual post-control pending fields and named transitions; PATH_CLEAR may precede reach-window entry. Derived contact validation is observed alongside ATTACHED, not a sub-tick timestamp. Eventual task outcome additionally requires the original destination-alone retention policy.",
+  "selected_material": [],
+  "stage_first_observation": {
+    "ATTACHED": null,
+    "CONTACT_VALIDATED": null,
+    "ENTER_REACH_WINDOW": null,
+    "LOAD_ADMITTED": null,
+    "PATH_CLEAR": null,
+    "REACHING": null,
+    "REQUEST_SELECTED": null,
+    "RETAINED": null,
+    "TARGET_LOCKED": null
+  }
+}

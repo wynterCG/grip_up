@@ -22,6 +22,14 @@ The names pre_control and post_control describe node callback order. They do not
 
 Actual callback delta is recorded and checked against 1 / requested_hz. Time used for episode comparisons is the tick-based physics clock; wall time is only an explicit timeout and overhead measurement. Camera pose, pointer, FOV, viewport, interpolation fraction, bodies, shapes, material-local targets, collisions and support identities are retained.
 
+### Clock/lifecycle revision after the preserved 60 Hz failure
+
+The first rendered 60 Hz run in catch_001 correctly returned BLOCKED_TRACE / ACTUAL_DELTA_MISMATCH. Its first 15 recorded world ticks received delta = 1/120, then tick 16 received 1/60, despite the requested frequency being 60 from driver start. The project default is 120; runtime assignment immediately preceded first-world construction. This establishes an effective startup frequency transition. An already scheduled engine batch is a plausible explanation, not a proven internal engine diagnosis. The failed receipt is retained and cannot qualify as 60 Hz data.
+
+The new harness revision waits on actual post-probe callbacks in an empty world after requesting the frequency. Two consecutive callbacks must carry the requested delta. Every startup delta, run tick, elapsed wall time and absence of a Lab is recorded. Five observed wall seconds or 120 callbacks without confirmation produce explicit BLOCKED_SETUP; the external process watchdog still covers an engine that stops producing callbacks entirely. No stale world is advanced or later relabelled. The existing exact in-scenario ACTUAL_DELTA_MISMATCH guard remains.
+
+Every new world is now constructed after post_completed, including the first and subsequent sequence cells, after retiring the old world. The creation boundary is recorded per scenario. Earlier 120 Hz receipts showed an initial one-step state difference: alone first PRE had vY = -0.0816667 m/s and COM 0.680566 mm lower than sequence first PRE (vY = 0). Lifecycle normalization addresses that measured setup inconsistency without changing a body pose or velocity. It is a second evaluator revision and does not retrospectively prove the cause of historical native failures. The parent must rerun the physical matrix against the new source commit; prior success counts remain version-specific.
+
 ## Catch evidence
 
 A request's intended point, actual camera ray hit, accepted material collider/local point, persistent target, reach window, finite-path status, actual hand endpoint, attachment and actual admitted load are separate records. CONTACT_VALIDATED precedes ATTACHED in the observational event chain; neither is a prediction. RETAINED requires continuous ATTACHED state with the same anchor for 0.6 s. Regripping or slipping resets that interval.
@@ -48,6 +56,8 @@ Failure to reach a precondition is PRECONDITION_NOT_MET, not a silently differen
 The parent lateral_stop001 smoke completed all 12 engine processes, but its two-hand stop began at total speed about 0.078 m/s, already inside the 0.10 m/s stopped band. The revision 1 minimum directed start of 0.05 did not logically distinguish a stop task from a low-energy control. Separately, the one-hand low-energy case entered at total speed about 0.145 m/s because only the lateral component was tested. Those development receipts remain historical and do not become qualified stops retroactively.
 
 Revision 2 uses 0.15 m/s for directed motion preparation: the unchanged 0.10 stopped band plus a declared 0.05 task separation. The low-energy case uses full relative velocity norm. These are benchmark validity checks, not force, geometry, tape, observation-window or performance-goal changes. Inability to enter the stricter state is an admissible PRECONDITION_NOT_MET; no outcome improvement is assumed. Baseline Resource verification errors now return BLOCKED_SETUP before any acquisition or settling, rather than being misreported as an unsuccessful physical preparation.
+
+Revision 3 preserves those bands and fixes their elapsed-time interpretation: 30 quiet samples at 120 Hz span 29 intervals (0.241667 s), and 15 at 60 Hz span 14 (0.233333 s). Confirmation now requires (current_tick - first_quiet_tick) / Hz >= 0.25, resetting the first tick after any violation. The full low-energy speed/spin condition is also checked at the actual accepted-command snapshot. A state that drifts outside it between preparation and acceptance remains PRECONDITION_NOT_MET. The exact revision 2 catalogue is preserved in development/benchmark_eval_v131_r2.json.
 
 ## Supports, budgets and work
 

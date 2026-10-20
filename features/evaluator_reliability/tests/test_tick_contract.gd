@@ -21,6 +21,8 @@ class SetupBlockedDriver extends "res://features/evaluator_reliability/scripts/r
 	func _fresh(_definition:Dictionary)->void:
 		app=FakeApp.new()
 		app.override_error="BASELINE_RESOURCE_MISMATCH:unit"
+class RetirementBlockedDriver extends "res://features/evaluator_reliability/scripts/reliability_driver.gd":
+	func _retire_previous_world()->bool:return false
 class PureDriver extends "res://features/evaluator_reliability/scripts/reliability_driver.gd":
 	var actual_input:=Vector2.ZERO
 	func _snapshot(phase:String)->Dictionary:
@@ -88,7 +90,7 @@ func run()->void:
 	check(rejected.status=="BLOCKED_SETUP" and invalid.app==null,"invalid manifest blocks before a gameplay Lab/body is constructed")
 	var catalog:Dictionary=JSON.parse_string(FileAccess.get_file_as_string(Driver.CATALOG))
 	check(catalog.scenarios.size()==12 and catalog.thresholds.clean_max_wait_s==5 and catalog.thresholds.clean_confirmation_s==.25,"prospective fixture registry and unchanged confirmation thresholds are explicit")
-	check(catalog.revision==2 and catalog.thresholds.motion_velocity_interval_m_s==[.15,.5] and catalog.thresholds.low_energy_velocity_scope=="full_support_relative_speed_norm","revision 2 discloses measurement-validity calibration without changing windows")
+	check(catalog.revision==3 and catalog.thresholds.motion_velocity_interval_m_s==[.15,.5] and catalog.thresholds.low_energy_velocity_scope=="full_support_relative_speed_norm","revision 3 preserves calibrated bands and declares exact elapsed confirmation")
 	check(not Driver._motion_velocity_eligible(.078,false),"stop preparation rejects the observed revision 1 start already inside the stopped band")
 	check(Driver._motion_velocity_eligible(.15,false) and Driver._motion_velocity_eligible(.5,false) and not Driver._motion_velocity_eligible(.149999,false) and not Driver._motion_velocity_eligible(.500001,false),"stop/brake/reverse starts require the explicit .15 to .50 directed speed interval")
 	check(Driver._motion_velocity_eligible(-.02,true) and Driver._motion_velocity_eligible(-.5,true) and not Driver._motion_velocity_eligible(-.019,true),"counter-swing preparation keeps its original opposing-speed interval")
@@ -99,6 +101,39 @@ func run()->void:
 	var setup_result:Dictionary=await blocked._control_case({"id":"unit_bad_baseline","revision":2})
 	check(setup_result.status=="BLOCKED_SETUP" and not setup_result.completed and setup_result.reason=="BASELINE_RESOURCE_MISMATCH:unit" and blocked._scenario_tick==0 and blocked._desired_keys.is_empty(),"baseline setup error is returned before any acquisition, prep or settling can hide it")
 	blocked.app.free();blocked.app=null;blocked.queue_free()
+	check(not Driver._quiet_window_confirmed(100,129,120) and Driver._quiet_window_confirmed(100,130,120),"120 Hz quiet confirmation needs .25 elapsed seconds, not just 30 samples spanning .24167")
+	check(not Driver._quiet_window_confirmed(100,114,60) and Driver._quiet_window_confirmed(100,115,60) and not Driver._quiet_window_confirmed(-1,200,60),"60 Hz quiet confirmation needs .25 elapsed seconds and cannot retain a broken interval")
+	var clock=Driver.new();clock.hz=60
+	clock._begin_clock_handshake();clock._record_clock_sample(1.0/120,0)
+	check(clock._clock_status=="WAITING" and clock._clock_streak==0 and clock.app==null,"stale 120 Hz startup callback cannot authorize a requested 60 Hz world")
+	clock._record_clock_sample(1.0/60,.01)
+	check(clock._clock_status=="WAITING" and clock._clock_streak==1,"one correct callback alone does not settle the startup clock")
+	clock._record_clock_sample(1.0/120,.02)
+	check(clock._clock_streak==0 and clock._clock_status=="WAITING","wrong startup delta resets the consecutive confirmation")
+	clock._record_clock_sample(1.0/60,.03);clock._record_clock_sample(1.0/60,.04)
+	check(clock._clock_status=="READY" and not clock._clock_waiting and clock._clock_receipt.samples.size()==5 and clock._clock_receipt.samples.all(func(sample):return not sample.world_present),"two consecutive actual requested deltas authorize only an empty-world clock and retain every startup sample")
+	clock._begin_clock_handshake();clock._record_clock_sample(1.0/60,5.0)
+	check(clock._clock_status=="BLOCKED_SETUP" and clock._clock_receipt.reason=="CLOCK_NOT_SETTLED_TIMEOUT","unsettled startup clock has an explicit wall-deadline setup failure")
+	clock._begin_clock_handshake()
+	for index in Driver.CLOCK_MAX_TICKS:clock._record_clock_sample(1.0/120,.1)
+	check(clock._clock_status=="BLOCKED_SETUP" and clock._clock_receipt.reason=="CLOCK_NOT_SETTLED_TICK_LIMIT" and clock._clock_receipt.samples.size()==Driver.CLOCK_MAX_TICKS,"startup callback budget is finite and never hides stale deltas")
+	clock._begin_clock_handshake();clock.app=FakeApp.new();clock._record_clock_sample(1.0/60,0)
+	check(clock._clock_status=="BLOCKED_SETUP" and clock._clock_receipt.reason=="WORLD_PRESENT_DURING_CLOCK_HANDSHAKE","startup settlement rejects any already-created lab instead of warming a mixed-frequency world")
+	clock.app.free();clock.app=null;clock.free()
+	var old_world=Node.new();old_world.name="RetirementUnitWorld"
+	var old_child=Node.new();old_world.add_child(old_child);root.add_child(old_world)
+	current_scene=old_world
+	var exit_seen:Array=[false]
+	old_world.tree_exited.connect(func():exit_seen[0]=true)
+	var retired:Dictionary=Driver._retire_world_node(old_world)
+	check(retired.present and retired.subtree_absent and retired.subtree_size==2 and not old_world.is_inside_tree() and not old_child.is_inside_tree() and exit_seen[0],"retirement synchronously exits the whole old subtree before another physics callback")
+	check(current_scene==null and old_world.get_parent()==null and old_world.is_queued_for_deletion(),"current scene is cleared and reclamation is deferred only after synchronous detachment")
+	var absent:Dictionary=Driver._retire_world_node(null)
+	check(not absent.present and absent.subtree_absent and absent.physics_bodies_still_in_space==0,"first-world retirement explicitly records absence rather than inventing an old world")
+	var retirement_blocked=RetirementBlockedDriver.new()
+	var failed_retirement:Dictionary=await retirement_blocked._run_scenario({"id":"unit_failed_teardown","revision":3})
+	check(failed_retirement.status=="BLOCKED_SETUP" and failed_retirement.reason=="OLD_WORLD_NOT_RETIRED" and retirement_blocked.app==null,"teardown failure returns before inherited acquisition can dereference a null Lab")
+	retirement_blocked.free()
 	var body_state:Dictionary={"body":{"com_m":Vector3.ZERO,"pose":Transform3D.IDENTITY,"linear_velocity_m_s":Vector3.ZERO,"angular_velocity_rad_s":Vector3.ZERO},"hands":[],"feet":[],"profile":4,"sample_phase":"pre_control"}
 	var reference:Dictionary=Reader.stable_initial(body_state)
 	body_state["runtime_id"]=12345;body_state["run_id"]="different_process"

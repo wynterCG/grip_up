@@ -171,3 +171,38 @@ horizontes e tempos de confirmação a 60/120 Hz. São construções sintéticas
 valores conhecidos, não jogadores nem resultados do Godot. O controlo físico de
 baixa energia e os episódios reais nas duas frequências ainda têm de validar o
 pipeline antes de afirmar ER4 concluído.
+
+## Auditoria da integração em desenvolvimento
+
+O recibo `development_lateral_stop_001` usa o contrato de desenvolvimento de
+revisão 1; não constitui qualificação do contrato de revisão 2. A revisão 2
+exige preparação do stop fora da banda de settling e controlo de baixa energia
+pela norma completa da velocidade relativa. Não se devem reinterpretar os
+recibos antigos com o catálogo atual nem misturar as duas distribuições.
+
+Uma verificação independente das amostras desse recibo reproduziu as seis
+distâncias de stop medidas, com erro numérico máximo de 5,6e-17 m. Todas as
+confirmações respetivas abrangem 0,25 s físicos e respeitam ambas as bandas.
+Isto valida a aplicação das fórmulas àquele registo, sem estabelecer repetição,
+equivalência entre modos ou aceitação do benchmark completo.
+
+Nesse desenvolvimento, ambos os brakes terminaram a janela ativa de 0,5 s sem
+atingir as frações pedidas: os tempos/distâncias dessas frações ficam
+`INTERRUPTED`, embora possa existir settling posterior. Em três episódios,
+uma reversão medida precede contacto com o chão; a reversão conserva o seu
+valor, mas progresso final e sucesso da tarefa inteira não ficam confirmados.
+Todos os controlos clean, release, brake e low-energy tinham pés carregados
+durante a observação. Uma só mão agarrada não demonstra suspensão só pelos
+braços nem separa causalmente a contribuição dos pés.
+
+A elegibilidade deve ser conferida também na amostra do comando aceite: há uma
+fronteira de um tick depois da preparação. O mínimo de movimento do analisador
+protege o stop; a qualificação de baixa energia exige verificar explicitamente
+velocidade completa e velocidade angular nessa amostra. Preparação baseada em
+contar N amostras consecutivas abrange N-1 intervalos; não equivale por si só a
+0,25 s decorridos. O detetor de settling usa tempo físico decorrido.
+
+Na revisão 2, o alvo espacial de overshoot é o COM no onset aceite, declarado
+como referência de medição com progresso zero. Não representa um alvo pedido
+pelo jogador nem uma alteração do controlador. Valores de overshoot têm de
+manter esta definição explícita ao serem comparados.

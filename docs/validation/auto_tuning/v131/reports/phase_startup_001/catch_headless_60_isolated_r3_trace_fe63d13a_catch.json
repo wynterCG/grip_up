@@ -1,0 +1,190 @@
+{
+  "events": [
+    {
+      "code": "FREE",
+      "physics_time_s": 0.0166666666666667,
+      "sample_phase": "post_control",
+      "tick": 1
+    },
+    {
+      "code": "TRANSFER_DIAGNOSTIC",
+      "physics_time_s": 2.36666666666667,
+      "sample_phase": "pre_control",
+      "tick": 142
+    },
+    {
+      "code": "TRANSFER_DIAGNOSTIC",
+      "physics_time_s": 2.36666666666667,
+      "sample_phase": "pre_control",
+      "tick": 142
+    },
+    {
+      "code": "REQUEST_SELECTED",
+      "physics_time_s": 2.36666666666667,
+      "sample_phase": "pre_control",
+      "tick": 142
+    },
+    {
+      "code": "TARGET_LOCKED",
+      "physics_time_s": 2.36666666666667,
+      "sample_phase": "post_control",
+      "tick": 142
+    },
+    {
+      "code": "REACHING",
+      "physics_time_s": 2.36666666666667,
+      "sample_phase": "post_control",
+      "tick": 142
+    },
+    {
+      "code": "PATH_CLEAR",
+      "physics_time_s": 2.36666666666667,
+      "sample_phase": "post_control",
+      "tick": 142
+    },
+    {
+      "code": "ENTER_REACH_WINDOW",
+      "physics_time_s": 3.53333333333333,
+      "sample_phase": "post_control",
+      "tick": 212
+    },
+    {
+      "code": "TRANSFER_DIAGNOSTIC",
+      "physics_time_s": 3.55,
+      "sample_phase": "control_callbacks",
+      "tick": 213
+    },
+    {
+      "code": "TRANSFER_DIAGNOSTIC",
+      "physics_time_s": 3.55,
+      "sample_phase": "control_callbacks",
+      "tick": 213
+    },
+    {
+      "code": "TRANSFER_DIAGNOSTIC",
+      "physics_time_s": 3.55,
+      "sample_phase": "control_callbacks",
+      "tick": 213
+    },
+    {
+      "code": "CONTACT_VALIDATED",
+      "physics_time_s": 3.55,
+      "sample_phase": "post_control",
+      "tick": 213
+    },
+    {
+      "code": "ATTACHED",
+      "physics_time_s": 3.55,
+      "sample_phase": "post_control",
+      "tick": 213
+    },
+    {
+      "code": "LOAD_ADMITTED",
+      "physics_time_s": 3.56666666666667,
+      "sample_phase": "post_control",
+      "tick": 214
+    },
+    {
+      "code": "RETAINED",
+      "physics_time_s": 4.15,
+      "sample_phase": "post_control",
+      "tick": 249
+    },
+    {
+      "code": "TRANSFER_DIAGNOSTIC",
+      "physics_time_s": 4.35,
+      "sample_phase": "post_control",
+      "tick": 261
+    }
+  ],
+  "first_missing_stage": null,
+  "maximum_REACHING_admitted_force_n": 0.0,
+  "minimum_observed_hand_target_distance_m": 0.0,
+  "minimum_observed_shoulder_distance_m": 0.62336277961731,
+  "observed_pending_gesture_speed_m_s": {
+    "max": 4.00000286102295,
+    "mean": 2.78514200647672,
+    "min": 0.418027848005295,
+    "n": 120,
+    "sample_sd": 1.1265299467774839
+  },
+  "reach_windows": [
+    {
+      "end_status": "open_at_last_sample",
+      "start_physics_time_s": 3.53333333333333,
+      "start_tick": 212
+    }
+  ],
+  "run_id": "catch_headless_60_isolated_r3_trace_fe63d13a",
+  "schema_version": "1.3.1",
+  "scope": "Actual post-control pending fields and named transitions; PATH_CLEAR may precede reach-window entry. Derived contact validation is observed alongside ATTACHED, not a sub-tick timestamp. Eventual task outcome additionally requires the original destination-alone retention policy.",
+  "selected_material": [
+    {
+      "collider_key": "catch",
+      "distance_m": 0.805310964584351,
+      "material_local_normal": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "material_local_point_m": [
+        -0.120785683393478,
+        -0.0499999523162842,
+        -0.00696602463722229
+      ],
+      "original_selection_world": [
+        0.229214310646057,
+        2.15000009536743,
+        0.143033981323242
+      ],
+      "tick": 142
+    }
+  ],
+  "stage_first_observation": {
+    "ATTACHED": {
+      "physics_time_s": 3.55,
+      "sample_phase": "post_control",
+      "tick": 213
+    },
+    "CONTACT_VALIDATED": {
+      "physics_time_s": 3.55,
+      "sample_phase": "post_control",
+      "tick": 213
+    },
+    "ENTER_REACH_WINDOW": {
+      "physics_time_s": 3.53333333333333,
+      "sample_phase": "post_control",
+      "tick": 212
+    },
+    "LOAD_ADMITTED": {
+      "physics_time_s": 3.56666666666667,
+      "sample_phase": "post_control",
+      "tick": 214
+    },
+    "PATH_CLEAR": {
+      "physics_time_s": 2.36666666666667,
+      "sample_phase": "post_control",
+      "tick": 142
+    },
+    "REACHING": {
+      "physics_time_s": 2.36666666666667,
+      "sample_phase": "post_control",
+      "tick": 142
+    },
+    "REQUEST_SELECTED": {
+      "physics_time_s": 2.36666666666667,
+      "sample_phase": "pre_control",
+      "tick": 142
+    },
+    "RETAINED": {
+      "physics_time_s": 4.15,
+      "sample_phase": "post_control",
+      "tick": 249
+    },
+    "TARGET_LOCKED": {
+      "physics_time_s": 2.36666666666667,
+      "sample_phase": "post_control",
+      "tick": 142
+    }
+  }
+}

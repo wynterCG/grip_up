@@ -13,12 +13,16 @@ class ReliabilityPlanTests(unittest.TestCase):
                 "physics_hz":120,"engine_mode":"headless","environment":{"engine_binary_sha256":"a"*64,"physics_backend":"Jolt Physics",
                 **{key:manifest[key] for key in ("code_commit","dirty_tree","expected_source_hashes")}},
                 "restoration":{**{key:True for key in ("physics_hz_restored","startup_profile_preserved","installs_pre_step","sources_after_unchanged")},"resources":{"originals_preserved":True}},
-                "scenarios":[{"id":"catch","completed":False,"status":"failed_task","invariants":{"solver_nonfinite":False}}],"trace":{"dropped_rows":0}}
+                "scenarios":[{"id":"catch","completed":False,"status":"failed_task","invariants":{"solver_nonfinite":False}}],"trace":{"dropped_rows":0},
+                "clock_startup":{"status":"READY","world_present_at_start":False,
+                                 "samples":[{"world_present":False,"delta_s":1/120} for _ in range(2)]}}
         validate_reliability_result(result,manifest,"d"*64)
         mutations=[lambda r:r.update(run_id="stale"),lambda r:r['environment'].update(engine_binary_sha256="wrong"),
                    lambda r:r['restoration'].update(installs_pre_step=False),lambda r:r['scenarios'][0]['invariants'].update(solver_nonfinite=True),
                    lambda r:r['trace'].update(dropped_rows=1),lambda r:r['scenarios'][0].update(completed=None),
-                   lambda r:r['scenarios'][0].update(status='BLOCKED_SETUP')]
+                   lambda r:r['scenarios'][0].update(status='BLOCKED_SETUP'),
+                   lambda r:r.pop('clock_startup'),lambda r:r['clock_startup']['samples'][0].update(delta_s=1/60),
+                   lambda r:r['clock_startup']['samples'][0].update(world_present=True)]
         for mutate in mutations:
             bad=copy.deepcopy(result);mutate(bad)
             with self.assertRaises(ValueError):validate_reliability_result(bad,manifest,"d"*64)

@@ -76,6 +76,13 @@ def validate_reliability_result(result: dict, manifest: dict, manifest_sha: str)
         raise ValueError("actual engine/Jolt identity mismatch")
     if result.get("physics_hz") != manifest["physics_hz"] or result.get("engine_mode") != manifest["engine_mode"]:
         raise ValueError("actual mode/frequency mismatch")
+    clock = result.get("clock_startup", {})
+    samples = clock.get("samples", [])
+    if (clock.get("status") != "READY" or clock.get("world_present_at_start") is not False
+            or not 2 <= len(samples) <= 120 or any(s.get("world_present") is not False for s in samples)
+            or any(type(s.get("delta_s")) not in (int, float)
+                   or not abs(s["delta_s"] - 1 / manifest["physics_hz"]) <= .0000001 for s in samples[-2:])):
+        raise ValueError("actual empty-world startup clock was not confirmed")
     for key in ("code_commit", "dirty_tree", "expected_source_hashes"):
         if environment.get(key) != manifest[key]:
             raise ValueError("runtime provenance mismatch: " + key)

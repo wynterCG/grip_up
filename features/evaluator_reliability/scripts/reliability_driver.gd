@@ -40,6 +40,17 @@ var _pending_transition:Dictionary={}
 var _actual_delta:=0.0
 var _trace_integrity_reason:=""
 var _measured_anchors:Dictionary={}
+const CLOCK_CONFIRM_TICKS=2
+const CLOCK_MAX_TICKS=120
+const CLOCK_TIMEOUT_S=5.0
+var _clock_waiting:=false
+var _clock_status:="IDLE"
+var _clock_streak:=0
+var _clock_started_msec:=0
+var _clock_receipt:Dictionary={}
+var _post_delta:=0.0
+var _world_creation:Dictionary={}
+var _retired_worlds:Array[Dictionary]=[]
 
 func _ready()->void:
 	pre_probe=Probe.new();pre_probe.process_physics_priority=-100;add_child(pre_probe);pre_probe.tick.connect(_pre_tick)
@@ -104,6 +115,11 @@ func _snapshot(phase:String)->Dictionary:
 	return result
 
 func _post_tick(delta:float)->void:
+	# The engine may deliver an already scheduled batch after runtime Hz changes.
+	# Observe it before constructing any lab; never discard mismatched world ticks.
+	_post_delta=delta
+	_phase_context="post_control"
+	if _clock_waiting:_record_clock_sample(delta,float(Time.get_ticks_msec()-_clock_started_msec)/1000.0)
 	if _scenario_enabled and is_instance_valid(app):
 		_actual_delta=delta
 		if absf(delta-1.0/hz)>.0000001:_trace_integrity_reason="ACTUAL_DELTA_MISMATCH"
@@ -138,6 +154,30 @@ func _post_tick(delta:float)->void:
 					_measurement_support_lost=_measurement_support_lost or hand.state!="ATTACHED" or hand.anchor_runtime_id!=_measured_anchors[id]
 		_sample_cost_usec+=Time.get_ticks_usec()-start_usec;_sample_calls+=1
 	post_completed.emit()
+
+func _begin_clock_handshake()->void:
+	_clock_waiting=true;_clock_status="WAITING";_clock_streak=0
+	_clock_started_msec=Time.get_ticks_msec()
+	_clock_receipt={"requested_delta_s":1.0/hz,"confirmation_ticks":CLOCK_CONFIRM_TICKS,"maximum_ticks":CLOCK_MAX_TICKS,"timeout_s":CLOCK_TIMEOUT_S,"samples":[],"world_present_at_start":is_instance_valid(app),"status":"WAITING"}
+
+func _record_clock_sample(delta:float,elapsed_s:float)->void:
+	if not _clock_waiting:return
+	_clock_receipt.samples.append({"run_tick":_global_tick,"delta_s":delta,"elapsed_wall_s":elapsed_s,"world_present":is_instance_valid(app)})
+	var failure:=""
+	if is_instance_valid(app):failure="WORLD_PRESENT_DURING_CLOCK_HANDSHAKE"
+	elif elapsed_s>=CLOCK_TIMEOUT_S:failure="CLOCK_NOT_SETTLED_TIMEOUT"
+	else:
+		_clock_streak=_clock_streak+1 if is_finite(delta) and absf(delta-1.0/hz)<=.0000001 else 0
+		if _clock_streak>=CLOCK_CONFIRM_TICKS:_clock_status="READY";_clock_waiting=false
+		elif _clock_receipt.samples.size()>=CLOCK_MAX_TICKS:failure="CLOCK_NOT_SETTLED_TICK_LIMIT"
+	if not failure.is_empty():_clock_status="BLOCKED_SETUP";_clock_receipt["reason"]=failure;_clock_waiting=false
+	_clock_receipt.status=_clock_status
+	_clock_receipt["consecutive_correct_ticks"]=_clock_streak
+
+func _settle_startup_clock()->bool:
+	_begin_clock_handshake()
+	while _clock_waiting:await post_completed
+	return _clock_status=="READY"
 
 func _chain(row:Dictionary)->void:
 	for id in 2:
@@ -175,12 +215,41 @@ func _tick(seconds:float)->void:
 		if float(Time.get_ticks_msec()-_clock_start)/1000.0>float(manifest.get("timeout_s",manifest.get("timeout_seconds",600))):
 			cancelled=true;break
 
-func _fresh(definition:Dictionary)->void:
+static func _retire_world_node(node:Node)->Dictionary:
+	if not is_instance_valid(node):return {"present":false,"subtree_absent":true,"physics_bodies_still_in_space":0}
+	var subtree:Array[Node]=[node]
+	subtree.append_array(node.find_children("*","",true,false))
+	var report:Dictionary={"present":true,"name":str(node.name),"was_inside_tree":node.is_inside_tree(),"subtree_size":subtree.size(),"physics_bodies":0,"physics_bodies_still_in_space":0}
+	var tree:SceneTree=node.get_tree() if node.is_inside_tree() else null
+	if tree!=null and tree.current_scene==node:tree.current_scene=null
+	if node.get_parent()!=null:node.get_parent().remove_child(node)
+	var absent:=true
+	for member:Node in subtree:
+		absent=absent and not member.is_inside_tree()
+		if member is PhysicsBody3D:
+			report.physics_bodies+=1
+			if PhysicsServer3D.body_get_space(member.get_rid()).is_valid():report.physics_bodies_still_in_space+=1
+	report["subtree_absent"]=absent
+	# Detachment is synchronous; queue_free only reclaims the now non-simulating
+	# objects later. A following physics tick must not advance the old world.
+	node.queue_free()
+	return report
+
+func _retire_previous_world()->bool:
 	_scenario_enabled=false;measurement_active=false
 	# Cleanup is deliberately immediate and outside the measured/recorded phase.
 	super._release_all();_desired_keys.clear();_emissions.clear();_pending_pointer=null
-	if is_instance_valid(app):loader.restore();app.queue_free();app=null;await get_tree().physics_frame
-	if is_instance_valid(_course):_course.queue_free();_course=null
+	_retired_worlds.clear()
+	if is_instance_valid(app):loader.restore();_retired_worlds.append(_retire_world_node(app));app=null
+	if is_instance_valid(_course):_retired_worlds.append(_retire_world_node(_course));_course=null
+	return _retired_worlds.all(func(report):return report.subtree_absent and report.physics_bodies_still_in_space==0)
+
+func _fresh(definition:Dictionary)->void:
+	# First and subsequent worlds are born at the same callback boundary, after
+	# the old subtrees have synchronously exited the tree/physics space. No world is advanced
+	# during the startup frequency handshake.
+	await post_completed
+	_world_creation={"run_tick":_global_tick,"sample_phase":_phase_context,"actual_delta_s":_post_delta,"requested_delta_s":1.0/hz,"boundary":"post_completed_before_lab_construction","retired_worlds":_retired_worlds.duplicate(true),"old_subtrees_absent":true}
 	super._reset_episode()
 	current_definition=definition.duplicate(true);_scenario_tick=0;_previous_hands.clear();_retained.clear();_last_command.clear();_latest_ray.clear();latest.clear()
 	_measurement_ground_seen=false;_measurement_support_lost=false
@@ -215,11 +284,17 @@ func _metric_row(row:Dictionary)->Dictionary:
 	return {"time":float(row.controller_time_s),"tick":int(row.controller_step),"com_position":row.body.com_m,"body_position":row.body.pose.origin,"velocity":row.body.linear_velocity_m_s,"linear_velocity":row.body.linear_velocity_m_s,"angular_velocity":row.body.angular_velocity_rad_s,"movement_intent_world":row.command_accepted.intent_world,"accepted_input":row.command_accepted.accepted_input,"accepted_input_time":row.command_accepted.accepted_input_time,"frame":row.frame,"grounded":row.support.grounded,"assisted":row.support.hybrid_owned}
 
 func _run_scenario(definition:Dictionary)->Dictionary:
+	# Validate retirement before inherited business logic can dereference the
+	# next app. Failure must never enter acquisition with a null/stale Lab.
+	if not _retire_previous_world():
+		_trace_integrity_reason="OLD_WORLD_NOT_RETIRED"
+		return {"id":definition.id,"revision":definition.revision,"status":"BLOCKED_SETUP","completed":false,"reason":_trace_integrity_reason,"retired_worlds":_retired_worlds.duplicate(true)}
 	var row:Dictionary
 	if definition.get("reliability_kind","")=="control":row=await _control_case(definition)
 	else:row=await super._run_scenario(definition)
 	row["reliability"]={"sample_phase":"post_control","input_driver":"shared_physics_tick_v1","measurement_ground_seen":_measurement_ground_seen,"measurement_support_lost":_measurement_support_lost,"last_snapshot":latest.duplicate(true),"controller_observer_enabled":_observer_on}
 	row["initial_state"]=initial_states.get(definition.id,{}).duplicate(true)
+	row["world_creation"]=_world_creation.duplicate(true)
 	row["initial_state_sha256"]=JSON.stringify(TraceWriter.Serializer.serializable(Reader.stable_initial(row.initial_state)),"",true,true).sha256_text()
 	if not _observer_on and row.has("metrics"):
 		row.metrics["max_acceleration_proxy_m_s2"]=null
@@ -250,13 +325,18 @@ static func _motion_velocity_eligible(speed:float,opposite:bool)->bool:
 	# Rev 2: stop/brake/reverse preparation starts outside the .10 m/s settling band.
 	return speed>=-.5 and speed<=-.02 if opposite else speed>=.15 and speed<=.5
 
+static func _quiet_window_confirmed(first_tick:int,current_tick:int,frequency:int)->bool:
+	return first_tick>=0 and float(current_tick-first_tick)/frequency>=.25
+
 func _settled(required:int,axis:Vector3,full_speed:bool=false)->bool:
-	var sustained:=0
+	var first_quiet_tick:=-1
 	for frame in int(5*hz):
 		await _tick(1.0/hz)
 		var valid:bool=_valid_support(required) and _quiet_velocity_eligible(_relative_velocity(latest),Vector3(latest.body.angular_velocity_rad_s),axis,full_speed)
-		sustained=sustained+1 if valid else 0
-		if sustained>=int(round(.25*hz)):return true
+		if valid:
+			if first_quiet_tick<0:first_quiet_tick=_scenario_tick
+		else:first_quiet_tick=-1
+		if _quiet_window_confirmed(first_quiet_tick,_scenario_tick,hz):return true
 		if cancelled or _hard_failed():return false
 	return false
 
@@ -267,6 +347,7 @@ func _control_case(definition:Dictionary)->Dictionary:
 	var required:int=int(definition.hand_count)
 	var task:String=definition.task
 	var reason:=""
+	var precondition_failure_detail:=""
 	for id in required:
 		if not await _grip(id,app.level.transfer_points[id]):reason="PREPARATION_ACQUISITION_FAILED";break
 	_set_keys(["contract"]);await _tick(1.5);_set_keys([]);await _tick(.15)
@@ -305,6 +386,8 @@ func _control_case(definition:Dictionary)->Dictionary:
 			transition.tick=_pending_transition.accepted_tick;transition.physics_time_s=_pending_transition.accepted_time_s
 			transition["requested_tick"]=_pending_transition.requested_tick
 			preparation=_pending_transition.accepted_snapshot.duplicate(true)
+			if task=="low_energy" and not _quiet_velocity_eligible(_relative_velocity(preparation),Vector3(preparation.body.angular_velocity_rad_s),axis,true):
+				reason="PRECONDITION_NOT_MET";precondition_failure_detail="LOW_ENERGY_ACCEPTED_STATE_OUTSIDE_BAND"
 		else:reason="INPUT_NOT_ACCEPTED"
 	_set_keys([])
 	var valid:bool=reason.is_empty()
@@ -312,7 +395,7 @@ func _control_case(definition:Dictionary)->Dictionary:
 	if valid and _measurement_support_lost:reason="SUPPORT_LOST";valid=false
 	var displacement:Variant=null
 	if preparation.get("body",{}).get("com_m") is Vector3 and latest.get("body",{}).get("com_m") is Vector3:displacement=(Vector3(latest.body.com_m)-Vector3(preparation.body.com_m)).dot(axis)
-	return {"id":definition.id,"revision":definition.revision,"status":"valid_observation" if valid else "precondition_not_met" if reason.begins_with("PRE") else "interrupted","completed":valid,"reason":reason,"scope":"measurement validity separate from positive performance; natural attachments and B1 foot contributions","invariants":violations.duplicate(true),"metrics":{"useful_displacement_m":displacement},"capture":capture.duplicate(true),"precondition_snapshot":preparation,"transition":transition,"direction_world":axis,"observation_s":definition.observe_s,"eligible_hand_count":required}
+	return {"id":definition.id,"revision":definition.revision,"status":"valid_observation" if valid else "precondition_not_met" if reason.begins_with("PRE") else "interrupted","completed":valid,"reason":reason,"scope":"measurement validity separate from positive performance; natural attachments and B1 foot contributions","invariants":violations.duplicate(true),"metrics":{"useful_displacement_m":displacement},"capture":capture.duplicate(true),"precondition_snapshot":preparation,"transition":transition,"direction_world":axis,"observation_s":definition.observe_s,"eligible_hand_count":required,"precondition_failure_detail":precondition_failure_detail}
 
 func start(value:Dictionary)->Dictionary:
 	if running:return {"schema_version":"1.3.1","status":"BLOCKED_SETUP","reason":"DRIVER_ALREADY_RUNNING"}
@@ -340,17 +423,22 @@ func start(value:Dictionary)->Dictionary:
 	if not writer.open_at(str(manifest.output_dir),bool(manifest.recorder_enabled)):return {"status":"BLOCKED_TRACE","reason":writer.error}
 	var previous_hz:int=Engine.physics_ticks_per_second
 	Engine.physics_ticks_per_second=hz;_clock_start=Time.get_ticks_msec();running=true
+	if not await _settle_startup_clock():
+		Engine.physics_ticks_per_second=previous_hz;running=false
+		return {"schema_version":"1.3.1","run_id":manifest.run_id,"status":"BLOCKED_SETUP","reason":_clock_receipt.get("reason","CLOCK_NOT_SETTLED"),"clock_startup":_clock_receipt.duplicate(true),"restoration":{"physics_hz_restored":Engine.physics_ticks_per_second==previous_hz},"trace":writer.close()}
 	var results:Array=[]
 	for id in manifest.scenario_ids:
 		results.append(await _run_scenario(definitions[id]))
 		if cancelled or _hard_failed() or not _trace_integrity_reason.is_empty():break
 	_scenario_enabled=false;measurement_active=false;super._release_all()
 	var restoration:Dictionary=loader.restore()
-	if is_instance_valid(app):app._set_input_profile(2);app.queue_free();app=null
+	if is_instance_valid(app):app._set_input_profile(2);_retire_world_node(app);app=null
+	if is_instance_valid(_course):_retire_world_node(_course);_course=null
 	Engine.physics_ticks_per_second=previous_hz
 	var sources_ok:=true
 	for path in manifest.expected_source_hashes:sources_ok=sources_ok and FileAccess.get_sha256("res://"+path)==manifest.expected_source_hashes[path]
 	var trace_result:Dictionary=writer.close()
 	TraceWriter.atomic_json(str(manifest.output_dir).path_join("initial_state.json"),initial_states)
 	running=false
-	return {"schema_version":"1.3.1","run_id":manifest.run_id,"status":"BLOCKED_TRACE" if not trace_result.error.is_empty() or not sources_ok or not _trace_integrity_reason.is_empty() else "timed_out" if cancelled else "failed_invariant" if _hard_failed() else "completed","reason":_trace_integrity_reason,"data_kind":"automated_headless" if manifest.engine_mode=="headless" else "automated_rendered_scripted","engine_mode":manifest.engine_mode,"physics_hz":hz,"scenarios":results,"restoration":{"resources":restoration,"physics_hz_restored":Engine.physics_ticks_per_second==previous_hz,"startup_profile_preserved":_baseline_profile_ok,"installs_pre_step":_all_installs_pre_step,"sources_after_unchanged":sources_ok},"trace":trace_result,"instrumentation":{"cost_usec":_sample_cost_usec,"sample_calls":_sample_calls,"cost_scope":"post-probe snapshot, event derivation and JSON serialization only; excludes pre-probe, input emission, original observers and engine. External process timing needed for total overhead.","recorder_enabled":writer.enabled,"existing_observer_enabled":_observer_on,"observer_off_scope":"recorder OFF is not full gameplay-observer OFF"},"environment":{"engine":Engine.get_version_info(),"engine_binary_sha256":FileAccess.get_sha256(OS.get_executable_path()),"physics_backend":ProjectSettings.get_setting("physics/3d/physics_engine"),"max_physics_steps_per_frame":Engine.max_physics_steps_per_frame,"time_scale":Engine.time_scale,"physics_interpolation":ProjectSettings.get_setting("physics/common/physics_interpolation"),"render_max_fps":Engine.max_fps,"code_commit":manifest.get("code_commit"),"dirty_tree":manifest.get("dirty_tree"),"expected_source_hashes":manifest.expected_source_hashes,"catalog_sha256":FileAccess.get_sha256(CATALOG)}}
+	var clock_receipt:Dictionary=_clock_receipt.duplicate(true)
+	return {"schema_version":"1.3.1","run_id":manifest.run_id,"status":"BLOCKED_TRACE" if not trace_result.error.is_empty() or not sources_ok or not _trace_integrity_reason.is_empty() else "timed_out" if cancelled else "failed_invariant" if _hard_failed() else "completed","reason":_trace_integrity_reason,"data_kind":"automated_headless" if manifest.engine_mode=="headless" else "automated_rendered_scripted","engine_mode":manifest.engine_mode,"physics_hz":hz,"scenarios":results,"restoration":{"resources":restoration,"physics_hz_restored":Engine.physics_ticks_per_second==previous_hz,"startup_profile_preserved":_baseline_profile_ok,"installs_pre_step":_all_installs_pre_step,"sources_after_unchanged":sources_ok},"trace":trace_result,"clock_startup":clock_receipt,"instrumentation":{"cost_usec":_sample_cost_usec,"sample_calls":_sample_calls,"cost_scope":"post-probe snapshot, event derivation and JSON serialization only; excludes pre-probe, input emission, original observers and engine. External process timing needed for total overhead.","recorder_enabled":writer.enabled,"existing_observer_enabled":_observer_on,"observer_off_scope":"recorder OFF is not full gameplay-observer OFF"},"environment":{"engine":Engine.get_version_info(),"engine_binary_sha256":FileAccess.get_sha256(OS.get_executable_path()),"physics_backend":ProjectSettings.get_setting("physics/3d/physics_engine"),"max_physics_steps_per_frame":Engine.max_physics_steps_per_frame,"time_scale":Engine.time_scale,"physics_interpolation":ProjectSettings.get_setting("physics/common/physics_interpolation"),"render_max_fps":Engine.max_fps,"code_commit":manifest.get("code_commit"),"dirty_tree":manifest.get("dirty_tree"),"expected_source_hashes":manifest.expected_source_hashes,"catalog_sha256":FileAccess.get_sha256(CATALOG)}}

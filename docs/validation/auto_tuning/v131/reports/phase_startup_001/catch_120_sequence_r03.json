@@ -1,0 +1,114 @@
+{
+  "differences": [
+    {
+      "absolute_difference": 1.0728836059986646e-06,
+      "classification": "TARGET_DIVERGENCE",
+      "field": "target.material_local_point_m[0]",
+      "left": -0.120787590742111,
+      "left_physics_time_s": 2.35,
+      "left_tick": 282,
+      "relative_tick": 282,
+      "right": -0.120786517858505,
+      "right_physics_time_s": 2.35,
+      "right_tick": 282,
+      "sample_phase": "post_control",
+      "scenario_id": "swing_catch_train"
+    },
+    {
+      "classification": "REQUESTED_INPUT_DIVERGENCE",
+      "field": "command_requested.keys[1]",
+      "left": "bias_left",
+      "left_physics_time_s": 2.41666666666667,
+      "left_tick": 290,
+      "relative_tick": 290,
+      "right": "bias_right",
+      "right_physics_time_s": 2.41666666666667,
+      "right_tick": 290,
+      "sample_phase": "pre_control",
+      "scenario_id": "swing_catch_train"
+    },
+    {
+      "absolute_difference": 1.41421353816986,
+      "classification": "ACCEPTED_INPUT_DIVERGENCE",
+      "field": "command_accepted.accepted_input[0]",
+      "left": -0.70710676908493,
+      "left_physics_time_s": 2.41666666666667,
+      "left_tick": 290,
+      "relative_tick": 290,
+      "right": 0.70710676908493,
+      "right_physics_time_s": 2.41666666666667,
+      "right_tick": 290,
+      "sample_phase": "post_control",
+      "scenario_id": "swing_catch_train"
+    },
+    {
+      "classification": "CONTACT_EVENT_DIVERGENCE",
+      "field": "contact_events",
+      "left_length": 0,
+      "left_physics_time_s": 2.41666666666667,
+      "left_tick": 290,
+      "relative_tick": 290,
+      "right_length": 2,
+      "right_physics_time_s": 2.41666666666667,
+      "right_tick": 290,
+      "sample_phase": "post_control",
+      "scenario_id": "swing_catch_train"
+    },
+    {
+      "classification": "GRIP_STATE_DIVERGENCE",
+      "field": "hands[1].attached",
+      "left": false,
+      "left_physics_time_s": 3.65,
+      "left_tick": 438,
+      "relative_tick": 438,
+      "right": true,
+      "right_physics_time_s": 3.65,
+      "right_tick": 438,
+      "sample_phase": "post_control",
+      "scenario_id": "swing_catch_train"
+    }
+  ],
+  "first_behavioral_difference": {
+    "absolute_difference": 1.0728836059986646e-06,
+    "classification": "TARGET_DIVERGENCE",
+    "field": "target.material_local_point_m[0]",
+    "left": -0.120787590742111,
+    "left_physics_time_s": 2.35,
+    "left_tick": 282,
+    "relative_tick": 282,
+    "right": -0.120786517858505,
+    "right_physics_time_s": 2.35,
+    "right_tick": 282,
+    "sample_phase": "post_control",
+    "scenario_id": "swing_catch_train"
+  },
+  "first_observed_state_difference": {
+    "absolute_difference": 1.0132789610706183e-06,
+    "field": "body.angular_velocity_rad_s[1]",
+    "left": 0.649238705635071,
+    "left_physics_time_s": 0.766666666666667,
+    "left_tick": 92,
+    "relative_tick": 92,
+    "right": 0.64923769235611,
+    "right_physics_time_s": 0.766666666666667,
+    "right_tick": 92,
+    "sample_phase": "pre_control",
+    "scenario_id": "swing_catch_train"
+  },
+  "human_sessions": 0,
+  "identity_mismatches": [],
+  "interpretation": "State-difference detector, not a calibrated physical-equivalence or game-feel score",
+  "peak_vector_difference": {
+    "angular_velocity_rad_s": 1.759592823880383,
+    "com_m": 0.015240865612231544,
+    "linear_velocity_m_s": 0.21637108025687551
+  },
+  "physical_equivalence_certified": false,
+  "reason": "Same manifest policy and sample phases; physical acceptance requires separately calibrated envelope",
+  "schema_version": "1.3.1",
+  "status": "ALIGNED_DIAGNOSTIC",
+  "unpaired_sample_counts": {
+    "left": 2,
+    "right": 0
+  }
+}

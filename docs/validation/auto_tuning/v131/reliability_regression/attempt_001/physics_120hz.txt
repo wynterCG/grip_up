@@ -1,0 +1,54 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS integrated Jolt backend
+PASS damping sign reduces tension when shoulder moves toward anchor
+PASS slack arm never becomes a compression actuator
+PASS toward motion cannot produce negative pushing force
+PASS axial spring reuses original grabber implicit denominator
+PASS W S A D without attachments exactly match uncontrolled freefall
+PASS no attachment means no actuator force
+PASS out-of-range requests are rejected
+PASS surface-valid first hold begins reaching
+PASS request does not instantly attach, move or accelerate torso
+PASS hand reaches in finite time without crossing its speed bound
+PASS second hand independently reaches and attaches
+MEASURE climb y=1.1963 v=1.2383 states=ATTACHED/ATTACHED
+PASS bounded arm contraction raises live 12kg torso against gravity
+PASS climb respects shared budget and applies only axial pulling forces
+PASS releasing one hand preserves instantaneous pose and both velocities
+PASS remaining single grip physically supports torso
+PASS extension lengthens rope without applying downward thrust
+PASS shoulder-to-hold line of sight rejects an intervening solid
+PASS same-body rear face cannot be attached through its front
+PASS surface capability metadata is enforced
+PASS steep upward front-surface ray reaches exact integrated hold point
+PASS attached hand cannot silently replace its anchor
+PASS released hand may start a fresh finite reach
+PASS new obstacle during reaching cancels attachment before force activation
+PASS candidate can be retried after obstacle removal
+PASS moving candidate outside arm range cancels finite reach
+PASS finite normal approach avoids hold underside when free hand begins behind front-face plane
+PASS heavy-load budget trial acquires one hand
+PASS independent heavy-load fixture acquires both hands before contraction
+MEASURE force peaks one=360.000 two=360.000 shared=360.000
+PASS adding second hand does not duplicate global force or torque budgets
+PASS strength-limited arms cannot freely lift an overweight torso
+PASS off-center torque trial acquires physical anchor
+PASS resultant torque cap includes shoulder moments and A/D assist in same allocation
+PASS dynamic support accepts finite-time attachment
+MEASURE dynamic dy torso=0.1518 support=-0.1822 momentum=0.000000
+PASS dynamic anchor stays material-local and receives exact opposite force
+PASS actual dynamic reaction moves support and conserves pair linear momentum
+PASS moving anchor damping includes angular point velocity
+PASS destroyed support releases cleanly without stale anchor
+PASS weak hold initially attaches normally
+PASS sustained overload gives deterministic slipping then explicit release reason
+PASS resetting controller never resets torso pose or momentum implicitly
+PASS reset clears both anchors, pending intent and actuator force
+PASS offset swing hold attaches within finite arm reach
+MEASURE swing x_span=1.5977 peak_horizontal=2.4391 state=ATTACHED
+PASS off-center tension and finite anchored work generate useful physical swing
+MEASURE Jolt PinJoint50kg anchor_drift=0.00003 despite weight490N > player budget360N
+PASS built-in pin baseline supports weight beyond player budget; requires different limiter model
+PHYSICS BENCHMARK Hz=120 wall_ms=393.45 physics_frames=2302
+GRIP UP PHYSICS RESULTS: 45 checks, 0 failures

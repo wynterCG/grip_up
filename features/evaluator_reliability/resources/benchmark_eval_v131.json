@@ -1,7 +1,7 @@
 {
   "schema_version": "1.3.1",
   "id": "benchmark_eval_v131",
-  "revision": 2,
+  "revision": 3,
   "input_driver": "shared_physics_tick_v1",
   "thresholds": {
     "clean_lateral_speed_m_s": 0.1,
@@ -23,14 +23,15 @@
     "reverse_speed_m_s": 0.02,
     "reverse_confirmation_s": 0.05,
     "retention_s": 0.6,
-    "reason": "Revision 2 measurement-validity calibration: motion minimum .15 exceeds .10 settling by .05; low-energy uses full relative speed. No force, geometry, observation window or performance goal change. Revision 1 development receipts preserved.",
+    "reason": "Revision 2 measurement-validity calibration: motion minimum .15 exceeds .10 settling by .05; low-energy uses full relative speed. No force, geometry, observation window or performance goal change. Revision 1 development receipts preserved. Revision 3 corrects continuous confirmation to elapsed intervals and validates full low-energy norm again at actual accepted onset; bands unchanged.",
     "low_energy_velocity_scope": "full_support_relative_speed_norm",
-    "clean_velocity_scope": "signed_lateral_component_absolute"
+    "clean_velocity_scope": "signed_lateral_component_absolute",
+    "confirmation_clock": "elapsed (current_tick - first_quiet_tick) / actual_requested_hz >= .25; not N sample count"
   },
   "scenarios": [
     {
       "id": "lateral_clean_left_v1",
-      "revision": 1,
+      "revision": 3,
       "reliability_kind": "control",
       "task": "clean",
       "arena": 8,
@@ -46,7 +47,7 @@
     },
     {
       "id": "lateral_clean_right_v1",
-      "revision": 1,
+      "revision": 3,
       "reliability_kind": "control",
       "task": "clean",
       "arena": 8,
@@ -62,7 +63,7 @@
     },
     {
       "id": "lateral_counter_swing_left_v1",
-      "revision": 1,
+      "revision": 3,
       "reliability_kind": "control",
       "task": "counter",
       "arena": 8,
@@ -78,7 +79,7 @@
     },
     {
       "id": "lateral_counter_swing_right_v1",
-      "revision": 1,
+      "revision": 3,
       "reliability_kind": "control",
       "task": "counter",
       "arena": 8,
@@ -94,7 +95,7 @@
     },
     {
       "id": "stop_release_v1",
-      "revision": 2,
+      "revision": 3,
       "reliability_kind": "control",
       "task": "stop_release",
       "arena": 8,
@@ -110,7 +111,7 @@
     },
     {
       "id": "stop_release_one_hand_v1",
-      "revision": 2,
+      "revision": 3,
       "reliability_kind": "control",
       "task": "stop_release",
       "arena": 7,
@@ -125,7 +126,7 @@
     },
     {
       "id": "brake_counter_v1",
-      "revision": 2,
+      "revision": 3,
       "reliability_kind": "control",
       "task": "brake_counter",
       "arena": 8,
@@ -141,7 +142,7 @@
     },
     {
       "id": "brake_counter_one_hand_v1",
-      "revision": 2,
+      "revision": 3,
       "reliability_kind": "control",
       "task": "brake_counter",
       "arena": 7,
@@ -156,7 +157,7 @@
     },
     {
       "id": "reverse_command_v1",
-      "revision": 2,
+      "revision": 3,
       "reliability_kind": "control",
       "task": "reverse_command",
       "arena": 8,
@@ -172,7 +173,7 @@
     },
     {
       "id": "reverse_command_one_hand_v1",
-      "revision": 2,
+      "revision": 3,
       "reliability_kind": "control",
       "task": "reverse_command",
       "arena": 7,
@@ -187,7 +188,7 @@
     },
     {
       "id": "stop_low_energy_control_v1",
-      "revision": 2,
+      "revision": 3,
       "reliability_kind": "control",
       "task": "low_energy",
       "arena": 8,
@@ -203,7 +204,7 @@
     },
     {
       "id": "stop_low_energy_control_one_hand_v1",
-      "revision": 2,
+      "revision": 3,
       "reliability_kind": "control",
       "task": "low_energy",
       "arena": 7,
