@@ -7,6 +7,14 @@ var distance := 6.0
 var focus := Vector3.ZERO
 var controller: Node
 var initialized := false
+var virtual_physics_follow := false
+var virtual_updates := 0
+var virtual_source_pose:=Transform3D.IDENTITY
+func evaluate_virtual_tick(delta:float) -> void:
+	assert(virtual_physics_follow)
+	virtual_updates+=1
+	virtual_source_pose=torso.global_transform
+	_update_camera(delta,true)
 
 func _ready() -> void:
 	fov = 56
@@ -33,11 +41,11 @@ func dolly(amount: float) -> void:
 	distance = clampf(distance + amount, 3.0, 17.0)
 
 func _process(delta: float) -> void:
-	if initialized and is_instance_valid(torso):
+	if not virtual_physics_follow and initialized and is_instance_valid(torso):
 		_update_camera(delta)
 
-func _update_camera(delta: float) -> void:
-	var body_pose: Transform3D = torso.get_global_transform_interpolated()
+func _update_camera(delta: float, physics_pose := false) -> void:
+	var body_pose: Transform3D = torso.global_transform if physics_pose else torso.get_global_transform_interpolated()
 	var desired: Vector3 = body_pose.origin + Vector3(0, 0.6, 0)
 	desired += torso.linear_velocity.limit_length(3.0) * 0.12
 	focus = focus.lerp(desired, 1.0 - exp(-4.5 * delta))

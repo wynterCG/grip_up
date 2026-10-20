@@ -1,5 +1,64 @@
 extends Node3D
 
+const LiveInputProvider=preload("res://features/grip_up/scripts/live_input_provider.gd")
+var live_input_provider=LiveInputProvider.new()
+var replay_input_provider:RefCounted
+var input_frame
+var input_picks:Array[Dictionary]=[]
+var virtual_input_arming:=false
+
+func virtual_input_owned() -> bool:
+	return replay_input_provider!=null and replay_input_provider.owns_input()
+
+func _input_pressed(action:String) -> bool:
+	if virtual_input_owned():return input_frame!=null and input_frame.held(action)
+	return Input.is_action_pressed(action)
+
+func _input_strength(action:String) -> float:
+	if virtual_input_owned():return input_frame.strength(action) if input_frame!=null else 0.0
+	return Input.get_action_strength(action)
+
+func begin_virtual_input(provider:RefCounted,session:Dictionary) -> String:
+	if not OS.is_debug_build() or not OS.get_cmdline_user_args().has("--virtual-cursor-evaluator"):return "TEST_FLAG_REQUIRED"
+	if virtual_input_owned():return "PROVIDER_ALREADY_OWNED"
+	replay_input_provider=provider
+	var checked:String=provider.arm(self,session)
+	virtual_input_arming=false
+	if checked.is_empty():
+		input_frame=null;router.input_frame=null;orbiting=false
+		camera.virtual_physics_follow=true
+		targeting.audit_enabled=true
+	return checked
+
+func commit_virtual_input(value:Dictionary,delta:float) -> String:
+	if replay_input_provider==null:return "INPUT_SOURCE_MISMATCH"
+	var checked:String=replay_input_provider.commit(value,self)
+	if not checked.is_empty():return checked
+	input_frame=replay_input_provider.frame;router.input_frame=input_frame
+	input_picks.clear()
+	if value.aim_valid:pointer=Vector2(float(value.aim_position_viewport_px[0]),float(value.aim_position_viewport_px[1]))
+	camera.orbit(Vector2(float(value.camera_orbit_delta[0]),float(value.camera_orbit_delta[1])))
+	for step in value.camera_zoom_steps:camera.dolly(float(step)*.65)
+	camera.evaluate_virtual_tick(delta)
+	for edge:Dictionary in value.button_edges:
+		if edge.pressed:
+			if value.aim_valid:request_hand(int(edge.hand))
+			else:input_picks.append({"hand":int(edge.hand),"reason":"INVALID_AIM_NO_NEW_TARGET"})
+		else:_release_hand_input(int(edge.hand),"virtual_input_release")
+	return ""
+
+func finish_virtual_input() -> void:
+	if replay_input_provider==null:return
+	for hand in 2:_release_hand_input(hand,"virtual_input_cleanup")
+	grip_intents.clear(controller);controller.cancel_launch();controller.clear_drag_requests()
+	controller.set_hand_held(0,false);controller.set_hand_held(1,false)
+	orbiting=false;router.reset_control_input();router.input_frame=null;input_frame=null
+	camera.virtual_physics_follow=false;targeting.audit_enabled=false
+	replay_input_provider.finish();replay_input_provider=null
+	for action in ["contract","extend","bias_left","bias_right","launch","grip_left","grip_right"]:Input.action_release(action)
+	_refresh_pointer_capture()
+
+
 const Controller = preload("res://features/grip_up/scripts/climbing_controller.gd")
 const CameraRig = preload("res://features/grip_up/scripts/climbing_camera.gd")
 const Targeting = preload("res://features/grip_up/scripts/grip_targeting.gd")
@@ -159,16 +218,20 @@ func _ready() -> void:
 		if OS.get_cmdline_user_args().has("--locomotion-tests-smoke"):
 			add_child(load("res://features/locomotion_test_suite/scripts/test_ui_smoke.gd").new())
 	get_window().mouse_exited.connect(func():
+		if virtual_input_owned():return
 		if input_profile==1:
 			router.set_owner("BOUNDARY")
 			controller.clear_drag_requests()
 	)
 	get_window().mouse_entered.connect(func():
+		if virtual_input_owned():return
 		if input_profile==1:
 			router.set_owner("GAME")
 			router.rebase_next_motion = true
 	)
 	get_window().focus_entered.connect(func():
+		if virtual_input_owned():
+			replay_input_provider.focus_changed(true);return
 		if input_profile==2:
 			contextual.clear_motion()
 			contextual_rebase=true
@@ -179,6 +242,7 @@ func _ready() -> void:
 			controller.clear_drag_requests()
 	)
 	get_window().size_changed.connect(func():
+		if virtual_input_owned():return
 		contextual.clear_motion()
 		contextual_rebase=true
 		if input_profile==1:
@@ -186,6 +250,8 @@ func _ready() -> void:
 			controller.clear_drag_requests()
 	)
 	get_window().focus_exited.connect(func():
+		if virtual_input_owned():
+			replay_input_provider.focus_changed(false);return
 		if is_instance_valid(hybrid_mantle):hybrid_mantle.focus_lost()
 		if input_profile==2:
 			contextual_paused=true
@@ -435,6 +501,10 @@ func message(text: String) -> void:
 	hint_time = 4.0
 
 func _input(event: InputEvent) -> void:
+	if virtual_input_arming:
+		get_viewport().set_input_as_handled();return
+	if virtual_input_owned():
+		replay_input_provider.reject_event(event);get_viewport().set_input_as_handled();return
 	if event.is_action_pressed("controls_menu") and not event.is_echo() and binding_action=="":
 		contextual_paused=false
 		settings.visible=not settings.visible
@@ -478,6 +548,10 @@ func _input(event: InputEvent) -> void:
 				_release_hand_input(hand)
 
 func _unhandled_input(event: InputEvent) -> void:
+	if virtual_input_arming:
+		get_viewport().set_input_as_handled();return
+	if virtual_input_owned():
+		replay_input_provider.reject_event(event);get_viewport().set_input_as_handled();return
 	if input_profile==2 and contextual_paused and event is InputEventMouseButton and event.pressed:
 		contextual_paused=false
 		_refresh_pointer_capture()
@@ -528,6 +602,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		trial.inputs += 1
 
 func request_hand(hand: int) -> bool:
+	if virtual_input_owned() and (input_frame==null or not input_frame.data().aim_valid):return false
 	if is_instance_valid(hybrid_mantle) and not hybrid_mantle.allows_grip(hand):return false
 	trial.inputs += 1
 	var state: String = controller.get_hand_state(hand)
@@ -540,6 +615,7 @@ func request_hand(hand: int) -> bool:
 	trial.attempts += 1
 	attempt_assessments[hand]={}
 	var hit: Dictionary = contextual.candidate(hand,controller,camera) if input_profile==2 else targeting.candidate(camera,pointer,torso)
+	if virtual_input_owned():input_picks.append({"hand":hand,"camera_pose":camera.global_transform,"camera_projection":camera.get_camera_projection(),"pointer":pointer,"audit":targeting.last_audit.duplicate(true)})
 	if hit.is_empty():
 		controller.record_unselected_attempt(hand,"no_surface")
 		trial.misses += 1
@@ -562,6 +638,11 @@ func toggle_beam() -> void:
 	load_test(2)
 
 func _physics_process(delta: float) -> void:
+	if not virtual_input_owned():
+		input_frame=live_input_provider.snapshot(self)
+		router.input_frame=input_frame
+	elif input_frame==null or replay_input_provider.state!="ACTIVE":
+		return
 	if not is_instance_valid(controller):
 		return
 	session_ticks += 1
@@ -575,19 +656,19 @@ func _physics_process(delta: float) -> void:
 		contextual.clear_motion()
 	if _capture_buffer_active():
 		for hand in 2:
-			if not Input.is_action_pressed("grip_left" if hand==0 else "grip_right"):
+			if not _input_pressed("grip_left" if hand==0 else "grip_right"):
 				grip_intents.release(controller,hand)
 		grip_intents.update(controller)
 	if _distant_targeting_active():
 		for hand in 2:
-			var pressed:bool=Input.is_action_pressed("grip_left" if hand==0 else "grip_right")
+			var pressed:bool=_input_pressed("grip_left" if hand==0 else "grip_right")
 			if controller.get_hand_state(hand)=="REACHING" and controller.pending_diagnostics(hand).get("active",false):
 				controller.set_hand_held(hand,pressed and not blocked,"ui_blocked" if blocked else "input_released")
 			elif not pressed:controller.set_hand_held(hand,false)
 	ground_motor.enabled = not blocked
-	ground_motor.move_intent = Input.get_vector("bias_left","bias_right","contract","extend")
+	ground_motor.move_intent = input_frame.ground_axis()
 	if input_profile==0:
-		controller.set_climb_intent(0.0 if blocked else Input.get_action_strength("contract"),0.0 if blocked else Input.get_action_strength("extend"),0.0 if blocked else Input.get_axis("bias_left","bias_right"),camera.global_basis.x)
+		controller.set_climb_intent(0.0 if blocked else _input_strength("contract"),0.0 if blocked else _input_strength("extend"),0.0 if blocked else Input.get_axis("bias_left","bias_right"),camera.global_basis.x)
 	elif input_profile==1:
 		controller.set_climb_intent(0,0,0,camera.global_basis.x)
 		var direction := Vector3.ZERO if blocked else router.swing_direction(camera.global_basis.x)
@@ -1080,7 +1161,7 @@ func _record_capture(delta: float) -> void:
 		"camera_right":capture_trace.vector(camera.global_basis.x),"camera_forward":capture_trace.vector(Vector3.UP.cross(camera.global_basis.x).normalized()),
 		"swing_requested":capture_trace.vector(controller.telemetry().get("swing_requested",Vector3.ZERO)),
 		"swing_torque":capture_trace.vector(controller.telemetry().get("swing_torque",Vector3.ZERO)),
-		"grip_buttons":[Input.is_action_pressed("grip_left"),Input.is_action_pressed("grip_right")],"capture_predictions":capture_predictions,
+		"grip_buttons":[_input_pressed("grip_left"),_input_pressed("grip_right")],"capture_predictions":capture_predictions,
 		"reach_prediction_enabled":reach_prediction_enabled,"catch_buffer_enabled":catch_buffer_enabled,"catch_buffer_duration":catch_buffer_duration,"reach_advice":reach_advice,"attempt_assessments":attempt_assessments,
 		"allow_out_of_reach_grip_targets":allow_out_of_reach_grip_targets,"out_of_reach_targeting_active":_distant_targeting_active(),"pending_targets":_pending_target_snapshots(),
 		"anomalous_displacements":trial.get("large_step_events",0),
@@ -1531,7 +1612,7 @@ func _set_hold_mode(on: bool) -> void:
 		trial.grip_mode = "hold" if on else "toggle"
 	if on and is_instance_valid(controller):
 		for hand in 2:
-			if not Input.is_action_pressed("grip_left" if hand == 0 else "grip_right"):
+			if not _input_pressed("grip_left" if hand == 0 else "grip_right"):
 				controller.release_grip(hand,"hold_mode_enabled")
 	message("Hold each mouse button to grip; release it to let go." if on else "Toggle mode: click to grip, click again to let go.")
 
@@ -1547,12 +1628,13 @@ func _controls_hint() -> String:
 	return "WASD / Walk or climb    Hold LMB / RMB / Grip    %s / Hold to load, release to launch    MMB / Orbit    Wheel / Dolly" % router.prompt("launch")
 
 func _held_grips() -> Array[bool]:
-	return [Input.is_action_pressed("grip_left"),Input.is_action_pressed("grip_right")]
+	return [_input_pressed("grip_left"),_input_pressed("grip_right")]
 
 func _launch_allowed() -> bool:
 	return input_profile==0 or experimental_launch_enabled
 
 func _control_owner() -> String:
+	if virtual_input_owned():return "GAME"
 	if settings.visible or binding_action!="" or rating_panel.visible:
 		return "UI"
 	if orbiting:
@@ -1688,6 +1770,7 @@ func _set_posture_policy(policy: int) -> void:
 	_apply_independent_settings()
 
 func _refresh_pointer_capture() -> void:
+	if virtual_input_arming:return
 	if not is_instance_valid(settings) or not is_instance_valid(rating_panel):return
 	var capture: bool=input_profile==2 and not contextual_paused and not settings.visible and not rating_panel.visible
 	contextual.clear_motion()

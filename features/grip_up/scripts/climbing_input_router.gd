@@ -1,5 +1,9 @@
 extends RefCounted
 
+var input_frame
+func _pressed(action:String)->bool:return input_frame.held(action) if input_frame!=null else Input.is_action_pressed(action)
+func _strength(action:String)->float:return input_frame.strength(action) if input_frame!=null else Input.get_action_strength(action)
+
 const DEFAULTS := {"grip_left": MOUSE_BUTTON_LEFT, "grip_right": MOUSE_BUTTON_RIGHT,
 	"contract": KEY_W, "extend": KEY_S, "bias_left": KEY_A, "bias_right": KEY_D,
 	"launch": KEY_SPACE,
@@ -84,10 +88,10 @@ func swing_direction(camera_right: Vector3) -> Vector3:
 	var basis := {"contract":forward,"extend":-forward,"bias_left":-right,"bias_right":right}
 	var direction := Vector3.ZERO
 	for action in basis:
-		if Input.is_action_pressed(action):
+		if _pressed(action):
 			if not gestures.has(action):
 				gestures[action] = basis[action]
-			direction += Vector3(gestures[action])*Input.get_action_strength(action)
+			direction += Vector3(gestures[action])*_strength(action)
 		else:
 			gestures.erase(action)
 	return direction.limit_length(1.0)
@@ -100,7 +104,7 @@ func diagnostics() -> Dictionary:
 func traversal_input() -> Vector2:
 	# Profile 4 only: positive Y means surface-up, not camera-forward swing.
 	if owner not in ["GAME","CAMERA"]:return Vector2.ZERO
-	return Vector2(Input.get_axis("bias_left","bias_right"),Input.get_axis("extend","contract")).limit_length(1.0)
+	return input_frame.traversal_axis() if input_frame!=null else Vector2(Input.get_axis("bias_left","bias_right"),Input.get_axis("extend","contract")).limit_length(1.0)
 
 func setup() -> void:
 	for action in DEFAULTS:
