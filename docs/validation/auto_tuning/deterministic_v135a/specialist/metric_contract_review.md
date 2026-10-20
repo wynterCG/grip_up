@@ -1,0 +1,41 @@
+# Measurement review before v1.3.5a certification
+
+Decision: **METRIC_CONTRACT_STATIC_PASS; new physical certification and search approval remain pending.** I independently reviewed the integration owner's scalar arithmetic against the archived Godot source and historical R4 raw bytes. This is permission to attempt the new qualification, not `CERTIFIED_FOR_LIMITED_SEARCH`, task success, candidate acceptance or permission to change A0.
+
+Historical R4 remains `NO_GO_MINIMAL_BENCHMARK`. Its raw failed candidate is a golden arithmetic input only and receives no optimizer value in this campaign.
+
+## Exact arithmetic
+
+The archived Godot `benchmark_driver.gd` SHA256 is `f8799d9c3b1ede93e384a251b300046b9975d97833bb55171e9b8888a3a19c72`. Its source computes scalar binary64 differences of observed native float32 COM components, then `sqrt(((dx*dx)+(dy*dy))+(dz*dz))`, and adds each magnitude sequentially to a positive-zero accumulator. It excludes an interrupting row, includes both authorized endpoints and uses ascending stored POST order. No interpolated position or event-aligned resampling participates. POST here is post-control, before the next physical integration.
+
+I reconstructed ticks425–545 from the original failed raw audit SHA256 `3f9248d21cb57862c029e7b20da3e104fc644067a8bb51f012beaaca5cdd7e7b`. All121 COM samples are exactly promoted float32 values;120 segment magnitudes reproduce the original little-endian binary64 stream SHA256 `2ef81c7306f293e5d7e22a7d9ad72c30997b9959920dca024e759ba20e8ca104`. The ordered result is `0x1.cbe1b2b09d8a6p-3`, big-endian bits `3fccbe1b2b09d8a6`. Historical Python3.13 builtin `sum` gives `...a7`. Tick439 identifies the first unequal offline accumulation prefix, not a physical or observed Godot-prefix divergence.
+
+The reviewed reducer source SHA256 is `8264957f3acc818256055f61f6c94aa28d4fc85490713e430982948e730f7342`; its contract is `ordered_binary64_sequential_v1`. It validates genuine finite scalar floats, preserves nonnegative path semantics, rejects accumulator overflow and uses explicit sequential addition. `dot3` uses the three products followed by two source-ordered additions, without an extra zero seed; the signed-zero test is material evidence for that distinction. `norm3` uses this dot followed by scalar square root. Neither a compensated reducer nor a tolerance is substituted.
+
+The new stream identity covers ordered tick/value bits, endpoints, POST phase, units, schema and provenance. Result checks compare all64 bits. Integral vector components remain allowed at the existing schema boundary; scalar segment streams reject integers and booleans. This arithmetic validation does not rewrite native cursor, force, vector or contact data. The original little-endian stream digest and new big-endian per-value bit strings are explicitly distinct encodings.
+
+## Caller inventory and typed outcomes
+
+The shared primitives reach benchmark path, signed projection, efficiency, loaded-hand onset totals, safety norms, hand-load integration and twist RMS; legacy stopping uses the same inner norm/dot and its existing sequential outer recurrence. Python quality projection/off-axis/angular measures also use the shared primitives. These quality algorithms are Python measurements; the Godot runtime does not independently publish every quality field. Pair diagnostics now share scalar norm/dot without relaxing strict comparison.
+
+Integer budget/count reductions and Pareto elementwise dominance/min/max retain their algorithms. Historical aggregate/reporting and inactive qualification runners are outside the new scoring route. No unrelated physics algorithm is introduced.
+
+The path auditor independently checks the actual declared horizon, including the five-second protected Stop task at60/120Hz. Interrupted authorized partial paths can be bit-audited as raw evidence but return a null official audit value and retain their interruption reason. Missing onset cannot carry a numeric path. Source/environment guards, complete-window eligibility and typed metric rules remain separate gates: `RUN_VALID` does not imply task success or a usable optimizer objective.
+
+I ran the eight golden/adversarial arithmetic tests under both exact installed interpreters: Python3.11.15 and pinned Python3.13.13, eight PASS each. The tests cover authentic raw provenance/readback, nested JSON roundtrip, historical legacy mismatch, ordering/cancellation, strict scalar types, nonfinite/overflow, altered bit, drop/duplicate/reorder, phase/unit/schema/endpoint/source mutations, signed zero, both Stop frequencies and partial/no-onset semantics. The test source SHA256 reviewed is `8ecc0a371baaf424690522c45491aa196bef936247891bb90176fbd4466523e0`.
+
+## Environment and finite scheduler
+
+Every new campaign command is pinned to the existing Python3.13.13 environment and exact executable, base interpreter, dependencies/lock, float/platform/locale, SQLite and reducer fingerprint. The other interpreter is an offline compatibility check only. Each new manifest carries the full environment and reducer identity. Source change, environment mismatch or altered resume identity must stop the campaign. SQLite settings are observed on a fresh connection, recorded for dry-run/pilot and compared on resume; no PRAGMA assignment changes their behavior.
+
+I implemented the campaign orchestration and therefore do not describe my own integration as independently reviewed by me. The physics reviewer and integration owner separately review that code. Its frozen prospective allocation is five configurations: four existing single-factor perturbations selected by indices1,2,4,6, then one bounded random proposal. Each reserves four complete V/R×120/60 cells. Twenty additional optimizer processes are reserved for exactly one promising configuration's confirmation. Initial four headless cells are reused only with matching source, environment, candidate and tape bytes;20 missing cells yield24 actual candidate processes, three H/R pairs per task/frequency,12H/R plus16 within-mode strict comparisons. The optimizer cap is40, not40 plus confirmation. No candidate enters the shortlist before this actual repeat qualification. TPE is not allocated; no retry or second confirmation candidate fills a failed confirmation.
+
+The twelve pure integration tests pass under the pinned interpreter. They include actual temporary SQLite with synthetic callbacks,40-process accounting,24/28 confirmation counts, failure after one actual launch with four reserved, reasoned nulls, frequency-specific latency and real historical-tape admission during confirmation. These tests are orchestration evidence, not physics runs or independent gameplay starts.
+
+The protected finalist ledger allows one finalist and24 processes:22 known jobs plus two reserved Right-independent jobs which remain unexecuted without a predeclared certified tape. One-hand coverage and Right-independent coverage remain explicitly missing. Missing essential coverage blocks a general recommendation; Stop with two hands does not certify one-hand control. The First Ascent private gate may open only after the real n3 confirmation proof and frozen shortlist; its repeat metadata now comes from that proof. No private holdout was read during this review.
+
+Physical caps are separately declared: preflight8, baseline24, negatives8, optimizer40, finalist24 and development2 =106 evaluation processes; mandatory regression34 plus four ordinary safety worlds give an overall ceiling144. Failure/timeout slots are not refunded. The planned six preflight worlds include protected Catch at bothHz and a complete four-cell A0 candidate-shaped scorer/SQLite/report/cleanup dry-run. Fresh baseline24 and negative8, independent physical/measurement review and immutable gate hashes are still required before search.
+
+## Remaining gate
+
+No new engine run was executed by this reviewer. Static and offline exact-bit evidence supports attempting recertification. It does not certify fresh viewport/clock, contact/retention, full new baseline, canary sensitivity, end-to-end A0 physical dry-run, candidate repeatability or human feel. Any failed mandatory gate stops the bounded campaign. A0 remains unchanged and no automated candidate promotion is permitted.

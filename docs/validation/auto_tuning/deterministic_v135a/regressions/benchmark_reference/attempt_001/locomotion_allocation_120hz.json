@@ -1,0 +1,3801 @@
+{
+	"benefit_established": false,
+	"checks": 77,
+	"comparisons": [
+		{
+			"kind": "A0_repeatability",
+			"twist_difference": 0.0000000235171636714078,
+			"useful_difference": 0.0000545978546142578
+		},
+		{
+			"a0_retained": true,
+			"a0_tilt": 0.273159298195303,
+			"a0_twist": 0.00058516838050311,
+			"a0_useful": 0.233572959899902,
+			"a1_retained": true,
+			"a1_tilt": 0.27315007101537,
+			"a1_twist": 0.000581181626979969,
+			"a1_useful": 0.233534097671509,
+			"kind": "symmetric"
+		},
+		{
+			"a0_retained": true,
+			"a0_tilt": 0.369739955252162,
+			"a0_twist": 0.0497748926030972,
+			"a0_useful": 0.208892345428467,
+			"a1_retained": true,
+			"a1_tilt": 0.362628869486435,
+			"a1_twist": 0.0736767283525878,
+			"a1_useful": 0.188733816146851,
+			"kind": "asymmetric"
+		},
+		{
+			"a0_retained": true,
+			"a0_tilt": 0.488949135121693,
+			"a0_twist": 0.671999741005692,
+			"a0_useful": 0.226300716400146,
+			"a1_retained": true,
+			"a1_tilt": 0.488949135121693,
+			"a1_twist": 0.671999741005692,
+			"a1_useful": 0.226300716400146,
+			"kind": "single"
+		},
+		{
+			"a0_retained": true,
+			"a0_tilt": 0.298803784753287,
+			"a0_twist": 0.0493719177265006,
+			"a0_useful": 0.108476892113686,
+			"a1_retained": true,
+			"a1_tilt": 0.281233342570592,
+			"a1_twist": 0.0979066097935827,
+			"a1_useful": -0.00619661062955856,
+			"kind": "asymmetric_diagonal"
+		},
+		{
+			"angular_error": 0.000000674514183174324,
+			"body_gravity": 0.0,
+			"kind": "dynamic_pair",
+			"linear_error": 0.000000357647280679885,
+			"linear_final": "(-0.0, -0.0, 0.0)",
+			"linear_initial": "(0.0, 0.0, 0.0)",
+			"peak_force": 5.53335571289063,
+			"support_gravity": 0.0
+		},
+		{
+			"blocked_target": 0.456379131217038,
+			"held_length": 0.502831995487213,
+			"kind": "blocked",
+			"post_release_target_drift": 0.0
+		}
+	],
+	"decision": "REVISE",
+	"default_promotion": false,
+	"failures": 0,
+	"physics_hz": 120,
+	"scope": "matched automated A0/A1 mechanics, not human improvement; no new force or reach budget",
+	"trials": [
+		{
+			"attached_samples": 168,
+			"input": "(0.0, 1.0)",
+			"kind": "symmetric",
+			"max_target_acceleration": 0.900000000000001,
+			"max_target_rate": 0.191253895271566,
+			"neutral_drift": 0.0,
+			"peak_force": 324.592666625977,
+			"peak_moment": 68.3676834106445,
+			"retained": true,
+			"samples": [
+				{
+					"allocation": {},
+					"force": 177.14640045166,
+					"moment": "(-32.65751, 0.006269, 0.01679)",
+					"position": "(-0.000017, 2.890265, 0.44173)",
+					"tilt": 0.117856879144301,
+					"time": 0.0,
+					"twist": 0.0011473058257252
+				},
+				{
+					"allocation": {},
+					"force": 223.310218811035,
+					"moment": "(-44.72353, 0.071544, 0.156913)",
+					"position": "(-0.000088, 2.87605, 0.408473)",
+					"tilt": 0.0664705253639713,
+					"time": 0.1,
+					"twist": 0.000981410150416195
+				},
+				{
+					"allocation": {},
+					"force": 309.881698608398,
+					"moment": "(-65.1279, 0.108449, 0.233637)",
+					"position": "(-0.000126, 2.867248, 0.38058)",
+					"tilt": 0.0235192814848646,
+					"time": 0.2,
+					"twist": 0.00104335229843855
+				},
+				{
+					"allocation": {},
+					"force": 291.988998413086,
+					"moment": "(-64.24223, 0.084364, 0.182478)",
+					"position": "(-0.000106, 2.879262, 0.366051)",
+					"tilt": 0.00124487789131963,
+					"time": 0.3,
+					"twist": 0.000989766442216933
+				},
+				{
+					"allocation": {},
+					"force": 249.94881439209,
+					"moment": "(-56.16715, 0.048199, 0.101952)",
+					"position": "(-0.000015, 2.903021, 0.369047)",
+					"tilt": 0.00577742969830726,
+					"time": 0.4,
+					"twist": 0.000780625327024609
+				},
+				{
+					"allocation": {},
+					"force": 263.707733154297,
+					"moment": "(-59.18591, 0.021408, 0.063722)",
+					"position": "(0.000142, 2.922872, 0.383893)",
+					"tilt": 0.0286518991865613,
+					"time": 0.5,
+					"twist": 0.000522687798365951
+				},
+				{
+					"allocation": {},
+					"force": 300.350555419922,
+					"moment": "(-65.13309, 0.001568, 0.050308)",
+					"position": "(0.000329, 2.937585, 0.409403)",
+					"tilt": 0.0679447314380183,
+					"time": 0.6,
+					"twist": 0.000300463230814785
+				},
+				{
+					"allocation": {},
+					"force": 321.029510498047,
+					"moment": "(-65.15073, -0.00849, 0.054571)",
+					"position": "(0.000519, 2.95307, 0.445746)",
+					"tilt": 0.124111730119518,
+					"time": 0.7,
+					"twist": 0.000134547546622343
+				},
+				{
+					"allocation": {},
+					"force": 311.331481933594,
+					"moment": "(-57.84016, -0.008485, 0.06958)",
+					"position": "(0.000706, 2.974104, 0.490599)",
+					"tilt": 0.193979683348052,
+					"time": 0.8,
+					"twist": -0.00000170817213529517
+				},
+				{
+					"allocation": {},
+					"force": 293.287933349609,
+					"moment": "(-49.43801, -0.007692, 0.074826)",
+					"position": "(0.000894, 3.00064, 0.538892)",
+					"tilt": 0.270342469478319,
+					"time": 0.9,
+					"twist": -0.000105904982774518
+				},
+				{
+					"allocation": {},
+					"force": 282.066680908203,
+					"moment": "(-43.39236, -0.010116, 0.069345)",
+					"position": "(0.001081, 3.03013, 0.585145)",
+					"tilt": 0.345024345440574,
+					"time": 1.0,
+					"twist": -0.000153938221046701
+				},
+				{
+					"allocation": {},
+					"force": 282.038589477539,
+					"moment": "(-40.20306, -0.015791, 0.061875)",
+					"position": "(0.00126, 3.05942, 0.62549)",
+					"tilt": 0.411832704063301,
+					"time": 1.1,
+					"twist": -0.000158459341037087
+				},
+				{
+					"allocation": {},
+					"force": 292.046234130859,
+					"moment": "(-39.21553, -0.023043, 0.057924)",
+					"position": "(0.001425, 3.085856, 0.658203)",
+					"tilt": 0.467458522762745,
+					"time": 1.2,
+					"twist": -0.000153003260493279
+				},
+				{
+					"allocation": {},
+					"force": 308.155151367188,
+					"moment": "(-39.51619, -0.029653, 0.058962)",
+					"position": "(0.001572, 3.107898, 0.683266)",
+					"tilt": 0.51115470860618,
+					"time": 1.3,
+					"twist": -0.000159317336510867
+				}
+			],
+			"tilt_rms": 0.273159298195303,
+			"twist_rms": 0.00058516838050311,
+			"useful_displacement": 0.233572959899902,
+			"variant": 0
+		},
+		{
+			"attached_samples": 168,
+			"input": "(0.0, 1.0)",
+			"kind": "symmetric",
+			"max_target_acceleration": 0.900000000000001,
+			"max_target_rate": 0.191253895271566,
+			"neutral_drift": 0.0,
+			"peak_force": 324.716812133789,
+			"peak_moment": 68.3676834106445,
+			"retained": true,
+			"samples": [
+				{
+					"allocation": {},
+					"force": 177.14640045166,
+					"moment": "(-32.65751, 0.006269, 0.01679)",
+					"position": "(-0.000017, 2.890265, 0.44173)",
+					"tilt": 0.117856879144301,
+					"time": 0.0,
+					"twist": 0.0011473058257252
+				},
+				{
+					"allocation": {},
+					"force": 223.310218811035,
+					"moment": "(-44.72353, 0.071544, 0.156913)",
+					"position": "(-0.000088, 2.87605, 0.408473)",
+					"tilt": 0.0664705253639713,
+					"time": 0.1,
+					"twist": 0.000981410150416195
+				},
+				{
+					"allocation": {},
+					"force": 309.881698608398,
+					"moment": "(-65.1279, 0.108449, 0.233637)",
+					"position": "(-0.000126, 2.867248, 0.38058)",
+					"tilt": 0.0235192814848646,
+					"time": 0.2,
+					"twist": 0.00104335229843855
+				},
+				{
+					"allocation": {},
+					"force": 291.988998413086,
+					"moment": "(-64.24223, 0.084364, 0.182478)",
+					"position": "(-0.000106, 2.879262, 0.366051)",
+					"tilt": 0.00124487789131963,
+					"time": 0.3,
+					"twist": 0.000989766442216933
+				},
+				{
+					"allocation": {},
+					"force": 249.94881439209,
+					"moment": "(-56.16715, 0.048199, 0.101952)",
+					"position": "(-0.000015, 2.903021, 0.369047)",
+					"tilt": 0.00577742969830726,
+					"time": 0.4,
+					"twist": 0.000780625327024609
+				},
+				{
+					"allocation": {},
+					"force": 263.707733154297,
+					"moment": "(-59.18591, 0.021408, 0.063722)",
+					"position": "(0.000142, 2.922872, 0.383893)",
+					"tilt": 0.0286518991865613,
+					"time": 0.5,
+					"twist": 0.000522687798365951
+				},
+				{
+					"allocation": {},
+					"force": 300.350555419922,
+					"moment": "(-65.13309, 0.001568, 0.050308)",
+					"position": "(0.000329, 2.937585, 0.409403)",
+					"tilt": 0.0679447314380183,
+					"time": 0.6,
+					"twist": 0.000300463230814785
+				},
+				{
+					"allocation": {},
+					"force": 321.029510498047,
+					"moment": "(-65.15073, -0.00849, 0.054571)",
+					"position": "(0.000519, 2.95307, 0.445746)",
+					"tilt": 0.124111730119518,
+					"time": 0.7,
+					"twist": 0.000134547546622343
+				},
+				{
+					"allocation": {},
+					"force": 311.331481933594,
+					"moment": "(-57.84016, -0.008485, 0.06958)",
+					"position": "(0.000706, 2.974104, 0.490599)",
+					"tilt": 0.193979683348052,
+					"time": 0.8,
+					"twist": -0.00000170817213529517
+				},
+				{
+					"allocation": {},
+					"force": 293.287933349609,
+					"moment": "(-49.43801, -0.007692, 0.074826)",
+					"position": "(0.000894, 3.00064, 0.538892)",
+					"tilt": 0.270342469478319,
+					"time": 0.9,
+					"twist": -0.000105904982774518
+				},
+				{
+					"allocation": {},
+					"force": 282.066680908203,
+					"moment": "(-43.39236, -0.010116, 0.069345)",
+					"position": "(0.001081, 3.03013, 0.585145)",
+					"tilt": 0.345024345440574,
+					"time": 1.0,
+					"twist": -0.000153938221046701
+				},
+				{
+					"allocation": {},
+					"force": 282.038589477539,
+					"moment": "(-40.20306, -0.015791, 0.061875)",
+					"position": "(0.00126, 3.05942, 0.62549)",
+					"tilt": 0.411832704063301,
+					"time": 1.1,
+					"twist": -0.000158459341037087
+				},
+				{
+					"allocation": {},
+					"force": 292.046234130859,
+					"moment": "(-39.21553, -0.023043, 0.057924)",
+					"position": "(0.001425, 3.085856, 0.658203)",
+					"tilt": 0.467458522762745,
+					"time": 1.2,
+					"twist": -0.000153003260493279
+				},
+				{
+					"allocation": {},
+					"force": 308.251434326172,
+					"moment": "(-39.53423, -0.029635, 0.058881)",
+					"position": "(0.001572, 3.10788, 0.68325)",
+					"tilt": 0.511120712857052,
+					"time": 1.3,
+					"twist": -0.000158653070684522
+				}
+			],
+			"tilt_rms": 0.273148673642612,
+			"twist_rms": 0.000585144863339439,
+			"useful_displacement": 0.233518362045288,
+			"variant": 0
+		},
+		{
+			"attached_samples": 168,
+			"input": "(0.0, 1.0)",
+			"kind": "symmetric",
+			"max_target_acceleration": 0.900000000000001,
+			"max_target_rate": 0.191253895271566,
+			"neutral_drift": 0.0,
+			"peak_force": 324.553070068359,
+			"peak_moment": 68.3676834106445,
+			"retained": true,
+			"samples": [
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": 0.0,
+							"1": 0.0
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.905898809432983,
+								"anchor_id": -9223371920722885129,
+								"force_sensitivity": 2651.17648854646,
+								"incremental_twist": 0.0,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": 0.0
+							},
+							"1": {
+								"alignment": 0.905621469020844,
+								"anchor_id": -9223371920672553486,
+								"force_sensitivity": 2613.29232769254,
+								"incremental_twist": 0.0,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": 0.0
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.0,
+						"predicted_incremental_twist_before": 0.0,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "HOLD",
+						"source_changes": {
+							"0": 0.0,
+							"1": 0.0
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 1.0
+						}
+					},
+					"force": 177.14640045166,
+					"moment": "(-32.65751, 0.006269, 0.01679)",
+					"position": "(-0.000017, 2.890265, 0.44173)",
+					"tilt": 0.117856879144301,
+					"time": 0.0,
+					"twist": 0.0011473058257252
+				},
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0494932353215948,
+							"1": -0.0497732162475586
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.914184868335724,
+								"anchor_id": -9223371920722885129,
+								"force_sensitivity": 2628.60283963861,
+								"incremental_twist": -9.31529235839844,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": -9.31529235839844
+							},
+							"1": {
+								"alignment": 0.913991689682007,
+								"anchor_id": -9223371920672553486,
+								"force_sensitivity": 2609.91726855628,
+								"incremental_twist": 9.25799751281738,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": 9.25799655914307
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": -0.00278894411495578,
+						"predicted_incremental_twist_before": -0.0572957992553711,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0497845411300659,
+							"1": -0.0497732162475586
+						},
+						"variant": 1,
+						"weights": {
+							"0": 0.994148669409042,
+							"1": 1.0
+						}
+					},
+					"force": 223.310218811035,
+					"moment": "(-44.72353, 0.071544, 0.156913)",
+					"position": "(-0.000088, 2.87605, 0.408473)",
+					"tilt": 0.0664705253639713,
+					"time": 0.1,
+					"twist": 0.000981410150416195
+				},
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0499316198128442,
+							"1": -0.0501392483711243
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.920149683952332,
+								"anchor_id": -9223371920722885129,
+								"force_sensitivity": 2611.66737382387,
+								"incremental_twist": -9.97282314300537,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": -9.97282314300537
+							},
+							"1": {
+								"alignment": 0.919959664344788,
+								"anchor_id": -9223371920672553486,
+								"force_sensitivity": 2602.26356854183,
+								"incremental_twist": 9.94585037231445,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": 9.94585132598877
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.0165333375521382,
+						"predicted_incremental_twist_before": -0.0269718170166016,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0501503944396973,
+							"1": -0.0501392483711243
+						},
+						"variant": 1,
+						"weights": {
+							"0": 0.995637628989816,
+							"1": 1.0
+						}
+					},
+					"force": 309.881698608398,
+					"moment": "(-65.1279, 0.108449, 0.233637)",
+					"position": "(-0.000126, 2.867248, 0.38058)",
+					"tilt": 0.0235192814848646,
+					"time": 0.2,
+					"twist": 0.00104335229843855
+				},
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0420269130945418,
+							"1": -0.0421161651611328
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.918674945831299,
+								"anchor_id": -9223371920722885129,
+								"force_sensitivity": 2597.37765178439,
+								"incremental_twist": -8.83142375946045,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": -8.83142375946045
+							},
+							"1": {
+								"alignment": 0.918483376502991,
+								"anchor_id": -9223371920672553486,
+								"force_sensitivity": 2592.55753891725,
+								"incremental_twist": 8.82227611541748,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": 8.8222770690918
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.0115389120168867,
+						"predicted_incremental_twist_before": -0.00914669036865234,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0421255826950073,
+							"1": -0.0421161651611328
+						},
+						"variant": 1,
+						"weights": {
+							"0": 0.997657727343977,
+							"1": 1.0
+						}
+					},
+					"force": 291.925674438477,
+					"moment": "(-64.22823, 0.088411, 0.194595)",
+					"position": "(-0.000106, 2.879261, 0.36605)",
+					"tilt": 0.00124487789131963,
+					"time": 0.3,
+					"twist": 0.000985793070867658
+				},
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0413824602922962,
+							"1": -0.0414171814918518
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.910996317863464,
+								"anchor_id": -9223371920722885129,
+								"force_sensitivity": 2589.40202123653,
+								"incremental_twist": -8.92610263824463,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": -8.92610359191895
+							},
+							"1": {
+								"alignment": 0.910826444625854,
+								"anchor_id": -9223371920672553486,
+								"force_sensitivity": 2586.92399433407,
+								"incremental_twist": 8.9233922958374,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": 8.9233922958374
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.0065682538144749,
+						"predicted_incremental_twist_before": -0.00271129608154297,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0414255261421204,
+							"1": -0.0414171814918518
+						},
+						"variant": 1,
+						"weights": {
+							"0": 0.99896040306944,
+							"1": 1.0
+						}
+					},
+					"force": 249.953506469727,
+					"moment": "(-56.16644, 0.049586, 0.114803)",
+					"position": "(-0.000006, 2.903002, 0.369047)",
+					"tilt": 0.00577742969830726,
+					"time": 0.4,
+					"twist": 0.00072594522498548
+				},
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0450114740649219,
+							"1": -0.0450203120708466
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.901944220066071,
+								"anchor_id": -9223371920722885129,
+								"force_sensitivity": 2589.51410690776,
+								"incremental_twist": -9.67367649078369,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": -9.67367649078369
+							},
+							"1": {
+								"alignment": 0.901807427406311,
+								"anchor_id": -9223371920672553486,
+								"force_sensitivity": 2588.23336538036,
+								"incremental_twist": 9.67366504669189,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": 9.67366600036621
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.00350171835986579,
+						"predicted_incremental_twist_before": -0.0000104904174804688,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0450278222560883,
+							"1": -0.0450203120708466
+						},
+						"variant": 1,
+						"weights": {
+							"0": 0.999636931338288,
+							"1": 1.0
+						}
+					},
+					"force": 263.737579345703,
+					"moment": "(-59.18908, 0.018435, 0.067435)",
+					"position": "(0.000172, 2.922838, 0.383893)",
+					"tilt": 0.0286518991865613,
+					"time": 0.5,
+					"twist": 0.000429647654527798
+				},
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0457556629040408,
+							"1": -0.0457504374589706
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.892477750778198,
+								"anchor_id": -9223371920722885129,
+								"force_sensitivity": 2597.63810747697,
+								"incremental_twist": -9.49320602416992,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": -9.49320602416992
+							},
+							"1": {
+								"alignment": 0.892363667488098,
+								"anchor_id": -9223371920672553486,
+								"force_sensitivity": 2596.96858921031,
+								"incremental_twist": 9.49461841583252,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": 9.4946174621582
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.00171210182075043,
+						"predicted_incremental_twist_before": 0.00141143798828125,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0457604229450226,
+							"1": -0.0457537472248077
+						},
+						"variant": 1,
+						"weights": {
+							"0": 0.99989597908683,
+							"1": 0.99992766131655
+						}
+					},
+					"force": 300.326858520508,
+					"moment": "(-65.1237, -0.006776, 0.043596)",
+					"position": "(0.000384, 2.937553, 0.409403)",
+					"tilt": 0.0679456093595896,
+					"time": 0.6,
+					"twist": 0.000199535381398164
+				},
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0432517751065408,
+							"1": -0.0432395087621976
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.88078099489212,
+								"anchor_id": -9223371920722885129,
+								"force_sensitivity": 2611.50279034014,
+								"incremental_twist": -8.40837955474854,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": -8.40837860107422
+							},
+							"1": {
+								"alignment": 0.880677700042725,
+								"anchor_id": -9223371920672553486,
+								"force_sensitivity": 2611.15995047182,
+								"incremental_twist": 8.41046524047852,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": 8.41046524047852
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.000866003690411787,
+						"predicted_incremental_twist_before": 0.00208663940429688,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0432530641555786,
+							"1": -0.0432470738887787
+						},
+						"variant": 1,
+						"weights": {
+							"0": 0.999970197509403,
+							"1": 0.999825071943583
+						}
+					},
+					"force": 320.997283935547,
+					"moment": "(-65.14016, -0.022077, 0.03934)",
+					"position": "(0.000597, 2.953043, 0.445746)",
+					"tilt": 0.12411124863354,
+					"time": 0.7,
+					"twist": 0.0000387356158171315
+				},
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.038977349777339,
+							"1": -0.0389630131321751
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.865205585956573,
+								"anchor_id": -9223371920722885129,
+								"force_sensitivity": 2627.61652708791,
+								"incremental_twist": -6.93182420730591,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": -6.93182373046875
+							},
+							"1": {
+								"alignment": 0.865116059780121,
+								"anchor_id": -9223371920672553486,
+								"force_sensitivity": 2627.46986058783,
+								"incremental_twist": 6.93385028839111,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": 6.93384981155396
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.000344924877706987,
+						"predicted_incremental_twist_before": 0.00202608108520508,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0389776825904846,
+							"1": -0.038972795009613
+						},
+						"variant": 1,
+						"weights": {
+							"0": 0.999991461443486,
+							"1": 0.999749007546534
+						}
+					},
+					"force": 311.308578491211,
+					"moment": "(-57.83185, -0.024725, 0.051947)",
+					"position": "(0.000798, 2.974075, 0.490597)",
+					"tilt": 0.193976591242474,
+					"time": 0.8,
+					"twist": -0.0000937997101573274
+				},
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0356099926510499,
+							"1": -0.0355959953742101
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.846189439296722,
+								"anchor_id": -9223371920722885129,
+								"force_sensitivity": 2643.13699340061,
+								"incremental_twist": -5.69635534286499,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": -5.69635486602783
+							},
+							"1": {
+								"alignment": 0.84611576795578,
+								"anchor_id": -9223371920672553486,
+								"force_sensitivity": 2643.11910106345,
+								"incremental_twist": 5.69803953170776,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": 5.69803953170776
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.0000932939086100149,
+						"predicted_incremental_twist_before": 0.00168466567993164,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0356100797653198,
+							"1": -0.0356060266494751
+						},
+						"variant": 1,
+						"weights": {
+							"0": 0.9999975536626,
+							"1": 0.999718270298348
+						}
+					},
+					"force": 293.268569946289,
+					"moment": "(-49.4309, -0.023733, 0.059453)",
+					"position": "(0.000992, 3.00061, 0.538888)",
+					"tilt": 0.270335550595699,
+					"time": 0.9,
+					"twist": -0.000197498826310039
+				},
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0338534177493713,
+							"1": -0.0338389636527857
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.825357854366302,
+								"anchor_id": -9223371920722885129,
+								"force_sensitivity": 2656.18735133054,
+								"incremental_twist": -4.83726358413696,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": -4.83726358413696
+							},
+							"1": {
+								"alignment": 0.825286090373993,
+								"anchor_id": -9223371920672553486,
+								"force_sensitivity": 2656.25421003385,
+								"incremental_twist": 4.83890867233276,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": 4.83890962600708
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.000159177230551144,
+						"predicted_incremental_twist_before": 0.00164604187011719,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0338534414768219,
+							"1": -0.0338493883609772
+						},
+						"variant": 1,
+						"weights": {
+							"0": 0.9999992991126,
+							"1": 0.999692026689515
+						}
+					},
+					"force": 282.047409057617,
+					"moment": "(-43.38564, -0.02448, 0.057475)",
+					"position": "(0.001176, 3.030099, 0.585138)",
+					"tilt": 0.345013595212503,
+					"time": 1.0,
+					"twist": -0.000244205817580223
+				},
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0336819223478933,
+							"1": -0.0336641372324391
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.804664790630341,
+								"anchor_id": -9223371920722885129,
+								"force_sensitivity": 2666.12970952181,
+								"incremental_twist": -4.31440496444702,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": -4.31440544128418
+							},
+							"1": {
+								"alignment": 0.80458015203476,
+								"anchor_id": -9223371920672553486,
+								"force_sensitivity": 2666.25480900673,
+								"incremental_twist": 4.31633281707764,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": 4.31633377075195
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.000302000047741835,
+						"predicted_incremental_twist_before": 0.00192832946777344,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0336819291114807,
+							"1": -0.0336768329143524
+						},
+						"variant": 1,
+						"weights": {
+							"0": 0.999999799192398,
+							"1": 0.99962301437473
+						}
+					},
+					"force": 282.018508911133,
+					"moment": "(-40.19625, -0.028424, 0.05269)",
+					"position": "(0.001344, 3.059387, 0.625481)",
+					"tilt": 0.411818409059367,
+					"time": 1.1,
+					"twist": -0.000244974275119603
+				},
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0346042791961922,
+							"1": -0.0345810379824041
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.78581964969635,
+								"anchor_id": -9223371920722885129,
+								"force_sensitivity": 2673.21749546395,
+								"incremental_twist": -4.02141523361206,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": -4.02141571044922
+							},
+							"1": {
+								"alignment": 0.785720109939575,
+								"anchor_id": -9223371920672553486,
+								"force_sensitivity": 2673.38688994682,
+								"incremental_twist": 4.02368927001953,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": 4.02368974685669
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.000333617651289586,
+						"predicted_incremental_twist_before": 0.0022740364074707,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0346042811870575,
+							"1": -0.0345977246761322
+						},
+						"variant": 1,
+						"weights": {
+							"0": 0.999999942467659,
+							"1": 0.999517693897956
+						}
+					},
+					"force": 292.023376464844,
+					"moment": "(-39.20823, -0.034764, 0.049804)",
+					"position": "(0.001494, 3.085821, 0.658193)",
+					"tilt": 0.467441591555312,
+					"time": 1.2,
+					"twist": -0.000234104518312961
+				},
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0360189670347679,
+							"1": -0.0359902912065761
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.769912421703339,
+								"anchor_id": -9223371920722885129,
+								"force_sensitivity": 2678.06872125029,
+								"incremental_twist": -3.86138916015625,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": -3.86138916015625
+							},
+							"1": {
+								"alignment": 0.769806802272797,
+								"anchor_id": -9223371920672553486,
+								"force_sensitivity": 2678.27378569912,
+								"incremental_twist": 3.86382961273193,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 115410470397,
+								"unscaled_incremental_twist": 3.86383056640625
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.000215190513540797,
+						"predicted_incremental_twist_before": 0.00244140625,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.036018967628479,
+							"1": -0.0360110402107239
+						},
+						"variant": 1,
+						"weights": {
+							"0": 0.999999983516708,
+							"1": 0.999423815473634
+						}
+					},
+					"force": 308.122711181641,
+					"moment": "(-39.50762, -0.041332, 0.050526)",
+					"position": "(0.001623, 3.107861, 0.683255)",
+					"tilt": 0.511135334937181,
+					"time": 1.3,
+					"twist": -0.000234633596846834
+				}
+			],
+			"tilt_rms": 0.27315007101537,
+			"twist_rms": 0.000581181626979969,
+			"useful_displacement": 0.233534097671509,
+			"variant": 1
+		},
+		{
+			"attached_samples": 168,
+			"input": "(0.0, 1.0)",
+			"kind": "asymmetric",
+			"max_target_acceleration": 0.900000000000001,
+			"max_target_rate": 0.209999999999997,
+			"neutral_drift": 0.0,
+			"peak_force": 360.0,
+			"peak_moment": 85.4027633666992,
+			"retained": true,
+			"samples": [
+				{
+					"allocation": {},
+					"force": 195.795143127441,
+					"moment": "(-33.53141, 2.130665, -7.685492)",
+					"position": "(-0.007472, 2.872419, 0.443775)",
+					"tilt": 0.123510834032837,
+					"time": 0.0,
+					"twist": 0.0804496109485626
+				},
+				{
+					"allocation": {},
+					"force": 230.783782958984,
+					"moment": "(-47.37019, 3.720924, -2.194617)",
+					"position": "(-0.027843, 2.854066, 0.40838)",
+					"tilt": 0.0884900162450233,
+					"time": 0.1,
+					"twist": 0.0763556808233261
+				},
+				{
+					"allocation": {},
+					"force": 327.68586730957,
+					"moment": "(-73.17003, 10.16715, 8.115467)",
+					"position": "(-0.05337, 2.844772, 0.376171)",
+					"tilt": 0.106940501254786,
+					"time": 0.2,
+					"twist": 0.0509551800787449
+				},
+				{
+					"allocation": {},
+					"force": 360.0,
+					"moment": "(-80.94701, 18.26727, 19.39404)",
+					"position": "(-0.077963, 2.845914, 0.364745)",
+					"tilt": 0.153129337527347,
+					"time": 0.3,
+					"twist": 0.0444367229938507
+				},
+				{
+					"allocation": {},
+					"force": 312.194290161133,
+					"moment": "(-68.31137, 18.68869, 19.88882)",
+					"position": "(-0.095813, 2.864537, 0.383433)",
+					"tilt": 0.185195222032737,
+					"time": 0.4,
+					"twist": 0.0400730967521667
+				},
+				{
+					"allocation": {},
+					"force": 285.314147949219,
+					"moment": "(-59.69076, 18.54897, 19.03399)",
+					"position": "(-0.105906, 2.88827, 0.414561)",
+					"tilt": 0.215872151774098,
+					"time": 0.5,
+					"twist": 0.0323591753840446
+				},
+				{
+					"allocation": {},
+					"force": 313.733795166016,
+					"moment": "(-60.42785, 20.98614, 20.05372)",
+					"position": "(-0.110598, 2.906221, 0.454297)",
+					"tilt": 0.251215917400445,
+					"time": 0.6,
+					"twist": 0.0321849621832371
+				},
+				{
+					"allocation": {},
+					"force": 305.148300170898,
+					"moment": "(-52.34452, 19.84492, 16.11318)",
+					"position": "(-0.112162, 2.928652, 0.498984)",
+					"tilt": 0.295673575412963,
+					"time": 0.7,
+					"twist": 0.0441669300198555
+				},
+				{
+					"allocation": {},
+					"force": 279.498107910156,
+					"moment": "(-41.26498, 17.25194, 11.52844)",
+					"position": "(-0.115265, 2.955294, 0.544141)",
+					"tilt": 0.351218038651556,
+					"time": 0.8,
+					"twist": 0.0601208508014679
+				},
+				{
+					"allocation": {},
+					"force": 277.423942565918,
+					"moment": "(-36.70239, 18.21174, 11.32068)",
+					"position": "(-0.123298, 2.983603, 0.584355)",
+					"tilt": 0.41190015230206,
+					"time": 0.9,
+					"twist": 0.0668266043066978
+				},
+				{
+					"allocation": {},
+					"force": 284.870338439941,
+					"moment": "(-35.14054, 20.76399, 13.87169)",
+					"position": "(-0.135604, 3.010737, 0.616955)",
+					"tilt": 0.470650102406138,
+					"time": 1.0,
+					"twist": 0.0551003664731979
+				},
+				{
+					"allocation": {},
+					"force": 295.260955810547,
+					"moment": "(-34.4924, 24.62687, 16.9074)",
+					"position": "(-0.151409, 3.034867, 0.641257)",
+					"tilt": 0.521961529101425,
+					"time": 1.1,
+					"twist": 0.0395313650369644
+				},
+				{
+					"allocation": {},
+					"force": 312.441513061523,
+					"moment": "(-34.97047, 29.66036, 19.99451)",
+					"position": "(-0.169891, 3.054913, 0.65753)",
+					"tilt": 0.563416706704502,
+					"time": 1.2,
+					"twist": 0.0314143598079681
+				},
+				{
+					"allocation": {},
+					"force": 335.536666870117,
+					"moment": "(-36.19065, 35.23461, 23.31103)",
+					"position": "(-0.189373, 3.070528, 0.666964)",
+					"tilt": 0.595337465914706,
+					"time": 1.3,
+					"twist": 0.029813701286912
+				}
+			],
+			"tilt_rms": 0.369739955252162,
+			"twist_rms": 0.0497748926030972,
+			"useful_displacement": 0.208892345428467,
+			"variant": 0
+		},
+		{
+			"attached_samples": 168,
+			"input": "(0.0, 1.0)",
+			"kind": "asymmetric",
+			"max_target_acceleration": 0.900000000000001,
+			"max_target_rate": 0.209999999999997,
+			"neutral_drift": 0.0,
+			"peak_force": 360.0,
+			"peak_moment": 85.4027633666992,
+			"retained": true,
+			"samples": [
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": 0.0,
+							"1": 0.0
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.916420161724091,
+								"anchor_id": -9223371872354171398,
+								"force_sensitivity": 2671.06414850188,
+								"incremental_twist": 0.0,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": 0.0
+							},
+							"1": {
+								"alignment": 0.782803654670715,
+								"anchor_id": -9223371872303839779,
+								"force_sensitivity": 2572.34466244868,
+								"incremental_twist": 0.0,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": 0.0
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.0,
+						"predicted_incremental_twist_before": 0.0,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "HOLD",
+						"source_changes": {
+							"0": 0.0,
+							"1": 0.0
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 1.0
+						}
+					},
+					"force": 195.795143127441,
+					"moment": "(-33.53141, 2.130665, -7.685492)",
+					"position": "(-0.007472, 2.872419, 0.443775)",
+					"tilt": 0.123510834032837,
+					"time": 0.0,
+					"twist": 0.0804496109485626
+				},
+				{
+					"allocation": {
+						"advisory_classification": "PARTIALLY_ACTUATABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0477598309516907,
+							"1": -0.0312002572041739
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.922835290431976,
+								"anchor_id": -9223371872354171398,
+								"force_sensitivity": 2669.35576117497,
+								"incremental_twist": -7.17239713668823,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": -7.17239713668823
+							},
+							"1": {
+								"alignment": 0.810164093971252,
+								"anchor_id": -9223371872303839779,
+								"force_sensitivity": 2559.54759799035,
+								"incremental_twist": 11.4769821166992,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": 11.4769811630249
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.839142677567313,
+						"predicted_incremental_twist_before": 4.30458402633667,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0477598309516907,
+							"1": -0.0446961224079132
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 0.698052885201739
+						}
+					},
+					"force": 230.783782958984,
+					"moment": "(-47.37019, 3.720924, -2.194617)",
+					"position": "(-0.027843, 2.854066, 0.40838)",
+					"tilt": 0.0884900162450233,
+					"time": 0.1,
+					"twist": 0.0763556808233261
+				},
+				{
+					"allocation": {
+						"advisory_classification": "PARTIALLY_ACTUATABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0476332306861877,
+							"1": -0.031740623860151
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.923506796360016,
+								"anchor_id": -9223371872354171398,
+								"force_sensitivity": 2653.96510591729,
+								"incremental_twist": -8.28689765930176,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": -8.28689956665039
+							},
+							"1": {
+								"alignment": 0.836070001125336,
+								"anchor_id": -9223371872303839779,
+								"force_sensitivity": 2555.54652792031,
+								"incremental_twist": 11.8155355453491,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": 11.8155364990234
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": -0.217168931889404,
+						"predicted_incremental_twist_before": 3.52863693237305,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0476332306861877,
+							"1": -0.0464739799499512
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 0.682976235182207
+						}
+					},
+					"force": 327.68586730957,
+					"moment": "(-73.17003, 10.16715, 8.115467)",
+					"position": "(-0.05337, 2.844772, 0.376171)",
+					"tilt": 0.106940501254786,
+					"time": 0.2,
+					"twist": 0.0509551800787449
+				},
+				{
+					"allocation": {
+						"advisory_classification": "SATURATED",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0467652082443237,
+							"1": -0.0335748363141933
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.921492278575897,
+								"anchor_id": -9223371872354171398,
+								"force_sensitivity": 2646.1976359541,
+								"incremental_twist": -8.58344745635986,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": -8.58344745635986
+							},
+							"1": {
+								"alignment": 0.846608579158783,
+								"anchor_id": -9223371872303839779,
+								"force_sensitivity": 2552.47545268131,
+								"incremental_twist": 11.8860759735107,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": 11.8860740661621
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": -0.129150756329885,
+						"predicted_incremental_twist_before": 3.30262660980225,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0467652082443237,
+							"1": -0.0472035706043243
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 0.7112774708428
+						}
+					},
+					"force": 360.0,
+					"moment": "(-80.94701, 18.26727, 19.39404)",
+					"position": "(-0.077963, 2.845914, 0.364745)",
+					"tilt": 0.153129337527347,
+					"time": 0.3,
+					"twist": 0.0444367229938507
+				},
+				{
+					"allocation": {
+						"advisory_classification": "PARTIALLY_ACTUATABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0382480025291443,
+							"1": -0.0274224175706267
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.91416722536087,
+								"anchor_id": -9223371872354171398,
+								"force_sensitivity": 2651.08810521396,
+								"incremental_twist": -6.84888124465942,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": -6.84888124465942
+							},
+							"1": {
+								"alignment": 0.835218966007233,
+								"anchor_id": -9223371872303839779,
+								"force_sensitivity": 2556.73258427777,
+								"incremental_twist": 9.46108055114746,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": 9.46107959747314
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": -0.0792478138929544,
+						"predicted_incremental_twist_before": 2.61219835281372,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0382480025291443,
+							"1": -0.0383249223232269
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 0.715524413574799
+						}
+					},
+					"force": 312.194290161133,
+					"moment": "(-68.31137, 18.68869, 19.88882)",
+					"position": "(-0.095813, 2.864537, 0.383433)",
+					"tilt": 0.185195222032737,
+					"time": 0.4,
+					"twist": 0.0400730967521667
+				},
+				{
+					"allocation": {
+						"advisory_classification": "PARTIALLY_ACTUATABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0432740449905396,
+							"1": -0.0299617746905262
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.903703033924103,
+								"anchor_id": -9223371872354171398,
+								"force_sensitivity": 2660.78100414225,
+								"incremental_twist": -7.31259632110596,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": -7.31259632110596
+							},
+							"1": {
+								"alignment": 0.815560579299927,
+								"anchor_id": -9223371872303839779,
+								"force_sensitivity": 2563.7452697657,
+								"incremental_twist": 9.84810161590576,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": 9.84810161590576
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": -0.0940762299050242,
+						"predicted_incremental_twist_before": 2.5355052947998,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0432740449905396,
+							"1": -0.0408763289451599
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 0.732985947214662
+						}
+					},
+					"force": 276.040573120117,
+					"moment": "(-57.38682, 17.41645, 17.70046)",
+					"position": "(-0.1063, 2.887975, 0.414483)",
+					"tilt": 0.215870482165319,
+					"time": 0.5,
+					"twist": 0.0345119908452034
+				},
+				{
+					"allocation": {
+						"advisory_classification": "PARTIALLY_ACTUATABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0423059463500977,
+							"1": -0.0277514075949086
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.896971940994263,
+								"anchor_id": -9223371872354171398,
+								"force_sensitivity": 2680.18460258897,
+								"incremental_twist": -6.23985195159912,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": -6.23985147476196
+							},
+							"1": {
+								"alignment": 0.79196697473526,
+								"anchor_id": -9223371872303839779,
+								"force_sensitivity": 2574.19089429435,
+								"incremental_twist": 8.9261589050293,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": 8.9261589050293
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.217305503318618,
+						"predicted_incremental_twist_before": 2.68630743026733,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0423059463500977,
+							"1": -0.0383626222610474
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 0.723397045334069
+						}
+					},
+					"force": 291.523468017578,
+					"moment": "(-55.4787, 18.84568, 17.03004)",
+					"position": "(-0.113241, 2.905767, 0.45307)",
+					"tilt": 0.251118788644354,
+					"time": 0.6,
+					"twist": 0.0422076284885406
+				},
+				{
+					"allocation": {
+						"advisory_classification": "PARTIALLY_ACTUATABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0396374762058258,
+							"1": -0.0231623675276909
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.891629636287689,
+								"anchor_id": -9223371872354171398,
+								"force_sensitivity": 2701.68438732076,
+								"incremental_twist": -4.72413492202759,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": -4.72413492202759
+							},
+							"1": {
+								"alignment": 0.75880628824234,
+								"anchor_id": -9223371872303839779,
+								"force_sensitivity": 2581.31535003689,
+								"incremental_twist": 7.97451210021973,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": 7.97451162338257
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.539095883968489,
+						"predicted_incremental_twist_before": 3.25037670135498,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0396374762058258,
+							"1": -0.035094141960144
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 0.660006663049236
+						}
+					},
+					"force": 278.839225769043,
+					"moment": "(-46.85398, 17.58276, 12.95275)",
+					"position": "(-0.11951, 2.927502, 0.494621)",
+					"tilt": 0.295047191942869,
+					"time": 0.7,
+					"twist": 0.0626751035451889
+				},
+				{
+					"allocation": {
+						"advisory_classification": "PARTIALLY_ACTUATABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0375259816646576,
+							"1": -0.0183351854781353
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.885881900787354,
+								"anchor_id": -9223371872354171398,
+								"force_sensitivity": 2718.36984710234,
+								"incremental_twist": -3.40121173858643,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": -3.40121173858643
+							},
+							"1": {
+								"alignment": 0.72268533706665,
+								"anchor_id": -9223371872303839779,
+								"force_sensitivity": 2587.46018565667,
+								"incremental_twist": 7.39827251434326,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": 7.39827156066895
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.674231948446892,
+						"predicted_incremental_twist_before": 3.99705982208252,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0375259816646576,
+							"1": -0.0332843959331512
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 0.55086430034542
+						}
+					},
+					"force": 261.58349609375,
+					"moment": "(-37.96447, 16.16655, 10.06388)",
+					"position": "(-0.129102, 2.952339, 0.534794)",
+					"tilt": 0.348484549153283,
+					"time": 0.8,
+					"twist": 0.0826384648680687
+				},
+				{
+					"allocation": {
+						"advisory_classification": "PARTIALLY_ACTUATABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0365482270717621,
+							"1": -0.0143454290902919
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.878876090049744,
+								"anchor_id": -9223371872354171398,
+								"force_sensitivity": 2727.84166661959,
+								"incremental_twist": -2.47112226486206,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": -2.47112131118774
+							},
+							"1": {
+								"alignment": 0.691141366958618,
+								"anchor_id": -9223371872303839779,
+								"force_sensitivity": 2594.52676118681,
+								"incremental_twist": 7.17622995376587,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": 7.17622900009155
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.623941425951989,
+						"predicted_incremental_twist_before": 4.70510768890381,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0365482270717621,
+							"1": -0.0332613885402679
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 0.431293752902847
+						}
+					},
+					"force": 249.419303894043,
+					"moment": "(-31.65422, 15.98853, 9.617113)",
+					"position": "(-0.144431, 2.977985, 0.569102)",
+					"tilt": 0.405617575020082,
+					"time": 0.9,
+					"twist": 0.092670626938343
+				},
+				{
+					"allocation": {
+						"advisory_classification": "PARTIALLY_ACTUATABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0367801785469055,
+							"1": -0.011421545695783
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.871812403202057,
+								"anchor_id": -9223371872354171398,
+								"force_sensitivity": 2731.65385287158,
+								"incremental_twist": -1.89419150352478,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": -1.89419150352478
+							},
+							"1": {
+								"alignment": 0.667427480220795,
+								"anchor_id": -9223371872303839779,
+								"force_sensitivity": 2601.8089385793,
+								"incremental_twist": 7.19311046600342,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": 7.19311046600342
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.480434370269963,
+						"predicted_incremental_twist_before": 5.29891896247864,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0367801785469055,
+							"1": -0.034597635269165
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 0.330125039093709
+						}
+					},
+					"force": 248.442428588867,
+					"moment": "(-28.93629, 18.0228, 11.36231)",
+					"position": "(-0.166306, 3.001986, 0.594517)",
+					"tilt": 0.460014808474554,
+					"time": 1.0,
+					"twist": 0.0942234918475151
+				},
+				{
+					"allocation": {
+						"advisory_classification": "PARTIALLY_ACTUATABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0381283760070801,
+							"1": -0.00962014724881314
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.866170525550842,
+								"anchor_id": -9223371872354171398,
+								"force_sensitivity": 2731.59438828945,
+								"incremental_twist": -1.58615291118622,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": -1.58615374565125
+							},
+							"1": {
+								"alignment": 0.651840031147003,
+								"anchor_id": -9223371872303839779,
+								"force_sensitivity": 2607.87477443126,
+								"incremental_twist": 7.0317497253418,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": 7.0317497253418
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.336851780614177,
+						"predicted_incremental_twist_before": 5.44559597969055,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0381283760070801,
+							"1": -0.03517746925354
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 0.273474682885126
+						}
+					},
+					"force": 261.220916748047,
+					"moment": "(-29.36426, 22.51546, 14.94491)",
+					"position": "(-0.193686, 3.022594, 0.609968)",
+					"tilt": 0.508001266083836,
+					"time": 1.1,
+					"twist": 0.0917902365326881
+				},
+				{
+					"allocation": {
+						"advisory_classification": "PARTIALLY_ACTUATABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0396037101745605,
+							"1": -0.00922145230636228
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.862828612327576,
+								"anchor_id": -9223371872354171398,
+								"force_sensitivity": 2729.0443627568,
+								"incremental_twist": -1.43515610694885,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": -1.43515682220459
+							},
+							"1": {
+								"alignment": 0.642724752426147,
+								"anchor_id": -9223371872303839779,
+								"force_sensitivity": 2611.70915389733,
+								"incremental_twist": 6.92966938018799,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": 6.92966938018799
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.343866771334669,
+						"predicted_incremental_twist_before": 5.4945125579834,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0396037101745605,
+							"1": -0.0359194874763489
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 0.25672560925136
+						}
+					},
+					"force": 287.263610839844,
+					"moment": "(-32.02376, 29.39549, 20.15614)",
+					"position": "(-0.223988, 3.039154, 0.616325)",
+					"tilt": 0.548346548627524,
+					"time": 1.2,
+					"twist": 0.0895960330963135
+				},
+				{
+					"allocation": {
+						"advisory_classification": "PARTIALLY_ACTUATABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0413365662097931,
+							"1": -0.00925819884160809
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.862019598484039,
+								"anchor_id": -9223371872354171398,
+								"force_sensitivity": 2725.42611719508,
+								"incremental_twist": -1.36069941520691,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": -1.36069965362549
+							},
+							"1": {
+								"alignment": 0.636996865272522,
+								"anchor_id": -9223371872303839779,
+								"force_sensitivity": 2612.96339900249,
+								"incremental_twist": 6.90938663482666,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 163779184115,
+								"unscaled_incremental_twist": 6.90938663482666
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.379960835624124,
+						"predicted_incremental_twist_before": 5.54868698120117,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0413365662097931,
+							"1": -0.036749541759491
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 0.251926919312322
+						}
+					},
+					"force": 319.394470214844,
+					"moment": "(-35.22641, 37.35474, 26.0402)",
+					"position": "(-0.253764, 3.051966, 0.616089)",
+					"tilt": 0.580941922105941,
+					"time": 1.3,
+					"twist": 0.0913426205515862
+				}
+			],
+			"tilt_rms": 0.362628869486435,
+			"twist_rms": 0.0736767283525878,
+			"useful_displacement": 0.188733816146851,
+			"variant": 1
+		},
+		{
+			"attached_samples": 168,
+			"input": "(0.0, 1.0)",
+			"kind": "single",
+			"max_target_acceleration": 0.900000000000001,
+			"max_target_rate": 0.236349766022745,
+			"neutral_drift": 0.0,
+			"peak_force": 223.167327880859,
+			"peak_moment": 44.9380569458008,
+			"retained": true,
+			"samples": [
+				{
+					"allocation": {},
+					"force": 180.312789916992,
+					"moment": "(-18.00299, 0.484438, -19.66337)",
+					"position": "(-0.001046, 2.86907, 0.446427)",
+					"tilt": 0.132187805780617,
+					"time": 0.0,
+					"twist": 0.187035724520683
+				},
+				{
+					"allocation": {},
+					"force": 173.396072387695,
+					"moment": "(-23.81999, -2.554212, -10.85522)",
+					"position": "(-0.027642, 2.847522, 0.406837)",
+					"tilt": 0.141059452542226,
+					"time": 0.1,
+					"twist": 0.197395950555801
+				},
+				{
+					"allocation": {},
+					"force": 184.321563720703,
+					"moment": "(-25.95514, 4.97391, -7.137635)",
+					"position": "(-0.080413, 2.840622, 0.36352)",
+					"tilt": 0.188039307335765,
+					"time": 0.2,
+					"twist": 0.26645365357399
+				},
+				{
+					"allocation": {},
+					"force": 213.475891113281,
+					"moment": "(-28.27068, 10.05937, -0.785199)",
+					"position": "(-0.145204, 2.842211, 0.330208)",
+					"tilt": 0.281634460923856,
+					"time": 0.3,
+					"twist": 0.405752718448639
+				},
+				{
+					"allocation": {},
+					"force": 216.026397705078,
+					"moment": "(-24.2957, 14.66117, 10.89582)",
+					"position": "(-0.217017, 2.856721, 0.306226)",
+					"tilt": 0.392497248737168,
+					"time": 0.4,
+					"twist": 0.558785200119019
+				},
+				{
+					"allocation": {},
+					"force": 222.821258544922,
+					"moment": "(-20.66756, 17.63802, 26.40993)",
+					"position": "(-0.285986, 2.881011, 0.291036)",
+					"tilt": 0.505435607670879,
+					"time": 0.5,
+					"twist": 0.70198529958725
+				},
+				{
+					"allocation": {},
+					"force": 213.583160400391,
+					"moment": "(-16.87908, 18.32791, 36.88939)",
+					"position": "(-0.343417, 2.91326, 0.284471)",
+					"tilt": 0.601574214089207,
+					"time": 0.6,
+					"twist": 0.816729187965393
+				},
+				{
+					"allocation": {},
+					"force": 196.776824951172,
+					"moment": "(-14.61821, 17.97084, 37.92529)",
+					"position": "(-0.383762, 2.947942, 0.286603)",
+					"tilt": 0.662851287865703,
+					"time": 0.7,
+					"twist": 0.883915662765503
+				},
+				{
+					"allocation": {},
+					"force": 198.046096801758,
+					"moment": "(-13.36536, 18.26436, 36.97129)",
+					"position": "(-0.404631, 2.975531, 0.296614)",
+					"tilt": 0.682779788733403,
+					"time": 0.8,
+					"twist": 0.911293923854828
+				},
+				{
+					"allocation": {},
+					"force": 198.340850830078,
+					"moment": "(-10.52095, 17.00706, 31.67447)",
+					"position": "(-0.406327, 2.995261, 0.313925)",
+					"tilt": 0.659515452156919,
+					"time": 0.9,
+					"twist": 0.900611639022827
+				},
+				{
+					"allocation": {},
+					"force": 179.664001464844,
+					"moment": "(-7.288259, 12.72208, 18.05097)",
+					"position": "(-0.390047, 3.013215, 0.336487)",
+					"tilt": 0.597761264077262,
+					"time": 1.0,
+					"twist": 0.83663147687912
+				},
+				{
+					"allocation": {},
+					"force": 169.819854736328,
+					"moment": "(-5.436709, 8.038015, 4.979711)",
+					"position": "(-0.356964, 3.031906, 0.35984)",
+					"tilt": 0.518329769070007,
+					"time": 1.1,
+					"twist": 0.733745217323303
+				},
+				{
+					"allocation": {},
+					"force": 169.636611938477,
+					"moment": "(-9.351133, 7.187608, 1.876549)",
+					"position": "(-0.308508, 3.052083, 0.383797)",
+					"tilt": 0.461186153572356,
+					"time": 1.2,
+					"twist": 0.648701369762421
+				},
+				{
+					"allocation": {},
+					"force": 170.398376464844,
+					"moment": "(-16.55591, 8.489886, 6.030421)",
+					"position": "(-0.253046, 3.077585, 0.397318)",
+					"tilt": 0.424756585093458,
+					"time": 1.3,
+					"twist": 0.576760232448578
+				}
+			],
+			"tilt_rms": 0.488949135121693,
+			"twist_rms": 0.671999741005692,
+			"useful_displacement": 0.226300716400146,
+			"variant": 0
+		},
+		{
+			"attached_samples": 168,
+			"input": "(0.0, 1.0)",
+			"kind": "single",
+			"max_target_acceleration": 0.900000000000001,
+			"max_target_rate": 0.236349766022745,
+			"neutral_drift": 0.0,
+			"peak_force": 223.167327880859,
+			"peak_moment": 44.9380569458008,
+			"retained": true,
+			"samples": [
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": 0.0
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.928743839263916,
+								"anchor_id": -9223371809305393646,
+								"force_sensitivity": 4869.31010319725,
+								"incremental_twist": 0.0,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 226827961873,
+								"unscaled_incremental_twist": 0.0
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.0,
+						"predicted_incremental_twist_before": 0.0,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "HOLD",
+						"source_changes": {
+							"0": 0.0
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0
+						}
+					},
+					"force": 180.312789916992,
+					"moment": "(-18.00299, 0.484438, -19.66337)",
+					"position": "(-0.001046, 2.86907, 0.446427)",
+					"tilt": 0.132187805780617,
+					"time": 0.0,
+					"twist": 0.187035724520683
+				},
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0462278127670288
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.938874542713165,
+								"anchor_id": -9223371809305393646,
+								"force_sensitivity": 4882.39168710394,
+								"incremental_twist": -11.2762107849121,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 226827961873,
+								"unscaled_incremental_twist": -11.2762107849121
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": -11.2762107849121,
+						"predicted_incremental_twist_before": -11.2762107849121,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0462278127670288
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0
+						}
+					},
+					"force": 173.396072387695,
+					"moment": "(-23.81999, -2.554212, -10.85522)",
+					"position": "(-0.027642, 2.847522, 0.406837)",
+					"tilt": 0.141059452542226,
+					"time": 0.1,
+					"twist": 0.197395950555801
+				},
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0485424101352692
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.950776517391205,
+								"anchor_id": -9223371809305393646,
+								"force_sensitivity": 4875.10492508862,
+								"incremental_twist": -12.2617464065552,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 226827961873,
+								"unscaled_incremental_twist": -12.2617464065552
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": -12.2617464065552,
+						"predicted_incremental_twist_before": -12.2617464065552,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0485424101352692
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0
+						}
+					},
+					"force": 184.321563720703,
+					"moment": "(-25.95514, 4.97391, -7.137635)",
+					"position": "(-0.080413, 2.840622, 0.36352)",
+					"tilt": 0.188039307335765,
+					"time": 0.2,
+					"twist": 0.26645365357399
+				},
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0461229383945465
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.959719121456146,
+								"anchor_id": -9223371809305393646,
+								"force_sensitivity": 4896.26613229185,
+								"incremental_twist": -10.6926546096802,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 226827961873,
+								"unscaled_incremental_twist": -10.6926536560059
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": -10.6926536560059,
+						"predicted_incremental_twist_before": -10.6926536560059,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0461229383945465
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0
+						}
+					},
+					"force": 213.475891113281,
+					"moment": "(-28.27068, 10.05937, -0.785199)",
+					"position": "(-0.145204, 2.842211, 0.330208)",
+					"tilt": 0.281634460923856,
+					"time": 0.3,
+					"twist": 0.405752718448639
+				},
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0440898239612579
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.967058002948761,
+								"anchor_id": -9223371809305393646,
+								"force_sensitivity": 4939.97032341893,
+								"incremental_twist": -7.23480272293091,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 226827961873,
+								"unscaled_incremental_twist": -7.23480272293091
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": -7.23480272293091,
+						"predicted_incremental_twist_before": -7.23480272293091,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0440898239612579
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0
+						}
+					},
+					"force": 216.026397705078,
+					"moment": "(-24.2957, 14.66117, 10.89582)",
+					"position": "(-0.217017, 2.856721, 0.306226)",
+					"tilt": 0.392497248737168,
+					"time": 0.4,
+					"twist": 0.558785200119019
+				},
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0424514412879944
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.972100555896759,
+								"anchor_id": -9223371809305393646,
+								"force_sensitivity": 4952.59705290276,
+								"incremental_twist": -2.60389757156372,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 226827961873,
+								"unscaled_incremental_twist": -2.60389614105225
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": -2.60389614105225,
+						"predicted_incremental_twist_before": -2.60389614105225,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0424514412879944
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0
+						}
+					},
+					"force": 222.821258544922,
+					"moment": "(-20.66756, 17.63802, 26.40993)",
+					"position": "(-0.285986, 2.881011, 0.291036)",
+					"tilt": 0.505435607670879,
+					"time": 0.5,
+					"twist": 0.70198529958725
+				},
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0400111973285675
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.974046945571899,
+								"anchor_id": -9223371809305393646,
+								"force_sensitivity": 4909.50954032217,
+								"incremental_twist": 1.50232172012329,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 226827961873,
+								"unscaled_incremental_twist": 1.50232028961182
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 1.50232028961182,
+						"predicted_incremental_twist_before": 1.50232028961182,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0400111973285675
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0
+						}
+					},
+					"force": 213.583160400391,
+					"moment": "(-16.87908, 18.32791, 36.88939)",
+					"position": "(-0.343417, 2.91326, 0.284471)",
+					"tilt": 0.601574214089207,
+					"time": 0.6,
+					"twist": 0.816729187965393
+				},
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0394555032253265
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.972412765026093,
+								"anchor_id": -9223371809305393646,
+								"force_sensitivity": 4860.10523861203,
+								"incremental_twist": 3.58649301528931,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 226827961873,
+								"unscaled_incremental_twist": 3.58649587631226
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 3.58649587631226,
+						"predicted_incremental_twist_before": 3.58649587631226,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0394555032253265
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0
+						}
+					},
+					"force": 196.776824951172,
+					"moment": "(-14.61821, 17.97084, 37.92529)",
+					"position": "(-0.383762, 2.947942, 0.286603)",
+					"tilt": 0.662851287865703,
+					"time": 0.7,
+					"twist": 0.883915662765503
+				},
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.044527143239975
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.970443367958069,
+								"anchor_id": -9223371809305393646,
+								"force_sensitivity": 4846.82454465896,
+								"incremental_twist": 5.17683982849121,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 226827961873,
+								"unscaled_incremental_twist": 5.17683982849121
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 5.17683982849121,
+						"predicted_incremental_twist_before": 5.17683982849121,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.044527143239975
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0
+						}
+					},
+					"force": 198.046096801758,
+					"moment": "(-13.36536, 18.26436, 36.97129)",
+					"position": "(-0.404631, 2.975531, 0.296614)",
+					"tilt": 0.682779788733403,
+					"time": 0.8,
+					"twist": 0.911293923854828
+				},
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0477336943149567
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.969715356826782,
+								"anchor_id": -9223371809305393646,
+								"force_sensitivity": 4882.49600455887,
+								"incremental_twist": 5.80251216888428,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 226827961873,
+								"unscaled_incremental_twist": 5.80251216888428
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 5.80251216888428,
+						"predicted_incremental_twist_before": 5.80251216888428,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0477336943149567
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0
+						}
+					},
+					"force": 198.340850830078,
+					"moment": "(-10.52095, 17.00706, 31.67447)",
+					"position": "(-0.406327, 2.995261, 0.313925)",
+					"tilt": 0.659515452156919,
+					"time": 0.9,
+					"twist": 0.900611639022827
+				},
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0459416806697845
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.966557741165161,
+								"anchor_id": -9223371809305393646,
+								"force_sensitivity": 4965.20977338093,
+								"incremental_twist": 3.69196677207947,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 226827961873,
+								"unscaled_incremental_twist": 3.69196581840515
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 3.69196581840515,
+						"predicted_incremental_twist_before": 3.69196581840515,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0459416806697845
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0
+						}
+					},
+					"force": 179.664001464844,
+					"moment": "(-7.288259, 12.72208, 18.05097)",
+					"position": "(-0.390047, 3.013215, 0.336487)",
+					"tilt": 0.597761264077262,
+					"time": 1.0,
+					"twist": 0.83663147687912
+				},
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.042652040719986
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.960236430168152,
+								"anchor_id": -9223371809305393646,
+								"force_sensitivity": 5032.76923343066,
+								"incremental_twist": 0.640834450721741,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 226827961873,
+								"unscaled_incremental_twist": 0.640833914279938
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.640833914279938,
+						"predicted_incremental_twist_before": 0.640833914279938,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.042652040719986
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0
+						}
+					},
+					"force": 169.819854736328,
+					"moment": "(-5.436709, 8.038015, 4.979711)",
+					"position": "(-0.356964, 3.031906, 0.35984)",
+					"tilt": 0.518329769070007,
+					"time": 1.1,
+					"twist": 0.733745217323303
+				},
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.039946049451828
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.949184656143188,
+								"anchor_id": -9223371809305393646,
+								"force_sensitivity": 5035.76689779833,
+								"incremental_twist": -1.52135848999023,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 226827961873,
+								"unscaled_incremental_twist": -1.52135848999023
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": -1.52135848999023,
+						"predicted_incremental_twist_before": -1.52135848999023,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.039946049451828
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0
+						}
+					},
+					"force": 169.636611938477,
+					"moment": "(-9.351133, 7.187608, 1.876549)",
+					"position": "(-0.308508, 3.052083, 0.383797)",
+					"tilt": 0.461186153572356,
+					"time": 1.2,
+					"twist": 0.648701369762421
+				},
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0413283109664917
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.929737210273743,
+								"anchor_id": -9223371809305393646,
+								"force_sensitivity": 4998.39506965139,
+								"incremental_twist": -3.5038890838623,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 226827961873,
+								"unscaled_incremental_twist": -3.5038890838623
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": -3.5038890838623,
+						"predicted_incremental_twist_before": -3.5038890838623,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0413283109664917
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0
+						}
+					},
+					"force": 170.398376464844,
+					"moment": "(-16.55591, 8.489886, 6.030421)",
+					"position": "(-0.253046, 3.077585, 0.397318)",
+					"tilt": 0.424756585093458,
+					"time": 1.3,
+					"twist": 0.576760232448578
+				}
+			],
+			"tilt_rms": 0.488949135121693,
+			"twist_rms": 0.671999741005692,
+			"useful_displacement": 0.226300716400146,
+			"variant": 1
+		},
+		{
+			"attached_samples": 168,
+			"input": "(0.7, 1.0)",
+			"kind": "asymmetric",
+			"max_target_acceleration": 0.900000000000001,
+			"max_target_rate": 0.166258241746129,
+			"neutral_drift": 0.0,
+			"peak_force": 360.0,
+			"peak_moment": 86.0722427368164,
+			"retained": true,
+			"samples": [
+				{
+					"allocation": {},
+					"force": 195.795143127441,
+					"moment": "(-33.52992, 2.135913, -7.628027)",
+					"position": "(-0.007472, 2.872419, 0.443775)",
+					"tilt": 0.123510834032837,
+					"time": 0.0,
+					"twist": 0.0804496109485626
+				},
+				{
+					"allocation": {},
+					"force": 227.605934143066,
+					"moment": "(-46.6365, 4.115016, 1.444305)",
+					"position": "(-0.027592, 2.854005, 0.408318)",
+					"tilt": 0.0877150554856359,
+					"time": 0.1,
+					"twist": 0.0785515457391739
+				},
+				{
+					"allocation": {},
+					"force": 322.622482299805,
+					"moment": "(-71.92612, 10.45902, 13.18477)",
+					"position": "(-0.050269, 2.844231, 0.375646)",
+					"tilt": 0.0979562911916637,
+					"time": 0.2,
+					"twist": 0.064469501376152
+				},
+				{
+					"allocation": {},
+					"force": 360.0,
+					"moment": "(-81.20318, 16.50201, 21.92847)",
+					"position": "(-0.066328, 2.843699, 0.364562)",
+					"tilt": 0.127087452201108,
+					"time": 0.3,
+					"twist": 0.0627547428011894
+				},
+				{
+					"allocation": {},
+					"force": 304.21076965332,
+					"moment": "(-66.78493, 14.49997, 20.51112)",
+					"position": "(-0.069895, 2.859041, 0.384508)",
+					"tilt": 0.137038977137953,
+					"time": 0.4,
+					"twist": 0.0541617572307587
+				},
+				{
+					"allocation": {},
+					"force": 282.475738525391,
+					"moment": "(-58.71573, 12.23068, 15.82305)",
+					"position": "(-0.062644, 2.878259, 0.416363)",
+					"tilt": 0.146584240304138,
+					"time": 0.5,
+					"twist": 0.0455491319298744
+				},
+				{
+					"allocation": {},
+					"force": 290.131958007813,
+					"moment": "(-54.47276, 10.43799, 10.52019)",
+					"position": "(-0.050452, 2.893519, 0.45592)",
+					"tilt": 0.174316335888578,
+					"time": 0.6,
+					"twist": 0.051262516528368
+				},
+				{
+					"allocation": {},
+					"force": 283.065315246582,
+					"moment": "(-47.99269, 8.976298, 6.962207)",
+					"position": "(-0.039235, 2.913155, 0.498495)",
+					"tilt": 0.223403852481658,
+					"time": 0.7,
+					"twist": 0.0595696456730366
+				},
+				{
+					"allocation": {},
+					"force": 272.169624328613,
+					"moment": "(-42.43044, 8.172621, 6.444983)",
+					"position": "(-0.031011, 2.935861, 0.540247)",
+					"tilt": 0.282907282785303,
+					"time": 0.8,
+					"twist": 0.0532679967582226
+				},
+				{
+					"allocation": {},
+					"force": 267.888900756836,
+					"moment": "(-39.42492, 8.771235, 7.706441)",
+					"position": "(-0.02638, 2.959217, 0.577646)",
+					"tilt": 0.341109016947628,
+					"time": 0.9,
+					"twist": 0.036198515444994
+				},
+				{
+					"allocation": {},
+					"force": 272.599044799805,
+					"moment": "(-38.5974, 10.41896, 9.576263)",
+					"position": "(-0.025032, 2.980816, 0.608524)",
+					"tilt": 0.391597284933978,
+					"time": 1.0,
+					"twist": 0.0168364401906729
+				},
+				{
+					"allocation": {},
+					"force": 284.166465759277,
+					"moment": "(-39.05515, 12.54298, 11.47677)",
+					"position": "(-0.026134, 2.998909, 0.632137)",
+					"tilt": 0.431697009178187,
+					"time": 1.1,
+					"twist": 0.000125048711197451
+				},
+				{
+					"allocation": {},
+					"force": 297.392585754395,
+					"moment": "(-39.82808, 14.5929, 13.05535)",
+					"position": "(-0.028917, 3.012627, 0.648769)",
+					"tilt": 0.460971669636876,
+					"time": 1.2,
+					"twist": -0.0116435457020998
+				},
+				{
+					"allocation": {},
+					"force": 305.810569763184,
+					"moment": "(-40.08218, 16.12622, 13.99338)",
+					"position": "(-0.033071, 3.021785, 0.659132)",
+					"tilt": 0.480066006660525,
+					"time": 1.3,
+					"twist": -0.0170515347272158
+				}
+			],
+			"tilt_rms": 0.298803784753287,
+			"twist_rms": 0.0493719177265006,
+			"useful_displacement": 0.108476892113686,
+			"variant": 0
+		},
+		{
+			"attached_samples": 168,
+			"input": "(0.7, 1.0)",
+			"kind": "asymmetric",
+			"max_target_acceleration": 0.900000000000001,
+			"max_target_rate": 0.165000000000002,
+			"neutral_drift": 0.0,
+			"peak_force": 359.518936157227,
+			"peak_moment": 85.1925048828125,
+			"retained": true,
+			"samples": [
+				{
+					"allocation": {
+						"advisory_classification": "AVAILABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": 0.0,
+							"1": 0.0
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.650008499622345,
+								"anchor_id": -9223371746256615945,
+								"force_sensitivity": 2671.06414850188,
+								"incremental_twist": 0.0,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": 0.0
+							},
+							"1": {
+								"alignment": 0.771561741828918,
+								"anchor_id": -9223371746206284284,
+								"force_sensitivity": 2572.34466244868,
+								"incremental_twist": 0.0,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": 0.0
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.0,
+						"predicted_incremental_twist_before": 0.0,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "HOLD",
+						"source_changes": {
+							"0": 0.0,
+							"1": 0.0
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 1.0
+						}
+					},
+					"force": 195.795143127441,
+					"moment": "(-33.52992, 2.135913, -7.628027)",
+					"position": "(-0.007472, 2.872419, 0.443775)",
+					"tilt": 0.123510834032837,
+					"time": 0.0,
+					"twist": 0.0804496109485626
+				},
+				{
+					"allocation": {
+						"advisory_classification": "PARTIALLY_ACTUATABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.031976580619812,
+							"1": -0.025164204130954
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.659173965454102,
+								"anchor_id": -9223371746256615945,
+								"force_sensitivity": 2669.7472307993,
+								"incremental_twist": -4.7854471206665,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": -4.7854471206665
+							},
+							"1": {
+								"alignment": 0.792634069919586,
+								"anchor_id": -9223371746206284284,
+								"force_sensitivity": 2558.73519157526,
+								"incremental_twist": 10.5246543884277,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": 10.5246543884277
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 1.68998992686977,
+						"predicted_incremental_twist_before": 5.73920726776123,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.031976580619812,
+							"1": -0.0408998727798462
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 0.615263628481356
+						}
+					},
+					"force": 227.605934143066,
+					"moment": "(-46.6365, 4.115016, 1.444305)",
+					"position": "(-0.027592, 2.854005, 0.408318)",
+					"tilt": 0.0877150554856359,
+					"time": 0.1,
+					"twist": 0.0785515457391739
+				},
+				{
+					"allocation": {
+						"advisory_classification": "PARTIALLY_ACTUATABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0316763520240784,
+							"1": -0.0218608089354398
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.663034975528717,
+								"anchor_id": -9223371746256615945,
+								"force_sensitivity": 2657.23044735699,
+								"incremental_twist": -5.40302085876465,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": -5.40302085876465
+							},
+							"1": {
+								"alignment": 0.810700654983521,
+								"anchor_id": -9223371746206284284,
+								"force_sensitivity": 2550.6637911988,
+								"incremental_twist": 10.7482767105103,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": 10.7482767105103
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.230974734771593,
+						"predicted_incremental_twist_before": 5.34525585174561,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0316763520240784,
+							"1": -0.0417050421237946
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 0.524176642012483
+						}
+					},
+					"force": 319.119888305664,
+					"moment": "(-70.97578, 10.06568, 12.87671)",
+					"position": "(-0.050284, 2.844228, 0.375642)",
+					"tilt": 0.0979453203668192,
+					"time": 0.2,
+					"twist": 0.064575232565403
+				},
+				{
+					"allocation": {
+						"advisory_classification": "SATURATED",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0303904414176941,
+							"1": -0.0212637884363911
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.663512825965881,
+								"anchor_id": -9223371746256615945,
+								"force_sensitivity": 2653.65804106051,
+								"incremental_twist": -5.37434196472168,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": -5.37434196472168
+							},
+							"1": {
+								"alignment": 0.816650629043579,
+								"anchor_id": -9223371746206284284,
+								"force_sensitivity": 2544.45295339641,
+								"incremental_twist": 10.6935777664185,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": 10.6935777664185
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.120926974907913,
+						"predicted_incremental_twist_before": 5.31923580169678,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0303904414176941,
+							"1": -0.0413784980773926
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 0.513884974670184
+						}
+					},
+					"force": 354.164855957031,
+					"moment": "(-79.29318, 15.79725, 20.58934)",
+					"position": "(-0.067433, 2.843384, 0.364247)",
+					"tilt": 0.126991481112605,
+					"time": 0.3,
+					"twist": 0.0683016106486321
+				},
+				{
+					"allocation": {
+						"advisory_classification": "PARTIALLY_ACTUATABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0268919467926025,
+							"1": -0.0185778250148391
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.659844875335693,
+								"anchor_id": -9223371746256615945,
+								"force_sensitivity": 2663.93703294572,
+								"incremental_twist": -4.5075216293335,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": -4.5075216293335
+							},
+							"1": {
+								"alignment": 0.810755908489227,
+								"anchor_id": -9223371746206284284,
+								"force_sensitivity": 2548.17100978102,
+								"incremental_twist": 9.82602691650391,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": 9.82602691650391
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.231596491174732,
+						"predicted_incremental_twist_before": 5.31850528717041,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0268919467926025,
+							"1": -0.038519024848938
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 0.482302578730815
+						}
+					},
+					"force": 292.482223510742,
+					"moment": "(-62.6529, 13.34324, 18.06443)",
+					"position": "(-0.07477, 2.857061, 0.384023)",
+					"tilt": 0.139867376436214,
+					"time": 0.4,
+					"twist": 0.0715322643518448
+				},
+				{
+					"allocation": {
+						"advisory_classification": "PARTIALLY_ACTUATABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.029987633228302,
+							"1": -0.018391004354162
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.655649960041046,
+								"anchor_id": -9223371746256615945,
+								"force_sensitivity": 2679.51803761655,
+								"incremental_twist": -4.53188467025757,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": -4.53188419342041
+							},
+							"1": {
+								"alignment": 0.79739910364151,
+								"anchor_id": -9223371746206284284,
+								"force_sensitivity": 2551.80531714761,
+								"incremental_twist": 10.0411109924316,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": 10.041111946106
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.117868377223227,
+						"predicted_incremental_twist_before": 5.50922775268555,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.029987633228302,
+							"1": -0.0397152602672577
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 0.463071480091093
+						}
+					},
+					"force": 274.16438293457,
+					"moment": "(-54.481, 12.10247, 13.59552)",
+					"position": "(-0.0753, 2.874376, 0.414697)",
+					"tilt": 0.154058136624066,
+					"time": 0.5,
+					"twist": 0.081691786646843
+				},
+				{
+					"allocation": {
+						"advisory_classification": "PARTIALLY_ACTUATABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0284596085548401,
+							"1": -0.0161000531338786
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.65312135219574,
+								"anchor_id": -9223371746256615945,
+								"force_sensitivity": 2698.22416351726,
+								"incremental_twist": -3.62954473495483,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": -3.62954425811768
+							},
+							"1": {
+								"alignment": 0.780777752399445,
+								"anchor_id": -9223371746206284284,
+								"force_sensitivity": 2558.42027325498,
+								"incremental_twist": 9.35788345336914,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": 9.35788345336914
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.373807015139366,
+						"predicted_incremental_twist_before": 5.72833919525146,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0284596085548401,
+							"1": -0.0376340746879578
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 0.427805207577757
+						}
+					},
+					"force": 264.300758361816,
+					"moment": "(-46.63278, 10.40963, 9.324475)",
+					"position": "(-0.073704, 2.889615, 0.451806)",
+					"tilt": 0.184434288661039,
+					"time": 0.6,
+					"twist": 0.0978086739778519
+				},
+				{
+					"allocation": {
+						"advisory_classification": "PARTIALLY_ACTUATABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0263065099716187,
+							"1": -0.0131008689095252
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.649806320667267,
+								"anchor_id": -9223371746256615945,
+								"force_sensitivity": 2713.67665490474,
+								"incremental_twist": -2.7181224822998,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": -2.7181224822998
+							},
+							"1": {
+								"alignment": 0.762380361557007,
+								"anchor_id": -9223371746206284284,
+								"force_sensitivity": 2565.22391967075,
+								"incremental_twist": 8.8241605758667,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": 8.82415962219238
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.481952650399821,
+						"predicted_incremental_twist_before": 6.10603713989258,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0263065099716187,
+							"1": -0.0361254513263702
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 0.362649279898742
+						}
+					},
+					"force": 242.529266357422,
+					"moment": "(-37.11946, 8.828938, 6.527764)",
+					"position": "(-0.074293, 2.907912, 0.489954)",
+					"tilt": 0.229712338726475,
+					"time": 0.7,
+					"twist": 0.112664267420769
+				},
+				{
+					"allocation": {
+						"advisory_classification": "PARTIALLY_ACTUATABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0250837206840515,
+							"1": -0.0105174265150134
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.646131932735443,
+								"anchor_id": -9223371746256615945,
+								"force_sensitivity": 2724.50262794077,
+								"incremental_twist": -2.05454421043396,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": -2.05454397201538
+							},
+							"1": {
+								"alignment": 0.745739281177521,
+								"anchor_id": -9223371746206284284,
+								"force_sensitivity": 2572.62002870025,
+								"incremental_twist": 8.59291362762451,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": 8.59291362762451
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.459892300399327,
+						"predicted_incremental_twist_before": 6.53836965560913,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0250837206840515,
+							"1": -0.0359425842761993
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 0.292617426565454
+						}
+					},
+					"force": 227.995918273926,
+					"moment": "(-30.8974, 8.751783, 6.04218)",
+					"position": "(-0.079997, 2.927328, 0.524468)",
+					"tilt": 0.2800419849477,
+					"time": 0.8,
+					"twist": 0.122751876711845
+				},
+				{
+					"allocation": {
+						"advisory_classification": "PARTIALLY_ACTUATABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0248076915740967,
+							"1": -0.00929935977993451
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.64169305562973,
+								"anchor_id": -9223371746256615945,
+								"force_sensitivity": 2730.85260782786,
+								"incremental_twist": -1.64787316322327,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": -1.64787364006042
+							},
+							"1": {
+								"alignment": 0.734006106853485,
+								"anchor_id": -9223371746206284284,
+								"force_sensitivity": 2581.62431981325,
+								"incremental_twist": 8.23235416412354,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": 8.23235416412354
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.510732745012203,
+						"predicted_incremental_twist_before": 6.58448052406311,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0248076915740967,
+							"1": -0.0354653000831604
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 0.26221009714084
+						}
+					},
+					"force": 224.640377044678,
+					"moment": "(-28.4492, 9.831686, 7.346599)",
+					"position": "(-0.090986, 2.945468, 0.55213)",
+					"tilt": 0.327178823134082,
+					"time": 0.9,
+					"twist": 0.12330611795187
+				},
+				{
+					"allocation": {
+						"advisory_classification": "PARTIALLY_ACTUATABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0255535840988159,
+							"1": -0.0090507547010298
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.637539982795715,
+								"anchor_id": -9223371746256615945,
+								"force_sensitivity": 2734.04813925969,
+								"incremental_twist": -1.46077620983124,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": -1.4607766866684
+							},
+							"1": {
+								"alignment": 0.728415429592133,
+								"anchor_id": -9223371746206284284,
+								"force_sensitivity": 2590.99365163232,
+								"incremental_twist": 8.00310611724854,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": 8.00310611724854
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.56799671983059,
+						"predicted_incremental_twist_before": 6.54232943058014,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0255535840988159,
+							"1": -0.0357034206390381
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 0.253498251400979
+						}
+					},
+					"force": 229.765731811523,
+					"moment": "(-28.08131, 11.71567, 9.250992)",
+					"position": "(-0.106245, 2.960576, 0.571596)",
+					"tilt": 0.366843246565228,
+					"time": 1.0,
+					"twist": 0.116736114025116
+				},
+				{
+					"allocation": {
+						"advisory_classification": "PARTIALLY_ACTUATABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0264057517051697,
+							"1": -0.00908817877719724
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.635514795780182,
+								"anchor_id": -9223371746256615945,
+								"force_sensitivity": 2735.23597201673,
+								"incremental_twist": -1.38723146915436,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": -1.38723194599152
+							},
+							"1": {
+								"alignment": 0.728550553321838,
+								"anchor_id": -9223371746206284284,
+								"force_sensitivity": 2598.59089216306,
+								"incremental_twist": 7.85066223144531,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": 7.85066270828247
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.583302181873931,
+						"predicted_incremental_twist_before": 6.46343076229095,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0264057517051697,
+							"1": -0.0362075567245483
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 0.251002265807004
+						}
+					},
+					"force": 243.751167297363,
+					"moment": "(-29.72687, 14.78674, 11.93795)",
+					"position": "(-0.124791, 2.971823, 0.58281)",
+					"tilt": 0.397752026344291,
+					"time": 1.1,
+					"twist": 0.10917217284441
+				},
+				{
+					"allocation": {
+						"advisory_classification": "PARTIALLY_ACTUATABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0273431539535522,
+							"1": -0.00923598728161284
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.635986089706421,
+								"anchor_id": -9223371746256615945,
+								"force_sensitivity": 2735.00266576891,
+								"incremental_twist": -1.40042555332184,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": -1.40042495727539
+							},
+							"1": {
+								"alignment": 0.733035981655121,
+								"anchor_id": -9223371746206284284,
+								"force_sensitivity": 2603.68017637209,
+								"incremental_twist": 7.78534126281738,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": 7.78534126281738
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.5481459500137,
+						"predicted_incremental_twist_before": 6.38491630554199,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0273431539535522,
+							"1": -0.0369015634059906
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 0.250287153961435
+						}
+					},
+					"force": 264.067832946777,
+					"moment": "(-32.62992, 18.70501, 15.23176)",
+					"position": "(-0.144876, 2.979242, 0.586863)",
+					"tilt": 0.420516779621803,
+					"time": 1.2,
+					"twist": 0.103430666029453
+				},
+				{
+					"allocation": {
+						"advisory_classification": "PARTIALLY_ACTUATABLE",
+						"authority": "bounded_existing_arm_targets_only",
+						"changes": {
+							"0": -0.0283947885036469,
+							"1": -0.00942536570936847
+						},
+						"collision_assessed": false,
+						"contacts": {
+							"0": {
+								"alignment": 0.638558328151703,
+								"anchor_id": -9223371746256615945,
+								"force_sensitivity": 2733.90720052911,
+								"incremental_twist": -1.46985292434692,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": -1.46985292434692
+							},
+							"1": {
+								"alignment": 0.73978865146637,
+								"anchor_id": -9223371746206284284,
+								"force_sensitivity": 2606.22948506111,
+								"incremental_twist": 7.8030858039856,
+								"load": 0.0,
+								"material_limit": 10000.0,
+								"remaining_load_fraction": 1.0,
+								"support_id": 289876739592,
+								"unscaled_incremental_twist": 7.8030858039856
+							}
+						},
+						"current_trunk_moment": 0.0,
+						"label": "A1_GEOMETRY_LOAD",
+						"predicted_incremental_twist_after": 0.481560494223247,
+						"predicted_incremental_twist_before": 6.33323287963867,
+						"prediction_scope": "local_axial_sensitivity; not a collision or capture guarantee",
+						"reason": "GEOMETRY_LOAD_TWIST_HEURISTIC",
+						"source_changes": {
+							"0": -0.0283947885036469,
+							"1": -0.0376890599727631
+						},
+						"variant": 1,
+						"weights": {
+							"0": 1.0,
+							"1": 0.250082270987389
+						}
+					},
+					"force": 287.19913482666,
+					"moment": "(-36.00313, 22.95551, 18.74549)",
+					"position": "(-0.164297, 2.98349, 0.585705)",
+					"tilt": 0.43641051202834,
+					"time": 1.3,
+					"twist": 0.100984282791615
+				}
+			],
+			"tilt_rms": 0.281233342570592,
+			"twist_rms": 0.0979066097935827,
+			"useful_displacement": -0.00619661062955856,
+			"variant": 1
+		}
+	]
+}

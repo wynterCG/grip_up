@@ -1,0 +1,124 @@
+{
+  "pass": true,
+  "physics_worlds": 0,
+  "python": {
+    "architecture": "AMD64",
+    "base_executable": "C:\\Users\\Wynter\\AppData\\Roaming\\uv\\python\\cpython-3.13.13-windows-x86_64-none\\python.exe",
+    "base_executable_sha256": "0b5614e289f43f46fbe478ea00a641c88e3aaa5055dc07d73afeb513a0f82b9d",
+    "base_prefix": "C:\\Users\\Wynter\\AppData\\Roaming\\uv\\python\\cpython-3.13-windows-x86_64-none",
+    "binary64_bytes": 8,
+    "byteorder": "little",
+    "dependency_lock_sha256": "da2991951fb7a56ad0e108b51e6a09e6aaf28366e49947949585b42ac0f32822",
+    "executable": "C:\\Users\\Wynter\\grip_up\\tools\\auto_tuning\\.venv\\Scripts\\python.exe",
+    "executable_sha256": "3ca806b3c7dc6f967da11546bff3c5f2681eb4e782e8ede6e6c3a9a571efa686",
+    "float_info": "sys.float_info(max=1.7976931348623157e+308, max_exp=1024, max_10_exp=308, min=2.2250738585072014e-308, min_exp=-1021, min_10_exp=-307, dig=15, mant_dig=53, epsilon=2.220446049250313e-16, radix=2, rounds=1)",
+    "locale": [
+      "Portuguese_Portugal",
+      "1252"
+    ],
+    "packages": {
+      "Mako": "1.4.3",
+      "MarkupSafe": "3.0.4",
+      "PyYAML": "6.0.3",
+      "SQLAlchemy": "2.1.5",
+      "alembic": "1.20.0",
+      "colorama": "0.4.6",
+      "colorlog": "6.12.0",
+      "contourpy": "1.4.0",
+      "cycler": "0.12.1",
+      "fonttools": "4.67.0",
+      "kiwisolver": "1.5.1",
+      "matplotlib": "3.10.8",
+      "numpy": "2.5.4",
+      "optuna": "5.0.0",
+      "packaging": "26.3",
+      "pillow": "13.0.0",
+      "pyparsing": "3.3.3",
+      "python-dateutil": "2.9.0.post0",
+      "six": "1.17.0",
+      "tqdm": "4.70.1",
+      "typing_extensions": "4.16.0"
+    },
+    "platform": "Windows-11-10.0.26200-SP0",
+    "pointer_bits": 64,
+    "prefix": "C:\\Users\\Wynter\\grip_up\\tools\\auto_tuning\\.venv",
+    "reducer": {
+      "expression": "path=+0; ascending POST: path=path+sqrt(((dx*dx)+(dy*dy))+(dz*dz)); no FMA",
+      "id": "ordered_binary64_sequential_v1",
+      "schema": "metric_binary64_audit_v1",
+      "source_sha256": "8264957f3acc818256055f61f6c94aa28d4fc85490713e430982948e730f7342"
+    },
+    "sha256": "93880dfde2cb42fd3ab0fcd6b96b964d3dcc237b37d25f9e01e2f86976cb82f5",
+    "sqlite_version": "3.53.1",
+    "sys_version": "3.13.13 (main, Jun  2 2026, 22:38:31) [MSC v.1944 64 bit (AMD64)]",
+    "version": "3.13.13"
+  },
+  "runs": [
+    {
+      "command": [
+        "C:\\Users\\Wynter\\grip_up\\tools\\auto_tuning\\.venv\\Scripts\\python.exe",
+        "tools/auto_tuning/tests/test_metric_binary64.py"
+      ],
+      "label": "metric_py313",
+      "returncode": 0,
+      "stderr_sha256": "2af0379d29175ba54835b84e47449e3225f69af03b0506a847f01fa2ba4c9b1f",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "python",
+        "tools/auto_tuning/tests/test_metric_binary64.py"
+      ],
+      "label": "metric_py311",
+      "returncode": 0,
+      "stderr_sha256": "d506a9b4d7e077f9f18885a226d35d9304f947b9d6688050318ff1db23abf375",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "C:\\Users\\Wynter\\grip_up\\tools\\auto_tuning\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/auto_tuning/benchmark_qualification/tests",
+        "-q"
+      ],
+      "label": "benchmark_contracts",
+      "returncode": 0,
+      "stderr_sha256": "21ed00b2887f9a9b424b5578e9947213c5fc314a7bde8d9632ce75a0b18ccca2",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "C:\\Users\\Wynter\\grip_up\\tools\\auto_tuning\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/auto_tuning/tests",
+        "-q"
+      ],
+      "label": "tooling_contracts",
+      "returncode": 0,
+      "stderr_sha256": "6f62eab43e9e6d0d0b3833e52239e42dd5a6a5d6d3b1865fe805da124b2059fc",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "C:\\Users\\Wynter\\grip_up\\tools\\auto_tuning\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/auto_tuning/minimal_v135",
+        "-q"
+      ],
+      "label": "minimal_contracts",
+      "returncode": 0,
+      "stderr_sha256": "e687f2db22d811156df05a901534b2158f9e7bdbe1137bf4e214b8f8a379f72b",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "schema": "metric_offline_tests_v1"
+}

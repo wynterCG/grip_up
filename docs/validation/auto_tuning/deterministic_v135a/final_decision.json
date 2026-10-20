@@ -1,0 +1,83 @@
+{
+  "baseline": {
+    "attempted_processes": 2,
+    "failed_run_id": "vertical_pull_clean_v134_r2_120_rendered_scripted_r2_deb07f25",
+    "maximum_wall_gap_usec": 257360,
+    "not_run": 22,
+    "planned_processes": 24,
+    "primary_scenario_reason": "RUNTIME_SUSPENDED:TICK_GAP",
+    "run_invalid": 1,
+    "run_valid": 1,
+    "secondary_engine_reason": "PICK_CONTRACT_FAILURE:INCOMPLETE_PICK_STREAM",
+    "status": "NO_GO_MINIMAL_BENCHMARK",
+    "strict_HR_pairs": 0,
+    "strict_within_mode_pairs": 0,
+    "unchanged_policy_limit_usec": 250000
+  },
+  "budget": {
+    "auxiliary_physical_processes": 4,
+    "development_physical_processes": 0,
+    "finalist_reserved_processes": 0,
+    "metadata_version_queries": "zero-world utility, excluded from physical process budget",
+    "optimizer_reserved_processes": 0,
+    "qualification_physical_processes": 8,
+    "regression_physical_processes": 34,
+    "total_physical_processes": 46,
+    "zero_world_admission_processes": 7,
+    "zero_world_pack_inventory": 1
+  },
+  "campaign_id": "minimal_v135a_r1",
+  "decision": "BASELINE_NO_GO",
+  "default_promotion": false,
+  "finalists": {
+    "count": 0,
+    "holdout_accessed": false,
+    "missing_coverage": [
+      "one_hand_60",
+      "one_hand_certified_wrapper",
+      "right_independent_start"
+    ],
+    "processes": 0
+  },
+  "fresh_quality_contract": {
+    "reason": "MANDATORY_BASELINE_RENDERED_RUN_INVALID",
+    "status": "NOT_RUN_EARLY_STOP"
+  },
+  "historical_R4_unchanged": true,
+  "human": {
+    "result": "NOT_RUN_NO_TECHNICAL_FINALIST",
+    "sessions": 0
+  },
+  "metric_contract": "CERTIFIED_METRIC_CONTRACT",
+  "metric_reducer_sha256": "8264957f3acc818256055f61f6c94aa28d4fc85490713e430982948e730f7342",
+  "negative_canary": {
+    "reason": "MANDATORY_BASELINE_RENDERED_RUN_INVALID",
+    "status": "NOT_RUN_EARLY_STOP"
+  },
+  "no_retry_or_v135b_authorized": true,
+  "optimizer": {
+    "candidate_processes": 0,
+    "optimizer_sqlite_created": false,
+    "pareto": "NOT_BUILT_NO_QUALIFIED_REFERENCE",
+    "proposals": 0,
+    "reference_A0_not_promoted_as_qualified": true,
+    "status": "NOT_STARTED_BASELINE_NO_GO"
+  },
+  "preflight": {
+    "A0_sqlite_dry_run": "A0_END_TO_END_PASS",
+    "physical_processes": 6,
+    "status": "PREFLIGHT_PASS"
+  },
+  "python_environment_sha256": "93880dfde2cb42fd3ab0fcd6b96b964d3dcc237b37d25f9e01e2f86976cb82f5",
+  "safety": {
+    "LIVE_MCP_pro": true,
+    "all_passed": true,
+    "auxiliary_physical_processes": 4,
+    "defaults_unchanged": true,
+    "regression_checks": 1146,
+    "regression_processes": 34
+  },
+  "schema": "deterministic_v135a_decision_v1",
+  "source_commit": "fccd68b47696f78f8eee6b3cb3291dc8375f2259",
+  "source_snapshot_sha256": "f81b0b58f966b99ff79415edf856d6c2439c5826ccb9127cdf69246c9f8dd270"
+}
