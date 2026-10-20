@@ -1,0 +1,728 @@
+{
+  "canonical_backing": [
+    1024,
+    576
+  ],
+  "canonical_compare": "Match same physicalHz/backing, same engine/source/policy/tape; full required channels including feet/nativeground/restlengths/reactions/planner/bodycontacts. Runtime IDs mapped to real stable support instance chains, not compared across processes.",
+  "capture_accounting": "4 primary domains \u00d72Hz \u00d7(1 adaptive capture +6 FIXED replays)=56; foot/stop \u00d72Hz \u00d7(1 capture +2 fixed replays +1 probeOFF control)=16. Adaptive captures never count as fixed-repeat evidence.",
+  "domain_precondition_failure": "valid simulation with no legal onset -> PRECONDITION_NOT_MET/DIAGNOSTIC_ONLY; skip its fixed replay cells; not a safety pass or zero progress.",
+  "foot_stop_policy": "n1 fixed pair per Hz is DIAGNOSTIC_ONLY even if task succeeds; explicit ranking exclusion with consequences. No automatic conversion of unused budget to more coverage.",
+  "frozen_before_qualification_utc": "2026-10-20T14:49:44.658402+00:00",
+  "generalization_seeds_hardware_rays": "GENERALIZATION_NOT_TESTED; seed101 repeats only",
+  "hard_stops": [
+    "invalid_tape_or_source",
+    "canonical_environment_clock_or_owner",
+    "unexpected_requested_accepted_applied_input_mismatch",
+    "missing_required_trace",
+    "strict_first_divergence_any_required_channel",
+    "hard_physical_invariant",
+    "invalid_metric_or_runtime_recompute"
+  ],
+  "hardware_interference": "Actual delivered external events recorded if present. Old physical mouse/focus evidence preserved separately; pure ownership controls are not human/physical OS tests.",
+  "human_playtests": 0,
+  "id": "benchmark_v133_r1",
+  "logical_viewport": [
+    1920,
+    1080
+  ],
+  "max_negative_attempts": 8,
+  "max_new_domain_attempts_including_captures": 72,
+  "max_post_hard_stop_diagnostics": 4,
+  "max_qualification_attempts": 96,
+  "max_reference_attempts": 12,
+  "measurement_task_failure": "task_succeeded false/latency censored/interruption keeps domain diagnostic; no physical/scoring rescue.",
+  "new_domain_cells": [
+    {
+      "hz": 120,
+      "lane": "ADAPTIVE_CAPTURE_SOURCE",
+      "mode": "headless",
+      "purpose": "bounded_preparation_capture_not_fixed_repeat",
+      "repeat": 0,
+      "scenario": "vertical_pull_clean"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "first_matched_pair_if_actual_onset_valid",
+      "repeat": 1,
+      "scenario": "vertical_pull_clean"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "first_matched_pair_if_actual_onset_valid",
+      "repeat": 1,
+      "scenario": "vertical_pull_clean"
+    },
+    {
+      "hz": 120,
+      "lane": "ADAPTIVE_CAPTURE_SOURCE",
+      "mode": "headless",
+      "purpose": "bounded_preparation_capture_not_fixed_repeat",
+      "repeat": 0,
+      "scenario": "asymmetric_pull_clean"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "first_matched_pair_if_actual_onset_valid",
+      "repeat": 1,
+      "scenario": "asymmetric_pull_clean"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "first_matched_pair_if_actual_onset_valid",
+      "repeat": 1,
+      "scenario": "asymmetric_pull_clean"
+    },
+    {
+      "hz": 120,
+      "lane": "ADAPTIVE_CAPTURE_SOURCE",
+      "mode": "headless",
+      "purpose": "bounded_preparation_capture_not_fixed_repeat",
+      "repeat": 0,
+      "scenario": "lateral_clean_left"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "first_matched_pair_if_actual_onset_valid",
+      "repeat": 1,
+      "scenario": "lateral_clean_left"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "first_matched_pair_if_actual_onset_valid",
+      "repeat": 1,
+      "scenario": "lateral_clean_left"
+    },
+    {
+      "hz": 120,
+      "lane": "ADAPTIVE_CAPTURE_SOURCE",
+      "mode": "headless",
+      "purpose": "bounded_preparation_capture_not_fixed_repeat",
+      "repeat": 0,
+      "scenario": "lateral_clean_right"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "first_matched_pair_if_actual_onset_valid",
+      "repeat": 1,
+      "scenario": "lateral_clean_right"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "first_matched_pair_if_actual_onset_valid",
+      "repeat": 1,
+      "scenario": "lateral_clean_right"
+    },
+    {
+      "hz": 120,
+      "lane": "ADAPTIVE_CAPTURE_SOURCE",
+      "mode": "headless",
+      "purpose": "bounded_preparation_capture_not_fixed_repeat",
+      "repeat": 0,
+      "scenario": "foot_supported_step"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "first_matched_pair_if_actual_onset_valid",
+      "repeat": 1,
+      "scenario": "foot_supported_step"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "first_matched_pair_if_actual_onset_valid",
+      "repeat": 1,
+      "scenario": "foot_supported_step"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "new_projection_probe_OFF_control_if_onset_valid",
+      "repeat": 9,
+      "scenario": "foot_supported_step"
+    },
+    {
+      "hz": 120,
+      "lane": "ADAPTIVE_CAPTURE_SOURCE",
+      "mode": "headless",
+      "purpose": "bounded_preparation_capture_not_fixed_repeat",
+      "repeat": 0,
+      "scenario": "two_hand_release_stop"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "first_matched_pair_if_actual_onset_valid",
+      "repeat": 1,
+      "scenario": "two_hand_release_stop"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "first_matched_pair_if_actual_onset_valid",
+      "repeat": 1,
+      "scenario": "two_hand_release_stop"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "new_projection_probe_OFF_control_if_onset_valid",
+      "repeat": 9,
+      "scenario": "two_hand_release_stop"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 2,
+      "scenario": "vertical_pull_clean"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 2,
+      "scenario": "vertical_pull_clean"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 3,
+      "scenario": "vertical_pull_clean"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 3,
+      "scenario": "vertical_pull_clean"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 2,
+      "scenario": "asymmetric_pull_clean"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 2,
+      "scenario": "asymmetric_pull_clean"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 3,
+      "scenario": "asymmetric_pull_clean"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 3,
+      "scenario": "asymmetric_pull_clean"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 2,
+      "scenario": "lateral_clean_left"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 2,
+      "scenario": "lateral_clean_left"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 3,
+      "scenario": "lateral_clean_left"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 3,
+      "scenario": "lateral_clean_left"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 2,
+      "scenario": "lateral_clean_right"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 2,
+      "scenario": "lateral_clean_right"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 3,
+      "scenario": "lateral_clean_right"
+    },
+    {
+      "hz": 120,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 3,
+      "scenario": "lateral_clean_right"
+    },
+    {
+      "hz": 60,
+      "lane": "ADAPTIVE_CAPTURE_SOURCE",
+      "mode": "headless",
+      "purpose": "bounded_preparation_capture_not_fixed_repeat",
+      "repeat": 0,
+      "scenario": "vertical_pull_clean"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "first_matched_pair_if_actual_onset_valid",
+      "repeat": 1,
+      "scenario": "vertical_pull_clean"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "first_matched_pair_if_actual_onset_valid",
+      "repeat": 1,
+      "scenario": "vertical_pull_clean"
+    },
+    {
+      "hz": 60,
+      "lane": "ADAPTIVE_CAPTURE_SOURCE",
+      "mode": "headless",
+      "purpose": "bounded_preparation_capture_not_fixed_repeat",
+      "repeat": 0,
+      "scenario": "asymmetric_pull_clean"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "first_matched_pair_if_actual_onset_valid",
+      "repeat": 1,
+      "scenario": "asymmetric_pull_clean"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "first_matched_pair_if_actual_onset_valid",
+      "repeat": 1,
+      "scenario": "asymmetric_pull_clean"
+    },
+    {
+      "hz": 60,
+      "lane": "ADAPTIVE_CAPTURE_SOURCE",
+      "mode": "headless",
+      "purpose": "bounded_preparation_capture_not_fixed_repeat",
+      "repeat": 0,
+      "scenario": "lateral_clean_left"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "first_matched_pair_if_actual_onset_valid",
+      "repeat": 1,
+      "scenario": "lateral_clean_left"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "first_matched_pair_if_actual_onset_valid",
+      "repeat": 1,
+      "scenario": "lateral_clean_left"
+    },
+    {
+      "hz": 60,
+      "lane": "ADAPTIVE_CAPTURE_SOURCE",
+      "mode": "headless",
+      "purpose": "bounded_preparation_capture_not_fixed_repeat",
+      "repeat": 0,
+      "scenario": "lateral_clean_right"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "first_matched_pair_if_actual_onset_valid",
+      "repeat": 1,
+      "scenario": "lateral_clean_right"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "first_matched_pair_if_actual_onset_valid",
+      "repeat": 1,
+      "scenario": "lateral_clean_right"
+    },
+    {
+      "hz": 60,
+      "lane": "ADAPTIVE_CAPTURE_SOURCE",
+      "mode": "headless",
+      "purpose": "bounded_preparation_capture_not_fixed_repeat",
+      "repeat": 0,
+      "scenario": "foot_supported_step"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "first_matched_pair_if_actual_onset_valid",
+      "repeat": 1,
+      "scenario": "foot_supported_step"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "first_matched_pair_if_actual_onset_valid",
+      "repeat": 1,
+      "scenario": "foot_supported_step"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "new_projection_probe_OFF_control_if_onset_valid",
+      "repeat": 9,
+      "scenario": "foot_supported_step"
+    },
+    {
+      "hz": 60,
+      "lane": "ADAPTIVE_CAPTURE_SOURCE",
+      "mode": "headless",
+      "purpose": "bounded_preparation_capture_not_fixed_repeat",
+      "repeat": 0,
+      "scenario": "two_hand_release_stop"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "first_matched_pair_if_actual_onset_valid",
+      "repeat": 1,
+      "scenario": "two_hand_release_stop"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "first_matched_pair_if_actual_onset_valid",
+      "repeat": 1,
+      "scenario": "two_hand_release_stop"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "new_projection_probe_OFF_control_if_onset_valid",
+      "repeat": 9,
+      "scenario": "two_hand_release_stop"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 2,
+      "scenario": "vertical_pull_clean"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 2,
+      "scenario": "vertical_pull_clean"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 3,
+      "scenario": "vertical_pull_clean"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 3,
+      "scenario": "vertical_pull_clean"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 2,
+      "scenario": "asymmetric_pull_clean"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 2,
+      "scenario": "asymmetric_pull_clean"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 3,
+      "scenario": "asymmetric_pull_clean"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 3,
+      "scenario": "asymmetric_pull_clean"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 2,
+      "scenario": "lateral_clean_left"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 2,
+      "scenario": "lateral_clean_left"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 3,
+      "scenario": "lateral_clean_left"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 3,
+      "scenario": "lateral_clean_left"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 2,
+      "scenario": "lateral_clean_right"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 2,
+      "scenario": "lateral_clean_right"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "headless",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 3,
+      "scenario": "lateral_clean_right"
+    },
+    {
+      "hz": 60,
+      "lane": "FIXED_VIRTUAL_REPLAY",
+      "mode": "rendered_scripted",
+      "purpose": "independent_process_replication_if_prior_gates_valid",
+      "repeat": 3,
+      "scenario": "lateral_clean_right"
+    }
+  ],
+  "new_domain_eligibility": "Only four primary domains with n3 FIXED modepairs at BOTHHz; all required channels exact; actual onset and signed positive progress >1e-6m, usefulvelocity>.02m/s sustained.05s, legal support and complete authorized horizon; metrics remain separated objectives; no score/search.",
+  "numeric_policy": "No contact/physics envelope. Typed Vector2 is native float32 as observed in pinned build; raw JSON scalar parser and actual API argument recorded. Precise JSON records and binary64 ray sidecars retained.",
+  "optimizer": "OFF",
+  "order": "BQ1 pure preflight; BQ2 six catch pairs; BQ5a120Hz capture and firstpairs; BQ5b120Hz primary repetitions; BQ5c60Hz same sequence; negatives only named prospective cases; final decision.",
+  "portability_1440": "NOT_RUN_RESERVED_NO_BUDGET_REALLOCATION",
+  "private_holdout_outcomes_accessed": false,
+  "pure_preflights": {
+    "gameplay_bodies_created": 0,
+    "negative_wrong_size": 1,
+    "not_physical_outcomes": true,
+    "positive": 12
+  },
+  "reference_cells": [
+    {
+      "hz": 120,
+      "mode": "headless",
+      "repeat": 1,
+      "scenario": "swing_catch_train"
+    },
+    {
+      "hz": 120,
+      "mode": "rendered_scripted",
+      "repeat": 1,
+      "scenario": "swing_catch_train"
+    },
+    {
+      "hz": 120,
+      "mode": "headless",
+      "repeat": 2,
+      "scenario": "swing_catch_train"
+    },
+    {
+      "hz": 120,
+      "mode": "rendered_scripted",
+      "repeat": 2,
+      "scenario": "swing_catch_train"
+    },
+    {
+      "hz": 120,
+      "mode": "headless",
+      "repeat": 3,
+      "scenario": "swing_catch_train"
+    },
+    {
+      "hz": 120,
+      "mode": "rendered_scripted",
+      "repeat": 3,
+      "scenario": "swing_catch_train"
+    },
+    {
+      "hz": 60,
+      "mode": "headless",
+      "repeat": 1,
+      "scenario": "swing_catch_train"
+    },
+    {
+      "hz": 60,
+      "mode": "rendered_scripted",
+      "repeat": 1,
+      "scenario": "swing_catch_train"
+    },
+    {
+      "hz": 60,
+      "mode": "headless",
+      "repeat": 2,
+      "scenario": "swing_catch_train"
+    },
+    {
+      "hz": 60,
+      "mode": "rendered_scripted",
+      "repeat": 2,
+      "scenario": "swing_catch_train"
+    },
+    {
+      "hz": 60,
+      "mode": "headless",
+      "repeat": 3,
+      "scenario": "swing_catch_train"
+    },
+    {
+      "hz": 60,
+      "mode": "rendered_scripted",
+      "repeat": 3,
+      "scenario": "swing_catch_train"
+    }
+  ],
+  "reference_tapes": {
+    "120": {
+      "path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\requal_20261020_r1\\capture\\tapes\\catch_120.json",
+      "sha256": "d09f2569cbbafb4db2d3571b806dc804622fe4efda3c6ba9d8790a51bdb2991b"
+    },
+    "60": {
+      "path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\requal_20261020_r1\\capture\\tapes\\catch_60.json",
+      "sha256": "a711b9cb2792890fddd3782db0705a003fdccae4fad67fa3085f895c0a2a2e9d"
+    }
+  },
+  "regressions_separate": "Explicit user confirmation: sim, regress\u00f5es \u00e0 parte; 34 original suites plus ordinary startup/MCP/release safety are separate validation, never new-domain passes.",
+  "seed": 101,
+  "source_catalog_sha256": "47462fac8b3340dd0426c631d64ea19b13fb07bf3c6dee89ec80d213bedc2f5d",
+  "thresholds": {
+    "latency_dwell_s": 0.05,
+    "latency_positive_velocity_m_s": 0.02,
+    "path_numerical_floor_m": 1e-06,
+    "quiet_directed_speed_m_s": 0.1,
+    "quiet_elapsed_dwell_s": 0.25,
+    "quiet_full_spin_rad_s": 0.2,
+    "quiet_max_wait_s": 5,
+    "settle_dwell_s": 0.25,
+    "settle_full_speed_m_s": 0.1,
+    "settle_full_spin_rad_s": 0.2,
+    "stop_directed_speed_band_m_s": [
+      0.15,
+      0.5
+    ],
+    "stop_drive_max_s": 2
+  }
+}

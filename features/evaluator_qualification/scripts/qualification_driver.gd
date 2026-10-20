@@ -222,6 +222,8 @@ func _fresh(definition:Dictionary)->void:
 	_scenario_enabled=true
 	await _tick(float(definition.get("warmup_s",.45)))
 
+func _additional_qualification_scenarios()->Array:return []
+
 func start(value:Dictionary)->Dictionary:
 	if running:return {"schema_version":"1.3.2","status":"BLOCKED_SETUP","reason":"DRIVER_ALREADY_RUNNING"}
 	manifest=value.duplicate(true);candidate=manifest.get("baseline_candidate",{}).duplicate(true)
@@ -243,6 +245,7 @@ func start(value:Dictionary)->Dictionary:
 	for item:Dictionary in catalog.scenarios:definitions[item.id]=item
 	var old_catalog:Dictionary=JSON.parse_string(FileAccess.get_file_as_string(TRAIN))
 	for item:Dictionary in old_catalog.scenarios:definitions[item.id]=item
+	for item:Dictionary in _additional_qualification_scenarios():definitions[item.id]=item
 	var isolated:Dictionary=definitions.swing_catch_train.duplicate(true);isolated.id="catch_isolated_v1";isolated.implementation_id="swing_catch_train";isolated.revision=1
 	definitions[isolated.id]=isolated
 	for id in manifest.scenario_ids:

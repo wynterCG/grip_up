@@ -1,0 +1,11 @@
+# Canonical environment contract v133
+
+Qualification uses actual1024×576 backing and logical1920×1080. CLI is --resolution1024x576; it is observed before gameplay-body construction. Clock settles on two consecutive actual1/Hz callbacks with no lab. A failed setup is rejected, never numerically repaired after execution. Requested and actual screen/window position/mode, display server, stretch/canvas/global/final, camera owner/FOV/near/keep-aspect and engine/backend identities are preserved. Unavailable headless DPI/screen scaling is typed unavailable, not zero or asserted equal to Windows.
+
+Twelve pure preflights create zero gameplay bodies; they verify environment/clock/API only, not V0 gameplay. Every BQ2 process separately proves its preworld setup and actual ACTIVE V0 owner, profile4/A0/B1, real pick chain and cleanup. Normal profile2/LIVE is a separate regression. The capture lane adaptively prepares contacts through ordinary inputs; the fixed lane only consumes frozen frame tapes. Capture is not counted as fixed replay.
+
+The old two tapes and source hashes remain unchanged. Their compatibility with v133 is explicit via capture and runtime source maps and reviewed read-only source delta. No parameter Resource is duplicated or overridden; original baseline identity is verified before its first step. One worker; one gameplay Lab per process; synchronous retirement/cleanup.
+
+During an episode provider checks ownership/viewport/FOV/bindings/clock; the v133 driver also checks observed window mode/position/screen and canvas/final transforms every PRE. Resize callbacks invalidate. Camera transforms may evolve physically and are measured, not frozen. Real hardware/focus rejection events are kept; execution gaps invalidate instead of inserting synthetic ticks. No new LIVE input or camera behavior is introduced.
+
+Native contact reporting may be incomplete; its configured limit is recorded. A zero-size contact buffer does not prove no collision. New climbing-only domains additionally use the existing read-only swept-ground query observer; potential ground intersections or native walking authority interrupt their measurement. Catch retains its honestly labelled historical B1/native-ground contribution.

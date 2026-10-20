@@ -8,9 +8,10 @@ class ProjectionContract(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'MISSING'):validate({'schema':'grip_projection_pick_v132b'})
     def test_immutable_capture_compatibility(self):
         tape=read_json(ROOT/'builds/eval_virtual_cursor/requal_20261020_r1/capture/tapes/catch_120.json')
-        result=compatibility(tape,source_hashes())
+        frozen=read_json(ROOT/'builds/eval_virtual_cursor/projection_v132b_r2/session_manifest.json')['source_hashes']
+        result=compatibility(tape,frozen)
         self.assertIn('approved_delta',result)
-        changed=source_hashes();changed['project.godot']='bad'
+        changed=dict(frozen);changed['project.godot']='bad'
         with self.assertRaisesRegex(ValueError,'UNAPPROVED'):compatibility(tape,changed)
     def test_nonfinite_parser_and_signedzero(self):
         import json

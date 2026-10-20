@@ -30,10 +30,19 @@ func _metadata(phase:String)->Dictionary:
 	var row:Dictionary=super._metadata(phase)
 	row.schema_version="1.3.2a";row.lane="V0_ISOLATED_POINTER";return row
 
+func _virtual_scope(value:Dictionary)->String:
+	if value.has("projection_config") and (not OS.get_cmdline_user_args().has("--projection-qualification") or not str(value.get("campaign_id","")).begins_with("projection_v132b_")):return "PROJECTION_FLAG_CAMPAIGN_REQUIRED"
+	return "" if value.get("scenario_ids",[])==["swing_catch_train"] else "UNSUPPORTED_REPLAY_CASE"
+
+func _virtual_benchmark(_value:Dictionary)->String:return "benchmark_eval_virtual_cursor_v1"
+func _virtual_tick_limit()->int:return 2048
+func _configure_virtual_fixture(definition:Dictionary)->void:
+	_course=Course.new();add_child(_course);_course.apply_segment(app,int(definition.segment))
+
 func start(value:Dictionary)->Dictionary:
 	if not OS.get_cmdline_user_args().has("--virtual-cursor-evaluator"):return {"status":"BLOCKED_SETUP","reason":"TEST_FLAG_REQUIRED"}
-	if value.has("projection_config") and (not OS.get_cmdline_user_args().has("--projection-qualification") or not str(value.get("campaign_id","")).begins_with("projection_v132b_")):return {"status":"BLOCKED_SETUP","reason":"PROJECTION_FLAG_CAMPAIGN_REQUIRED"}
-	if value.get("scenario_ids",[])!=["swing_catch_train"]:return {"status":"BLOCKED_SETUP","reason":"UNSUPPORTED_REPLAY_CASE"}
+	var scope_error:String=_virtual_scope(value)
+	if not scope_error.is_empty():return {"status":"BLOCKED_SETUP","reason":scope_error}
 	if value.get("virtual_mode","")=="REPLAY":
 		var path:String=str(value.get("virtual_tape_path",""))
 		if not FileAccess.file_exists(path) or FileAccess.get_sha256(path)!=value.get("virtual_tape_sha256",""):return {"status":"BLOCKED_SETUP","reason":"TAPE_HASH"}
@@ -41,9 +50,9 @@ func start(value:Dictionary)->Dictionary:
 		if not parsed is Dictionary or parsed.get("schema","")!="grip_virtual_replay_v1":return {"status":"BLOCKED_SETUP","reason":"LEGACY_POINTER_AMBIGUOUS"}
 		virtual_tape=parsed
 		if virtual_tape.get("diagnostic_only",false) and value.get("negative_case","").is_empty():return {"status":"BLOCKED_SETUP","reason":"DIAGNOSTIC_TAPE_NOT_QUALIFICATION"}
-		if virtual_tape.get("engine_identity",{})!=value.engine_identity or virtual_tape.get("benchmark","")!="benchmark_eval_virtual_cursor_v1" or virtual_tape.get("camera_mode","")!="V0_PHYSICS_FOLLOW":return {"status":"BLOCKED_SETUP","reason":"TAPE_ENGINE_CAMERA_BENCHMARK"}
+		if virtual_tape.get("engine_identity",{})!=value.engine_identity or virtual_tape.get("benchmark","")!=_virtual_benchmark(value) or virtual_tape.get("camera_mode","")!="V0_PHYSICS_FOLLOW":return {"status":"BLOCKED_SETUP","reason":"TAPE_ENGINE_CAMERA_BENCHMARK"}
 		if virtual_tape.get("source_hashes",{})!=value.get("projection_capture_source_hashes",value.expected_source_hashes) or int(virtual_tape.get("physics_hz",0))!=int(value.physics_hz):return {"status":"BLOCKED_SETUP","reason":"TAPE_SOURCE_HZ"}
-		if not virtual_tape.get("frames") is Array or virtual_tape.frames.is_empty() or virtual_tape.frames.size()>2048:return {"status":"BLOCKED_SETUP","reason":"TAPE_TICK_COUNT"}
+		if not virtual_tape.get("frames") is Array or virtual_tape.frames.is_empty() or virtual_tape.frames.size()>_virtual_tick_limit():return {"status":"BLOCKED_SETUP","reason":"TAPE_TICK_COUNT"}
 		if not virtual_tape.get("reference_ticks") is Array or virtual_tape.reference_ticks.size()!=virtual_tape.frames.size():return {"status":"BLOCKED_SETUP","reason":"MISSING_TICK:REFERENCE"}
 		var previous:Dictionary={}
 		for row:Dictionary in virtual_tape.frames:
@@ -51,7 +60,7 @@ func start(value:Dictionary)->Dictionary:
 			if not checked.is_empty():return {"status":"BLOCKED_SETUP","reason":checked}
 			previous=row
 	var result:Dictionary=await super.start(value)
-	result.schema_version="1.3.2a";result["benchmark"]="benchmark_eval_virtual_cursor_v1"
+	result.schema_version="1.3.2a";result["benchmark"]=_virtual_benchmark(value)
 	result["virtual_input"]={"environment":session_environment,"cleanup":cleanup_receipt,"maximum_tick_wall_gap_usec":maximum_gap_usec,"provider_lifecycle":provider.lifecycle if provider!=null else [],"rejected_hardware_events":provider.rejected if provider!=null else [],"rejected_hardware_event_count":provider.rejected_count if provider!=null else 0,"rejection_counts":provider.rejection_counts if provider!=null else {},"focus_events":provider.focus_events if provider!=null else []}
 	result["negative_checks"]=negative_checks.duplicate(true)
 	if value.has("projection_config"):
@@ -83,7 +92,7 @@ func _fresh(definition:Dictionary)->void:
 	get_tree().root.add_child(app);get_tree().current_scene=app
 	_baseline_profile_ok=_baseline_profile_ok and app.input_profile==2
 	app._open_intent_arena(int(definition.arena),true)
-	_course=Course.new();add_child(_course);_course.apply_segment(app,int(definition.segment))
+	_configure_virtual_fixture(definition)
 	app._set_movement_allocation(0);app._set_intent_aware_feet(false);app._set_physical_feet(true)
 	app._set_distant_targeting(true);app._set_locomotion_diagnostics(_observer_on);app.transfer_diagnostics_enabled=true;app._apply_independent_settings()
 	app.won=true;app.settings.hide()
@@ -97,7 +106,7 @@ func _fresh(definition:Dictionary)->void:
 			projection_probe=Probe.new();projection_probe.manifest=manifest
 			app.targeting.projection_probe=projection_probe
 	provider=Provider.new()
-	var checked:String=app.begin_virtual_input(provider,{"benchmark":"benchmark_eval_virtual_cursor_v1","camera_mode":"V0_PHYSICS_FOLLOW"})
+	var checked:String=app.begin_virtual_input(provider,{"benchmark":_virtual_benchmark(manifest),"camera_mode":"V0_PHYSICS_FOLLOW"})
 	if not checked.is_empty():_trace_integrity_reason=checked;return
 	provider.focus_changed(app.get_window().has_focus())
 	var vp:Viewport=app.get_viewport()
