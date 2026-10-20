@@ -32,6 +32,11 @@ func _initialize()->void:
 	check(Frame.validate(value)=="INPUT_BUTTON_HELD_EDGE_MISMATCH","held without edge")
 	value.button_edges=[{"hand":0,"pressed":true}]
 	check(Frame.validate(value)=="","press edge")
+	check(Frame.validate(JSON.parse_string(JSON.stringify(value)))=="","real JSON roundtrip preserves integer-valued hand ID")
+	var fractional:Dictionary=value.duplicate(true);fractional.button_edges[0].hand=.5
+	check(Frame.validate(fractional)=="INPUT_BUTTON_EDGE","fractional hand rejected without rounding")
+	var wheel:Dictionary=sample();wheel.camera_zoom_steps=[1,-1]
+	check(Frame.validate(JSON.parse_string(JSON.stringify(wheel)))=="","JSON signed wheel roundtrip")
 	value.button_edges.append({"hand":0,"pressed":true})
 	check(Frame.validate(value)=="INPUT_BUTTON_EDGE_ORDER","double press")
 	value=sample();value.button_edges=[{"hand":0,"pressed":true},{"hand":0,"pressed":false}]

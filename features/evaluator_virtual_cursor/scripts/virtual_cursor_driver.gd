@@ -37,6 +37,7 @@ func start(value:Dictionary)->Dictionary:
 		var parsed:Variant=JSON.parse_string(FileAccess.get_file_as_string(path))
 		if not parsed is Dictionary or parsed.get("schema","")!="grip_virtual_replay_v1":return {"status":"BLOCKED_SETUP","reason":"LEGACY_POINTER_AMBIGUOUS"}
 		virtual_tape=parsed
+		if virtual_tape.get("diagnostic_only",false) and value.get("negative_case","").is_empty():return {"status":"BLOCKED_SETUP","reason":"DIAGNOSTIC_TAPE_NOT_QUALIFICATION"}
 		if virtual_tape.get("engine_identity",{})!=value.engine_identity or virtual_tape.get("benchmark","")!="benchmark_eval_virtual_cursor_v1" or virtual_tape.get("camera_mode","")!="V0_PHYSICS_FOLLOW":return {"status":"BLOCKED_SETUP","reason":"TAPE_ENGINE_CAMERA_BENCHMARK"}
 		if virtual_tape.get("source_hashes",{})!=value.expected_source_hashes or int(virtual_tape.get("physics_hz",0))!=int(value.physics_hz):return {"status":"BLOCKED_SETUP","reason":"TAPE_SOURCE_HZ"}
 		if not virtual_tape.get("frames") is Array or virtual_tape.frames.is_empty() or virtual_tape.frames.size()>2048:return {"status":"BLOCKED_SETUP","reason":"TAPE_TICK_COUNT"}

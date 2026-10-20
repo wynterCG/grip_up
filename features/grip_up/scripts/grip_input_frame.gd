@@ -36,12 +36,14 @@ static func validate(value:Dictionary,previous:Dictionary={}) -> String:
 	for action in ["contract","extend","bias_left","bias_right","grip_left","grip_right"]:
 		if not value.strengths.has(action) or not is_finite(float(value.strengths[action])) or float(value.strengths[action])<0 or float(value.strengths[action])>1:return "INPUT_STRENGTH:"+action
 	for step in value.camera_zoom_steps:
-		if step not in [-1,1]:return "INPUT_ZOOM_STEP"
+		if not (step is float or step is int) or float(step)!=float(int(step)) or int(step) not in [-1,1]:return "INPUT_ZOOM_STEP"
 	if not value.action_edges.is_empty():return "UNSUPPORTED_REPLAY_CASE:ACTION_EDGES"
 	if value.focus_policy_state not in ["ACTIVE","EXTERNALLY_UNFOCUSED","RUNTIME_PAUSED"]:return "INPUT_FOCUS_POLICY"
 	var last:Dictionary=previous.get("strengths",{"grip_left":0.0,"grip_right":0.0}).duplicate(true)
 	for edge in value.button_edges:
-		if not edge is Dictionary or edge.get("hand",-1) not in [0,1] or not edge.get("pressed") is bool:return "INPUT_BUTTON_EDGE"
+		if not edge is Dictionary or not edge.get("pressed") is bool:return "INPUT_BUTTON_EDGE"
+		var hand:Variant=edge.get("hand")
+		if not (hand is float or hand is int) or not is_finite(float(hand)) or float(hand)!=float(int(hand)) or int(hand) not in [0,1]:return "INPUT_BUTTON_EDGE"
 		var action:String="grip_left" if int(edge.hand)==0 else "grip_right"
 		if bool(float(last[action])>0)==edge.pressed:return "INPUT_BUTTON_EDGE_ORDER"
 		last[action]=1.0 if edge.pressed else 0.0

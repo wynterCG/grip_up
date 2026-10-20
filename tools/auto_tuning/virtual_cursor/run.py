@@ -70,6 +70,7 @@ def execute(mode,hz,condition,repeat,output,tape_path=None,development=False,neg
     manifest['baseline_candidate']=make_candidate(baseline(parameter_resource()),['swing_catch_train'],trial_id=run_id,hz=hz,seed=101,timeout=100,provenance=identity)
     if tape_path:
         tape=read_json(tape_path)
+        if tape.get('diagnostic_only') and not negative:raise ValueError('DIAGNOSTIC_TAPE_NOT_QUALIFICATION')
         manifest.update(virtual_tape_path=str(tape_path),virtual_tape_sha256=file_hash(tape_path))
         if tape['source_hashes']!=identity['source_hashes']:raise ValueError('TAPE_SOURCE_IDENTITY')
         if tape['engine_identity']!=identity['engine_identity'] or tape['benchmark']!=BENCHMARK or tape['camera_mode']!='V0_PHYSICS_FOLLOW':raise ValueError('TAPE_ENGINE_CAMERA_BENCHMARK')
@@ -149,6 +150,8 @@ def main():
             receipt=execute('headless' if condition=='V0-H' else 'rendered_scripted',hz,condition,cell['repeat'],output,tape_path,args.suite!='matrix',cell.get('negative',''))
             receipts.append({**cell,**receipt})
             if receipt['status']!='completed':
+                if args.suite=='negatives':
+                    atomic_json(output/'session_state.json',{'runs':receipts,'status':'DIAGNOSTICS_CONTINUE_WITH_FAILURE_RETAINED'});continue
                 receipts.extend({**pending,'status':'NOT_RUN_EARLY_STOP'} for pending in cells[index+1:]);break
             if args.suite=='capture':make_tape(receipt,output/'tapes'/f'catch_{hz}.json')
             atomic_json(output/'session_state.json',{'runs':receipts})
