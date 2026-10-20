@@ -1,0 +1,272 @@
+{
+  "scope": "Unchanged A0 production regression and preserved A1/B2 diagnostic outcomes; not candidate or human validation",
+  "accepted_runs": [
+    {
+      "suite": "physics",
+      "hz": 120,
+      "passed": true,
+      "checks": 45,
+      "failures": 0,
+      "exit_code": 0,
+      "receipt": "reference/attempt_001/results.json"
+    },
+    {
+      "suite": "physics",
+      "hz": 60,
+      "passed": true,
+      "checks": 45,
+      "failures": 0,
+      "exit_code": 0,
+      "receipt": "reference/attempt_001/results.json"
+    },
+    {
+      "suite": "pending_contact",
+      "hz": 120,
+      "passed": true,
+      "checks": 47,
+      "failures": 0,
+      "exit_code": 0,
+      "receipt": "reference/attempt_001/results.json"
+    },
+    {
+      "suite": "pending_contact",
+      "hz": 60,
+      "passed": true,
+      "checks": 47,
+      "failures": 0,
+      "exit_code": 0,
+      "receipt": "reference/attempt_001/results.json"
+    },
+    {
+      "suite": "intent_integration",
+      "hz": 120,
+      "passed": true,
+      "checks": 19,
+      "failures": 0,
+      "exit_code": 0,
+      "receipt": "reference/attempt_001/results.json"
+    },
+    {
+      "suite": "intent_integration",
+      "hz": 60,
+      "passed": true,
+      "checks": 19,
+      "failures": 0,
+      "exit_code": 0,
+      "receipt": "reference/attempt_001/results.json"
+    },
+    {
+      "suite": "intent_reversal",
+      "hz": 120,
+      "passed": true,
+      "checks": 37,
+      "failures": 0,
+      "exit_code": 0,
+      "receipt": "reference/attempt_001/results.json"
+    },
+    {
+      "suite": "intent_reversal",
+      "hz": 60,
+      "passed": true,
+      "checks": 37,
+      "failures": 0,
+      "exit_code": 0,
+      "receipt": "reference/attempt_001/results.json"
+    },
+    {
+      "suite": "first_ascent",
+      "hz": 120,
+      "passed": true,
+      "checks": 17,
+      "failures": 0,
+      "exit_code": 0,
+      "receipt": "reference/attempt_001/results.json"
+    },
+    {
+      "suite": "first_ascent",
+      "hz": 60,
+      "passed": true,
+      "checks": 17,
+      "failures": 0,
+      "exit_code": 0,
+      "receipt": "reference/attempt_001/results.json"
+    },
+    {
+      "suite": "hybrid_mantle",
+      "hz": 120,
+      "passed": true,
+      "checks": 14,
+      "failures": 0,
+      "exit_code": 0,
+      "receipt": "reference/attempt_001/results.json"
+    },
+    {
+      "suite": "hybrid_mantle",
+      "hz": 60,
+      "passed": true,
+      "checks": 14,
+      "failures": 0,
+      "exit_code": 0,
+      "receipt": "reference/attempt_001/results.json"
+    },
+    {
+      "suite": "vault_resilience",
+      "hz": 120,
+      "passed": true,
+      "checks": 59,
+      "failures": 0,
+      "exit_code": 0,
+      "receipt": "reference/attempt_001/results.json"
+    },
+    {
+      "suite": "vault_resilience",
+      "hz": 60,
+      "passed": true,
+      "checks": 59,
+      "failures": 0,
+      "exit_code": 0,
+      "receipt": "reference/attempt_001/results.json"
+    },
+    {
+      "suite": "vault_restore_guard",
+      "hz": 120,
+      "passed": true,
+      "checks": 57,
+      "failures": 0,
+      "exit_code": 0,
+      "receipt": "reference/attempt_001/results.json"
+    },
+    {
+      "suite": "vault_restore_guard",
+      "hz": 60,
+      "passed": true,
+      "checks": 57,
+      "failures": 0,
+      "exit_code": 0,
+      "receipt": "reference/attempt_001/results.json"
+    },
+    {
+      "suite": "locomotion_allocation",
+      "hz": 120,
+      "passed": true,
+      "checks": 77,
+      "failures": 0,
+      "exit_code": 0,
+      "receipt": "reference/attempt_001/results.json"
+    },
+    {
+      "suite": "locomotion_allocation",
+      "hz": 60,
+      "passed": true,
+      "checks": 77,
+      "failures": 0,
+      "exit_code": 0,
+      "receipt": "reference/attempt_001/results.json"
+    },
+    {
+      "suite": "intent_feet",
+      "hz": 120,
+      "passed": true,
+      "checks": 29,
+      "failures": 0,
+      "exit_code": 0,
+      "receipt": "reference/attempt_001/results.json"
+    },
+    {
+      "suite": "intent_feet",
+      "hz": 60,
+      "passed": true,
+      "checks": 29,
+      "failures": 0,
+      "exit_code": 0,
+      "receipt": "reference/attempt_001/results.json"
+    },
+    {
+      "suite": "ground_locomotion",
+      "hz": 120,
+      "passed": true,
+      "checks": 24,
+      "failures": 0,
+      "exit_code": 0,
+      "receipt": "reference_addendum/attempt_001/results.json"
+    },
+    {
+      "suite": "ground_locomotion",
+      "hz": 60,
+      "passed": true,
+      "checks": 24,
+      "failures": 0,
+      "exit_code": 0,
+      "receipt": "reference_addendum/attempt_001/results.json"
+    },
+    {
+      "suite": "intent_frame_sign",
+      "hz": 120,
+      "passed": true,
+      "checks": 17,
+      "failures": 0,
+      "exit_code": 0,
+      "receipt": "reference_addendum/attempt_001/results.json"
+    },
+    {
+      "suite": "intent_frame_sign",
+      "hz": 60,
+      "passed": true,
+      "checks": 17,
+      "failures": 0,
+      "exit_code": 0,
+      "receipt": "reference_addendum/attempt_001/results.json"
+    }
+  ],
+  "invocation_errors": [
+    {
+      "suite": "safety_and_reaction",
+      "hz": 120,
+      "passed": false,
+      "checks": 0,
+      "failures": null,
+      "exit_code": 1,
+      "receipt": "reference/attempt_001/results.json",
+      "classification": "ROOT_INVOCATION_ERROR",
+      "reason": "Called nonexistent test_safety_and_reaction.gd; reaction checks are in test_intent_reversal.gd"
+    },
+    {
+      "suite": "safety_and_reaction",
+      "hz": 60,
+      "passed": false,
+      "checks": 0,
+      "failures": null,
+      "exit_code": 1,
+      "receipt": "reference/attempt_001/results.json",
+      "classification": "ROOT_INVOCATION_ERROR",
+      "reason": "Called nonexistent test_safety_and_reaction.gd; reaction checks are in test_intent_reversal.gd"
+    },
+    {
+      "suite": "ground_walk",
+      "hz": 120,
+      "passed": false,
+      "checks": 0,
+      "failures": null,
+      "exit_code": 1,
+      "receipt": "reference/attempt_001/results.json",
+      "classification": "ROOT_INVOCATION_ERROR",
+      "reason": "Called nonexistent test_ground_walk.gd; corrected to test_ground_locomotion.gd"
+    },
+    {
+      "suite": "ground_walk",
+      "hz": 60,
+      "passed": false,
+      "checks": 0,
+      "failures": null,
+      "exit_code": 1,
+      "receipt": "reference/attempt_001/results.json",
+      "classification": "ROOT_INVOCATION_ERROR",
+      "reason": "Called nonexistent test_ground_walk.gd; corrected to test_ground_locomotion.gd"
+    }
+  ],
+  "checks": 884,
+  "accepted_execution_count": 24,
+  "technical_failures_in_executed_checks": 0,
+  "all_requested_invocations_passed": false,
+  "human_sessions": 0
+}

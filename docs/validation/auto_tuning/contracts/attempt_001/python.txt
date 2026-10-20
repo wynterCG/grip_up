@@ -1,0 +1,40 @@
+test_actual_task_failure_is_not_runtime_crash_or_successful_task (test_contract.RunnerTests.test_actual_task_failure_is_not_runtime_crash_or_successful_task) ... ok
+test_engine_source_rejection_retains_taxonomy_without_a_score (test_contract.RunnerTests.test_engine_source_rejection_retains_taxonomy_without_a_score) ... ok
+test_godot_full_version_hash_matches_cli_abbreviation (test_contract.RunnerTests.test_godot_full_version_hash_matches_cli_abbreviation) ... ok
+test_holdout_cannot_execute_without_public_freeze (test_contract.RunnerTests.test_holdout_cannot_execute_without_public_freeze) ... ok
+test_holdout_freeze_requires_matching_provenance_and_repeats (test_contract.RunnerTests.test_holdout_freeze_requires_matching_provenance_and_repeats) ... ok
+test_invalid_nonfinite_input_preserved_without_launch (test_contract.RunnerTests.test_invalid_nonfinite_input_preserved_without_launch) ... ok
+test_nonzero_exit_and_missing_result_fail (test_contract.RunnerTests.test_nonzero_exit_and_missing_result_fail) ... ok
+test_single_worker_lock (test_contract.RunnerTests.test_single_worker_lock) ... ok
+test_stale_id_revision_source_hz_engine_and_invariant_rejected (test_contract.RunnerTests.test_stale_id_revision_source_hz_engine_and_invariant_rejected) ... ok
+test_timeout_is_never_ranked_as_completion (test_contract.RunnerTests.test_timeout_is_never_ranked_as_completion) ... ok
+test_unique_directories_and_atomic_results (test_contract.RunnerTests.test_unique_directories_and_atomic_results) ... ok
+test_baseline_and_stable_decimal_identity (test_contract.SchemaTests.test_baseline_and_stable_decimal_identity) ... ok
+test_candidate_metadata_integrity (test_contract.SchemaTests.test_candidate_metadata_integrity) ... ok
+test_missing_fields_and_resource_version (test_contract.SchemaTests.test_missing_fields_and_resource_version) ... ok
+test_parameter_boundary_rejects_unsafe_values (test_contract.SchemaTests.test_parameter_boundary_rejects_unsafe_values) ... ok
+test_unknown_missing_and_coupled_values (test_contract.SchemaTests.test_unknown_missing_and_coupled_values) ... ok
+test_pinned_multiobjective_random_tpe_and_sqlite (test_optuna.OptunaTests.test_pinned_multiobjective_random_tpe_and_sqlite) ... [I 2026-10-20 03:48:41,209] A new study created in RDB with name: synthetic_api_contract
+ok
+test_known_support_loss_is_unscored_confirmed_once_and_stops (test_program.ProgramTests.test_known_support_loss_is_unscored_confirmed_once_and_stops) ... [I 2026-10-20 03:48:41,584] A new study created in RDB with name: synthetic_program_contract
+C:\Users\Wynter\grip_up\tools\auto_tuning\optimize.py:101: ExperimentalWarning: optuna.study.study.Study.set_metric_names is experimental (supported from v3.2.0). The interface can change in the future.
+  study.set_metric_names(list(AXES))
+ok
+test_baseline_zero_and_no_practical_win (test_scoring.ScoringTests.test_baseline_zero_and_no_practical_win) ... ok
+test_invalid_baseline_start_is_not_an_ordinary_failed_catch (test_scoring.ScoringTests.test_invalid_baseline_start_is_not_an_ordinary_failed_catch) ... ok
+test_known_physical_landing_and_preparation_failure_are_typed_unscored_tasks (test_scoring.ScoringTests.test_known_physical_landing_and_preparation_failure_are_typed_unscored_tasks) ... ok
+test_lateral_ground_walking_cannot_receive_climbing_credit (test_scoring.ScoringTests.test_lateral_ground_walking_cannot_receive_climbing_credit) ... ok
+test_lost_task_is_reliability_regression (test_scoring.ScoringTests.test_lost_task_is_reliability_regression) ... ok
+test_millimetre_improvement_is_not_magic_winner (test_scoring.ScoringTests.test_millimetre_improvement_is_not_magic_winner) ... ok
+test_missing_baseline_swing_blocks_search (test_scoring.ScoringTests.test_missing_baseline_swing_blocks_search) ... ok
+test_no_blanket_swing_rotation_penalty (test_scoring.ScoringTests.test_no_blanket_swing_rotation_penalty) ... ok
+test_noise_retained_and_gate_visible (test_scoring.ScoringTests.test_noise_retained_and_gate_visible) ... ok
+test_pareto_preserves_tradeoffs (test_scoring.ScoringTests.test_pareto_preserves_tradeoffs) ... ok
+test_single_bad_posture_cannot_hide_in_average (test_scoring.ScoringTests.test_single_bad_posture_cannot_hide_in_average) ... ok
+test_unknown_metric_does_not_become_zero_latency (test_scoring.ScoringTests.test_unknown_metric_does_not_become_zero_latency) ... ok
+test_unsafe_runtime_never_pareto (test_scoring.ScoringTests.test_unsafe_runtime_never_pareto) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 2.405s
+
+OK

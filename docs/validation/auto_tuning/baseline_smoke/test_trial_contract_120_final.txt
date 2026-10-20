@@ -1,0 +1,18 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS versioned catalog parses: res://features/auto_tuning_lab/resources/train_scenarios.json
+PASS scenario IDs unique across splits, revision and scope explicit
+PASS versioned catalog parses: res://features/auto_tuning_lab/resources/safety_scenarios.json
+PASS scenario IDs unique across splits, revision and scope explicit
+PASS versioned catalog parses: res://features/auto_tuning_lab/holdout/scenarios.json
+PASS scenario IDs unique across splits, revision and scope explicit
+PASS seven train plus four safety plus nine withheld definitions exist; no outcome evaluated
+PASS trace mismatch rejected before scene or physics configuration
+PASS rejected trace creates no Lab and leaves Hz unchanged
+PASS actual engine executable hash enforced before actuation
+PASS engine rejection has no world or settings residue
+PASS unknown scenario is rejected, never scored as zero effort success
+PASS unknown scenario cannot allocate a physical scene
+TRIAL CONTRACT RESULTS: 13 checks, 0 failures
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)

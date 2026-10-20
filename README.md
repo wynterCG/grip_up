@@ -1,10 +1,23 @@
-# GRIP UP / physics climbing lab 1.1 experimental
+# GRIP UP / physics climbing lab
 
-Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v1.1-experimental.exe`.
+Open `project.godot` in Godot 4.7.2, or launch the preserved normal Windows build
+`builds/GripUp-v1.2-pre-v1.3.exe`.
 PC mouse and keyboard. Resizable 1920x1080 reference canvas; initial window 1440x810.
 Integrated Jolt, 120 Hz. Core and complete routes also tested at 60 Hz.
 
 This is a separate prototype. The Janga object grabber and its project are unchanged.
+
+## v1.3 / Offline physics auto-tuning lab
+
+An isolated research tool compares four bounded A0 planner parameters through
+the existing controller. Python/Optuna runs offline and is excluded from the
+game. Normal startup remains profile 2; explicit research comparisons use
+profile 4 with A0/B1. No candidate is automatically adopted, and M7/RL remain
+separate. The pre-lab source is recoverable at `baseline/pre-v1.3-auto-tuning`.
+
+See the [experiment record](docs/validation/auto_tuning/README.md) and
+[reproduction commands](tools/auto_tuning/README.md). Automated results measure
+declared physics tasks; they do not establish better feel or human preference.
 
 Consolidated Portuguese implementation report before the v0.7 M7 reactive
 challenge: [system state, physics, controls, top-out, evidence and remaining work](docs/reports/SISTEMA_IMPLEMENTADO_PRE_M7_PT.md).

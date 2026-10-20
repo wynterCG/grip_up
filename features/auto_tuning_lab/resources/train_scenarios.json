@@ -1,0 +1,255 @@
+{
+  "schema_version": "1.0",
+  "revision": 3,
+  "input_trace_id": "train_tape_r3",
+  "policy_id": "declared_state_policy_r3",
+  "scope": "Scripted technical evaluation; real input and finite capture, not human play or autonomous route planning",
+  "scenarios": [
+    {
+      "id": "vertical_pull_train",
+      "revision": 3,
+      "arena": 6,
+      "hands": [
+        0,
+        1
+      ],
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "duration_s": 1.5,
+      "settle_s": 0.4,
+      "goal_progress_m": 0.06,
+      "commands": [
+        {
+          "time": 0,
+          "keys": [
+            "contract"
+          ]
+        },
+        {
+          "time": 1.5,
+          "keys": []
+        }
+      ],
+      "driver": "fixed_input_tape",
+      "scope": "actual lab Step; A0 B1 feet ON"
+    },
+    {
+      "id": "asymmetric_pull_train",
+      "revision": 3,
+      "arena": 8,
+      "hands": [
+        0,
+        1
+      ],
+      "contact_y_offsets": [
+        0,
+        -0.12
+      ],
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "duration_s": 1.5,
+      "settle_s": 0.4,
+      "goal_progress_m": 0.04,
+      "commands": [
+        {
+          "time": 0,
+          "keys": [
+            "contract"
+          ]
+        },
+        {
+          "time": 1.5,
+          "keys": []
+        }
+      ],
+      "driver": "fixed_input_tape",
+      "scope": "actual free wall contacts at different heights; geometry unchanged"
+    },
+    {
+      "id": "lateral_traverse_train",
+      "revision": 3,
+      "arena": 8,
+      "hands": [
+        0,
+        1
+      ],
+      "direction": [
+        1,
+        0,
+        0
+      ],
+      "duration_s": 0.7,
+      "settle_s": 0.5,
+      "goal_progress_m": 0.06,
+      "commands": [
+        {
+          "time": 0,
+          "keys": [
+            "bias_right"
+          ]
+        },
+        {
+          "time": 0.35,
+          "keys": []
+        },
+        {
+          "time": 0.45,
+          "keys": [
+            "bias_left"
+          ]
+        },
+        {
+          "time": 0.7,
+          "keys": []
+        }
+      ],
+      "driver": "fixed_input_tape",
+      "scope": "Existing Traverse geometry; W1.5s earns actual loaded nongrounded two-hand start, then same D.35/neutral.1/A.25/neutral.5 tape. Ground during measured window invalidates traversal, feet B1 remain measured.",
+      "preparation_w_s": 1.5,
+      "require_ungrounded": true,
+      "forbid_ground_during_measurement": true
+    },
+    {
+      "id": "one_hand_hang_train",
+      "revision": 3,
+      "arena": 7,
+      "hands": [
+        0
+      ],
+      "preparation_w_s": 1.5,
+      "require_ungrounded": true,
+      "direction": [
+        1,
+        0,
+        0
+      ],
+      "duration_s": 1.0,
+      "settle_s": 0.5,
+      "goal_progress_m": 0.0,
+      "commands": [
+        {
+          "time": 0,
+          "keys": [
+            "bias_right"
+          ],
+          "work_goal": "DRIVE"
+        },
+        {
+          "time": 0.6,
+          "keys": [
+            "bias_left"
+          ],
+          "work_goal": "COUNTER"
+        },
+        {
+          "time": 1.0,
+          "keys": [],
+          "work_goal": "NEUTRAL"
+        }
+      ],
+      "driver": "fixed_input_tape",
+      "scope": "ordinary W earns real hang before measurement; loaded-ground readiness failure is explicit; swing goal requires measured pendulum band >=0.1rad, DRIVE positive AND COUNTER negative work, same source anchor retained, no ground. Net COM translation is raw data, not task victory.",
+      "goal_kind": "supported_swing",
+      "minimum_pendulum_band_rad": 0.1,
+      "minimum_phase_signed_work_j": 1e-06
+    },
+    {
+      "id": "swing_catch_train",
+      "revision": 3,
+      "arena": 7,
+      "fixture": "existing_mastery_segment",
+      "segment": 2,
+      "hands": [
+        0
+      ],
+      "direction": [
+        1,
+        0,
+        0
+      ],
+      "duration_s": 10.0,
+      "settle_s": 0.6,
+      "goal_progress_m": 0.0,
+      "driver": "declared_state_policy_r2",
+      "scope": "unchanged Mastery C r1; B1 feet contribution explicitly measured; source W1.5s then reference phase policy, actual beyond-static catch and retained destination after source release",
+      "policy": {
+        "preload_w_s": 1.5,
+        "max_swing_s": 10.0,
+        "target_x_offset": -0.12,
+        "predictive_target": false,
+        "persistent_target": true,
+        "angular_phase_threshold": -0.04,
+        "drive_when": "body angular velocity dot toward.cross(real shoulder-COM lever) >= threshold",
+        "catch_request": "single finite pointer/button request",
+        "post_catch_brake_s": 0.12,
+        "post_source_release_brake_s": 0.08,
+        "retention_s": 0.6
+      }
+    },
+    {
+      "id": "foot_supported_step_train",
+      "revision": 3,
+      "arena": 6,
+      "hands": [
+        0,
+        1
+      ],
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "duration_s": 3.0,
+      "settle_s": 0.4,
+      "goal_progress_m": 0.15,
+      "require_foot_load_n": 10.0,
+      "commands": [
+        {
+          "time": 0,
+          "keys": [
+            "contract"
+          ]
+        },
+        {
+          "time": 3.0,
+          "keys": []
+        }
+      ],
+      "driver": "fixed_input_tape",
+      "scope": "actual Step with B1; compares actual loaded contacts, no visual-foot credit"
+    },
+    {
+      "id": "ground_grip_transition_train",
+      "revision": 3,
+      "arena": 6,
+      "hands": [],
+      "walk_before_reach_s": 0.1,
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "duration_s": 2.0,
+      "settle_s": 0.4,
+      "goal_progress_m": 0.03,
+      "driver": "declared_state_policy_r2",
+      "scope": "measurement begins on ordinary ground with no hands; actual D walk then pointer-grip then W, explicit readiness waits, no forced attachment; each click X uses current physical shoulder X, authored wall Y2.1/Z0; state policy fixed before search.; after first real contact, W and wait max1s for second shoulder-distance<=R-.02, then one R click; no retries.",
+      "contact_policy": {
+        "x": "current_physical_shoulder_x",
+        "y": 2.1,
+        "z": 0.0,
+        "wait_before_second_max_s": 1.0,
+        "reach_margin_m": 0.02,
+        "wait_input": [
+          "contract"
+        ]
+      }
+    }
+  ]
+}

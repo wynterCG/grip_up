@@ -1,0 +1,44 @@
+{
+  "recorded_utc": "2026-10-20T01:48:38.926591+00:00",
+  "scope": "Python contracts, pure numerical metrics, resource isolation and native scene parsing; not human or full gameplay validation",
+  "runs": [
+    {
+      "name": "python",
+      "passed": true,
+      "exit_code": 0,
+      "checks": 31
+    },
+    {
+      "name": "override_loader",
+      "passed": true,
+      "exit_code": 0,
+      "checks": 30
+    },
+    {
+      "name": "response_metrics",
+      "passed": true,
+      "exit_code": 0,
+      "checks": 17
+    },
+    {
+      "name": "native_parse",
+      "passed": true,
+      "exit_code": 0,
+      "checks": 0
+    }
+  ],
+  "source_sha256": {
+    "features/auto_tuning_lab/scripts/first_ascent_trial_exercise.gd": "6b23505074358a51d32f2d9edf2c29378e04e77419b947b0a59597e9409eb8a4",
+    "features/auto_tuning_lab/scripts/native_review.gd": "957b4e7ef46f9575f201508a3656f5575bb20480733331220133daa48b488576",
+    "features/auto_tuning_lab/scripts/optimization_canary_fixture.gd": "2306644b8bf5d93a223d0f8694a29a31c62375281b6aea3a4322fa400019c7e7",
+    "features/auto_tuning_lab/scripts/optimization_override_loader.gd": "06f35943e1c83a25fa9f65c5452bb4f1eaf11c42f218021758c1628a3d57fc2c",
+    "features/auto_tuning_lab/scripts/optimization_trial_driver.gd": "6ee81739872e8631625b5dc1e0c2c27a226c326231637dea12b04503d1ba177d",
+    "features/auto_tuning_lab/scripts/optimization_trial_lab.gd": "df67368c3c75d36d4d7242219ec9b690f121a6e259bbaf1a1f6742b558b51316",
+    "features/auto_tuning_lab/scripts/optimization_trial_runner.gd": "05444b1fdd99f386eb95285143f759e03b25519e55cb720c9293794e14b3e55f",
+    "features/auto_tuning_lab/scripts/response_metrics.gd": "a4b92a0be9143559fbbc97277196c4376a38b010afef31ce928358d3595f3d8f",
+    "features/auto_tuning_lab/tests/test_override_loader.gd": "88471762b4c7dc79e09f9ce27b7b1a8ba1ea217326d08e5bb49ffc9f997a1c4f",
+    "features/auto_tuning_lab/tests/test_response_metrics.gd": "96cced85e5ed7e5e2bf8a74a50ff2dc38f45f2dcc709a6b8d67c268544b95e91",
+    "features/auto_tuning_lab/tests/test_trial_contract.gd": "4685a03ae1f647a4255f765145a70c02514a4cecd3c3beb741179855c3c6080b"
+  },
+  "all_passed": true
+}

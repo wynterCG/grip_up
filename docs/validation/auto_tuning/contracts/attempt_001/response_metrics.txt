@@ -1,0 +1,20 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS preheld start admitted without inventing latency
+PASS missing commands stay unknown
+PASS slow single sample is not settled
+PASS continuous .25second stable interval confirms forward stop distance
+PASS finish is pure and repeatable
+PASS opposite velocity must persist
+PASS reversal latency uses raw accepted command and sustained actual velocity
+PASS duplicate time/tick rejected
+PASS nonfinite COM rejected
+PASS interrupted stop retains unknown distance
+PASS unfinished reversal is censored
+PASS target jerk measured in SI units
+PASS changed anchor excludes derivative discontinuity
+PASS missing accepted timestamp never becomes zero latency
+PASS released reversal cannot earn later passive motion credit
+PASS missing input frame cannot invent a world response axis
+PASS event history bounded with current pending observation
+RESPONSE METRICS RESULTS: 17 checks, 0 failures

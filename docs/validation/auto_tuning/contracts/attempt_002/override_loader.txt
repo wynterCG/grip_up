@@ -1,0 +1,34 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+VALIDATION { "ok": true, "reason": "VALID", "errors": [], "source_hashes": { "features/auto_tuning_lab/resources/parameter_space.json": "aec7e3be5e22fa9185cedc1e0e9bd1bfbf8d101205da69d732294e072a959e2b" }, "parameter_space_sha256": "aec7e3be5e22fa9185cedc1e0e9bd1bfbf8d101205da69d732294e072a959e2b" }
+PASS full baseline manifest and real source hash validate
+PASS actual JSON numeric roundtrip preserves valid Hz/seed semantics
+PASS fixed8 canonical numeric bytes agree with declared Python contract
+PASS missing manifest field rejected: schema_version
+PASS missing manifest field rejected: parameter_overrides
+PASS missing manifest field rejected: source_hashes
+PASS missing manifest field rejected: evaluation_split
+PASS unknown manifest field cannot request extra authority
+PASS bad type/nonfinite/range rejects nan
+PASS bad type/nonfinite/range rejects inf
+PASS bad type/nonfinite/range rejects -inf
+PASS bad type/nonfinite/range rejects true
+PASS bad type/nonfinite/range rejects 0.12
+PASS bad type/nonfinite/range rejects -0.1
+PASS bad type/nonfinite/range rejects 0.21
+PASS partial override is rejected rather than silently filled
+PASS unknown tuning field is rejected
+PASS coupled target braking distance outside frozen envelope is rejected
+PASS canonical precision beyond eight decimals is rejected
+PASS candidate identity is recomputed, not blindly echoed
+PASS changed schema version is rejected
+PASS stale actual source is rejected
+PASS source path cannot escape the project
+PASS train validation never opens private holdout bytes
+PASS duplicate scenario IDs rejected
+PASS session transport duplicates the Resource and changes only intended knob
+PASS source Resource, force/reach/mass/KD and other fields remain unchanged
+PASS normal completion restores exact original tuning identity
+PASS failure/abort cleanup restores the same original, not a reconstructed default
+PASS invalid transport creates no resource binding or side effect
+OVERRIDE LOADER RESULTS: 30 checks, 0 failures

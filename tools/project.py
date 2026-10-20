@@ -8,9 +8,7 @@ import subprocess
 import sys
 sys.stdout.reconfigure(encoding='utf-8',errors='replace')
 
-ROOT = Path(__file__).resolve().parents[1]
-DEST = Path(r'E:\Godot Games\grip_up')
-ENGINE = Path(r'C:\Users\Wynter\WrapRush\tools\godot.exe')
+from project_config import ROOT, DEST, ENGINE
 CLI = Path(r'C:\Users\Wynter\Downloads\godot-mcp-pro-v1.17.1\server\build\cli.js')
 BUILD_NAME = 'GripUp-v1.2-tests.exe'
 
@@ -37,7 +35,7 @@ elif args.task == 'sync':
     assert str(DEST.resolve()).lower() == r'e:\godot games\grip_up'
     DEST.mkdir(parents=True, exist_ok=True)
     for name in ['features','tools','docs']:
-        shutil.copytree(ROOT/name, DEST/name, dirs_exist_ok=True, ignore=shutil.ignore_patterns('__pycache__'))
+        shutil.copytree(ROOT/name, DEST/name, dirs_exist_ok=True, ignore=shutil.ignore_patterns('__pycache__', '.venv', '.pytest_cache'))
     for name in ['project.godot','.gitignore','README.md','export_presets.cfg']:
         if (ROOT/name).exists(): shutil.copy2(ROOT/name, DEST/name)
     # The licensed local plugin is enabled by ignored override.cfg, not by the

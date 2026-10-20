@@ -1,0 +1,393 @@
+{
+  "schema_version": "1.0",
+  "revision": 1,
+  "input_trace_id": "withheld_policy_r1",
+  "scope": "Private final evaluation, open only after shortlist provenance freeze",
+  "scenarios": [
+    {
+      "revision": 1,
+      "arena": 8,
+      "hands": [
+        0,
+        1
+      ],
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "duration_s": 1.5,
+      "settle_s": 0.4,
+      "goal_progress_m": 0.04,
+      "commands": [
+        {
+          "time": 0,
+          "keys": [
+            "contract"
+          ]
+        },
+        {
+          "time": 1.5,
+          "keys": []
+        }
+      ],
+      "driver": "fixed_input_tape_holdout_r1",
+      "scope": "Withheld existing geometry; ordinary inputs, task failure retained",
+      "id": "withheld_asymmetric_spacing",
+      "implementation_id": "asymmetric_pull_train",
+      "contact_points": [
+        [
+          -0.31,
+          2.12,
+          0
+        ],
+        [
+          0.28,
+          1.98,
+          0
+        ]
+      ]
+    },
+    {
+      "revision": 1,
+      "arena": 6,
+      "hands": [
+        0,
+        1
+      ],
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "duration_s": 1.5,
+      "settle_s": 0.4,
+      "goal_progress_m": 0.04,
+      "commands": [
+        {
+          "time": 0,
+          "keys": [
+            "contract"
+          ]
+        },
+        {
+          "time": 1.5,
+          "keys": []
+        }
+      ],
+      "driver": "fixed_input_tape_holdout_r1",
+      "scope": "Actual pre-simulation horizontal velocity .08m/s and changed real camera yaw; not a case label alone",
+      "id": "withheld_camera_velocity",
+      "implementation_id": "vertical_pull_train",
+      "camera_yaw": -0.28,
+      "initial_velocity": [
+        0.08,
+        0,
+        0
+      ]
+    },
+    {
+      "revision": 1,
+      "arena": 6,
+      "hands": [
+        0,
+        1
+      ],
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "duration_s": 1.5,
+      "settle_s": 0.4,
+      "goal_progress_m": 0.02,
+      "commands": [
+        {
+          "time": 0,
+          "keys": [
+            "contract"
+          ]
+        },
+        {
+          "time": 1.5,
+          "keys": []
+        }
+      ],
+      "driver": "fixed_input_tape_holdout_r1",
+      "scope": "Withheld existing geometry; ordinary inputs, task failure retained",
+      "id": "withheld_near_reach",
+      "implementation_id": "vertical_pull_train",
+      "near_reach_margin_m": 0.015
+    },
+    {
+      "revision": 1,
+      "arena": 8,
+      "hands": [
+        0,
+        1
+      ],
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "duration_s": 1.5,
+      "settle_s": 0.4,
+      "goal_progress_m": 0.04,
+      "commands": [
+        {
+          "time": 0,
+          "keys": [
+            "contract"
+          ]
+        },
+        {
+          "time": 1.5,
+          "keys": []
+        }
+      ],
+      "driver": "fixed_input_tape_holdout_r1",
+      "scope": "Existing Mastery A geometry physically mirrored by Course.apply_segment(true), with anatomically mirrored hand/index mapping",
+      "id": "withheld_mastery_a_mirror",
+      "implementation_id": "two_stage_transfer",
+      "fixture": "existing_mastery_segment",
+      "segment": 0,
+      "mirrored": true,
+      "contact_indices": {
+        "0": 1,
+        "1": 0
+      },
+      "policy": {
+        "initial_w_s": 3.0,
+        "first_point_index": 2,
+        "first_hand": 1,
+        "settle_s": 0.25,
+        "second_point_index": 3,
+        "second_hand": 0,
+        "second_lateral_action": "bias_left",
+        "second_lateral_s": 0.3,
+        "transfer_timeout_s": 3.0,
+        "persistent_target": true
+      }
+    },
+    {
+      "revision": 1,
+      "arena": 8,
+      "hands": [
+        0,
+        1
+      ],
+      "direction": [
+        -1,
+        0,
+        0
+      ],
+      "duration_s": 0.7,
+      "settle_s": 0.5,
+      "goal_progress_m": 0.04,
+      "commands": [
+        {
+          "time": 0,
+          "keys": [
+            "bias_left"
+          ]
+        },
+        {
+          "time": 0.35,
+          "keys": []
+        },
+        {
+          "time": 0.45,
+          "keys": [
+            "bias_right"
+          ]
+        },
+        {
+          "time": 0.7,
+          "keys": []
+        }
+      ],
+      "driver": "fixed_input_tape_holdout_r1",
+      "scope": "Existing Mastery B actual primitive positions and spawn mirrored; contact index/hand mapping mirrored too",
+      "id": "withheld_mastery_b_mirror",
+      "implementation_id": "lateral_traverse_train",
+      "fixture": "existing_mastery_segment",
+      "segment": 1,
+      "mirrored": true,
+      "contact_indices": {
+        "0": 1,
+        "1": 0
+      },
+      "contact_y_offsets": [
+        -0.16,
+        0
+      ]
+    },
+    {
+      "revision": 1,
+      "arena": 6,
+      "hands": [
+        0,
+        1
+      ],
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "duration_s": 1.5,
+      "settle_s": 0.4,
+      "goal_progress_m": 0.04,
+      "commands": [
+        {
+          "time": 0,
+          "keys": [
+            "contract"
+          ]
+        },
+        {
+          "time": 1.5,
+          "keys": []
+        }
+      ],
+      "driver": "fixed_input_tape_holdout_r1",
+      "scope": "Existing Step, same declared two real handoffs as test_intent_handoffs; natural finite capture/continuity",
+      "id": "withheld_two_stage",
+      "implementation_id": "two_stage_transfer",
+      "policy": {
+        "initial_w_s": 3.0,
+        "first_point_index": 2,
+        "first_hand": 0,
+        "settle_s": 0.25,
+        "second_point_index": 3,
+        "second_hand": 1,
+        "second_lateral_action": "bias_right",
+        "second_lateral_s": 0.3,
+        "transfer_timeout_s": 3.0,
+        "persistent_target": true
+      }
+    },
+    {
+      "revision": 1,
+      "arena": 2,
+      "hands": [],
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "duration_s": 1.5,
+      "settle_s": 0.4,
+      "goal_progress_m": 0.04,
+      "commands": [
+        {
+          "time": 0,
+          "keys": [
+            "contract"
+          ]
+        },
+        {
+          "time": 1.5,
+          "keys": []
+        }
+      ],
+      "driver": "fixed_input_tape_holdout_r1",
+      "scope": "Existing real hinged beam, profile4; reaction and material anchor tracking regression, not M7 or complete EXIT route",
+      "id": "withheld_dynamic_beam",
+      "implementation_id": "dynamic_support",
+      "policy": {
+        "hand": 1,
+        "local_point": [
+          0.2,
+          0,
+          0.13
+        ],
+        "w_s": 1.2,
+        "settle_s": 0.4,
+        "minimum_rotation_rad": 0.02
+      }
+    },
+    {
+      "revision": 1,
+      "arena": 8,
+      "hands": [],
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "duration_s": 1.5,
+      "settle_s": 0.4,
+      "goal_progress_m": 0.04,
+      "commands": [
+        {
+          "time": 0,
+          "keys": [
+            "contract"
+          ]
+        },
+        {
+          "time": 1.5,
+          "keys": []
+        }
+      ],
+      "driver": "fixed_input_tape_holdout_r1",
+      "scope": "Original v1.1 test_locomotion_allocation capsule/static-support fixture copied unchanged mechanically; A0/A1 negative control, not a newly favourable level",
+      "id": "withheld_a1_canary",
+      "implementation_id": "allocation_canary",
+      "policy": {
+        "kinds": [
+          "asymmetric_diagonal"
+        ],
+        "variants": [
+          0,
+          1
+        ],
+        "duration_s": 1.4,
+        "input": [
+          0.7,
+          1
+        ],
+        "left_offset": [
+          -0.1,
+          0.42,
+          -0.35
+        ],
+        "right_offset": [
+          0.1,
+          0.2,
+          -0.35
+        ]
+      }
+    },
+    {
+      "revision": 1,
+      "arena": 21,
+      "hands": [],
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "duration_s": 1.5,
+      "settle_s": 0.4,
+      "goal_progress_m": 0.0,
+      "commands": [
+        {
+          "time": 0,
+          "keys": [
+            "contract"
+          ]
+        },
+        {
+          "time": 1.5,
+          "keys": []
+        }
+      ],
+      "driver": "fixed_input_tape_holdout_r1",
+      "scope": "Existing complete First Ascent ordinary spawn through manual-input closed-loop exercise, hybrid phase separately tagged; native sole and .30m walking goal required",
+      "id": "withheld_first_ascent",
+      "implementation_id": "first_ascent"
+    }
+  ]
+}

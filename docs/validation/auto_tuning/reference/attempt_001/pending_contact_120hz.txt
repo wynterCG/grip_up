@@ -1,0 +1,53 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS current-valid held selection reaches actual contact finitely without request pose/velocity writes
+PASS new contact always passes actual evaluator, finite gesture and unchanged strength/assist limits
+PASS valid new grip retains and pending duration freezes at actual contact
+PASS newly attached grip becomes one real support instead of remaining a zero-load pending hand
+PASS rest target initializes from actual separation within unchanged existing target limits
+PASS journal SUCCESS records real contact time and original material point exactly once
+PASS held button-up releases an attached new grip synchronously and preserves momentum
+PASS initially distant static material target is caught by one continuous held gesture during natural incoming body motion
+PASS incoming catch retains exact current anatomical/contact/force authority
+PASS capture never erases incoming body momentum or substitutes a future reach point
+PASS full anatomical extension can establish actual current contact without enlarging reach
+PASS full-reach catch caches real separation but retains .62rest/.04elastic authority and bounded blend
+PASS moving dynamic support reaches current contact on the selected local point
+PASS incoming moving support receives no force before valid finite contact
+PASS handoff starts on a physically caught left support
+PASS second initially unreachable target is selected while preserving original real support
+PASS pending second selection does not add an impulse or pose jump
+PASS supporting anchor/rest/allocation remain unchanged for the entire pending second attempt
+PASS natural supported body motion earns the selected second contact without another press
+PASS left release preserves new right anchor and instantaneous body momentum
+PASS new single support retains with original globally shared force/torque limits
+PENDING_GYRO_CONTROL 0.04533999040723
+PENDING_PAIR {"damp":[0.0,0.0],"final_l":"(2.413167, 0.026361, 0.483632)","final_p":"(-0.0, -4.799999, 0.0)","gravity":[0.0,0.0],"initial_l":"(2.405675, 0.027876, 0.519311)","initial_p":"(0.0, -4.8, 0.0)","isotropic":false,"observed":{"angular_error":0.0389072671532631,"caps":true,"dual_samples":68,"linear_error":0.000000961124897003174,"peak_assist":1.95888316631317,"reaction_error":0.0,"torque_error":0.0000038444995880127}}
+PASS both new finite grips physically engage the same free dynamic support
+PASS two anchors share one opposite support torque and conserve the applied pair force/moment wrench
+PASS original anisotropic pair conserves linear momentum and angular drift stays inside measured unactuated control envelope
+PASS two dynamic-support grips retain360N shared hand,20Nm assist and150Nm resultant authority
+PENDING_PAIR {"damp":[0.0,0.0],"final_l":"(2.399993, 0.36, 0.6)","final_p":"(-0.0, -4.8, 0.0)","gravity":[0.0,0.0],"initial_l":"(2.4, 0.36, 0.6)","initial_p":"(0.0, -4.8, 0.0)","isotropic":true,"observed":{"angular_error":0.00000621748176854453,"caps":true,"dual_samples":68,"linear_error":0.000000533328375240671,"peak_assist":1.57669377326965,"reaction_error":0.0,"torque_error":0.00000384441273126868}}
+PASS both new finite grips physically engage the same free dynamic support
+PASS two anchors share one opposite support torque and conserve the applied pair force/moment wrench
+PASS isotropic closed Jolt pair conserves total linear/angular momentum through catches
+PASS two dynamic-support grips retain360N shared hand,20Nm assist and150Nm resultant authority
+PASS timed moderate-speed reach window produces an actual earned catch from early selection
+PASS moderate catch respects finite hand travel and does not erase incoming speed
+PASS a deliberately short high-speed window can pass without any impossible guaranteed catch
+PASS miss is explained by finite hand travel while body momentum remains untouched
+PASS a missed window does not invent a timeout or silently drop the still-held material target
+PASS adverse load fixture starts from real captured/retained contact
+PASS contact success and later real grip overload/slip are recorded as separate physical stages
+PASS weak support is allowed to lose an unsustainable catch instead of increasing strength
+PASS regrip after old contact creates fresh capture metadata instead of inheriting prior arrival/failure
+PASS new pending selection cannot advertise old catch time or prediction authority
+PASS reset clears both pending/attached capture ownership without ghost effort
+PASS new attached grip cannot survive invalid ownership: ungrabbable
+PASS invalidating a neutral new attached grip causes no body impulse or pose reset: ungrabbable
+PASS new attached grip cannot survive invalid ownership: destroyed
+PASS invalidating a neutral new attached grip causes no body impulse or pose reset: destroyed
+PASS new attached grip cannot survive invalid ownership: reset
+PASS invalidating a neutral new attached grip causes no body impulse or pose reset: reset
+PASS all observed new-branch steps respect zero precontact force and shared force/torque budgets
+PENDING CONTACT RESULTS: 47 checks, 0 failures

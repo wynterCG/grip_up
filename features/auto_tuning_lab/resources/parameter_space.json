@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "version": "AT1-r1",
+  "profile": "BASE-A0-B1",
+  "parameters": [
+    {"id":"traversal_speed_m_s","engine_path":"controller.tuning.traversal_speed_m_s","type":"float","units":"m/s","baseline":0.25,"min":0.18,"max":0.32,"transform":"linear","requires":["profile4","intent_climb_enabled","A0","B1"],"invariants":["existing_target_envelope","unchanged_effort_and_reach"],"version":1,"provenance":"climbing_tuning.gd:89; coordinator desired velocity; v1.3 physics audit"},
+    {"id":"traversal_input_ramp_s","engine_path":"controller.tuning.traversal_input_ramp_s","type":"float","units":"s","baseline":0.12,"min":0.07,"max":0.20,"transform":"linear","requires":["profile4","intent_climb_enabled","A0","B1"],"invariants":["at_least_four_60hz_ticks","explicit_reversal_policy_unchanged"],"version":1,"provenance":"climbing_tuning.gd:90; coordinator command ramp/reversal recency; v1.3 physics audit"},
+    {"id":"traversal_target_max_rate","engine_path":"controller.tuning.traversal_target_max_rate","type":"float","units":"m/s","baseline":0.24,"min":0.16,"max":0.30,"transform":"linear","requires":["profile4","intent_climb_enabled","A0","B1"],"invariants":["finite_target_rate","braking_distance_within_0.055m"],"version":1,"provenance":"climbing_tuning.gd:95; existing braking-envelope target integrator; v1.3 physics audit"},
+    {"id":"traversal_target_max_acceleration","engine_path":"controller.tuning.traversal_target_max_acceleration","type":"float","units":"m/s^2","baseline":0.9,"min":0.6,"max":1.2,"transform":"linear","requires":["profile4","intent_climb_enabled","A0","B1"],"invariants":["finite_target_acceleration","braking_distance_within_0.055m"],"version":1,"provenance":"climbing_tuning.gd:96; existing braking-envelope target integrator; v1.3 physics audit"}
+  ],
+  "cross_constraints": [
+    {"id":"TARGET_BRAKING_ENVELOPE","expression":"traversal_target_max_rate^2/(2*traversal_target_max_acceleration)<=0.055","units":"m","limit":0.055,"reason":"Conservative first-sweep subset: full-rate target can brake inside the unchanged planner offset. Not a claim that excluded combinations necessarily violate engine physics."},
+    {"id":"RESOLVED_INPUT_RAMP","expression":"traversal_input_ramp_s>=4/60","units":"s","reason":"At least four comparison-frequency ticks in the input ramp."}
+  ],
+  "frozen": {"traversal_plan_max_acceleration":1.0,"traversal_prediction_s":0.18,"traversal_max_target_offset":0.055,"body_mass":12.0,"max_reach_length":0.65708,"total_pull_force_budget":360.0,"max_attitude_torque":20.0,"max_total_torque":150.0,"arm_stiffness":6000.0,"arm_damping":220.0,"foot_total_force_budget":180.0,"foot_max_force_per_foot":120.0},
+  "candidate_identity":"SHA256 UTF8 sorted compact JSON of all four values formatted fixed8 decimals then trailing zeros/decimal point removed; no exponent",
+  "promotion":"NONE; physics-valid experiment only; human review required"
+}

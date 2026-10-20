@@ -1,0 +1,16 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS unexpired wall clock neither cancels nor changes state
+PASS hard invariant abort remains distinct from wall timeout
+PASS existing cancellation remains latched
+PASS expired FirstAscent deadline latches the trial cancellation state
+PASS real FirstAscent wrapper observes the shared cancellation hook
+PASS expired pre-tick hook does not simulate a route or construct a Lab/body
+PASS real run_trial classifies the FirstAscent abort as timed_out, never completed
+PASS aborted scenario remains explicit unsuccessful evidence
+PASS timeout cleanup leaves no Resource binding or saved-resource mutation
+PASS timeout restores physics frequency through normal cleanup
+PASS timeout result retains independently verified unchanged source provenance
+TRIAL TIMEOUT RESULTS: 11 checks, 0 failures
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://features/auto_tuning_lab/scripts/native_review.gd" id="1"]
+
+[node name="NativeTuningReview" type="Node"]
+script = ExtResource("1")

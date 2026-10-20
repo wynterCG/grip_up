@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "study_name": "grip_up_stage1_r1",
+  "seed": 104729,
+  "physics_hz": 120,
+  "run_seed": 101,
+  "timeout_seconds": 180,
+  "baseline_repeats": 3,
+  "random_trials": 12,
+  "tpe_trials": 40,
+  "workers": 1,
+  "require_meaningful_random_gain_for_tpe": true,
+  "tpe_batch_size": 10,
+  "no_improvement_batch_limit": 2,
+  "notes": "Only public train_scenarios.json. Stop on unsafe/ambiguous logging, reproduced essential regression, baseline noise, or no practical Pareto screening gain. No product promotion."
+}
