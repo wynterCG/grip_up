@@ -28,7 +28,9 @@ func _virtual_scope(value:Dictionary)->String:
 		if not config is Dictionary or not config.get("window_size") is Array:return "ENVIRONMENT_NOT_COMPARABLE:CANONICAL_BACKING"
 		var size:Array=config.window_size
 		# JSON uses floats; compare exact scalar values without rounding dimensions.
-		if size.size()!=2 or size[0]!=1024.0 or size[1]!=576.0:return "ENVIRONMENT_NOT_COMPARABLE:CANONICAL_BACKING"
+		if size.size()!=2:return "ENVIRONMENT_NOT_COMPARABLE:CANONICAL_BACKING"
+		if typeof(size[0]) not in [TYPE_INT,TYPE_FLOAT] or typeof(size[1]) not in [TYPE_INT,TYPE_FLOAT]:return "ENVIRONMENT_NOT_COMPARABLE:CANONICAL_BACKING"
+		if size[0]!=1024.0 or size[1]!=576.0:return "ENVIRONMENT_NOT_COMPARABLE:CANONICAL_BACKING"
 	backing_initialization=Backing.initialize(get_window())
 	if not backing_initialization.reason.is_empty():return "ENVIRONMENT_NOT_COMPARABLE:"+backing_initialization.reason
 	return ""

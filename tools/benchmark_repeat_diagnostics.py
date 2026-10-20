@@ -54,4 +54,52 @@ def main():
     assert len(rows)<=4 and source_hashes()==hashes
     print('Bounded diagnostics completed',len(rows),'primary remains stopped')
 
-if __name__=='__main__':main()
+def finish():
+    """Retain failed D1; spend only the three remaining diagnostic slots."""
+    assert not (BASE/'diagnostics_session.json').exists()
+    first=BASE/'attempts/D1_json_size_contract'
+    old=read_json(BASE/'diagnostic_source_identity.json')
+    observed=read_json(first/'result.json')
+    assert observed['old_array_comparison'] is False and observed['failures']==1
+    identity=git_identity();assert not identity['repository_dirty']
+    hashes=source_hashes();assert hashes==source_hashes(DEST)
+    assert {p for p in hashes if hashes[p]!=old['source_hashes'].get(p)}=={'features/evaluator_virtual_cursor/scripts/benchmark_driver.gd'}
+    source={**identity,'source_hashes':hashes,'engine_identity':engine_identity(),'diagnostic_only':True}
+    assert not (BASE/'diagnostic_final_source_identity.json').exists()
+    atomic_json(BASE/'diagnostic_final_source_identity.json',source)
+    campaign.BASE=BASE;campaign.DOC=DOC
+    def diagnostic_identity():
+        assert hashes==source_hashes()==source_hashes(DEST)
+        return source
+    campaign.identity=diagnostic_identity
+    rows=[{'run_id':first.name,'directory':str(first),'status':'PURE_CONTRACT_FAILED','result':observed,'reason':'Invalid string dimension caused script error; retained before numeric-type guard correction','source_commit':old['repository_commit']}]
+    def save():atomic_json(BASE/'diagnostics_session.json',{'runs':rows,'primary_campaign_stays_stopped':True,'maximum_diagnostic_processes':4,'diagnostic_source_commit':identity['repository_commit']})
+    with StudyLock(ROOT/'builds/eval_virtual_cursor'):
+        save()
+        directory=BASE/'attempts/D2_json_size_contract';directory.mkdir(parents=True,exist_ok=False)
+        command=[str(ENGINE),'--headless','--path',str(ROOT),'--script','res://features/evaluator_virtual_cursor/tests/test_benchmark_backing.gd','--','--benchmark-qualification','--backing-size','1024x576','--output',str(directory/'result.json')]
+        atomic_json(directory/'manifest.json',{'budget_group':'diagnostic','run_id':directory.name,'source_identity':source,'command':command,'gameplay_worlds':0})
+        with (directory/'stdout.txt').open('wb') as stdout,(directory/'stderr.txt').open('wb') as stderr:
+            p=subprocess.Popen(command,cwd=ROOT,stdout=stdout,stderr=stderr)
+            try:code=p.wait(timeout=20)
+            except subprocess.TimeoutExpired:p.kill();p.wait();code=124
+        result=read_json(directory/'result.json')
+        rows.append({'run_id':directory.name,'directory':str(directory),'status':'PURE_CONTRACT_PASS' if code==0 and result['failures']==0 else 'PURE_CONTRACT_FAILED','result':result,'exit_code':code});save()
+        if rows[-1]['status']!='PURE_CONTRACT_PASS':return
+        for mode in ['headless','rendered_scripted']:
+            r=campaign.execute('swing_catch_train',120,mode,1,'diagnostic',ROOT/'builds/eval_virtual_cursor/requal_20261020_r1/capture/tapes/catch_120.json')
+            rows.append(r);save()
+            if r['status']!='RUN_VALID':break
+        physical=[r for r in rows if r['status']=='RUN_VALID']
+        if len(physical)==2:
+            try:pair=compare_required(physical[0]['directory'],physical[1]['directory'])
+            except (ValueError,KeyError,TypeError) as e:pair={'status':'INVALID_COMPARISON','reason':str(e)}
+            atomic_json(BASE/'diagnostic_pair_120.json',pair)
+    assert len(rows)<=4
+    print('Diagnostics finished',len(rows),'primary remains stopped')
+
+if __name__=='__main__':
+    import argparse
+    parser=argparse.ArgumentParser();parser.add_argument('--finish',action='store_true')
+    args=parser.parse_args()
+    finish() if args.finish else main()
