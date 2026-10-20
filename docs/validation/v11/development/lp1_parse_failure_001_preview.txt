@@ -1,0 +1,55 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+
+
+PASS v0.7 leaves the real startup profile and opt-in flag unchanged
+
+PASS explicit Step button selects experimental profile4
+
+PASS hold-to-grip mandatory and Space initially OFF
+
+PASS hands-only Step starts P0 without silently enabling feet
+
+PASS Step has a broad real foothold and separate higher free-surface targets
+
+FAIL real LMB finite contact starts the Step
+
+FAIL independent RMB adds a real second support
+
+SCRIPT ERROR: Parse Error: Cannot infer the type of "contact_blocked" variable because the value doesn't have a set type.
+
+   at: GDScript::reload (res://features/grip_up/scripts/locomotion_observer.gd:75)
+
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+
+   at: GDScript::reload (res://features/grip_up/scripts/climbing_controller.gd:0)
+
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+
+   at: GDScript::reload (res://features/grip_up/scripts/grip_up_lab.gd:0)
+
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+
+   at: GDScript::reload (res://features/grip_up/tests/test_intent_integration.gd:0)
+
+ERROR: Failed to load script "res://features/grip_up/tests/test_intent_integration.gd" with error "Compilation failed".
+
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+
+SCRIPT ERROR: Invalid call. Nonexistent function 'new' in base 'GDScript'.
+
+   at: @implicit_new (res://features/grip_up/scripts/climbing_controller.gd:61)
+
+   GDScript backtrace (most recent call first):
+
+       [0] @implicit_new (res://features/grip_up/scripts/climbing_controller.gd:61)
+
+       [1] load_test (res://features/grip_up/scripts/grip_up_lab.gd:338)
+
+       [2] _ready (res://features/grip_up/scripts/grip_up_lab.gd:147)
+
+       [3] run (res://features/grip_up/tests/test_intent_integration.gd:66)
+
+SCRIPT ERROR: Invalid call. Nonexistent function 'reset' in base 'Nil'.
+
+   at: reset_state (res://features/grip_up/scripts/climbing_controller.gd:122)

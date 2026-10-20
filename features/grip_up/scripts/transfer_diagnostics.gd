@@ -258,7 +258,7 @@ func sample(controller: Node, delta: float, decomposition: Dictionary) -> void:
 		"swing_relative_spin":swing_relative_spin,"swing_work_scope":"incremental_swing_after_common_cap; actual_blended_reaction_weighted_support_spin",
 		"energy_scope":"body_relative_to_weighted_support; excludes gravity/contact/joint/drag work and support kinetic energy",
 		"budget":budget,"support_reactions":reactions}
-	var request: Vector3 = controller._swing_requested if controller.supported_wasd_swing_enabled else Vector3.ZERO
+	var request: Vector3 = controller.get_effective_swing_request()
 	var lever: Vector3 = decomposition.swing_lever
 	var unactuated := has_support and float(decomposition.swing_engagement)>.000001 and request.length_squared()>.000001 and (lever.length_squared()<.000001 or request.cross(lever.normalized()).length_squared()<.000001)
 	if unactuated and not _axis_unactuated:

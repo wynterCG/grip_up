@@ -15,6 +15,7 @@ const TransferDiagnostics = preload("res://features/grip_up/scripts/transfer_dia
 const TwistRefinement = preload("res://features/grip_up/scripts/supported_twist_refinement.gd")
 const PostureRefinement = preload("res://features/grip_up/scripts/supported_posture_refinement.gd")
 const IntentLocomotion = preload("res://features/grip_up/scripts/intent_locomotion_coordinator.gd")
+const LocomotionObserver = preload("res://features/grip_up/scripts/locomotion_observer.gd")
 const PendingGripTarget = preload("res://features/grip_up/scripts/pending_grip_target.gd")
 const ReachableGripResolver = preload("res://features/grip_up/scripts/reachable_grip_resolver.gd")
 const LedgeTransfer = preload("res://features/grip_up/scripts/ledge_transfer.gd")
@@ -56,6 +57,9 @@ var free_foot_positions: Array[Vector3] = []
 var grounded_for_walking := false
 var intent_climb_enabled := false
 var intent_locomotion = IntentLocomotion.new()
+var locomotion_diagnostics_enabled := false
+var intent_aware_feet_enabled := false
+var locomotion_observer = LocomotionObserver.new()
 var intent_auto_mantle_enabled := false
 var ledge_transfer = LedgeTransfer.new()
 var physics_mantle_v08_enabled := false
@@ -116,6 +120,7 @@ func configure(body: RigidBody3D, configuration: Resource = null) -> void:
 
 func reset_state() -> void:
 	assisted_motion_owned=false
+	locomotion_observer.reset()
 	palm_solver.reset()
 	ledge_transfer.reset()
 	intent_locomotion.reset()
@@ -876,6 +881,7 @@ func _physics_process(delta: float) -> void:
 	simulation_time += delta
 	if assisted_motion_owned:
 		_diagnostics["assisted_motion_owned"]=true
+		if locomotion_diagnostics_enabled:_diagnostics["locomotion_observation"]=locomotion_observer.sample(self,delta)
 		sample_ready.emit(delta)
 		return
 	var intent_response: float = 1.0 if tuning.intent_response_time <= 0.0 else 1.0-exp(-delta/tuning.intent_response_time)
@@ -1059,13 +1065,7 @@ func _physics_process(delta: float) -> void:
 			diagnostic_swing_lever = lever
 			diagnostic_swing_engagement = engagement
 		var base_assist := assist
-		var requested := _swing_requested
-		if control_profile == 4:
-			requested = intent_locomotion.swing if supported_wasd_swing_enabled else Vector3.ZERO
-		if control_profile == 3 and not supported_wasd_swing_enabled:
-			requested = Vector3.ZERO
-		if control_profile == 2:
-			requested = (requested+_contextual_world_filtered).limit_length(1.0)
+		var requested: Vector3 = get_effective_swing_request()
 		var requested_swing: Vector3 = _supported_swing.evaluate(delta,requested,lever,torso.angular_velocity-support_spin,engagement,tuning)
 		assist = (base_assist+requested_swing).limit_length(tuning.max_attitude_torque)
 		_swing_torque = assist-base_assist
@@ -1091,6 +1091,8 @@ func _physics_process(delta: float) -> void:
 	if feet_solver!=null:
 		for id in mini(2,free_foot_positions.size()):
 			feet_solver.set_free_foot_world(id,free_foot_positions[id])
+		feet_solver.intent_aware_selection = control_profile==4 and intent_aware_feet_enabled
+		feet_solver.selection_intent = Vector3(intent_locomotion.data.get("movement_intent_world",Vector3.ZERO)) if feet_solver.intent_aware_selection else Vector3.ZERO
 		var climbing: bool = hands.any(func(hand):return hand.state in ["REACHING","ATTACHED","SLIPPING"] and not hand.get("held_target_pending",false))
 		var foot_stance: bool = feet_solver.feet.any(func(foot):return foot.state in ["SUPPORTING","SLIDING"]) and not grounded_for_walking
 		if control_profile == 4:
@@ -1159,7 +1161,7 @@ func _physics_process(delta: float) -> void:
 		torso.apply_torque(assist * scale_factor)
 		torso.sleeping = false
 	_diagnostics = {"step": _step, "physics_delta": delta, "attached_count": attached.size(),
-		"control_profile":control_profile,"swing_intent":_supported_swing.intent if control_profile in [1,2,3,4] else Vector3.ZERO,"swing_requested":_swing_requested,"swing_torque":_swing_torque*scale_factor,
+		"control_profile":control_profile,"swing_intent":_supported_swing.intent if control_profile in [1,2,3,4] else Vector3.ZERO,"swing_requested":get_effective_swing_request(),"swing_requested_legacy":_swing_requested,"swing_torque":_swing_torque*scale_factor,
 		"intent_locomotion":intent_locomotion.data.duplicate(true) if control_profile==4 else {},"aim_input_does_not_change_length":control_profile in [3,4],"posture_policy":posture_policy,"posture_assist_enabled":posture_assist_enabled,"supported_wasd_swing_enabled":supported_wasd_swing_enabled,
 		"posture":posture_coordinator.diagnostics(self) if control_profile==3 else {},
 		"posture_tilt_assist_enabled":posture_tilt_assist_enabled,"posture_tilt_torque":_posture_tilt_torque*scale_factor,
@@ -1175,6 +1177,8 @@ func _physics_process(delta: float) -> void:
 		"budget_scale": scale_factor, "control_right": _view_right, "hands": hands.duplicate(true),
 		"torso_position": torso.global_position, "linear_velocity": torso.linear_velocity,
 		"angular_velocity": torso.angular_velocity, "metrics": metrics.duplicate()}
+	if locomotion_diagnostics_enabled:
+		_diagnostics["hand_force_vectors"] = [forces[0]*scale_factor,forces[1]*scale_factor]
 	if control_profile==4:
 		_diagnostics["ledge_transfer"]=ledge_transfer.data.duplicate(true)
 		_diagnostics["ledge_transfer"]["applied_torque"]=mantle_assist*scale_factor
@@ -1197,7 +1201,16 @@ func _physics_process(delta: float) -> void:
 			"weights":support_torque_weights,"swing_lever":diagnostic_swing_lever,"swing_engagement":diagnostic_swing_engagement,"applied":diagnostic_applied})
 		_diagnostics["transfer_diagnostics"] = transfer_journal.diagnostics()
 		_publish_transfer_events()
+	if locomotion_diagnostics_enabled:_diagnostics["locomotion_observation"]=locomotion_observer.sample(self,delta)
 	sample_ready.emit(delta)
+
+func get_effective_swing_request() -> Vector3:
+	if assisted_motion_owned:return Vector3.ZERO
+	var requested: Vector3 = _swing_requested
+	if control_profile==4:return intent_locomotion.swing if supported_wasd_swing_enabled else Vector3.ZERO
+	if control_profile==3 and not supported_wasd_swing_enabled:return Vector3.ZERO
+	if control_profile==2:requested = (requested+_contextual_world_filtered).limit_length(1.0)
+	return requested
 
 func _update_integrity(id: int, unweakened_force: float, delta: float) -> void:
 	var hand: Dictionary = hands[id]

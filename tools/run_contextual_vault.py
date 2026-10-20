@@ -2,6 +2,7 @@
 from pathlib import Path
 from datetime import datetime, timezone
 import argparse
+import gzip
 import hashlib
 import json
 import re
@@ -14,10 +15,12 @@ root = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser()
 parser.add_argument('milestone')
 parser.add_argument('suites', nargs='+')
+parser.add_argument('--report-root', default='docs/validation/v10')
 args = parser.parse_args()
 assert re.fullmatch(r'[a-z0-9_]+', args.milestone)
 assert all(re.fullmatch(r'[a-z0-9_]+', name) for name in args.suites)
-base = root / 'docs/validation/v10' / args.milestone
+base = root / args.report_root / args.milestone
+assert base.resolve().is_relative_to((root/'docs/validation').resolve())
 base.mkdir(parents=True, exist_ok=True)
 number = 1
 while (base / f'attempt_{number:03}').exists():
@@ -44,7 +47,11 @@ for suite in args.suites:
         receipt = 'hybrid_resilience' if suite == 'vault_resilience' else suite
         p = root / f'builds/{receipt}_{hz}hz.json'
         if p.exists() and p.stat().st_mtime >= started:
-            shutil.copy2(p, out / f'{suite}_{hz}hz.json')
+            destination = out / f'{suite}_{hz}hz.json'
+            if p.stat().st_size > 1_000_000:
+                destination.with_suffix('.json.gz').write_bytes(gzip.compress(p.read_bytes(), mtime=0))
+            else:
+                shutil.copy2(p, destination)
         print(suite, hz, 'PASS' if passed else 'FAIL', flush=True)
 report['all_passed'] = all(row['passed'] for row in report['runs'])
 report['source_sha256'] = {str(p.relative_to(root)).replace('\\', '/'): hashlib.sha256(p.read_bytes()).hexdigest()

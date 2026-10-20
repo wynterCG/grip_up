@@ -65,5 +65,8 @@ func sample(delta: float, controller: Node, extra: Dictionary = {}) -> void:
 				"support_name":str(support.name) if valid else "","relative_velocity":vector(velocity) if valid else [],"normal_force":foot.normal_force,
 				"tangent_force":vector(foot.tangent_force),"force":vector(foot.force),"slip":foot.slip,"reason":foot.reason})
 	row.merge(extra)
+	if controller.locomotion_diagnostics_enabled:
+		row["locomotion_observation"] = data.get("locomotion_observation",{}).duplicate(true)
+		if controller.feet_solver!=null:row["foot_selection"] = controller.feet_solver.candidate_selection()
 	_file.store_line(JSON.stringify(row))
 	_file.flush()

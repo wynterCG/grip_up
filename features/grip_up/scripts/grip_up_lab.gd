@@ -81,6 +81,13 @@ var attempt_assessments: Array[Dictionary] = [{},{}]
 var physical_feet_enabled := false
 var input_profile := 2
 var intent_climb_enabled := false
+var movement_allocation := 0
+var intent_aware_feet_enabled := false
+var swing_phase_feedback_enabled := false
+var locomotion_diagnostics_enabled := false
+var movement_allocation_choice: OptionButton
+var foot_selection_choice: OptionButton
+var locomotion_diagnostics_toggle: CheckButton
 var contextual = ContextualInput.new()
 var contextual_paused := false
 var contextual_owner := "GAME"
@@ -858,6 +865,15 @@ func _process(delta: float) -> void:
 			status_label.text="You reached the deck by another line. R to try the marked route."
 		elif not hybrid_mantle.active() and hybrid_mantle.state!="DYNAMIC_GROUNDED":
 			status_label.text=level.route_zones[climbing_route.stage].hint if not climbing_route.completed else "FINAL WALL / Reach the broad upper edge and hold W to climb up."
+	if input_profile==4 and locomotion_diagnostics_enabled and hint_time<=0 and (not is_instance_valid(hybrid_mantle) or not hybrid_mantle.active()):
+		var observation: Dictionary = launch.get("locomotion_observation",{})
+		var explanation: String = _locomotion_explanation(observation.get("feedback_code",""))
+		if not explanation.is_empty():status_label.text += " / "+explanation
+	if input_profile==4 and swing_phase_feedback_enabled and not ground_motor.grounded and controller._attached_ids().size()==1 and hint_time<=0 and (not is_instance_valid(hybrid_mantle) or not hybrid_mantle.active()):
+		var swing_motion:Dictionary=launch.get("transfer_diagnostics",{}).get("motion",{})
+		var phase:String=swing_motion.get("swing_phase","")
+		var phase_text:String={"PUMPING":"Swing effort / driving","BRAKING":"Swing effort / braking","NEUTRAL":"Swing effort / neutral"}.get(phase,"")
+		if not phase_text.is_empty():status_label.text += " / "+phase_text
 	if debug_visible:
 		debug_label.text = "PHYSICS / %d Hz  |  step %d  |  %.2f ms  |  %d fps\nBody %s  |  rotation %s\nv %s  /  spin %s" % [Engine.physics_ticks_per_second,session_ticks,Performance.get_monitor(Performance.TIME_PHYSICS_PROCESS)*1000,Engine.get_frames_per_second(),str(torso.position),str(torso.rotation),str(torso.linear_velocity),str(torso.angular_velocity)]
 		for i in 2:
@@ -881,6 +897,11 @@ func _process(delta: float) -> void:
 			var movement:Dictionary=launch.get("intent_locomotion",{})
 			debug_label.text="INTENT-DRIVEN / %s | %s\nRequest %s | desired v %s\nActual v %s | position %s\nGround authority %s | targets %s\nFrame %s" % [movement.get("support_mode","PENDING"),movement.get("movement_block_reason",""),str(movement.get("movement_intent_world",Vector3.ZERO)),str(movement.get("desired_com_velocity",Vector3.ZERO)),str(movement.get("actual_relative_velocity",torso.linear_velocity)),str(torso.global_position),str(ground_motor.motor_authority),str(movement.get("planned_arm_rest_lengths",{})),str(movement.get("frame",{}))]
 			debug_label.text+="\nHands %.1f /360 N | feet %.1f /180 N\nCombined moment %s /150 Nm" % [launch.get("total_force",0),launch.get("leg_force",0),str(launch.get("combined_ground_climb_torque",launch.get("torque",Vector3.ZERO)))]
+			debug_label.text+="\nv1.1 / %s | %s | diagnostics %s" % [["A0 BASELINE","A1 GEOMETRY / LOAD"][movement_allocation],"B2 INTENT FEET" if intent_aware_feet_enabled else "B1 EXISTING FEET",str(locomotion_diagnostics_enabled)]
+			if locomotion_diagnostics_enabled:
+				var observed: Dictionary = launch.get("locomotion_observation",{})
+				debug_label.text+="\nUseful speed %.3f / requested %.3f | owners %d\nLoaded feet %d (sliding %d) | transition windows %d" % [observed.get("actual_useful_speed",0.0),observed.get("requested_useful_speed",0.0),observed.get("owner_bits",0),observed.get("foot_load",{}).get("loaded_count",0),observed.get("foot_load",{}).get("sliding_loaded_count",0),observed.get("complete_windows",0)]
+				debug_label.text+="\nSwing / %s | incremental power %.2f W" % [observed.get("swing_phase","UNMEASURED"),observed.get("swing_power",0.0)]
 			if level_id==11:
 				var ledge:Dictionary=launch.get("ledge_transfer",{})
 				debug_label.text+="\nLedge / %s | %s\nDestination free %s | top ground %s | walked away %s"%[ledge.get("status",""),ledge.get("reason",""),str(ledge.get("destination_clear",false)),str(ground_motor.grounded and ground_motor.support_body==level.platform),str(mantle_completed)]
@@ -1231,6 +1252,29 @@ func _setup_ui() -> void:
 	_button("v0.6 / Early targets: swing",func():_open_distant_lab(5),distant_row)
 	_button("v0.6 / Early targets: moving beam",func():_open_distant_lab(2),distant_row)
 	_label("v0.7 / Choose grips, request body travel",18,settings_box,COLORS[0])
+	_label("v1.1 / Locomotion comparison (opt-in)",18,settings_box,COLORS[0])
+	movement_allocation_choice=OptionButton.new()
+	movement_allocation_choice.add_item("A0 / Existing movement")
+	movement_allocation_choice.add_item("A1 / Geometry and load experiment")
+	movement_allocation_choice.select(movement_allocation)
+	movement_allocation_choice.item_selected.connect(_set_movement_allocation)
+	settings_box.add_child(movement_allocation_choice)
+	foot_selection_choice=OptionButton.new()
+	foot_selection_choice.add_item("B1 / Existing feet (when enabled)")
+	foot_selection_choice.add_item("B2 / Intent-aware feet experiment")
+	foot_selection_choice.select(1 if intent_aware_feet_enabled else 0)
+	foot_selection_choice.item_selected.connect(func(index:int):_set_intent_aware_feet(index==1))
+	settings_box.add_child(foot_selection_choice)
+	var swing_feedback_toggle:=CheckButton.new()
+	swing_feedback_toggle.text="C1 / One-hand swing effort feedback (same physics)"
+	swing_feedback_toggle.set_pressed_no_signal(swing_phase_feedback_enabled)
+	swing_feedback_toggle.toggled.connect(func(on:bool):swing_phase_feedback_enabled=on;_apply_independent_settings())
+	settings_box.add_child(swing_feedback_toggle)
+	locomotion_diagnostics_toggle=CheckButton.new()
+	locomotion_diagnostics_toggle.text="v1.1 / Record movement and transition diagnostics"
+	locomotion_diagnostics_toggle.set_pressed_no_signal(locomotion_diagnostics_enabled)
+	locomotion_diagnostics_toggle.toggled.connect(_set_locomotion_diagnostics)
+	settings_box.add_child(locomotion_diagnostics_toggle)
 	var step_row:=HBoxContainer.new()
 	settings_box.add_child(step_row)
 	_button("The Step / hands only",func():_open_intent_arena(6,false),step_row)
@@ -1548,12 +1592,38 @@ func _update_objective() -> void:
 	if input_profile==4:
 		objective_label.text=level.objective if level_id>=6 else "Choose and hold real contacts. W/S requests up/down; A/D requests traverse.\nMovement needs support; pointing at a new grip never pulls you toward it."
 
+func _set_movement_allocation(variant: int) -> void:
+	movement_allocation=clampi(variant,0,1)
+	if is_instance_valid(movement_allocation_choice):movement_allocation_choice.select(movement_allocation)
+	_apply_independent_settings()
+	message("v1.1 / "+("A1 geometry and load experiment" if movement_allocation==1 else "A0 existing movement"))
+
+func _set_locomotion_diagnostics(on: bool) -> void:
+	locomotion_diagnostics_enabled=on
+	if is_instance_valid(locomotion_diagnostics_toggle):locomotion_diagnostics_toggle.set_pressed_no_signal(on)
+	if is_instance_valid(controller):
+		controller.locomotion_diagnostics_enabled=on
+		controller.locomotion_observer.reset()
+
+func _set_intent_aware_feet(on: bool) -> void:
+	intent_aware_feet_enabled=on
+	if is_instance_valid(foot_selection_choice):foot_selection_choice.select(1 if on else 0)
+	_apply_independent_settings()
+
+func _locomotion_explanation(code: String) -> String:
+	return {"NO_SUPPORT":"A real grip is needed to climb.","AXIS_NOT_ACTUATABLE":"These supports give little leverage in that direction.","ARM_SATURATED":"Support effort is at its limit.","CONTACT_BLOCKED":"The selected hand path is blocked.","FOOT_NOT_PLANTED":"Feet are still seeking support."}.get(code,"")
+
 func _apply_independent_settings() -> void:
 	if not is_instance_valid(controller):return
+	if controller.intent_locomotion.movement_allocation!=movement_allocation:
+		controller.intent_locomotion.reset()
+		controller.intent_locomotion.movement_allocation=movement_allocation
+	controller.locomotion_diagnostics_enabled=locomotion_diagnostics_enabled
+	controller.intent_aware_feet_enabled=intent_aware_feet_enabled and input_profile==4
 	controller.intent_climb_enabled=intent_climb_enabled and input_profile==4
 	if is_instance_valid(ground_motor):ground_motor.process_physics_priority=-10 if input_profile==4 else 0
 	controller.independent_aim_enabled=input_profile in [3,4]
-	controller.transfer_diagnostics_enabled=transfer_diagnostics_enabled and input_profile in [3,4]
+	controller.transfer_diagnostics_enabled=(transfer_diagnostics_enabled or swing_phase_feedback_enabled) and input_profile in [3,4]
 	controller.transfer_assist_enabled=transfer_assist_enabled and input_profile in [3,4]
 	controller.set_posture_variant(posture_variant)
 	controller.posture_assist_enabled=posture_assist_enabled

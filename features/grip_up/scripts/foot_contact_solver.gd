@@ -11,6 +11,19 @@ var _lengths: Array[float] = []
 var _clearances: Array[float] = []
 var _pending: Array[Dictionary] = []
 var _committed := true
+var intent_aware_selection:=false:
+	set(value):
+		if intent_aware_selection!=value:
+			intent_aware_selection=value
+			# Policy changes discard ranking memory only. A valid planted foot
+			# and its force/rest target have the same owner throughout the toggle.
+			_selection_history.clear()
+			_selection_data.clear()
+			_selection_switches=0
+var selection_intent:=Vector3.ZERO
+var _selection_history:Dictionary={}
+var _selection_data:Dictionary={}
+var _selection_switches:=0
 ## v0.8 only: world ankle positions admitted by the current physical proxy pose.
 var collision_pose_guard:Array[Vector3]=[]
 
@@ -24,6 +37,9 @@ func configure(torso: RigidBody3D, settings: Resource, hips: Array[Vector3], res
 	reset()
 
 func reset() -> void:
+	_selection_history.clear()
+	_selection_data.clear()
+	_selection_switches=0
 	_pending.clear()
 	_committed = true
 	feet.clear()
@@ -47,6 +63,12 @@ func get_foot_world(id: int) -> Vector3:
 
 func get_hip_world(id: int) -> Vector3:
 	return body.global_transform * _hips[id] if id >= 0 and id < _hips.size() else Vector3.ZERO
+
+func candidate_selection(include_candidates:bool=false)->Dictionary:
+	var details:Dictionary=_selection_data.duplicate(true)
+	if not include_candidates:
+		for id in details:details[id].erase("candidates")
+	return {"enabled":intent_aware_selection,"policy":"B2_INTENT_AWARE" if intent_aware_selection else "B1_EXISTING","intent":selection_intent,"switch_count":_selection_switches,"feet":details,"scope":"local search only; planted contacts are not automatically replaced"}
 
 func _release(foot: Dictionary, reason: String) -> void:
 	foot.state = "SEARCHING"
@@ -98,7 +120,18 @@ func prepare(delta: float, contract: float, extend: float, _bias: float, active:
 				continue
 			foot.state = "SEARCHING"
 			foot.clock = 0.0
-			var candidate := Sampler.sample(body, tuning, hip, body.global_transform * _rest[id], foot.ankle, _lengths[id], _clearances[id], id)
+			var context:Dictionary={}
+			if intent_aware_selection:
+				context={"enabled":true,"intent":selection_intent,"previous":_selection_history.get(id,{})}
+			var candidate := Sampler.sample(body, tuning, hip, body.global_transform * _rest[id], foot.ankle, _lengths[id], _clearances[id], id,context)
+			if intent_aware_selection:
+				_selection_data[id]=context.get("diagnostics",{}).duplicate(true)
+				if not candidate.is_empty():
+					var selected_support:PhysicsBody3D=candidate.support
+					var local_selected:Vector3=selected_support.to_local(candidate.point)
+					var previous:Dictionary=_selection_history.get(id,{})
+					if not previous.is_empty() and (int(previous.support_id)!=selected_support.get_instance_id() or Vector3(previous.local_point).distance_to(local_selected)>.08):_selection_switches+=1
+					_selection_history[id]={"support_id":selected_support.get_instance_id(),"local_point":local_selected}
 			if candidate.is_empty():
 				foot.reason = "no_surface"
 				continue

@@ -1,0 +1,23 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS v1.1 preserves A0 and disabled observation by default
+PASS load observation includes a sliding foot and excludes a planting foot
+PASS diagnostic trial left hand has actual finite contact
+PASS diagnostic trial right hand has actual finite contact
+PASS profile4 drives its own actual swing request while legacy request remains zero
+PASS public swing diagnostic observes the actual profile4 request
+PASS per-tick observation uses the same actual request
+PASS acceleration and jerk proxy have finite real-tick history
+PASS read-only observation cannot move body, set velocity or change actuator targets
+PASS two-to-one transfer preserves the surviving actual material anchor
+PASS observer retains real before/after half-second handoff windows
+PASS one-to-two diagnostic handoff reacquires with real finite travel
+PASS explicit A1 selector propagates independently of observation
+PASS retry keeps selected variant and diagnostics
+PASS A0 rollback and observer reset are available
+PASS unsupported release trial first earns actual hang contact
+PASS last-hand release fixture has physically left the start floor
+PASS last-hand release leaves no actual swing authority
+PASS unsupported input is explained without creating authority
+PASS instrumented real handoffs preserve shared physical budgets
+LOCOMOTION DIAGNOSTICS RESULTS: 20 checks, 0 failures

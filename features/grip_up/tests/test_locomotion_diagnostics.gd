@@ -1,0 +1,71 @@
+extends "res://features/grip_up/tests/test_intent_integration.gd"
+const Observer=preload("res://features/grip_up/scripts/locomotion_observer.gd")
+
+func run() -> void:
+	await fresh(6,true)
+	check(app.movement_allocation==0 and not app.locomotion_diagnostics_enabled,"v1.1 preserves A0 and disabled observation by default")
+	app._set_locomotion_diagnostics(true)
+	await ticks(.15)
+	var feet: Dictionary=Observer.foot_loads([{"state":"SUPPORTING","force":Vector3.UP*20},{"state":"SLIDING","force":Vector3.UP*7},{"state":"PLANTING","force":Vector3.ZERO}])
+	check(feet.loaded_count==2 and feet.sliding_loaded_count==1 and feet.net_force==Vector3.UP*27,"load observation includes a sliding foot and excludes a planting foot")
+	check(await grip(0,app.level.transfer_points[0]),"diagnostic trial left hand has actual finite contact")
+	check(await grip(1,app.level.transfer_points[1]),"diagnostic trial right hand has actual finite contact")
+	await ticks(.4)
+	Input.action_press("bias_right")
+	await ticks(.3)
+	var telemetry: Dictionary=app.controller.telemetry()
+	var actual_request: Vector3=app.controller.intent_locomotion.swing
+	check(app.controller._swing_requested==Vector3.ZERO and actual_request.length()>.01,"profile4 drives its own actual swing request while legacy request remains zero")
+	check(Vector3(telemetry.swing_requested).distance_to(actual_request)<.000001,"public swing diagnostic observes the actual profile4 request")
+	check(Vector3(telemetry.locomotion_observation.swing_request).distance_to(actual_request)<.000001,"per-tick observation uses the same actual request")
+	check(telemetry.locomotion_observation.get("derivative_valid",false) and Vector3(telemetry.locomotion_observation.jerk_proxy).is_finite(),"acceleration and jerk proxy have finite real-tick history")
+	var pose: Transform3D=app.torso.global_transform
+	var velocity: Vector3=app.torso.linear_velocity
+	var spin: Vector3=app.torso.angular_velocity
+	var lengths: Array=app.controller.hands.map(func(hand):return hand.rest_length)
+	app.controller.locomotion_observer.sample(app.controller,1.0/hz)
+	check(app.torso.global_transform==pose and app.torso.linear_velocity==velocity and app.torso.angular_velocity==spin and app.controller.hands.map(func(hand):return hand.rest_length)==lengths,"read-only observation cannot move body, set velocity or change actuator targets")
+	Input.action_release("bias_right")
+	var anchor=app.controller.hands[0].anchor
+	var material_point: Vector3=anchor.local_point
+	button(1,false)
+	await ticks(.7)
+	check(app.controller.hands[0].anchor==anchor and anchor.local_point==material_point,"two-to-one transfer preserves the surviving actual material anchor")
+	var windows: Dictionary=app.controller.locomotion_observer.transition_windows()
+	var handoff_window:=false
+	for window in windows.complete:
+		var before_two: bool=window.before.any(func(frame):return frame.hands.count("ATTACHED")==2)
+		var after_one: bool=window.after.any(func(frame):return frame.hands.count("ATTACHED")==1)
+		if before_two and after_one:handoff_window=true
+	check(handoff_window,"observer retains real before/after half-second handoff windows")
+	check(await grip(1,app.level.transfer_points[1]),"one-to-two diagnostic handoff reacquires with real finite travel")
+	await ticks(.2)
+	app._set_movement_allocation(1)
+	check(app.controller.intent_locomotion.movement_allocation==1 and app.movement_allocation_choice.selected==1,"explicit A1 selector propagates independently of observation")
+	app.load_test(6)
+	await ticks(.2)
+	check(app.controller.intent_locomotion.movement_allocation==1 and app.controller.locomotion_diagnostics_enabled,"retry keeps selected variant and diagnostics")
+	app._set_movement_allocation(0)
+	app._set_locomotion_diagnostics(false)
+	check(app.controller.intent_locomotion.movement_allocation==0 and app.controller.locomotion_observer.data.is_empty(),"A0 rollback and observer reset are available")
+	await fresh(7,false)
+	app._set_locomotion_diagnostics(true)
+	check(await grip(0,app.level.transfer_points[0]),"unsupported release trial first earns actual hang contact")
+	Input.action_press("contract")
+	await ticks(1.6)
+	Input.action_release("contract")
+	check(not app.ground_motor.grounded,"last-hand release fixture has physically left the start floor")
+	button(0,false)
+	Input.action_press("bias_right")
+	await ticks(.05)
+	var released: Dictionary=app.controller.telemetry()
+	check(app.controller.get_effective_swing_request()==Vector3.ZERO and Vector3(released.swing_torque)==Vector3.ZERO,"last-hand release leaves no actual swing authority")
+	check(released.locomotion_observation.feedback_code=="NO_SUPPORT" and released.locomotion_observation.owner_bits==0,"unsupported input is explained without creating authority")
+	Input.action_release("bias_right")
+	check(budgets_ok,"instrumented real handoffs preserve shared physical budgets")
+	report={"physics_hz":hz,"checks":checks,"failures":failures,"windows":windows,"released":released.locomotion_observation,"provenance":"Automated physical and read-only diagnostic checks; not human comfort"}
+	FileAccess.open("res://builds/locomotion_diagnostics_%dhz.json"%hz,FileAccess.WRITE).store_string(JSON.stringify(report,"\t"))
+	app.queue_free()
+	await ticks(.03)
+	print("LOCOMOTION DIAGNOSTICS RESULTS: %d checks, %d failures"%[checks,failures])
+	quit(1 if failures else 0)

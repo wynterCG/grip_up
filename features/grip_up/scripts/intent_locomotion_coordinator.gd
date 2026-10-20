@@ -2,6 +2,9 @@ extends RefCounted
 ## Tier 1: geometric target planning only; all physical forces remain in ArmActuator.
 ## Reuses arm_target_coordinator's braking-envelope / acceleration-limited update.
 const SupportFrame = preload("res://features/grip_up/scripts/locomotion_support_frame.gd")
+const ConstraintAllocation = preload("res://features/grip_up/scripts/constraint_aware_allocation.gd")
+var movement_allocation:=0
+var constraint_allocation=ConstraintAllocation.new()
 var frame = SupportFrame.new()
 var records: Dictionary = {}
 var input := Vector2.ZERO
@@ -25,6 +28,7 @@ var _last_swing_command := Vector2.ZERO
 var _last_swing_command_time := -1.0
 
 func reset() -> void:
+	constraint_allocation.reset()
 	frame.reset()
 	records.clear()
 	input = Vector2.ZERO
@@ -167,6 +171,11 @@ func step(controller: Node, delta: float, enabled: bool) -> void:
 	var rates := {}
 	var accelerations := {}
 	var goals := {}
+	var allocation:Dictionary={}
+	if movement_allocation==1:
+		allocation=constraint_allocation.evaluate(controller,ids,body_step,direction,delta)
+	elif not constraint_allocation.data.is_empty():
+		constraint_allocation.reset()
 	for id in ids:
 		var hand: Dictionary = controller.hands[id]
 		if controller.is_palm_hand(id):
@@ -185,6 +194,8 @@ func step(controller: Node, delta: float, enabled: bool) -> void:
 		record.idle = record.idle+delta if command.length_squared()<.00001 else 0.0
 		var shoulder: Vector3 = controller.get_shoulder_world(id)
 		var geometric_change: float = (shoulder+body_step).distance_to(hand.anchor_world)-actual
+		if movement_allocation==1:
+			geometric_change=allocation.changes.get(id,geometric_change)
 		record["requested_length_direction"] = int(signf(geometric_change)) if absf(geometric_change)>.00001 else 0
 		# Saturation stops actuator advancement below, but must not reset this
 		# stroke's absolute reference on every cap crossing (an oscillation ratchet).
@@ -240,3 +251,4 @@ func step(controller: Node, delta: float, enabled: bool) -> void:
 		"actual_height_gain":controller.torso.global_position.y-_start_position.y,"actuator_saturated":saturated,
 		"planned_foot_action":Vector2(foot_contract,foot_extend),"aim_input_does_not_change_length":true,"tier":1,
 		"planner_cpu_usec":Time.get_ticks_usec()-began}
+	if movement_allocation==1:data["movement_allocation"]=allocation.duplicate(true)

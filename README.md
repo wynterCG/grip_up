@@ -1,6 +1,6 @@
-# GRIP UP / physics climbing lab 1.0 experimental
+# GRIP UP / physics climbing lab 1.1 experimental
 
-Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v1.0-experimental.exe`.
+Open `project.godot` in Godot 4.7.2, or launch `builds/GripUp-v1.1-experimental.exe`.
 PC mouse and keyboard. Resizable 1920x1080 reference canvas; initial window 1440x810.
 Integrated Jolt, 120 Hz. Core and complete routes also tested at 60 Hz.
 
@@ -9,14 +9,24 @@ This is a separate prototype. The Janga object grabber and its project are uncha
 Consolidated Portuguese implementation report before the v0.7 M7 reactive
 challenge: [system state, physics, controls, top-out, evidence and remaining work](docs/reports/SISTEMA_IMPLEMENTADO_PRE_M7_PT.md).
 
-## v1.1 pre-M7 baseline preparation
+## v1.1 pre-M7 locomotion experiments
 
-The locomotion-refinement experiment starts from the preserved
-`baseline/pre-v1.1-locomotion` tag. LP0 targeted baseline regression passes
-782 checks / 28 runs at 60 and 120 Hz. Gameplay is unchanged; a genuine designer
-baseline is still required before new movement variants. See the
-[v1.1 milestone status](docs/validation/v11/status.md) and
-[short baseline session](docs/validation/v11/LP0_PLAYTEST_PT.md).
+The original controls remain the default and are recoverable at
+`baseline/pre-v1.1-locomotion`. Controls now offers independent A0/A1 allocation,
+B1/B2 foot selection, optional one-hand swing effort feedback and a read-only
+movement/transition observer. Select profile 4 to compare supported intent.
+Enable physical feet separately to compare B1/B2; B0 is physical feet OFF.
+
+A1 is **REVISE**, not an improvement: asymmetric movement and twist regress,
+and a high-ledge approach fails at 60 Hz. B2 corrects effort direction in an
+isolated fixture but has no demonstrated general benefit on Step. Keep A0/B1
+as reference. Swing feedback changes no physics. New switches start OFF;
+profile 2 remains startup. There are no new grip-strength or camera rules.
+
+See the [v1.1 report and separate decisions](docs/validation/v11/report.md),
+[milestone status](docs/validation/v11/status.md) and preserved
+[baseline protocol](docs/validation/v11/LP0_PLAYTEST_PT.md). Automated evidence
+does not substitute for human A/B or authorize default promotion/M7.
 
 ## PLAY / The first ascent
 

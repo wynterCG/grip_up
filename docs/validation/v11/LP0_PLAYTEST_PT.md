@@ -1,5 +1,8 @@
 # v1.1 LP0 comparação de referência
 
+Protocolo histórico do congelamento LP0. Para a implementação atual e decisões
+das experiências, consultar [status.md](status.md) e [report.md](report.md).
+
 Esta sessão usa o controlo existente, antes de qualquer refinamento v1.1.
 Referência: `6646cdeda0a0104b723c483905a9a4fc36e00674`, tag
 `baseline/pre-v1.1-locomotion`. A build anterior está preservada localmente
