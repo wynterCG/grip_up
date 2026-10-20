@@ -1,0 +1,30 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS v0.6 remains opt-in and baseline flag OFF
+PASS pending/free right hand never adds load or exceeds workspace
+PASS existing supporting left anchor and target length preserved
+PASS distant selectable hover is amber rather than a false invalid target
+PASS actual out-of-reach RMB selects a persistent pending target
+PASS selection preserves exact body pose and velocity
+PASS resize notification preserves held target rather than rebasing material coordinates
+PASS pointer and camera cannot retarget latched material point
+PASS pending/free right hand never adds load or exceeds workspace
+PASS existing supporting left anchor and target length preserved
+PASS pending survives old650/150ms admission deadlines while held
+PASS small pending outline identifies selected hand without advertising a grip
+PASS marker follows exact selected material point
+PASS right mouse-up cancels only right pending target immediately
+PASS cancelled point never attaches later and outline disappears
+PASS queued distant target has exactly zero effect on supported body trajectory
+PASS no stale pending target after ui
+PASS no stale pending target after focus
+PASS no stale pending target after reset
+PASS no stale pending target after disable
+PASS no stale pending target after profile
+PASS releasing legacy-acquired left grip preserves pending right
+PASS explicit distant mode takes priority over legacy and short-buffer admission
+PASS short buffer settings cannot expire persistent distant selection
+PASS disabling distant mode cancels its intent while preserving explicit legacy comparison flag
+PASS pending hand does not count as climbing support or disable ground motor
+PASS existing third-person ground walking continues with distant intention held
+DISTANT INPUT RESULTS: 27 checks, 0 failures

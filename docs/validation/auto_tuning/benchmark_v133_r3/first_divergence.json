@@ -1,0 +1,27 @@
+{
+  "actual_physics_divergence_status": "NOT_DEMONSTRATED",
+  "actual_query_ticks": [
+    3,
+    55,
+    282
+  ],
+  "actual_ray_query_records": 3,
+  "earliest_semantic_discrepancy_tick": 1,
+  "first_actual_physics_divergence": null,
+  "first_entry": {
+    "hand": 0,
+    "reason": "INVALID_AIM_NO_NEW_TARGET"
+  },
+  "interpretation": "Frozen validator counted an invalid-aim no-query sentinel as a real raycast. Receipt remains RUN_INVALID; no source repair or new campaign.",
+  "logical_pick_entries": 4,
+  "phase": "POST_RUN_OBSERVER_ACCOUNTING",
+  "primary_hard_stop": true,
+  "prior_domain_task_interruptions_are_not_H_R_divergences": true,
+  "published_H_R_first_divergence": null,
+  "reason": "MISSING_REAL_PICK_RECORDS",
+  "run_id": "swing_catch_train_120_headless_r1_e0310d17",
+  "source_commit": "7a578995915d56ade2fa447f3adfdd6e19dc0218",
+  "source_hash": "a6bd333c5f4fc8f8571d5c907db09f858da9429852befc20e2777f9dc9b36986",
+  "tape_sha256": "bcee5b74cd6e591917366eeac3b2ce6159b12b3e8dc2164f4ae0521d34fce86a",
+  "trace_window": "Full 536 POST rows, point-of-call records and engine result retained in evidence archives"
+}

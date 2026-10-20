@@ -1,0 +1,129 @@
+{
+  "M7_started": false,
+  "engine": {
+    "sha256": "12310c74bdda7dcd43f28e971f33047dcecadd436b68169d61ce41009006df38",
+    "version": "4.7.2.stable.steam.ed1daf0bf"
+  },
+  "frozen_source_unchanged_after_primary": true,
+  "historical_changes": [],
+  "historical_raw_files_verified": 1104,
+  "historical_tracked_files_verified": 4493,
+  "human_external_interference_tested_in_R3": false,
+  "human_feel_approved_in_R3": false,
+  "measured_commit": "7a578995915d56ade2fa447f3adfdd6e19dc0218",
+  "native_MCP_Pro": {
+    "final_runtime": {
+      "allocation": 0,
+      "bindings": {
+        "bias_left": [
+          "A - Physical"
+        ],
+        "bias_right": [
+          "D - Physical"
+        ],
+        "contract": [
+          "W - Physical"
+        ],
+        "extend": [
+          "S - Physical"
+        ],
+        "grip_left": [
+          "Left Mouse Button"
+        ],
+        "grip_right": [
+          "Right Mouse Button"
+        ]
+      },
+      "camera_virtual": false,
+      "capture_recorder": false,
+      "hold": true,
+      "intent_aware_feet": false,
+      "mass": 12.0,
+      "native_mode": "ordinary_main_after_review",
+      "observer": false,
+      "physical_feet": false,
+      "physics_hz": 120,
+      "profile": 2,
+      "reach": 0.65708,
+      "source_kind": "LIVE",
+      "values": [
+        0.25,
+        0.12,
+        0.24,
+        0.9
+      ],
+      "virtual_arming": false,
+      "virtual_provider_disabled": true,
+      "window_screen": 0,
+      "window_size": "(1440, 810)"
+    },
+    "first_inspection": "Failed supplementary query used nonexistent app.projection_probe; retained, no gameplay source change.",
+    "fresh_final_errors": 0,
+    "initial_warning_count": 1,
+    "restoration": {
+      "original_sha256": "6ae2782544aa70dfb6a099260ead68de0b0bb7007093ef846bbb2dabfc6a86c9",
+      "owned_editor_closed": true,
+      "project_C_restored": true,
+      "project_E_restored": true
+    },
+    "retry": "Corrected query only; ordinary LIVE inspection, no qualification credit",
+    "screenshot_visually_inspected": true,
+    "version": "1.17.1"
+  },
+  "normal_startup_exact_baseline": true,
+  "optimizer_trials": 0,
+  "pack_inspection": {
+    "camera_virtual": false,
+    "excluded": {
+      "res://features/auto_tuning_lab/scripts/optimization_trial_driver.gd": true,
+      "res://features/evaluator_qualification/scripts/qualification_driver.gd": true,
+      "res://features/evaluator_virtual_cursor/resources/benchmark_eval_v133.json": true,
+      "res://features/evaluator_virtual_cursor/scripts/benchmark_backing.gd": true,
+      "res://features/evaluator_virtual_cursor/scripts/benchmark_driver.gd": true,
+      "res://features/evaluator_virtual_cursor/scripts/benchmark_preflight.gd": true,
+      "res://features/evaluator_virtual_cursor/scripts/benchmark_runner.gd": true,
+      "res://features/evaluator_virtual_cursor/scripts/projection_probe.gd": true,
+      "res://features/evaluator_virtual_cursor/scripts/replay_input_provider.gd": true,
+      "res://features/evaluator_virtual_cursor/scripts/virtual_cursor_driver.gd": true,
+      "res://features/evaluator_virtual_cursor/scripts/virtual_cursor_runner.gd": true
+    },
+    "profile": 2,
+    "provider_disabled": true,
+    "release_template": false
+  },
+  "pack_inspection_uses_debug_tools_engine": true,
+  "preflight_status": "CERTIFIED",
+  "primary_qualification_status": "NO_GO_BENCHMARK",
+  "private_holdout_accessed": false,
+  "production_files_checked": 195,
+  "protected_external": {
+    "C:\\Users\\Wynter\\grip_up\\builds\\GripUp-v1.2-pre-v1.3.exe": "fb018cfbf8ac57dac83c43af6590f2107bede466d56053e1218583f03564e33d",
+    "C:\\Users\\Wynter\\grip_up\\export_presets.cfg": "d0c195fcc871ec53cee49e87d4486824b36725fbfc205b366475f6224054a4b9",
+    "C:\\Users\\Wynter\\grip_up\\project.godot": "6ae2782544aa70dfb6a099260ead68de0b0bb7007093ef846bbb2dabfc6a86c9",
+    "E:\\Godot Games\\grip_up\\export_presets.cfg": "d0c195fcc871ec53cee49e87d4486824b36725fbfc205b366475f6224054a4b9",
+    "E:\\Godot Games\\grip_up\\project.godot": "6ae2782544aa70dfb6a099260ead68de0b0bb7007093ef846bbb2dabfc6a86c9",
+    "E:\\Godot Games\\janga_proto\\runtime\\physics_grabber.gd": "8ab923ac1d903e8dcc8ed2a2e4f9f8c5cec326a3217cb4a9d8f00036557e7dad"
+  },
+  "regression_checks": 1146,
+  "regression_processes": 34,
+  "release_export": {
+    "bytes": 110754728,
+    "release": true,
+    "sha256": "152d9fda80171dee327e53416778a8552dc9ad4f150a42a2c9af50cf882d9fa7",
+    "startup_smoke_only": true
+  },
+  "release_smoke": {
+    "command": [
+      "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\benchmark_v133_r3\\safety\\GripUp-v133-benchmark-safe.exe",
+      "--headless",
+      "--quit-after",
+      "180"
+    ],
+    "exit_code": 0,
+    "script_errors": false
+  },
+  "remaining_physical_controls_halted": true,
+  "source_C_E_parity": true,
+  "source_hash": "a6bd333c5f4fc8f8571d5c907db09f858da9429852befc20e2777f9dc9b36986",
+  "source_hash_scope": "295 public source hashes plus 5 execution helpers; manifest snapshot hashes only public map"
+}

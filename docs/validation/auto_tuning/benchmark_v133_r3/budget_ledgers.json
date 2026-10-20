@@ -1,0 +1,84 @@
+{
+  "preflight": {
+    "candidates": [
+      {
+        "candidate": 1,
+        "path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\benchmark_v133_r3\\candidate_preflight\\benchmark_v133_r3_candidate_001",
+        "pure_base_plan": {
+          "additional_repair_diagnostics_limit": 2,
+          "environment_processes": 7,
+          "transport_processes": 1
+        },
+        "source_snapshot_sha256": "f12e3442ae454824f6bf365c0952449c6b92dd46b0a252c2b754b967c70f1821",
+        "status": "PREFLIGHT_NOT_CERTIFIED"
+      },
+      {
+        "candidate": 2,
+        "path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\benchmark_v133_r3\\candidate_preflight\\benchmark_v133_r3_candidate_002",
+        "pure_base_plan": {
+          "additional_repair_diagnostics_limit": 2,
+          "environment_processes": 7,
+          "transport_processes": 1
+        },
+        "source_snapshot_sha256": "a9f7e541a8f164cd85712c83c18038f40717623330c616aa61784949b6d66b80",
+        "status": "PREFLIGHT_NOT_CERTIFIED"
+      },
+      {
+        "candidate": 3,
+        "path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\benchmark_v133_r3\\candidate_preflight\\benchmark_v133_r3_candidate_003",
+        "pure_base_plan": {
+          "additional_repair_diagnostics_limit": 2,
+          "environment_processes": 7,
+          "transport_processes": 1
+        },
+        "source_snapshot_sha256": "a6bd333c5f4fc8f8571d5c907db09f858da9429852befc20e2777f9dc9b36986",
+        "status": "CERTIFICATION_READY_FOR_REVIEW"
+      }
+    ],
+    "final_status": "CERTIFIED",
+    "limit": 12,
+    "physical_attempted": 4,
+    "pure": {
+      "additional_repair_diagnostics_per_candidate": [
+        0,
+        0,
+        0
+      ],
+      "development_check_only_processes": 4,
+      "environment_processes": 7,
+      "failed_transport_batches": 2,
+      "note": "Pure processes and development compiler checks give no physical or primary credit.",
+      "python_contracts_unique_final": 49,
+      "successful_transport_assertions": 135,
+      "successful_transport_cases": 41,
+      "transport_processes": 3
+    }
+  },
+  "primary": {
+    "adaptive_domain_captures_included": 12,
+    "attempted": 61,
+    "fixed_domain_pair_replays": 34,
+    "fixed_projection_probe_OFF_domain_controls": 2,
+    "groups": {
+      "diagnostic": 0,
+      "domain": 48,
+      "negative": 1,
+      "reference": 12
+    },
+    "invalid_attempt_not_reclaimed": "swing_catch_train_120_headless_r1_e0310d17",
+    "invalid_runtime_receipts": 1,
+    "limit": 96,
+    "ordinary_safety_excluded": true,
+    "pure_environment_processes": 13,
+    "status": "CLOSED_NO_GO_BENCHMARK",
+    "unattempted_slots": 35,
+    "valid_runtime_receipts": 60
+  },
+  "regression": {
+    "checks": 1146,
+    "completed": 34,
+    "passed": true,
+    "required": 34,
+    "separate": true
+  }
+}

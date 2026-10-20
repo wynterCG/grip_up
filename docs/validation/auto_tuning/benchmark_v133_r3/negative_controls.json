@@ -1,0 +1,326 @@
+{
+  "attempted": [
+    {
+      "cleanup": {
+        "camera_live": true,
+        "hand_held": [
+          false,
+          false
+        ],
+        "hands": [
+          "RELEASED",
+          "RELEASED"
+        ],
+        "lab_provider_removed": true,
+        "orbiting": false,
+        "provider_disabled": true,
+        "router_frame_removed": true
+      },
+      "internal_checks": [
+        {
+          "evidence": {
+            "reason": "INPUT_SOURCE_MISMATCH"
+          },
+          "label": "reject_source",
+          "pass": true
+        },
+        {
+          "evidence": {
+            "reason": "ENVIRONMENT_NOT_COMPARABLE:VIEWPORT"
+          },
+          "label": "reject_viewport",
+          "pass": true
+        },
+        {
+          "evidence": {
+            "reason": "ENVIRONMENT_NOT_COMPARABLE:VIEWPORT_CAMERA_BINDINGS"
+          },
+          "label": "reject_camera",
+          "pass": true
+        },
+        {
+          "evidence": {
+            "reason": "DUPLICATE_TICK"
+          },
+          "label": "reject_duplicate",
+          "pass": true
+        },
+        {
+          "evidence": {
+            "reason": "MISSING_TICK"
+          },
+          "label": "reject_missing",
+          "pass": true
+        },
+        {
+          "evidence": {},
+          "label": "explicit_invalid_aim_can_preserve_held_semantics",
+          "pass": true
+        },
+        {
+          "evidence": {
+            "picks": [
+              {
+                "hand": 0,
+                "reason": "INVALID_AIM_NO_NEW_TARGET"
+              }
+            ]
+          },
+          "label": "initial_absent_cursor_did_not_pick",
+          "pass": true
+        },
+        {
+          "evidence": {},
+          "label": "explicit_valid_top_left_not_ambiguous",
+          "pass": true
+        },
+        {
+          "evidence": {
+            "picks": [
+              {
+                "audit": {
+                  "mask": 3,
+                  "pointer": [
+                    0.0,
+                    0.0
+                  ],
+                  "range_m": 70.0,
+                  "rays": [
+                    {
+                      "direction": [
+                        -0.778128921985626,
+                        0.40025070309639,
+                        -0.484060764312744
+                      ],
+                      "offset_px": [
+                        0.0,
+                        0.0
+                      ],
+                      "origin_m": [
+                        0.874703645706177,
+                        1.4096851348877,
+                        6.22184276580811
+                      ],
+                      "point_px": [
+                        0.0,
+                        0.0
+                      ],
+                      "reason": "MISS"
+                    },
+                    {
+                      "direction": [
+                        -0.774308145046234,
+                        0.402307838201523,
+                        -0.488462299108505
+                      ],
+                      "offset_px": [
+                        12.0,
+                        0.0
+                      ],
+                      "origin_m": [
+                        0.874703645706177,
+                        1.4096851348877,
+                        6.22184276580811
+                      ],
+                      "point_px": [
+                        12.0,
+                        0.0
+                      ],
+                      "reason": "MISS"
+                    },
+                    {
+                      "direction": [
+                        -0.781881392002106,
+                        0.398199558258057,
+                        -0.479686081409454
+                      ],
+                      "offset_px": [
+                        -12.0,
+                        0.0
+                      ],
+                      "origin_m": [
+                        0.874703645706177,
+                        1.4096851348877,
+                        6.22184276580811
+                      ],
+                      "point_px": [
+                        -12.0,
+                        0.0
+                      ],
+                      "reason": "MISS"
+                    },
+                    {
+                      "direction": [
+                        -0.78047388792038,
+                        0.393380045890808,
+                        -0.485914349555969
+                      ],
+                      "offset_px": [
+                        0.0,
+                        12.0
+                      ],
+                      "origin_m": [
+                        0.874703645706177,
+                        1.4096851348877,
+                        6.22184276580811
+                      ],
+                      "point_px": [
+                        0.0,
+                        12.0
+                      ],
+                      "reason": "MISS"
+                    },
+                    {
+                      "direction": [
+                        -0.77575409412384,
+                        0.407059460878372,
+                        -0.482190907001495
+                      ],
+                      "offset_px": [
+                        0.0,
+                        -12.0
+                      ],
+                      "origin_m": [
+                        0.874703645706177,
+                        1.4096851348877,
+                        6.22184276580811
+                      ],
+                      "point_px": [
+                        0.0,
+                        -12.0
+                      ],
+                      "reason": "MISS"
+                    },
+                    {
+                      "direction": [
+                        -0.777161657810211,
+                        0.397037476301193,
+                        -0.488242864608765
+                      ],
+                      "offset_px": [
+                        8.0,
+                        8.0
+                      ],
+                      "origin_m": [
+                        0.874703645706177,
+                        1.4096851348877,
+                        6.22184276580811
+                      ],
+                      "point_px": [
+                        8.0,
+                        8.0
+                      ],
+                      "reason": "MISS"
+                    },
+                    {
+                      "direction": [
+                        -0.779063820838928,
+                        0.403418481349945,
+                        -0.479909479618073
+                      ],
+                      "offset_px": [
+                        -8.0,
+                        -8.0
+                      ],
+                      "origin_m": [
+                        0.874703645706177,
+                        1.4096851348877,
+                        6.22184276580811
+                      ],
+                      "point_px": [
+                        -8.0,
+                        -8.0
+                      ],
+                      "reason": "MISS"
+                    }
+                  ],
+                  "winner": null
+                },
+                "camera_pose": {
+                  "basis": [
+                    [
+                      0.97133868932724,
+                      0.0,
+                      -0.237699881196022
+                    ],
+                    [
+                      0.0141885448247194,
+                      0.998216927051544,
+                      0.0579801835119724
+                    ],
+                    [
+                      0.237276032567024,
+                      -0.0596910119056702,
+                      0.969606697559357
+                    ]
+                  ],
+                  "origin": [
+                    0.874703645706177,
+                    1.4096851348877,
+                    6.22184276580811
+                  ]
+                },
+                "camera_projection": null,
+                "hand": 0,
+                "pointer": [
+                  0.0,
+                  0.0
+                ]
+              }
+            ]
+          },
+          "label": "explicit_valid_top_left_uses_real_targeting",
+          "pass": true
+        }
+      ],
+      "reason": "MISSING_REAL_PICK_RECORDS",
+      "run_id": "swing_catch_train_120_headless_r1_e0310d17",
+      "status": "RUN_INVALID"
+    }
+  ],
+  "full_observer_ON_OFF_equivalence": "NOT_QUALIFIED; n1 probe toggle retains audit and trace",
+  "human_external_interference_or_AltTab": "NOT_RUN_IN_R3",
+  "invalid_new_native_support_physical_control": "NOT_RUN",
+  "physical_registration": {
+    "cases": [
+      "N1_invalid_aim_and_cancel_120",
+      "N4_abort_held_120",
+      "probe_OFF_120",
+      "N1_invalid_aim_and_cancel_60",
+      "N4_abort_held_60",
+      "probe_OFF_60"
+    ],
+    "not_claimed": [
+      "real_external_human_interference",
+      "new_invalid_native_contact_fixture",
+      "full_observer_cost_estimation"
+    ],
+    "original_tapes_immutable": true,
+    "processes": 6,
+    "source_hash": "a6bd333c5f4fc8f8571d5c907db09f858da9429852befc20e2777f9dc9b36986",
+    "status": "REGISTERED_BEFORE_EXECUTION"
+  },
+  "plan": [
+    "wrong_actual_backing_before_world",
+    "corrupt_tape_hash_before_world",
+    "mutated_source_before_world",
+    "duplicate_missing_out_of_order_input_pure",
+    "pending_canceled_grip_zero_traction",
+    "invalid_support_not_proximity",
+    "abort_held_cleanup",
+    "observer_probe_OFF_control"
+  ],
+  "projection_probe_OFF_domain_controls": [
+    "two_hand_release_stop_120",
+    "two_hand_release_stop_60"
+  ],
+  "pure_prerequisite_coverage": {
+    "duplicate_missing_out_of_order": "REJECTED_PC0",
+    "scope": "PC0/PC1 certification; not fresh primary physical cells",
+    "source_and_tape_mutation": "REJECTED_PC0",
+    "wrong_backing": "REJECTED_BEFORE_WORLD; also fresh BQ1 negative"
+  },
+  "remaining_registered_physical_controls": "NOT_RUN_EARLY_STOP",
+  "unsafe_authority_transfer_new_physical_control": "NOT_RUN",
+  "unused_negative_slots": 7
+}
