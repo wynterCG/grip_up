@@ -1,0 +1,9 @@
+# Revisão nativa e segurança do export
+
+Godot MCP Pro1.17.1 foi usado no editor E:, monitor0 pedido e observado no main. `runtime exec` confirmou perfil2, LIVE, replay disabled, virtual camera false e projection probe null; restantes valores coincidem exatamente com a baseline. A captura ordinary_main.png foi inspecionada visualmente: cena normal STATIC CLIMB, personagem e HUD visíveis. Não houve interação de escalada ou playtest humano neste suplemento.
+
+`errors_before`: um aviso preexistente sobre builds/reference_v13_reliability/project.godot. `errors_after`:0. Requests/responses e PID próprio estão arquivados. O editor próprio foi encerrado e os bytes originais de project.godot C/E restaurados (SHA6ae2782544aa70dfb6a099260ead68de0b0bb7007093ef846bbb2dabfc6a86c9). Não restaram motores Godot desta campanha.
+
+O arranque headless normal coincide exatamente com a baseline anterior. Export RELEASE novo e smoke headless de180frames terminam0, sem script errors; isso é startup smoke, não playthrough. A inspeção de recursos usa o motor debug stock com --main-pack num diretório isolado, para não procurar scripts no projeto de origem. Confirma ausência de ProjectionProbe/provider/driver/runner/qualification/optimization e arranque perfil2/providerdisabled/câmaravirtualfalse. Não se apresenta essa inspeção como executada pelo template release. O executável novo está em builds/eval_virtual_cursor/projection_v132b_r2/safety, com SHA/bytes próprios; a rollback anterior não foi substituída.
+
+Os replays de qualificação são outra atividade: o monitor efetivo foi screen0 para janela pequena e screen1 para grande, apesar do CLI --screen0. Ambos reportam DPI120/scale1.0. Esse fator está explicitamente declarado NOT_ISOLATED na ablação renderizada; não se alteraram nem repetiram os dados para ocultá-lo.
