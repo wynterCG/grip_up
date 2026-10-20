@@ -1,0 +1,60 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS flag false reaches driver before configuration
+PASS flag false intercepts real RESTORE after native motor unfreeze
+PASS velocity support fault invalidates committed material snapshot
+PASS OFF preserves legacy unguarded RESTORE behavior
+PASS OFF control reproduces invalid moving support being handed to walking
+PASS flag true reaches driver before configuration
+PASS flag true intercepts real RESTORE after native motor unfreeze
+PASS velocity support fault invalidates committed material snapshot
+PASS ON velocity refuses invalid support before dynamic ground handoff
+PASS ON velocity freezes current solved pose without rewind or continued travel
+PASS ON velocity holds frozen recovery with both old force owners suspended
+PASS ON velocity never rebuilds or reuses a geometry transition
+PASS ON velocity cannot declare top-out or silently resume
+PASS ON velocity has no old hand foot or ground force
+PASS ON recovery preserves actual body mass and collision filters
+PASS RESTORE velocity R creates fresh dynamic body without old assisted authority
+PASS RESTORE velocity R clears phase progress counters and pending route
+PASS RESTORE velocity R restores full baseline shapes and keeps v08 capabilities OFF
+PASS RESTORE velocity R restores normal mass collision filters gravity and ground authority
+PASS flag true reaches driver before configuration
+PASS flag true intercepts real RESTORE after native motor unfreeze
+PASS moved support fault invalidates committed material snapshot
+PASS ON moved refuses invalid support before dynamic ground handoff
+PASS ON moved freezes current solved pose without rewind or continued travel
+PASS ON moved holds frozen recovery with both old force owners suspended
+PASS ON moved never rebuilds or reuses a geometry transition
+PASS ON moved cannot declare top-out or silently resume
+PASS ON moved has no old hand foot or ground force
+PASS ON recovery preserves actual body mass and collision filters
+PASS RESTORE moved R creates fresh dynamic body without old assisted authority
+PASS RESTORE moved R clears phase progress counters and pending route
+PASS RESTORE moved R restores full baseline shapes and keeps v08 capabilities OFF
+PASS RESTORE moved R restores normal mass collision filters gravity and ground authority
+PASS flag true reaches driver before configuration
+PASS flag true intercepts real RESTORE after native motor unfreeze
+PASS destroyed support fault invalidates committed material snapshot
+PASS ON destroyed refuses invalid support before dynamic ground handoff
+PASS ON destroyed freezes current solved pose without rewind or continued travel
+PASS ON destroyed holds frozen recovery with both old force owners suspended
+PASS ON destroyed never rebuilds or reuses a geometry transition
+PASS ON destroyed cannot declare top-out or silently resume
+PASS ON destroyed has no old hand foot or ground force
+PASS ON recovery preserves actual body mass and collision filters
+PASS RESTORE destroyed R creates fresh dynamic body without old assisted authority
+PASS RESTORE destroyed R clears phase progress counters and pending route
+PASS RESTORE destroyed R restores full baseline shapes and keeps v08 capabilities OFF
+PASS RESTORE destroyed R restores normal mass collision filters gravity and ground authority
+PASS flag false reaches driver before configuration
+PASS flag false intercepts real RESTORE after native motor unfreeze
+PASS valid flag false restores ordinary dynamic walking
+PASS valid flag false earns actual top-ground and 30cm walking
+PASS flag true reaches driver before configuration
+PASS flag true intercepts real RESTORE after native motor unfreeze
+PASS valid flag true restores ordinary dynamic walking
+PASS valid flag true earns actual top-ground and 30cm walking
+PASS completed DYNAMIC_GROUNDED remains ordinary physics when ground later changes
+PASS all real-input fixture ticks preserve legacy force and torque budgets
+VAULT RESTORE GUARD RESULTS: 57 checks, 0 failures

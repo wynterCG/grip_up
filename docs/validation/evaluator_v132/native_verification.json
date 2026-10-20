@@ -1,0 +1,154 @@
+{
+  "catch": {
+    "actual_destination_load_admitted": true,
+    "beyond_static_reach_at_request": true,
+    "contact_tick": 455,
+    "expected_destination_key": "catch",
+    "foot_loaded_ticks_whole_episode": 26,
+    "ground_ticks_whole_episode": 167,
+    "real_contact": true,
+    "request_distance_m": 0.813638925552368,
+    "request_reach_m": 0.65708,
+    "retained": true,
+    "retained_at_end": true,
+    "retained_duration_required_s": 0.6,
+    "retained_tick": 542,
+    "scope": "actual destination ATTACHED with same runtime material anchor and source FREE; includes B1/ground contributions",
+    "source_free_tick": 470
+  },
+  "fresh_editor_error_count": 0,
+  "manifest_sha256": "ec3835179215f9e75339428c40a5adf5767b62b99272cbc6be5e60f00e85a0ea",
+  "ordinary_runtime": {
+    "allocation": 0,
+    "bindings": {
+      "bias_left": [
+        "A - Physical"
+      ],
+      "bias_right": [
+        "D - Physical"
+      ],
+      "contract": [
+        "W - Physical"
+      ],
+      "extend": [
+        "S - Physical"
+      ],
+      "grip_left": [
+        "Left Mouse Button"
+      ],
+      "grip_right": [
+        "Right Mouse Button"
+      ]
+    },
+    "capture_recorder": false,
+    "hold": true,
+    "intent_aware_feet": false,
+    "mass": 12.0,
+    "native_mode": "ordinary_main_after_review",
+    "observer": false,
+    "physical_feet": false,
+    "physics_hz": 120,
+    "profile": 2,
+    "reach": 0.65708,
+    "values": [
+      0.25,
+      0.12,
+      0.24,
+      0.9
+    ],
+    "window_screen": 0,
+    "window_size": "(1440, 810)"
+  },
+  "plugin": "Godot MCP Pro 1.17.1",
+  "provenance": {
+    "helper_sha256": "cdf8cbd73c2da11d6bca26a7d88b21c1916c81848c358d34dfb9ddb02a584e60",
+    "plugin_cfg_sha256": "04f13a0507b462993be9416f010ac6f44419705e185e1120fc3d809514c57a02",
+    "plugin_script_sha256": "3af7739e6be2b4efd02e283e2eb261f5d73b5a73522b19d0cd8ba81623fff8fe",
+    "plugin_version": "1.17.1",
+    "scope": "Temporary plugin/project activation makes this supplementary evidence, not a strict reference-matrix comparison.",
+    "source_differences_vs_frozen": [
+      "project.godot"
+    ]
+  },
+  "restoration": {
+    "editor_owned_pid_closed": 40768,
+    "normal_checks": {
+      "normal_cli": {
+        "command": [
+          "C:\\Users\\Wynter\\WrapRush\\tools\\godot.exe",
+          "--path",
+          "E:\\Godot Games\\grip_up",
+          "--screen",
+          "0",
+          "--position",
+          "80,80",
+          "--quit-after",
+          "180"
+        ],
+        "exit_code": 0,
+        "script_error": false
+      },
+      "normal_snapshot": {
+        "command": [
+          "C:\\Users\\Wynter\\WrapRush\\tools\\godot.exe",
+          "--headless",
+          "--path",
+          "C:\\Users\\Wynter\\grip_up",
+          "--script",
+          "res://docs/validation/evaluator_v132/baseline/normal_snapshot.gd"
+        ],
+        "exit_code": 0,
+        "script_error": false
+      }
+    },
+    "project_restored_byte_for_byte": true,
+    "project_sha256": "6ae2782544aa70dfb6a099260ead68de0b0bb7007093ef846bbb2dabfc6a86c9"
+  },
+  "scope": "SUPPLEMENTARY_ONLY_TEMP_PLUGIN_PROJECT",
+  "screenshots": {
+    "frames": [
+      {
+        "file": "screenshots/frame_01.png",
+        "image_phase": "frame_post_draw; latest preceding observed tick, not post-solver",
+        "observed_com_m": [
+          -0.507179021835327,
+          1.0725382566452,
+          -0.203707024455071
+        ],
+        "observed_hand_states": [
+          "ATTACHED",
+          "FREE"
+        ],
+        "observed_tick": 281,
+        "physics_time_s": 2.34166666666667,
+        "readback_and_save_usec": 43745,
+        "render_frame": 339,
+        "sample_phase": "post_control",
+        "save_error": 0,
+        "scenario_id": "swing_catch_train"
+      },
+      {
+        "file": "screenshots/frame_02.png",
+        "image_phase": "frame_post_draw; latest preceding observed tick, not post-solver",
+        "observed_com_m": [
+          -0.276727318763733,
+          1.13277876377106,
+          -0.0885254740715027
+        ],
+        "observed_hand_states": [
+          "ATTACHED",
+          "ATTACHED"
+        ],
+        "observed_tick": 455,
+        "physics_time_s": 3.79166666666667,
+        "readback_and_save_usec": 42870,
+        "render_frame": 552,
+        "sample_phase": "post_control",
+        "save_error": 0,
+        "scenario_id": "swing_catch_train"
+      }
+    ],
+    "schema_version": "1.3.2"
+  },
+  "status": "completed"
+}

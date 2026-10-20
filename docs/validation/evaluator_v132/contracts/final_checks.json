@@ -1,0 +1,27 @@
+{
+  "legacy_tick_43": {
+    "command": [
+      "C:\\Users\\Wynter\\WrapRush\\tools\\godot.exe",
+      "--headless",
+      "--path",
+      "C:\\Users\\Wynter\\grip_up",
+      "--script",
+      "res://features/evaluator_reliability/tests/test_tick_contract.gd"
+    ],
+    "exit_code": 0
+  },
+  "python_final_35": {
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/auto_tuning/evaluator_qualification",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    "exit_code": 0
+  }
+}
