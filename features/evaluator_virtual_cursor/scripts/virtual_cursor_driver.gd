@@ -49,12 +49,19 @@ func start(value:Dictionary)->Dictionary:
 			previous=row
 	var result:Dictionary=await super.start(value)
 	result.schema_version="1.3.2a";result["benchmark"]="benchmark_eval_virtual_cursor_v1"
-	result["virtual_input"]={"environment":session_environment,"cleanup":cleanup_receipt,"maximum_tick_wall_gap_usec":maximum_gap_usec,"provider_lifecycle":provider.lifecycle if provider!=null else [],"rejected_hardware_events":provider.rejected if provider!=null else [],"rejected_hardware_event_count":provider.rejected_count if provider!=null else 0}
+	result["virtual_input"]={"environment":session_environment,"cleanup":cleanup_receipt,"maximum_tick_wall_gap_usec":maximum_gap_usec,"provider_lifecycle":provider.lifecycle if provider!=null else [],"rejected_hardware_events":provider.rejected if provider!=null else [],"rejected_hardware_event_count":provider.rejected_count if provider!=null else 0,"rejection_counts":provider.rejection_counts if provider!=null else {},"focus_events":provider.focus_events if provider!=null else []}
 	result["negative_checks"]=negative_checks.duplicate(true)
 	TraceWriter.atomic_json(str(value.output_dir).path_join("virtual_audit.json"),{"schema":"grip_virtual_audit_v1","environment":session_environment,"frames":virtual_frames,"ticks":virtual_rows})
 	return result
 
 func _fresh(definition:Dictionary)->void:
+	var lead_in:float=float(manifest.get("human_lead_in_s",0))
+	if lead_in>0:
+		var notice:=Label.new();notice.text="GRIP UP replay / "+str(manifest.get("condition",""))+" / begins in %ds"%int(lead_in)
+		notice.position=Vector2(40,40);notice.add_theme_font_size_override("font_size",32);notice.mouse_filter=Control.MOUSE_FILTER_IGNORE
+		add_child(notice)
+		await _tick(lead_in)
+		notice.queue_free()
 	await post_completed
 	_world_creation={"run_tick":_global_tick,"sample_phase":_phase_context,"actual_delta_s":_post_delta,"requested_delta_s":1.0/hz,"boundary":"post_completed_before_lab_construction","retired_worlds":_retired_worlds.duplicate(true),"old_subtrees_absent":true}
 	_reset_episode()

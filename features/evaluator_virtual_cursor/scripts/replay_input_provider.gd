@@ -12,6 +12,8 @@ var external_focus:="ACTIVE"
 var lifecycle:Array[String]=["DISABLED"]
 var last_engine_tick:=-1
 var environment:Dictionary={}
+var focus_events:Array[Dictionary]=[]
+var rejection_counts:Dictionary={}
 
 func _environment(app:Node)->Dictionary:
 	var vp:Viewport=app.get_viewport()
@@ -50,8 +52,16 @@ func commit(value:Dictionary,app:Node)->String:
 	previous=value.duplicate(true);frame=Frame.new(value);last_engine_tick=engine_tick;return ""
 func reject_event(event:InputEvent)->void:
 	rejected_count+=1
-	if rejected.size()<64:rejected.append({"tick":previous.get("tick_index",0),"kind":event.get_class(),"reason":"EXTERNAL_INPUT_REJECTED"})
-func focus_changed(focused:bool)->void:external_focus="ACTIVE" if focused else "EXTERNALLY_UNFOCUSED"
+	var kind:String=event.get_class()
+	rejection_counts[kind]=int(rejection_counts.get(kind,0))+1
+	if rejected.size()<64:
+		var row:Dictionary={"tick":previous.get("tick_index",0),"kind":kind,"reason":"EXTERNAL_INPUT_REJECTED","wall_usec":Time.get_ticks_usec()}
+		if event is InputEventMouseMotion:row.merge({"position":event.position,"relative":event.relative})
+		elif event is InputEventMouseButton:row.merge({"position":event.position,"button":int(event.button_index),"pressed":event.pressed})
+		rejected.append(row)
+func focus_changed(focused:bool)->void:
+	external_focus="ACTIVE" if focused else "EXTERNALLY_UNFOCUSED"
+	if focus_events.size()<32:focus_events.append({"tick":previous.get("tick_index",0),"focused":focused,"wall_usec":Time.get_ticks_usec()})
 func finish()->void:
 	if state=="DISABLED":return
 	_state("FINISHING");frame=null;previous.clear();_state("DISABLED")

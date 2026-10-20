@@ -1,6 +1,6 @@
 """Bounded virtual-input evidence, no optimization imports or score aggregation."""
 from __future__ import annotations
-import argparse,itertools,json,subprocess,sys,time,uuid
+import argparse,itertools,json,subprocess,sys,time,uuid,re
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from common import ROOT,DEST,ENGINE,atomic_json,digest,engine_identity,file_hash,git_identity,read_json,source_hashes,utc_now,StudyLock
@@ -9,9 +9,9 @@ from run_trial import make_candidate
 
 ENTRY='res://features/evaluator_virtual_cursor/scripts/virtual_cursor_runner.gd'
 BENCHMARK='benchmark_eval_virtual_cursor_v1'
-def check_budget(development,hz,capture,negative):
+def check_budget(development,hz,capture,negative,campaign_id=''):
     manifests=[read_json(p) for p in (ROOT/'builds/eval_virtual_cursor').glob('**/attempts/*/manifest.json')]
-    relevant=[m for m in manifests if m.get('benchmark')==BENCHMARK]
+    relevant=[m for m in manifests if m.get('benchmark')==BENCHMARK and m.get('campaign_id','')==campaign_id]
     if negative:
         if sum(bool(m.get('negative_case')) for m in relevant)>=4:raise ValueError('DIAGNOSTIC_BUDGET_EXHAUSTED')
     elif development:
@@ -61,12 +61,15 @@ def compare(tape,audit):
             if diff and first_physics is None:first_physics={'tick':index+1,'phase':phase,'first':diff}
     return {'status':'PASS_PICKING_REPLAY','input_status':'PASS_INPUT_ISOLATION','ticks':len(ticks),'first_physics_divergence':first_physics,'physics_status':'PHYSICS_DIVERGENCE_AFTER_MATCHED_INPUT_AND_PICKING' if first_physics else 'NO_RECORDED_PHYSICS_DIFFERENCE','physics_scope':'diagnostic only, no approved continuous error envelope'}
 
-def execute(mode,hz,condition,repeat,output,tape_path=None,development=False,negative=''):
-    check_budget(development,hz,tape_path is None,negative)
+def execute(mode,hz,condition,repeat,output,tape_path=None,development=False,negative='',campaign_id='',human_lead_in_s=0):
+    if campaign_id and not re.fullmatch(r'[a-z0-9_]{1,64}',campaign_id):raise ValueError('CAMPAIGN_ID')
+    if human_lead_in_s<0 or human_lead_in_s>30:raise ValueError('HUMAN_LEAD_IN')
+    check_budget(development,hz,tape_path is None,negative,campaign_id)
     identity=git_identity();identity.update(source_hashes=source_hashes(ROOT),engine_identity=engine_identity())
     run_id=f'{condition}_{hz}_r{repeat}_{uuid.uuid4().hex[:8]}'
     directory=output/'attempts'/run_id;directory.mkdir(parents=True,exist_ok=False)
     manifest={'schema_version':'1.3.2a','benchmark':BENCHMARK,'run_id':run_id,'physics_hz':hz,'engine_mode':mode,'lane':'A','virtual_mode':'REPLAY' if tape_path else 'CAPTURE','scenario_ids':['swing_catch_train'],'recorder_enabled':True,'existing_observer_enabled':True,'output_dir':str(directory),'run_seed':101,'expected_source_hashes':identity['source_hashes'],'code_commit':identity['repository_commit'],'dirty_tree':identity['repository_dirty'],'engine_identity':identity['engine_identity'],'timeout_s':100,'condition':condition,'classification':'DEVELOPMENT_NOT_CERTIFIED' if development else 'QUALIFICATION','local_override_sha256':file_hash(ROOT/'override.cfg') if (ROOT/'override.cfg').exists() else 'ABSENT','negative_case':negative}
+    manifest['campaign_id']=campaign_id;manifest['human_lead_in_s']=human_lead_in_s
     manifest['baseline_candidate']=make_candidate(baseline(parameter_resource()),['swing_catch_train'],trial_id=run_id,hz=hz,seed=101,timeout=100,provenance=identity)
     if tape_path:
         tape=read_json(tape_path)
@@ -115,7 +118,16 @@ def execute(mode,hz,condition,repeat,output,tape_path=None,development=False,neg
         if negative and any(not check['pass'] for check in result.get('negative_checks',[])):raise ValueError('NEGATIVE_CASE_FAILED')
         status='completed'
     except (OSError,KeyError,TypeError,ValueError) as exc:status='failed_runtime';reason=str(exc)
+    layered={}
+    if tape_path and (directory/'virtual_audit.json').is_file() and negative not in ['N1','N2']:
+        from layered_comparison import compare_layers
+        audit=read_json(directory/'virtual_audit.json')
+        layered=compare_layers(tape,audit)
+        atomic_json(directory/'layered_comparison.json',layered)
+        if status=='completed' and layered['status']!='PASS_PICKING_REPLAY' and not negative:
+            status='failed_runtime';reason=layered['status']
     receipt={'status':status,'reason':reason,'run_id':run_id,'directory':str(directory),'exit_code':code,'elapsed_wall_s':time.monotonic()-started,'engine_result':result,'comparison':comparison}
+    receipt['layered_summary']={k:v for k,v in layered.items() if k!='bounded_window'}
     atomic_json(directory/'receipt.json',receipt)
     print(run_id,status,reason,flush=True)
     return receipt
@@ -131,7 +143,7 @@ def make_tape(receipt,destination):
     atomic_json(destination,tape)
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--suite',choices=['capture','development','matrix','negatives'],required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--tapes',type=Path);p.add_argument('--hz',type=int,choices=[60,120],action='append');p.add_argument('--condition',choices=['V0-H','V0-R','V0-M','V0-F'],action='append');p.add_argument('--human-attested',action='store_true');args=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--suite',choices=['capture','development','matrix','negatives'],required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--tapes',type=Path);p.add_argument('--hz',type=int,choices=[60,120],action='append');p.add_argument('--condition',choices=['V0-H','V0-R','V0-M','V0-F'],action='append');p.add_argument('--human-attested',action='store_true');p.add_argument('--campaign',default='');p.add_argument('--human-lead-in',type=float,default=0);args=p.parse_args()
     output=args.output.resolve();output.mkdir(parents=True,exist_ok=True)
     conditions=args.condition or (['V0-H','V0-R','V0-M','V0-F'] if args.suite=='matrix' else ['V0-H'])
     if args.suite in ['matrix','negatives'] and not args.tapes:raise ValueError('QUALIFICATION_REQUIRES_FROZEN_TAPES')
@@ -139,7 +151,7 @@ def main():
     cells=[dict(condition=c,hz=h,repeat=r) for c,h,r in itertools.product(conditions,args.hz or [120,60],range(1,4) if args.suite=='matrix' else [1])]
     if args.suite=='negatives':cells=[dict(condition=c,hz=h,repeat=1,negative=n) for n,c,h in [('N1','V0-H',120),('N2','V0-H',60),('N3','V0-R',120),('N4','V0-R',60)]]
     if (output/'session_manifest.json').exists():raise FileExistsError('IMMUTABLE_SESSION')
-    atomic_json(output/'session_manifest.json',{'benchmark':BENCHMARK,'utc':utc_now(),'cells':cells,'suite':args.suite,'human_attested':args.human_attested,'protocol_sha256':file_hash(ROOT/'docs/validation/virtual_cursor_v132a/protocol.md'),'candidate_trials':0,'private_holdout_outcomes_accessed':False})
+    atomic_json(output/'session_manifest.json',{'benchmark':BENCHMARK,'campaign_id':args.campaign,'utc':utc_now(),'cells':cells,'suite':args.suite,'human_attested':args.human_attested,'protocol_sha256':file_hash(ROOT/'docs/validation/virtual_cursor_v132a/protocol.md'),'candidate_trials':0,'private_holdout_outcomes_accessed':False})
     receipts=[]
     with StudyLock(ROOT/'builds/eval_virtual_cursor'):
         for index,cell in enumerate(cells):
@@ -147,7 +159,7 @@ def main():
             if condition in ['V0-M','V0-F'] and not args.human_attested:
                 receipts.append({**cell,'status':'INCOMPLETE_COVERAGE','reason':'HUMAN_INTERFERENCE_NOT_OBSERVED'});continue
             tape_path=args.tapes/f'catch_{hz}.json' if args.tapes else None
-            receipt=execute('headless' if condition=='V0-H' else 'rendered_scripted',hz,condition,cell['repeat'],output,tape_path,args.suite!='matrix',cell.get('negative',''))
+            receipt=execute('headless' if condition=='V0-H' else 'rendered_scripted',hz,condition,cell['repeat'],output,tape_path,args.suite!='matrix',cell.get('negative',''),args.campaign,args.human_lead_in)
             receipts.append({**cell,**receipt})
             if receipt['status']!='completed':
                 if args.suite=='negatives':
