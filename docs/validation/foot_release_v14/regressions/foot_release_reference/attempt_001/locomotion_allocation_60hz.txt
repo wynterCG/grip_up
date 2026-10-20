@@ -1,0 +1,81 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS A0 remains the default coordinator policy
+PASS A0 without support has exactly zero muscle authority
+PASS A1 without support has exactly zero muscle authority
+PASS A0/A1 unsupported trajectories are identical
+PASS A1 assigns no effort or contact feasibility to a distant pending hand
+PASS asymmetric A1 begins finite actual left acquisition
+PASS asymmetric A1 begins finite actual right acquisition
+PASS asymmetric A1 acquires actual contacts before applying movement
+PASS A1 evaluation is read-only for body and actuator state
+PASS A1 never amplifies contraction or claims future collision clearance
+PASS A1 preserves geometry-based tension relief for lowering without inventing a push
+PASS A0 target/state outputs are exact on identical live geometry regardless of unused A1 cache
+PASS hybrid retirement clears helper state and old muscle authority
+PASS symmetric A0 begins finite actual left acquisition
+PASS symmetric A0 begins finite actual right acquisition
+PASS symmetric A0 acquires actual contacts before applying movement
+PASS symmetric A0 physically exercises capped actuation and unchanged target derivative bounds
+PASS A0 cannot replace the selected material anchor
+PASS symmetric A0 finite neutral settling does not accumulate posture
+PASS symmetric A0 begins finite actual left acquisition
+PASS symmetric A0 begins finite actual right acquisition
+PASS symmetric A0 acquires actual contacts before applying movement
+PASS symmetric A0 physically exercises capped actuation and unchanged target derivative bounds
+PASS A0 cannot replace the selected material anchor
+PASS symmetric A0 finite neutral settling does not accumulate posture
+PASS symmetric A1 begins finite actual left acquisition
+PASS symmetric A1 begins finite actual right acquisition
+PASS symmetric A1 acquires actual contacts before applying movement
+PASS symmetric A1 physically exercises capped actuation and unchanged target derivative bounds
+PASS A1 cannot replace the selected material anchor
+PASS symmetric A1 finite neutral settling does not accumulate posture
+PASS asymmetric A0 begins finite actual left acquisition
+PASS asymmetric A0 begins finite actual right acquisition
+PASS asymmetric A0 acquires actual contacts before applying movement
+PASS asymmetric A0 physically exercises capped actuation and unchanged target derivative bounds
+PASS A0 cannot replace the selected material anchor
+PASS asymmetric A0 finite neutral settling does not accumulate posture
+PASS asymmetric A1 begins finite actual left acquisition
+PASS asymmetric A1 begins finite actual right acquisition
+PASS asymmetric A1 acquires actual contacts before applying movement
+PASS asymmetric A1 physically exercises capped actuation and unchanged target derivative bounds
+PASS A1 cannot replace the selected material anchor
+PASS asymmetric A1 finite neutral settling does not accumulate posture
+PASS single A0 begins finite actual left acquisition
+PASS single A0 acquires actual contacts before applying movement
+PASS single A0 physically exercises capped actuation and unchanged target derivative bounds
+PASS A0 cannot replace the selected material anchor
+PASS single A0 finite neutral settling does not accumulate posture
+PASS single A1 begins finite actual left acquisition
+PASS single A1 acquires actual contacts before applying movement
+PASS single A1 physically exercises capped actuation and unchanged target derivative bounds
+PASS A1 cannot replace the selected material anchor
+PASS single A1 finite neutral settling does not accumulate posture
+PASS asymmetric A0 begins finite actual left acquisition
+PASS asymmetric A0 begins finite actual right acquisition
+PASS asymmetric A0 acquires actual contacts before applying movement
+PASS asymmetric A0 physically exercises capped actuation and unchanged target derivative bounds
+PASS A0 cannot replace the selected material anchor
+PASS asymmetric A0 finite neutral settling does not accumulate posture
+PASS asymmetric A1 begins finite actual left acquisition
+PASS asymmetric A1 begins finite actual right acquisition
+PASS asymmetric A1 acquires actual contacts before applying movement
+PASS asymmetric A1 physically exercises capped actuation and unchanged target derivative bounds
+PASS A1 cannot replace the selected material anchor
+PASS asymmetric A1 finite neutral settling does not accumulate posture
+PASS symmetric A1 begins finite actual left acquisition
+PASS symmetric A1 begins finite actual right acquisition
+PASS symmetric A1 acquires actual contacts before applying movement
+ALLOCATION_DYNAMIC { "kind": "dynamic_pair", "linear_initial": (0.0, 0.0, 0.0), "linear_final": (-0.0, 0.0, 0.0), "linear_error": 0.00000023844768, "angular_error": 0.00000049202043, "peak_force": 5.75245952606201, "body_gravity": 0.0, "support_gravity": 0.0 }
+PASS A1 nonzero effort still reacts on the dynamic material rather than propelling the pair
+PASS closed isotropic A1 pair also retains angular momentum with reacted assistance
+PASS symmetric A1 begins finite actual left acquisition
+PASS symmetric A1 begins finite actual right acquisition
+PASS symmetric A1 acquires actual contacts before applying movement
+PASS A1 four-second rigid obstruction cannot wind up an arbitrary contracted posture
+PASS A1 opening a block after neutral does not reveal stored future pull
+PASS ordinary reset clears A1 remembered allocation without a stale helper plan
+PASS all observed fixtures respect shared caps and zero precontact force
+LOCOMOTION ALLOCATION RESULTS: 77 checks, 0 failures

@@ -1073,6 +1073,17 @@ func _open_first_ascent()->void:
 	_set_physical_feet(true)
 	message("Climb, cross the bars, then reach the upper deck. Choose free surfaces and keep one real hand held.")
 
+func _open_foot_diagnosis()->void:
+	if has_node("FootDiagnostics"):get_node("FootDiagnostics").free()
+	_set_movement_allocation(0)
+	_set_intent_aware_feet(false)
+	_open_first_ascent()
+	var observer=load("res://features/foot_release_lab/scripts/foot_diagnostics.gd").new()
+	observer.name="FootDiagnostics"
+	observer.app=self
+	add_child(observer)
+	observer.start_recording()
+
 func _on_transfer_event(event: Dictionary) -> void:
 	var row: Dictionary=event.duplicate(true)
 	row.session_id=transfer_session_id
@@ -1391,6 +1402,7 @@ func _setup_ui() -> void:
 	_button("The Corner",func():_open_intent_arena(9,false),intent_row)
 	_button("PLAY / The first route",func():_open_intent_arena(10,true);_set_distant_targeting(true),settings_box)
 	_button("PLAY / The first ascent",_open_first_ascent,settings_box)
+	if OS.is_debug_build():_button("First Ascent / diagnose feet B0 vs B1",_open_foot_diagnosis,settings_box)
 	var ledge_row:=HBoxContainer.new()
 	settings_box.add_child(ledge_row)
 	_button("Ledge experiment / hands",func():_open_intent_arena(11,false);_set_distant_targeting(true),ledge_row)

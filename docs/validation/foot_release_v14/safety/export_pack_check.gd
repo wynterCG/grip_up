@@ -1,0 +1,14 @@
+extends SceneTree
+func _initialize()->void:run.call_deferred()
+func run()->void:
+	var excluded={}
+	for path in ["res://features/evaluator_virtual_cursor/scripts/projection_probe.gd","res://features/evaluator_virtual_cursor/scripts/replay_input_provider.gd","res://features/evaluator_virtual_cursor/scripts/virtual_cursor_driver.gd","res://features/evaluator_virtual_cursor/scripts/virtual_cursor_runner.gd","res://features/evaluator_qualification/scripts/qualification_driver.gd","res://features/auto_tuning_lab/scripts/optimization_trial_driver.gd"]:excluded[path]=not ResourceLoader.exists(path)
+	for path in ["res://features/evaluator_virtual_cursor/scripts/benchmark_backing.gd","res://features/evaluator_virtual_cursor/scripts/benchmark_driver.gd","res://features/evaluator_virtual_cursor/scripts/benchmark_runner.gd","res://features/evaluator_virtual_cursor/scripts/benchmark_preflight.gd","res://features/evaluator_virtual_cursor/resources/benchmark_eval_v133.json"]:excluded[path]=not ResourceLoader.exists(path)
+	for path in ["res://features/evaluator_virtual_cursor/scripts/feasibility_driver.gd","res://features/evaluator_virtual_cursor/scripts/feasibility_runner.gd","res://features/evaluator_virtual_cursor/scripts/feasibility_fixture.gd","res://features/evaluator_virtual_cursor/scripts/pick_dispatch_contract.gd","res://features/evaluator_virtual_cursor/resources/fixture_feasibility_v134.json"]:excluded[path]=not ResourceLoader.exists(path)
+	for path in ["res://features/evaluator_virtual_cursor/scripts/minimal_driver.gd","res://features/evaluator_virtual_cursor/scripts/minimal_runner.gd","res://features/evaluator_virtual_cursor/scripts/minimal_lab.gd","res://features/evaluator_virtual_cursor/scripts/minimal_override_loader.gd","res://features/evaluator_virtual_cursor/scripts/minimal_batch_runner.gd","res://features/evaluator_virtual_cursor/resources/benchmark_minimal_v135_r1.json","res://features/evaluator_virtual_cursor/resources/minimal_transfer_v135.json"]:excluded[path]=not ResourceLoader.exists(path)
+	var app=load("res://features/grip_up/scenes/grip_up_lab.tscn").instantiate();root.add_child(app);current_scene=app
+	for frame in 5:await physics_frame
+	excluded["res://features/foot_release_lab/scripts/foot_diagnostics.gd"]=not ResourceLoader.exists("res://features/foot_release_lab/scripts/foot_diagnostics.gd")
+	var value={"diagnostic_absent":not app.has_node("FootDiagnostics"),"release_template":not OS.is_debug_build(),"provider_disabled":app.replay_input_provider==null,"camera_virtual":app.camera.virtual_physics_follow,"profile":app.input_profile,"excluded":excluded}
+	var file=FileAccess.open("C:/Users/Wynter/grip_up/builds/foot_release_v14_r1/safety/export_pack_check.json",FileAccess.WRITE);file.store_string(JSON.stringify(value));file.close()
+	quit(0 if excluded.values().all(func(x):return x) and value.diagnostic_absent and value.provider_disabled and not value.camera_virtual and value.profile==2 else 1)

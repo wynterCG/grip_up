@@ -1,0 +1,3493 @@
+{
+  "classification": "F0_PARTIAL_KEEP_B1_NO_B3",
+  "boundary": "First and last POST rows of each stage; not driver START/END boundaries",
+  "human_acceptance": false,
+  "attempts": [
+    {
+      "attempt": "F0_ABLATION_120_headless",
+      "status": "DIAGNOSTIC_COMPLETE",
+      "hz": 120,
+      "localized_window_reached": true,
+      "budgets_ok": true,
+      "row_count": 1267,
+      "raw_sha256": {
+        "attempt_report.json": "9912e52a1ff62aff23bd65034b3cc0aea2fcf87b7e288835f0d74b846f4d8fd4",
+        "manifest.json": "83978f0e29f350dbdca2ba3781ab936fea2fdfa5d46696cac38ebfc5fb8b36ef",
+        "physics.jsonl": "e1178bacfa5bfb2abbb22b015866a0d8a888b31a9aa9f2a8894bfc2d81b5bdb1",
+        "receipt.json": "b19024890a87a644b4b4fa5b7362f0e3ef0ad5a2cbc0a87920191c9d04f85455",
+        "render.jsonl": "ec06c774161c7d33e78d8ae582344f184c541ae5d81e6f335367179f9fda7827",
+        "setup.json": "15d72f0f28ef30ea1e651575d50eb188354a218e50b8eab8373152f5f11d112f",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "b739eeac34e6d3113ff369b4cc8609551af7799d6d9e3e0a8e4fd06a4865aade"
+      },
+      "stages": [
+        {
+          "stage": "SETUP_WARMUP",
+          "first_tick": 1,
+          "last_tick": 48,
+          "sample_count": 48,
+          "observed_duration_s": 0.4,
+          "COM_displacement_m": [
+            1.014909258856278e-07,
+            -0.0026193857192993164,
+            -4.827976226806641e-06
+          ],
+          "start_velocity_m_s": [
+            0.0,
+            -0.08166667073965073,
+            0.0
+          ],
+          "end_velocity_m_s": [
+            2.3447339003723755e-07,
+            2.425357251922833e-06,
+            -1.246533247467596e-05
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 48
+        },
+        {
+          "stage": "ENTRY_LEFT",
+          "first_tick": 49,
+          "last_tick": 83,
+          "sample_count": 35,
+          "observed_duration_s": 0.2916666666666667,
+          "COM_displacement_m": [
+            6.557196741141524e-08,
+            0.0,
+            -3.039836883544922e-06
+          ],
+          "start_velocity_m_s": [
+            2.3229306123084825e-07,
+            2.425397269689711e-06,
+            -1.2467166925489437e-05
+          ],
+          "end_velocity_m_s": [
+            2.3154846928719053e-07,
+            2.4252412913483568e-06,
+            -1.2466192856663838e-05
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 35
+        },
+        {
+          "stage": "ENTRY_RIGHT",
+          "first_tick": 84,
+          "last_tick": 118,
+          "sample_count": 35,
+          "observed_duration_s": 0.2916666666666667,
+          "COM_displacement_m": [
+            5.896048421050182e-06,
+            0.0,
+            -1.615285873413086e-05
+          ],
+          "start_velocity_m_s": [
+            1.0939257890640874e-06,
+            1.5008763512014411e-06,
+            -7.605462997162249e-06
+          ],
+          "end_velocity_m_s": [
+            -2.11462997867784e-06,
+            1.2754580893670209e-06,
+            -4.378088306111749e-06
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 56,
+          "rows_with_reported_FootBase": 35
+        },
+        {
+          "stage": "ENTRY_DUAL_SETTLE",
+          "first_tick": 119,
+          "last_tick": 154,
+          "sample_count": 36,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            1.7913471310748719e-06,
+            -1.1920928955078125e-06,
+            7.659196853637695e-06
+          ],
+          "start_velocity_m_s": [
+            1.3647451851284131e-05,
+            -1.236176922247978e-05,
+            5.4919393733143806e-05
+          ],
+          "end_velocity_m_s": [
+            1.3148425068720826e-06,
+            -1.3322442100616172e-06,
+            6.493157798104221e-06
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 72,
+          "rows_with_reported_FootBase": 36
+        },
+        {
+          "stage": "CLIMB_W",
+          "first_tick": 155,
+          "last_tick": 514,
+          "sample_count": 360,
+          "observed_duration_s": 3.0,
+          "COM_displacement_m": [
+            0.02877220994923846,
+            0.2719435691833496,
+            0.01758486032485962
+          ],
+          "start_velocity_m_s": [
+            1.2478487860789755e-06,
+            -1.2642584579225513e-06,
+            6.163508714962518e-06
+          ],
+          "end_velocity_m_s": [
+            0.2708303928375244,
+            -0.027811521664261818,
+            -0.1080779880285263
+          ],
+          "peak_per_foot_N": 80.10566804738433,
+          "summed_submitted_foot_impulse_Ns": [
+            -52.377326356586615,
+            122.79240595760444,
+            34.850214938819406
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 99,
+          "rows_with_reported_FootBase": 117
+        },
+        {
+          "stage": "HIGHER_LEFT_WALL",
+          "first_tick": 515,
+          "last_tick": 529,
+          "sample_count": 15,
+          "observed_duration_s": 0.125,
+          "COM_displacement_m": [
+            0.0350771676748991,
+            -0.008948802947998047,
+            -0.004494607448577881
+          ],
+          "start_velocity_m_s": [
+            0.2636095881462097,
+            -0.021971996873617172,
+            -0.10311275720596313
+          ],
+          "end_velocity_m_s": [
+            0.327447772026062,
+            -0.07715312391519547,
+            0.01926404982805252
+          ],
+          "peak_per_foot_N": 92.76492161428905,
+          "summed_submitted_foot_impulse_Ns": [
+            -0.6191693904499213,
+            9.875749065478642,
+            3.743812356889248
+          ],
+          "min_individual_foot_intent_projection_N": 0.744633674621582,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "HIGHER_LEFT_W",
+          "first_tick": 530,
+          "last_tick": 559,
+          "sample_count": 30,
+          "observed_duration_s": 0.25,
+          "COM_displacement_m": [
+            0.08479460328817368,
+            0.018742918968200684,
+            0.013394773006439209
+          ],
+          "start_velocity_m_s": [
+            0.33092159032821655,
+            -0.07248354703187943,
+            0.025809986516833305
+          ],
+          "end_velocity_m_s": [
+            0.3200480043888092,
+            0.13829942047595978,
+            0.01529754139482975
+          ],
+          "peak_per_foot_N": 93.8454827678277,
+          "summed_submitted_foot_impulse_Ns": [
+            -0.35536798841009537,
+            16.10309886932373,
+            5.457954343159994
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 3,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "HIGHER_RIGHT_WALL",
+          "first_tick": 560,
+          "last_tick": 577,
+          "sample_count": 18,
+          "observed_duration_s": 0.15,
+          "COM_displacement_m": [
+            0.026127085089683533,
+            0.015886783599853516,
+            -0.009111970663070679
+          ],
+          "start_velocity_m_s": [
+            0.31370341777801514,
+            0.1371360868215561,
+            0.005807950627058744
+          ],
+          "end_velocity_m_s": [
+            0.04123971238732338,
+            0.10660899430513382,
+            -0.12098830938339233
+          ],
+          "peak_per_foot_N": 33.03751660727556,
+          "summed_submitted_foot_impulse_Ns": [
+            0.14152828938579962,
+            2.3080044705886396,
+            0.7860176250843021
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "HIGHER_RIGHT_W",
+          "first_tick": 578,
+          "last_tick": 697,
+          "sample_count": 120,
+          "observed_duration_s": 1.0,
+          "COM_displacement_m": [
+            -0.18099760718178004,
+            0.11237740516662598,
+            -0.19005903601646423
+          ],
+          "start_velocity_m_s": [
+            0.022958602756261826,
+            0.09682615846395493,
+            -0.12768487632274628
+          ],
+          "end_velocity_m_s": [
+            0.13205040991306305,
+            0.18967151641845703,
+            0.05588430538773537
+          ],
+          "peak_per_foot_N": 33.919885826812376,
+          "summed_submitted_foot_impulse_Ns": [
+            0.230855718072659,
+            10.79860012542146,
+            3.873853769696628
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 28,
+          "rows_with_reported_FootBase": 19
+        },
+        {
+          "stage": "LEFT_CROSSING",
+          "first_tick": 698,
+          "last_tick": 718,
+          "sample_count": 21,
+          "observed_duration_s": 0.175,
+          "COM_displacement_m": [
+            0.03869420872069895,
+            0.015273451805114746,
+            0.00512203574180603
+          ],
+          "start_velocity_m_s": [
+            0.13400523364543915,
+            0.1889321655035019,
+            0.05549968034029007
+          ],
+          "end_velocity_m_s": [
+            0.3321915566921234,
+            0.08986947685480118,
+            0.006943343672901392
+          ],
+          "peak_per_foot_N": 9.818622379222287,
+          "summed_submitted_foot_impulse_Ns": [
+            -0.05671723461903942,
+            0.39609519828421375,
+            0.4708124832017347
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 4,
+          "rows_with_reported_FootBase": 2
+        },
+        {
+          "stage": "CROSS_W_D",
+          "first_tick": 719,
+          "last_tick": 790,
+          "sample_count": 72,
+          "observed_duration_s": 0.6,
+          "COM_displacement_m": [
+            0.17959557101130486,
+            0.05926942825317383,
+            0.040044501423835754
+          ],
+          "start_velocity_m_s": [
+            0.342331200838089,
+            0.09036550670862198,
+            0.005727396812289953
+          ],
+          "end_velocity_m_s": [
+            0.5657713413238525,
+            0.08578043431043625,
+            -0.10297839343547821
+          ],
+          "peak_per_foot_N": 11.80515901992534,
+          "summed_submitted_foot_impulse_Ns": [
+            -0.08135471958149007,
+            1.4437424976631519,
+            1.7026703710650812
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 46,
+          "rows_with_reported_FootBase": 72
+        },
+        {
+          "stage": "RIGHT_UNCOVERED_WALL_EDGE",
+          "first_tick": 791,
+          "last_tick": 804,
+          "sample_count": 14,
+          "observed_duration_s": 0.11666666666666667,
+          "COM_displacement_m": [
+            0.07791528105735779,
+            -0.030940532684326172,
+            6.389617919921875e-05
+          ],
+          "start_velocity_m_s": [
+            0.5736364722251892,
+            0.08433768898248672,
+            -0.11031018942594528
+          ],
+          "end_velocity_m_s": [
+            0.875137209892273,
+            -0.5437021255493164,
+            0.03545064851641655
+          ],
+          "peak_per_foot_N": 18.109914071405946,
+          "summed_submitted_foot_impulse_Ns": [
+            0.15164022584600995,
+            0.6518297992646694,
+            0.7876703921084602
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 14
+        },
+        {
+          "stage": "WALL_EDGE_W_D",
+          "first_tick": 805,
+          "last_tick": 840,
+          "sample_count": 36,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            0.3344278931617737,
+            -0.04917597770690918,
+            0.03138470649719238
+          ],
+          "start_velocity_m_s": [
+            0.9025853872299194,
+            -0.577599048614502,
+            0.0440850593149662
+          ],
+          "end_velocity_m_s": [
+            0.8759018182754517,
+            0.5863950848579407,
+            0.003101782174780965
+          ],
+          "peak_per_foot_N": 26.661219941342562,
+          "summed_submitted_foot_impulse_Ns": [
+            1.0086122748752435,
+            2.587840486566226,
+            3.277207295099894
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 21,
+          "rows_with_reported_FootBase": 7
+        },
+        {
+          "stage": "RIGHT_AROUND_BAR_LEADING_EDGE",
+          "first_tick": 841,
+          "last_tick": 862,
+          "sample_count": 22,
+          "observed_duration_s": 0.18333333333333332,
+          "COM_displacement_m": [
+            0.10158324241638184,
+            0.03738701343536377,
+            0.0024766921997070312
+          ],
+          "start_velocity_m_s": [
+            0.8493539094924927,
+            0.5707664489746094,
+            -0.0003307089500594884
+          ],
+          "end_velocity_m_s": [
+            0.22661778330802917,
+            0.12263471633195877,
+            0.01206978689879179
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 22,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "BAR_LEADING_EDGE_W_D",
+          "first_tick": 863,
+          "last_tick": 898,
+          "sample_count": 36,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            -0.05413573980331421,
+            0.0037114620208740234,
+            -0.0031491219997406006
+          ],
+          "start_velocity_m_s": [
+            0.18897569179534912,
+            0.12581387162208557,
+            0.009727947413921356
+          ],
+          "end_velocity_m_s": [
+            -0.37446627020835876,
+            -0.06249520927667618,
+            0.01977107860147953
+          ],
+          "peak_per_foot_N": 23.648029990959092,
+          "summed_submitted_foot_impulse_Ns": [
+            0.9718677698945005,
+            1.9550696580360334,
+            2.5691470101475717
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 36,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "DIAGNOSTIC_NEUTRAL_1",
+          "first_tick": 899,
+          "last_tick": 934,
+          "sample_count": 36,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            -0.14794409275054932,
+            -0.018188118934631348,
+            -0.017244815826416016
+          ],
+          "start_velocity_m_s": [
+            -0.37974560260772705,
+            -0.06270360201597214,
+            0.02606622315943241
+          ],
+          "end_velocity_m_s": [
+            -0.5243380665779114,
+            -0.061777014285326004,
+            -0.11814165115356445
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "DIAGNOSTIC_D_AWAY",
+          "first_tick": 935,
+          "last_tick": 1006,
+          "sample_count": 72,
+          "observed_duration_s": 0.6,
+          "COM_displacement_m": [
+            0.04569607973098755,
+            0.018599748611450195,
+            -0.035583049058914185
+          ],
+          "start_velocity_m_s": [
+            -0.5172262191772461,
+            -0.062193289399147034,
+            -0.12087386846542358
+          ],
+          "end_velocity_m_s": [
+            0.5709928274154663,
+            0.037441425025463104,
+            -0.016390491276979446
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 48
+        },
+        {
+          "stage": "DIAGNOSTIC_NEUTRAL_2",
+          "first_tick": 1007,
+          "last_tick": 1042,
+          "sample_count": 36,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            0.13130104541778564,
+            0.01436924934387207,
+            -0.002399623394012451
+          ],
+          "start_velocity_m_s": [
+            0.5737659335136414,
+            0.03960831090807915,
+            -0.01818569004535675
+          ],
+          "end_velocity_m_s": [
+            0.19949252903461456,
+            0.03786725550889969,
+            0.013934201560914516
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 36
+        },
+        {
+          "stage": "DIAGNOSTIC_A_REVERSAL",
+          "first_tick": 1043,
+          "last_tick": 1072,
+          "sample_count": 30,
+          "observed_duration_s": 0.25,
+          "COM_displacement_m": [
+            -0.03166121244430542,
+            0.0004696846008300781,
+            0.0010284185409545898
+          ],
+          "start_velocity_m_s": [
+            0.17896462976932526,
+            0.03512450307607651,
+            0.013416268862783909
+          ],
+          "end_velocity_m_s": [
+            -0.39637815952301025,
+            0.011418611742556095,
+            -0.001755335833877325
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 30
+        },
+        {
+          "stage": "DIAGNOSTIC_NEUTRAL_3",
+          "first_tick": 1073,
+          "last_tick": 1108,
+          "sample_count": 36,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            -0.16351962089538574,
+            -0.013564705848693848,
+            0.0012737065553665161
+          ],
+          "start_velocity_m_s": [
+            -0.41175925731658936,
+            0.010044995695352554,
+            -0.002162172691896558
+          ],
+          "end_velocity_m_s": [
+            -0.5722615718841553,
+            0.016090795397758484,
+            0.022058777511119843
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 36
+        },
+        {
+          "stage": "DIAGNOSTIC_RIGHT_ONLY_D",
+          "first_tick": 1109,
+          "last_tick": 1162,
+          "sample_count": 54,
+          "observed_duration_s": 0.45,
+          "COM_displacement_m": [
+            0.020768344402313232,
+            0.06067359447479248,
+            0.005015939474105835
+          ],
+          "start_velocity_m_s": [
+            -0.5621393918991089,
+            0.027516048401594162,
+            0.02132301591336727
+          ],
+          "end_velocity_m_s": [
+            0.6951941847801208,
+            0.019643789157271385,
+            -0.0021990048699080944
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 54
+        },
+        {
+          "stage": "DIAGNOSTIC_RIGHT_ONLY_NEUTRAL",
+          "first_tick": 1163,
+          "last_tick": 1198,
+          "sample_count": 36,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            0.22996163368225098,
+            0.012658357620239258,
+            -0.016282305121421814
+          ],
+          "start_velocity_m_s": [
+            0.7134904265403748,
+            0.020979413762688637,
+            -0.004540757276117802
+          ],
+          "end_velocity_m_s": [
+            0.6688036322593689,
+            0.012539543211460114,
+            -0.10936374962329865
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 34
+        },
+        {
+          "stage": "RECOVERY_FIRST_BAR_LEFT",
+          "first_tick": 1199,
+          "last_tick": 1231,
+          "sample_count": 33,
+          "observed_duration_s": 0.275,
+          "COM_displacement_m": [
+            0.10538822412490845,
+            0.043218255043029785,
+            -0.015932470560073853
+          ],
+          "start_velocity_m_s": [
+            0.6540040373802185,
+            0.012901504524052143,
+            -0.11257453262805939
+          ],
+          "end_velocity_m_s": [
+            0.20002539455890656,
+            0.28494906425476074,
+            2.1736719091336454e-09
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "DIAGNOSTIC_FINAL_NEUTRAL",
+          "first_tick": 1232,
+          "last_tick": 1267,
+          "sample_count": 36,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            0.026036083698272705,
+            0.007949471473693848,
+            3.606081008911133e-06
+          ],
+          "start_velocity_m_s": [
+            0.19264625012874603,
+            0.2801433801651001,
+            2.1719117171414837e-08
+          ],
+          "end_velocity_m_s": [
+            -0.030996637418866158,
+            -0.1909700483083725,
+            -3.725385777642032e-09
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 0
+        }
+      ]
+    },
+    {
+      "attempt": "F0_ABLATION_60_headless",
+      "status": "DIAGNOSTIC_COMPLETE",
+      "hz": 60,
+      "localized_window_reached": true,
+      "budgets_ok": true,
+      "row_count": 638,
+      "raw_sha256": {
+        "attempt_report.json": "dfd689f38455c5b722081a409be1d9f8358c235290929c2e1739b057db48f680",
+        "manifest.json": "7984125db210198a594604c9f5c2bfb1244c1fc90bbe219d36ce8fb4d6dc7310",
+        "physics.jsonl": "cca01b20756be1eb14dc07afb02c1180d515c2d32bf30a44870b2755c9a1f471",
+        "receipt.json": "94eb1a56697e770de24c6e568443c2630e138fa30ad79a2e0d5bed1d4df00da4",
+        "render.jsonl": "3f8e0080c84b6a30539e315b438522c2c7a836e8062019bc9edaeb17a1780045",
+        "setup.json": "5599b490e77d08b525e34b90957d8dbf3834f2d8fe7edd56879c951832aa8bdb",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "4e9115e4896c71b12f4ab108c6c8b6e3fd41578f4144c68f7c4ec4e22d9331fb"
+      },
+      "stages": [
+        {
+          "stage": "SETUP_WARMUP",
+          "first_tick": 1,
+          "last_tick": 24,
+          "sample_count": 24,
+          "observed_duration_s": 0.4,
+          "COM_displacement_m": [
+            7.151353287326856e-08,
+            -0.0032999515533447266,
+            -2.3543834686279297e-06
+          ],
+          "start_velocity_m_s": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "end_velocity_m_s": [
+            4.25037605111811e-08,
+            1.1915514050997444e-06,
+            -6.2894009715819266e-06
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 23
+        },
+        {
+          "stage": "ENTRY_LEFT",
+          "first_tick": 25,
+          "last_tick": 42,
+          "sample_count": 18,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            2.6764844562876533e-08,
+            0.0,
+            -1.6689300537109375e-06
+          ],
+          "start_velocity_m_s": [
+            4.265973529982148e-08,
+            1.1913754178749514e-06,
+            -6.288416443567257e-06
+          ],
+          "end_velocity_m_s": [
+            1.1065286287248455e-07,
+            1.2124646673328243e-06,
+            -6.238697551452788e-06
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 18
+        },
+        {
+          "stage": "ENTRY_RIGHT",
+          "first_tick": 43,
+          "last_tick": 60,
+          "sample_count": 18,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            4.1303482419152715e-05,
+            -3.933906555175781e-06,
+            -5.295872688293457e-05
+          ],
+          "start_velocity_m_s": [
+            -1.2134286407672334e-05,
+            8.564296649637981e-07,
+            -4.632424406736391e-06
+          ],
+          "end_velocity_m_s": [
+            -1.7754617147147655e-05,
+            1.0336098057450727e-05,
+            -4.895968231721781e-05
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 30,
+          "rows_with_reported_FootBase": 18
+        },
+        {
+          "stage": "ENTRY_DUAL_SETTLE",
+          "first_tick": 61,
+          "last_tick": 78,
+          "sample_count": 18,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            5.0628805183805525e-06,
+            -4.0531158447265625e-06,
+            1.9103288650512695e-05
+          ],
+          "start_velocity_m_s": [
+            6.210039373399923e-06,
+            -1.4267964616010431e-05,
+            7.904017547843978e-05
+          ],
+          "end_velocity_m_s": [
+            4.3825652937812265e-06,
+            -4.431497472978663e-06,
+            2.1431382265291177e-05
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 36,
+          "rows_with_reported_FootBase": 18
+        },
+        {
+          "stage": "CLIMB_W",
+          "first_tick": 79,
+          "last_tick": 258,
+          "sample_count": 180,
+          "observed_duration_s": 3.0,
+          "COM_displacement_m": [
+            -0.017839987016486702,
+            0.27463841438293457,
+            0.011804759502410889
+          ],
+          "start_velocity_m_s": [
+            3.823617589659989e-06,
+            -3.954620751756011e-06,
+            1.912651350721717e-05
+          ],
+          "end_velocity_m_s": [
+            0.2735675573348999,
+            -0.00921234767884016,
+            -0.007100915536284447
+          ],
+          "peak_per_foot_N": 78.17799252141118,
+          "summed_submitted_foot_impulse_Ns": [
+            -56.86197861335143,
+            126.11539953847726,
+            33.195795530080794
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 45,
+          "rows_with_reported_FootBase": 73
+        },
+        {
+          "stage": "HIGHER_LEFT_WALL",
+          "first_tick": 259,
+          "last_tick": 266,
+          "sample_count": 8,
+          "observed_duration_s": 0.13333333333333333,
+          "COM_displacement_m": [
+            0.03712509199976921,
+            -0.0051727294921875,
+            0.005077779293060303
+          ],
+          "start_velocity_m_s": [
+            0.2677936553955078,
+            -0.004974707029759884,
+            -0.005744861904531717
+          ],
+          "end_velocity_m_s": [
+            0.36165547370910645,
+            -0.01591898873448372,
+            0.10020554810762405
+          ],
+          "peak_per_foot_N": 76.75035283880081,
+          "summed_submitted_foot_impulse_Ns": [
+            -0.8970970471700033,
+            10.065559742848079,
+            4.612562199433644
+          ],
+          "min_individual_foot_intent_projection_N": 1.904438853263855,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "HIGHER_LEFT_W",
+          "first_tick": 267,
+          "last_tick": 281,
+          "sample_count": 15,
+          "observed_duration_s": 0.25,
+          "COM_displacement_m": [
+            0.09832644835114479,
+            0.021657705307006836,
+            0.03029465675354004
+          ],
+          "start_velocity_m_s": [
+            0.37724214792251587,
+            0.0023361635394394398,
+            0.12361767888069153
+          ],
+          "end_velocity_m_s": [
+            0.38077276945114136,
+            0.10175473242998123,
+            0.013378535397350788
+          ],
+          "peak_per_foot_N": 75.7103292707126,
+          "summed_submitted_foot_impulse_Ns": [
+            -0.5357555872760713,
+            13.077679264545441,
+            5.649175520737966
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 4,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "HIGHER_RIGHT_WALL",
+          "first_tick": 282,
+          "last_tick": 290,
+          "sample_count": 9,
+          "observed_duration_s": 0.15,
+          "COM_displacement_m": [
+            0.02708888053894043,
+            0.00736844539642334,
+            -0.015247702598571777
+          ],
+          "start_velocity_m_s": [
+            0.3622416853904724,
+            0.1004314199090004,
+            -0.015076322481036186
+          ],
+          "end_velocity_m_s": [
+            0.06233884021639824,
+            0.06804050505161285,
+            -0.21741068363189697
+          ],
+          "peak_per_foot_N": 23.264403525461297,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0601737861831983,
+            1.9957114219665528,
+            0.7235131700833638
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "HIGHER_RIGHT_W",
+          "first_tick": 291,
+          "last_tick": 350,
+          "sample_count": 60,
+          "observed_duration_s": 1.0,
+          "COM_displacement_m": [
+            -0.1727709723636508,
+            0.09436321258544922,
+            -0.20949530601501465
+          ],
+          "start_velocity_m_s": [
+            0.02558796852827072,
+            0.05528021603822708,
+            -0.24666130542755127
+          ],
+          "end_velocity_m_s": [
+            0.15754324197769165,
+            0.1282506287097931,
+            -0.00018954275583382696
+          ],
+          "peak_per_foot_N": 34.747761484475106,
+          "summed_submitted_foot_impulse_Ns": [
+            -0.24301687215144435,
+            13.168361774086952,
+            6.637248028069735
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 6,
+          "rows_with_reported_FootBase": 2
+        },
+        {
+          "stage": "LEFT_CROSSING",
+          "first_tick": 351,
+          "last_tick": 361,
+          "sample_count": 11,
+          "observed_duration_s": 0.18333333333333332,
+          "COM_displacement_m": [
+            0.044210927560925484,
+            0.008001089096069336,
+            0.004452884197235107
+          ],
+          "start_velocity_m_s": [
+            0.16102690994739532,
+            0.1406714916229248,
+            1.5242923836922273e-05
+          ],
+          "end_velocity_m_s": [
+            0.3598802089691162,
+            0.05254742130637169,
+            0.021872252225875854
+          ],
+          "peak_per_foot_N": 5.807502461697881,
+          "summed_submitted_foot_impulse_Ns": [
+            -0.1274116449058056,
+            0.714447503288587,
+            0.8539301951726278
+          ],
+          "min_individual_foot_intent_projection_N": 0.4704304337501526,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 11
+        },
+        {
+          "stage": "CROSS_W_D",
+          "first_tick": 362,
+          "last_tick": 397,
+          "sample_count": 36,
+          "observed_duration_s": 0.6,
+          "COM_displacement_m": [
+            0.14494968205690384,
+            0.046230316162109375,
+            0.05255025625228882
+          ],
+          "start_velocity_m_s": [
+            0.3797340989112854,
+            0.05087829381227493,
+            0.018914151936769485
+          ],
+          "end_velocity_m_s": [
+            0.4237073063850403,
+            0.10940881073474884,
+            0.01572921685874462
+          ],
+          "peak_per_foot_N": 7.7146845081555355,
+          "summed_submitted_foot_impulse_Ns": [
+            -0.040824542427435516,
+            1.1065040668162207,
+            1.30655197808519
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 10,
+          "rows_with_reported_FootBase": 36
+        },
+        {
+          "stage": "RIGHT_UNCOVERED_WALL_EDGE",
+          "first_tick": 398,
+          "last_tick": 404,
+          "sample_count": 7,
+          "observed_duration_s": 0.11666666666666667,
+          "COM_displacement_m": [
+            0.05933934450149536,
+            -0.025420427322387695,
+            0.004653990268707275
+          ],
+          "start_velocity_m_s": [
+            0.4441278576850891,
+            0.10363946855068207,
+            0.006574653089046478
+          ],
+          "end_velocity_m_s": [
+            0.7175338268280029,
+            -0.46340447664260864,
+            0.09158075600862503
+          ],
+          "peak_per_foot_N": 29.46486254063059,
+          "summed_submitted_foot_impulse_Ns": [
+            0.18384031901756923,
+            1.2956185698509217,
+            1.5402952353159587
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 4
+        },
+        {
+          "stage": "WALL_EDGE_W_D",
+          "first_tick": 405,
+          "last_tick": 422,
+          "sample_count": 18,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            0.3205568790435791,
+            -0.045638084411621094,
+            0.06890031695365906
+          ],
+          "start_velocity_m_s": [
+            0.7696009278297424,
+            -0.530229926109314,
+            0.11724161356687546
+          ],
+          "end_velocity_m_s": [
+            1.093988060951233,
+            0.451543390750885,
+            0.13619068264961243
+          ],
+          "peak_per_foot_N": 47.15266781099966,
+          "summed_submitted_foot_impulse_Ns": [
+            1.5059634506702424,
+            7.723630011081696,
+            5.92089705367883
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 10,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "RIGHT_AROUND_BAR_LEADING_EDGE",
+          "first_tick": 423,
+          "last_tick": 435,
+          "sample_count": 13,
+          "observed_duration_s": 0.21666666666666667,
+          "COM_displacement_m": [
+            0.13474112749099731,
+            0.031435489654541016,
+            0.014616400003433228
+          ],
+          "start_velocity_m_s": [
+            1.046769380569458,
+            0.43522146344184875,
+            0.11839727312326431
+          ],
+          "end_velocity_m_s": [
+            0.22716198861598969,
+            0.19615896046161652,
+            0.00021167349768802524
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 16,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "BAR_LEADING_EDGE_W_D",
+          "first_tick": 436,
+          "last_tick": 453,
+          "sample_count": 18,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            -0.052348554134368896,
+            -0.010120511054992676,
+            -0.026603400707244873
+          ],
+          "start_velocity_m_s": [
+            0.1537427306175232,
+            0.20104092359542847,
+            -0.015455269254744053
+          ],
+          "end_velocity_m_s": [
+            -0.30378487706184387,
+            0.031751468777656555,
+            -0.038673728704452515
+          ],
+          "peak_per_foot_N": 50.44838969016736,
+          "summed_submitted_foot_impulse_Ns": [
+            1.8114094947775206,
+            5.253223357597987,
+            3.6534753243128457
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 13,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "DIAGNOSTIC_NEUTRAL_1",
+          "first_tick": 454,
+          "last_tick": 471,
+          "sample_count": 18,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            -0.10718625783920288,
+            -0.029811859130859375,
+            -0.03371131420135498
+          ],
+          "start_velocity_m_s": [
+            -0.28959086537361145,
+            0.07446503639221191,
+            -0.008120149374008179
+          ],
+          "end_velocity_m_s": [
+            -0.4064593017101288,
+            -0.10333753377199173,
+            -0.21837766468524933
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "DIAGNOSTIC_D_AWAY",
+          "first_tick": 472,
+          "last_tick": 507,
+          "sample_count": 36,
+          "observed_duration_s": 0.6,
+          "COM_displacement_m": [
+            0.028373003005981445,
+            0.023659467697143555,
+            -0.05597364902496338
+          ],
+          "start_velocity_m_s": [
+            -0.40053653717041016,
+            -0.0970885306596756,
+            -0.2276955246925354
+          ],
+          "end_velocity_m_s": [
+            0.5282406806945801,
+            0.032210249453783035,
+            -0.010558390989899635
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 23
+        },
+        {
+          "stage": "DIAGNOSTIC_NEUTRAL_2",
+          "first_tick": 508,
+          "last_tick": 525,
+          "sample_count": 18,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            0.1391369104385376,
+            0.015456080436706543,
+            -0.006616085767745972
+          ],
+          "start_velocity_m_s": [
+            0.541510283946991,
+            0.03360927477478981,
+            -0.01500556617975235
+          ],
+          "end_velocity_m_s": [
+            0.31013843417167664,
+            0.05291636288166046,
+            -0.0010286604519933462
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 18
+        },
+        {
+          "stage": "DIAGNOSTIC_A_REVERSAL",
+          "first_tick": 526,
+          "last_tick": 540,
+          "sample_count": 15,
+          "observed_duration_s": 0.25,
+          "COM_displacement_m": [
+            -0.010264158248901367,
+            0.005878329277038574,
+            0.0015766769647598267
+          ],
+          "start_velocity_m_s": [
+            0.2724016308784485,
+            0.04993119835853577,
+            0.0005475229118019342
+          ],
+          "end_velocity_m_s": [
+            -0.31454116106033325,
+            0.010248847305774689,
+            0.010851122438907623
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 15
+        },
+        {
+          "stage": "DIAGNOSTIC_NEUTRAL_3",
+          "first_tick": 541,
+          "last_tick": 558,
+          "sample_count": 18,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            -0.15727460384368896,
+            -0.0217435359954834,
+            0.006341695785522461
+          ],
+          "start_velocity_m_s": [
+            -0.35052376985549927,
+            0.00250656483694911,
+            0.011096897535026073
+          ],
+          "end_velocity_m_s": [
+            -0.626372218132019,
+            -0.03641887009143829,
+            0.029443351551890373
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 18
+        },
+        {
+          "stage": "DIAGNOSTIC_RIGHT_ONLY_D",
+          "first_tick": 559,
+          "last_tick": 585,
+          "sample_count": 27,
+          "observed_duration_s": 0.45,
+          "COM_displacement_m": [
+            -0.020986080169677734,
+            0.07294511795043945,
+            0.0037266910076141357
+          ],
+          "start_velocity_m_s": [
+            -0.6141021847724915,
+            -0.010731187649071217,
+            0.023655937984585762
+          ],
+          "end_velocity_m_s": [
+            0.565647304058075,
+            0.03887886554002762,
+            0.00806494802236557
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 27
+        },
+        {
+          "stage": "DIAGNOSTIC_RIGHT_ONLY_NEUTRAL",
+          "first_tick": 586,
+          "last_tick": 603,
+          "sample_count": 18,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            0.20850419998168945,
+            0.010475873947143555,
+            -0.011437326669692993
+          ],
+          "start_velocity_m_s": [
+            0.6058259010314941,
+            0.03557479754090309,
+            0.008298197761178017
+          ],
+          "end_velocity_m_s": [
+            0.6663970351219177,
+            0.015564259141683578,
+            -0.0888974517583847
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 18
+        },
+        {
+          "stage": "RECOVERY_FIRST_BAR_LEFT",
+          "first_tick": 604,
+          "last_tick": 620,
+          "sample_count": 17,
+          "observed_duration_s": 0.2833333333333333,
+          "COM_displacement_m": [
+            0.0988006591796875,
+            0.04014229774475098,
+            -0.021705269813537598
+          ],
+          "start_velocity_m_s": [
+            0.6384317278862,
+            0.015701964497566223,
+            -0.0954829528927803
+          ],
+          "end_velocity_m_s": [
+            0.1771550178527832,
+            0.2929634153842926,
+            -2.181136693479857e-08
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 2
+        },
+        {
+          "stage": "DIAGNOSTIC_FINAL_NEUTRAL",
+          "first_tick": 621,
+          "last_tick": 638,
+          "sample_count": 18,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            0.03771770000457764,
+            0.004023551940917969,
+            0.0
+          ],
+          "start_velocity_m_s": [
+            0.16564960777759552,
+            0.2873128056526184,
+            -2.1680621742348194e-09
+          ],
+          "end_velocity_m_s": [
+            0.0368414968252182,
+            -0.21839600801467896,
+            6.984114175878631e-09
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 0
+        }
+      ]
+    },
+    {
+      "attempt": "F0_B0_120_headless",
+      "status": "PREPARATION_FAILED",
+      "hz": 120,
+      "localized_window_reached": false,
+      "budgets_ok": true,
+      "row_count": 874,
+      "raw_sha256": {
+        "attempt_report.json": "42f586707bd5bea56f4bf0c72d78c3177bcc83afd9d0828992df0b1d3b421438",
+        "manifest.json": "995161fd4c27b4c854c3e281f4ab28ee336b50a0cf7290a160dacdac21f43f95",
+        "physics.jsonl": "4cfbc2b1cad266159b21d13f3c5fe8f38b814cb5af806736e80666e999e7283f",
+        "receipt.json": "1a87e02c56b8fdda25abdf086be88745e68bed478eabccf36214332b8b59ce9c",
+        "render.jsonl": "40c5f6e7e6b6c85d0ee8c52d24932f4c2074d83383967dccf077b6eea3a5b564",
+        "setup.json": "7f6c19b33f487e14e42cf8b9ab07a07e8e7415c400ec7647f0691c6dfd19f1b5",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "19d051e81fc9eacda6feb6d8b88ea7be13e76ae5e2ab6d3bbc641b6ecd4780ef"
+      },
+      "stages": [
+        {
+          "stage": "SETUP_WARMUP",
+          "first_tick": 1,
+          "last_tick": 48,
+          "sample_count": 48,
+          "observed_duration_s": 0.4,
+          "COM_displacement_m": [
+            1.014909258856278e-07,
+            -0.0026193857192993164,
+            -4.827976226806641e-06
+          ],
+          "start_velocity_m_s": [
+            0.0,
+            -0.08166667073965073,
+            0.0
+          ],
+          "end_velocity_m_s": [
+            2.3447339003723755e-07,
+            2.425357251922833e-06,
+            -1.246533247467596e-05
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 48
+        },
+        {
+          "stage": "ENTRY_LEFT",
+          "first_tick": 49,
+          "last_tick": 83,
+          "sample_count": 35,
+          "observed_duration_s": 0.2916666666666667,
+          "COM_displacement_m": [
+            6.557196741141524e-08,
+            0.0,
+            -3.039836883544922e-06
+          ],
+          "start_velocity_m_s": [
+            2.3229306123084825e-07,
+            2.425397269689711e-06,
+            -1.2467166925489437e-05
+          ],
+          "end_velocity_m_s": [
+            2.3154846928719053e-07,
+            2.4252412913483568e-06,
+            -1.2466192856663838e-05
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 35
+        },
+        {
+          "stage": "ENTRY_RIGHT",
+          "first_tick": 84,
+          "last_tick": 118,
+          "sample_count": 35,
+          "observed_duration_s": 0.2916666666666667,
+          "COM_displacement_m": [
+            5.896048421050182e-06,
+            0.0,
+            -1.615285873413086e-05
+          ],
+          "start_velocity_m_s": [
+            1.0939257890640874e-06,
+            1.5008763512014411e-06,
+            -7.605462997162249e-06
+          ],
+          "end_velocity_m_s": [
+            -2.11462997867784e-06,
+            1.2754580893670209e-06,
+            -4.378088306111749e-06
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 35
+        },
+        {
+          "stage": "ENTRY_DUAL_SETTLE",
+          "first_tick": 119,
+          "last_tick": 154,
+          "sample_count": 36,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            1.7913471310748719e-06,
+            -1.1920928955078125e-06,
+            7.659196853637695e-06
+          ],
+          "start_velocity_m_s": [
+            1.3647451851284131e-05,
+            -1.236176922247978e-05,
+            5.4919393733143806e-05
+          ],
+          "end_velocity_m_s": [
+            1.3148425068720826e-06,
+            -1.3322442100616172e-06,
+            6.493157798104221e-06
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 36
+        },
+        {
+          "stage": "CLIMB_W",
+          "first_tick": 155,
+          "last_tick": 514,
+          "sample_count": 360,
+          "observed_duration_s": 3.0,
+          "COM_displacement_m": [
+            0.013496627278072992,
+            0.16317760944366455,
+            -0.14656305313110352
+          ],
+          "start_velocity_m_s": [
+            1.2478487860789755e-06,
+            -1.2642584579225513e-06,
+            6.163508714962518e-06
+          ],
+          "end_velocity_m_s": [
+            0.012094697915017605,
+            0.006258444860577583,
+            0.002062023850157857
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 223
+        },
+        {
+          "stage": "HIGHER_LEFT_WALL",
+          "first_tick": 515,
+          "last_tick": 874,
+          "sample_count": 360,
+          "observed_duration_s": 3.0,
+          "COM_displacement_m": [
+            0.2574046114459634,
+            0.04918801784515381,
+            -0.014614850282669067
+          ],
+          "start_velocity_m_s": [
+            0.011514633893966675,
+            0.006302468478679657,
+            0.0022025187499821186
+          ],
+          "end_velocity_m_s": [
+            3.237053292082237e-08,
+            1.1224736695680804e-08,
+            -5.915202994088986e-09
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 333
+        }
+      ]
+    },
+    {
+      "attempt": "F0_B0_60_headless",
+      "status": "PREPARATION_FAILED",
+      "hz": 60,
+      "localized_window_reached": false,
+      "budgets_ok": true,
+      "row_count": 438,
+      "raw_sha256": {
+        "attempt_report.json": "f3d59e19c4479a889eab1bd74d73dd11c2c1641d2fece7cac0caf92beab4706f",
+        "manifest.json": "318a513eb7c7e0ff87903f9a341499c43f9389202ac35c75658564964b2f4162",
+        "physics.jsonl": "be0aee6c986ba2ba83281f9ebd8319359849cea7b45e79c20f6482ec68a70698",
+        "receipt.json": "853100fdcac77d6a53a7ddbb77e73467418e926c8aaaa0576b5292d52c14ec7b",
+        "render.jsonl": "a823a7835e9870077b3bec093b5d50095d687c68edf6dd56a06ad9175053c4d0",
+        "setup.json": "63ede7bbc0cfeb7c2b4b8895c46974c3a2265b548cce1eb6f2c21b9b2aaa5720",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "a1c78ca50738be771204d7e3e2b290b90fb84782f3e72d02e5b6e82fdea44e50"
+      },
+      "stages": [
+        {
+          "stage": "SETUP_WARMUP",
+          "first_tick": 1,
+          "last_tick": 24,
+          "sample_count": 24,
+          "observed_duration_s": 0.4,
+          "COM_displacement_m": [
+            7.151353287326856e-08,
+            -0.0032999515533447266,
+            -2.3543834686279297e-06
+          ],
+          "start_velocity_m_s": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "end_velocity_m_s": [
+            4.25037605111811e-08,
+            1.1915514050997444e-06,
+            -6.2894009715819266e-06
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 23
+        },
+        {
+          "stage": "ENTRY_LEFT",
+          "first_tick": 25,
+          "last_tick": 42,
+          "sample_count": 18,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            2.6764844562876533e-08,
+            0.0,
+            -1.6689300537109375e-06
+          ],
+          "start_velocity_m_s": [
+            4.265973529982148e-08,
+            1.1913754178749514e-06,
+            -6.288416443567257e-06
+          ],
+          "end_velocity_m_s": [
+            1.1065286287248455e-07,
+            1.2124646673328243e-06,
+            -6.238697551452788e-06
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 18
+        },
+        {
+          "stage": "ENTRY_RIGHT",
+          "first_tick": 43,
+          "last_tick": 60,
+          "sample_count": 18,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            4.1303482419152715e-05,
+            -3.933906555175781e-06,
+            -5.295872688293457e-05
+          ],
+          "start_velocity_m_s": [
+            -1.2134286407672334e-05,
+            8.564296649637981e-07,
+            -4.632424406736391e-06
+          ],
+          "end_velocity_m_s": [
+            -1.7754617147147655e-05,
+            1.0336098057450727e-05,
+            -4.895968231721781e-05
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 18
+        },
+        {
+          "stage": "ENTRY_DUAL_SETTLE",
+          "first_tick": 61,
+          "last_tick": 78,
+          "sample_count": 18,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            5.0628805183805525e-06,
+            -4.0531158447265625e-06,
+            1.9103288650512695e-05
+          ],
+          "start_velocity_m_s": [
+            6.210039373399923e-06,
+            -1.4267964616010431e-05,
+            7.904017547843978e-05
+          ],
+          "end_velocity_m_s": [
+            4.3825652937812265e-06,
+            -4.431497472978663e-06,
+            2.1431382265291177e-05
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 18
+        },
+        {
+          "stage": "CLIMB_W",
+          "first_tick": 79,
+          "last_tick": 258,
+          "sample_count": 180,
+          "observed_duration_s": 3.0,
+          "COM_displacement_m": [
+            0.029402907752228202,
+            0.13787293434143066,
+            -0.1508518010377884
+          ],
+          "start_velocity_m_s": [
+            3.823617589659989e-06,
+            -3.954620751756011e-06,
+            1.912651350721717e-05
+          ],
+          "end_velocity_m_s": [
+            0.019160859286785126,
+            0.007180617190897465,
+            0.00025694738724268973
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 158
+        },
+        {
+          "stage": "HIGHER_LEFT_WALL",
+          "first_tick": 259,
+          "last_tick": 438,
+          "sample_count": 180,
+          "observed_duration_s": 3.0,
+          "COM_displacement_m": [
+            0.23607963137328625,
+            0.06522297859191895,
+            -0.015570119023323059
+          ],
+          "start_velocity_m_s": [
+            0.018361005932092667,
+            0.007154417224228382,
+            0.0003299799864180386
+          ],
+          "end_velocity_m_s": [
+            2.4091059458442032e-05,
+            8.220501513278577e-06,
+            -3.3768726552807493e-06
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 154
+        }
+      ]
+    },
+    {
+      "attempt": "F0_B1_120_headless",
+      "status": "DIAGNOSTIC_COMPLETE",
+      "hz": 120,
+      "localized_window_reached": true,
+      "budgets_ok": true,
+      "row_count": 1267,
+      "raw_sha256": {
+        "attempt_report.json": "09318f0b7c5027336d41c457c13899ca98022b138d6e696e00bfdab5c7ca14e4",
+        "manifest.json": "2a42d95850e0e718d8a479a9ba3dd4348197c8f741f825cff8da1c766583af99",
+        "physics.jsonl": "18a9c499f48188ff1569c1e9cd98e58fadc9288acc61e96e7aa2a892f70d8f4f",
+        "receipt.json": "9c06a2570b4b94eeb1f38633a8c67665bbff54de8a224bf108053641ca833125",
+        "render.jsonl": "dc99f6cb792aa50c4db0695dad09b7f24f3ad07428725839c7fe5a6a86077ad8",
+        "setup.json": "f2666a4398a442f2694aaf670b247f26d89d743fe4ee5f079a99cbb3d1567b54",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "929e9f4d90409b91ba701daa112a4446ec47f58c2b4a75b19e2107bf7979c934"
+      },
+      "stages": [
+        {
+          "stage": "SETUP_WARMUP",
+          "first_tick": 1,
+          "last_tick": 48,
+          "sample_count": 48,
+          "observed_duration_s": 0.4,
+          "COM_displacement_m": [
+            1.014909258856278e-07,
+            -0.0026193857192993164,
+            -4.827976226806641e-06
+          ],
+          "start_velocity_m_s": [
+            0.0,
+            -0.08166667073965073,
+            0.0
+          ],
+          "end_velocity_m_s": [
+            2.3447339003723755e-07,
+            2.425357251922833e-06,
+            -1.246533247467596e-05
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 48
+        },
+        {
+          "stage": "ENTRY_LEFT",
+          "first_tick": 49,
+          "last_tick": 83,
+          "sample_count": 35,
+          "observed_duration_s": 0.2916666666666667,
+          "COM_displacement_m": [
+            6.557196741141524e-08,
+            0.0,
+            -3.039836883544922e-06
+          ],
+          "start_velocity_m_s": [
+            2.3229306123084825e-07,
+            2.425397269689711e-06,
+            -1.2467166925489437e-05
+          ],
+          "end_velocity_m_s": [
+            2.3154846928719053e-07,
+            2.4252412913483568e-06,
+            -1.2466192856663838e-05
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 35
+        },
+        {
+          "stage": "ENTRY_RIGHT",
+          "first_tick": 84,
+          "last_tick": 118,
+          "sample_count": 35,
+          "observed_duration_s": 0.2916666666666667,
+          "COM_displacement_m": [
+            5.896048421050182e-06,
+            0.0,
+            -1.615285873413086e-05
+          ],
+          "start_velocity_m_s": [
+            1.0939257890640874e-06,
+            1.5008763512014411e-06,
+            -7.605462997162249e-06
+          ],
+          "end_velocity_m_s": [
+            -2.11462997867784e-06,
+            1.2754580893670209e-06,
+            -4.378088306111749e-06
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 56,
+          "rows_with_reported_FootBase": 35
+        },
+        {
+          "stage": "ENTRY_DUAL_SETTLE",
+          "first_tick": 119,
+          "last_tick": 154,
+          "sample_count": 36,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            1.7913471310748719e-06,
+            -1.1920928955078125e-06,
+            7.659196853637695e-06
+          ],
+          "start_velocity_m_s": [
+            1.3647451851284131e-05,
+            -1.236176922247978e-05,
+            5.4919393733143806e-05
+          ],
+          "end_velocity_m_s": [
+            1.3148425068720826e-06,
+            -1.3322442100616172e-06,
+            6.493157798104221e-06
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 72,
+          "rows_with_reported_FootBase": 36
+        },
+        {
+          "stage": "CLIMB_W",
+          "first_tick": 155,
+          "last_tick": 514,
+          "sample_count": 360,
+          "observed_duration_s": 3.0,
+          "COM_displacement_m": [
+            0.02877220994923846,
+            0.2719435691833496,
+            0.01758486032485962
+          ],
+          "start_velocity_m_s": [
+            1.2478487860789755e-06,
+            -1.2642584579225513e-06,
+            6.163508714962518e-06
+          ],
+          "end_velocity_m_s": [
+            0.2708303928375244,
+            -0.027811521664261818,
+            -0.1080779880285263
+          ],
+          "peak_per_foot_N": 80.10566804738433,
+          "summed_submitted_foot_impulse_Ns": [
+            -52.377326356586615,
+            122.79240595760444,
+            34.850214938819406
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 99,
+          "rows_with_reported_FootBase": 117
+        },
+        {
+          "stage": "HIGHER_LEFT_WALL",
+          "first_tick": 515,
+          "last_tick": 529,
+          "sample_count": 15,
+          "observed_duration_s": 0.125,
+          "COM_displacement_m": [
+            0.0350771676748991,
+            -0.008948802947998047,
+            -0.004494607448577881
+          ],
+          "start_velocity_m_s": [
+            0.2636095881462097,
+            -0.021971996873617172,
+            -0.10311275720596313
+          ],
+          "end_velocity_m_s": [
+            0.327447772026062,
+            -0.07715312391519547,
+            0.01926404982805252
+          ],
+          "peak_per_foot_N": 92.76492161428905,
+          "summed_submitted_foot_impulse_Ns": [
+            -0.6191693904499213,
+            9.875749065478642,
+            3.743812356889248
+          ],
+          "min_individual_foot_intent_projection_N": 0.744633674621582,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "HIGHER_LEFT_W",
+          "first_tick": 530,
+          "last_tick": 559,
+          "sample_count": 30,
+          "observed_duration_s": 0.25,
+          "COM_displacement_m": [
+            0.08479460328817368,
+            0.018742918968200684,
+            0.013394773006439209
+          ],
+          "start_velocity_m_s": [
+            0.33092159032821655,
+            -0.07248354703187943,
+            0.025809986516833305
+          ],
+          "end_velocity_m_s": [
+            0.3200480043888092,
+            0.13829942047595978,
+            0.01529754139482975
+          ],
+          "peak_per_foot_N": 93.8454827678277,
+          "summed_submitted_foot_impulse_Ns": [
+            -0.35536798841009537,
+            16.10309886932373,
+            5.457954343159994
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 3,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "HIGHER_RIGHT_WALL",
+          "first_tick": 560,
+          "last_tick": 577,
+          "sample_count": 18,
+          "observed_duration_s": 0.15,
+          "COM_displacement_m": [
+            0.026127085089683533,
+            0.015886783599853516,
+            -0.009111970663070679
+          ],
+          "start_velocity_m_s": [
+            0.31370341777801514,
+            0.1371360868215561,
+            0.005807950627058744
+          ],
+          "end_velocity_m_s": [
+            0.04123971238732338,
+            0.10660899430513382,
+            -0.12098830938339233
+          ],
+          "peak_per_foot_N": 33.03751660727556,
+          "summed_submitted_foot_impulse_Ns": [
+            0.14152828938579962,
+            2.3080044705886396,
+            0.7860176250843021
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "HIGHER_RIGHT_W",
+          "first_tick": 578,
+          "last_tick": 697,
+          "sample_count": 120,
+          "observed_duration_s": 1.0,
+          "COM_displacement_m": [
+            -0.18099760718178004,
+            0.11237740516662598,
+            -0.19005903601646423
+          ],
+          "start_velocity_m_s": [
+            0.022958602756261826,
+            0.09682615846395493,
+            -0.12768487632274628
+          ],
+          "end_velocity_m_s": [
+            0.13205040991306305,
+            0.18967151641845703,
+            0.05588430538773537
+          ],
+          "peak_per_foot_N": 33.919885826812376,
+          "summed_submitted_foot_impulse_Ns": [
+            0.230855718072659,
+            10.79860012542146,
+            3.873853769696628
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 28,
+          "rows_with_reported_FootBase": 19
+        },
+        {
+          "stage": "LEFT_CROSSING",
+          "first_tick": 698,
+          "last_tick": 718,
+          "sample_count": 21,
+          "observed_duration_s": 0.175,
+          "COM_displacement_m": [
+            0.03869420872069895,
+            0.015273451805114746,
+            0.00512203574180603
+          ],
+          "start_velocity_m_s": [
+            0.13400523364543915,
+            0.1889321655035019,
+            0.05549968034029007
+          ],
+          "end_velocity_m_s": [
+            0.3321915566921234,
+            0.08986947685480118,
+            0.006943343672901392
+          ],
+          "peak_per_foot_N": 9.818622379222287,
+          "summed_submitted_foot_impulse_Ns": [
+            -0.05671723461903942,
+            0.39609519828421375,
+            0.4708124832017347
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 4,
+          "rows_with_reported_FootBase": 2
+        },
+        {
+          "stage": "CROSS_W_D",
+          "first_tick": 719,
+          "last_tick": 790,
+          "sample_count": 72,
+          "observed_duration_s": 0.6,
+          "COM_displacement_m": [
+            0.17959557101130486,
+            0.05926942825317383,
+            0.040044501423835754
+          ],
+          "start_velocity_m_s": [
+            0.342331200838089,
+            0.09036550670862198,
+            0.005727396812289953
+          ],
+          "end_velocity_m_s": [
+            0.5657713413238525,
+            0.08578043431043625,
+            -0.10297839343547821
+          ],
+          "peak_per_foot_N": 11.80515901992534,
+          "summed_submitted_foot_impulse_Ns": [
+            -0.08135471958149007,
+            1.4437424976631519,
+            1.7026703710650812
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 46,
+          "rows_with_reported_FootBase": 72
+        },
+        {
+          "stage": "RIGHT_UNCOVERED_WALL_EDGE",
+          "first_tick": 791,
+          "last_tick": 804,
+          "sample_count": 14,
+          "observed_duration_s": 0.11666666666666667,
+          "COM_displacement_m": [
+            0.07791528105735779,
+            -0.030940532684326172,
+            6.389617919921875e-05
+          ],
+          "start_velocity_m_s": [
+            0.5736364722251892,
+            0.08433768898248672,
+            -0.11031018942594528
+          ],
+          "end_velocity_m_s": [
+            0.875137209892273,
+            -0.5437021255493164,
+            0.03545064851641655
+          ],
+          "peak_per_foot_N": 18.109914071405946,
+          "summed_submitted_foot_impulse_Ns": [
+            0.15164022584600995,
+            0.6518297992646694,
+            0.7876703921084602
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 14
+        },
+        {
+          "stage": "WALL_EDGE_W_D",
+          "first_tick": 805,
+          "last_tick": 840,
+          "sample_count": 36,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            0.3344278931617737,
+            -0.04917597770690918,
+            0.03138470649719238
+          ],
+          "start_velocity_m_s": [
+            0.9025853872299194,
+            -0.577599048614502,
+            0.0440850593149662
+          ],
+          "end_velocity_m_s": [
+            0.8759018182754517,
+            0.5863950848579407,
+            0.003101782174780965
+          ],
+          "peak_per_foot_N": 26.661219941342562,
+          "summed_submitted_foot_impulse_Ns": [
+            1.0086122748752435,
+            2.587840486566226,
+            3.277207295099894
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 21,
+          "rows_with_reported_FootBase": 7
+        },
+        {
+          "stage": "RIGHT_AROUND_BAR_LEADING_EDGE",
+          "first_tick": 841,
+          "last_tick": 862,
+          "sample_count": 22,
+          "observed_duration_s": 0.18333333333333332,
+          "COM_displacement_m": [
+            0.10158324241638184,
+            0.03738701343536377,
+            0.0024766921997070312
+          ],
+          "start_velocity_m_s": [
+            0.8493539094924927,
+            0.5707664489746094,
+            -0.0003307089500594884
+          ],
+          "end_velocity_m_s": [
+            0.22661778330802917,
+            0.12263471633195877,
+            0.01206978689879179
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 22,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "BAR_LEADING_EDGE_W_D",
+          "first_tick": 863,
+          "last_tick": 898,
+          "sample_count": 36,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            -0.05413573980331421,
+            0.0037114620208740234,
+            -0.0031491219997406006
+          ],
+          "start_velocity_m_s": [
+            0.18897569179534912,
+            0.12581387162208557,
+            0.009727947413921356
+          ],
+          "end_velocity_m_s": [
+            -0.37446627020835876,
+            -0.06249520927667618,
+            0.01977107860147953
+          ],
+          "peak_per_foot_N": 23.648029990959092,
+          "summed_submitted_foot_impulse_Ns": [
+            0.9718677698945005,
+            1.9550696580360334,
+            2.5691470101475717
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 36,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "DIAGNOSTIC_NEUTRAL_1",
+          "first_tick": 899,
+          "last_tick": 934,
+          "sample_count": 36,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            -0.12790632247924805,
+            0.005606889724731445,
+            0.049991607666015625
+          ],
+          "start_velocity_m_s": [
+            -0.37974560260772705,
+            -0.06270360201597214,
+            0.02606622315943241
+          ],
+          "end_velocity_m_s": [
+            -0.4431339502334595,
+            -0.008780458942055702,
+            0.29778093099594116
+          ],
+          "peak_per_foot_N": 26.549651418560845,
+          "summed_submitted_foot_impulse_Ns": [
+            2.1096849044164023,
+            5.06880673567454,
+            6.491764008998871
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 15,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "DIAGNOSTIC_D_AWAY",
+          "first_tick": 935,
+          "last_tick": 1006,
+          "sample_count": 72,
+          "observed_duration_s": 0.6,
+          "COM_displacement_m": [
+            0.017360687255859375,
+            0.006875872611999512,
+            -0.025487154722213745
+          ],
+          "start_velocity_m_s": [
+            -0.4394787847995758,
+            -0.012547032907605171,
+            0.3024497926235199
+          ],
+          "end_velocity_m_s": [
+            0.5146051049232483,
+            -0.03224446251988411,
+            -0.34769555926322937
+          ],
+          "peak_per_foot_N": 13.782175551620751,
+          "summed_submitted_foot_impulse_Ns": [
+            0.5543352098980298,
+            2.0800243467713395,
+            2.568573373928666
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 56,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "DIAGNOSTIC_NEUTRAL_2",
+          "first_tick": 1007,
+          "last_tick": 1042,
+          "sample_count": 36,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            0.11656045913696289,
+            -0.00020062923431396484,
+            -0.0812075287103653
+          ],
+          "start_velocity_m_s": [
+            0.5181751251220703,
+            -0.03337804228067398,
+            -0.3521401882171631
+          ],
+          "end_velocity_m_s": [
+            0.1338825672864914,
+            0.05835218355059624,
+            -0.0011858654906973243
+          ],
+          "peak_per_foot_N": 2.573765156612249,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0043670365897317725,
+            0.031592690572142604,
+            0.037521874407927196
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 68,
+          "rows_with_reported_FootBase": 12
+        },
+        {
+          "stage": "DIAGNOSTIC_A_REVERSAL",
+          "first_tick": 1043,
+          "last_tick": 1072,
+          "sample_count": 30,
+          "observed_duration_s": 0.25,
+          "COM_displacement_m": [
+            -0.03736215829849243,
+            -0.0011042356491088867,
+            0.002013653516769409
+          ],
+          "start_velocity_m_s": [
+            0.11555200070142746,
+            0.05282154306769371,
+            -0.001928422600030899
+          ],
+          "end_velocity_m_s": [
+            -0.38103222846984863,
+            0.019898541271686554,
+            0.005126563832163811
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 60,
+          "rows_with_reported_FootBase": 30
+        },
+        {
+          "stage": "DIAGNOSTIC_NEUTRAL_3",
+          "first_tick": 1073,
+          "last_tick": 1108,
+          "sample_count": 36,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            -0.14712071418762207,
+            -0.007058858871459961,
+            0.002675682306289673
+          ],
+          "start_velocity_m_s": [
+            -0.39404675364494324,
+            0.021017594262957573,
+            0.004651166498661041
+          ],
+          "end_velocity_m_s": [
+            -0.4853780269622803,
+            0.03751363977789879,
+            0.02744399383664131
+          ],
+          "peak_per_foot_N": 5.356032952961543,
+          "summed_submitted_foot_impulse_Ns": [
+            0.11986978119239211,
+            0.2791424776117007,
+            0.3601828396320343
+          ],
+          "min_individual_foot_intent_projection_N": -0.13494646549224854,
+          "zero_load_supporting_foot_samples": 55,
+          "rows_with_reported_FootBase": 36
+        },
+        {
+          "stage": "DIAGNOSTIC_RIGHT_ONLY_D",
+          "first_tick": 1109,
+          "last_tick": 1162,
+          "sample_count": 54,
+          "observed_duration_s": 0.45,
+          "COM_displacement_m": [
+            0.04317885637283325,
+            0.04988503456115723,
+            0.004451751708984375
+          ],
+          "start_velocity_m_s": [
+            -0.47482332587242126,
+            0.04625775292515755,
+            0.027140265330672264
+          ],
+          "end_velocity_m_s": [
+            0.7148397564888,
+            0.012153021059930325,
+            0.001494953641667962
+          ],
+          "peak_per_foot_N": 3.3513054200493264,
+          "summed_submitted_foot_impulse_Ns": [
+            0.034293063233296076,
+            0.07851542135079702,
+            0.10080286463101705
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 102,
+          "rows_with_reported_FootBase": 54
+        },
+        {
+          "stage": "DIAGNOSTIC_RIGHT_ONLY_NEUTRAL",
+          "first_tick": 1163,
+          "last_tick": 1198,
+          "sample_count": 36,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            0.23242872953414917,
+            0.011718153953552246,
+            -0.015009045600891113
+          ],
+          "start_velocity_m_s": [
+            0.7322419285774231,
+            0.013821236789226532,
+            -0.0009563083294779062
+          ],
+          "end_velocity_m_s": [
+            0.6670418977737427,
+            0.0242071021348238,
+            -0.10422616451978683
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 60,
+          "rows_with_reported_FootBase": 31
+        },
+        {
+          "stage": "RECOVERY_FIRST_BAR_LEFT",
+          "first_tick": 1199,
+          "last_tick": 1231,
+          "sample_count": 33,
+          "observed_duration_s": 0.275,
+          "COM_displacement_m": [
+            0.10023891925811768,
+            0.0445401668548584,
+            -0.01835697889328003
+          ],
+          "start_velocity_m_s": [
+            0.6510480046272278,
+            0.027118466794490814,
+            -0.1075722798705101
+          ],
+          "end_velocity_m_s": [
+            0.1635027378797531,
+            0.28243011236190796,
+            -1.5832419819616916e-08
+          ],
+          "peak_per_foot_N": 0.12272304525090726,
+          "summed_submitted_foot_impulse_Ns": [
+            0.00031724561704322697,
+            0.001822707693402966,
+            0.0021766010982294877
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 5,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "DIAGNOSTIC_FINAL_NEUTRAL",
+          "first_tick": 1232,
+          "last_tick": 1267,
+          "sample_count": 36,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            0.017269253730773926,
+            0.006550192832946777,
+            9.238719940185547e-07
+          ],
+          "start_velocity_m_s": [
+            0.1555023044347763,
+            0.27829688787460327,
+            -2.5616866849986764e-08
+          ],
+          "end_velocity_m_s": [
+            -0.04239428788423538,
+            -0.20391981303691864,
+            -1.0438573561089015e-08
+          ],
+          "peak_per_foot_N": 2.905943415346646,
+          "summed_submitted_foot_impulse_Ns": [
+            0.029032733509666286,
+            0.18239234953653066,
+            0.2173429232595178
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 34,
+          "rows_with_reported_FootBase": 0
+        }
+      ]
+    },
+    {
+      "attempt": "F0_B1_60_headless",
+      "status": "DIAGNOSTIC_COMPLETE",
+      "hz": 60,
+      "localized_window_reached": true,
+      "budgets_ok": true,
+      "row_count": 664,
+      "raw_sha256": {
+        "attempt_report.json": "bc2e5951900d872190c505d856a77c2b610d7d5f0d359a1bfcb3e88c6a71c4ba",
+        "manifest.json": "b070db9efe3a4b3611793f8c1ad0410cbb4269c3998f468202f0b4f3568c7804",
+        "physics.jsonl": "20233d0d14a2c2266a695ebbd0fca928f6ef7c5e8915b5b537c493075c83737b",
+        "receipt.json": "c6f23a7829da2f77be78ff26162755eecb6c27154d33f83efae9d2f1cf7cc25e",
+        "render.jsonl": "f075150be84e1c0b790e661249eaf1a5c1d54d6c9cb52810c9853beb0ef05a78",
+        "setup.json": "59b31e2047d8ff6ba7949a03dafe169eb27ca29d4ea3ae2105df5f7cca30a6d3",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "80ee970e8598989e561884eb32d24edeb99b2fa9c711e53da781b46272c037d8"
+      },
+      "stages": [
+        {
+          "stage": "SETUP_WARMUP",
+          "first_tick": 1,
+          "last_tick": 24,
+          "sample_count": 24,
+          "observed_duration_s": 0.4,
+          "COM_displacement_m": [
+            7.151353287326856e-08,
+            -0.0032999515533447266,
+            -2.3543834686279297e-06
+          ],
+          "start_velocity_m_s": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "end_velocity_m_s": [
+            4.25037605111811e-08,
+            1.1915514050997444e-06,
+            -6.2894009715819266e-06
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 23
+        },
+        {
+          "stage": "ENTRY_LEFT",
+          "first_tick": 25,
+          "last_tick": 42,
+          "sample_count": 18,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            2.6764844562876533e-08,
+            0.0,
+            -1.6689300537109375e-06
+          ],
+          "start_velocity_m_s": [
+            4.265973529982148e-08,
+            1.1913754178749514e-06,
+            -6.288416443567257e-06
+          ],
+          "end_velocity_m_s": [
+            1.1065286287248455e-07,
+            1.2124646673328243e-06,
+            -6.238697551452788e-06
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 18
+        },
+        {
+          "stage": "ENTRY_RIGHT",
+          "first_tick": 43,
+          "last_tick": 60,
+          "sample_count": 18,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            4.1303482419152715e-05,
+            -3.933906555175781e-06,
+            -5.295872688293457e-05
+          ],
+          "start_velocity_m_s": [
+            -1.2134286407672334e-05,
+            8.564296649637981e-07,
+            -4.632424406736391e-06
+          ],
+          "end_velocity_m_s": [
+            -1.7754617147147655e-05,
+            1.0336098057450727e-05,
+            -4.895968231721781e-05
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 30,
+          "rows_with_reported_FootBase": 18
+        },
+        {
+          "stage": "ENTRY_DUAL_SETTLE",
+          "first_tick": 61,
+          "last_tick": 78,
+          "sample_count": 18,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            5.0628805183805525e-06,
+            -4.0531158447265625e-06,
+            1.9103288650512695e-05
+          ],
+          "start_velocity_m_s": [
+            6.210039373399923e-06,
+            -1.4267964616010431e-05,
+            7.904017547843978e-05
+          ],
+          "end_velocity_m_s": [
+            4.3825652937812265e-06,
+            -4.431497472978663e-06,
+            2.1431382265291177e-05
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 36,
+          "rows_with_reported_FootBase": 18
+        },
+        {
+          "stage": "CLIMB_W",
+          "first_tick": 79,
+          "last_tick": 258,
+          "sample_count": 180,
+          "observed_duration_s": 3.0,
+          "COM_displacement_m": [
+            -0.017839987016486702,
+            0.27463841438293457,
+            0.011804759502410889
+          ],
+          "start_velocity_m_s": [
+            3.823617589659989e-06,
+            -3.954620751756011e-06,
+            1.912651350721717e-05
+          ],
+          "end_velocity_m_s": [
+            0.2735675573348999,
+            -0.00921234767884016,
+            -0.007100915536284447
+          ],
+          "peak_per_foot_N": 78.17799252141118,
+          "summed_submitted_foot_impulse_Ns": [
+            -56.86197861335143,
+            126.11539953847726,
+            33.195795530080794
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 45,
+          "rows_with_reported_FootBase": 73
+        },
+        {
+          "stage": "HIGHER_LEFT_WALL",
+          "first_tick": 259,
+          "last_tick": 266,
+          "sample_count": 8,
+          "observed_duration_s": 0.13333333333333333,
+          "COM_displacement_m": [
+            0.03712509199976921,
+            -0.0051727294921875,
+            0.005077779293060303
+          ],
+          "start_velocity_m_s": [
+            0.2677936553955078,
+            -0.004974707029759884,
+            -0.005744861904531717
+          ],
+          "end_velocity_m_s": [
+            0.36165547370910645,
+            -0.01591898873448372,
+            0.10020554810762405
+          ],
+          "peak_per_foot_N": 76.75035283880081,
+          "summed_submitted_foot_impulse_Ns": [
+            -0.8970970471700033,
+            10.065559742848079,
+            4.612562199433644
+          ],
+          "min_individual_foot_intent_projection_N": 1.904438853263855,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "HIGHER_LEFT_W",
+          "first_tick": 267,
+          "last_tick": 281,
+          "sample_count": 15,
+          "observed_duration_s": 0.25,
+          "COM_displacement_m": [
+            0.09832644835114479,
+            0.021657705307006836,
+            0.03029465675354004
+          ],
+          "start_velocity_m_s": [
+            0.37724214792251587,
+            0.0023361635394394398,
+            0.12361767888069153
+          ],
+          "end_velocity_m_s": [
+            0.38077276945114136,
+            0.10175473242998123,
+            0.013378535397350788
+          ],
+          "peak_per_foot_N": 75.7103292707126,
+          "summed_submitted_foot_impulse_Ns": [
+            -0.5357555872760713,
+            13.077679264545441,
+            5.649175520737966
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 4,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "HIGHER_RIGHT_WALL",
+          "first_tick": 282,
+          "last_tick": 290,
+          "sample_count": 9,
+          "observed_duration_s": 0.15,
+          "COM_displacement_m": [
+            0.02708888053894043,
+            0.00736844539642334,
+            -0.015247702598571777
+          ],
+          "start_velocity_m_s": [
+            0.3622416853904724,
+            0.1004314199090004,
+            -0.015076322481036186
+          ],
+          "end_velocity_m_s": [
+            0.06233884021639824,
+            0.06804050505161285,
+            -0.21741068363189697
+          ],
+          "peak_per_foot_N": 23.264403525461297,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0601737861831983,
+            1.9957114219665528,
+            0.7235131700833638
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "HIGHER_RIGHT_W",
+          "first_tick": 291,
+          "last_tick": 350,
+          "sample_count": 60,
+          "observed_duration_s": 1.0,
+          "COM_displacement_m": [
+            -0.1727709723636508,
+            0.09436321258544922,
+            -0.20949530601501465
+          ],
+          "start_velocity_m_s": [
+            0.02558796852827072,
+            0.05528021603822708,
+            -0.24666130542755127
+          ],
+          "end_velocity_m_s": [
+            0.15754324197769165,
+            0.1282506287097931,
+            -0.00018954275583382696
+          ],
+          "peak_per_foot_N": 34.747761484475106,
+          "summed_submitted_foot_impulse_Ns": [
+            -0.24301687215144435,
+            13.168361774086952,
+            6.637248028069735
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 6,
+          "rows_with_reported_FootBase": 2
+        },
+        {
+          "stage": "LEFT_CROSSING",
+          "first_tick": 351,
+          "last_tick": 361,
+          "sample_count": 11,
+          "observed_duration_s": 0.18333333333333332,
+          "COM_displacement_m": [
+            0.044210927560925484,
+            0.008001089096069336,
+            0.004452884197235107
+          ],
+          "start_velocity_m_s": [
+            0.16102690994739532,
+            0.1406714916229248,
+            1.5242923836922273e-05
+          ],
+          "end_velocity_m_s": [
+            0.3598802089691162,
+            0.05254742130637169,
+            0.021872252225875854
+          ],
+          "peak_per_foot_N": 5.807502461697881,
+          "summed_submitted_foot_impulse_Ns": [
+            -0.1274116449058056,
+            0.714447503288587,
+            0.8539301951726278
+          ],
+          "min_individual_foot_intent_projection_N": 0.4704304337501526,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 11
+        },
+        {
+          "stage": "CROSS_W_D",
+          "first_tick": 362,
+          "last_tick": 397,
+          "sample_count": 36,
+          "observed_duration_s": 0.6,
+          "COM_displacement_m": [
+            0.14494968205690384,
+            0.046230316162109375,
+            0.05255025625228882
+          ],
+          "start_velocity_m_s": [
+            0.3797340989112854,
+            0.05087829381227493,
+            0.018914151936769485
+          ],
+          "end_velocity_m_s": [
+            0.4237073063850403,
+            0.10940881073474884,
+            0.01572921685874462
+          ],
+          "peak_per_foot_N": 7.7146845081555355,
+          "summed_submitted_foot_impulse_Ns": [
+            -0.040824542427435516,
+            1.1065040668162207,
+            1.30655197808519
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 10,
+          "rows_with_reported_FootBase": 36
+        },
+        {
+          "stage": "RIGHT_UNCOVERED_WALL_EDGE",
+          "first_tick": 398,
+          "last_tick": 404,
+          "sample_count": 7,
+          "observed_duration_s": 0.11666666666666667,
+          "COM_displacement_m": [
+            0.05933934450149536,
+            -0.025420427322387695,
+            0.004653990268707275
+          ],
+          "start_velocity_m_s": [
+            0.4441278576850891,
+            0.10363946855068207,
+            0.006574653089046478
+          ],
+          "end_velocity_m_s": [
+            0.7175338268280029,
+            -0.46340447664260864,
+            0.09158075600862503
+          ],
+          "peak_per_foot_N": 29.46486254063059,
+          "summed_submitted_foot_impulse_Ns": [
+            0.18384031901756923,
+            1.2956185698509217,
+            1.5402952353159587
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 4
+        },
+        {
+          "stage": "WALL_EDGE_W_D",
+          "first_tick": 405,
+          "last_tick": 422,
+          "sample_count": 18,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            0.3205568790435791,
+            -0.045638084411621094,
+            0.06890031695365906
+          ],
+          "start_velocity_m_s": [
+            0.7696009278297424,
+            -0.530229926109314,
+            0.11724161356687546
+          ],
+          "end_velocity_m_s": [
+            1.093988060951233,
+            0.451543390750885,
+            0.13619068264961243
+          ],
+          "peak_per_foot_N": 47.15266781099966,
+          "summed_submitted_foot_impulse_Ns": [
+            1.5059634506702424,
+            7.723630011081696,
+            5.92089705367883
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 10,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "RIGHT_AROUND_BAR_LEADING_EDGE",
+          "first_tick": 423,
+          "last_tick": 435,
+          "sample_count": 13,
+          "observed_duration_s": 0.21666666666666667,
+          "COM_displacement_m": [
+            0.13474112749099731,
+            0.031435489654541016,
+            0.014616400003433228
+          ],
+          "start_velocity_m_s": [
+            1.046769380569458,
+            0.43522146344184875,
+            0.11839727312326431
+          ],
+          "end_velocity_m_s": [
+            0.22716198861598969,
+            0.19615896046161652,
+            0.00021167349768802524
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 16,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "BAR_LEADING_EDGE_W_D",
+          "first_tick": 436,
+          "last_tick": 453,
+          "sample_count": 18,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            -0.052348554134368896,
+            -0.010120511054992676,
+            -0.026603400707244873
+          ],
+          "start_velocity_m_s": [
+            0.1537427306175232,
+            0.20104092359542847,
+            -0.015455269254744053
+          ],
+          "end_velocity_m_s": [
+            -0.30378487706184387,
+            0.031751468777656555,
+            -0.038673728704452515
+          ],
+          "peak_per_foot_N": 50.44838969016736,
+          "summed_submitted_foot_impulse_Ns": [
+            1.8114094947775206,
+            5.253223357597987,
+            3.6534753243128457
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 13,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "DIAGNOSTIC_NEUTRAL_1",
+          "first_tick": 454,
+          "last_tick": 471,
+          "sample_count": 18,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            -0.036984026432037354,
+            0.010329961776733398,
+            0.050362974405288696
+          ],
+          "start_velocity_m_s": [
+            -0.28959086537361145,
+            0.07446503639221191,
+            -0.008120149374008179
+          ],
+          "end_velocity_m_s": [
+            -0.004637137521058321,
+            -0.06732445955276489,
+            0.23231804370880127
+          ],
+          "peak_per_foot_N": 53.58372459127004,
+          "summed_submitted_foot_impulse_Ns": [
+            5.60751105149587,
+            16.613767329851786,
+            7.587399776776632
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 0,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "DIAGNOSTIC_D_AWAY",
+          "first_tick": 472,
+          "last_tick": 507,
+          "sample_count": 36,
+          "observed_duration_s": 0.6,
+          "COM_displacement_m": [
+            0.035272300243377686,
+            -0.005188465118408203,
+            -0.011912703514099121
+          ],
+          "start_velocity_m_s": [
+            0.0052886344492435455,
+            -0.06545183807611465,
+            0.22317776083946228
+          ],
+          "end_velocity_m_s": [
+            0.12896621227264404,
+            -0.04322068765759468,
+            -0.22169846296310425
+          ],
+          "peak_per_foot_N": 46.47330177317056,
+          "summed_submitted_foot_impulse_Ns": [
+            6.488649372306342,
+            18.52712739457687,
+            8.20726852590839
+          ],
+          "min_individual_foot_intent_projection_N": -0.3006347715854645,
+          "zero_load_supporting_foot_samples": 5,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "DIAGNOSTIC_NEUTRAL_2",
+          "first_tick": 508,
+          "last_tick": 525,
+          "sample_count": 18,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            0.04926508665084839,
+            -0.013648390769958496,
+            -0.0763082504272461
+          ],
+          "start_velocity_m_s": [
+            0.13407038152217865,
+            -0.04940824210643768,
+            -0.23069551587104797
+          ],
+          "end_velocity_m_s": [
+            0.18713587522506714,
+            -0.021810686215758324,
+            -0.2839546799659729
+          ],
+          "peak_per_foot_N": 44.57339347255479,
+          "summed_submitted_foot_impulse_Ns": [
+            4.95604928083485,
+            11.252361858387788,
+            3.436201138297717
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 12,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "DIAGNOSTIC_A_REVERSAL",
+          "first_tick": 526,
+          "last_tick": 540,
+          "sample_count": 15,
+          "observed_duration_s": 0.25,
+          "COM_displacement_m": [
+            0.017590224742889404,
+            0.010134577751159668,
+            -0.05215321481227875
+          ],
+          "start_velocity_m_s": [
+            0.18216055631637573,
+            -0.015264221467077732,
+            -0.2836552560329437
+          ],
+          "end_velocity_m_s": [
+            -0.05683392286300659,
+            0.10069165378808975,
+            -0.0297625083476305
+          ],
+          "peak_per_foot_N": 42.2268291867897,
+          "summed_submitted_foot_impulse_Ns": [
+            4.050202655792236,
+            8.009365208943684,
+            1.6039591550827026
+          ],
+          "min_individual_foot_intent_projection_N": -18.13328742980957,
+          "zero_load_supporting_foot_samples": 15,
+          "rows_with_reported_FootBase": 4
+        },
+        {
+          "stage": "DIAGNOSTIC_NEUTRAL_3",
+          "first_tick": 541,
+          "last_tick": 558,
+          "sample_count": 18,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            -0.040026724338531494,
+            -0.005273342132568359,
+            0.003066912293434143
+          ],
+          "start_velocity_m_s": [
+            -0.08354569226503372,
+            0.10114160925149918,
+            -0.027830271050333977
+          ],
+          "end_velocity_m_s": [
+            -0.0662844106554985,
+            -0.05531608313322067,
+            0.035930585116147995
+          ],
+          "peak_per_foot_N": 69.51851573142518,
+          "summed_submitted_foot_impulse_Ns": [
+            6.67662771542867,
+            14.231524244944254,
+            2.2888957500457763
+          ],
+          "min_individual_foot_intent_projection_N": -19.765352249145508,
+          "zero_load_supporting_foot_samples": 18,
+          "rows_with_reported_FootBase": 18
+        },
+        {
+          "stage": "DIAGNOSTIC_RIGHT_ONLY_D",
+          "first_tick": 559,
+          "last_tick": 585,
+          "sample_count": 27,
+          "observed_duration_s": 0.45,
+          "COM_displacement_m": [
+            0.1166486144065857,
+            -0.005147814750671387,
+            0.0312078595161438
+          ],
+          "start_velocity_m_s": [
+            -0.04909631609916687,
+            -0.04820932447910309,
+            0.039299942553043365
+          ],
+          "end_velocity_m_s": [
+            0.4503542482852936,
+            0.10537315160036087,
+            -0.027949579060077667
+          ],
+          "peak_per_foot_N": 72.31923054585053,
+          "summed_submitted_foot_impulse_Ns": [
+            7.075233581413825,
+            15.348785914977391,
+            2.857727592686812
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 11,
+          "rows_with_reported_FootBase": 6
+        },
+        {
+          "stage": "DIAGNOSTIC_RIGHT_ONLY_NEUTRAL",
+          "first_tick": 586,
+          "last_tick": 603,
+          "sample_count": 18,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            0.11136078834533691,
+            0.008980512619018555,
+            -0.02145981788635254
+          ],
+          "start_velocity_m_s": [
+            0.45575982332229614,
+            0.09707051515579224,
+            -0.037148211151361465
+          ],
+          "end_velocity_m_s": [
+            0.21768148243427277,
+            0.017316676676273346,
+            -0.11987591534852982
+          ],
+          "peak_per_foot_N": 4.823279465445442,
+          "summed_submitted_foot_impulse_Ns": [
+            -0.013977786890851954,
+            0.30573083957036334,
+            0.3602139095465342
+          ],
+          "min_individual_foot_intent_projection_N": -0.18926434218883514,
+          "zero_load_supporting_foot_samples": 10,
+          "rows_with_reported_FootBase": 0
+        },
+        {
+          "stage": "RECOVERY_FIRST_BAR_LEFT",
+          "first_tick": 604,
+          "last_tick": 646,
+          "sample_count": 43,
+          "observed_duration_s": 0.7166666666666667,
+          "COM_displacement_m": [
+            -0.20389628410339355,
+            0.08115708827972412,
+            -0.03760388493537903
+          ],
+          "start_velocity_m_s": [
+            0.1777825951576233,
+            0.020655948668718338,
+            -0.127405047416687
+          ],
+          "end_velocity_m_s": [
+            -0.0387776717543602,
+            0.08764691650867462,
+            -0.00812043622136116
+          ],
+          "peak_per_foot_N": 2.04808294179166,
+          "summed_submitted_foot_impulse_Ns": [
+            0.002018427336588502,
+            0.19714602356155714,
+            0.23480500367780527
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 59,
+          "rows_with_reported_FootBase": 18
+        },
+        {
+          "stage": "DIAGNOSTIC_FINAL_NEUTRAL",
+          "first_tick": 647,
+          "last_tick": 664,
+          "sample_count": 18,
+          "observed_duration_s": 0.3,
+          "COM_displacement_m": [
+            0.007566928863525391,
+            0.016216278076171875,
+            -0.00013728439807891846
+          ],
+          "start_velocity_m_s": [
+            -0.024231158196926117,
+            0.09362819045782089,
+            -0.005313756875693798
+          ],
+          "end_velocity_m_s": [
+            -0.039792146533727646,
+            -0.05546899139881134,
+            -0.009575879201292992
+          ],
+          "peak_per_foot_N": 0.0,
+          "summed_submitted_foot_impulse_Ns": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_individual_foot_intent_projection_N": 0.0,
+          "zero_load_supporting_foot_samples": 36,
+          "rows_with_reported_FootBase": 18
+        }
+      ]
+    }
+  ],
+  "matched_prefixes": [
+    {
+      "hz": 120,
+      "switch_tick": 898,
+      "first_state_or_hand_force_divergence_tick": 900,
+      "setter_preserved_body_hands_native": true,
+      "later_stage_onsets_matched": false,
+      "caveat": "Existing feet-OFF setter changes solver and visual ownership; later neutral evolves differently"
+    },
+    {
+      "hz": 60,
+      "switch_tick": 453,
+      "first_state_or_hand_force_divergence_tick": 455,
+      "setter_preserved_body_hands_native": true,
+      "later_stage_onsets_matched": false,
+      "caveat": "Existing feet-OFF setter changes solver and visual ownership; later neutral evolves differently"
+    }
+  ]
+}

@@ -1,0 +1,4715 @@
+{
+	"cases": [
+		{
+			"baseline_selected_x": -0.159999996423721,
+			"intent_selected_x": 0.159999996423721,
+			"kind": "ranking",
+			"selection": {
+				"candidate_count": 6,
+				"candidates": [
+					{
+						"adjustment": 0.144899763528109,
+						"baseline_cost": 0.186830538344383,
+						"bearing_quality": 0.980580627918243,
+						"compression_feasible": true,
+						"cost": 0.331730301872492,
+						"drift_penalty_distance": 0.0,
+						"extension_room": 0.0133268946838379,
+						"friction": 0.85,
+						"gesture_time_estimate": 0.0838152691721916,
+						"hysteresis_bonus": 0.0,
+						"normal": "(0.0, 1.0, 0.0)",
+						"normal_per_unit_effort": 0.980580627918243,
+						"point": "(-0.16, 0.1, 0.0)",
+						"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+						"relative_support_velocity": "(0.0, 0.0, 0.0)",
+						"signed_push_utility": -0.196116134524345,
+						"support_id": 51422168546,
+						"support_name": "@StaticBody3D@6"
+					},
+					{
+						"adjustment": 0.163290769222975,
+						"baseline_cost": 0.225355270338058,
+						"bearing_quality": 0.970142483711243,
+						"compression_feasible": true,
+						"cost": 0.388646039561033,
+						"drift_penalty_distance": 0.0,
+						"extension_room": 0.00454891864776608,
+						"friction": 0.85,
+						"gesture_time_estimate": 0.103077635169029,
+						"hysteresis_bonus": 0.0,
+						"normal": "(0.0, 1.0, 0.0)",
+						"normal_per_unit_effort": 0.970142483711243,
+						"point": "(-0.16, 0.1, -0.12)",
+						"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+						"relative_support_velocity": "(0.0, 0.0, 0.0)",
+						"signed_push_utility": -0.19402851164341,
+						"support_id": 51422168546,
+						"support_name": "@StaticBody3D@6"
+					},
+					{
+						"adjustment": 0.163290769222975,
+						"baseline_cost": 0.225355270338058,
+						"bearing_quality": 0.970142483711243,
+						"compression_feasible": true,
+						"cost": 0.388646039561033,
+						"drift_penalty_distance": 0.0,
+						"extension_room": 0.00454891864776608,
+						"friction": 0.85,
+						"gesture_time_estimate": 0.103077635169029,
+						"hysteresis_bonus": 0.0,
+						"normal": "(0.0, 1.0, 0.0)",
+						"normal_per_unit_effort": 0.970142483711243,
+						"point": "(-0.16, 0.1, 0.12)",
+						"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+						"relative_support_velocity": "(0.0, 0.0, 0.0)",
+						"signed_push_utility": -0.19402851164341,
+						"support_id": 51422168546,
+						"support_name": "@StaticBody3D@6"
+					},
+					{
+						"adjustment": 0.0076184693610669,
+						"baseline_cost": 0.186830538344383,
+						"bearing_quality": 0.980580627918243,
+						"compression_feasible": true,
+						"cost": 0.19444900770545,
+						"drift_penalty_distance": 0.0,
+						"extension_room": 0.0133268946838379,
+						"friction": 0.85,
+						"gesture_time_estimate": 0.0838152691721916,
+						"hysteresis_bonus": 0.0,
+						"normal": "(0.0, 1.0, 0.0)",
+						"normal_per_unit_effort": 0.980580627918243,
+						"point": "(0.16, 0.1, 0.0)",
+						"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+						"relative_support_velocity": "(0.0, 0.0, 0.0)",
+						"signed_push_utility": 0.196116134524345,
+						"support_id": 51489277418,
+						"support_name": "@StaticBody3D@8"
+					},
+					{
+						"adjustment": 0.027470811072588,
+						"baseline_cost": 0.225355270338058,
+						"bearing_quality": 0.970142483711243,
+						"compression_feasible": true,
+						"cost": 0.252826081410647,
+						"drift_penalty_distance": 0.0,
+						"extension_room": 0.00454891864776608,
+						"friction": 0.85,
+						"gesture_time_estimate": 0.103077635169029,
+						"hysteresis_bonus": 0.0,
+						"normal": "(0.0, 1.0, 0.0)",
+						"normal_per_unit_effort": 0.970142483711243,
+						"point": "(0.16, 0.1, -0.12)",
+						"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+						"relative_support_velocity": "(0.0, 0.0, 0.0)",
+						"signed_push_utility": 0.19402851164341,
+						"support_id": 51489277418,
+						"support_name": "@StaticBody3D@8"
+					},
+					{
+						"adjustment": 0.027470811072588,
+						"baseline_cost": 0.225355270338058,
+						"bearing_quality": 0.970142483711243,
+						"compression_feasible": true,
+						"cost": 0.252826081410647,
+						"drift_penalty_distance": 0.0,
+						"extension_room": 0.00454891864776608,
+						"friction": 0.85,
+						"gesture_time_estimate": 0.103077635169029,
+						"hysteresis_bonus": 0.0,
+						"normal": "(0.0, 1.0, 0.0)",
+						"normal_per_unit_effort": 0.970142483711243,
+						"point": "(0.16, 0.1, 0.12)",
+						"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+						"relative_support_velocity": "(0.0, 0.0, 0.0)",
+						"signed_push_utility": 0.19402851164341,
+						"support_id": 51489277418,
+						"support_name": "@StaticBody3D@8"
+					}
+				],
+				"future_contact_authorized": false,
+				"reason": "LOCAL_CANDIDATE_SELECTED",
+				"rejected": {},
+				"selected": {
+					"adjustment": 0.0076184693610669,
+					"baseline_cost": 0.186830538344383,
+					"bearing_quality": 0.980580627918243,
+					"compression_feasible": true,
+					"cost": 0.19444900770545,
+					"drift_penalty_distance": 0.0,
+					"extension_room": 0.0133268946838379,
+					"friction": 0.85,
+					"gesture_time_estimate": 0.0838152691721916,
+					"hysteresis_bonus": 0.0,
+					"normal": "(0.0, 1.0, 0.0)",
+					"normal_per_unit_effort": 0.980580627918243,
+					"point": "(0.16, 0.1, 0.0)",
+					"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+					"relative_support_velocity": "(0.0, 0.0, 0.0)",
+					"signed_push_utility": 0.196116134524345,
+					"support_id": 51489277418,
+					"support_name": "@StaticBody3D@8"
+				}
+			},
+			"small_reversal": {
+				"candidate_count": 3,
+				"candidates": [
+					{
+						"adjustment": 0.0755727099607141,
+						"baseline_cost": 0.186830538344383,
+						"bearing_quality": 0.980580627918243,
+						"compression_feasible": true,
+						"cost": 0.262403248305097,
+						"drift_penalty_distance": 0.0,
+						"extension_room": 0.0133268946838379,
+						"friction": 0.85,
+						"gesture_time_estimate": 0.0838152691721916,
+						"hysteresis_bonus": 0.0,
+						"normal": "(0.0, 1.0, 0.0)",
+						"normal_per_unit_effort": 0.980580627918243,
+						"point": "(-0.16, 0.1, 0.0)",
+						"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+						"relative_support_velocity": "(0.0, 0.0, 0.0)",
+						"signed_push_utility": 0.00196116138249636,
+						"support_id": 51422168546,
+						"support_name": "@StaticBody3D@6"
+					},
+					{
+						"adjustment": 0.0947016903668084,
+						"baseline_cost": 0.225355270338058,
+						"bearing_quality": 0.970142483711243,
+						"compression_feasible": true,
+						"cost": 0.320056960704867,
+						"drift_penalty_distance": 0.0,
+						"extension_room": 0.00454891864776608,
+						"friction": 0.85,
+						"gesture_time_estimate": 0.103077635169029,
+						"hysteresis_bonus": 0.0,
+						"normal": "(0.0, 1.0, 0.0)",
+						"normal_per_unit_effort": 0.970142483711243,
+						"point": "(-0.16, 0.1, -0.12)",
+						"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+						"relative_support_velocity": "(0.0, 0.0, 0.0)",
+						"signed_push_utility": 0.00194028508849442,
+						"support_id": 51422168546,
+						"support_name": "@StaticBody3D@6"
+					},
+					{
+						"adjustment": 0.0947016903668084,
+						"baseline_cost": 0.225355270338058,
+						"bearing_quality": 0.970142483711243,
+						"compression_feasible": true,
+						"cost": 0.320056960704867,
+						"drift_penalty_distance": 0.0,
+						"extension_room": 0.00454891864776608,
+						"friction": 0.85,
+						"gesture_time_estimate": 0.103077635169029,
+						"hysteresis_bonus": 0.0,
+						"normal": "(0.0, 1.0, 0.0)",
+						"normal_per_unit_effort": 0.970142483711243,
+						"point": "(-0.16, 0.1, 0.12)",
+						"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+						"relative_support_velocity": "(0.0, 0.0, 0.0)",
+						"signed_push_utility": 0.00194028508849442,
+						"support_id": 51422168546,
+						"support_name": "@StaticBody3D@6"
+					}
+				],
+				"future_contact_authorized": false,
+				"reason": "LOCAL_CANDIDATE_SELECTED",
+				"rejected": {},
+				"selected": {
+					"adjustment": 0.0755727099607141,
+					"baseline_cost": 0.186830538344383,
+					"bearing_quality": 0.980580627918243,
+					"compression_feasible": true,
+					"cost": 0.262403248305097,
+					"drift_penalty_distance": 0.0,
+					"extension_room": 0.0133268946838379,
+					"friction": 0.85,
+					"gesture_time_estimate": 0.0838152691721916,
+					"hysteresis_bonus": 0.0,
+					"normal": "(0.0, 1.0, 0.0)",
+					"normal_per_unit_effort": 0.980580627918243,
+					"point": "(-0.16, 0.1, 0.0)",
+					"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+					"relative_support_velocity": "(0.0, 0.0, 0.0)",
+					"signed_push_utility": 0.00196116138249636,
+					"support_id": 51422168546,
+					"support_name": "@StaticBody3D@6"
+				}
+			}
+		},
+		{
+			"aware": false,
+			"dx": 0.00426367064937949,
+			"dy": 0.0213181972503662,
+			"kind": "isolated_push",
+			"leg_work": 0.0576627098023891,
+			"linear_error": 1.24171566963196,
+			"peak_force": 22.211820602417,
+			"selected_side": "left",
+			"selection": {
+				"enabled": false,
+				"feet": {},
+				"intent": "(-1.0, 0.0, 0.0)",
+				"policy": "B1_EXISTING",
+				"scope": "local search only; planted contacts are not automatically replaced",
+				"switch_count": 0
+			}
+		},
+		{
+			"aware": true,
+			"dx": -0.00426367064937949,
+			"dy": 0.0213181972503662,
+			"kind": "isolated_push",
+			"leg_work": 0.0576627098023891,
+			"linear_error": 1.24171566963196,
+			"peak_force": 22.211820602417,
+			"selected_side": "right",
+			"selection": {
+				"enabled": true,
+				"feet": {
+					"0": {
+						"candidate_count": 6,
+						"future_contact_authorized": false,
+						"reason": "LOCAL_CANDIDATE_SELECTED",
+						"rejected": {},
+						"selected": {
+							"adjustment": 0.0076184693610669,
+							"baseline_cost": 0.186830538344383,
+							"bearing_quality": 0.980580627918243,
+							"compression_feasible": true,
+							"cost": 0.19444900770545,
+							"drift_penalty_distance": 0.0,
+							"extension_room": 0.0133268946838379,
+							"friction": 0.85,
+							"gesture_time_estimate": 0.0838152691721916,
+							"hysteresis_bonus": 0.0,
+							"normal": "(0.0, 1.0, 0.0)",
+							"normal_per_unit_effort": 0.980580627918243,
+							"point": "(0.16, 0.1, 0.0)",
+							"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+							"relative_support_velocity": "(0.0, 0.0, 0.0)",
+							"signed_push_utility": 0.196116134524345,
+							"support_id": 64592283114,
+							"support_name": "@StaticBody3D@20"
+						}
+					}
+				},
+				"intent": "(-1.0, 0.0, 0.0)",
+				"policy": "B2_INTENT_AWARE",
+				"scope": "local search only; planted contacts are not automatically replaced",
+				"switch_count": 0
+			}
+		},
+		{
+			"aware": true,
+			"dx": -0.00346572883427143,
+			"dy": 0.017329216003418,
+			"kind": "isolated_dynamic",
+			"leg_work": 0.04884760286659,
+			"linear_error": 0.0000000596046447753906,
+			"peak_force": 21.5733413696289,
+			"selected_side": "right",
+			"selection": {
+				"enabled": true,
+				"feet": {
+					"0": {
+						"candidate_count": 6,
+						"future_contact_authorized": false,
+						"reason": "LOCAL_CANDIDATE_SELECTED",
+						"rejected": {},
+						"selected": {
+							"adjustment": 0.0076184693610669,
+							"baseline_cost": 0.186830538344383,
+							"bearing_quality": 0.980580627918243,
+							"compression_feasible": true,
+							"cost": 0.19444900770545,
+							"drift_penalty_distance": 0.0,
+							"extension_room": 0.0133268946838379,
+							"friction": 0.85,
+							"gesture_time_estimate": 0.0838152691721916,
+							"hysteresis_bonus": 0.0,
+							"normal": "(0.0, 1.0, 0.0)",
+							"normal_per_unit_effort": 0.980580627918243,
+							"point": "(0.16, 0.1, 0.0)",
+							"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+							"relative_support_velocity": "(0.0, 0.0, 0.0)",
+							"signed_push_utility": 0.196116134524345,
+							"support_id": 73215772150,
+							"support_name": "@RigidBody3D@26"
+						}
+					}
+				},
+				"intent": "(-1.0, 0.0, 0.0)",
+				"policy": "B2_INTENT_AWARE",
+				"scope": "local search only; planted contacts are not automatically replaced",
+				"switch_count": 0
+			}
+		},
+		{
+			"foot_positive_work": 0.0,
+			"hand_load_integral": 404.611510183414,
+			"kind": "full_biped_step",
+			"mode": "B0",
+			"peak_leg_force": 0.0,
+			"planted_samples": 0,
+			"retained": true,
+			"rise": 0.159641742706299,
+			"samples": [
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 1.55262398719788,
+					"leg_force": 0.0,
+					"position": "(0.000029, 1.166692, 0.40006)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 0.0
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 0.0,
+					"leg_force": 0.0,
+					"position": "(-0.015669, 1.166694, 0.331023)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 0.1
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 0.0,
+					"leg_force": 0.0,
+					"position": "(-0.049336, 1.171193, 0.239228)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 0.2
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 0.0,
+					"leg_force": 0.0,
+					"position": "(-0.075284, 1.169914, 0.239247)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 0.3
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 0.0,
+					"leg_force": 0.0,
+					"position": "(-0.095271, 1.169562, 0.239253)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 0.4
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 6.96039652824402,
+					"leg_force": 0.0,
+					"position": "(-0.111128, 1.169564, 0.239253)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 0.5
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 91.0053520202637,
+					"leg_force": 0.0,
+					"position": "(-0.121805, 1.169554, 0.239248)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 0.6
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 150.945518493652,
+					"leg_force": 0.0,
+					"position": "(-0.11743, 1.172498, 0.239199)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 0.7
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 147.145820617676,
+					"leg_force": 0.0,
+					"position": "(-0.09149, 1.180034, 0.239065)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 0.8
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 155.876602172852,
+					"leg_force": 0.0,
+					"position": "(-0.055622, 1.191213, 0.238912)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 0.9
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 146.199203491211,
+					"leg_force": 0.0,
+					"position": "(-0.025511, 1.207119, 0.239084)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 1.0
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 147.271942138672,
+					"leg_force": 0.0,
+					"position": "(-0.008197, 1.219218, 0.240249)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 1.1
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 161.990005493164,
+					"leg_force": 0.0,
+					"position": "(0.000214, 1.22757, 0.242504)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 1.2
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 162.046005249023,
+					"leg_force": 0.0,
+					"position": "(0.007442, 1.239538, 0.245605)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 1.3
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 155.895004272461,
+					"leg_force": 0.0,
+					"position": "(0.017217, 1.253197, 0.249145)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 1.4
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 161.214172363281,
+					"leg_force": 0.0,
+					"position": "(0.027606, 1.264465, 0.252753)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 1.5
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 166.106460571289,
+					"leg_force": 0.0,
+					"position": "(0.033976, 1.274844, 0.256152)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 1.6
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 167.487098693848,
+					"leg_force": 0.0,
+					"position": "(0.033779, 1.285078, 0.259196)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 1.7
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 169.065093994141,
+					"leg_force": 0.0,
+					"position": "(0.028334, 1.294376, 0.261702)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 1.8
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 171.275245666504,
+					"leg_force": 0.0,
+					"position": "(0.021157, 1.302498, 0.263401)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 1.9
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 173.804893493652,
+					"leg_force": 0.0,
+					"position": "(0.01514, 1.309436, 0.264176)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 2.0
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 175.959495544434,
+					"leg_force": 0.0,
+					"position": "(0.011249, 1.315082, 0.264076)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 2.1
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 177.6767578125,
+					"leg_force": 0.0,
+					"position": "(0.009171, 1.319316, 0.263203)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 2.2
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 179.043815612793,
+					"leg_force": 0.0,
+					"position": "(0.008502, 1.322141, 0.261651)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 2.3
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 180.147720336914,
+					"leg_force": 0.0,
+					"position": "(0.009149, 1.323683, 0.259547)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 2.4
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 181.473747253418,
+					"leg_force": 0.0,
+					"position": "(0.011033, 1.32418, 0.257061)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 2.5
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 183.275321960449,
+					"leg_force": 0.0,
+					"position": "(0.013641, 1.324169, 0.254764)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 2.6
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 183.651420593262,
+					"leg_force": 0.0,
+					"position": "(0.016269, 1.324272, 0.254616)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 2.7
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 183.705596923828,
+					"leg_force": 0.0,
+					"position": "(0.018944, 1.324783, 0.254599)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 2.8
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.0, 0.0, 0.0)",
+							"reason": "inactive",
+							"state": "FREE"
+						}
+					],
+					"hand_force": 183.467552185059,
+					"leg_force": 0.0,
+					"position": "(0.021166, 1.325588, 0.254627)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 2.9
+				}
+			],
+			"selection": {
+				"enabled": false,
+				"feet": {},
+				"intent": "(0.0, 0.0, 0.0)",
+				"policy": "B1_EXISTING",
+				"scope": "local search only; planted contacts are not automatically replaced",
+				"switch_count": 0
+			}
+		},
+		{
+			"foot_positive_work": 20.7213504483031,
+			"hand_load_integral": 257.136937292417,
+			"kind": "full_biped_step",
+			"mode": "B1",
+			"peak_leg_force": 78.0477905273438,
+			"planted_samples": 528,
+			"retained": true,
+			"rise": 0.272320508956909,
+			"samples": [
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.088897, 0.25, 0.38579)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.089103, 0.25, 0.38579)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 1.55262398719788,
+					"leg_force": 0.0,
+					"position": "(0.000029, 1.166692, 0.40006)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 0.0
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.088897, 0.25, 0.38579)",
+							"reason": "leg_reach",
+							"state": "SEARCHING"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.089103, 0.25, 0.38579)",
+							"reason": "leg_reach",
+							"state": "SEARCHING"
+						}
+					],
+					"hand_force": 0.0,
+					"leg_force": 0.0,
+					"position": "(-0.015669, 1.166694, 0.331023)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 0.1
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.171594, 0.638955, 0.0)",
+							"reason": "approaching",
+							"state": "PLANTING"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "approaching",
+							"state": "PLANTING"
+						}
+					],
+					"hand_force": 0.0,
+					"leg_force": 0.0,
+					"position": "(-0.049336, 1.171193, 0.239228)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 0.2
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.171594, 0.638955, 0.0)",
+							"reason": "approaching",
+							"state": "PLANTING"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "approaching",
+							"state": "PLANTING"
+						}
+					],
+					"hand_force": 0.0,
+					"leg_force": 0.0,
+					"position": "(-0.075744, 1.171222, 0.239223)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 0.3
+				},
+				{
+					"feet": [
+						{
+							"force": "(-0.168991, 4.521065, 5.322615)",
+							"point": "(-0.171286, 0.62685, 0.0)",
+							"reason": "friction_limit",
+							"state": "SLIDING"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "approaching",
+							"state": "PLANTING"
+						}
+					],
+					"hand_force": 0.0,
+					"leg_force": 6.98561477661133,
+					"position": "(-0.096399, 1.169918, 0.239248)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 0.4
+				},
+				{
+					"feet": [
+						{
+							"force": "(-0.673072, 9.827278, 11.58859)",
+							"point": "(-0.1702, 0.605999, 0.0)",
+							"reason": "friction_limit",
+							"state": "SLIDING"
+						},
+						{
+							"force": "(-1.126126, 2.462285, 0.42121)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 7.94937109947205,
+					"leg_force": 17.9494841098785,
+					"position": "(-0.11361, 1.169936, 0.239248)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 0.5
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.168976, 0.59029, 0.0)",
+							"reason": "slid_off_edge",
+							"state": "SEARCHING"
+						},
+						{
+							"force": "(-29.58937, 60.22514, 10.33714)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 98.2745132446289,
+					"leg_force": 67.8929595947266,
+					"position": "(-0.130886, 1.170487, 0.239238)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 0.6
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.282156, 0.65046, 0.0)",
+							"reason": "approaching",
+							"state": "PLANTING"
+						},
+						{
+							"force": "(-31.37362, 60.52174, 10.05068)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 94.1135406494141,
+					"leg_force": 68.9071960449219,
+					"position": "(-0.151089, 1.188835, 0.239448)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 0.7
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.282156, 0.65046, 0.0)",
+							"reason": "approaching",
+							"state": "PLANTING"
+						},
+						{
+							"force": "(-29.83531, 55.01166, 8.492061)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 70.7689905166626,
+					"leg_force": 63.154914855957,
+					"position": "(-0.173404, 1.217621, 0.241264)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 0.8
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.282154, 0.64011, 0.0)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						},
+						{
+							"force": "(-30.25547, 52.35978, 7.60649)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 89.5365619659424,
+					"leg_force": 60.9491500854492,
+					"position": "(-0.199273, 1.241907, 0.243783)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 0.9
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.281927, 0.63496, 0.0)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						},
+						{
+							"force": "(-35.42097, 57.89224, 8.684059)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 128.833311080933,
+					"leg_force": 68.422004699707,
+					"position": "(-0.223928, 1.262303, 0.252656)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 1.0
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.281927, 0.63496, 0.0)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						},
+						{
+							"force": "(-29.6259, 47.40202, 8.06511)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 95.2759342193604,
+					"leg_force": 56.477352142334,
+					"position": "(-0.242557, 1.29098, 0.269794)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 1.1
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.281927, 0.63496, 0.0)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						},
+						{
+							"force": "(-29.75799, 47.30455, 8.753821)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 89.1931171417236,
+					"leg_force": 56.5675506591797,
+					"position": "(-0.25815, 1.320102, 0.284487)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 1.2
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.281927, 0.63496, 0.0)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						},
+						{
+							"force": "(-32.52722, 51.43962, 10.04653)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 95.5404415130615,
+					"leg_force": 61.6845817565918,
+					"position": "(-0.272093, 1.345468, 0.295458)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 1.3
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.281927, 0.63496, 0.0)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						},
+						{
+							"force": "(-24.13234, 38.202, 7.631043)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 96.2178630828857,
+					"leg_force": 45.8257102966309,
+					"position": "(-0.284326, 1.370252, 0.302634)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 1.4
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.281927, 0.63496, 0.0)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						},
+						{
+							"force": "(-19.39798, 31.02448, 6.244055)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 115.056255340576,
+					"leg_force": 37.1185684204102,
+					"position": "(-0.288139, 1.385532, 0.30534)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 1.5
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.281927, 0.63496, 0.0)",
+							"reason": "leg_reach",
+							"state": "SEARCHING"
+						},
+						{
+							"force": "(-22.24907, 36.6759, 7.251779)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 118.689697265625,
+					"leg_force": 43.5055274963379,
+					"position": "(-0.280494, 1.393137, 0.303039)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 1.6
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.482422, 0.906887, -0.0)",
+							"reason": "approaching",
+							"state": "PLANTING"
+						},
+						{
+							"force": "(-26.17469, 45.08821, 8.566582)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 114.339897155762,
+					"leg_force": 52.8341522216797,
+					"position": "(-0.267688, 1.397376, 0.297293)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 1.7
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.482422, 0.906887, -0.0)",
+							"reason": "approaching",
+							"state": "PLANTING"
+						},
+						{
+							"force": "(-28.25607, 50.9122, 9.162433)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 112.284671783447,
+					"leg_force": 58.9441146850586,
+					"position": "(-0.255379, 1.400294, 0.289837)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 1.8
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.992064, 3.680247, 4.484253)",
+							"point": "(-0.483992, 0.900985, 0.0)",
+							"reason": "friction_limit",
+							"state": "SLIDING"
+						},
+						{
+							"force": "(-28.23223, 53.06965, 8.93859)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 111.02885055542,
+					"leg_force": 66.6582145690918,
+					"position": "(-0.24471, 1.403551, 0.281673)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 1.9
+				},
+				{
+					"feet": [
+						{
+							"force": "(3.227798, 11.29984, 13.82566)",
+							"point": "(-0.488992, 0.882929, 0.0)",
+							"reason": "friction_limit",
+							"state": "SLIDING"
+						},
+						{
+							"force": "(-25.42458, 49.90091, 7.977543)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 104.672916412354,
+					"leg_force": 74.7152328491211,
+					"position": "(-0.233757, 1.40932, 0.277181)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 2.0
+				},
+				{
+					"feet": [
+						{
+							"force": "(3.50756, 11.55942, 14.21161)",
+							"point": "(-0.494366, 0.864628, 0.0)",
+							"reason": "friction_limit",
+							"state": "SLIDING"
+						},
+						{
+							"force": "(-23.57764, 48.41301, 7.90215)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 102.83016204834,
+					"leg_force": 73.0776977539063,
+					"position": "(-0.22097, 1.415995, 0.281932)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 2.1
+				},
+				{
+					"feet": [
+						{
+							"force": "(3.832113, 11.91453, 14.72428)",
+							"point": "(-0.500019, 0.846501, 0.0)",
+							"reason": "friction_limit",
+							"state": "SLIDING"
+						},
+						{
+							"force": "(-21.27435, 45.53538, 8.177297)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 107.496925354004,
+					"leg_force": 70.245626449585,
+					"position": "(-0.20766, 1.421957, 0.296303)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 2.2
+				},
+				{
+					"feet": [
+						{
+							"force": "(3.664371, 10.7696, 13.38346)",
+							"point": "(-0.505828, 0.828889, 0.0)",
+							"reason": "friction_limit",
+							"state": "SLIDING"
+						},
+						{
+							"force": "(-17.00571, 38.22352, 7.877798)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 101.399471282959,
+					"leg_force": 60.1360054016113,
+					"position": "(-0.192522, 1.430357, 0.318038)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 2.3
+				},
+				{
+					"feet": [
+						{
+							"force": "(3.64167, 9.944583, 12.45929)",
+							"point": "(-0.511778, 0.811948, 0.0)",
+							"reason": "friction_limit",
+							"state": "SLIDING"
+						},
+						{
+							"force": "(-15.53618, 37.34946, 8.956814)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 101.453834533691,
+					"leg_force": 57.7836971282959,
+					"position": "(-0.172363, 1.437607, 0.344107)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 2.4
+				},
+				{
+					"feet": [
+						{
+							"force": "(3.491582, 8.68908, 11.0169)",
+							"point": "(-0.517945, 0.795789, 0.0)",
+							"reason": "friction_limit",
+							"state": "SLIDING"
+						},
+						{
+							"force": "(-14.54845, 38.3085, 10.67657)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 106.300720214844,
+					"leg_force": 56.8050689697266,
+					"position": "(-0.146334, 1.442495, 0.372791)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 2.5
+				},
+				{
+					"feet": [
+						{
+							"force": "(2.973344, 6.672513, 8.594132)",
+							"point": "(-0.524402, 0.780455, 0.0)",
+							"reason": "friction_limit",
+							"state": "SLIDING"
+						},
+						{
+							"force": "(-12.46869, 37.22748, 11.89241)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 109.650203704834,
+					"leg_force": 52.3010234832764,
+					"position": "(-0.115095, 1.446806, 0.401999)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 2.6
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.527761, 0.773086, 0.0)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						},
+						{
+							"force": "(-10.45802, 37.11829, 13.27399)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 123.511199951172,
+					"leg_force": 40.7840194702148,
+					"position": "(-0.080173, 1.448888, 0.427348)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 2.7
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.527761, 0.773086, 0.0)",
+							"reason": "leg_reach",
+							"state": "SEARCHING"
+						},
+						{
+							"force": "(-9.233249, 41.72836, 15.75428)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 115.42191696167,
+					"leg_force": 45.548942565918,
+					"position": "(-0.042521, 1.448473, 0.437781)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 2.8
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.254091, 0.748048, 0.0)",
+							"reason": "approaching",
+							"state": "PLANTING"
+						},
+						{
+							"force": "(-8.58768, 52.92074, 19.91987)",
+							"point": "(0.18974, 0.59, 0.087474)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 115.705062866211,
+					"leg_force": 57.1940040588379,
+					"position": "(-0.004684, 1.444504, 0.43315)",
+					"selection": {
+						"enabled": false,
+						"feet": {},
+						"intent": "(0.0, 0.0, 0.0)",
+						"policy": "B1_EXISTING",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 2.9
+				}
+			],
+			"selection": {
+				"enabled": false,
+				"feet": {},
+				"intent": "(0.0, 0.0, 0.0)",
+				"policy": "B1_EXISTING",
+				"scope": "local search only; planted contacts are not automatically replaced",
+				"switch_count": 0
+			}
+		},
+		{
+			"foot_positive_work": 20.746876747911,
+			"hand_load_integral": 257.330166526636,
+			"kind": "full_biped_step",
+			"mode": "B2",
+			"peak_leg_force": 78.3751678466797,
+			"planted_samples": 526,
+			"retained": true,
+			"rise": 0.271632790565491,
+			"samples": [
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.088897, 0.25, 0.38579)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.089103, 0.25, 0.38579)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 1.55262398719788,
+					"leg_force": 0.0,
+					"position": "(0.000029, 1.166692, 0.40006)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 16,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 14
+								},
+								"selected": {
+									"adjustment": 0.10015079379084,
+									"baseline_cost": 0.000255156151251867,
+									"bearing_quality": 0.998994708061218,
+									"compression_feasible": false,
+									"cost": 0.100405949942092,
+									"drift_penalty_distance": 0.0000000000000645652212138575,
+									"extension_room": 0.0,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.000133934910991229,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.998994708061218,
+									"point": "(-0.088897, 0.25, 0.38579)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.0, 0.0, 0.0)",
+									"signed_push_utility": 0.0,
+									"support_id": 512493619920,
+									"support_name": "Start"
+								}
+							},
+							"1": {
+								"candidate_count": 16,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 14
+								},
+								"selected": {
+									"adjustment": 0.100150793790828,
+									"baseline_cost": 0.00025861322064884,
+									"bearing_quality": 0.998994708061218,
+									"compression_feasible": false,
+									"cost": 0.100409407011477,
+									"drift_penalty_distance": 0.0000000000000298823905075005,
+									"extension_room": 0.0,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.000134590562083758,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.998994708061218,
+									"point": "(0.089103, 0.25, 0.38579)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.0, 0.0, 0.0)",
+									"signed_push_utility": 0.0,
+									"support_id": 512493619920,
+									"support_name": "Start"
+								}
+							}
+						},
+						"intent": "(0.0, 0.069444, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 0.0
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.088897, 0.25, 0.38579)",
+							"reason": "leg_reach",
+							"state": "SEARCHING"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.089103, 0.25, 0.38579)",
+							"reason": "leg_reach",
+							"state": "SEARCHING"
+						}
+					],
+					"hand_force": 0.0,
+					"leg_force": 0.0,
+					"position": "(-0.015669, 1.166694, 0.331023)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 16,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 14
+								},
+								"selected": {
+									"adjustment": 0.10015079379084,
+									"baseline_cost": 0.000255156151251867,
+									"bearing_quality": 0.998994708061218,
+									"compression_feasible": false,
+									"cost": 0.100405949942092,
+									"drift_penalty_distance": 0.0000000000000645652212138575,
+									"extension_room": 0.0,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.000133934910991229,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.998994708061218,
+									"point": "(-0.088897, 0.25, 0.38579)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.0, 0.0, 0.0)",
+									"signed_push_utility": 0.0,
+									"support_id": 512493619920,
+									"support_name": "Start"
+								}
+							},
+							"1": {
+								"candidate_count": 16,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 14
+								},
+								"selected": {
+									"adjustment": 0.100150793790828,
+									"baseline_cost": 0.00025861322064884,
+									"bearing_quality": 0.998994708061218,
+									"compression_feasible": false,
+									"cost": 0.100409407011477,
+									"drift_penalty_distance": 0.0000000000000298823905075005,
+									"extension_room": 0.0,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.000134590562083758,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.998994708061218,
+									"point": "(0.089103, 0.25, 0.38579)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.0, 0.0, 0.0)",
+									"signed_push_utility": 0.0,
+									"support_id": 512493619920,
+									"support_name": "Start"
+								}
+							}
+						},
+						"intent": "(0.0, 0.902778, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 0
+					},
+					"time": 0.1
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.171595, 0.638953, 0.0)",
+							"reason": "approaching",
+							"state": "PLANTING"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "approaching",
+							"state": "PLANTING"
+						}
+					],
+					"hand_force": 0.0,
+					"leg_force": 0.0,
+					"position": "(-0.049341, 1.171191, 0.239228)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 15,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 15
+								},
+								"selected": {
+									"adjustment": 0.0995901245531837,
+									"baseline_cost": 0.187214553356171,
+									"bearing_quality": 0.151472866535187,
+									"compression_feasible": true,
+									"cost": 0.286804677909354,
+									"drift_penalty_distance": 0.0723615937736488,
+									"extension_room": 0.27194696316123,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.170202881097794,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.178572356700897,
+									"point": "(-0.171595, 0.638953, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.051335, -0.29765, -0.2992)",
+									"signed_push_utility": 0.151472866535187,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 2
+					},
+					"time": 0.2
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.171595, 0.638953, 0.0)",
+							"reason": "approaching",
+							"state": "PLANTING"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "approaching",
+							"state": "PLANTING"
+						}
+					],
+					"hand_force": 0.0,
+					"leg_force": 0.0,
+					"position": "(-0.075171, 1.169913, 0.239248)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 15,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 15
+								},
+								"selected": {
+									"adjustment": 0.0995901245531837,
+									"baseline_cost": 0.187214553356171,
+									"bearing_quality": 0.151472866535187,
+									"compression_feasible": true,
+									"cost": 0.286804677909354,
+									"drift_penalty_distance": 0.0723615937736488,
+									"extension_room": 0.27194696316123,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.170202881097794,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.178572356700897,
+									"point": "(-0.171595, 0.638953, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.051335, -0.29765, -0.2992)",
+									"signed_push_utility": 0.151472866535187,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 2
+					},
+					"time": 0.3
+				},
+				{
+					"feet": [
+						{
+							"force": "(-0.160028, 4.491711, 5.287719)",
+							"point": "(-0.171305, 0.626849, 0.0)",
+							"reason": "friction_limit",
+							"state": "SLIDING"
+						},
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "approaching",
+							"state": "PLANTING"
+						}
+					],
+					"hand_force": 0.0,
+					"leg_force": 6.93981599807739,
+					"position": "(-0.095365, 1.169566, 0.239254)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 15,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 15
+								},
+								"selected": {
+									"adjustment": 0.0995901245531837,
+									"baseline_cost": 0.187214553356171,
+									"bearing_quality": 0.151472866535187,
+									"compression_feasible": true,
+									"cost": 0.286804677909354,
+									"drift_penalty_distance": 0.0723615937736488,
+									"extension_room": 0.27194696316123,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.170202881097794,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.178572356700897,
+									"point": "(-0.171595, 0.638953, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.051335, -0.29765, -0.2992)",
+									"signed_push_utility": 0.151472866535187,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 2
+					},
+					"time": 0.4
+				},
+				{
+					"feet": [
+						{
+							"force": "(-0.646545, 9.802041, 11.55687)",
+							"point": "(-0.170263, 0.605999, 0.0)",
+							"reason": "friction_limit",
+							"state": "SLIDING"
+						},
+						{
+							"force": "(-1.125336, 2.475418, 0.423761)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 7.74833726882935,
+					"leg_force": 17.9197325706482,
+					"position": "(-0.112136, 1.169586, 0.239254)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 15,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 15
+								},
+								"selected": {
+									"adjustment": 0.0995901245531837,
+									"baseline_cost": 0.187214553356171,
+									"bearing_quality": 0.151472866535187,
+									"compression_feasible": true,
+									"cost": 0.286804677909354,
+									"drift_penalty_distance": 0.0723615937736488,
+									"extension_room": 0.27194696316123,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.170202881097794,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.178572356700897,
+									"point": "(-0.171595, 0.638953, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.051335, -0.29765, -0.2992)",
+									"signed_push_utility": 0.151472866535187,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 2
+					},
+					"time": 0.5
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.169082, 0.59029, 0.0)",
+							"reason": "slid_off_edge",
+							"state": "SEARCHING"
+						},
+						{
+							"force": "(-29.57012, 60.6176, 10.41824)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 98.187198638916,
+					"leg_force": 68.2453308105469,
+					"position": "(-0.129102, 1.170163, 0.239243)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 15,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 15
+								},
+								"selected": {
+									"adjustment": 0.0995901245531837,
+									"baseline_cost": 0.187214553356171,
+									"bearing_quality": 0.151472866535187,
+									"compression_feasible": true,
+									"cost": 0.286804677909354,
+									"drift_penalty_distance": 0.0723615937736488,
+									"extension_room": 0.27194696316123,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.170202881097794,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.178572356700897,
+									"point": "(-0.171595, 0.638953, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.051335, -0.29765, -0.2992)",
+									"signed_push_utility": 0.151472866535187,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 2
+					},
+					"time": 0.6
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.279954, 0.649982, 0.0)",
+							"reason": "approaching",
+							"state": "PLANTING"
+						},
+						{
+							"force": "(-31.31307, 60.83145, 10.1227)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 93.3851699829102,
+					"leg_force": 69.1624450683594,
+					"position": "(-0.149309, 1.188611, 0.23948)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 15,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 15
+								},
+								"selected": {
+									"adjustment": 0.109981343647118,
+									"baseline_cost": 0.15673194527626,
+									"bearing_quality": 0.153709471225739,
+									"compression_feasible": true,
+									"cost": 0.266713288923378,
+									"drift_penalty_distance": 0.10524594074282,
+									"extension_room": 0.271873828262091,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.155460253357887,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.181291520595551,
+									"point": "(-0.279954, 0.649982, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.613402, -0.285277, -0.026051)",
+									"signed_push_utility": 0.153709471225739,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 3
+					},
+					"time": 0.7
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.279954, 0.649982, 0.0)",
+							"reason": "approaching",
+							"state": "PLANTING"
+						},
+						{
+							"force": "(-29.77321, 55.1995, 8.547901)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 70.5545444488525,
+					"leg_force": 63.2968864440918,
+					"position": "(-0.17192, 1.217374, 0.241361)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 15,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 15
+								},
+								"selected": {
+									"adjustment": 0.109981343647118,
+									"baseline_cost": 0.15673194527626,
+									"bearing_quality": 0.153709471225739,
+									"compression_feasible": true,
+									"cost": 0.266713288923378,
+									"drift_penalty_distance": 0.10524594074282,
+									"extension_room": 0.271873828262091,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.155460253357887,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.181291520595551,
+									"point": "(-0.279954, 0.649982, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.613402, -0.285277, -0.026051)",
+									"signed_push_utility": 0.153709471225739,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 3
+					},
+					"time": 0.8
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.279937, 0.639631, 0.0)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						},
+						{
+							"force": "(-30.11216, 52.30607, 7.631068)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 89.6015911102295,
+					"leg_force": 60.8350296020508,
+					"position": "(-0.198164, 1.24165, 0.243973)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 15,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 15
+								},
+								"selected": {
+									"adjustment": 0.109981343647118,
+									"baseline_cost": 0.15673194527626,
+									"bearing_quality": 0.153709471225739,
+									"compression_feasible": true,
+									"cost": 0.266713288923378,
+									"drift_penalty_distance": 0.10524594074282,
+									"extension_room": 0.271873828262091,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.155460253357887,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.181291520595551,
+									"point": "(-0.279954, 0.649982, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.613402, -0.285277, -0.026051)",
+									"signed_push_utility": 0.153709471225739,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 3
+					},
+					"time": 0.9
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.279685, 0.634488, 0.0)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						},
+						{
+							"force": "(-35.18983, 57.67289, 8.646546)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 128.830911636353,
+					"leg_force": 68.1120376586914,
+					"position": "(-0.223159, 1.262254, 0.252506)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 15,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 15
+								},
+								"selected": {
+									"adjustment": 0.109981343647118,
+									"baseline_cost": 0.15673194527626,
+									"bearing_quality": 0.153709471225739,
+									"compression_feasible": true,
+									"cost": 0.266713288923378,
+									"drift_penalty_distance": 0.10524594074282,
+									"extension_room": 0.271873828262091,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.155460253357887,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.181291520595551,
+									"point": "(-0.279954, 0.649982, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.613402, -0.285277, -0.026051)",
+									"signed_push_utility": 0.153709471225739,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 3
+					},
+					"time": 1.0
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.279685, 0.634488, 0.0)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						},
+						{
+							"force": "(-29.51567, 47.30667, 8.03844)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 96.2068481445313,
+					"leg_force": 56.3357162475586,
+					"position": "(-0.241886, 1.290681, 0.269538)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 15,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 15
+								},
+								"selected": {
+									"adjustment": 0.109981343647118,
+									"baseline_cost": 0.15673194527626,
+									"bearing_quality": 0.153709471225739,
+									"compression_feasible": true,
+									"cost": 0.266713288923378,
+									"drift_penalty_distance": 0.10524594074282,
+									"extension_room": 0.271873828262091,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.155460253357887,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.181291520595551,
+									"point": "(-0.279954, 0.649982, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.613402, -0.285277, -0.026051)",
+									"signed_push_utility": 0.153709471225739,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 3
+					},
+					"time": 1.1
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.279685, 0.634488, 0.0)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						},
+						{
+							"force": "(-29.69746, 47.29343, 8.736807)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 89.0818023681641,
+					"leg_force": 56.5237922668457,
+					"position": "(-0.25741, 1.3198, 0.28418)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 15,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 15
+								},
+								"selected": {
+									"adjustment": 0.109981343647118,
+									"baseline_cost": 0.15673194527626,
+									"bearing_quality": 0.153709471225739,
+									"compression_feasible": true,
+									"cost": 0.266713288923378,
+									"drift_penalty_distance": 0.10524594074282,
+									"extension_room": 0.271873828262091,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.155460253357887,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.181291520595551,
+									"point": "(-0.279954, 0.649982, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.613402, -0.285277, -0.026051)",
+									"signed_push_utility": 0.153709471225739,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 3
+					},
+					"time": 1.2
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.279685, 0.634488, 0.0)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						},
+						{
+							"force": "(-32.46962, 51.43062, 10.02846)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 95.6809635162354,
+					"leg_force": 61.6437683105469,
+					"position": "(-0.271375, 1.345111, 0.295137)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 15,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 15
+								},
+								"selected": {
+									"adjustment": 0.109981343647118,
+									"baseline_cost": 0.15673194527626,
+									"bearing_quality": 0.153709471225739,
+									"compression_feasible": true,
+									"cost": 0.266713288923378,
+									"drift_penalty_distance": 0.10524594074282,
+									"extension_room": 0.271873828262091,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.155460253357887,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.181291520595551,
+									"point": "(-0.279954, 0.649982, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.613402, -0.285277, -0.026051)",
+									"signed_push_utility": 0.153709471225739,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 3
+					},
+					"time": 1.3
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.279685, 0.634488, 0.0)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						},
+						{
+							"force": "(-24.43402, 38.73277, 7.723886)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 95.9600601196289,
+					"leg_force": 46.442512512207,
+					"position": "(-0.283735, 1.369996, 0.302327)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 15,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 15
+								},
+								"selected": {
+									"adjustment": 0.109981343647118,
+									"baseline_cost": 0.15673194527626,
+									"bearing_quality": 0.153709471225739,
+									"compression_feasible": true,
+									"cost": 0.266713288923378,
+									"drift_penalty_distance": 0.10524594074282,
+									"extension_room": 0.271873828262091,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.155460253357887,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.181291520595551,
+									"point": "(-0.279954, 0.649982, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.613402, -0.285277, -0.026051)",
+									"signed_push_utility": 0.153709471225739,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 3
+					},
+					"time": 1.4
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.279685, 0.634488, 0.0)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						},
+						{
+							"force": "(-19.34977, 30.97353, 6.223197)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 114.77575302124,
+					"leg_force": 37.0472869873047,
+					"position": "(-0.287908, 1.385536, 0.305105)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 15,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 15
+								},
+								"selected": {
+									"adjustment": 0.109981343647118,
+									"baseline_cost": 0.15673194527626,
+									"bearing_quality": 0.153709471225739,
+									"compression_feasible": true,
+									"cost": 0.266713288923378,
+									"drift_penalty_distance": 0.10524594074282,
+									"extension_room": 0.271873828262091,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.155460253357887,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.181291520595551,
+									"point": "(-0.279954, 0.649982, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.613402, -0.285277, -0.026051)",
+									"signed_push_utility": 0.153709471225739,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 3
+					},
+					"time": 1.5
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.279685, 0.634488, 0.0)",
+							"reason": "leg_reach",
+							"state": "SEARCHING"
+						},
+						{
+							"force": "(-22.11788, 36.46689, 7.201158)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 118.926170349121,
+					"leg_force": 43.2537994384766,
+					"position": "(-0.280524, 1.393216, 0.302885)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 15,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 15
+								},
+								"selected": {
+									"adjustment": 0.109981343647118,
+									"baseline_cost": 0.15673194527626,
+									"bearing_quality": 0.153709471225739,
+									"compression_feasible": true,
+									"cost": 0.266713288923378,
+									"drift_penalty_distance": 0.10524594074282,
+									"extension_room": 0.271873828262091,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.155460253357887,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.181291520595551,
+									"point": "(-0.279954, 0.649982, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.613402, -0.285277, -0.026051)",
+									"signed_push_utility": 0.153709471225739,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 3
+					},
+					"time": 1.6
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.484319, 0.906731, 0.0)",
+							"reason": "approaching",
+							"state": "PLANTING"
+						},
+						{
+							"force": "(-26.07963, 44.92381, 8.526226)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 114.501953125,
+					"leg_force": 52.6402168273926,
+					"position": "(-0.267759, 1.39747, 0.297184)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 15,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 3
+								},
+								"selected": {
+									"adjustment": 0.0363010404422257,
+									"baseline_cost": 0.390005677938461,
+									"bearing_quality": 0.25692430138588,
+									"compression_feasible": true,
+									"cost": 0.426306718380687,
+									"drift_penalty_distance": 0.0421805461004727,
+									"extension_room": 0.249472435802221,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.218954727053642,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.309503763914108,
+									"point": "(-0.484319, 0.906731, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(-0.176668, -0.04934, 0.058874)",
+									"signed_push_utility": 0.25692430138588,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 4
+					},
+					"time": 1.7
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.484319, 0.906731, 0.0)",
+							"reason": "approaching",
+							"state": "PLANTING"
+						},
+						{
+							"force": "(-28.2265, 50.86103, 9.144385)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 112.360691070557,
+					"leg_force": 58.8829307556152,
+					"position": "(-0.255387, 1.400365, 0.289748)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 15,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 3
+								},
+								"selected": {
+									"adjustment": 0.0363010404422257,
+									"baseline_cost": 0.390005677938461,
+									"bearing_quality": 0.25692430138588,
+									"compression_feasible": true,
+									"cost": 0.426306718380687,
+									"drift_penalty_distance": 0.0421805461004727,
+									"extension_room": 0.249472435802221,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.218954727053642,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.309503763914108,
+									"point": "(-0.484319, 0.906731, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(-0.176668, -0.04934, 0.058874)",
+									"signed_push_utility": 0.25692430138588,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 4
+					},
+					"time": 1.8
+				},
+				{
+					"feet": [
+						{
+							"force": "(1.229967, 4.504816, 5.493776)",
+							"point": "(-0.486301, 0.899359, 0.0)",
+							"reason": "friction_limit",
+							"state": "SLIDING"
+						},
+						{
+							"force": "(-28.1151, 52.86022, 8.898519)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 110.777793884277,
+					"leg_force": 67.7399554252625,
+					"position": "(-0.244632, 1.403665, 0.281688)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 15,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 3
+								},
+								"selected": {
+									"adjustment": 0.0363010404422257,
+									"baseline_cost": 0.390005677938461,
+									"bearing_quality": 0.25692430138588,
+									"compression_feasible": true,
+									"cost": 0.426306718380687,
+									"drift_penalty_distance": 0.0421805461004727,
+									"extension_room": 0.249472435802221,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.218954727053642,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.309503763914108,
+									"point": "(-0.484319, 0.906731, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(-0.176668, -0.04934, 0.058874)",
+									"signed_push_utility": 0.25692430138588,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 4
+					},
+					"time": 1.9
+				},
+				{
+					"feet": [
+						{
+							"force": "(3.288993, 11.37063, 13.92559)",
+							"point": "(-0.491365, 0.881306, 0.0)",
+							"reason": "friction_limit",
+							"state": "SLIDING"
+						},
+						{
+							"force": "(-25.20504, 49.50649, 7.95181)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 104.100372314453,
+					"leg_force": 74.3961906433105,
+					"position": "(-0.233472, 1.409671, 0.277913)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 15,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 3
+								},
+								"selected": {
+									"adjustment": 0.0363010404422257,
+									"baseline_cost": 0.390005677938461,
+									"bearing_quality": 0.25692430138588,
+									"compression_feasible": true,
+									"cost": 0.426306718380687,
+									"drift_penalty_distance": 0.0421805461004727,
+									"extension_room": 0.249472435802221,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.218954727053642,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.309503763914108,
+									"point": "(-0.484319, 0.906731, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(-0.176668, -0.04934, 0.058874)",
+									"signed_push_utility": 0.25692430138588,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 4
+					},
+					"time": 2.0
+				},
+				{
+					"feet": [
+						{
+							"force": "(3.583257, 11.66163, 14.35262)",
+							"point": "(-0.496795, 0.863042, 0.0)",
+							"reason": "friction_limit",
+							"state": "SLIDING"
+						},
+						{
+							"force": "(-23.44347, 48.18118, 7.963974)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 103.065933227539,
+					"leg_force": 73.007495880127,
+					"position": "(-0.220511, 1.416303, 0.283594)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 15,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 3
+								},
+								"selected": {
+									"adjustment": 0.0363010404422257,
+									"baseline_cost": 0.390005677938461,
+									"bearing_quality": 0.25692430138588,
+									"compression_feasible": true,
+									"cost": 0.426306718380687,
+									"drift_penalty_distance": 0.0421805461004727,
+									"extension_room": 0.249472435802221,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.218954727053642,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.309503763914108,
+									"point": "(-0.484319, 0.906731, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(-0.176668, -0.04934, 0.058874)",
+									"signed_push_utility": 0.25692430138588,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 4
+					},
+					"time": 2.1
+				},
+				{
+					"feet": [
+						{
+							"force": "(3.874137, 11.89986, 14.72308)",
+							"point": "(-0.502495, 0.84499, 0.0)",
+							"reason": "friction_limit",
+							"state": "SLIDING"
+						},
+						{
+							"force": "(-20.91288, 44.81613, 8.197261)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 107.089321136475,
+					"leg_force": 69.4532909393311,
+					"position": "(-0.207031, 1.422382, 0.298877)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 15,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 3
+								},
+								"selected": {
+									"adjustment": 0.0363010404422257,
+									"baseline_cost": 0.390005677938461,
+									"bearing_quality": 0.25692430138588,
+									"compression_feasible": true,
+									"cost": 0.426306718380687,
+									"drift_penalty_distance": 0.0421805461004727,
+									"extension_room": 0.249472435802221,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.218954727053642,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.309503763914108,
+									"point": "(-0.484319, 0.906731, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(-0.176668, -0.04934, 0.058874)",
+									"signed_push_utility": 0.25692430138588,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 4
+					},
+					"time": 2.2
+				},
+				{
+					"feet": [
+						{
+							"force": "(3.684048, 10.68266, 13.29419)",
+							"point": "(-0.508344, 0.827476, 0.0)",
+							"reason": "friction_limit",
+							"state": "SLIDING"
+						},
+						{
+							"force": "(-16.78906, 37.86579, 7.963786)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 100.621570587158,
+					"leg_force": 59.6273555755615,
+					"position": "(-0.191321, 1.430945, 0.321209)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 15,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 3
+								},
+								"selected": {
+									"adjustment": 0.0363010404422257,
+									"baseline_cost": 0.390005677938461,
+									"bearing_quality": 0.25692430138588,
+									"compression_feasible": true,
+									"cost": 0.426306718380687,
+									"drift_penalty_distance": 0.0421805461004727,
+									"extension_room": 0.249472435802221,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.218954727053642,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.309503763914108,
+									"point": "(-0.484319, 0.906731, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(-0.176668, -0.04934, 0.058874)",
+									"signed_push_utility": 0.25692430138588,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 4
+					},
+					"time": 2.3
+				},
+				{
+					"feet": [
+						{
+							"force": "(3.658849, 9.834427, 12.34471)",
+							"point": "(-0.514342, 0.810647, 0.0)",
+							"reason": "friction_limit",
+							"state": "SLIDING"
+						},
+						{
+							"force": "(-15.5315, 37.55474, 9.194449)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 101.884731292725,
+					"leg_force": 57.8685131072998,
+					"position": "(-0.170426, 1.437871, 0.347714)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 15,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 3
+								},
+								"selected": {
+									"adjustment": 0.0363010404422257,
+									"baseline_cost": 0.390005677938461,
+									"bearing_quality": 0.25692430138588,
+									"compression_feasible": true,
+									"cost": 0.426306718380687,
+									"drift_penalty_distance": 0.0421805461004727,
+									"extension_room": 0.249472435802221,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.218954727053642,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.309503763914108,
+									"point": "(-0.484319, 0.906731, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(-0.176668, -0.04934, 0.058874)",
+									"signed_push_utility": 0.25692430138588,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 4
+					},
+					"time": 2.4
+				},
+				{
+					"feet": [
+						{
+							"force": "(3.449019, 8.437335, 10.7236)",
+							"point": "(-0.520563, 0.794612, 0.0)",
+							"reason": "friction_limit",
+							"state": "SLIDING"
+						},
+						{
+							"force": "(-14.41718, 38.31373, 10.8883)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 106.585838317871,
+					"leg_force": 56.4338836669922,
+					"position": "(-0.143704, 1.442688, 0.37662)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 15,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 3
+								},
+								"selected": {
+									"adjustment": 0.0363010404422257,
+									"baseline_cost": 0.390005677938461,
+									"bearing_quality": 0.25692430138588,
+									"compression_feasible": true,
+									"cost": 0.426306718380687,
+									"drift_penalty_distance": 0.0421805461004727,
+									"extension_room": 0.249472435802221,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.218954727053642,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.309503763914108,
+									"point": "(-0.484319, 0.906731, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(-0.176668, -0.04934, 0.058874)",
+									"signed_push_utility": 0.25692430138588,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 4
+					},
+					"time": 2.5
+				},
+				{
+					"feet": [
+						{
+							"force": "(2.278994, 5.024656, 6.490982)",
+							"point": "(-0.527081, 0.779402, 0.0)",
+							"reason": "friction_limit",
+							"state": "SLIDING"
+						},
+						{
+							"force": "(-12.25062, 37.08267, 12.05025)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 109.986770629883,
+					"leg_force": 49.3896818161011,
+					"position": "(-0.111884, 1.446938, 0.405718)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 15,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 3
+								},
+								"selected": {
+									"adjustment": 0.0363010404422257,
+									"baseline_cost": 0.390005677938461,
+									"bearing_quality": 0.25692430138588,
+									"compression_feasible": true,
+									"cost": 0.426306718380687,
+									"drift_penalty_distance": 0.0421805461004727,
+									"extension_room": 0.249472435802221,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.218954727053642,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.309503763914108,
+									"point": "(-0.484319, 0.906731, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(-0.176668, -0.04934, 0.058874)",
+									"signed_push_utility": 0.25692430138588,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 4
+					},
+					"time": 2.6
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.529901, 0.773295, 0.0)",
+							"reason": "leg_reach",
+							"state": "SEARCHING"
+						},
+						{
+							"force": "(-10.18833, 36.92113, 13.37619)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 123.392097473145,
+					"leg_force": 40.5696220397949,
+					"position": "(-0.076583, 1.448788, 0.43013)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 15,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 3
+								},
+								"selected": {
+									"adjustment": 0.0363010404422257,
+									"baseline_cost": 0.390005677938461,
+									"bearing_quality": 0.25692430138588,
+									"compression_feasible": true,
+									"cost": 0.426306718380687,
+									"drift_penalty_distance": 0.0421805461004727,
+									"extension_room": 0.249472435802221,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.218954727053642,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.309503763914108,
+									"point": "(-0.484319, 0.906731, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(-0.176668, -0.04934, 0.058874)",
+									"signed_push_utility": 0.25692430138588,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 4
+					},
+					"time": 2.7
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.258612, 0.748158, 0.0)",
+							"reason": "approaching",
+							"state": "PLANTING"
+						},
+						{
+							"force": "(-9.09722, 42.29834, 16.05519)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 115.065620422363,
+					"leg_force": 46.1484413146973,
+					"position": "(-0.038698, 1.448127, 0.438676)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 9,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 7
+								},
+								"selected": {
+									"adjustment": 0.0656523990045583,
+									"baseline_cost": 0.69399983882904,
+									"bearing_quality": 0.325427830219269,
+									"compression_feasible": true,
+									"cost": 0.759652237833599,
+									"drift_penalty_distance": 0.222693658218667,
+									"extension_room": 0.0497882331311703,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.205797255039215,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.388158172369003,
+									"point": "(-0.258612, 0.748158, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(-1.041421, 0.278707, 0.093331)",
+									"signed_push_utility": 0.325427830219269,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 5
+					},
+					"time": 2.8
+				},
+				{
+					"feet": [
+						{
+							"force": "(0.0, 0.0, 0.0)",
+							"point": "(-0.258612, 0.748158, 0.0)",
+							"reason": "approaching",
+							"state": "PLANTING"
+						},
+						{
+							"force": "(-8.476493, 54.16798, 20.40635)",
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "contact",
+							"state": "SUPPORTING"
+						}
+					],
+					"hand_force": 116.629928588867,
+					"leg_force": 58.5016212463379,
+					"position": "(-0.000994, 1.443682, 0.43276)",
+					"selection": {
+						"enabled": true,
+						"feet": {
+							"0": {
+								"candidate_count": 9,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 7
+								},
+								"selected": {
+									"adjustment": 0.0656523990045583,
+									"baseline_cost": 0.69399983882904,
+									"bearing_quality": 0.325427830219269,
+									"compression_feasible": true,
+									"cost": 0.759652237833599,
+									"drift_penalty_distance": 0.222693658218667,
+									"extension_room": 0.0497882331311703,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.205797255039215,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 0.0, 1.0)",
+									"normal_per_unit_effort": 0.388158172369003,
+									"point": "(-0.258612, 0.748158, 0.0)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(-1.041421, 0.278707, 0.093331)",
+									"signed_push_utility": 0.325427830219269,
+									"support_id": 512392956622,
+									"support_name": "Intent wall"
+								}
+							},
+							"1": {
+								"candidate_count": 18,
+								"future_contact_authorized": false,
+								"reason": "LOCAL_CANDIDATE_SELECTED",
+								"rejected": {
+									"leg_reach": 12
+								},
+								"selected": {
+									"adjustment": -0.279813704262985,
+									"baseline_cost": -0.1865059943676,
+									"bearing_quality": 0.940536081790924,
+									"compression_feasible": true,
+									"cost": -0.466319698630584,
+									"drift_penalty_distance": 0.115583818949935,
+									"extension_room": 0.308486040920019,
+									"friction": 0.85,
+									"gesture_time_estimate": 0.20179970562458,
+									"hysteresis_bonus": 0.0,
+									"normal": "(0.0, 1.0, 0.0)",
+									"normal_per_unit_effort": 0.940536081790924,
+									"point": "(0.189742, 0.59, 0.087475)",
+									"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+									"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+									"signed_push_utility": 0.940536081790924,
+									"support_id": 512594283223,
+									"support_name": "Broad real foothold"
+								}
+							}
+						},
+						"intent": "(0.0, 1.0, 0.0)",
+						"policy": "B2_INTENT_AWARE",
+						"scope": "local search only; planted contacts are not automatically replaced",
+						"switch_count": 5
+					},
+					"time": 2.9
+				}
+			],
+			"selection": {
+				"enabled": true,
+				"feet": {
+					"0": {
+						"candidate_count": 9,
+						"future_contact_authorized": false,
+						"reason": "LOCAL_CANDIDATE_SELECTED",
+						"rejected": {
+							"leg_reach": 7
+						},
+						"selected": {
+							"adjustment": 0.0656523990045583,
+							"baseline_cost": 0.69399983882904,
+							"bearing_quality": 0.325427830219269,
+							"compression_feasible": true,
+							"cost": 0.759652237833599,
+							"drift_penalty_distance": 0.222693658218667,
+							"extension_room": 0.0497882331311703,
+							"friction": 0.85,
+							"gesture_time_estimate": 0.205797255039215,
+							"hysteresis_bonus": 0.0,
+							"normal": "(0.0, 0.0, 1.0)",
+							"normal_per_unit_effort": 0.388158172369003,
+							"point": "(-0.258612, 0.748158, 0.0)",
+							"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+							"relative_support_velocity": "(-1.041421, 0.278707, 0.093331)",
+							"signed_push_utility": 0.325427830219269,
+							"support_id": 512392956622,
+							"support_name": "Intent wall"
+						}
+					},
+					"1": {
+						"candidate_count": 18,
+						"future_contact_authorized": false,
+						"reason": "LOCAL_CANDIDATE_SELECTED",
+						"rejected": {
+							"leg_reach": 12
+						},
+						"selected": {
+							"adjustment": -0.279813704262985,
+							"baseline_cost": -0.1865059943676,
+							"bearing_quality": 0.940536081790924,
+							"compression_feasible": true,
+							"cost": -0.466319698630584,
+							"drift_penalty_distance": 0.115583818949935,
+							"extension_room": 0.308486040920019,
+							"friction": 0.85,
+							"gesture_time_estimate": 0.20179970562458,
+							"hysteresis_bonus": 0.0,
+							"normal": "(0.0, 1.0, 0.0)",
+							"normal_per_unit_effort": 0.940536081790924,
+							"point": "(0.189742, 0.59, 0.087475)",
+							"reason": "LOCAL_COMPRESSIVE_PUSH_RANKING",
+							"relative_support_velocity": "(0.217596, -0.235414, 0.474649)",
+							"signed_push_utility": 0.940536081790924,
+							"support_id": 512594283223,
+							"support_name": "Broad real foothold"
+						}
+					}
+				},
+				"intent": "(0.0, 1.0, 0.0)",
+				"policy": "B2_INTENT_AWARE",
+				"scope": "local search only; planted contacts are not automatically replaced",
+				"switch_count": 5
+			}
+		}
+	],
+	"checks": 29,
+	"decision": "LOCAL_SELECTION_EXPERIMENT; GAMEPLAY_BENEFIT_UNPROVEN",
+	"failures": 0,
+	"physics_hz": 120,
+	"scope": "isolated point-foot fixtures plus unchanged actual Step with A0; API hand acquisition and real W input; no body pose/velocity writes during actuation; not human feel",
+	"step_comparison": {
+		"B0_hand_integral": 404.611510183414,
+		"B0_rise": 0.159641742706299,
+		"B1_hand_integral": 257.136937292417,
+		"B1_rise": 0.272320508956909,
+		"B1_work": 20.7213504483031,
+		"B2_hand_integral": 257.330166526636,
+		"B2_rise": 0.271632790565491,
+		"B2_work": 20.746876747911
+	}
+}

@@ -1,0 +1,22 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS normal startup has no diagnostic observer
+PASS normal input and foot defaults preserved
+PASS normal startup remains live input
+PASS explicit diagnostic starts recording
+PASS diagnostic opens hold-to-grip First Ascent B1
+PASS diagnostic forces controlled A0/B1 without B2
+PASS body mass and reach preserved
+PASS existing foot caps preserved
+PASS physics sample phase is explicit
+PASS native contact availability is explicitly typed
+PASS reaction estimate is not mislabelled an independent sensor
+PASS visual observations use separate clocks or UNKNOWN
+PASS diagnostic markers have no physics bodies
+PASS feet OFF always reports zero effective foot force
+PASS stop flushes a receipt and closes recording
+PASS trace and receipt exist
+PASS restarting allocates a unique take without overwriting raw evidence
+PASS observer and HUD cleanly detach
+PASS observer cleanup does not seize feet or input ownership
+RESULTS: 19 checks, 0 failures

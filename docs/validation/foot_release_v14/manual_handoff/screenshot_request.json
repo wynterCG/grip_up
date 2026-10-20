@@ -1,0 +1,1 @@
+{"group": "runtime", "command": "exec", "params": {"code": "var err=get_viewport().get_texture().get_image().save_png(\"C:/Users/Wynter/grip_up/builds/foot_release_v14_r1/manual_handoff/diagnostic.png\")\n_mcp_print(JSON.stringify({\"saved\":err==OK}))"}}

@@ -1,0 +1,43 @@
+{
+  "body_edits_allowed": false,
+  "diagnostic_source_only": true,
+  "fresh_repro_budget": 4,
+  "fresh_repro_cells": [
+    {
+      "feet": "B1",
+      "hz": 120,
+      "input": "ADAPTIVE_REAL_INPUT_API_NO_FOOT_ANCHORS",
+      "mode": "headless"
+    },
+    {
+      "feet": "B0",
+      "hz": 120,
+      "input": "ADAPTIVE_REAL_INPUT_API_NO_FOOT_ANCHORS",
+      "mode": "headless"
+    },
+    {
+      "feet": "B1",
+      "hz": 60,
+      "input": "ADAPTIVE_REAL_INPUT_API_NO_FOOT_ANCHORS",
+      "mode": "headless"
+    },
+    {
+      "feet": "B0",
+      "hz": 60,
+      "input": "ADAPTIVE_REAL_INPUT_API_NO_FOOT_ANCHORS",
+      "mode": "headless"
+    }
+  ],
+  "in_state_ablation_budget": 2,
+  "no_B3_without_F0_actuator_evidence": true,
+  "no_f0_pass_from_source_hypothesis": true,
+  "pure_parse_worlds": 0,
+  "rendered_followup_budget": 4,
+  "source_sha256": {
+    "export_presets.cfg": "938c886627a61d3bc2ad78e1a0eb5730c00bff180c775d946d6c0191ab12d47c",
+    "features/foot_release_lab/scripts/foot_diagnostics.gd": "e8985951db367316684bce3bafd6977551f860ed697848599d9c681ce62c681d",
+    "features/grip_up/scripts/grip_up_lab.gd": "b8bc6c0217ddb7708723147b88205f84072b28c2a6b843f221cd11d44509f8ec"
+  },
+  "stage": "F0",
+  "user_hotspot": "lateral first wall crossing to second section/bars"
+}
