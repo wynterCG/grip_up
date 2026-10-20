@@ -9,7 +9,7 @@ func _make_virtual_lab():return MinimalLab.new()
 func _seal_virtual_lab()->String:
 	return loader.seal_pre_step(app.controller,{"physical_feet":true,"allow_out_of_reach_grip_targets":true},"MEASURED_WORLD_PRE_STEP")
 func _candidate_policy_error()->String:
-	return "" if manifest.get("campaign_id")=="minimal_v135_r3" and OS.get_cmdline_user_args().has("--minimal-tuning") else "MINIMAL_OPT_IN_REQUIRED"
+	return "" if manifest.get("campaign_id")=="minimal_v135_r4" and OS.get_cmdline_user_args().has("--minimal-tuning") else "MINIMAL_OPT_IN_REQUIRED"
 func _frozen_parameters_valid()->bool:
 	return super._frozen_parameters_valid() and loader.exact_effective_valid(app.controller)
 func _additional_qualification_scenarios()->Array:
@@ -21,7 +21,7 @@ func _virtual_benchmark(value:Dictionary)->String:
 	return "fixture_feasibility_v134" if value.get("historical_feasibility_tape",false) else "benchmark_minimal_v135_r1"
 func _virtual_scope(value:Dictionary)->String:
 	if not OS.get_cmdline_user_args().has("--minimal-tuning") or not OS.get_cmdline_user_args().has("--benchmark-qualification"):return "MINIMAL_OPT_IN_REQUIRED"
-	if value.get("campaign_id")!="minimal_v135_r3" or value.get("pick_contract_version")!="1.3.4":return "MINIMAL_CAMPAIGN_CONTRACT_REQUIRED"
+	if value.get("campaign_id")!="minimal_v135_r4" or value.get("pick_contract_version")!="1.3.4":return "MINIMAL_CAMPAIGN_CONTRACT_REQUIRED"
 	if value.get("minimal_catalog_sha256")!=FileAccess.get_sha256(MCATALOG) or value.get("transfer_catalog_sha256")!=FileAccess.get_sha256(TCATALOG):return "MINIMAL_CATALOG_HASH"
 	if value.scenario_ids.size()!=1:return "MINIMAL_SINGLE_WORLD_REQUIRED"
 	var ids:Array=["swing_catch_train"]

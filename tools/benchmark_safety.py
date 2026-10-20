@@ -3,7 +3,7 @@ from pathlib import Path
 import subprocess,json,sys,hashlib
 ROOT=Path(__file__).resolve().parents[1];ENGINE=Path.home()/'WrapRush/tools/godot.exe'
 campaign=sys.argv[2] if len(sys.argv)>2 else 'benchmark_v133_r1'
-assert campaign in ['benchmark_v133_r1','benchmark_v133_r2','benchmark_v133_r3','fixture_feasibility_v134_r1','minimal_v135_r1','minimal_v135_r2','minimal_v135_r3']
+assert campaign in ['benchmark_v133_r1','benchmark_v133_r2','benchmark_v133_r3','fixture_feasibility_v134_r1','minimal_v135_r1','minimal_v135_r2','minimal_v135_r3','minimal_v135_r4']
 OUT=ROOT/'builds/eval_virtual_cursor'/campaign/'safety';OUT.mkdir(parents=True,exist_ok=True)
 def run(label,command,timeout=60):
     with (OUT/f'{label}_stdout.txt').open('wb') as stdout,(OUT/f'{label}_stderr.txt').open('wb') as stderr:

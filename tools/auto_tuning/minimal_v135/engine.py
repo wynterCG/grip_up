@@ -9,8 +9,8 @@ from comparison import compare_required
 from metrics import summarize
 from projection_comparison import load_picks
 
-DOC=ROOT/'docs/validation/auto_tuning/minimal_v135/r3'
-BASE=ROOT/'builds/eval_virtual_cursor/minimal_v135_r3'
+DOC=ROOT/'docs/validation/auto_tuning/minimal_v135/r4'
+BASE=ROOT/'builds/eval_virtual_cursor/minimal_v135_r4'
 ENTRY='res://features/evaluator_virtual_cursor/scripts/minimal_runner.gd'
 CATALOG=ROOT/'features/evaluator_virtual_cursor/resources/benchmark_minimal_v135_r1.json'
 TRANSFER=ROOT/'features/evaluator_virtual_cursor/resources/minimal_transfer_v135.json'

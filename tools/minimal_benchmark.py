@@ -220,9 +220,14 @@ def negatives():
         r=one(scenario,60,'headless','negative_canary',phase='public_known_failure_diagnostic');session['runs'].append(r);save()
         if r['status']!='RUN_VALID':session.update(status='NO_GO',reason='DIAGNOSTIC_INFRASTRUCTURE_OR_SAFETY');save();return
         observation=r['metrics'].get('observation',{})
-        expected='GROUND_CLEARANCE' if scenario=='asymmetric_pull_clean_v134_r2' else 'GROUND'
-        if observation.get('status')!='INTERRUPTED' or expected not in observation.get('reason_code','') or observation.get('interruption',{}).get('tick') is None:
+        expected='GROUND_CLEARANCE_NOT_CERTIFIED' if scenario=='asymmetric_pull_clean_v134_r2' else 'NATIVE_GROUND_AUTHORITY_CHANGED_TASK'
+        interruption=observation.get('interruption',{}).get('tick')
+        if observation.get('status')!='INTERRUPTED' or observation.get('reason_code')!=expected or interruption is None:
             session.update(status='NO_GO',reason='DECLARED_PHYSICAL_NEGATIVE_PATH_NOT_EXERCISED:'+scenario);save();return
+        if scenario=='lateral_clean_left_v134_r2':
+            raw=read_json(Path(r['directory'])/'benchmark_audit.json')['ticks'][interruption-1]
+            if not raw['benchmark_extra']['native_ground_authority']:
+                session.update(status='NO_GO',reason='GROUND_NEGATIVE_LACKS_ACTUAL_AUTHORITY');save();return
     sensitive=any(x['continuous_sensitivity_demonstrated'] for x in session['canary'].values())
     # Deliberate corruption of actual captured evidence tests the real validator.
     from pick_contract import validate_stream
@@ -246,8 +251,8 @@ def gate():
     for role in ['physics','measurement']:
         p=D/f'specialist/{role}_signoff.json'
         approved=approved and p.exists() and read_json(p).get('source_snapshot_sha256')==s['snapshot_sha256'] and read_json(p).get('status')=='APPROVED_FOR_TWO_DOMAIN_SEARCH'
-        if role=='measurement':approved=approved and (D/'quality_contract.json').exists() and p.exists() and read_json(p).get('quality_contract_sha256')==file_hash(D/'quality_contract.json')
-    result={'status':'GO_MINIMAL_BENCHMARK' if approved else 'NO_GO_MINIMAL_BENCHMARK','source_snapshot_sha256':s['snapshot_sha256'],'baseline_status':base['status'],'negative_status':neg['status'],'reason':neg.get('reason') or base.get('reason') or ('INDEPENDENT_REVIEW_REQUIRED' if not approved else ''),'default_promotion':False}
+        if role=='measurement':approved=approved and (D/'quality_contract.json').exists() and p.exists() and read_json(p).get('quality_contract_sha256')==file_hash(D/'quality_contract.json') and (B/'optimizer_reference.json').exists() and read_json(p).get('optimizer_reference_sha256')==file_hash(B/'optimizer_reference.json')
+    result={'status':'GO_MINIMAL_BENCHMARK' if approved else 'NO_GO_MINIMAL_BENCHMARK','source_snapshot_sha256':s['snapshot_sha256'],'quality_contract_sha256':file_hash(D/'quality_contract.json') if (D/'quality_contract.json').exists() else None,'optimizer_reference_sha256':file_hash(B/'optimizer_reference.json') if (B/'optimizer_reference.json').exists() else None,'review_sha256':{role:file_hash(D/f'specialist/{role}_signoff.json') if (D/f'specialist/{role}_signoff.json').exists() else None for role in ['physics','measurement']},'baseline_status':base['status'],'negative_status':neg['status'],'reason':neg.get('reason') or base.get('reason') or ('INDEPENDENT_REVIEW_REQUIRED' if not approved else ''),'default_promotion':False}
     atomic_json(D/'mb2_gate.json',result);print(result['status'],result['reason'],flush=True)
 
 def quality_reference():
@@ -290,6 +295,11 @@ def validation_quality(primary):
 
 def search(stage=None,resume=False):
     qualified=read_json(D/'mb2_gate.json');assert qualified['status']=='GO_MINIMAL_BENCHMARK','MB2 GO required'
+    assert qualified['source_snapshot_sha256']==guard()['snapshot_sha256'],'Cached GO source differs'
+    for key,path in [('quality_contract_sha256',D/'quality_contract.json'),('optimizer_reference_sha256',B/'optimizer_reference.json')]:
+        assert qualified.get(key)==file_hash(path),'Cached GO reviewed artifact differs: '+key
+    for role in ['physics','measurement']:
+        assert qualified['review_sha256'][role]==file_hash(D/f'specialist/{role}_signoff.json'),'Cached GO review changed'
     directory=B/'optimizer';assert resume or not (directory/'study.sqlite3').exists(),'Use --resume for exact identity and ledger audit'
     refpath=B/'optimizer_reference.json';qpath=D/'quality_contract.json'
     assert refpath.exists() and qpath.exists(),'Freeze realized baseline quality contract and obtain independent sign-off BEFORE search'
