@@ -1,6 +1,8 @@
 import copy
 import unittest
-from run import recompute_runtime
+from run import recompute_runtime,optional_file_hash
+from pathlib import Path
+import tempfile
 
 
 def samples(hz=120,kind="release",initial=.2):
@@ -13,6 +15,12 @@ def samples(hz=120,kind="release",initial=.2):
 
 
 class Metrics(unittest.TestCase):
+    def test_absent_local_override_is_explicit(self):
+        with tempfile.TemporaryDirectory() as directory:self.assertEqual(optional_file_hash(Path(directory)/"override.cfg"),"ABSENT")
+    def test_present_local_override_is_hashed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path=Path(directory)/"override.cfg";path.write_text("[editor_plugins]\n")
+            self.assertEqual(len(optional_file_hash(path)),64)
     def test_elapsed_settle_start(self):
         rows,row=samples();r=recompute_runtime(rows,row,120)
         self.assertAlmostEqual(r["settling_time_s"]["value"],.25)

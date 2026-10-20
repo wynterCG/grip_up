@@ -22,6 +22,10 @@ ENTRY="res://features/evaluator_qualification/scripts/qualification_runner.gd"
 CATALOG=ROOT/"features/evaluator_qualification/resources/benchmark_eval_v132.json"
 
 
+def optional_file_hash(path):
+    return file_hash(path) if path.is_file() else "ABSENT"
+
+
 def audit_protected():
     freeze=read_json(ROOT/"docs/validation/evaluator_v132/baseline/freeze.json")
     changed=[name for name,expected in freeze["protected_files"].items() if any(not (base/name).is_file() or file_hash(base/name)!=expected for base in (ROOT,DEST))]
@@ -214,7 +218,7 @@ def main():
             directory=args.output/"attempts"/run_id
             manifest={"schema_version":"1.3.2","run_id":run_id,"physics_hz":cell["hz"],"engine_mode":cell["mode"],"lane":cell["lane"],"context":cell["context"],"scenario_ids":cell["ids"],"recorder_enabled":cell["trace"],"existing_observer_enabled":cell["observer"],"output_dir":str(directory),"run_seed":101,"expected_source_hashes":identity["source_hashes"],"code_commit":identity["repository_commit"],"dirty_tree":identity["repository_dirty"],"engine_identity":identity["engine_identity"],"timeout_s":300,"catch_definition_sha256":digest(catch),"qualification":"DEVELOPMENT_NOT_CERTIFIED" if args.suite=="development" else "FROZEN_QUALIFICATION_MATRIX","cell":cell}
             manifest["preparation_selection"]=selection
-            manifest["local_override_sha256"]=file_hash(ROOT/"override.cfg")
+            manifest["local_override_sha256"]=optional_file_hash(ROOT/"override.cfg")
             manifest["preparation_selection_sha256"]=file_hash(args.preparation_selection) if args.preparation_selection else None
             manifest["baseline_candidate"]=make_candidate(baseline(parameter_resource()),["swing_catch_train"],trial_id=run_id,hz=cell["hz"],seed=101,timeout=300,provenance=identity)
             if cell["lane"]=="R0":

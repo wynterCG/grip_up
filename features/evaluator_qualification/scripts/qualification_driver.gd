@@ -232,7 +232,8 @@ func start(value:Dictionary)->Dictionary:
 		if float(candidate.parameter_overrides[knob.id])!=float(knob.baseline):return {"status":"BLOCKED_SETUP","reason":"BASELINE_ONLY_NO_OVERRIDES"}
 	for path in manifest.expected_source_hashes:
 		if FileAccess.get_sha256("res://"+path)!=manifest.expected_source_hashes[path]:return {"status":"BLOCKED_SETUP","reason":"SOURCE_HASH_MISMATCH:"+path}
-	if FileAccess.get_sha256("res://override.cfg")!=manifest.get("local_override_sha256",""):return {"status":"BLOCKED_SETUP","reason":"LOCAL_OVERRIDE_MISMATCH"}
+	var override_identity:String=FileAccess.get_sha256("res://override.cfg") if FileAccess.file_exists("res://override.cfg") else "ABSENT"
+	if override_identity!=manifest.get("local_override_sha256",""):return {"status":"BLOCKED_SETUP","reason":"LOCAL_OVERRIDE_MISMATCH"}
 	hz=int(manifest.physics_hz)
 	if hz not in [60,120]:return {"status":"BLOCKED_SETUP","reason":"PHYSICS_HZ"}
 	_observer_on=bool(manifest.get("existing_observer_enabled",true))
@@ -290,7 +291,7 @@ func start(value:Dictionary)->Dictionary:
 	result["lane"]=manifest.get("lane","A")
 	result["tape_file_sha256"]=manifest.get("tape_file_sha256")
 	result["backlog_scope"]="Pending physics-step backlog is not exposed by the runtime API used; actual delta, tick wall gaps and render cadence are measured separately."
-	result["local_override_sha256"]=FileAccess.get_sha256("res://override.cfg")
+	result["local_override_sha256"]=FileAccess.get_sha256("res://override.cfg") if FileAccess.file_exists("res://override.cfg") else "ABSENT"
 	return result
 
 func _valid_support(required:int)->bool:
