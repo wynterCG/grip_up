@@ -1,0 +1,91 @@
+{
+	"checks": 19,
+	"failures": 0,
+	"physics_hz": 60,
+	"runs": [
+		{
+			"arena": "Step",
+			"feet": false,
+			"intent": {
+				"actual_com_displacement": "(0.052452, 0.095358, -0.15919)",
+				"actual_foot_count": 0,
+				"actual_hand_ids": [
+					0,
+					1
+				],
+				"actual_height_gain": 0.0953583717346191,
+				"actual_relative_velocity": "(-0.035799, 0.03149, 0.025685)",
+				"actuator_saturated": false,
+				"aim_input_does_not_change_length": true,
+				"desired_com_velocity": "(0.0, 0.25, 0.0)",
+				"enabled": true,
+				"frame": {
+					"normal": "(0.0, 0.0, 1.0)",
+					"quality": "WEIGHTED_NORMAL",
+					"right": "(1.0, 0.0, 0.0)",
+					"support_ids": [
+						91872037537,
+						91872037537
+					],
+					"up": "(0.0, 1.0, 0.0)",
+					"valid": true
+				},
+				"ground": {
+					"applied_force": "(0.0, 0.0, 0.0)",
+					"applied_torque": "(0.0, 0.0, 0.0)",
+					"authority": 0.0,
+					"grounded": false,
+					"measured_other_support_load": 137.541160583496,
+					"motor_authority": 0.0,
+					"normal": "(0.0, 1.0, 0.0)",
+					"point": "(0.102124, 0.25, 0.261686)",
+					"point_velocity": "(0.0, 0.0, 0.0)",
+					"support_id": 0,
+					"velocity": "(0.0, 0.0, 0.0)"
+				},
+				"input_frame_id": 1,
+				"input_ramp_s": 0.12,
+				"input_timestamp": 1.53333333333333,
+				"intent_strength": 1.0,
+				"movement_block_reason": "BOUNDED_TARGET_TRACKING",
+				"movement_intent_local": "(0.0, 1.0)",
+				"movement_intent_world": "(0.0, 1.0, 0.0)",
+				"originating_support_frame": {
+					"normal": "(0.0, 0.0, 1.0)",
+					"quality": "WEIGHTED_NORMAL",
+					"right": "(1.0, 0.0, 0.0)",
+					"support_ids": [
+						91872037537,
+						91872037537
+					],
+					"up": "(0.0, 1.0, 0.0)",
+					"valid": true
+				},
+				"planned_arm_rest_lengths": {
+					"0": 0.371838748455048,
+					"1": 0.316263407468796
+				},
+				"planned_foot_action": "(1.0, 0.0)",
+				"planner_cpu_usec": 57,
+				"recommended_climb_share": 1.0,
+				"requested_input": "(0.0, 1.0)",
+				"support_mode": "CLIMB_TWO_HANDS",
+				"swing_request_world": "(0.0, 1.0, 0.0)",
+				"swing_reversal_active": false,
+				"target_accelerations": {
+					"0": 0.0962467608229797,
+					"1": 0.460315229750569
+				},
+				"target_rates": {
+					"0": -0.015945957835265,
+					"1": -0.060236312458718
+				},
+				"tier": 1,
+				"virtual_acceleration": "(0.143196, 0.874042, 0.0)",
+				"voluntary_reversals": 0
+			},
+			"position": "(0.051776, 1.265871, 0.241257)",
+			"rise": 0.0991916656494141
+		}
+	]
+}

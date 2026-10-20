@@ -1,0 +1,49 @@
+{
+  "status": "APPROVED_FOR_TWO_DOMAIN_SEARCH",
+  "source_snapshot_sha256": "cbe93f29aa2f6e47e4aa3fd784bbc1055cfa36bacaa385f7e07baa2bc262d54d",
+  "quality_contract_sha256": "279f739e74674e11b695fb8e15592e883c680ebb9c8869c055b0629aeb5fb496",
+  "optimizer_reference_sha256": "052641575181462406011e9c7083d5df03072f9cbeadc29964c9d1205efeaf0c",
+  "baseline_session_sha256": "f8bad043a50e240cfab4b65edfa1713f4119dcecc047d62dc2dbc77d17516649",
+  "negative_session_sha256": "468e58c828f398dc6521634dff270963456963309a197ffc687d3b2ec09daee9",
+  "review_path": "docs/validation/auto_tuning/minimal_v135/r4/specialist/measurement_qualification_review.md",
+  "review_sha256": "74cd97bc0b6fe54715de7b811d6f375a8a66396f9006a93c0bc30661a0e56a30",
+  "source_copy_verification": {
+    "public_and_helper_files": 324,
+    "C_matches_frozen_bytes": true,
+    "E_matches_frozen_bytes_after_restoration": true
+  },
+  "independent_checks": {
+    "baseline_raw_runs": 24,
+    "baseline_metric_summaries_exact": 24,
+    "baseline_manual_com_progress_and_path_exact": 24,
+    "headless_rendered_comparisons_recomputed_strict": 12,
+    "within_mode_comparisons_recomputed_strict": 16,
+    "negative_raw_runs": 8,
+    "negative_noncatch_summaries_exact": 6,
+    "N1_frequencies_passed": [60, 120],
+    "N1_internal_checks_per_frequency": 9,
+    "N1_logical_dispatch_ray_suppressed_counts": [4, 3, 9, 1],
+    "continuous_canary_task": "vertical_pull_clean_v134_r2",
+    "continuous_canary_repeats": 2,
+    "continuous_canary_signed_progress_m": 0.12452423572540283,
+    "continuous_canary_fresh_A0_progress_m": 0.20630919933319092,
+    "right_canary_continuous_gradient_claimed": false,
+    "actual_clearance_interruption_negative_passed": true,
+    "actual_native_ground_interruption_negative_passed": true,
+    "independent_missing_and_duplicate_sidecar_rejections": true,
+    "official_typed_null_corruption_stops_study": true,
+    "quality_frozen_before_canary_and_proposals": true,
+    "optimizer_proposals_at_review": 0,
+    "reviewer_engine_launches": 0,
+    "private_holdout_accessed": false
+  },
+  "reasons": [],
+  "scope": "Frozen R4 two-task fixed-tape benchmark and prospectively bounded 8 sensitivity + 6 random + up to 4 TPE configurations only; at most 40 optimizer process launches. Repeat equality establishes local replay stability, not statistical independence or player generalization.",
+  "not_approved": [
+    "full_historical_benchmark",
+    "finalist_or_batch_validation",
+    "protected_transfer_or_independent_right_start_generalization",
+    "human_acceptance",
+    "default_promotion"
+  ]
+}

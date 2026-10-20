@@ -1,0 +1,74 @@
+{
+  "all_physical_worlds_including_regressions": 81,
+  "auxiliary_physical_worlds": 4,
+  "baseline_processes": 24,
+  "canary_vertical_degradation_fraction": 0.3964193737948871,
+  "cumulative_evaluation_including_auxiliary": 47,
+  "decision": "NO_GO_MINIMAL_BENCHMARK",
+  "decision_scope": "R4 baseline qualified under Python3.11.15; actual optimization environment Python3.13.13 exposes non-identical float sum contract; global study stop, no candidate certification. Historical MB2GO remains preserved.",
+  "default_changes": false,
+  "external_protected_unchanged": {
+    "C:\\Users\\Wynter\\grip_up\\builds\\GripUp-v1.2-pre-v1.3.exe": "fb018cfbf8ac57dac83c43af6590f2107bede466d56053e1218583f03564e33d",
+    "E:\\Godot Games\\grip_up\\builds\\GripUp-v1.2-pre-v1.3.exe": "fb018cfbf8ac57dac83c43af6590f2107bede466d56053e1218583f03564e33d",
+    "E:\\Godot Games\\janga_proto\\runtime\\physics_grabber.gd": "8ab923ac1d903e8dcc8ed2a2e4f9f8c5cec326a3217cb4a9d8f00036557e7dad"
+  },
+  "final_source_guard_pass": true,
+  "finalists": 0,
+  "historical_files_unchanged": 3127,
+  "historical_initial_audit_files": 2947,
+  "human_sessions": 0,
+  "ledger": {
+    "batch_processes": 0,
+    "capability_processes": 0,
+    "cumulative_evaluation_processes": 43,
+    "episodes": 42,
+    "evaluation_processes": 42,
+    "groups": {
+      "baseline": 24,
+      "finalist": 0,
+      "negative_canary": 8,
+      "optimizer": 3,
+      "preflight": 7
+    },
+    "limits": {
+      "baseline": 24,
+      "finalist": 48,
+      "negative_canary": 8,
+      "optimizer": 40,
+      "optimizer_episodes": 160,
+      "preflight": 7,
+      "regression": 34,
+      "total_evaluation": 128
+    },
+    "prior_physical_preflight_failures": 1,
+    "process_count_policy": "Attempt manifest written before launch; aborts and retries consume slots; final batches have two independently admitted episodes.",
+    "single_process_attempts": 42
+  },
+  "measurement_commit": "7d56a6db9f467df92cd002aee8494e98ae6399ee",
+  "optimizer_physical_launches": 3,
+  "optimizer_proposals": 2,
+  "optimizer_reserved_launches": 4,
+  "original_R3_exact_files_unchanged": 1873,
+  "protected_gameplay_project_files_unchanged": 204,
+  "qualification_gate_sha256": "eb6064b078214628cf80b84601beb814e53f68d84dcaf1d05dda3da5aedf8e1c",
+  "random_proposals": 0,
+  "recommended_followup": "Separate authorized qualification using pinnedPython3.13 and an explicit reviewed binary64 reduction contract; do not relax physicalH/R or retrofit this stopped study.",
+  "regression_checks": 1146,
+  "regression_processes": 34,
+  "search_report_sha256": "067a76d85afb3141e140f3809c7d1798aef3e43ab604a51c117238c82b2a5af5",
+  "source_snapshot_sha256": "cbe93f29aa2f6e47e4aa3fd784bbc1055cfa36bacaa385f7e07baa2bc262d54d",
+  "sqlite_numeric_objective_rows": 0,
+  "sqlite_trials": [
+    {
+      "number": 0,
+      "state": "FAIL"
+    },
+    {
+      "number": 1,
+      "state": "FAIL"
+    }
+  ],
+  "strict_HR_pairs": 12,
+  "strict_within_mode_comparisons": 16,
+  "tpe_proposals": 0
+}

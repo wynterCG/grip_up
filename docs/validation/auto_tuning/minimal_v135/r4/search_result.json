@@ -1,0 +1,1797 @@
+{
+  "archive": [
+    {
+      "candidate_id": "eaf521b0fe88ebf50d4c2368da7424dde3b3b21b7f54e7078420ff5d7aedf957",
+      "parameter_overrides": {
+        "traversal_input_ramp_s": 0.12,
+        "traversal_speed_m_s": 0.25,
+        "traversal_target_max_acceleration": 0.9,
+        "traversal_target_max_rate": 0.24
+      },
+      "role": "FRESH_A0_REFERENCE",
+      "score": {
+        "directions": [
+          "maximize",
+          "maximize"
+        ],
+        "disposition": "COMPLETE",
+        "eligible": true,
+        "four_dimensions": {
+          "directed_progress": {
+            "lateral_clean_right_v134_r2": {
+              "end_tick": 545,
+              "event_provenance": "actual_post_control_trace",
+              "metric": "signed_progress_m",
+              "onset_tick": 425,
+              "reason_code": "FIXED_AUTHORIZED_WORLD_COM_WINDOW",
+              "status": "MEASURED",
+              "unit": "m",
+              "value": 0.1453312337398529
+            },
+            "vertical_pull_clean_v134_r2": {
+              "end_tick": 545,
+              "event_provenance": "actual_post_control_trace",
+              "metric": "signed_progress_m",
+              "onset_tick": 425,
+              "reason_code": "FIXED_AUTHORIZED_WORLD_COM_WINDOW",
+              "status": "MEASURED",
+              "unit": "m",
+              "value": 0.20630919933319092
+            }
+          },
+          "movement_fidelity": {
+            "lateral_clean_right_v134_r2": {
+              "backwards_excursion_m": {
+                "end_tick": 545,
+                "metric": "backwards_excursion_m",
+                "onset_tick": 425,
+                "reason_code": "ACTUAL_POST_TRACE_SAME_AUTHORIZED_WINDOW",
+                "status": "MEASURED",
+                "unit": "m",
+                "value": 0.0
+              },
+              "directional_efficiency": {
+                "end_tick": 545,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "directional_efficiency",
+                "onset_tick": 425,
+                "reason_code": "SIGNED_PROGRESS_OVER_3D_WORLD_COM_PATH",
+                "status": "MEASURED",
+                "unit": "dimensionless",
+                "value": 0.9948403347510847
+              },
+              "latency_to_useful_motion_s": {
+                "end_tick": 545,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "latency_to_useful_motion_s",
+                "observed_useful_event": {
+                  "confirmation_tick": 431,
+                  "criterion_tick": 425
+                },
+                "onset_tick": 425,
+                "prior_directed_velocity_m_s": 0.033794064074754715,
+                "prior_tick": 424,
+                "reason_code": "ALREADY_MOVING_BEFORE_ONSET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "s",
+                "value": null
+              }
+            },
+            "vertical_pull_clean_v134_r2": {
+              "backwards_excursion_m": {
+                "end_tick": 545,
+                "metric": "backwards_excursion_m",
+                "onset_tick": 425,
+                "reason_code": "ACTUAL_POST_TRACE_SAME_AUTHORIZED_WINDOW",
+                "status": "MEASURED",
+                "unit": "m",
+                "value": 0.0
+              },
+              "directional_efficiency": {
+                "end_tick": 545,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "directional_efficiency",
+                "onset_tick": 425,
+                "reason_code": "SIGNED_PROGRESS_OVER_3D_WORLD_COM_PATH",
+                "status": "MEASURED",
+                "unit": "dimensionless",
+                "value": 0.9655050128036458
+              },
+              "latency_to_useful_motion_s": {
+                "confirmation_tick": 442,
+                "criterion_tick": 436,
+                "end_tick": 442,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "latency_to_useful_motion_s",
+                "onset_tick": 425,
+                "reason_code": "POSITIVE_VELOCITY_SUSTAINED",
+                "status": "MEASURED",
+                "unit": "s",
+                "value": 0.09166666666666666
+              }
+            }
+          },
+          "physics_control_quality": {
+            "lateral_clean_right_v134_r2": {
+              "angular_speed_peak_rad_s": {
+                "end_tick": 545,
+                "metric": "angular_speed_peak_rad_s",
+                "onset_tick": 425,
+                "reason_code": "ACTUAL_POST_TRACE_SAME_AUTHORIZED_WINDOW",
+                "status": "MEASURED",
+                "unit": "rad/s",
+                "value": 0.4214989966835846
+              },
+              "brake_fraction_reached": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "brake_fraction_reached",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "dimensionless",
+                "value": null
+              },
+              "catch_success": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "catch_success",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "binary",
+                "value": null
+              },
+              "foot_load_contribution": {
+                "end_tick": 545,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "foot_load_contribution",
+                "onset_tick": 425,
+                "reason_code": "COMPRESSIVE_FOOT_IMPULSE_OVER_FOOT_PLUS_UPWARD_HAND_IMPULSE",
+                "status": "MEASURED",
+                "unit": "dimensionless",
+                "value": 0.0
+              },
+              "hard_physical_violations": {
+                "end_tick": 545,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "hard_physical_violations",
+                "onset_tick": 425,
+                "reason_code": "EXISTING_PUBLISHED_LIMIT_MONITORS_SCOPE",
+                "status": "MEASURED",
+                "unit": "count",
+                "value": 0,
+                "violations": []
+              },
+              "off_axis_excursion_m": {
+                "end_tick": 545,
+                "metric": "off_axis_excursion_m",
+                "onset_tick": 425,
+                "reason_code": "ACTUAL_POST_TRACE_SAME_AUTHORIZED_WINDOW",
+                "status": "MEASURED",
+                "unit": "m",
+                "value": 0.00858068943425164
+              },
+              "overshoot_after_release_m": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "overshoot_after_release_m",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "m",
+                "value": null
+              },
+              "retention_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "retention_s",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "s",
+                "value": null
+              },
+              "reversal_time_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "reversal_time_s",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "s",
+                "value": null
+              },
+              "settling_time_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "settling_time_s",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "s",
+                "value": null
+              },
+              "stop_path_3d_m": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "stop_path_3d_m",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "m",
+                "value": null
+              },
+              "target_saturation_fraction": {
+                "end_tick": 545,
+                "metric": "target_saturation_fraction",
+                "onset_tick": 425,
+                "reason_code": "ACTUAL_POST_TRACE_SAME_AUTHORIZED_WINDOW",
+                "status": "MEASURED",
+                "unit": "ratio",
+                "value": 0.0
+              },
+              "twist_rms_rad": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "twist_rms_rad",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "rad",
+                "value": null
+              }
+            },
+            "vertical_pull_clean_v134_r2": {
+              "angular_speed_peak_rad_s": {
+                "end_tick": 545,
+                "metric": "angular_speed_peak_rad_s",
+                "onset_tick": 425,
+                "reason_code": "ACTUAL_POST_TRACE_SAME_AUTHORIZED_WINDOW",
+                "status": "MEASURED",
+                "unit": "rad/s",
+                "value": 0.2040564464143459
+              },
+              "brake_fraction_reached": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "brake_fraction_reached",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "dimensionless",
+                "value": null
+              },
+              "catch_success": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "catch_success",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "binary",
+                "value": null
+              },
+              "foot_load_contribution": {
+                "end_tick": 545,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "foot_load_contribution",
+                "onset_tick": 425,
+                "reason_code": "COMPRESSIVE_FOOT_IMPULSE_OVER_FOOT_PLUS_UPWARD_HAND_IMPULSE",
+                "status": "MEASURED",
+                "unit": "dimensionless",
+                "value": 0.00226226553266589
+              },
+              "hard_physical_violations": {
+                "end_tick": 545,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "hard_physical_violations",
+                "onset_tick": 425,
+                "reason_code": "EXISTING_PUBLISHED_LIMIT_MONITORS_SCOPE",
+                "status": "MEASURED",
+                "unit": "count",
+                "value": 0,
+                "violations": []
+              },
+              "off_axis_excursion_m": {
+                "end_tick": 545,
+                "metric": "off_axis_excursion_m",
+                "onset_tick": 425,
+                "reason_code": "ACTUAL_POST_TRACE_SAME_AUTHORIZED_WINDOW",
+                "status": "MEASURED",
+                "unit": "m",
+                "value": 0.035156450934650044
+              },
+              "overshoot_after_release_m": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "overshoot_after_release_m",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "m",
+                "value": null
+              },
+              "retention_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "retention_s",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "s",
+                "value": null
+              },
+              "reversal_time_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "reversal_time_s",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "s",
+                "value": null
+              },
+              "settling_time_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "settling_time_s",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "s",
+                "value": null
+              },
+              "stop_path_3d_m": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "stop_path_3d_m",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "m",
+                "value": null
+              },
+              "target_saturation_fraction": {
+                "end_tick": 545,
+                "metric": "target_saturation_fraction",
+                "onset_tick": 425,
+                "reason_code": "ACTUAL_POST_TRACE_SAME_AUTHORIZED_WINDOW",
+                "status": "MEASURED",
+                "unit": "ratio",
+                "value": 0.0
+              },
+              "twist_rms_rad": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "twist_rms_rad",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "rad",
+                "value": null
+              }
+            }
+          },
+          "reliability": {
+            "lateral_clean_right_v134_r2": {
+              "observation": {
+                "direction_world": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "end_tick": 545,
+                "interruption": null,
+                "onset_tick": 425,
+                "physics_hz": 120,
+                "raw_scope": "world COM; static common support required by legacy stop contract",
+                "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+                "status": "MEASURED",
+                "support_frame": "COMMON_STATIC_WORLD"
+              },
+              "task_succeeded": true
+            },
+            "vertical_pull_clean_v134_r2": {
+              "observation": {
+                "direction_world": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "end_tick": 545,
+                "interruption": null,
+                "onset_tick": 425,
+                "physics_hz": 120,
+                "raw_scope": "world COM; static common support required by legacy stop contract",
+                "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+                "status": "MEASURED",
+                "support_frame": "COMMON_STATIC_WORLD"
+              },
+              "task_succeeded": true
+            }
+          }
+        },
+        "objective_names": [
+          "vertical_pull_clean_v134_r2",
+          "lateral_clean_right_v134_r2"
+        ],
+        "per_task": [
+          {
+            "baseline": 0.20630919933319092,
+            "candidate": 0.20630919933319092,
+            "max_loss_m": 0.006189275979995727,
+            "paired_difference_m": 0.0,
+            "practical_gain_floor_m": 0.010315459966659547,
+            "scenario": "vertical_pull_clean_v134_r2"
+          },
+          {
+            "baseline": 0.1453312337398529,
+            "candidate": 0.1453312337398529,
+            "max_loss_m": 0.005,
+            "paired_difference_m": 0.0,
+            "practical_gain_floor_m": 0.01,
+            "scenario": "lateral_clean_right_v134_r2"
+          }
+        ],
+        "practical_gain": false,
+        "reasons": [],
+        "scope": "two fixed tapes at 120Hz; no statistical significance, transfer or human acceptance",
+        "values": [
+          0.20630919933319092,
+          0.1453312337398529
+        ],
+        "version": "minimal_v135_score_r3"
+      }
+    },
+    {
+      "attempt_id": "mbq_000_sensitivity",
+      "candidate_id": "acc044fbbdec1df7ac618e8438c24ba17c7c113ec6908e30a0e4ea3cec3a37b6",
+      "created_utc": "2026-10-20T21:24:27.856961+00:00",
+      "optuna_trial": 0,
+      "parameter_overrides": {
+        "traversal_input_ramp_s": 0.12,
+        "traversal_speed_m_s": 0.22,
+        "traversal_target_max_acceleration": 0.9,
+        "traversal_target_max_rate": 0.24
+      },
+      "phase": "sensitivity",
+      "proposal_index": 0,
+      "receipt": "receipts/mbq_000_sensitivity.json",
+      "receipt_sha256": "ed2d96640592fb39c62f6131465e2f20edaacbecaeffdbaaa4afc66fe1e93038",
+      "score": {
+        "directions": [
+          "maximize",
+          "maximize"
+        ],
+        "disposition": "REJECT_CANDIDATE",
+        "eligible": false,
+        "four_dimensions": {
+          "directed_progress": {
+            "lateral_clean_right_v134_r2": {
+              "end_tick": null,
+              "event_provenance": "actual_post_control_trace",
+              "metric": "signed_progress_m",
+              "onset_tick": null,
+              "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+              "status": "PRECONDITION_NOT_MET",
+              "unit": "m",
+              "value": null
+            },
+            "vertical_pull_clean_v134_r2": {
+              "end_tick": null,
+              "event_provenance": "actual_post_control_trace",
+              "metric": "signed_progress_m",
+              "onset_tick": null,
+              "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+              "status": "PRECONDITION_NOT_MET",
+              "unit": "m",
+              "value": null
+            }
+          },
+          "movement_fidelity": {
+            "lateral_clean_right_v134_r2": {
+              "backwards_excursion_m": {
+                "end_tick": null,
+                "metric": "backwards_excursion_m",
+                "onset_tick": null,
+                "reason_code": "COMPLETE_AUTHORIZED_WINDOW_REQUIRED",
+                "status": "NOT_APPLICABLE",
+                "unit": "m",
+                "value": null
+              },
+              "directional_efficiency": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "directional_efficiency",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "dimensionless",
+                "value": null
+              },
+              "latency_to_useful_motion_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "latency_to_useful_motion_s",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "s",
+                "value": null
+              }
+            },
+            "vertical_pull_clean_v134_r2": {
+              "backwards_excursion_m": {
+                "end_tick": null,
+                "metric": "backwards_excursion_m",
+                "onset_tick": null,
+                "reason_code": "COMPLETE_AUTHORIZED_WINDOW_REQUIRED",
+                "status": "NOT_APPLICABLE",
+                "unit": "m",
+                "value": null
+              },
+              "directional_efficiency": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "directional_efficiency",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "dimensionless",
+                "value": null
+              },
+              "latency_to_useful_motion_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "latency_to_useful_motion_s",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "s",
+                "value": null
+              }
+            }
+          },
+          "physics_control_quality": {
+            "lateral_clean_right_v134_r2": {
+              "angular_speed_peak_rad_s": {
+                "end_tick": null,
+                "metric": "angular_speed_peak_rad_s",
+                "onset_tick": null,
+                "reason_code": "COMPLETE_AUTHORIZED_WINDOW_REQUIRED",
+                "status": "NOT_APPLICABLE",
+                "unit": "rad/s",
+                "value": null
+              },
+              "brake_fraction_reached": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "brake_fraction_reached",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "dimensionless",
+                "value": null
+              },
+              "catch_success": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "catch_success",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "binary",
+                "value": null
+              },
+              "foot_load_contribution": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "foot_load_contribution",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "dimensionless",
+                "value": null
+              },
+              "hard_physical_violations": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "hard_physical_violations",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "count",
+                "value": null
+              },
+              "off_axis_excursion_m": {
+                "end_tick": null,
+                "metric": "off_axis_excursion_m",
+                "onset_tick": null,
+                "reason_code": "COMPLETE_AUTHORIZED_WINDOW_REQUIRED",
+                "status": "NOT_APPLICABLE",
+                "unit": "m",
+                "value": null
+              },
+              "overshoot_after_release_m": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "overshoot_after_release_m",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "m",
+                "value": null
+              },
+              "retention_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "retention_s",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "s",
+                "value": null
+              },
+              "reversal_time_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "reversal_time_s",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "s",
+                "value": null
+              },
+              "settling_time_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "settling_time_s",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "s",
+                "value": null
+              },
+              "stop_path_3d_m": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "stop_path_3d_m",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "m",
+                "value": null
+              },
+              "target_saturation_fraction": {
+                "end_tick": null,
+                "metric": "target_saturation_fraction",
+                "onset_tick": null,
+                "reason_code": "COMPLETE_AUTHORIZED_WINDOW_REQUIRED",
+                "status": "NOT_APPLICABLE",
+                "unit": "ratio",
+                "value": null
+              },
+              "twist_rms_rad": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "twist_rms_rad",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "rad",
+                "value": null
+              }
+            },
+            "vertical_pull_clean_v134_r2": {
+              "angular_speed_peak_rad_s": {
+                "end_tick": null,
+                "metric": "angular_speed_peak_rad_s",
+                "onset_tick": null,
+                "reason_code": "COMPLETE_AUTHORIZED_WINDOW_REQUIRED",
+                "status": "NOT_APPLICABLE",
+                "unit": "rad/s",
+                "value": null
+              },
+              "brake_fraction_reached": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "brake_fraction_reached",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "dimensionless",
+                "value": null
+              },
+              "catch_success": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "catch_success",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "binary",
+                "value": null
+              },
+              "foot_load_contribution": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "foot_load_contribution",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "dimensionless",
+                "value": null
+              },
+              "hard_physical_violations": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "hard_physical_violations",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "count",
+                "value": null
+              },
+              "off_axis_excursion_m": {
+                "end_tick": null,
+                "metric": "off_axis_excursion_m",
+                "onset_tick": null,
+                "reason_code": "COMPLETE_AUTHORIZED_WINDOW_REQUIRED",
+                "status": "NOT_APPLICABLE",
+                "unit": "m",
+                "value": null
+              },
+              "overshoot_after_release_m": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "overshoot_after_release_m",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "m",
+                "value": null
+              },
+              "retention_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "retention_s",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "s",
+                "value": null
+              },
+              "reversal_time_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "reversal_time_s",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "s",
+                "value": null
+              },
+              "settling_time_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "settling_time_s",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "s",
+                "value": null
+              },
+              "stop_path_3d_m": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "stop_path_3d_m",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "m",
+                "value": null
+              },
+              "target_saturation_fraction": {
+                "end_tick": null,
+                "metric": "target_saturation_fraction",
+                "onset_tick": null,
+                "reason_code": "COMPLETE_AUTHORIZED_WINDOW_REQUIRED",
+                "status": "NOT_APPLICABLE",
+                "unit": "ratio",
+                "value": null
+              },
+              "twist_rms_rad": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "twist_rms_rad",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "rad",
+                "value": null
+              }
+            }
+          },
+          "reliability": {
+            "lateral_clean_right_v134_r2": {
+              "observation": {
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET"
+              },
+              "task_succeeded": false
+            },
+            "vertical_pull_clean_v134_r2": {
+              "observation": {
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET"
+              },
+              "task_succeeded": false
+            }
+          }
+        },
+        "objective_names": [
+          "vertical_pull_clean_v134_r2",
+          "lateral_clean_right_v134_r2"
+        ],
+        "per_task": [],
+        "practical_gain": false,
+        "reasons": [
+          "vertical_pull_clean_v134_r2: actual task/onset/full-window failure PRECONDITION_NOT_MET",
+          "vertical_pull_clean_v134_r2/backwards_excursion_m: lost required quality measurement",
+          "vertical_pull_clean_v134_r2/directional_efficiency: lost required quality measurement",
+          "vertical_pull_clean_v134_r2/latency_to_useful_motion_s: lost required quality measurement",
+          "vertical_pull_clean_v134_r2/off_axis_excursion_m: lost required quality measurement",
+          "vertical_pull_clean_v134_r2/twist_rms_rad: lost required quality measurement",
+          "lateral_clean_right_v134_r2: actual task/onset/full-window failure PRECONDITION_NOT_MET",
+          "lateral_clean_right_v134_r2/backwards_excursion_m: lost required quality measurement",
+          "lateral_clean_right_v134_r2/directional_efficiency: lost required quality measurement",
+          "lateral_clean_right_v134_r2/latency_to_useful_motion_s: lost required quality measurement",
+          "lateral_clean_right_v134_r2/off_axis_excursion_m: lost required quality measurement",
+          "lateral_clean_right_v134_r2/twist_rms_rad: lost required quality measurement"
+        ],
+        "scope": "two fixed tapes at 120Hz; no statistical significance, transfer or human acceptance",
+        "values": null,
+        "version": "minimal_v135_score_r3"
+      },
+      "status": "PROPOSED"
+    },
+    {
+      "attempt_id": "mbq_001_sensitivity",
+      "candidate_id": "620bed9048482a82868ef9f0105e79c7f440466b0fded1d035f67b40534faae4",
+      "created_utc": "2026-10-20T21:24:48.841403+00:00",
+      "optuna_trial": 1,
+      "parameter_overrides": {
+        "traversal_input_ramp_s": 0.12,
+        "traversal_speed_m_s": 0.28,
+        "traversal_target_max_acceleration": 0.9,
+        "traversal_target_max_rate": 0.24
+      },
+      "phase": "sensitivity",
+      "proposal_index": 1,
+      "receipt": "receipts/mbq_001_sensitivity.json",
+      "receipt_sha256": "ea8c80e8cc5fe78ad474fd2ab7cfd95e52bde8e07fdf433000dc50da9d77664e",
+      "score": {
+        "disposition": "STOP_STUDY",
+        "eligible": false,
+        "reasons": [
+          "callback/infrastructure RuntimeError: INFRASTRUCTURE_OR_SAFETY_STOP:C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\minimal_v135_r4\\attempts\\vertical_pull_clean_v134_r2_120_headless_r3_ff1cc7a7"
+        ],
+        "values": null
+      },
+      "status": "PROPOSED"
+    }
+  ],
+  "frontier": [
+    {
+      "candidate_id": "eaf521b0fe88ebf50d4c2368da7424dde3b3b21b7f54e7078420ff5d7aedf957",
+      "parameter_overrides": {
+        "traversal_input_ramp_s": 0.12,
+        "traversal_speed_m_s": 0.25,
+        "traversal_target_max_acceleration": 0.9,
+        "traversal_target_max_rate": 0.24
+      },
+      "role": "FRESH_A0_REFERENCE",
+      "score": {
+        "directions": [
+          "maximize",
+          "maximize"
+        ],
+        "disposition": "COMPLETE",
+        "eligible": true,
+        "four_dimensions": {
+          "directed_progress": {
+            "lateral_clean_right_v134_r2": {
+              "end_tick": 545,
+              "event_provenance": "actual_post_control_trace",
+              "metric": "signed_progress_m",
+              "onset_tick": 425,
+              "reason_code": "FIXED_AUTHORIZED_WORLD_COM_WINDOW",
+              "status": "MEASURED",
+              "unit": "m",
+              "value": 0.1453312337398529
+            },
+            "vertical_pull_clean_v134_r2": {
+              "end_tick": 545,
+              "event_provenance": "actual_post_control_trace",
+              "metric": "signed_progress_m",
+              "onset_tick": 425,
+              "reason_code": "FIXED_AUTHORIZED_WORLD_COM_WINDOW",
+              "status": "MEASURED",
+              "unit": "m",
+              "value": 0.20630919933319092
+            }
+          },
+          "movement_fidelity": {
+            "lateral_clean_right_v134_r2": {
+              "backwards_excursion_m": {
+                "end_tick": 545,
+                "metric": "backwards_excursion_m",
+                "onset_tick": 425,
+                "reason_code": "ACTUAL_POST_TRACE_SAME_AUTHORIZED_WINDOW",
+                "status": "MEASURED",
+                "unit": "m",
+                "value": 0.0
+              },
+              "directional_efficiency": {
+                "end_tick": 545,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "directional_efficiency",
+                "onset_tick": 425,
+                "reason_code": "SIGNED_PROGRESS_OVER_3D_WORLD_COM_PATH",
+                "status": "MEASURED",
+                "unit": "dimensionless",
+                "value": 0.9948403347510847
+              },
+              "latency_to_useful_motion_s": {
+                "end_tick": 545,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "latency_to_useful_motion_s",
+                "observed_useful_event": {
+                  "confirmation_tick": 431,
+                  "criterion_tick": 425
+                },
+                "onset_tick": 425,
+                "prior_directed_velocity_m_s": 0.033794064074754715,
+                "prior_tick": 424,
+                "reason_code": "ALREADY_MOVING_BEFORE_ONSET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "s",
+                "value": null
+              }
+            },
+            "vertical_pull_clean_v134_r2": {
+              "backwards_excursion_m": {
+                "end_tick": 545,
+                "metric": "backwards_excursion_m",
+                "onset_tick": 425,
+                "reason_code": "ACTUAL_POST_TRACE_SAME_AUTHORIZED_WINDOW",
+                "status": "MEASURED",
+                "unit": "m",
+                "value": 0.0
+              },
+              "directional_efficiency": {
+                "end_tick": 545,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "directional_efficiency",
+                "onset_tick": 425,
+                "reason_code": "SIGNED_PROGRESS_OVER_3D_WORLD_COM_PATH",
+                "status": "MEASURED",
+                "unit": "dimensionless",
+                "value": 0.9655050128036458
+              },
+              "latency_to_useful_motion_s": {
+                "confirmation_tick": 442,
+                "criterion_tick": 436,
+                "end_tick": 442,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "latency_to_useful_motion_s",
+                "onset_tick": 425,
+                "reason_code": "POSITIVE_VELOCITY_SUSTAINED",
+                "status": "MEASURED",
+                "unit": "s",
+                "value": 0.09166666666666666
+              }
+            }
+          },
+          "physics_control_quality": {
+            "lateral_clean_right_v134_r2": {
+              "angular_speed_peak_rad_s": {
+                "end_tick": 545,
+                "metric": "angular_speed_peak_rad_s",
+                "onset_tick": 425,
+                "reason_code": "ACTUAL_POST_TRACE_SAME_AUTHORIZED_WINDOW",
+                "status": "MEASURED",
+                "unit": "rad/s",
+                "value": 0.4214989966835846
+              },
+              "brake_fraction_reached": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "brake_fraction_reached",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "dimensionless",
+                "value": null
+              },
+              "catch_success": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "catch_success",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "binary",
+                "value": null
+              },
+              "foot_load_contribution": {
+                "end_tick": 545,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "foot_load_contribution",
+                "onset_tick": 425,
+                "reason_code": "COMPRESSIVE_FOOT_IMPULSE_OVER_FOOT_PLUS_UPWARD_HAND_IMPULSE",
+                "status": "MEASURED",
+                "unit": "dimensionless",
+                "value": 0.0
+              },
+              "hard_physical_violations": {
+                "end_tick": 545,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "hard_physical_violations",
+                "onset_tick": 425,
+                "reason_code": "EXISTING_PUBLISHED_LIMIT_MONITORS_SCOPE",
+                "status": "MEASURED",
+                "unit": "count",
+                "value": 0,
+                "violations": []
+              },
+              "off_axis_excursion_m": {
+                "end_tick": 545,
+                "metric": "off_axis_excursion_m",
+                "onset_tick": 425,
+                "reason_code": "ACTUAL_POST_TRACE_SAME_AUTHORIZED_WINDOW",
+                "status": "MEASURED",
+                "unit": "m",
+                "value": 0.00858068943425164
+              },
+              "overshoot_after_release_m": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "overshoot_after_release_m",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "m",
+                "value": null
+              },
+              "retention_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "retention_s",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "s",
+                "value": null
+              },
+              "reversal_time_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "reversal_time_s",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "s",
+                "value": null
+              },
+              "settling_time_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "settling_time_s",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "s",
+                "value": null
+              },
+              "stop_path_3d_m": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "stop_path_3d_m",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "m",
+                "value": null
+              },
+              "target_saturation_fraction": {
+                "end_tick": 545,
+                "metric": "target_saturation_fraction",
+                "onset_tick": 425,
+                "reason_code": "ACTUAL_POST_TRACE_SAME_AUTHORIZED_WINDOW",
+                "status": "MEASURED",
+                "unit": "ratio",
+                "value": 0.0
+              },
+              "twist_rms_rad": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "twist_rms_rad",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "rad",
+                "value": null
+              }
+            },
+            "vertical_pull_clean_v134_r2": {
+              "angular_speed_peak_rad_s": {
+                "end_tick": 545,
+                "metric": "angular_speed_peak_rad_s",
+                "onset_tick": 425,
+                "reason_code": "ACTUAL_POST_TRACE_SAME_AUTHORIZED_WINDOW",
+                "status": "MEASURED",
+                "unit": "rad/s",
+                "value": 0.2040564464143459
+              },
+              "brake_fraction_reached": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "brake_fraction_reached",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "dimensionless",
+                "value": null
+              },
+              "catch_success": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "catch_success",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "binary",
+                "value": null
+              },
+              "foot_load_contribution": {
+                "end_tick": 545,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "foot_load_contribution",
+                "onset_tick": 425,
+                "reason_code": "COMPRESSIVE_FOOT_IMPULSE_OVER_FOOT_PLUS_UPWARD_HAND_IMPULSE",
+                "status": "MEASURED",
+                "unit": "dimensionless",
+                "value": 0.00226226553266589
+              },
+              "hard_physical_violations": {
+                "end_tick": 545,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "hard_physical_violations",
+                "onset_tick": 425,
+                "reason_code": "EXISTING_PUBLISHED_LIMIT_MONITORS_SCOPE",
+                "status": "MEASURED",
+                "unit": "count",
+                "value": 0,
+                "violations": []
+              },
+              "off_axis_excursion_m": {
+                "end_tick": 545,
+                "metric": "off_axis_excursion_m",
+                "onset_tick": 425,
+                "reason_code": "ACTUAL_POST_TRACE_SAME_AUTHORIZED_WINDOW",
+                "status": "MEASURED",
+                "unit": "m",
+                "value": 0.035156450934650044
+              },
+              "overshoot_after_release_m": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "overshoot_after_release_m",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "m",
+                "value": null
+              },
+              "retention_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "retention_s",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "s",
+                "value": null
+              },
+              "reversal_time_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "reversal_time_s",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "s",
+                "value": null
+              },
+              "settling_time_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "settling_time_s",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "s",
+                "value": null
+              },
+              "stop_path_3d_m": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "stop_path_3d_m",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "m",
+                "value": null
+              },
+              "target_saturation_fraction": {
+                "end_tick": 545,
+                "metric": "target_saturation_fraction",
+                "onset_tick": 425,
+                "reason_code": "ACTUAL_POST_TRACE_SAME_AUTHORIZED_WINDOW",
+                "status": "MEASURED",
+                "unit": "ratio",
+                "value": 0.0
+              },
+              "twist_rms_rad": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "twist_rms_rad",
+                "onset_tick": 425,
+                "reason_code": "NOT_DEFINED_FOR_TASK",
+                "status": "NOT_APPLICABLE",
+                "unit": "rad",
+                "value": null
+              }
+            }
+          },
+          "reliability": {
+            "lateral_clean_right_v134_r2": {
+              "observation": {
+                "direction_world": [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "end_tick": 545,
+                "interruption": null,
+                "onset_tick": 425,
+                "physics_hz": 120,
+                "raw_scope": "world COM; static common support required by legacy stop contract",
+                "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+                "status": "MEASURED",
+                "support_frame": "COMMON_STATIC_WORLD"
+              },
+              "task_succeeded": true
+            },
+            "vertical_pull_clean_v134_r2": {
+              "observation": {
+                "direction_world": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "end_tick": 545,
+                "interruption": null,
+                "onset_tick": 425,
+                "physics_hz": 120,
+                "raw_scope": "world COM; static common support required by legacy stop contract",
+                "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+                "status": "MEASURED",
+                "support_frame": "COMMON_STATIC_WORLD"
+              },
+              "task_succeeded": true
+            }
+          }
+        },
+        "objective_names": [
+          "vertical_pull_clean_v134_r2",
+          "lateral_clean_right_v134_r2"
+        ],
+        "per_task": [
+          {
+            "baseline": 0.20630919933319092,
+            "candidate": 0.20630919933319092,
+            "max_loss_m": 0.006189275979995727,
+            "paired_difference_m": 0.0,
+            "practical_gain_floor_m": 0.010315459966659547,
+            "scenario": "vertical_pull_clean_v134_r2"
+          },
+          {
+            "baseline": 0.1453312337398529,
+            "candidate": 0.1453312337398529,
+            "max_loss_m": 0.005,
+            "paired_difference_m": 0.0,
+            "practical_gain_floor_m": 0.01,
+            "scenario": "lateral_clean_right_v134_r2"
+          }
+        ],
+        "practical_gain": false,
+        "reasons": [],
+        "scope": "two fixed tapes at 120Hz; no statistical significance, transfer or human acceptance",
+        "values": [
+          0.20630919933319092,
+          0.1453312337398529
+        ],
+        "version": "minimal_v135_score_r3"
+      }
+    }
+  ],
+  "global_stop": true,
+  "holdout_accessed": false,
+  "human_sessions": 0,
+  "manifest_sha256": "179b4d0dc3b9e8a4cec75fc18e22a89ae801ebf38bee0af40babe03e5a6eb771",
+  "process_launches_reserved": 4,
+  "product_promotion": "NONE",
+  "proposal_count": 2,
+  "reason": "callback/infrastructure RuntimeError: INFRASTRUCTURE_OR_SAFETY_STOP:C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\minimal_v135_r4\\attempts\\vertical_pull_clean_v134_r2_120_headless_r3_ff1cc7a7",
+  "records": [
+    {
+      "attempt_id": "mbq_000_sensitivity",
+      "candidate_id": "acc044fbbdec1df7ac618e8438c24ba17c7c113ec6908e30a0e4ea3cec3a37b6",
+      "created_utc": "2026-10-20T21:24:27.856961+00:00",
+      "optuna_trial": 0,
+      "parameter_overrides": {
+        "traversal_input_ramp_s": 0.12,
+        "traversal_speed_m_s": 0.22,
+        "traversal_target_max_acceleration": 0.9,
+        "traversal_target_max_rate": 0.24
+      },
+      "phase": "sensitivity",
+      "proposal_index": 0,
+      "receipt": "receipts/mbq_000_sensitivity.json",
+      "receipt_sha256": "ed2d96640592fb39c62f6131465e2f20edaacbecaeffdbaaa4afc66fe1e93038",
+      "score": {
+        "directions": [
+          "maximize",
+          "maximize"
+        ],
+        "disposition": "REJECT_CANDIDATE",
+        "eligible": false,
+        "four_dimensions": {
+          "directed_progress": {
+            "lateral_clean_right_v134_r2": {
+              "end_tick": null,
+              "event_provenance": "actual_post_control_trace",
+              "metric": "signed_progress_m",
+              "onset_tick": null,
+              "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+              "status": "PRECONDITION_NOT_MET",
+              "unit": "m",
+              "value": null
+            },
+            "vertical_pull_clean_v134_r2": {
+              "end_tick": null,
+              "event_provenance": "actual_post_control_trace",
+              "metric": "signed_progress_m",
+              "onset_tick": null,
+              "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+              "status": "PRECONDITION_NOT_MET",
+              "unit": "m",
+              "value": null
+            }
+          },
+          "movement_fidelity": {
+            "lateral_clean_right_v134_r2": {
+              "backwards_excursion_m": {
+                "end_tick": null,
+                "metric": "backwards_excursion_m",
+                "onset_tick": null,
+                "reason_code": "COMPLETE_AUTHORIZED_WINDOW_REQUIRED",
+                "status": "NOT_APPLICABLE",
+                "unit": "m",
+                "value": null
+              },
+              "directional_efficiency": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "directional_efficiency",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "dimensionless",
+                "value": null
+              },
+              "latency_to_useful_motion_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "latency_to_useful_motion_s",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "s",
+                "value": null
+              }
+            },
+            "vertical_pull_clean_v134_r2": {
+              "backwards_excursion_m": {
+                "end_tick": null,
+                "metric": "backwards_excursion_m",
+                "onset_tick": null,
+                "reason_code": "COMPLETE_AUTHORIZED_WINDOW_REQUIRED",
+                "status": "NOT_APPLICABLE",
+                "unit": "m",
+                "value": null
+              },
+              "directional_efficiency": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "directional_efficiency",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "dimensionless",
+                "value": null
+              },
+              "latency_to_useful_motion_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "latency_to_useful_motion_s",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "s",
+                "value": null
+              }
+            }
+          },
+          "physics_control_quality": {
+            "lateral_clean_right_v134_r2": {
+              "angular_speed_peak_rad_s": {
+                "end_tick": null,
+                "metric": "angular_speed_peak_rad_s",
+                "onset_tick": null,
+                "reason_code": "COMPLETE_AUTHORIZED_WINDOW_REQUIRED",
+                "status": "NOT_APPLICABLE",
+                "unit": "rad/s",
+                "value": null
+              },
+              "brake_fraction_reached": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "brake_fraction_reached",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "dimensionless",
+                "value": null
+              },
+              "catch_success": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "catch_success",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "binary",
+                "value": null
+              },
+              "foot_load_contribution": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "foot_load_contribution",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "dimensionless",
+                "value": null
+              },
+              "hard_physical_violations": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "hard_physical_violations",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "count",
+                "value": null
+              },
+              "off_axis_excursion_m": {
+                "end_tick": null,
+                "metric": "off_axis_excursion_m",
+                "onset_tick": null,
+                "reason_code": "COMPLETE_AUTHORIZED_WINDOW_REQUIRED",
+                "status": "NOT_APPLICABLE",
+                "unit": "m",
+                "value": null
+              },
+              "overshoot_after_release_m": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "overshoot_after_release_m",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "m",
+                "value": null
+              },
+              "retention_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "retention_s",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "s",
+                "value": null
+              },
+              "reversal_time_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "reversal_time_s",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "s",
+                "value": null
+              },
+              "settling_time_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "settling_time_s",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "s",
+                "value": null
+              },
+              "stop_path_3d_m": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "stop_path_3d_m",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "m",
+                "value": null
+              },
+              "target_saturation_fraction": {
+                "end_tick": null,
+                "metric": "target_saturation_fraction",
+                "onset_tick": null,
+                "reason_code": "COMPLETE_AUTHORIZED_WINDOW_REQUIRED",
+                "status": "NOT_APPLICABLE",
+                "unit": "ratio",
+                "value": null
+              },
+              "twist_rms_rad": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "twist_rms_rad",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "rad",
+                "value": null
+              }
+            },
+            "vertical_pull_clean_v134_r2": {
+              "angular_speed_peak_rad_s": {
+                "end_tick": null,
+                "metric": "angular_speed_peak_rad_s",
+                "onset_tick": null,
+                "reason_code": "COMPLETE_AUTHORIZED_WINDOW_REQUIRED",
+                "status": "NOT_APPLICABLE",
+                "unit": "rad/s",
+                "value": null
+              },
+              "brake_fraction_reached": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "brake_fraction_reached",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "dimensionless",
+                "value": null
+              },
+              "catch_success": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "catch_success",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "binary",
+                "value": null
+              },
+              "foot_load_contribution": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "foot_load_contribution",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "dimensionless",
+                "value": null
+              },
+              "hard_physical_violations": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "hard_physical_violations",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "count",
+                "value": null
+              },
+              "off_axis_excursion_m": {
+                "end_tick": null,
+                "metric": "off_axis_excursion_m",
+                "onset_tick": null,
+                "reason_code": "COMPLETE_AUTHORIZED_WINDOW_REQUIRED",
+                "status": "NOT_APPLICABLE",
+                "unit": "m",
+                "value": null
+              },
+              "overshoot_after_release_m": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "overshoot_after_release_m",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "m",
+                "value": null
+              },
+              "retention_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "retention_s",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "s",
+                "value": null
+              },
+              "reversal_time_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "reversal_time_s",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "s",
+                "value": null
+              },
+              "settling_time_s": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "settling_time_s",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "s",
+                "value": null
+              },
+              "stop_path_3d_m": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "stop_path_3d_m",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "m",
+                "value": null
+              },
+              "target_saturation_fraction": {
+                "end_tick": null,
+                "metric": "target_saturation_fraction",
+                "onset_tick": null,
+                "reason_code": "COMPLETE_AUTHORIZED_WINDOW_REQUIRED",
+                "status": "NOT_APPLICABLE",
+                "unit": "ratio",
+                "value": null
+              },
+              "twist_rms_rad": {
+                "end_tick": null,
+                "event_provenance": "actual_post_control_trace",
+                "metric": "twist_rms_rad",
+                "onset_tick": null,
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET",
+                "unit": "rad",
+                "value": null
+              }
+            }
+          },
+          "reliability": {
+            "lateral_clean_right_v134_r2": {
+              "observation": {
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET"
+              },
+              "task_succeeded": false
+            },
+            "vertical_pull_clean_v134_r2": {
+              "observation": {
+                "reason_code": "FROZEN_ONSET_PRECONDITION_NOT_MET",
+                "status": "PRECONDITION_NOT_MET"
+              },
+              "task_succeeded": false
+            }
+          }
+        },
+        "objective_names": [
+          "vertical_pull_clean_v134_r2",
+          "lateral_clean_right_v134_r2"
+        ],
+        "per_task": [],
+        "practical_gain": false,
+        "reasons": [
+          "vertical_pull_clean_v134_r2: actual task/onset/full-window failure PRECONDITION_NOT_MET",
+          "vertical_pull_clean_v134_r2/backwards_excursion_m: lost required quality measurement",
+          "vertical_pull_clean_v134_r2/directional_efficiency: lost required quality measurement",
+          "vertical_pull_clean_v134_r2/latency_to_useful_motion_s: lost required quality measurement",
+          "vertical_pull_clean_v134_r2/off_axis_excursion_m: lost required quality measurement",
+          "vertical_pull_clean_v134_r2/twist_rms_rad: lost required quality measurement",
+          "lateral_clean_right_v134_r2: actual task/onset/full-window failure PRECONDITION_NOT_MET",
+          "lateral_clean_right_v134_r2/backwards_excursion_m: lost required quality measurement",
+          "lateral_clean_right_v134_r2/directional_efficiency: lost required quality measurement",
+          "lateral_clean_right_v134_r2/latency_to_useful_motion_s: lost required quality measurement",
+          "lateral_clean_right_v134_r2/off_axis_excursion_m: lost required quality measurement",
+          "lateral_clean_right_v134_r2/twist_rms_rad: lost required quality measurement"
+        ],
+        "scope": "two fixed tapes at 120Hz; no statistical significance, transfer or human acceptance",
+        "values": null,
+        "version": "minimal_v135_score_r3"
+      },
+      "status": "PROPOSED"
+    },
+    {
+      "attempt_id": "mbq_001_sensitivity",
+      "candidate_id": "620bed9048482a82868ef9f0105e79c7f440466b0fded1d035f67b40534faae4",
+      "created_utc": "2026-10-20T21:24:48.841403+00:00",
+      "optuna_trial": 1,
+      "parameter_overrides": {
+        "traversal_input_ramp_s": 0.12,
+        "traversal_speed_m_s": 0.28,
+        "traversal_target_max_acceleration": 0.9,
+        "traversal_target_max_rate": 0.24
+      },
+      "phase": "sensitivity",
+      "proposal_index": 1,
+      "receipt": "receipts/mbq_001_sensitivity.json",
+      "receipt_sha256": "ea8c80e8cc5fe78ad474fd2ab7cfd95e52bde8e07fdf433000dc50da9d77664e",
+      "score": {
+        "disposition": "STOP_STUDY",
+        "eligible": false,
+        "reasons": [
+          "callback/infrastructure RuntimeError: INFRASTRUCTURE_OR_SAFETY_STOP:C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\minimal_v135_r4\\attempts\\vertical_pull_clean_v134_r2_120_headless_r3_ff1cc7a7"
+        ],
+        "values": null
+      },
+      "status": "PROPOSED"
+    }
+  ],
+  "reservations": [
+    {
+      "attempt_id": "mbq_000_sensitivity",
+      "confirmation": false,
+      "episodes": 2,
+      "processes": 2
+    },
+    {
+      "attempt_id": "mbq_001_sensitivity",
+      "confirmation": false,
+      "episodes": 2,
+      "processes": 2
+    }
+  ],
+  "scope": "narrow fixed-tape120Hz pilot; repeats are not independent starts; no transfer or feel certification",
+  "selection_rule": "max minimum normalized practical paired gain, then maximum gain, then ascending canonical hash; at most one",
+  "shortlist": [],
+  "status": "NO_GO_MINIMAL_BENCHMARK",
+  "training_episodes_reserved": 4
+}

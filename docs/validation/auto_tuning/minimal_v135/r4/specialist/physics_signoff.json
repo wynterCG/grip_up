@@ -1,0 +1,31 @@
+{
+  "status": "APPROVED_FOR_TWO_DOMAIN_SEARCH",
+  "source_snapshot_sha256": "cbe93f29aa2f6e47e4aa3fd784bbc1055cfa36bacaa385f7e07baa2bc262d54d",
+  "source_commit": "7d56a6db9f467df92cd002aee8494e98ae6399ee",
+  "review_path": "docs/validation/auto_tuning/minimal_v135/r4/specialist/physics_review.md",
+  "scope": "Independent physical admission only: fixed-tape Vertical and Lateral Right, profile4 A0/B1, declared four-knob bounded search; no candidate/default/product approval.",
+  "review_method": "Offline raw POST/source/receipt audit; no engine, Git, sync, source edits or private holdout definitions opened.",
+  "baseline_processes": 24,
+  "preflight_processes": 7,
+  "negative_canary_processes": 8,
+  "post_samples_audited": 16719,
+  "baseline_hr_strict_pairs": 12,
+  "baseline_within_mode_strict_comparisons": 16,
+  "public_source_helper_hashes_verified": 324,
+  "baseline_protected_hashes_verified": 204,
+  "source_hash_mismatches": 0,
+  "observed_invariant_violations": 0,
+  "resource_restoration_all_pass": true,
+  "canary_continuous_sensitivity_domain": "vertical_pull_clean_v134_r2_120",
+  "canary_right_continuous_gradient_demonstrated": false,
+  "native_contact_truth": "UNKNOWN where native contact reporting is disabled; conservative clearance and actual ground authority remain distinct observed gates.",
+  "limitations": [
+    "One fixed tape/start per task/frequency; repeats demonstrate local repeatability only.",
+    "Right latency remains null ALREADY_MOVING_BEFORE_ONSET.",
+    "Twist axial quality not measured; total angular speed is descriptive only.",
+    "B1 foot contribution is retained; not universally arm-only.",
+    "Static supports do not certify dynamic-beam angular momentum or untrained capabilities.",
+    "Measurement-review approval and integrator safety/budget gates remain independently required.",
+    "No tuning result, human preference or default promotion approved."
+  ]
+}

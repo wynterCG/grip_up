@@ -1,0 +1,111 @@
+{
+  "frozen": true,
+  "frozen_utc": "2026-10-20T21:16:35.379646+00:00",
+  "scope": "Prospective gameplay floors or twice fresh A0 max-minus-min repeat range; deterministic tape repetitions are not independent skill samples. Twist unavailable is NOT_APPLICABLE, never zero.",
+  "source_snapshot_sha256": "cbe93f29aa2f6e47e4aa3fd784bbc1055cfa36bacaa385f7e07baa2bc262d54d",
+  "tasks": {
+    "lateral_clean_right_v134_r2": {
+      "backwards_excursion_m": {
+        "allowed_missing": [],
+        "baseline_repeat_range": 0.0,
+        "direction": "minimize",
+        "max_worsening": 0.005
+      },
+      "directional_efficiency": {
+        "allowed_missing": [],
+        "baseline_repeat_range": 0.0,
+        "direction": "maximize",
+        "max_worsening": 0.05
+      },
+      "latency_to_useful_motion_s": {
+        "allowed_missing": [
+          {
+            "reason_code": "ALREADY_MOVING_BEFORE_ONSET",
+            "status": "PRECONDITION_NOT_MET"
+          },
+          {
+            "reason_code": "ALREADY_MOVING_BEFORE_ONSET",
+            "status": "PRECONDITION_NOT_MET"
+          },
+          {
+            "reason_code": "ALREADY_MOVING_BEFORE_ONSET",
+            "status": "PRECONDITION_NOT_MET"
+          }
+        ],
+        "baseline_repeat_range": null,
+        "direction": "minimize",
+        "max_worsening": 0.016666666666666666
+      },
+      "off_axis_excursion_m": {
+        "allowed_missing": [],
+        "baseline_repeat_range": 0.0,
+        "direction": "minimize",
+        "max_worsening": 0.005
+      },
+      "twist_rms_rad": {
+        "allowed_missing": [
+          {
+            "reason_code": "NOT_DEFINED_FOR_TASK",
+            "status": "NOT_APPLICABLE"
+          },
+          {
+            "reason_code": "NOT_DEFINED_FOR_TASK",
+            "status": "NOT_APPLICABLE"
+          },
+          {
+            "reason_code": "NOT_DEFINED_FOR_TASK",
+            "status": "NOT_APPLICABLE"
+          }
+        ],
+        "baseline_repeat_range": null,
+        "direction": "minimize",
+        "max_worsening": 0.03
+      }
+    },
+    "vertical_pull_clean_v134_r2": {
+      "backwards_excursion_m": {
+        "allowed_missing": [],
+        "baseline_repeat_range": 0.0,
+        "direction": "minimize",
+        "max_worsening": 0.005
+      },
+      "directional_efficiency": {
+        "allowed_missing": [],
+        "baseline_repeat_range": 0.0,
+        "direction": "maximize",
+        "max_worsening": 0.05
+      },
+      "latency_to_useful_motion_s": {
+        "allowed_missing": [],
+        "baseline_repeat_range": 0.0,
+        "direction": "minimize",
+        "max_worsening": 0.016666666666666666
+      },
+      "off_axis_excursion_m": {
+        "allowed_missing": [],
+        "baseline_repeat_range": 0.0,
+        "direction": "minimize",
+        "max_worsening": 0.005
+      },
+      "twist_rms_rad": {
+        "allowed_missing": [
+          {
+            "reason_code": "NOT_DEFINED_FOR_TASK",
+            "status": "NOT_APPLICABLE"
+          },
+          {
+            "reason_code": "NOT_DEFINED_FOR_TASK",
+            "status": "NOT_APPLICABLE"
+          },
+          {
+            "reason_code": "NOT_DEFINED_FOR_TASK",
+            "status": "NOT_APPLICABLE"
+          }
+        ],
+        "baseline_repeat_range": null,
+        "direction": "minimize",
+        "max_worsening": 0.03
+      }
+    }
+  }
+}

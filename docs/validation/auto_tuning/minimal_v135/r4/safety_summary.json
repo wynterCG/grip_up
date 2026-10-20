@@ -1,0 +1,90 @@
+{
+  "MCP_Pro": {
+    "fresh_errors": 0,
+    "preexisting_warning": {
+      "count": 1,
+      "errors": [
+        "\u2009WARNING: editor/file_system/editor_file_system.cpp:3497 - Detected another project.godot at res://builds/reference_v13_reliability. The folder will be ignored."
+      ]
+    },
+    "restoration": {
+      "original_sha256": "6ae2782544aa70dfb6a099260ead68de0b0bb7007093ef846bbb2dabfc6a86c9",
+      "owned_editor_closed": true,
+      "project_C_restored": true,
+      "project_E_restored": true
+    },
+    "runtime": {
+      "allocation": 0,
+      "bindings": {
+        "bias_left": [
+          "A - Physical"
+        ],
+        "bias_right": [
+          "D - Physical"
+        ],
+        "contract": [
+          "W - Physical"
+        ],
+        "extend": [
+          "S - Physical"
+        ],
+        "grip_left": [
+          "Left Mouse Button"
+        ],
+        "grip_right": [
+          "Right Mouse Button"
+        ]
+      },
+      "camera_virtual": false,
+      "capture_recorder": false,
+      "hold": true,
+      "intent_aware_feet": false,
+      "mass": 12.0,
+      "native_mode": "ordinary_main_after_review",
+      "observer": false,
+      "physical_feet": false,
+      "physics_hz": 120,
+      "profile": 2,
+      "reach": 0.65708,
+      "source_kind": "LIVE",
+      "values": [
+        0.25,
+        0.12,
+        0.24,
+        0.9
+      ],
+      "virtual_arming": false,
+      "virtual_provider_disabled": true,
+      "window_screen": 0,
+      "window_size": "(1440, 810)"
+    },
+    "screenshot": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\minimal_v135_r4\\native\\normal_main.png",
+    "screenshot_sha256": "e98e540b25da1161ab881930fdc4b2be45f949940c6a86bf51a083f500cb3d4e",
+    "version": "1.17.1",
+    "visually_inspected": true
+  },
+  "auxiliary_physical_worlds": 4,
+  "auxiliary_scope": "normal startup, MCP LIVE game, release smoke, isolated pack startup; export/editor-only processes have no gameplay world",
+  "defaults_promoted": false,
+  "normal_startup_exact_baseline": true,
+  "regressions": {
+    "benchmark_live_reference": {
+      "checks": 262,
+      "passed": true,
+      "processes": 10
+    },
+    "benchmark_reference": {
+      "checks": 884,
+      "passed": true,
+      "processes": 24
+    }
+  },
+  "release_export": {
+    "bytes": 110754728,
+    "release": true,
+    "sha256": "54ca9f14008d484c7b367c78aadd744ea34f0b2b372d3678211993faf94facac",
+    "startup_smoke_only": true
+  },
+  "release_pack_all_excluded": true,
+  "release_pack_excluded_paths": 23
+}
