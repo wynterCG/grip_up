@@ -1,0 +1,1539 @@
+{
+  "fix": "Do not run POST pick validator when admission rejected before rows; preserve original rejection.",
+  "physical_worlds_prior": 0,
+  "prior_results": {
+    "environment": [
+      {
+        "hz": 120,
+        "mode": "headless",
+        "pass": true,
+        "positive": true,
+        "result": {
+          "actual_size": [
+            1024,
+            576
+          ],
+          "backing_initialization": {
+            "actual_size": [
+              1024,
+              576
+            ],
+            "before_size": [
+              64,
+              64
+            ],
+            "explicit_headless_initialization": true,
+            "logical_size": [
+              1920.0,
+              1080.0
+            ],
+            "phase": "BEFORE_GAMEPLAY_WORLD",
+            "projection_schema": {
+              "raw_config": {
+                "logical_viewport_size": [
+                  1920.0,
+                  1080.0
+                ],
+                "probe_enabled": true,
+                "window_size": [
+                  1024.0,
+                  576.0
+                ]
+              },
+              "reason": "",
+              "status": "VALID_SCHEMA",
+              "viewport": {
+                "canonical": [
+                  1920,
+                  1080
+                ],
+                "field": "logical_viewport_size",
+                "parsed_types": [
+                  "float",
+                  "float"
+                ],
+                "raw_values": [
+                  1920.0,
+                  1080.0
+                ],
+                "reason": "",
+                "status": "VALID_SCHEMA"
+              },
+              "window": {
+                "canonical": [
+                  1024,
+                  576
+                ],
+                "field": "window_size",
+                "parsed_types": [
+                  "float",
+                  "float"
+                ],
+                "raw_values": [
+                  1024.0,
+                  576.0
+                ],
+                "reason": "",
+                "status": "VALID_SCHEMA"
+              }
+            },
+            "reason": "",
+            "requested_cli_size": [
+              1024,
+              576
+            ]
+          },
+          "binary_sha256": "12310c74bdda7dcd43f28e971f33047dcecadd436b68169d61ce41009006df38",
+          "clock_samples": [
+            0.008333333333333333,
+            0.008333333333333333
+          ],
+          "engine": {
+            "build": "steam",
+            "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+            "hex": 263938,
+            "major": 4,
+            "minor": 7,
+            "patch": 2,
+            "status": "stable",
+            "string": "4.7.2-stable (steam)",
+            "timestamp": 0
+          },
+          "environment": {
+            "camera": {
+              "current": true,
+              "effective_transform": [
+                [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ],
+              "far": 4000.0,
+              "fov": 56.0,
+              "frustum_offset": [
+                0.0,
+                0.0
+              ],
+              "global_transform": [
+                [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ],
+              "h_offset": 0.0,
+              "keep_aspect": 1,
+              "near": 0.07999999821186066,
+              "obstruction_query_result": "NOT_STORED_BY_CAMERA",
+              "projection_matrix": [
+                [
+                  1.057908535003662,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.8807263374328613,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  -1.000040054321289,
+                  -1.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  -0.160003200173378,
+                  0.0
+                ]
+              ],
+              "projection_type": 0,
+              "runtime_id": 27984397779,
+              "v0_distance": 6.0,
+              "v0_elevation": -0.06,
+              "v0_focus": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "v0_source_pose": [
+                [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ],
+              "v0_yaw": 0.24,
+              "v_offset": 0.0
+            },
+            "viewport": {
+              "active_camera_runtime_id": 27984397779,
+              "camera_coords": "UNAVAILABLE_PUBLIC_API",
+              "camera_rect_size": "UNAVAILABLE_PUBLIC_API",
+              "canvas": [
+                [
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0
+                ],
+                [
+                  0.0,
+                  0.0
+                ]
+              ],
+              "class": "Window",
+              "final": [
+                [
+                  0.5333333611488342,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.5333333611488342
+                ],
+                [
+                  0.0,
+                  0.0
+                ]
+              ],
+              "global_canvas": [
+                [
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0
+                ],
+                [
+                  0.0,
+                  0.0
+                ]
+              ],
+              "path": "/root",
+              "runtime_id": 27615299005,
+              "size_public": [
+                1024,
+                576
+              ],
+              "stretch": [
+                [
+                  0.5333333611488342,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.5333333611488342
+                ],
+                [
+                  0.0,
+                  0.0
+                ]
+              ],
+              "visible_rect": {
+                "position": [
+                  0.0,
+                  0.0
+                ],
+                "size": [
+                  1920.0,
+                  1080.0
+                ]
+              }
+            },
+            "window": {
+              "content_scale_aspect": 4,
+              "content_scale_factor": 1.0,
+              "content_scale_mode": 1,
+              "content_scale_size": [
+                1920,
+                1080
+              ],
+              "content_scale_stretch": 0,
+              "display_server": "headless",
+              "dpi": "UNAVAILABLE_PUBLIC_API",
+              "mode": 1,
+              "os_scale": "UNAVAILABLE_PUBLIC_API",
+              "position": [
+                0,
+                0
+              ],
+              "screen": -1,
+              "size": [
+                1024,
+                576
+              ]
+            }
+          },
+          "gameplay_bodies_created": 0,
+          "provider_state": "DISABLED_NO_GAMEPLAY_WORLD",
+          "reason": "",
+          "requested_hz": 120,
+          "scope": "PREFLIGHT_ONLY_NO_GAMEPLAY_BODIES_NO_TASK_OUTCOME",
+          "screen": -1,
+          "status": "PREFLIGHT_PASS",
+          "v0_runtime_proof": "REQUIRED_IN_EACH_BQ2_REFERENCE_RUN_NOT_CLAIMED_BY_PREFLIGHT",
+          "window_mode": 1,
+          "window_position": [
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "hz": 120,
+        "mode": "rendered_scripted",
+        "pass": true,
+        "positive": true,
+        "result": {
+          "actual_size": [
+            1024,
+            576
+          ],
+          "backing_initialization": {
+            "actual_size": [
+              1024,
+              576
+            ],
+            "before_size": [
+              1024,
+              576
+            ],
+            "explicit_headless_initialization": false,
+            "logical_size": [
+              1920.0,
+              1080.0
+            ],
+            "phase": "BEFORE_GAMEPLAY_WORLD",
+            "projection_schema": {
+              "raw_config": {
+                "logical_viewport_size": [
+                  1920.0,
+                  1080.0
+                ],
+                "probe_enabled": true,
+                "window_size": [
+                  1024.0,
+                  576.0
+                ]
+              },
+              "reason": "",
+              "status": "VALID_SCHEMA",
+              "viewport": {
+                "canonical": [
+                  1920,
+                  1080
+                ],
+                "field": "logical_viewport_size",
+                "parsed_types": [
+                  "float",
+                  "float"
+                ],
+                "raw_values": [
+                  1920.0,
+                  1080.0
+                ],
+                "reason": "",
+                "status": "VALID_SCHEMA"
+              },
+              "window": {
+                "canonical": [
+                  1024,
+                  576
+                ],
+                "field": "window_size",
+                "parsed_types": [
+                  "float",
+                  "float"
+                ],
+                "raw_values": [
+                  1024.0,
+                  576.0
+                ],
+                "reason": "",
+                "status": "VALID_SCHEMA"
+              }
+            },
+            "reason": "",
+            "requested_cli_size": []
+          },
+          "binary_sha256": "12310c74bdda7dcd43f28e971f33047dcecadd436b68169d61ce41009006df38",
+          "clock_samples": [
+            0.008333333333333333,
+            0.008333333333333333
+          ],
+          "engine": {
+            "build": "steam",
+            "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+            "hex": 263938,
+            "major": 4,
+            "minor": 7,
+            "patch": 2,
+            "status": "stable",
+            "string": "4.7.2-stable (steam)",
+            "timestamp": 0
+          },
+          "environment": {
+            "camera": {
+              "current": true,
+              "effective_transform": [
+                [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ],
+              "far": 4000.0,
+              "fov": 56.0,
+              "frustum_offset": [
+                0.0,
+                0.0
+              ],
+              "global_transform": [
+                [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ],
+              "h_offset": 0.0,
+              "keep_aspect": 1,
+              "near": 0.07999999821186066,
+              "obstruction_query_result": "NOT_STORED_BY_CAMERA",
+              "projection_matrix": [
+                [
+                  1.057908535003662,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.8807263374328613,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  -1.000040054321289,
+                  -1.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  -0.160003200173378,
+                  0.0
+                ]
+              ],
+              "projection_type": 0,
+              "runtime_id": 28521268692,
+              "v0_distance": 6.0,
+              "v0_elevation": -0.06,
+              "v0_focus": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "v0_source_pose": [
+                [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ],
+              "v0_yaw": 0.24,
+              "v_offset": 0.0
+            },
+            "viewport": {
+              "active_camera_runtime_id": 28521268692,
+              "camera_coords": "UNAVAILABLE_PUBLIC_API",
+              "camera_rect_size": "UNAVAILABLE_PUBLIC_API",
+              "canvas": [
+                [
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0
+                ],
+                [
+                  0.0,
+                  0.0
+                ]
+              ],
+              "class": "Window",
+              "final": [
+                [
+                  0.5333333611488342,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.5333333611488342
+                ],
+                [
+                  0.0,
+                  0.0
+                ]
+              ],
+              "global_canvas": [
+                [
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0
+                ],
+                [
+                  0.0,
+                  0.0
+                ]
+              ],
+              "path": "/root",
+              "runtime_id": 28118615487,
+              "size_public": [
+                1024,
+                576
+              ],
+              "stretch": [
+                [
+                  0.5333333611488342,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.5333333611488342
+                ],
+                [
+                  0.0,
+                  0.0
+                ]
+              ],
+              "visible_rect": {
+                "position": [
+                  0.0,
+                  0.0
+                ],
+                "size": [
+                  1920.0,
+                  1080.0
+                ]
+              }
+            },
+            "window": {
+              "content_scale_aspect": 4,
+              "content_scale_factor": 1.0,
+              "content_scale_mode": 1,
+              "content_scale_size": [
+                1920,
+                1080
+              ],
+              "content_scale_stretch": 0,
+              "display_server": "Windows",
+              "dpi": 120,
+              "mode": 0,
+              "os_scale": 1.0,
+              "position": [
+                2400,
+                80
+              ],
+              "screen": 0,
+              "size": [
+                1024,
+                576
+              ]
+            }
+          },
+          "gameplay_bodies_created": 0,
+          "provider_state": "DISABLED_NO_GAMEPLAY_WORLD",
+          "reason": "",
+          "requested_hz": 120,
+          "scope": "PREFLIGHT_ONLY_NO_GAMEPLAY_BODIES_NO_TASK_OUTCOME",
+          "screen": 0,
+          "status": "PREFLIGHT_PASS",
+          "v0_runtime_proof": "REQUIRED_IN_EACH_BQ2_REFERENCE_RUN_NOT_CLAIMED_BY_PREFLIGHT",
+          "window_mode": 0,
+          "window_position": [
+            2400,
+            80
+          ]
+        }
+      },
+      {
+        "hz": 60,
+        "mode": "headless",
+        "pass": true,
+        "positive": true,
+        "result": {
+          "actual_size": [
+            1024,
+            576
+          ],
+          "backing_initialization": {
+            "actual_size": [
+              1024,
+              576
+            ],
+            "before_size": [
+              64,
+              64
+            ],
+            "explicit_headless_initialization": true,
+            "logical_size": [
+              1920.0,
+              1080.0
+            ],
+            "phase": "BEFORE_GAMEPLAY_WORLD",
+            "projection_schema": {
+              "raw_config": {
+                "logical_viewport_size": [
+                  1920.0,
+                  1080.0
+                ],
+                "probe_enabled": true,
+                "window_size": [
+                  1024.0,
+                  576.0
+                ]
+              },
+              "reason": "",
+              "status": "VALID_SCHEMA",
+              "viewport": {
+                "canonical": [
+                  1920,
+                  1080
+                ],
+                "field": "logical_viewport_size",
+                "parsed_types": [
+                  "float",
+                  "float"
+                ],
+                "raw_values": [
+                  1920.0,
+                  1080.0
+                ],
+                "reason": "",
+                "status": "VALID_SCHEMA"
+              },
+              "window": {
+                "canonical": [
+                  1024,
+                  576
+                ],
+                "field": "window_size",
+                "parsed_types": [
+                  "float",
+                  "float"
+                ],
+                "raw_values": [
+                  1024.0,
+                  576.0
+                ],
+                "reason": "",
+                "status": "VALID_SCHEMA"
+              }
+            },
+            "reason": "",
+            "requested_cli_size": [
+              1024,
+              576
+            ]
+          },
+          "binary_sha256": "12310c74bdda7dcd43f28e971f33047dcecadd436b68169d61ce41009006df38",
+          "clock_samples": [
+            0.016666666666666666,
+            0.016666666666666666
+          ],
+          "engine": {
+            "build": "steam",
+            "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+            "hex": 263938,
+            "major": 4,
+            "minor": 7,
+            "patch": 2,
+            "status": "stable",
+            "string": "4.7.2-stable (steam)",
+            "timestamp": 0
+          },
+          "environment": {
+            "camera": {
+              "current": true,
+              "effective_transform": [
+                [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ],
+              "far": 4000.0,
+              "fov": 56.0,
+              "frustum_offset": [
+                0.0,
+                0.0
+              ],
+              "global_transform": [
+                [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ],
+              "h_offset": 0.0,
+              "keep_aspect": 1,
+              "near": 0.07999999821186066,
+              "obstruction_query_result": "NOT_STORED_BY_CAMERA",
+              "projection_matrix": [
+                [
+                  1.057908535003662,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.8807263374328613,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  -1.000040054321289,
+                  -1.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  -0.160003200173378,
+                  0.0
+                ]
+              ],
+              "projection_type": 0,
+              "runtime_id": 27984397779,
+              "v0_distance": 6.0,
+              "v0_elevation": -0.06,
+              "v0_focus": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "v0_source_pose": [
+                [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ],
+              "v0_yaw": 0.24,
+              "v_offset": 0.0
+            },
+            "viewport": {
+              "active_camera_runtime_id": 27984397779,
+              "camera_coords": "UNAVAILABLE_PUBLIC_API",
+              "camera_rect_size": "UNAVAILABLE_PUBLIC_API",
+              "canvas": [
+                [
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0
+                ],
+                [
+                  0.0,
+                  0.0
+                ]
+              ],
+              "class": "Window",
+              "final": [
+                [
+                  0.5333333611488342,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.5333333611488342
+                ],
+                [
+                  0.0,
+                  0.0
+                ]
+              ],
+              "global_canvas": [
+                [
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0
+                ],
+                [
+                  0.0,
+                  0.0
+                ]
+              ],
+              "path": "/root",
+              "runtime_id": 27615299005,
+              "size_public": [
+                1024,
+                576
+              ],
+              "stretch": [
+                [
+                  0.5333333611488342,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.5333333611488342
+                ],
+                [
+                  0.0,
+                  0.0
+                ]
+              ],
+              "visible_rect": {
+                "position": [
+                  0.0,
+                  0.0
+                ],
+                "size": [
+                  1920.0,
+                  1080.0
+                ]
+              }
+            },
+            "window": {
+              "content_scale_aspect": 4,
+              "content_scale_factor": 1.0,
+              "content_scale_mode": 1,
+              "content_scale_size": [
+                1920,
+                1080
+              ],
+              "content_scale_stretch": 0,
+              "display_server": "headless",
+              "dpi": "UNAVAILABLE_PUBLIC_API",
+              "mode": 1,
+              "os_scale": "UNAVAILABLE_PUBLIC_API",
+              "position": [
+                0,
+                0
+              ],
+              "screen": -1,
+              "size": [
+                1024,
+                576
+              ]
+            }
+          },
+          "gameplay_bodies_created": 0,
+          "provider_state": "DISABLED_NO_GAMEPLAY_WORLD",
+          "reason": "",
+          "requested_hz": 60,
+          "scope": "PREFLIGHT_ONLY_NO_GAMEPLAY_BODIES_NO_TASK_OUTCOME",
+          "screen": -1,
+          "status": "PREFLIGHT_PASS",
+          "v0_runtime_proof": "REQUIRED_IN_EACH_BQ2_REFERENCE_RUN_NOT_CLAIMED_BY_PREFLIGHT",
+          "window_mode": 1,
+          "window_position": [
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "hz": 60,
+        "mode": "rendered_scripted",
+        "pass": true,
+        "positive": true,
+        "result": {
+          "actual_size": [
+            1024,
+            576
+          ],
+          "backing_initialization": {
+            "actual_size": [
+              1024,
+              576
+            ],
+            "before_size": [
+              1024,
+              576
+            ],
+            "explicit_headless_initialization": false,
+            "logical_size": [
+              1920.0,
+              1080.0
+            ],
+            "phase": "BEFORE_GAMEPLAY_WORLD",
+            "projection_schema": {
+              "raw_config": {
+                "logical_viewport_size": [
+                  1920.0,
+                  1080.0
+                ],
+                "probe_enabled": true,
+                "window_size": [
+                  1024.0,
+                  576.0
+                ]
+              },
+              "reason": "",
+              "status": "VALID_SCHEMA",
+              "viewport": {
+                "canonical": [
+                  1920,
+                  1080
+                ],
+                "field": "logical_viewport_size",
+                "parsed_types": [
+                  "float",
+                  "float"
+                ],
+                "raw_values": [
+                  1920.0,
+                  1080.0
+                ],
+                "reason": "",
+                "status": "VALID_SCHEMA"
+              },
+              "window": {
+                "canonical": [
+                  1024,
+                  576
+                ],
+                "field": "window_size",
+                "parsed_types": [
+                  "float",
+                  "float"
+                ],
+                "raw_values": [
+                  1024.0,
+                  576.0
+                ],
+                "reason": "",
+                "status": "VALID_SCHEMA"
+              }
+            },
+            "reason": "",
+            "requested_cli_size": []
+          },
+          "binary_sha256": "12310c74bdda7dcd43f28e971f33047dcecadd436b68169d61ce41009006df38",
+          "clock_samples": [
+            0.008333333333333333,
+            0.008333333333333333,
+            0.008333333333333333,
+            0.008333333333333333,
+            0.016666666666666666,
+            0.016666666666666666
+          ],
+          "engine": {
+            "build": "steam",
+            "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+            "hex": 263938,
+            "major": 4,
+            "minor": 7,
+            "patch": 2,
+            "status": "stable",
+            "string": "4.7.2-stable (steam)",
+            "timestamp": 0
+          },
+          "environment": {
+            "camera": {
+              "current": true,
+              "effective_transform": [
+                [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ],
+              "far": 4000.0,
+              "fov": 56.0,
+              "frustum_offset": [
+                0.0,
+                0.0
+              ],
+              "global_transform": [
+                [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ],
+              "h_offset": 0.0,
+              "keep_aspect": 1,
+              "near": 0.07999999821186066,
+              "obstruction_query_result": "NOT_STORED_BY_CAMERA",
+              "projection_matrix": [
+                [
+                  1.057908535003662,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.8807263374328613,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  -1.000040054321289,
+                  -1.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  -0.160003200173378,
+                  0.0
+                ]
+              ],
+              "projection_type": 0,
+              "runtime_id": 28588377556,
+              "v0_distance": 6.0,
+              "v0_elevation": -0.06,
+              "v0_focus": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "v0_source_pose": [
+                [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ],
+              "v0_yaw": 0.24,
+              "v_offset": 0.0
+            },
+            "viewport": {
+              "active_camera_runtime_id": 28588377556,
+              "camera_coords": "UNAVAILABLE_PUBLIC_API",
+              "camera_rect_size": "UNAVAILABLE_PUBLIC_API",
+              "canvas": [
+                [
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0
+                ],
+                [
+                  0.0,
+                  0.0
+                ]
+              ],
+              "class": "Window",
+              "final": [
+                [
+                  0.5333333611488342,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.5333333611488342
+                ],
+                [
+                  0.0,
+                  0.0
+                ]
+              ],
+              "global_canvas": [
+                [
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0
+                ],
+                [
+                  0.0,
+                  0.0
+                ]
+              ],
+              "path": "/root",
+              "runtime_id": 28118615487,
+              "size_public": [
+                1024,
+                576
+              ],
+              "stretch": [
+                [
+                  0.5333333611488342,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.5333333611488342
+                ],
+                [
+                  0.0,
+                  0.0
+                ]
+              ],
+              "visible_rect": {
+                "position": [
+                  0.0,
+                  0.0
+                ],
+                "size": [
+                  1920.0,
+                  1080.0
+                ]
+              }
+            },
+            "window": {
+              "content_scale_aspect": 4,
+              "content_scale_factor": 1.0,
+              "content_scale_mode": 1,
+              "content_scale_size": [
+                1920,
+                1080
+              ],
+              "content_scale_stretch": 0,
+              "display_server": "Windows",
+              "dpi": 120,
+              "mode": 0,
+              "os_scale": 1.0,
+              "position": [
+                2400,
+                80
+              ],
+              "screen": 0,
+              "size": [
+                1024,
+                576
+              ]
+            }
+          },
+          "gameplay_bodies_created": 0,
+          "provider_state": "DISABLED_NO_GAMEPLAY_WORLD",
+          "reason": "",
+          "requested_hz": 60,
+          "scope": "PREFLIGHT_ONLY_NO_GAMEPLAY_BODIES_NO_TASK_OUTCOME",
+          "screen": 0,
+          "status": "PREFLIGHT_PASS",
+          "v0_runtime_proof": "REQUIRED_IN_EACH_BQ2_REFERENCE_RUN_NOT_CLAIMED_BY_PREFLIGHT",
+          "window_mode": 0,
+          "window_position": [
+            2400,
+            80
+          ]
+        }
+      },
+      {
+        "hz": 120,
+        "mode": "headless",
+        "pass": true,
+        "positive": false,
+        "result": {
+          "actual_size": [
+            64,
+            64
+          ],
+          "backing_initialization": {
+            "actual_size": [
+              64,
+              64
+            ],
+            "before_size": [
+              64,
+              64
+            ],
+            "explicit_headless_initialization": false,
+            "logical_size": [
+              1920.0,
+              1920.0
+            ],
+            "phase": "BEFORE_GAMEPLAY_WORLD",
+            "projection_schema": {
+              "raw_config": {
+                "logical_viewport_size": [
+                  1920.0,
+                  1080.0
+                ],
+                "probe_enabled": true,
+                "window_size": [
+                  1024.0,
+                  576.0
+                ]
+              },
+              "reason": "",
+              "status": "VALID_SCHEMA",
+              "viewport": {
+                "canonical": [
+                  1920,
+                  1080
+                ],
+                "field": "logical_viewport_size",
+                "parsed_types": [
+                  "float",
+                  "float"
+                ],
+                "raw_values": [
+                  1920.0,
+                  1080.0
+                ],
+                "reason": "",
+                "status": "VALID_SCHEMA"
+              },
+              "window": {
+                "canonical": [
+                  1024,
+                  576
+                ],
+                "field": "window_size",
+                "parsed_types": [
+                  "float",
+                  "float"
+                ],
+                "raw_values": [
+                  1024.0,
+                  576.0
+                ],
+                "reason": "",
+                "status": "VALID_SCHEMA"
+              }
+            },
+            "reason": "CANONICAL_BACKING",
+            "requested_cli_size": [
+              1440,
+              810
+            ]
+          },
+          "binary_sha256": "12310c74bdda7dcd43f28e971f33047dcecadd436b68169d61ce41009006df38",
+          "engine": {
+            "build": "steam",
+            "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+            "hex": 263938,
+            "major": 4,
+            "minor": 7,
+            "patch": 2,
+            "status": "stable",
+            "string": "4.7.2-stable (steam)",
+            "timestamp": 0
+          },
+          "gameplay_bodies_created": 0,
+          "reason": "CANONICAL_BACKING",
+          "requested_hz": 120,
+          "scope": "PREFLIGHT_ONLY_NO_GAMEPLAY_BODIES_NO_TASK_OUTCOME",
+          "screen": -1,
+          "status": "ENVIRONMENT_NOT_COMPARABLE",
+          "window_mode": 1,
+          "window_position": [
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "hz": 120,
+        "mode": "rendered_scripted",
+        "pass": true,
+        "positive": false,
+        "result": {
+          "actual_size": [
+            1440,
+            810
+          ],
+          "backing_initialization": {
+            "actual_size": [
+              1440,
+              810
+            ],
+            "before_size": [
+              1440,
+              810
+            ],
+            "explicit_headless_initialization": false,
+            "logical_size": [
+              1920.0,
+              1080.0
+            ],
+            "phase": "BEFORE_GAMEPLAY_WORLD",
+            "projection_schema": {
+              "raw_config": {
+                "logical_viewport_size": [
+                  1920.0,
+                  1080.0
+                ],
+                "probe_enabled": true,
+                "window_size": [
+                  1024.0,
+                  576.0
+                ]
+              },
+              "reason": "",
+              "status": "VALID_SCHEMA",
+              "viewport": {
+                "canonical": [
+                  1920,
+                  1080
+                ],
+                "field": "logical_viewport_size",
+                "parsed_types": [
+                  "float",
+                  "float"
+                ],
+                "raw_values": [
+                  1920.0,
+                  1080.0
+                ],
+                "reason": "",
+                "status": "VALID_SCHEMA"
+              },
+              "window": {
+                "canonical": [
+                  1024,
+                  576
+                ],
+                "field": "window_size",
+                "parsed_types": [
+                  "float",
+                  "float"
+                ],
+                "raw_values": [
+                  1024.0,
+                  576.0
+                ],
+                "reason": "",
+                "status": "VALID_SCHEMA"
+              }
+            },
+            "reason": "CANONICAL_BACKING",
+            "requested_cli_size": []
+          },
+          "binary_sha256": "12310c74bdda7dcd43f28e971f33047dcecadd436b68169d61ce41009006df38",
+          "engine": {
+            "build": "steam",
+            "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+            "hex": 263938,
+            "major": 4,
+            "minor": 7,
+            "patch": 2,
+            "status": "stable",
+            "string": "4.7.2-stable (steam)",
+            "timestamp": 0
+          },
+          "gameplay_bodies_created": 0,
+          "reason": "CANONICAL_BACKING",
+          "requested_hz": 120,
+          "scope": "PREFLIGHT_ONLY_NO_GAMEPLAY_BODIES_NO_TASK_OUTCOME",
+          "screen": 1,
+          "status": "ENVIRONMENT_NOT_COMPARABLE",
+          "window_mode": 0,
+          "window_position": [
+            80,
+            749
+          ]
+        }
+      }
+    ],
+    "gameplay_worlds": 0,
+    "pass": false,
+    "physical_launches": 0,
+    "source_snapshot": "2f84530d12e231604f5655ead2edc53fdc379fa82a6843571d7708a0bd02d92c"
+  },
+  "prior_source": "2f84530d12e231604f5655ead2edc53fdc379fa82a6843571d7708a0bd02d92c",
+  "reason": "PRE_WORLD_SOURCE_REJECTION_MASKED_BY_POST_REPLAY_PICK_VALIDATOR"
+}

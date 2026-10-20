@@ -69,7 +69,7 @@ func start(value:Dictionary)->Dictionary:
 	if value.has("projection_config"):
 		result["projection_setup"]=projection_setup
 		result["projection_probe"]=projection_probe.write(str(value.output_dir).path_join("projection_picks.jsonl")) if projection_probe!=null else {"status":"CONTROL_WITH_PROBE_DISABLED"}
-	if value.get("pick_contract_version","")=="1.3.4":
+	if value.get("pick_contract_version","")=="1.3.4" and (result.get("status")=="completed" or not virtual_rows.is_empty()):
 		var PickContract=preload("res://features/evaluator_virtual_cursor/scripts/pick_dispatch_contract.gd")
 		var ProbeEncoder=preload("res://features/evaluator_virtual_cursor/scripts/projection_probe.gd")
 		var pick_view:Dictionary=PickContract.build_view(ProbeEncoder.encode(virtual_rows),projection_probe.records if projection_probe!=null else [],str(value.run_id),result.get("status")=="completed" and _trace_integrity_reason.is_empty(),virtual_frames.size(),true)
