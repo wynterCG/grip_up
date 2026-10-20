@@ -1,0 +1,60 @@
+{
+  "verified_utc": "2026-10-20T02:05:53.388406+00:00",
+  "scope": "Read-only artifact/source/archive/report consistency; no new experiments or gameplay edits",
+  "experimental_commit": "1b0a86272a2939452dbe14130df25cde40278a82",
+  "protected_files_verified_both_copies": 202,
+  "public_source_files_verified_both_copies": 239,
+  "engine_janga_rollback_verified": true,
+  "pilot": {
+    "evaluations": 6,
+    "episodes": 42,
+    "goals": 34,
+    "hard_violations": 0,
+    "stop": "reproduced essential regression: lost baseline task completion: swing_catch_train",
+    "shortlist": 0
+  },
+  "native": [
+    {
+      "condition": "baseline_120_r1",
+      "goals": 5,
+      "episodes": 7,
+      "screenshots": 7
+    },
+    {
+      "condition": "random_0002_120_r1",
+      "goals": 5,
+      "episodes": 7,
+      "screenshots": 7
+    }
+  ],
+  "normal_startup": {
+    "acceleration": 0.9,
+    "allocation": 0,
+    "assist": 20.0,
+    "capture_recorder": false,
+    "hands_budget": 360.0,
+    "hold": true,
+    "mass": 12.0,
+    "moment": 150.0,
+    "observer": false,
+    "physics_hz": 120,
+    "profile": 2,
+    "ramp": 0.12,
+    "rate": 0.24,
+    "reach": 0.65708,
+    "research_driver_present": false,
+    "screen": 0,
+    "speed": 0.25,
+    "suite_recording": false,
+    "suite_waiting": false
+  },
+  "normal_startup_diagnostic_entries": 0,
+  "archive_sha256": "c583f9034ce9dbf76f34cb936914436cb30613efa28b56588fe4a42fb96d2c40",
+  "archive_members_verified": 49,
+  "report_sha256": "c72a37edff5d43b75ca0fa6ea701eee4f4727a884117659341b23e3aeb0d7141",
+  "export_exclusions_checked": "configuration and absence of production imports; no fresh executable export",
+  "new_trials_run": 0,
+  "human_sessions": 0,
+  "promotion": false,
+  "all_checks_passed": true
+}

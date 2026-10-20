@@ -1,0 +1,3237 @@
+{
+  "actual_candidate_trials": 2,
+  "distributions": {
+    "all_candidate_outcomes": {
+      "scenarios": [
+        {
+          "attempts": 3,
+          "completed_tasks": 3,
+          "metrics": {
+            "controllable_swing": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "directional_efficiency": {
+              "max": 0.269703232611485,
+              "mean": 0.2526082232884397,
+              "min": 0.244060718626917,
+              "n": 3,
+              "range": 0.02564251398456799,
+              "stdev": 0.014804712351689071
+            },
+            "foot_loaded_time_fraction": {
+              "max": 0.815789473684211,
+              "mean": 0.815789473684211,
+              "min": 0.815789473684211,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "grip_retention_rate": {
+              "max": 1.0,
+              "mean": 1.0,
+              "min": 1.0,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "max_acceleration_proxy_m_s2": {
+              "max": 99.869384765625,
+              "mean": 99.22097778320314,
+              "min": 97.9241638183594,
+              "n": 3,
+              "range": 1.9452209472655966,
+              "stdev": 1.123073837537091
+            },
+            "metric_reasons": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "movement_latency_s": {
+              "max": 0.699999999999998,
+              "mean": 0.67222222222222,
+              "min": 0.658333333333331,
+              "n": 3,
+              "range": 0.04166666666666696,
+              "stdev": 0.024056261216234578
+            },
+            "negative_swing_work_j": {
+              "max": -0.120161823680004,
+              "mean": -0.14464449814210367,
+              "min": -0.193609847066303,
+              "n": 3,
+              "range": 0.073448023386299,
+              "stdev": 0.04240523607352565
+            },
+            "overshoot_m": {
+              "max": 0.143128695487976,
+              "mean": 0.13683770338694268,
+              "min": 0.133692207336426,
+              "n": 3,
+              "range": 0.009436488151549988,
+              "stdev": 0.0054481589745020995
+            },
+            "partial_actuator_work_j": {
+              "max": 24.4908263803541,
+              "mean": 22.311917868949966,
+              "min": 21.2224636132479,
+              "n": 3,
+              "range": 3.2683627671062006,
+              "stdev": 1.886990123398115
+            },
+            "positive_swing_work_j": {
+              "max": 1.38245008351902,
+              "mean": 1.3306955692668734,
+              "min": 1.22718654076258,
+              "n": 3,
+              "range": 0.15526354275644016,
+              "stdev": 0.0896414482057657
+            },
+            "reversal_latency_s": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "stop_distance_m": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "target_jerk_peak_m_s3": {
+              "max": 281.433196800001,
+              "mean": 239.522525580101,
+              "min": 155.701183140301,
+              "n": 3,
+              "range": 125.73201365969999,
+              "stdev": 72.59141193218149
+            },
+            "target_jerk_rms_m_s3": {
+              "max": 40.0755670944837,
+              "mean": 32.129152820088805,
+              "min": 16.236324271299,
+              "n": 3,
+              "range": 23.8392428231847,
+              "stdev": 13.76359326124254
+            },
+            "unwanted_twist_rms_rad": {
+              "max": 0.185656887556778,
+              "mean": 0.17878543960879467,
+              "min": 0.175349715634803,
+              "n": 3,
+              "range": 0.010307171921975,
+              "stdev": 0.005950848483736019
+            },
+            "useful_displacement_m": {
+              "max": 0.171057462692261,
+              "mean": 0.158838669459025,
+              "min": 0.152729272842407,
+              "n": 3,
+              "range": 0.018328189849853987,
+              "stdev": 0.010581785343571766
+            }
+          },
+          "physics_hz": 120,
+          "scenario": "asymmetric_pull_train",
+          "task_failures": 0
+        },
+        {
+          "attempts": 3,
+          "completed_tasks": 3,
+          "metrics": {
+            "controllable_swing": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "directional_efficiency": {
+              "max": 0.239419170497277,
+              "mean": 0.23677475667263367,
+              "min": 0.235452549760312,
+              "n": 3,
+              "range": 0.003966620736965021,
+              "stdev": 0.0022901295502599063
+            },
+            "foot_loaded_time_fraction": {
+              "max": 0.897058823529413,
+              "mean": 0.897058823529413,
+              "min": 0.897058823529413,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "grip_retention_rate": {
+              "max": 1.0,
+              "mean": 1.0,
+              "min": 1.0,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "max_acceleration_proxy_m_s2": {
+              "max": 100.186546325684,
+              "mean": 100.16827138265,
+              "min": 100.131721496582,
+              "n": 3,
+              "range": 0.054824829102003036,
+              "stdev": 0.03165312984031668
+            },
+            "metric_reasons": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "movement_latency_s": {
+              "max": 0.691666666666664,
+              "mean": 0.6638888888888866,
+              "min": 0.649999999999998,
+              "n": 3,
+              "range": 0.041666666666665964,
+              "stdev": 0.024056261216234002
+            },
+            "negative_swing_work_j": {
+              "max": -0.707024586821596,
+              "mean": -0.72007883003292,
+              "min": -0.746187316455568,
+              "n": 3,
+              "range": 0.03916272963397205,
+              "stdev": 0.022610612496374298
+            },
+            "overshoot_m": {
+              "max": 0.103991823196411,
+              "mean": 0.097292579015096,
+              "min": 0.0939429569244385,
+              "n": 3,
+              "range": 0.01004886627197249,
+              "stdev": 0.005801715647173868
+            },
+            "partial_actuator_work_j": {
+              "max": 36.2400943421791,
+              "mean": 34.361134345910564,
+              "min": 33.4216543477763,
+              "n": 3,
+              "range": 2.8184399944028016,
+              "stdev": 1.6272270894632648
+            },
+            "positive_swing_work_j": {
+              "max": 1.63291797065176,
+              "mean": 1.56511073586945,
+              "min": 1.42949626630483,
+              "n": 3,
+              "range": 0.20342170434692997,
+              "stdev": 0.11744557576371248
+            },
+            "reversal_latency_s": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "stop_distance_m": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "target_jerk_peak_m_s3": {
+              "max": 281.433196800001,
+              "mean": 243.869102033899,
+              "min": 168.740912501695,
+              "n": 3,
+              "range": 112.69228429830599,
+              "stdev": 65.0629206752208
+            },
+            "target_jerk_rms_m_s3": {
+              "max": 26.9393318913966,
+              "mean": 23.526396660723666,
+              "min": 16.7005261993778,
+              "n": 3,
+              "range": 10.238805692018797,
+              "stdev": 5.911377222467325
+            },
+            "unwanted_twist_rms_rad": {
+              "max": 0.138827873929054,
+              "mean": 0.131163480196512,
+              "min": 0.127331283330241,
+              "n": 3,
+              "range": 0.011496590598813,
+              "stdev": 0.006637559676987606
+            },
+            "useful_displacement_m": {
+              "max": 0.246406674385071,
+              "mean": 0.23890976111094167,
+              "min": 0.235161304473877,
+              "n": 3,
+              "range": 0.011245369911193986,
+              "stdev": 0.006492517345364766
+            }
+          },
+          "physics_hz": 120,
+          "scenario": "foot_supported_step_train",
+          "task_failures": 0
+        },
+        {
+          "attempts": 3,
+          "completed_tasks": 3,
+          "metrics": {
+            "controllable_swing": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "directional_efficiency": {
+              "max": 0.24097245423271,
+              "mean": 0.223451583830182,
+              "min": 0.214691148628918,
+              "n": 3,
+              "range": 0.026281305603791993,
+              "stdev": 0.015173518865004128
+            },
+            "foot_loaded_time_fraction": {
+              "max": 0.715789473684211,
+              "mean": 0.715789473684211,
+              "min": 0.715789473684211,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "grip_retention_rate": {
+              "max": 1.0,
+              "mean": 1.0,
+              "min": 1.0,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "max_acceleration_proxy_m_s2": {
+              "max": 104.004402160645,
+              "mean": 101.02001698811867,
+              "min": 99.5278244018555,
+              "n": 3,
+              "range": 4.476577758789503,
+              "stdev": 2.584553374085411
+            },
+            "metric_reasons": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "movement_latency_s": {
+              "max": 0.416666666666665,
+              "mean": 0.40833333333333166,
+              "min": 0.391666666666665,
+              "n": 3,
+              "range": 0.025000000000000022,
+              "stdev": 0.014433756729740658
+            },
+            "negative_swing_work_j": {
+              "max": -0.218540250098643,
+              "mean": -0.266687866264773,
+              "min": -0.362983098597033,
+              "n": 3,
+              "range": 0.14444284849838998,
+              "stdev": 0.08339411746306179
+            },
+            "overshoot_m": {
+              "max": 0.184780311584473,
+              "mean": 0.17544439633687367,
+              "min": 0.170776438713074,
+              "n": 3,
+              "range": 0.014003872871399009,
+              "stdev": 0.008085139771999515
+            },
+            "partial_actuator_work_j": {
+              "max": 27.5940807209405,
+              "mean": 25.117820927087966,
+              "min": 23.8796910301617,
+              "n": 3,
+              "range": 3.714389690778802,
+              "stdev": 2.144503887846312
+            },
+            "positive_swing_work_j": {
+              "max": 0.779942804986301,
+              "mean": 0.7073322425638456,
+              "min": 0.562111117718935,
+              "n": 3,
+              "range": 0.21783168726736601,
+              "stdev": 0.12576518328184413
+            },
+            "reversal_latency_s": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "stop_distance_m": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "target_jerk_peak_m_s3": {
+              "max": 265.368658460993,
+              "mean": 235.188049048931,
+              "min": 174.826830224807,
+              "n": 3,
+              "range": 90.541828236186,
+              "stdev": 52.27434890508285
+            },
+            "target_jerk_rms_m_s3": {
+              "max": 20.8580280630495,
+              "mean": 18.747626596870166,
+              "min": 14.5268236645115,
+              "n": 3,
+              "range": 6.331204398537999,
+              "stdev": 3.655322563790456
+            },
+            "unwanted_twist_rms_rad": {
+              "max": 0.440655735636935,
+              "mean": 0.4403719838728027,
+              "min": 0.439804480344538,
+              "n": 3,
+              "range": 0.0008512552923969907,
+              "stdev": 0.0004914724722144962
+            },
+            "useful_displacement_m": {
+              "max": 0.21626615524292,
+              "mean": 0.20098328590393066,
+              "min": 0.193341851234436,
+              "n": 3,
+              "range": 0.022924304008483998,
+              "stdev": 0.013235353090283054
+            }
+          },
+          "physics_hz": 120,
+          "scenario": "ground_grip_transition_train",
+          "task_failures": 0
+        },
+        {
+          "attempts": 3,
+          "completed_tasks": 0,
+          "metrics": {
+            "controllable_swing": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "directional_efficiency": {
+              "max": -0.149217457889657,
+              "mean": -0.195499811021926,
+              "min": -0.288064517286464,
+              "n": 3,
+              "range": 0.13884705939680697,
+              "stdev": 0.08016338711893446
+            },
+            "foot_loaded_time_fraction": {
+              "max": 1.0,
+              "mean": 1.0,
+              "min": 1.0,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "grip_retention_rate": {
+              "max": 1.0,
+              "mean": 1.0,
+              "min": 1.0,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "max_acceleration_proxy_m_s2": {
+              "max": 99.0089797973633,
+              "mean": 98.89357503255209,
+              "min": 98.6627655029297,
+              "n": 3,
+              "range": 0.34621429443359375,
+              "stdev": 0.1998869160885317
+            },
+            "metric_reasons": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "movement_latency_s": {
+              "max": 0.283333333333332,
+              "mean": 0.188888888888888,
+              "min": 0.141666666666666,
+              "n": 3,
+              "range": 0.141666666666666,
+              "stdev": 0.0817912881351966
+            },
+            "negative_swing_work_j": {
+              "max": -0.0176019051422675,
+              "mean": -0.017920358868367566,
+              "min": -0.0180795857314176,
+              "n": 3,
+              "range": 0.0004776805891500979,
+              "stdev": 0.0002757890167324681
+            },
+            "overshoot_m": {
+              "max": 0.0,
+              "mean": 0.0,
+              "min": 0.0,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "partial_actuator_work_j": {
+              "max": -3.18723769868569,
+              "mean": -3.69083929563897,
+              "min": -4.69804248954553,
+              "n": 3,
+              "range": 1.5108047908598405,
+              "stdev": 0.8722635526959052
+            },
+            "positive_swing_work_j": {
+              "max": 2.72724498884442,
+              "mean": 2.59575752194958,
+              "min": 2.3327825881599,
+              "n": 3,
+              "range": 0.3944624006845201,
+              "stdev": 0.2277429732203937
+            },
+            "reversal_latency_s": {
+              "max": 0.141666666666666,
+              "mean": 0.13055555555555534,
+              "min": 0.125,
+              "n": 3,
+              "range": 0.016666666666665997,
+              "stdev": 0.009622504486493376
+            },
+            "stop_distance_m": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "target_jerk_peak_m_s3": {
+              "max": 281.433196800001,
+              "mean": 251.274083200001,
+              "min": 190.955856000001,
+              "n": 3,
+              "range": 90.47734079999998,
+              "stdev": 52.2371170664415
+            },
+            "target_jerk_rms_m_s3": {
+              "max": 45.2692768181582,
+              "mean": 39.02820725188213,
+              "min": 26.54606811933,
+              "n": 3,
+              "range": 18.7232086988282,
+              "stdev": 10.809849582362004
+            },
+            "unwanted_twist_rms_rad": {
+              "max": 0.162449935391316,
+              "mean": 0.13800197546355333,
+              "min": 0.125777995499672,
+              "n": 3,
+              "range": 0.036671939891643995,
+              "stdev": 0.021172554368146437
+            },
+            "useful_displacement_m": {
+              "max": -0.0359430611133575,
+              "mean": -0.045452445745468105,
+              "min": -0.0644712150096893,
+              "n": 3,
+              "range": 0.0285281538963318,
+              "stdev": 0.016470737331530236
+            }
+          },
+          "physics_hz": 120,
+          "scenario": "lateral_traverse_train",
+          "task_failures": 3
+        },
+        {
+          "attempts": 3,
+          "completed_tasks": 3,
+          "metrics": {
+            "controllable_swing": {
+              "max": 0.594057263055787,
+              "mean": 0.5857815414991177,
+              "min": 0.569230098385779,
+              "n": 3,
+              "range": 0.024827164670008006,
+              "stdev": 0.014333970205444288
+            },
+            "directional_efficiency": {
+              "max": -0.00825675113969483,
+              "mean": -0.04158660266771881,
+              "min": -0.0582515284317308,
+              "n": 3,
+              "range": 0.04999477729203597,
+              "stdev": 0.02886449812763236
+            },
+            "foot_loaded_time_fraction": {
+              "max": 0.705555555555556,
+              "mean": 0.683333333333334,
+              "min": 0.672222222222223,
+              "n": 3,
+              "range": 0.03333333333333299,
+              "stdev": 0.01924500897298733
+            },
+            "grip_retention_rate": {
+              "max": 1.0,
+              "mean": 1.0,
+              "min": 1.0,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "max_acceleration_proxy_m_s2": {
+              "max": 69.0058059692383,
+              "mean": 61.365786234537765,
+              "min": 46.0857467651367,
+              "n": 3,
+              "range": 22.920059204101598,
+              "stdev": 13.232902351330218
+            },
+            "metric_reasons": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "movement_latency_s": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "negative_swing_work_j": {
+              "max": -0.0602301256420712,
+              "mean": -0.061153760107441064,
+              "min": -0.061615577340126,
+              "n": 3,
+              "range": 0.0013854516980548043,
+              "stdev": 0.0007998909108211654
+            },
+            "overshoot_m": {
+              "max": 0.0336408722400665,
+              "mean": 0.03156498154004417,
+              "min": 0.030527036190033,
+              "n": 3,
+              "range": 0.0031138360500334965,
+              "stdev": 0.0017977740816992002
+            },
+            "partial_actuator_work_j": {
+              "max": 0.0846763085573935,
+              "mean": 0.03932420308184483,
+              "min": -0.0513800078692525,
+              "n": 3,
+              "range": 0.136056316426646,
+              "stdev": 0.07855215091387296
+            },
+            "positive_swing_work_j": {
+              "max": 4.89070740385602,
+              "mean": 4.806606603041293,
+              "min": 4.63840500141184,
+              "n": 3,
+              "range": 0.25230240244417956,
+              "stdev": 0.14566685996833637
+            },
+            "reversal_latency_s": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "stop_distance_m": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "target_jerk_peak_m_s3": {
+              "max": 281.433196800001,
+              "mean": 251.274083200001,
+              "min": 190.955856000001,
+              "n": 3,
+              "range": 90.47734079999998,
+              "stdev": 52.2371170664415
+            },
+            "target_jerk_rms_m_s3": {
+              "max": 36.8104368695854,
+              "mean": 33.7880213049109,
+              "min": 27.7431901755619,
+              "n": 3,
+              "range": 9.067246694023503,
+              "stdev": 5.234977319603214
+            },
+            "unwanted_twist_rms_rad": {
+              "max": 0.213689383795442,
+              "mean": 0.21263789400134267,
+              "min": 0.210534914413144,
+              "n": 3,
+              "range": 0.003154469382297992,
+              "stdev": 0.0018212337470201781
+            },
+            "useful_displacement_m": {
+              "max": -0.00297704339027405,
+              "mean": -0.01651488741238915,
+              "min": -0.0232838094234467,
+              "n": 3,
+              "range": 0.02030676603317265,
+              "stdev": 0.011724116835622979
+            }
+          },
+          "physics_hz": 120,
+          "scenario": "one_hand_hang_train",
+          "task_failures": 0
+        },
+        {
+          "attempts": 3,
+          "completed_tasks": 1,
+          "metrics": {
+            "controllable_swing": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "directional_efficiency": {
+              "max": 0.496506547560398,
+              "mean": 0.404721281040656,
+              "min": 0.358828647780785,
+              "n": 3,
+              "range": 0.13767789977961303,
+              "stdev": 0.0794883724992219
+            },
+            "foot_loaded_time_fraction": {
+              "max": 0.06020066889632,
+              "mean": 0.0300171383883256,
+              "min": 0.0149253731343284,
+              "n": 3,
+              "range": 0.0452752957619916,
+              "stdev": 0.026139704195825775
+            },
+            "grip_retention_rate": {
+              "max": 1.0,
+              "mean": 0.3333333333333333,
+              "min": 0.0,
+              "n": 3,
+              "range": 1.0,
+              "stdev": 0.5773502691896257
+            },
+            "max_acceleration_proxy_m_s2": {
+              "max": 69.0522003173828,
+              "mean": 61.370548248291,
+              "min": 46.0072441101074,
+              "n": 3,
+              "range": 23.044956207275398,
+              "stdev": 13.305011669733588
+            },
+            "metric_reasons": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "movement_latency_s": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "negative_swing_work_j": {
+              "max": -0.219549294002354,
+              "mean": -0.3355700605652407,
+              "min": -0.393580443846684,
+              "n": 3,
+              "range": 0.17403114984433,
+              "stdev": 0.10047693121000402
+            },
+            "overshoot_m": {
+              "max": 0.42241327047348,
+              "mean": 0.25658621470133464,
+              "min": 0.173672686815262,
+              "n": 3,
+              "range": 0.248740583658218,
+              "stdev": 0.1436104429334568
+            },
+            "partial_actuator_work_j": {
+              "max": 3.74572939654874,
+              "mean": 3.482410112418003,
+              "min": 2.95577154415653,
+              "n": 3,
+              "range": 0.78995785239221,
+              "stdev": 0.45608237872710106
+            },
+            "positive_swing_work_j": {
+              "max": 8.19087267840902,
+              "mean": 6.397838241110893,
+              "min": 5.50132102246183,
+              "n": 3,
+              "range": 2.6895516559471906,
+              "stdev": 1.5528133725605142
+            },
+            "reversal_latency_s": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "stop_distance_m": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "target_jerk_peak_m_s3": {
+              "max": 213.652876953464,
+              "mean": 206.08720330230966,
+              "min": 190.955856000001,
+              "n": 3,
+              "range": 22.69702095346298,
+              "stdev": 13.10413115728443
+            },
+            "target_jerk_rms_m_s3": {
+              "max": 20.6130077975566,
+              "mean": 15.7287195949518,
+              "min": 13.2865754936494,
+              "n": 3,
+              "range": 7.326432303907202,
+              "stdev": 4.229917662860394
+            },
+            "unwanted_twist_rms_rad": {
+              "max": 0.498342392308216,
+              "mean": 0.4490554424510983,
+              "min": 0.350481542736863,
+              "n": 3,
+              "range": 0.14786084957135298,
+              "stdev": 0.08536750130262741
+            },
+            "useful_displacement_m": {
+              "max": 0.44241327047348,
+              "mean": 0.26726806163787864,
+              "min": 0.179695457220078,
+              "n": 3,
+              "range": 0.26271781325340204,
+              "stdev": 0.1516802002027615
+            }
+          },
+          "physics_hz": 120,
+          "scenario": "swing_catch_train",
+          "task_failures": 2
+        },
+        {
+          "attempts": 3,
+          "completed_tasks": 3,
+          "metrics": {
+            "controllable_swing": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "directional_efficiency": {
+              "max": 0.279073965176097,
+              "mean": 0.26623144641141966,
+              "min": 0.259810187029081,
+              "n": 3,
+              "range": 0.01926377814701602,
+              "stdev": 0.011121947498788929
+            },
+            "foot_loaded_time_fraction": {
+              "max": 0.815789473684211,
+              "mean": 0.815789473684211,
+              "min": 0.815789473684211,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "grip_retention_rate": {
+              "max": 1.0,
+              "mean": 1.0,
+              "min": 1.0,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "max_acceleration_proxy_m_s2": {
+              "max": 100.346328735352,
+              "mean": 99.7143580118818,
+              "min": 98.4504165649414,
+              "n": 3,
+              "range": 1.8959121704105968,
+              "stdev": 1.0946054019464457
+            },
+            "metric_reasons": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "movement_latency_s": {
+              "max": 0.691666666666664,
+              "mean": 0.6638888888888866,
+              "min": 0.649999999999998,
+              "n": 3,
+              "range": 0.041666666666665964,
+              "stdev": 0.024056261216234002
+            },
+            "negative_swing_work_j": {
+              "max": -0.0511864391000321,
+              "mean": -0.05294531578611997,
+              "min": -0.0538247541291639,
+              "n": 3,
+              "range": 0.0026383150291317964,
+              "stdev": 0.001523231892276278
+            },
+            "overshoot_m": {
+              "max": 0.11756817817688,
+              "mean": 0.11651345411936434,
+              "min": 0.114404006004333,
+              "n": 3,
+              "range": 0.0031641721725470112,
+              "stdev": 0.00182683565558234
+            },
+            "partial_actuator_work_j": {
+              "max": 23.9917154565278,
+              "mean": 21.9125344092048,
+              "min": 20.8729438855433,
+              "n": 3,
+              "range": 3.1187715709844994,
+              "stdev": 1.8006236060488527
+            },
+            "positive_swing_work_j": {
+              "max": 1.2799112620453,
+              "mean": 1.2486276763387834,
+              "min": 1.18606050492575,
+              "n": 3,
+              "range": 0.09385075711954993,
+              "stdev": 0.05418475988662234
+            },
+            "reversal_latency_s": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "stop_distance_m": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "target_jerk_peak_m_s3": {
+              "max": 281.433196800001,
+              "mean": 251.274083200001,
+              "min": 190.955856000001,
+              "n": 3,
+              "range": 90.47734079999998,
+              "stdev": 52.2371170664415
+            },
+            "target_jerk_rms_m_s3": {
+              "max": 32.3548953276531,
+              "mean": 28.85835550493353,
+              "min": 21.8652758594944,
+              "n": 3,
+              "range": 10.489619468158697,
+              "stdev": 6.0561846236381625
+            },
+            "unwanted_twist_rms_rad": {
+              "max": 0.154345670972858,
+              "mean": 0.14385971407267534,
+              "min": 0.138616735622584,
+              "n": 3,
+              "range": 0.015728935350274004,
+              "stdev": 0.009081105058546916
+            },
+            "useful_displacement_m": {
+              "max": 0.172399520874023,
+              "mean": 0.16437562306721967,
+              "min": 0.160363674163818,
+              "n": 3,
+              "range": 0.012035846710204995,
+              "stdev": 0.006948899338061925
+            }
+          },
+          "physics_hz": 120,
+          "scenario": "vertical_pull_train",
+          "task_failures": 0
+        }
+      ],
+      "status_counts": {
+        "completed": 3
+      }
+    },
+    "baseline": {
+      "scenarios": [
+        {
+          "attempts": 3,
+          "completed_tasks": 3,
+          "metrics": {
+            "controllable_swing": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "directional_efficiency": {
+              "max": 0.298326206774402,
+              "mean": 0.298326206774402,
+              "min": 0.298326206774402,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "foot_loaded_time_fraction": {
+              "max": 0.815789473684211,
+              "mean": 0.815789473684211,
+              "min": 0.815789473684211,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "grip_retention_rate": {
+              "max": 1.0,
+              "mean": 1.0,
+              "min": 1.0,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "max_acceleration_proxy_m_s2": {
+              "max": 98.0048446655273,
+              "mean": 98.0048446655273,
+              "min": 98.0048446655273,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "metric_reasons": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "movement_latency_s": {
+              "max": 0.616666666666664,
+              "mean": 0.616666666666664,
+              "min": 0.616666666666664,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "negative_swing_work_j": {
+              "max": -0.114818360283971,
+              "mean": -0.114818360283971,
+              "min": -0.114818360283971,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "overshoot_m": {
+              "max": 0.152675333023071,
+              "mean": 0.152675333023071,
+              "min": 0.152675333023071,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "partial_actuator_work_j": {
+              "max": 24.0032865411446,
+              "mean": 24.0032865411446,
+              "min": 24.0032865411446,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "positive_swing_work_j": {
+              "max": 1.33293015599872,
+              "mean": 1.33293015599872,
+              "min": 1.33293015599872,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "reversal_latency_s": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "stop_distance_m": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "target_jerk_peak_m_s3": {
+              "max": 208.266729834098,
+              "mean": 208.266729834098,
+              "min": 208.266729834098,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "target_jerk_rms_m_s3": {
+              "max": 25.2140686237488,
+              "mean": 25.2140686237488,
+              "min": 25.2140686237488,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "unwanted_twist_rms_rad": {
+              "max": 0.150897933431313,
+              "mean": 0.150897933431313,
+              "min": 0.150897933431313,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "useful_displacement_m": {
+              "max": 0.179050445556641,
+              "mean": 0.179050445556641,
+              "min": 0.179050445556641,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            }
+          },
+          "physics_hz": 120,
+          "scenario": "asymmetric_pull_train",
+          "task_failures": 0
+        },
+        {
+          "attempts": 3,
+          "completed_tasks": 3,
+          "metrics": {
+            "controllable_swing": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "directional_efficiency": {
+              "max": 0.247698498529177,
+              "mean": 0.247698498529177,
+              "min": 0.247698498529177,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "foot_loaded_time_fraction": {
+              "max": 0.897058823529413,
+              "mean": 0.897058823529413,
+              "min": 0.897058823529413,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "grip_retention_rate": {
+              "max": 1.0,
+              "mean": 1.0,
+              "min": 1.0,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "max_acceleration_proxy_m_s2": {
+              "max": 98.386100769043,
+              "mean": 98.386100769043,
+              "min": 98.386100769043,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "metric_reasons": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "movement_latency_s": {
+              "max": 0.608333333333331,
+              "mean": 0.608333333333331,
+              "min": 0.608333333333331,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "negative_swing_work_j": {
+              "max": -0.777992787039451,
+              "mean": -0.777992787039451,
+              "min": -0.777992787039451,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "overshoot_m": {
+              "max": 0.113674597740173,
+              "mean": 0.113674597740173,
+              "min": 0.113674597740173,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "partial_actuator_work_j": {
+              "max": 35.756950098483,
+              "mean": 35.756950098483,
+              "min": 35.756950098483,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "positive_swing_work_j": {
+              "max": 1.59546244702069,
+              "mean": 1.59546244702069,
+              "min": 1.59546244702069,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "reversal_latency_s": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "stop_distance_m": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "target_jerk_peak_m_s3": {
+              "max": 181.500644855226,
+              "mean": 181.500644855226,
+              "min": 181.500644855226,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "target_jerk_rms_m_s3": {
+              "max": 20.823667893647,
+              "mean": 20.823667893647,
+              "min": 20.823667893647,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "unwanted_twist_rms_rad": {
+              "max": 0.134393025126247,
+              "mean": 0.134393025126247,
+              "min": 0.134393025126247,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "useful_displacement_m": {
+              "max": 0.254619359970093,
+              "mean": 0.254619359970093,
+              "min": 0.254619359970093,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            }
+          },
+          "physics_hz": 120,
+          "scenario": "foot_supported_step_train",
+          "task_failures": 0
+        },
+        {
+          "attempts": 3,
+          "completed_tasks": 3,
+          "metrics": {
+            "controllable_swing": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "directional_efficiency": {
+              "max": 0.202673341656365,
+              "mean": 0.202673341656365,
+              "min": 0.202673341656365,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "foot_loaded_time_fraction": {
+              "max": 0.692105263157895,
+              "mean": 0.692105263157895,
+              "min": 0.692105263157895,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "grip_retention_rate": {
+              "max": 1.0,
+              "mean": 1.0,
+              "min": 1.0,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "max_acceleration_proxy_m_s2": {
+              "max": 104.004531860352,
+              "mean": 104.004531860352,
+              "min": 104.004531860352,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "metric_reasons": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "movement_latency_s": {
+              "max": 0.374999999999999,
+              "mean": 0.374999999999999,
+              "min": 0.374999999999999,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "negative_swing_work_j": {
+              "max": -0.449630387003223,
+              "mean": -0.449630387003223,
+              "min": -0.449630387003223,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "overshoot_m": {
+              "max": 0.20548791885376,
+              "mean": 0.20548791885376,
+              "min": 0.20548791885376,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "partial_actuator_work_j": {
+              "max": 31.8791768569445,
+              "mean": 31.8791768569445,
+              "min": 31.8791768569445,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "positive_swing_work_j": {
+              "max": 0.990796190686524,
+              "mean": 0.990796190686524,
+              "min": 0.990796190686524,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "reversal_latency_s": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "stop_distance_m": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "target_jerk_peak_m_s3": {
+              "max": 185.812359643146,
+              "mean": 185.812359643146,
+              "min": 185.812359643146,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "target_jerk_rms_m_s3": {
+              "max": 20.103618400688,
+              "mean": 20.103618400688,
+              "min": 20.103618400688,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "unwanted_twist_rms_rad": {
+              "max": 0.44751454373777,
+              "mean": 0.44751454373777,
+              "min": 0.44751454373777,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "useful_displacement_m": {
+              "max": 0.230443716049194,
+              "mean": 0.230443716049194,
+              "min": 0.230443716049194,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            }
+          },
+          "physics_hz": 120,
+          "scenario": "ground_grip_transition_train",
+          "task_failures": 0
+        },
+        {
+          "attempts": 3,
+          "completed_tasks": 0,
+          "metrics": {
+            "controllable_swing": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "directional_efficiency": {
+              "max": -0.278887480917498,
+              "mean": -0.278887480917498,
+              "min": -0.278887480917498,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "foot_loaded_time_fraction": {
+              "max": 1.0,
+              "mean": 1.0,
+              "min": 1.0,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "grip_retention_rate": {
+              "max": 1.0,
+              "mean": 1.0,
+              "min": 1.0,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "max_acceleration_proxy_m_s2": {
+              "max": 100.815490722656,
+              "mean": 100.815490722656,
+              "min": 100.815490722656,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "metric_reasons": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "movement_latency_s": {
+              "max": 0.283333333333332,
+              "mean": 0.283333333333332,
+              "min": 0.283333333333332,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "negative_swing_work_j": {
+              "max": -0.0168860425745758,
+              "mean": -0.0168860425745758,
+              "min": -0.0168860425745758,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "overshoot_m": {
+              "max": 0.0,
+              "mean": 0.0,
+              "min": 0.0,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "partial_actuator_work_j": {
+              "max": -3.82345252283072,
+              "mean": -3.82345252283072,
+              "min": -3.82345252283072,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "positive_swing_work_j": {
+              "max": 2.19232042712004,
+              "mean": 2.19232042712004,
+              "min": 2.19232042712004,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "reversal_latency_s": {
+              "max": 0.141666666666666,
+              "mean": 0.141666666666666,
+              "min": 0.141666666666666,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "stop_distance_m": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "target_jerk_peak_m_s3": {
+              "max": 216.000000000001,
+              "mean": 216.000000000001,
+              "min": 216.000000000001,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "target_jerk_rms_m_s3": {
+              "max": 32.5259803078376,
+              "mean": 32.5259803078376,
+              "min": 32.5259803078376,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "unwanted_twist_rms_rad": {
+              "max": 0.119145052724452,
+              "mean": 0.119145052724452,
+              "min": 0.119145052724452,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "useful_displacement_m": {
+              "max": -0.0667930245399475,
+              "mean": -0.0667930245399475,
+              "min": -0.0667930245399475,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            }
+          },
+          "physics_hz": 120,
+          "scenario": "lateral_traverse_train",
+          "task_failures": 3
+        },
+        {
+          "attempts": 3,
+          "completed_tasks": 3,
+          "metrics": {
+            "controllable_swing": {
+              "max": 0.581737557582855,
+              "mean": 0.581737557582855,
+              "min": 0.581737557582855,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "directional_efficiency": {
+              "max": -0.0154769095963583,
+              "mean": -0.0154769095963583,
+              "min": -0.0154769095963583,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "foot_loaded_time_fraction": {
+              "max": 0.7,
+              "mean": 0.7,
+              "min": 0.7,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "grip_retention_rate": {
+              "max": 1.0,
+              "mean": 1.0,
+              "min": 1.0,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "max_acceleration_proxy_m_s2": {
+              "max": 47.0501556396484,
+              "mean": 47.0501556396484,
+              "min": 47.0501556396484,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "metric_reasons": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "movement_latency_s": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "negative_swing_work_j": {
+              "max": -0.064162113579611,
+              "mean": -0.064162113579611,
+              "min": -0.064162113579611,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "overshoot_m": {
+              "max": 0.0361427772045135,
+              "mean": 0.0361427772045135,
+              "min": 0.0361427772045135,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "partial_actuator_work_j": {
+              "max": 0.110239118182412,
+              "mean": 0.110239118182412,
+              "min": 0.110239118182412,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "positive_swing_work_j": {
+              "max": 4.76490763717641,
+              "mean": 4.76490763717641,
+              "min": 4.76490763717641,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "reversal_latency_s": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "stop_distance_m": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "target_jerk_peak_m_s3": {
+              "max": 216.000000000001,
+              "mean": 216.000000000001,
+              "min": 216.000000000001,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "target_jerk_rms_m_s3": {
+              "max": 29.826514174043,
+              "mean": 29.826514174043,
+              "min": 29.826514174043,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "unwanted_twist_rms_rad": {
+              "max": 0.210001733744889,
+              "mean": 0.210001733744889,
+              "min": 0.210001733744889,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "useful_displacement_m": {
+              "max": -0.00566786527633667,
+              "mean": -0.00566786527633667,
+              "min": -0.00566786527633667,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            }
+          },
+          "physics_hz": 120,
+          "scenario": "one_hand_hang_train",
+          "task_failures": 0
+        },
+        {
+          "attempts": 3,
+          "completed_tasks": 3,
+          "metrics": {
+            "controllable_swing": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "directional_efficiency": {
+              "max": 0.460383616364828,
+              "mean": 0.460383616364828,
+              "min": 0.460383616364828,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "foot_loaded_time_fraction": {
+              "max": 0.0593749999999988,
+              "mean": 0.0593749999999988,
+              "min": 0.0593749999999988,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "grip_retention_rate": {
+              "max": 1.0,
+              "mean": 1.0,
+              "min": 1.0,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "max_acceleration_proxy_m_s2": {
+              "max": 69.5758895874023,
+              "mean": 69.5758895874023,
+              "min": 69.5758895874023,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "metric_reasons": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "movement_latency_s": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "negative_swing_work_j": {
+              "max": -0.130357697730263,
+              "mean": -0.130357697730263,
+              "min": -0.130357697730263,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "overshoot_m": {
+              "max": 0.385551582574844,
+              "mean": 0.385551582574844,
+              "min": 0.385551582574844,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "partial_actuator_work_j": {
+              "max": 2.72046530484992,
+              "mean": 2.72046530484992,
+              "min": 2.72046530484992,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "positive_swing_work_j": {
+              "max": 8.54313564120481,
+              "mean": 8.54313564120481,
+              "min": 8.54313564120481,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "reversal_latency_s": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "stop_distance_m": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "target_jerk_peak_m_s3": {
+              "max": 194.610274467051,
+              "mean": 194.610274467051,
+              "min": 194.610274467051,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "target_jerk_rms_m_s3": {
+              "max": 23.2229256726663,
+              "mean": 23.2229256726663,
+              "min": 23.2229256726663,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "unwanted_twist_rms_rad": {
+              "max": 0.366789899457175,
+              "mean": 0.366789899457175,
+              "min": 0.366789899457175,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "useful_displacement_m": {
+              "max": 0.405551582574844,
+              "mean": 0.405551582574844,
+              "min": 0.405551582574844,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            }
+          },
+          "physics_hz": 120,
+          "scenario": "swing_catch_train",
+          "task_failures": 0
+        },
+        {
+          "attempts": 3,
+          "completed_tasks": 3,
+          "metrics": {
+            "controllable_swing": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "directional_efficiency": {
+              "max": 0.331172009193984,
+              "mean": 0.331172009193984,
+              "min": 0.331172009193984,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "foot_loaded_time_fraction": {
+              "max": 0.815789473684211,
+              "mean": 0.815789473684211,
+              "min": 0.815789473684211,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "grip_retention_rate": {
+              "max": 1.0,
+              "mean": 1.0,
+              "min": 1.0,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "max_acceleration_proxy_m_s2": {
+              "max": 98.5089950561523,
+              "mean": 98.5089950561523,
+              "min": 98.5089950561523,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "metric_reasons": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "movement_latency_s": {
+              "max": 0.608333333333331,
+              "mean": 0.608333333333331,
+              "min": 0.608333333333331,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "negative_swing_work_j": {
+              "max": -0.0687193985407551,
+              "mean": -0.0687193985407551,
+              "min": -0.0687193985407551,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "overshoot_m": {
+              "max": 0.147453589439392,
+              "mean": 0.147453589439392,
+              "min": 0.147453589439392,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "partial_actuator_work_j": {
+              "max": 25.2555909708835,
+              "mean": 25.2555909708835,
+              "min": 25.2555909708835,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "positive_swing_work_j": {
+              "max": 1.11373833675558,
+              "mean": 1.11373833675558,
+              "min": 1.11373833675558,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "reversal_latency_s": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "stop_distance_m": {
+              "max": null,
+              "mean": null,
+              "min": null,
+              "n": 0,
+              "range": null,
+              "stdev": null
+            },
+            "target_jerk_peak_m_s3": {
+              "max": 197.196872205598,
+              "mean": 197.196872205598,
+              "min": 197.196872205598,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "target_jerk_rms_m_s3": {
+              "max": 24.9315973041387,
+              "mean": 24.9315973041387,
+              "min": 24.9315973041387,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "unwanted_twist_rms_rad": {
+              "max": 0.129467500420665,
+              "mean": 0.129467500420665,
+              "min": 0.129467500420665,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            },
+            "useful_displacement_m": {
+              "max": 0.198075294494629,
+              "mean": 0.198075294494629,
+              "min": 0.198075294494629,
+              "n": 3,
+              "range": 0.0,
+              "stdev": 0.0
+            }
+          },
+          "physics_hz": 120,
+          "scenario": "vertical_pull_train",
+          "task_failures": 0
+        }
+      ],
+      "status_counts": {
+        "completed": 3
+      }
+    }
+  },
+  "holdout_accessed": false,
+  "human_sessions": 0,
+  "pareto": [
+    {
+      "candidate_id": "e8941a99a5f7c36bee1b68f4e213d50b336162b4e99222777038d7a19f5b2edf",
+      "elapsed_wall_s": 9.23104730000341,
+      "optuna_trial": 0,
+      "parameter_overrides": {
+        "traversal_input_ramp_s": 0.15155457,
+        "traversal_speed_m_s": 0.3151714,
+        "traversal_target_max_acceleration": 0.7956494,
+        "traversal_target_max_rate": 0.1687839
+      },
+      "path": "trials\\random-0001_d7fedca989ab46aa9426726fbab7a52b",
+      "phase": "random",
+      "reason": "completed",
+      "sampler": "RandomSampler",
+      "score": {
+        "decision": "no demonstrated robust practical gain",
+        "directions": [
+          "maximize",
+          "maximize",
+          "maximize",
+          "maximize"
+        ],
+        "meaningful_screening_gain": false,
+        "objective_names": [
+          "directed_progress",
+          "precision",
+          "physical_quality",
+          "reliability"
+        ],
+        "per_cell": [
+          {
+            "axis": "directed_progress",
+            "baseline_mean": 0.179050445556641,
+            "baseline_sd": 0.0,
+            "candidate": 0.171057462692261,
+            "gain": -0.44640954896990254,
+            "metric": "useful_displacement_m",
+            "scale": 0.017905044555664103,
+            "scenario": "asymmetric_pull_train"
+          },
+          {
+            "axis": "precision",
+            "baseline_mean": 0.616666666666664,
+            "baseline_sd": 0.0,
+            "candidate": 0.699999999999998,
+            "gain": -1.3513513513513666,
+            "metric": "movement_latency_s",
+            "scale": 0.061666666666666405,
+            "scenario": "asymmetric_pull_train"
+          },
+          {
+            "axis": "precision",
+            "baseline_mean": 0.152675333023071,
+            "baseline_sd": 0.0,
+            "candidate": 0.143128695487976,
+            "gain": 0.625290107187938,
+            "metric": "overshoot_m",
+            "scale": 0.015267533302307103,
+            "scenario": "asymmetric_pull_train"
+          },
+          {
+            "axis": "physical_quality",
+            "baseline_mean": 0.150897933431313,
+            "baseline_sd": 0.0,
+            "candidate": 0.185656887556778,
+            "gain": -1.158631804182167,
+            "metric": "unwanted_twist_rms_rad",
+            "scale": 0.03,
+            "scenario": "asymmetric_pull_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 1.0,
+            "baseline_sd": 0.0,
+            "candidate": 1.0,
+            "gain": 0.0,
+            "metric": "completion_rate",
+            "scale": 0.1,
+            "scenario": "asymmetric_pull_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 1.0,
+            "baseline_sd": 0.0,
+            "candidate": 1.0,
+            "gain": 0.0,
+            "metric": "grip_retention_rate",
+            "scale": 0.1,
+            "scenario": "asymmetric_pull_train"
+          },
+          {
+            "axis": "directed_progress",
+            "baseline_mean": 0.254619359970093,
+            "baseline_sd": 0.0,
+            "candidate": 0.246406674385071,
+            "gain": -0.3225475700664177,
+            "metric": "useful_displacement_m",
+            "scale": 0.0254619359970093,
+            "scenario": "foot_supported_step_train"
+          },
+          {
+            "axis": "precision",
+            "baseline_mean": 0.608333333333331,
+            "baseline_sd": 0.0,
+            "candidate": 0.691666666666664,
+            "gain": -1.3698630136986305,
+            "metric": "movement_latency_s",
+            "scale": 0.0608333333333331,
+            "scenario": "foot_supported_step_train"
+          },
+          {
+            "axis": "precision",
+            "baseline_mean": 0.113674597740173,
+            "baseline_sd": 0.0,
+            "candidate": 0.103991823196411,
+            "gain": 0.8517975639459926,
+            "metric": "overshoot_m",
+            "scale": 0.0113674597740173,
+            "scenario": "foot_supported_step_train"
+          },
+          {
+            "axis": "physical_quality",
+            "baseline_mean": 0.134393025126247,
+            "baseline_sd": 0.0,
+            "candidate": 0.138827873929054,
+            "gain": -0.1478282934268993,
+            "metric": "unwanted_twist_rms_rad",
+            "scale": 0.03,
+            "scenario": "foot_supported_step_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 1.0,
+            "baseline_sd": 0.0,
+            "candidate": 1.0,
+            "gain": 0.0,
+            "metric": "completion_rate",
+            "scale": 0.1,
+            "scenario": "foot_supported_step_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 1.0,
+            "baseline_sd": 0.0,
+            "candidate": 1.0,
+            "gain": 0.0,
+            "metric": "grip_retention_rate",
+            "scale": 0.1,
+            "scenario": "foot_supported_step_train"
+          },
+          {
+            "axis": "directed_progress",
+            "baseline_mean": 0.230443716049194,
+            "baseline_sd": 0.0,
+            "candidate": 0.21626615524292,
+            "gain": -0.6152287877204445,
+            "metric": "useful_displacement_m",
+            "scale": 0.0230443716049194,
+            "scenario": "ground_grip_transition_train"
+          },
+          {
+            "axis": "precision",
+            "baseline_mean": 0.374999999999999,
+            "baseline_sd": 0.0,
+            "candidate": 0.391666666666665,
+            "gain": -0.44444444444442777,
+            "metric": "movement_latency_s",
+            "scale": 0.0374999999999999,
+            "scenario": "ground_grip_transition_train"
+          },
+          {
+            "axis": "precision",
+            "baseline_mean": 0.20548791885376,
+            "baseline_sd": 0.0,
+            "candidate": 0.184780311584473,
+            "gain": 1.0077286968886974,
+            "metric": "overshoot_m",
+            "scale": 0.020548791885376002,
+            "scenario": "ground_grip_transition_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 1.0,
+            "baseline_sd": 0.0,
+            "candidate": 1.0,
+            "gain": 0.0,
+            "metric": "completion_rate",
+            "scale": 0.1,
+            "scenario": "ground_grip_transition_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 1.0,
+            "baseline_sd": 0.0,
+            "candidate": 1.0,
+            "gain": 0.0,
+            "metric": "grip_retention_rate",
+            "scale": 0.1,
+            "scenario": "ground_grip_transition_train"
+          },
+          {
+            "axis": "directed_progress",
+            "baseline_mean": -0.0667930245399475,
+            "baseline_sd": 0.0,
+            "candidate": -0.0644712150096893,
+            "gain": 0.23218095302581926,
+            "metric": "useful_displacement_m",
+            "scale": 0.01,
+            "scenario": "lateral_traverse_train"
+          },
+          {
+            "axis": "precision",
+            "baseline_mean": 0.283333333333332,
+            "baseline_sd": 0.0,
+            "candidate": 0.283333333333332,
+            "gain": -0.0,
+            "metric": "movement_latency_s",
+            "scale": 0.03,
+            "scenario": "lateral_traverse_train"
+          },
+          {
+            "axis": "precision",
+            "baseline_mean": 0.0,
+            "baseline_sd": 0.0,
+            "candidate": 0.0,
+            "gain": -0.0,
+            "metric": "overshoot_m",
+            "scale": 0.01,
+            "scenario": "lateral_traverse_train"
+          },
+          {
+            "axis": "precision",
+            "baseline_mean": 0.141666666666666,
+            "baseline_sd": 0.0,
+            "candidate": 0.141666666666666,
+            "gain": -0.0,
+            "metric": "reversal_latency_s",
+            "scale": 0.05,
+            "scenario": "lateral_traverse_train"
+          },
+          {
+            "axis": "physical_quality",
+            "baseline_mean": 0.119145052724452,
+            "baseline_sd": 0.0,
+            "candidate": 0.162449935391316,
+            "gain": -1.4434960888954667,
+            "metric": "unwanted_twist_rms_rad",
+            "scale": 0.03,
+            "scenario": "lateral_traverse_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 0.0,
+            "baseline_sd": 0.0,
+            "candidate": 0.0,
+            "gain": 0.0,
+            "metric": "completion_rate",
+            "scale": 0.1,
+            "scenario": "lateral_traverse_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 1.0,
+            "baseline_sd": 0.0,
+            "candidate": 1.0,
+            "gain": 0.0,
+            "metric": "grip_retention_rate",
+            "scale": 0.1,
+            "scenario": "lateral_traverse_train"
+          },
+          {
+            "axis": "physical_quality",
+            "baseline_mean": 0.581737557582855,
+            "baseline_sd": 0.0,
+            "candidate": 0.569230098385779,
+            "gain": -0.12507459197075965,
+            "metric": "controllable_swing",
+            "scale": 0.1,
+            "scenario": "one_hand_hang_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 1.0,
+            "baseline_sd": 0.0,
+            "candidate": 1.0,
+            "gain": 0.0,
+            "metric": "completion_rate",
+            "scale": 0.1,
+            "scenario": "one_hand_hang_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 1.0,
+            "baseline_sd": 0.0,
+            "candidate": 1.0,
+            "gain": 0.0,
+            "metric": "grip_retention_rate",
+            "scale": 0.1,
+            "scenario": "one_hand_hang_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 1.0,
+            "baseline_sd": 0.0,
+            "candidate": 1.0,
+            "gain": 0.0,
+            "metric": "completion_rate",
+            "scale": 0.1,
+            "scenario": "swing_catch_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 1.0,
+            "baseline_sd": 0.0,
+            "candidate": 1.0,
+            "gain": 0.0,
+            "metric": "grip_retention_rate",
+            "scale": 0.1,
+            "scenario": "swing_catch_train"
+          },
+          {
+            "axis": "directed_progress",
+            "baseline_mean": 0.198075294494629,
+            "baseline_sd": 0.0,
+            "candidate": 0.172399520874023,
+            "gain": -1.2962633066438387,
+            "metric": "useful_displacement_m",
+            "scale": 0.0198075294494629,
+            "scenario": "vertical_pull_train"
+          },
+          {
+            "axis": "precision",
+            "baseline_mean": 0.608333333333331,
+            "baseline_sd": 0.0,
+            "candidate": 0.691666666666664,
+            "gain": -1.3698630136986305,
+            "metric": "movement_latency_s",
+            "scale": 0.0608333333333331,
+            "scenario": "vertical_pull_train"
+          },
+          {
+            "axis": "precision",
+            "baseline_mean": 0.147453589439392,
+            "baseline_sd": 0.0,
+            "candidate": 0.114404006004333,
+            "gain": 2.2413549619721804,
+            "metric": "overshoot_m",
+            "scale": 0.0147453589439392,
+            "scenario": "vertical_pull_train"
+          },
+          {
+            "axis": "physical_quality",
+            "baseline_mean": 0.129467500420665,
+            "baseline_sd": 0.0,
+            "candidate": 0.154345670972858,
+            "gain": -0.8292723517397673,
+            "metric": "unwanted_twist_rms_rad",
+            "scale": 0.03,
+            "scenario": "vertical_pull_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 1.0,
+            "baseline_sd": 0.0,
+            "candidate": 1.0,
+            "gain": 0.0,
+            "metric": "completion_rate",
+            "scale": 0.1,
+            "scenario": "vertical_pull_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 1.0,
+            "baseline_sd": 0.0,
+            "candidate": 1.0,
+            "gain": 0.0,
+            "metric": "grip_retention_rate",
+            "scale": 0.1,
+            "scenario": "vertical_pull_train"
+          }
+        ],
+        "regression_flags": [],
+        "values": [
+          -1.2962633066438387,
+          -1.3698630136986305,
+          -1.4434960888954667,
+          0.0
+        ]
+      },
+      "status": "completed",
+      "trial_id": "random-0001"
+    },
+    {
+      "candidate_id": "d2b9bedb66c94dd57b3ac5c10be8be37c23f282b30d402219457b10a232bf862",
+      "elapsed_wall_s": 10.793563100000028,
+      "optuna_trial": 1,
+      "parameter_overrides": {
+        "traversal_input_ramp_s": 0.10353623,
+        "traversal_speed_m_s": 0.20661109,
+        "traversal_target_max_acceleration": 1.17263832,
+        "traversal_target_max_rate": 0.1840169
+      },
+      "path": "trials\\random-0002_65cd89f187954ee696fa25eac478005d",
+      "phase": "random",
+      "reason": "completed",
+      "regression_confirmation": {
+        "candidate_id": "d2b9bedb66c94dd57b3ac5c10be8be37c23f282b30d402219457b10a232bf862",
+        "elapsed_wall_s": 10.350601400001324,
+        "parameter_overrides": {
+          "traversal_input_ramp_s": 0.10353623,
+          "traversal_speed_m_s": 0.20661109,
+          "traversal_target_max_acceleration": 1.17263832,
+          "traversal_target_max_rate": 0.1840169
+        },
+        "path": "trials\\confirm-0002_8e0a7385008a49c3a123ce6f536b5d1a",
+        "reason": "completed",
+        "score": {
+          "decision": "no demonstrated robust practical gain",
+          "directions": [
+            "maximize",
+            "maximize",
+            "maximize",
+            "maximize"
+          ],
+          "meaningful_screening_gain": false,
+          "objective_names": [
+            "directed_progress",
+            "precision",
+            "physical_quality",
+            "reliability"
+          ],
+          "per_cell": [
+            {
+              "axis": "directed_progress",
+              "baseline_mean": 0.179050445556641,
+              "baseline_sd": 0.0,
+              "candidate": 0.152729272842407,
+              "gain": -1.4700422907301585,
+              "metric": "useful_displacement_m",
+              "scale": 0.017905044555664103,
+              "scenario": "asymmetric_pull_train"
+            },
+            {
+              "axis": "precision",
+              "baseline_mean": 0.616666666666664,
+              "baseline_sd": 0.0,
+              "candidate": 0.658333333333331,
+              "gain": -0.6756756756756833,
+              "metric": "movement_latency_s",
+              "scale": 0.061666666666666405,
+              "scenario": "asymmetric_pull_train"
+            },
+            {
+              "axis": "precision",
+              "baseline_mean": 0.152675333023071,
+              "baseline_sd": 0.0,
+              "candidate": 0.133692207336426,
+              "gain": 1.2433655988015062,
+              "metric": "overshoot_m",
+              "scale": 0.015267533302307103,
+              "scenario": "asymmetric_pull_train"
+            },
+            {
+              "axis": "physical_quality",
+              "baseline_mean": 0.150897933431313,
+              "baseline_sd": 0.0,
+              "candidate": 0.175349715634803,
+              "gain": -0.8150594067830003,
+              "metric": "unwanted_twist_rms_rad",
+              "scale": 0.03,
+              "scenario": "asymmetric_pull_train"
+            },
+            {
+              "axis": "reliability",
+              "baseline_mean": 1.0,
+              "baseline_sd": 0.0,
+              "candidate": 1.0,
+              "gain": 0.0,
+              "metric": "completion_rate",
+              "scale": 0.1,
+              "scenario": "asymmetric_pull_train"
+            },
+            {
+              "axis": "reliability",
+              "baseline_mean": 1.0,
+              "baseline_sd": 0.0,
+              "candidate": 1.0,
+              "gain": 0.0,
+              "metric": "grip_retention_rate",
+              "scale": 0.1,
+              "scenario": "asymmetric_pull_train"
+            },
+            {
+              "axis": "directed_progress",
+              "baseline_mean": 0.254619359970093,
+              "baseline_sd": 0.0,
+              "candidate": 0.235161304473877,
+              "gain": -0.7642017283564567,
+              "metric": "useful_displacement_m",
+              "scale": 0.0254619359970093,
+              "scenario": "foot_supported_step_train"
+            },
+            {
+              "axis": "precision",
+              "baseline_mean": 0.608333333333331,
+              "baseline_sd": 0.0,
+              "candidate": 0.649999999999998,
+              "gain": -0.6849315068493244,
+              "metric": "movement_latency_s",
+              "scale": 0.0608333333333331,
+              "scenario": "foot_supported_step_train"
+            },
+            {
+              "axis": "precision",
+              "baseline_mean": 0.113674597740173,
+              "baseline_sd": 0.0,
+              "candidate": 0.0939429569244385,
+              "gain": 1.735800364197045,
+              "metric": "overshoot_m",
+              "scale": 0.0113674597740173,
+              "scenario": "foot_supported_step_train"
+            },
+            {
+              "axis": "physical_quality",
+              "baseline_mean": 0.134393025126247,
+              "baseline_sd": 0.0,
+              "candidate": 0.127331283330241,
+              "gain": 0.23539139320020072,
+              "metric": "unwanted_twist_rms_rad",
+              "scale": 0.03,
+              "scenario": "foot_supported_step_train"
+            },
+            {
+              "axis": "reliability",
+              "baseline_mean": 1.0,
+              "baseline_sd": 0.0,
+              "candidate": 1.0,
+              "gain": 0.0,
+              "metric": "completion_rate",
+              "scale": 0.1,
+              "scenario": "foot_supported_step_train"
+            },
+            {
+              "axis": "reliability",
+              "baseline_mean": 1.0,
+              "baseline_sd": 0.0,
+              "candidate": 1.0,
+              "gain": 0.0,
+              "metric": "grip_retention_rate",
+              "scale": 0.1,
+              "scenario": "foot_supported_step_train"
+            },
+            {
+              "axis": "directed_progress",
+              "baseline_mean": 0.230443716049194,
+              "baseline_sd": 0.0,
+              "candidate": 0.193341851234436,
+              "gain": -1.6100185091112518,
+              "metric": "useful_displacement_m",
+              "scale": 0.0230443716049194,
+              "scenario": "ground_grip_transition_train"
+            },
+            {
+              "axis": "precision",
+              "baseline_mean": 0.374999999999999,
+              "baseline_sd": 0.0,
+              "candidate": 0.416666666666665,
+              "gain": -1.1111111111110967,
+              "metric": "movement_latency_s",
+              "scale": 0.0374999999999999,
+              "scenario": "ground_grip_transition_train"
+            },
+            {
+              "axis": "precision",
+              "baseline_mean": 0.20548791885376,
+              "baseline_sd": 0.0,
+              "candidate": 0.170776438713074,
+              "gain": 1.6892224289540443,
+              "metric": "overshoot_m",
+              "scale": 0.020548791885376002,
+              "scenario": "ground_grip_transition_train"
+            },
+            {
+              "axis": "reliability",
+              "baseline_mean": 1.0,
+              "baseline_sd": 0.0,
+              "candidate": 1.0,
+              "gain": 0.0,
+              "metric": "completion_rate",
+              "scale": 0.1,
+              "scenario": "ground_grip_transition_train"
+            },
+            {
+              "axis": "reliability",
+              "baseline_mean": 1.0,
+              "baseline_sd": 0.0,
+              "candidate": 1.0,
+              "gain": 0.0,
+              "metric": "grip_retention_rate",
+              "scale": 0.1,
+              "scenario": "ground_grip_transition_train"
+            },
+            {
+              "axis": "directed_progress",
+              "baseline_mean": -0.0667930245399475,
+              "baseline_sd": 0.0,
+              "candidate": -0.0359430611133575,
+              "gain": 3.0849963426589992,
+              "metric": "useful_displacement_m",
+              "scale": 0.01,
+              "scenario": "lateral_traverse_train"
+            },
+            {
+              "axis": "precision",
+              "baseline_mean": 0.283333333333332,
+              "baseline_sd": 0.0,
+              "candidate": 0.141666666666666,
+              "gain": 4.7222222222222,
+              "metric": "movement_latency_s",
+              "scale": 0.03,
+              "scenario": "lateral_traverse_train"
+            },
+            {
+              "axis": "precision",
+              "baseline_mean": 0.0,
+              "baseline_sd": 0.0,
+              "candidate": 0.0,
+              "gain": -0.0,
+              "metric": "overshoot_m",
+              "scale": 0.01,
+              "scenario": "lateral_traverse_train"
+            },
+            {
+              "axis": "precision",
+              "baseline_mean": 0.141666666666666,
+              "baseline_sd": 0.0,
+              "candidate": 0.125,
+              "gain": 0.33333333333331994,
+              "metric": "reversal_latency_s",
+              "scale": 0.05,
+              "scenario": "lateral_traverse_train"
+            },
+            {
+              "axis": "physical_quality",
+              "baseline_mean": 0.119145052724452,
+              "baseline_sd": 0.0,
+              "candidate": 0.125777995499672,
+              "gain": -0.22109809250733342,
+              "metric": "unwanted_twist_rms_rad",
+              "scale": 0.03,
+              "scenario": "lateral_traverse_train"
+            },
+            {
+              "axis": "reliability",
+              "baseline_mean": 0.0,
+              "baseline_sd": 0.0,
+              "candidate": 0.0,
+              "gain": 0.0,
+              "metric": "completion_rate",
+              "scale": 0.1,
+              "scenario": "lateral_traverse_train"
+            },
+            {
+              "axis": "reliability",
+              "baseline_mean": 1.0,
+              "baseline_sd": 0.0,
+              "candidate": 1.0,
+              "gain": 0.0,
+              "metric": "grip_retention_rate",
+              "scale": 0.1,
+              "scenario": "lateral_traverse_train"
+            },
+            {
+              "axis": "physical_quality",
+              "baseline_mean": 0.581737557582855,
+              "baseline_sd": 0.0,
+              "candidate": 0.594057263055787,
+              "gain": 0.12319705472932041,
+              "metric": "controllable_swing",
+              "scale": 0.1,
+              "scenario": "one_hand_hang_train"
+            },
+            {
+              "axis": "reliability",
+              "baseline_mean": 1.0,
+              "baseline_sd": 0.0,
+              "candidate": 1.0,
+              "gain": 0.0,
+              "metric": "completion_rate",
+              "scale": 0.1,
+              "scenario": "one_hand_hang_train"
+            },
+            {
+              "axis": "reliability",
+              "baseline_mean": 1.0,
+              "baseline_sd": 0.0,
+              "candidate": 1.0,
+              "gain": 0.0,
+              "metric": "grip_retention_rate",
+              "scale": 0.1,
+              "scenario": "one_hand_hang_train"
+            },
+            {
+              "axis": "reliability",
+              "baseline_mean": 1.0,
+              "baseline_sd": 0.0,
+              "candidate": 0.0,
+              "gain": -10.0,
+              "metric": "completion_rate",
+              "scale": 0.1,
+              "scenario": "swing_catch_train"
+            },
+            {
+              "axis": "reliability",
+              "baseline_mean": 1.0,
+              "baseline_sd": 0.0,
+              "candidate": 0.0,
+              "gain": -10.0,
+              "metric": "grip_retention_rate",
+              "scale": 0.1,
+              "scenario": "swing_catch_train"
+            },
+            {
+              "axis": "directed_progress",
+              "baseline_mean": 0.198075294494629,
+              "baseline_sd": 0.0,
+              "candidate": 0.160363674163818,
+              "gain": -1.9039032821851276,
+              "metric": "useful_displacement_m",
+              "scale": 0.0198075294494629,
+              "scenario": "vertical_pull_train"
+            },
+            {
+              "axis": "precision",
+              "baseline_mean": 0.608333333333331,
+              "baseline_sd": 0.0,
+              "candidate": 0.649999999999998,
+              "gain": -0.6849315068493244,
+              "metric": "movement_latency_s",
+              "scale": 0.0608333333333331,
+              "scenario": "vertical_pull_train"
+            },
+            {
+              "axis": "precision",
+              "baseline_mean": 0.147453589439392,
+              "baseline_sd": 0.0,
+              "candidate": 0.11756817817688,
+              "gain": 2.026767295128873,
+              "metric": "overshoot_m",
+              "scale": 0.0147453589439392,
+              "scenario": "vertical_pull_train"
+            },
+            {
+              "axis": "physical_quality",
+              "baseline_mean": 0.129467500420665,
+              "baseline_sd": 0.0,
+              "candidate": 0.138616735622584,
+              "gain": -0.30497450673063387,
+              "metric": "unwanted_twist_rms_rad",
+              "scale": 0.03,
+              "scenario": "vertical_pull_train"
+            },
+            {
+              "axis": "reliability",
+              "baseline_mean": 1.0,
+              "baseline_sd": 0.0,
+              "candidate": 1.0,
+              "gain": 0.0,
+              "metric": "completion_rate",
+              "scale": 0.1,
+              "scenario": "vertical_pull_train"
+            },
+            {
+              "axis": "reliability",
+              "baseline_mean": 1.0,
+              "baseline_sd": 0.0,
+              "candidate": 1.0,
+              "gain": 0.0,
+              "metric": "grip_retention_rate",
+              "scale": 0.1,
+              "scenario": "vertical_pull_train"
+            }
+          ],
+          "regression_flags": [
+            "lost baseline task completion: swing_catch_train"
+          ],
+          "values": [
+            -1.9039032821851276,
+            -1.1111111111110967,
+            -0.8150594067830003,
+            -10.0
+          ]
+        },
+        "status": "completed",
+        "trial_id": "confirm-0002"
+      },
+      "sampler": "RandomSampler",
+      "score": {
+        "decision": "no demonstrated robust practical gain",
+        "directions": [
+          "maximize",
+          "maximize",
+          "maximize",
+          "maximize"
+        ],
+        "meaningful_screening_gain": false,
+        "objective_names": [
+          "directed_progress",
+          "precision",
+          "physical_quality",
+          "reliability"
+        ],
+        "per_cell": [
+          {
+            "axis": "directed_progress",
+            "baseline_mean": 0.179050445556641,
+            "baseline_sd": 0.0,
+            "candidate": 0.152729272842407,
+            "gain": -1.4700422907301585,
+            "metric": "useful_displacement_m",
+            "scale": 0.017905044555664103,
+            "scenario": "asymmetric_pull_train"
+          },
+          {
+            "axis": "precision",
+            "baseline_mean": 0.616666666666664,
+            "baseline_sd": 0.0,
+            "candidate": 0.658333333333331,
+            "gain": -0.6756756756756833,
+            "metric": "movement_latency_s",
+            "scale": 0.061666666666666405,
+            "scenario": "asymmetric_pull_train"
+          },
+          {
+            "axis": "precision",
+            "baseline_mean": 0.152675333023071,
+            "baseline_sd": 0.0,
+            "candidate": 0.133692207336426,
+            "gain": 1.2433655988015062,
+            "metric": "overshoot_m",
+            "scale": 0.015267533302307103,
+            "scenario": "asymmetric_pull_train"
+          },
+          {
+            "axis": "physical_quality",
+            "baseline_mean": 0.150897933431313,
+            "baseline_sd": 0.0,
+            "candidate": 0.175349715634803,
+            "gain": -0.8150594067830003,
+            "metric": "unwanted_twist_rms_rad",
+            "scale": 0.03,
+            "scenario": "asymmetric_pull_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 1.0,
+            "baseline_sd": 0.0,
+            "candidate": 1.0,
+            "gain": 0.0,
+            "metric": "completion_rate",
+            "scale": 0.1,
+            "scenario": "asymmetric_pull_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 1.0,
+            "baseline_sd": 0.0,
+            "candidate": 1.0,
+            "gain": 0.0,
+            "metric": "grip_retention_rate",
+            "scale": 0.1,
+            "scenario": "asymmetric_pull_train"
+          },
+          {
+            "axis": "directed_progress",
+            "baseline_mean": 0.254619359970093,
+            "baseline_sd": 0.0,
+            "candidate": 0.235161304473877,
+            "gain": -0.7642017283564567,
+            "metric": "useful_displacement_m",
+            "scale": 0.0254619359970093,
+            "scenario": "foot_supported_step_train"
+          },
+          {
+            "axis": "precision",
+            "baseline_mean": 0.608333333333331,
+            "baseline_sd": 0.0,
+            "candidate": 0.649999999999998,
+            "gain": -0.6849315068493244,
+            "metric": "movement_latency_s",
+            "scale": 0.0608333333333331,
+            "scenario": "foot_supported_step_train"
+          },
+          {
+            "axis": "precision",
+            "baseline_mean": 0.113674597740173,
+            "baseline_sd": 0.0,
+            "candidate": 0.0939429569244385,
+            "gain": 1.735800364197045,
+            "metric": "overshoot_m",
+            "scale": 0.0113674597740173,
+            "scenario": "foot_supported_step_train"
+          },
+          {
+            "axis": "physical_quality",
+            "baseline_mean": 0.134393025126247,
+            "baseline_sd": 0.0,
+            "candidate": 0.127331283330241,
+            "gain": 0.23539139320020072,
+            "metric": "unwanted_twist_rms_rad",
+            "scale": 0.03,
+            "scenario": "foot_supported_step_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 1.0,
+            "baseline_sd": 0.0,
+            "candidate": 1.0,
+            "gain": 0.0,
+            "metric": "completion_rate",
+            "scale": 0.1,
+            "scenario": "foot_supported_step_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 1.0,
+            "baseline_sd": 0.0,
+            "candidate": 1.0,
+            "gain": 0.0,
+            "metric": "grip_retention_rate",
+            "scale": 0.1,
+            "scenario": "foot_supported_step_train"
+          },
+          {
+            "axis": "directed_progress",
+            "baseline_mean": 0.230443716049194,
+            "baseline_sd": 0.0,
+            "candidate": 0.193341851234436,
+            "gain": -1.6100185091112518,
+            "metric": "useful_displacement_m",
+            "scale": 0.0230443716049194,
+            "scenario": "ground_grip_transition_train"
+          },
+          {
+            "axis": "precision",
+            "baseline_mean": 0.374999999999999,
+            "baseline_sd": 0.0,
+            "candidate": 0.416666666666665,
+            "gain": -1.1111111111110967,
+            "metric": "movement_latency_s",
+            "scale": 0.0374999999999999,
+            "scenario": "ground_grip_transition_train"
+          },
+          {
+            "axis": "precision",
+            "baseline_mean": 0.20548791885376,
+            "baseline_sd": 0.0,
+            "candidate": 0.170776438713074,
+            "gain": 1.6892224289540443,
+            "metric": "overshoot_m",
+            "scale": 0.020548791885376002,
+            "scenario": "ground_grip_transition_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 1.0,
+            "baseline_sd": 0.0,
+            "candidate": 1.0,
+            "gain": 0.0,
+            "metric": "completion_rate",
+            "scale": 0.1,
+            "scenario": "ground_grip_transition_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 1.0,
+            "baseline_sd": 0.0,
+            "candidate": 1.0,
+            "gain": 0.0,
+            "metric": "grip_retention_rate",
+            "scale": 0.1,
+            "scenario": "ground_grip_transition_train"
+          },
+          {
+            "axis": "directed_progress",
+            "baseline_mean": -0.0667930245399475,
+            "baseline_sd": 0.0,
+            "candidate": -0.0359430611133575,
+            "gain": 3.0849963426589992,
+            "metric": "useful_displacement_m",
+            "scale": 0.01,
+            "scenario": "lateral_traverse_train"
+          },
+          {
+            "axis": "precision",
+            "baseline_mean": 0.283333333333332,
+            "baseline_sd": 0.0,
+            "candidate": 0.141666666666666,
+            "gain": 4.7222222222222,
+            "metric": "movement_latency_s",
+            "scale": 0.03,
+            "scenario": "lateral_traverse_train"
+          },
+          {
+            "axis": "precision",
+            "baseline_mean": 0.0,
+            "baseline_sd": 0.0,
+            "candidate": 0.0,
+            "gain": -0.0,
+            "metric": "overshoot_m",
+            "scale": 0.01,
+            "scenario": "lateral_traverse_train"
+          },
+          {
+            "axis": "precision",
+            "baseline_mean": 0.141666666666666,
+            "baseline_sd": 0.0,
+            "candidate": 0.125,
+            "gain": 0.33333333333331994,
+            "metric": "reversal_latency_s",
+            "scale": 0.05,
+            "scenario": "lateral_traverse_train"
+          },
+          {
+            "axis": "physical_quality",
+            "baseline_mean": 0.119145052724452,
+            "baseline_sd": 0.0,
+            "candidate": 0.125777995499672,
+            "gain": -0.22109809250733342,
+            "metric": "unwanted_twist_rms_rad",
+            "scale": 0.03,
+            "scenario": "lateral_traverse_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 0.0,
+            "baseline_sd": 0.0,
+            "candidate": 0.0,
+            "gain": 0.0,
+            "metric": "completion_rate",
+            "scale": 0.1,
+            "scenario": "lateral_traverse_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 1.0,
+            "baseline_sd": 0.0,
+            "candidate": 1.0,
+            "gain": 0.0,
+            "metric": "grip_retention_rate",
+            "scale": 0.1,
+            "scenario": "lateral_traverse_train"
+          },
+          {
+            "axis": "physical_quality",
+            "baseline_mean": 0.581737557582855,
+            "baseline_sd": 0.0,
+            "candidate": 0.594057263055787,
+            "gain": 0.12319705472932041,
+            "metric": "controllable_swing",
+            "scale": 0.1,
+            "scenario": "one_hand_hang_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 1.0,
+            "baseline_sd": 0.0,
+            "candidate": 1.0,
+            "gain": 0.0,
+            "metric": "completion_rate",
+            "scale": 0.1,
+            "scenario": "one_hand_hang_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 1.0,
+            "baseline_sd": 0.0,
+            "candidate": 1.0,
+            "gain": 0.0,
+            "metric": "grip_retention_rate",
+            "scale": 0.1,
+            "scenario": "one_hand_hang_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 1.0,
+            "baseline_sd": 0.0,
+            "candidate": 0.0,
+            "gain": -10.0,
+            "metric": "completion_rate",
+            "scale": 0.1,
+            "scenario": "swing_catch_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 1.0,
+            "baseline_sd": 0.0,
+            "candidate": 0.0,
+            "gain": -10.0,
+            "metric": "grip_retention_rate",
+            "scale": 0.1,
+            "scenario": "swing_catch_train"
+          },
+          {
+            "axis": "directed_progress",
+            "baseline_mean": 0.198075294494629,
+            "baseline_sd": 0.0,
+            "candidate": 0.160363674163818,
+            "gain": -1.9039032821851276,
+            "metric": "useful_displacement_m",
+            "scale": 0.0198075294494629,
+            "scenario": "vertical_pull_train"
+          },
+          {
+            "axis": "precision",
+            "baseline_mean": 0.608333333333331,
+            "baseline_sd": 0.0,
+            "candidate": 0.649999999999998,
+            "gain": -0.6849315068493244,
+            "metric": "movement_latency_s",
+            "scale": 0.0608333333333331,
+            "scenario": "vertical_pull_train"
+          },
+          {
+            "axis": "precision",
+            "baseline_mean": 0.147453589439392,
+            "baseline_sd": 0.0,
+            "candidate": 0.11756817817688,
+            "gain": 2.026767295128873,
+            "metric": "overshoot_m",
+            "scale": 0.0147453589439392,
+            "scenario": "vertical_pull_train"
+          },
+          {
+            "axis": "physical_quality",
+            "baseline_mean": 0.129467500420665,
+            "baseline_sd": 0.0,
+            "candidate": 0.138616735622584,
+            "gain": -0.30497450673063387,
+            "metric": "unwanted_twist_rms_rad",
+            "scale": 0.03,
+            "scenario": "vertical_pull_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 1.0,
+            "baseline_sd": 0.0,
+            "candidate": 1.0,
+            "gain": 0.0,
+            "metric": "completion_rate",
+            "scale": 0.1,
+            "scenario": "vertical_pull_train"
+          },
+          {
+            "axis": "reliability",
+            "baseline_mean": 1.0,
+            "baseline_sd": 0.0,
+            "candidate": 1.0,
+            "gain": 0.0,
+            "metric": "grip_retention_rate",
+            "scale": 0.1,
+            "scenario": "vertical_pull_train"
+          }
+        ],
+        "regression_flags": [
+          "lost baseline task completion: swing_catch_train"
+        ],
+        "values": [
+          -1.9039032821851276,
+          -1.1111111111110967,
+          -0.8150594067830003,
+          -10.0
+        ]
+      },
+      "status": "completed",
+      "trial_id": "random-0002"
+    }
+  ],
+  "promotion": false,
+  "requested_candidate_budget": 52,
+  "status_counts": {
+    "completed": 6
+  },
+  "stop_reason": "reproduced essential regression: lost baseline task completion: swing_catch_train",
+  "study_status": "stopped"
+}

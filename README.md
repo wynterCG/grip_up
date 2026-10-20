@@ -15,7 +15,8 @@ game. Normal startup remains profile 2; explicit research comparisons use
 profile 4 with A0/B1. No candidate is automatically adopted, and M7/RL remain
 separate. The pre-lab source is recoverable at `baseline/pre-v1.3-auto-tuning`.
 
-See the [experiment record](docs/validation/auto_tuning/README.md) and
+See the [final comparison report](docs/validation/auto_tuning/report.md),
+[experiment record](docs/validation/auto_tuning/README.md) and
 [reproduction commands](tools/auto_tuning/README.md). Automated results measure
 declared physics tasks; they do not establish better feel or human preference.
 

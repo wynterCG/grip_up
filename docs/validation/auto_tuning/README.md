@@ -2,6 +2,8 @@
 
 Laboratório offline, independente do jogo normal e de M7. O objetivo é encontrar e comparar pequenas afinações do planeador A0, respeitando a física existente. Uma métrica melhor não promove uma configuração ao jogo.
 
+[Relatório final da experiência](report.md): manter A0/B1. O piloto fez três repetições de referência, duas propostas Random e uma confirmação; parou por perda reproduzida de captura no headless. Nenhum candidato passou a seleção. A própria referência falhou a captura na revisão nativa, pelo que a consistência entre modos permanece por diagnosticar. Não se demonstrou melhoria de feel.
+
 ## Referência recuperável
 
 - Checkpoint anterior ao laboratório: `f865ebf3a95eac983329d43df1a90dd1b7952bbd`, tag `baseline/pre-v1.3-auto-tuning`.
@@ -33,4 +35,4 @@ O avaliador separa input scripted de input humano, contacto de retenção, e sub
 
 As comparações humanas são uma etapa separada. Nenhum teste automático pode aprovar AT6. A0/B1 permanece a configuração de referência até existir benefício percebido repetível e aprovação explícita. RL e M7 não fazem parte desta entrega.
 
-Os comandos finais, recibos, resultados e limitações serão ligados aqui após a validação do laboratório.
+O [arquivo integral](evidence/stage1_r1.zip), o [manifesto de hashes](evidence/stage1_r1_manifest.json), as [tabelas e Pareto](reports/stage1_r1/report.md) e a [verificação final](final_verification.json) acompanham o relatório. O código medido é o commit `1b0a86272a2939452dbe14130df25cde40278a82`. TPE, sensibilidade, holdout e A/B humano não foram executados; não houve integração de candidatos. Os [comandos de reprodução](../../../tools/auto_tuning/README.md) continuam sujeitos aos gates.
