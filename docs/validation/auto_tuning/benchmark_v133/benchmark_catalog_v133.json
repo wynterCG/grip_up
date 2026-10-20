@@ -1,0 +1,264 @@
+{
+  "allocation": "A0",
+  "canonical_backing": [
+    1024,
+    576
+  ],
+  "capture_lane": "ADAPTIVE_CAPTURE_SOURCE_NEVER_COUNTED_AS_FIXED_REPLAY",
+  "dataset_partitions": {
+    "benchmark_qualification": "PUBLIC_UNSCORED_DEFINITIONS_NO_NEW_OUTCOMES",
+    "future_training": "UNASSIGNED_NOT_AUTHORIZED",
+    "human_playtests": "SEPARATE_PROTOCOL_NO_SESSIONS",
+    "private_holdout": "UNOPENED_NO_OUTCOMES_ACCESSED",
+    "public_validation": "RESERVED_NOT_POPULATED"
+  },
+  "feet": "B1",
+  "generalization": "NOT_TESTED",
+  "id": "benchmark_eval_v133",
+  "logical_viewport": [
+    1920,
+    1080
+  ],
+  "optimizer": "OFF",
+  "profile": 4,
+  "qualification_lane": "FIXED_VIRTUAL_REPLAY",
+  "qualification_status": "NOT_QUALIFIED_BQ1_STOP",
+  "ranking_enabled": false,
+  "revision": 1,
+  "scenarios": [
+    {
+      "acquisition_order": [
+        0,
+        1
+      ],
+      "arena": 8,
+      "command": [
+        "contract"
+      ],
+      "contact_points": [
+        [
+          -0.24,
+          2.1,
+          0
+        ],
+        [
+          0.24,
+          2.1,
+          0
+        ]
+      ],
+      "direction_world": [
+        0,
+        1,
+        0
+      ],
+      "fixture": "qualification_mirror_v1",
+      "id": "vertical_pull_clean",
+      "initial_policy": "PENDING_QUALIFICATION",
+      "input_policy_revision": "benchmark_v133_preparation_r1",
+      "kind": "progress",
+      "observe_s": 1.0,
+      "onset_policy": "real dual hands/no nativeground/fullspin<=.2/abs(axisvelocity)<=.1 for elapsed .25;stop drive[.15,.5];acceptedPOST recheck;foot requires >1N compressive",
+      "physical_feet": true,
+      "preload_s": 0.55,
+      "require_foot_load": false,
+      "revision": 1,
+      "warmup_s": 0.45
+    },
+    {
+      "acquisition_order": [
+        0,
+        1
+      ],
+      "arena": 8,
+      "command": [
+        "contract"
+      ],
+      "contact_points": [
+        [
+          -0.24,
+          2.1,
+          0
+        ],
+        [
+          0.24,
+          1.98,
+          0
+        ]
+      ],
+      "direction_world": [
+        0,
+        1,
+        0
+      ],
+      "fixture": "qualification_mirror_v1",
+      "id": "asymmetric_pull_clean",
+      "initial_policy": "PENDING_QUALIFICATION",
+      "input_policy_revision": "benchmark_v133_preparation_r1",
+      "kind": "progress",
+      "observe_s": 1.0,
+      "onset_policy": "real dual hands/no nativeground/fullspin<=.2/abs(axisvelocity)<=.1 for elapsed .25;stop drive[.15,.5];acceptedPOST recheck;foot requires >1N compressive",
+      "physical_feet": true,
+      "preload_s": 0.55,
+      "require_foot_load": false,
+      "revision": 1,
+      "warmup_s": 0.45
+    },
+    {
+      "acquisition_order": [
+        1,
+        0
+      ],
+      "arena": 8,
+      "command": [
+        "bias_left"
+      ],
+      "contact_points": [
+        [
+          -0.24,
+          2.1,
+          0
+        ],
+        [
+          0.24,
+          2.1,
+          0
+        ]
+      ],
+      "direction_world": [
+        -1,
+        0,
+        0
+      ],
+      "fixture": "qualification_mirror_v1",
+      "id": "lateral_clean_left",
+      "initial_policy": "PENDING_QUALIFICATION",
+      "input_policy_revision": "benchmark_v133_preparation_r1",
+      "kind": "progress",
+      "observe_s": 1.0,
+      "onset_policy": "real dual hands/no nativeground/fullspin<=.2/abs(axisvelocity)<=.1 for elapsed .25;stop drive[.15,.5];acceptedPOST recheck;foot requires >1N compressive",
+      "physical_feet": true,
+      "preload_s": 1.5,
+      "require_foot_load": false,
+      "revision": 1,
+      "warmup_s": 0.45
+    },
+    {
+      "acquisition_order": [
+        0,
+        1
+      ],
+      "arena": 8,
+      "command": [
+        "bias_right"
+      ],
+      "contact_points": [
+        [
+          -0.24,
+          2.1,
+          0
+        ],
+        [
+          0.24,
+          2.1,
+          0
+        ]
+      ],
+      "direction_world": [
+        1,
+        0,
+        0
+      ],
+      "fixture": "qualification_mirror_v1",
+      "id": "lateral_clean_right",
+      "initial_policy": "PENDING_QUALIFICATION",
+      "input_policy_revision": "benchmark_v133_preparation_r1",
+      "kind": "progress",
+      "observe_s": 1.0,
+      "onset_policy": "real dual hands/no nativeground/fullspin<=.2/abs(axisvelocity)<=.1 for elapsed .25;stop drive[.15,.5];acceptedPOST recheck;foot requires >1N compressive",
+      "physical_feet": true,
+      "preload_s": 1.5,
+      "require_foot_load": false,
+      "revision": 1,
+      "warmup_s": 0.45
+    },
+    {
+      "acquisition_order": [
+        0,
+        1
+      ],
+      "arena": 6,
+      "command": [
+        "contract"
+      ],
+      "contact_points": [
+        [
+          -0.24,
+          2.1,
+          0
+        ],
+        [
+          0.24,
+          2.1,
+          0
+        ]
+      ],
+      "direction_world": [
+        0,
+        1,
+        0
+      ],
+      "fixture": "original_step",
+      "id": "foot_supported_step",
+      "initial_policy": "PENDING_QUALIFICATION",
+      "input_policy_revision": "benchmark_v133_preparation_r1",
+      "kind": "progress",
+      "observe_s": 1.0,
+      "onset_policy": "real dual hands/no nativeground/fullspin<=.2/abs(axisvelocity)<=.1 for elapsed .25;stop drive[.15,.5];acceptedPOST recheck;foot requires >1N compressive",
+      "physical_feet": true,
+      "preload_s": 0.55,
+      "require_foot_load": true,
+      "revision": 1,
+      "warmup_s": 0.45
+    },
+    {
+      "acquisition_order": [
+        0,
+        1
+      ],
+      "arena": 8,
+      "command": [],
+      "contact_points": [
+        [
+          -0.24,
+          2.1,
+          0
+        ],
+        [
+          0.24,
+          2.1,
+          0
+        ]
+      ],
+      "direction_world": [
+        1,
+        0,
+        0
+      ],
+      "fixture": "qualification_mirror_v1",
+      "id": "two_hand_release_stop",
+      "initial_policy": "PENDING_QUALIFICATION",
+      "input_policy_revision": "benchmark_v133_preparation_r1",
+      "kind": "release_stop",
+      "observe_s": 5.0,
+      "onset_policy": "real dual hands/no nativeground/fullspin<=.2/abs(axisvelocity)<=.1 for elapsed .25;stop drive[.15,.5];acceptedPOST recheck;foot requires >1N compressive",
+      "physical_feet": true,
+      "preload_s": 1.5,
+      "require_foot_load": false,
+      "revision": 1,
+      "warmup_s": 0.45
+    }
+  ],
+  "seed": 101,
+  "source_catalog_sha256": "47462fac8b3340dd0426c631d64ea19b13fb07bf3c6dee89ec80d213bedc2f5d"
+}

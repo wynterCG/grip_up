@@ -1,0 +1,74 @@
+{
+  "baseline_commit": "247f19060f7966a8b5fe547cfc5a91e62fa2c2a5",
+  "decision": "NO_GO_BENCHMARK",
+  "engine": {
+    "sha256": "12310c74bdda7dcd43f28e971f33047dcecadd436b68169d61ce41009006df38",
+    "version": "4.7.2.stable.steam.ed1daf0bf"
+  },
+  "export": {
+    "excluded_paths": 10,
+    "identity": {
+      "bytes": 110754728,
+      "release": true,
+      "sha256": "ef98a00afc53c0665f93d4f17fb990c12ca8feb874b306a37ed332f84d9f58e6",
+      "startup_smoke_only": true
+    },
+    "inspection_is_release_template": false,
+    "isolated_debug_engine_pack_inspection": "PASS",
+    "release_export_and_plain_release_smoke": "PASS"
+  },
+  "human_playtest_sessions": 0,
+  "measured_source_commit": "3c888c70a0b5a8bc427e3b68058ac744ba002db6",
+  "native_fresh_errors": 0,
+  "native_mcp": "PASS_DEFAULT_SAFETY_ONLY",
+  "native_preexisting_nested_project_warning": 1,
+  "new_climbing_outcomes": 0,
+  "new_pure_python_contracts": 34,
+  "no_automatic_rerun": true,
+  "normal_headless_startup": "PASS",
+  "optimizer_RL_Jev_processes": 0,
+  "ordinary_regressions": {
+    "checks": 1146,
+    "passed": true,
+    "processes": 34,
+    "separate_budget_by_user": true
+  },
+  "preflight": {
+    "aborted": 0,
+    "accepted": 0,
+    "attempted": 1,
+    "gameplay_worlds": 0,
+    "negative_attempted": 0,
+    "negative_planned": 1,
+    "planned_positive": 12,
+    "positive_not_run_early_stop": 11,
+    "rejected_setup": 1
+  },
+  "private_outcomes_accessed": 0,
+  "protection": {
+    "C_E_source_parity": true,
+    "gameplay_physics_camera_controls_source_unchanged": true,
+    "historical_raw_files_verified": 749,
+    "historical_tracked_files_verified": 4249,
+    "normal_project_janga_rollback_export_preset_unchanged": true,
+    "public_source_files": 292
+  },
+  "qualification": {
+    "catch_reference_planned": 12,
+    "issue_diagnostic_allotment": 4,
+    "issue_diagnostic_gameplay_worlds": 0,
+    "issue_diagnostics_attempted": 4,
+    "max_physics_processes": 96,
+    "negative_allotment": 8,
+    "negative_attempted": 0,
+    "new_domain_planned": 72,
+    "primary_aborted": 0,
+    "primary_attempted": 0,
+    "primary_invalid": 0,
+    "primary_not_run_early_stop": 84,
+    "primary_planned": 84,
+    "primary_valid": 0,
+    "qualification_physics_processes_used": 0
+  },
+  "recommended_next_action": "Explicitly initialize and observe backing before world creation in a separately approved, versioned admission correction; then redo BQ1 before BQ2. No tuning."
+}

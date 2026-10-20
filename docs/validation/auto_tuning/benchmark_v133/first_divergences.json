@@ -1,0 +1,28 @@
+{
+  "before_gameplay_world": true,
+  "decision": "NO_GO_BENCHMARK",
+  "diagnostics_explain_but_do_not_replace_primary": true,
+  "evidence": "builds\\eval_virtual_cursor\\benchmark_v133_r1\\preflight\\headless_120_1_positive",
+  "first_failure_kind": "ENVIRONMENT_ADMISSION",
+  "gameplay_bodies_created": 0,
+  "hz": 120,
+  "mode": "headless",
+  "no_input_camera_raycast_anchor_physics_divergence_observed": true,
+  "observed_backing": [
+    64,
+    64
+  ],
+  "observed_mode": 1,
+  "observed_screen": -1,
+  "phase": "BEFORE_CLOCK_AND_WORLD_BRANCH",
+  "process_exit_code": 1,
+  "reason": "BACKING_SIZE",
+  "requested_backing": [
+    1024,
+    576
+  ],
+  "scenario_tick": null,
+  "source_commit": "3c888c70a0b5a8bc427e3b68058ac744ba002db6",
+  "stage": "BQ1_PURE_PREFLIGHT",
+  "typed_status": "ENVIRONMENT_NOT_COMPARABLE"
+}

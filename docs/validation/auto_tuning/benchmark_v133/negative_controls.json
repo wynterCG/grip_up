@@ -1,0 +1,284 @@
+{
+  "diagnostics": {
+    "gameplay_worlds": 0,
+    "optimizer": "OFF",
+    "primary_campaign_stays_stopped": true,
+    "runs": [
+      {
+        "directory": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\benchmark_v133_r1\\attempts\\D1_headless_cli",
+        "exit_code": 0,
+        "name": "D1_headless_cli",
+        "result": {
+          "after": {
+            "content_scale_aspect": 4,
+            "content_scale_mode": 1,
+            "content_scale_size": [
+              1920,
+              1080
+            ],
+            "display_server": "headless",
+            "mode": 1,
+            "position": [
+              0,
+              0
+            ],
+            "screen": -1,
+            "size": [
+              64,
+              64
+            ],
+            "visible_size": [
+              1920.0,
+              1920.0
+            ]
+          },
+          "before": {
+            "content_scale_aspect": 4,
+            "content_scale_mode": 1,
+            "content_scale_size": [
+              1920,
+              1080
+            ],
+            "display_server": "headless",
+            "mode": 1,
+            "position": [
+              0,
+              0
+            ],
+            "screen": -1,
+            "size": [
+              64,
+              64
+            ],
+            "visible_size": [
+              1920.0,
+              1920.0
+            ]
+          },
+          "clock_samples": [
+            0.008333333333333333,
+            0.008333333333333333
+          ],
+          "clock_settled": true,
+          "explicit_size_initialization": false,
+          "gameplay_bodies_created": 0,
+          "physics_outcomes": 0,
+          "scope": "ENVIRONMENT_DIAGNOSTIC_NOT_QUALIFICATION"
+        }
+      },
+      {
+        "directory": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\benchmark_v133_r1\\attempts\\D2_rendered_cli",
+        "exit_code": 0,
+        "name": "D2_rendered_cli",
+        "result": {
+          "after": {
+            "content_scale_aspect": 4,
+            "content_scale_mode": 1,
+            "content_scale_size": [
+              1920,
+              1080
+            ],
+            "display_server": "Windows",
+            "mode": 0,
+            "position": [
+              2400,
+              80
+            ],
+            "screen": 0,
+            "size": [
+              1024,
+              576
+            ],
+            "visible_size": [
+              1920.0,
+              1080.0
+            ]
+          },
+          "before": {
+            "content_scale_aspect": 4,
+            "content_scale_mode": 1,
+            "content_scale_size": [
+              1920,
+              1080
+            ],
+            "display_server": "Windows",
+            "mode": 0,
+            "position": [
+              2400,
+              80
+            ],
+            "screen": 0,
+            "size": [
+              1024,
+              576
+            ],
+            "visible_size": [
+              1920.0,
+              1080.0
+            ]
+          },
+          "clock_samples": [
+            0.008333333333333333,
+            0.008333333333333333
+          ],
+          "clock_settled": true,
+          "explicit_size_initialization": false,
+          "gameplay_bodies_created": 0,
+          "physics_outcomes": 0,
+          "scope": "ENVIRONMENT_DIAGNOSTIC_NOT_QUALIFICATION"
+        }
+      },
+      {
+        "directory": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\benchmark_v133_r1\\attempts\\D3_headless_explicit_initialization",
+        "exit_code": 0,
+        "name": "D3_headless_explicit_initialization",
+        "result": {
+          "after": {
+            "content_scale_aspect": 4,
+            "content_scale_mode": 1,
+            "content_scale_size": [
+              1920,
+              1080
+            ],
+            "display_server": "headless",
+            "mode": 1,
+            "position": [
+              0,
+              0
+            ],
+            "screen": -1,
+            "size": [
+              1024,
+              576
+            ],
+            "visible_size": [
+              1920.0,
+              1080.0
+            ]
+          },
+          "before": {
+            "content_scale_aspect": 4,
+            "content_scale_mode": 1,
+            "content_scale_size": [
+              1920,
+              1080
+            ],
+            "display_server": "headless",
+            "mode": 1,
+            "position": [
+              0,
+              0
+            ],
+            "screen": -1,
+            "size": [
+              64,
+              64
+            ],
+            "visible_size": [
+              1920.0,
+              1920.0
+            ]
+          },
+          "clock_samples": [
+            0.008333333333333333,
+            0.008333333333333333
+          ],
+          "clock_settled": true,
+          "explicit_size_initialization": true,
+          "gameplay_bodies_created": 0,
+          "physics_outcomes": 0,
+          "scope": "ENVIRONMENT_DIAGNOSTIC_NOT_QUALIFICATION"
+        }
+      },
+      {
+        "directory": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\benchmark_v133_r1\\attempts\\D4_headless60_explicit_initialization",
+        "exit_code": 0,
+        "name": "D4_headless60_explicit_initialization",
+        "result": {
+          "after": {
+            "content_scale_aspect": 4,
+            "content_scale_mode": 1,
+            "content_scale_size": [
+              1920,
+              1080
+            ],
+            "display_server": "headless",
+            "mode": 1,
+            "position": [
+              0,
+              0
+            ],
+            "screen": -1,
+            "size": [
+              1024,
+              576
+            ],
+            "visible_size": [
+              1920.0,
+              1080.0
+            ]
+          },
+          "before": {
+            "content_scale_aspect": 4,
+            "content_scale_mode": 1,
+            "content_scale_size": [
+              1920,
+              1080
+            ],
+            "display_server": "headless",
+            "mode": 1,
+            "position": [
+              0,
+              0
+            ],
+            "screen": -1,
+            "size": [
+              64,
+              64
+            ],
+            "visible_size": [
+              1920.0,
+              1920.0
+            ]
+          },
+          "clock_samples": [
+            0.016666666666666666,
+            0.016666666666666666
+          ],
+          "clock_settled": true,
+          "explicit_size_initialization": true,
+          "gameplay_bodies_created": 0,
+          "physics_outcomes": 0,
+          "scope": "ENVIRONMENT_DIAGNOSTIC_NOT_QUALIFICATION"
+        }
+      }
+    ]
+  },
+  "external_hardware_interference": "NOT_RUN_IN_V133",
+  "focus_alt_tab": "NOT_RUN_IN_V133",
+  "new_physical_negative_processes": 0,
+  "no_stale_evidence_fills_new_cells": true,
+  "previous_evidence": "Historical v132a/v132b records preserved; not fresh v133 passes.",
+  "pure_contracts": {
+    "command": [
+      "python",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/auto_tuning/benchmark_qualification/tests",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    "engine_processes": 0,
+    "exit_code": 0,
+    "gameplay_worlds": 0,
+    "log_sha256": "48de084e398da77a11b78bdb1e905ff93b74ba10a4cae1b6304f007dc8bf729c",
+    "scope": "PURE_SYNTHETIC_CONTRACTS_NOT_BENCHMARK_QUALIFICATION",
+    "source_commit": "3c888c70a0b5a8bc427e3b68058ac744ba002db6",
+    "utc": "2026-10-20T15:00:33.968265+00:00"
+  },
+  "wrong_backing_negative": "NOT_RUN_EARLY_STOP"
+}

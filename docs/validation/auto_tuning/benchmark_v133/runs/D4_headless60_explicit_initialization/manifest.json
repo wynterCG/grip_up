@@ -1,0 +1,21 @@
+{
+  "budget_group": "diagnostic",
+  "command": [
+    "C:\\Users\\Wynter\\WrapRush\\tools\\godot.exe",
+    "--headless",
+    "--fixed-fps",
+    "120",
+    "--resolution",
+    "1024x576",
+    "--path",
+    "C:\\Users\\Wynter\\grip_up",
+    "--script",
+    "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\benchmark_v133_r1\\attempts\\D4_headless60_explicit_initialization\\environment_diagnostic.gd"
+  ],
+  "diagnostic_script_sha256": "e74ecfadd868dd6e384db13f44b1158633dab7737d5b4bd9136acbfbaeb58a0c",
+  "does_not_requalify_failed_campaign": true,
+  "engine_mode": "headless",
+  "frozen_source_commit": "3c888c70a0b5a8bc427e3b68058ac744ba002db6",
+  "physics_hz": 60,
+  "run_id": "D4_headless60_explicit_initialization"
+}
