@@ -224,14 +224,19 @@ func _fresh(definition:Dictionary)->void:
 
 func _additional_qualification_scenarios()->Array:return []
 
+func _candidate_policy_error()->String:
+	for knob:Dictionary in loader.space.parameters:
+		if float(candidate.parameter_overrides[knob.id])!=float(knob.baseline):return "BASELINE_ONLY_NO_OVERRIDES"
+	return ""
+
 func start(value:Dictionary)->Dictionary:
 	if running:return {"schema_version":"1.3.2","status":"BLOCKED_SETUP","reason":"DRIVER_ALREADY_RUNNING"}
 	manifest=value.duplicate(true);candidate=manifest.get("baseline_candidate",{}).duplicate(true)
 	var checked:Dictionary=loader.validate(candidate)
 	if not checked.ok:return {"schema_version":"1.3.2","status":"BLOCKED_SETUP","reason":checked.reason}
 	if FileAccess.get_sha256(OS.get_executable_path())!=candidate.engine_identity.sha256 or not str(candidate.engine_identity.version).contains(str(Engine.get_version_info().hash).substr(0,9)):return {"status":"BLOCKED_SETUP","reason":"ENGINE_IDENTITY_MISMATCH"}
-	for knob:Dictionary in loader.space.parameters:
-		if float(candidate.parameter_overrides[knob.id])!=float(knob.baseline):return {"status":"BLOCKED_SETUP","reason":"BASELINE_ONLY_NO_OVERRIDES"}
+	var policy_error:String=_candidate_policy_error()
+	if not policy_error.is_empty():return {"status":"BLOCKED_SETUP","reason":policy_error}
 	for path in manifest.expected_source_hashes:
 		if FileAccess.get_sha256("res://"+path)!=manifest.expected_source_hashes[path]:return {"status":"BLOCKED_SETUP","reason":"SOURCE_HASH_MISMATCH:"+path}
 	var override_identity:String=FileAccess.get_sha256("res://override.cfg") if FileAccess.file_exists("res://override.cfg") else "ABSENT"

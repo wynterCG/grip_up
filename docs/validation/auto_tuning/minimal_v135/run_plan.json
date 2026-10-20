@@ -1,0 +1,134 @@
+{
+  "A1": "OMITTED_NOT_SUPPORTED_IN_FOUR_KNOB_LANE_HISTORY_ONLY",
+  "allocation": "A0",
+  "authorization": "GRIP_UP_Minimal_Auto_Tuning_Benchmark_Spec_v1_3_5_EN.md",
+  "baseline_schedule": "2tasks x2Hz x3freshH/Rpairs=24singleprocesses; withinmode comparisons required",
+  "budget_limits": {
+    "baseline": 24,
+    "finalist": 48,
+    "negative_canary": 8,
+    "optimizer": 40,
+    "optimizer_episodes": 160,
+    "preflight": 8,
+    "regression": 34,
+    "total_evaluation": 128
+  },
+  "canary_gate": "Both repeats task-valid in >=1domain; degradation>=max(.010m,5%A0); no safety violation. Task failure alone is not continuous sensitivity. No canary retune.",
+  "canary_parameters": {
+    "traversal_input_ramp_s": 0.2,
+    "traversal_speed_m_s": 0.18,
+    "traversal_target_max_acceleration": 0.6,
+    "traversal_target_max_rate": 0.16
+  },
+  "candidate_rejection": [
+    "acquisition",
+    "onset",
+    "incompletewindow",
+    "quality",
+    "no_practical_gain"
+  ],
+  "feet": "B1",
+  "finalist_schedule": {
+    "batch_cleanup": "SeparateDriver/fullmanifest/clock/world/tape; absent bodies/subtrees, exact resource restore and2cleanup callbacks; fail closes finalist stage",
+    "maximum": 1,
+    "primary": "Fresh A0 plus finalist:2tasks x2Hz x3H/Rpairs perconfig=48episodes packed2independentworlds/process=24processes",
+    "protected_allocation": {
+      "asym_left_120_A0_candidate": 4,
+      "catch_A0_candidate_bothHz_HR": 8,
+      "first_ascent_A0_candidate_bothHz": 4,
+      "novel_V_R_120_A0_candidate": 4,
+      "stop_A0_candidate_bothHz": 4
+    },
+    "protected_limit": 24
+  },
+  "frozen_before_results_utc": "2026-10-20T20:50:40.944851+00:00",
+  "global_stop": [
+    "infrastructure",
+    "source_identity",
+    "physics_cap",
+    "resource_restore",
+    "baseline_mandatory_cell"
+  ],
+  "human_sessions": "Only separately agreed after all mandatory gates; no authorization by timeout",
+  "id": "minimal_v135_r1",
+  "max_qualification_attempts": 128,
+  "negative_schedule": {
+    "N1_bothHz": 2,
+    "impaired_canary_2tasks_120_n2": 4,
+    "other_controls": "pure contracts/exact raw mutation with original evidence retained",
+    "public_ground_and_clearance_diagnostics_60": 2
+  },
+  "no_default_promotion": true,
+  "no_scoring_holdouts": true,
+  "optimizer_seed": 135101,
+  "practical_gate": {
+    "maximum_other_loss_fraction": 0.03,
+    "maximum_other_loss_m": 0.005,
+    "minimum_gain_fraction": 0.05,
+    "minimum_gain_m": 0.01
+  },
+  "preflight_schedule": {
+    "catch_headless_reference": 2,
+    "novel_120_capture": 2,
+    "pure_transport_environment_processes": "SEPARATE_ZERO_GAMEPLAY_WORLDS_RECORDED",
+    "training_capture": 4
+  },
+  "profile": 4,
+  "protected_public_tapes": {
+    "asymmetric_pull_clean_v134_r2:120": {
+      "admission": "ONLY_FINALIST_PROTECTED; historical-source delta explicit; fulltask revalidated noheader rewrite",
+      "catalog_sha256": "5ac75d6ce44a62e494d8bfe3076d6d0568e71dc3105eca246d5ca96c0451b7a8",
+      "path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\fixture_feasibility_v134_r1\\tapes\\asymmetric_pull_clean_v134_r2_120.json",
+      "sha256": "7236b637bbebf8a825e2b9a4689493ef8efe67a359b2783bfc756b7693602f24",
+      "source_map_sha256": "7e08936c8e5206a6225a5373c0ae2da5318fd92717a862a1312617c2d3a17dc3"
+    },
+    "lateral_clean_left_v134_r2:120": {
+      "admission": "ONLY_FINALIST_PROTECTED; historical-source delta explicit; fulltask revalidated noheader rewrite",
+      "catalog_sha256": "5ac75d6ce44a62e494d8bfe3076d6d0568e71dc3105eca246d5ca96c0451b7a8",
+      "path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\fixture_feasibility_v134_r1\\tapes\\lateral_clean_left_v134_r2_120.json",
+      "sha256": "96e6c1255c203f254f3c3b268f3a6129bd0307b67114bfeabbc4a80f82db8c41",
+      "source_map_sha256": "7e08936c8e5206a6225a5373c0ae2da5318fd92717a862a1312617c2d3a17dc3"
+    },
+    "two_hand_release_stop_v134_r2:120": {
+      "admission": "ONLY_FINALIST_PROTECTED; historical-source delta explicit; fulltask revalidated noheader rewrite",
+      "catalog_sha256": "5ac75d6ce44a62e494d8bfe3076d6d0568e71dc3105eca246d5ca96c0451b7a8",
+      "path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\fixture_feasibility_v134_r1\\tapes\\two_hand_release_stop_v134_r2_120.json",
+      "sha256": "4ec3623e0fc7d35dae601468a9187162b3e77dbbe9072ebc04ef8f22dd5b9579",
+      "source_map_sha256": "7e08936c8e5206a6225a5373c0ae2da5318fd92717a862a1312617c2d3a17dc3"
+    },
+    "two_hand_release_stop_v134_r2:60": {
+      "admission": "ONLY_FINALIST_PROTECTED; historical-source delta explicit; fulltask revalidated noheader rewrite",
+      "catalog_sha256": "5ac75d6ce44a62e494d8bfe3076d6d0568e71dc3105eca246d5ca96c0451b7a8",
+      "path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\fixture_feasibility_v134_r1\\tapes\\two_hand_release_stop_v134_r2_60.json",
+      "sha256": "207ef1769f67edc28cb187cf001cdab05d0a6a338f17a249451234f829810eaa",
+      "source_map_sha256": "7e08936c8e5206a6225a5373c0ae2da5318fd92717a862a1312617c2d3a17dc3"
+    }
+  },
+  "quality_freeze": "After freshA0 before any candidate; max gameplay floor or2*baseline repeat range; latency floor max2ticks,15%A0; efficiency floor .05; backwards/drift/overshoot .005m; twist RMS .03rad/10%,peak .05rad/10% if actual frame valid. Twist otherwise exactNOT_APPLICABLE no inventedvalue; full angular excursion descriptive.",
+  "reference_tapes": {
+    "120": {
+      "path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\requal_20261020_r1\\capture\\tapes\\catch_120.json",
+      "sha256": "d09f2569cbbafb4db2d3571b806dc804622fe4efda3c6ba9d8790a51bdb2991b"
+    },
+    "60": {
+      "path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\requal_20261020_r1\\capture\\tapes\\catch_60.json",
+      "sha256": "a711b9cb2792890fddd3782db0705a003fdccae4fad67fa3085f895c0a2a2e9d"
+    }
+  },
+  "search_schedule": {
+    "confirmations_reserved": 4,
+    "duplicates": "ARCHIVED_NO_REDRAW",
+    "futility": "stop after sensitivity+random if zero practically promising eligible candidates; TPE only if >=3distinct valid objective vectors and at least1practical promising candidate",
+    "invalid": "ARCHIVED_FAIL_NO_REDRAW",
+    "launches_per_configuration": 2,
+    "physically_evaluated_configurations": 18,
+    "random": 6,
+    "sensitivity": 8,
+    "tpe": 4
+  },
+  "seed": 101,
+  "training_ids": [
+    "vertical_pull_clean_v134_r2",
+    "lateral_clean_right_v134_r2"
+  ]
+}

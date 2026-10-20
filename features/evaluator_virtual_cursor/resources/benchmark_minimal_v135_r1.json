@@ -1,0 +1,133 @@
+{
+  "allocation": "A0",
+  "canonical_backing": [
+    1024,
+    576
+  ],
+  "capture_lane": "ADAPTIVE_CAPTURE_SOURCE_NEVER_COUNTED_AS_FIXED_REPLAY",
+  "feet": "B1",
+  "generalization": "NOT_TESTED",
+  "historical_catalog_sha256": "5ac75d6ce44a62e494d8bfe3076d6d0568e71dc3105eca246d5ca96c0451b7a8",
+  "id": "benchmark_minimal_v135_r1",
+  "logical_viewport": [
+    1920,
+    1080
+  ],
+  "optimizer": "CONDITIONAL_MB2_GO",
+  "profile": 4,
+  "provenance": "Developmentr1 data: Vertical60measured; Asym60padEND_OVERLAP; Step60wallcontactwithoutcompression. Finalr2staticreviewedpadfront.39 andStepliptop.65/front.10; newworld/newtapes, no scorecontinuity.",
+  "qualification_lane": "FIXED_VIRTUAL_REPLAY",
+  "revision": 1,
+  "scenarios": [
+    {
+      "acquisition_order": [
+        0,
+        1
+      ],
+      "arena": 8,
+      "command": [
+        "contract"
+      ],
+      "contact_points": [
+        [
+          -0.24,
+          2.25,
+          0
+        ],
+        [
+          0.24,
+          2.25,
+          0
+        ]
+      ],
+      "direction_world": [
+        0,
+        1,
+        0
+      ],
+      "domain_id": "vertical_pull_clean",
+      "entry_contacts": [
+        [
+          -0.24,
+          2.1,
+          0
+        ],
+        [
+          0.24,
+          2.1,
+          0
+        ]
+      ],
+      "entry_pull_s": 1.5,
+      "fixture": "v134_pad_clearance_r2",
+      "fixture_revision": "v134_pad_clearance_r2",
+      "id": "vertical_pull_clean_v134_r2",
+      "initial_policy": "REQUALIFY_NEW_SOURCE_NO_HISTORIC_SCORES",
+      "input_policy_revision": "v134_real_higher_regrip_r1",
+      "kind": "progress",
+      "observe_s": 1.0,
+      "onset_policy": "real dual hands/no nativeground/fullspin<=.2/abs(axisvelocity)<=.1 for elapsed .25;stop drive[.15,.5];acceptedPOST recheck;foot requires >1N compressive",
+      "physical_feet": true,
+      "require_foot_load": false,
+      "revision": 2,
+      "scoring": "CONDITIONAL_TWO_DOMAIN_TRAINING",
+      "warmup_s": 0.45
+    },
+    {
+      "acquisition_order": [
+        0,
+        1
+      ],
+      "arena": 8,
+      "command": [
+        "bias_right"
+      ],
+      "contact_points": [
+        [
+          -0.24,
+          2.25,
+          0
+        ],
+        [
+          0.24,
+          2.25,
+          0
+        ]
+      ],
+      "direction_world": [
+        1,
+        0,
+        0
+      ],
+      "domain_id": "lateral_clean_right",
+      "entry_contacts": [
+        [
+          -0.24,
+          2.1,
+          0
+        ],
+        [
+          0.24,
+          2.1,
+          0
+        ]
+      ],
+      "entry_pull_s": 1.5,
+      "fixture": "v134_pad_clearance_r2",
+      "fixture_revision": "v134_pad_clearance_r2",
+      "id": "lateral_clean_right_v134_r2",
+      "initial_policy": "REQUALIFY_NEW_SOURCE_NO_HISTORIC_SCORES",
+      "input_policy_revision": "v134_real_higher_regrip_r1",
+      "kind": "progress",
+      "observe_s": 1.0,
+      "onset_policy": "real dual hands/no nativeground/fullspin<=.2/abs(axisvelocity)<=.1 for elapsed .25;stop drive[.15,.5];acceptedPOST recheck;foot requires >1N compressive",
+      "physical_feet": true,
+      "require_foot_load": false,
+      "revision": 2,
+      "scoring": "CONDITIONAL_TWO_DOMAIN_TRAINING",
+      "warmup_s": 0.45
+    }
+  ],
+  "scoring": "FIXED_TAPE_ONLY_AFTER_MB2_GO",
+  "seed": 101
+}

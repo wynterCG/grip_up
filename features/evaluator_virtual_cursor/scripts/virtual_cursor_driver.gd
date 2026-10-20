@@ -80,6 +80,9 @@ func start(value:Dictionary)->Dictionary:
 	TraceWriter.atomic_json(str(value.output_dir).path_join("virtual_audit.json"),{"schema":"grip_virtual_audit_v1","environment":session_environment,"frames":virtual_frames,"ticks":virtual_rows})
 	return result
 
+func _make_virtual_lab():return BaselineLab.new()
+func _seal_virtual_lab()->String:return ""
+
 func _fresh(definition:Dictionary)->void:
 	var lead_in:float=float(manifest.get("human_lead_in_s",0))
 	if lead_in>0:
@@ -100,13 +103,15 @@ func _fresh(definition:Dictionary)->void:
 	_world_creation={"run_tick":_global_tick,"sample_phase":_phase_context,"actual_delta_s":_post_delta,"requested_delta_s":1.0/hz,"boundary":"post_completed_before_lab_construction","retired_worlds":_retired_worlds.duplicate(true),"old_subtrees_absent":true}
 	_reset_episode()
 	current_definition=definition.duplicate(true);_scenario_tick=0;_previous_hands.clear();_retained.clear();_last_command.clear();_latest_ray.clear();latest.clear()
-	app=BaselineLab.new();app.override_loader=loader;app.trial_candidate=candidate;app.virtual_input_arming=true
+	app=_make_virtual_lab();app.override_loader=loader;app.trial_candidate=candidate;app.virtual_input_arming=true
 	get_tree().root.add_child(app);get_tree().current_scene=app
 	_baseline_profile_ok=_baseline_profile_ok and app.input_profile==2
 	app._open_intent_arena(int(definition.arena),true)
 	_configure_virtual_fixture(definition)
 	app._set_movement_allocation(0);app._set_intent_aware_feet(false);app._set_physical_feet(true)
 	app._set_distant_targeting(true);app._set_locomotion_diagnostics(_observer_on);app.transfer_diagnostics_enabled=true;app._apply_independent_settings()
+	var seal_error:String=_seal_virtual_lab()
+	if not seal_error.is_empty():_trace_integrity_reason=seal_error;return
 	app.won=true;app.settings.hide()
 	app.controller.sample_ready.connect(_sample);app.controller.transfer_event.connect(_transfer)
 	for entry:Dictionary in app.installs:_all_installs_pre_step=_all_installs_pre_step and bool(entry.before_first_step)
