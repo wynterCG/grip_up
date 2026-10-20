@@ -1,0 +1,21 @@
+{
+  "benchmark": "benchmark_eval_virtual_cursor_v1",
+  "protocol_sha256": "6bbaa315e9e999dfe8af23ef0f0e203b41befbfca382ca4b4ae3ec3368009a72",
+  "scenario": "swing_catch_train",
+  "physics_hz": [
+    120,
+    60
+  ],
+  "conditions": [
+    "V0-H",
+    "V0-R",
+    "V0-M",
+    "V0-F"
+  ],
+  "repeats": 3,
+  "clock": "physics ticks, no invented steps",
+  "camera_mode": "V0_PHYSICS_FOLLOW",
+  "input_schema": "grip_input_frame_v1",
+  "decision": "NO_GO_INPUT_REPLAY",
+  "metadata_only_not_a_new_runtime_benchmark_revision": true
+}

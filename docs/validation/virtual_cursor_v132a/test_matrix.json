@@ -1,0 +1,228 @@
+{
+  "benchmark": "benchmark_eval_virtual_cursor_v1",
+  "human_interference_measured": false,
+  "negatives": {
+    "N1": "DIAGNOSTIC_ONLY_PASS_9_CHECKS",
+    "N2": "NOT_RUN_EARLY_STOP",
+    "N3": "NOT_RUN_EARLY_STOP",
+    "N4": "NOT_RUN_EARLY_STOP"
+  },
+  "runs": [
+    {
+      "condition": "V0-H",
+      "hz": 120,
+      "phase": "TAPE_ADMISSION_NO_WORLD",
+      "reason": "INPUT_BUTTON_EDGE",
+      "repeat": 1,
+      "run_id": "V0-H_120_r1_c56d2f29",
+      "status": "failed_runtime"
+    },
+    {
+      "condition": "V0-H",
+      "hz": 120,
+      "phase": "NOT_RUN",
+      "reason": "",
+      "repeat": 2,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-H",
+      "hz": 120,
+      "phase": "NOT_RUN",
+      "reason": "",
+      "repeat": 3,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-H",
+      "hz": 60,
+      "phase": "NOT_RUN",
+      "reason": "",
+      "repeat": 1,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-H",
+      "hz": 60,
+      "phase": "NOT_RUN",
+      "reason": "",
+      "repeat": 2,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-H",
+      "hz": 60,
+      "phase": "NOT_RUN",
+      "reason": "",
+      "repeat": 3,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-R",
+      "hz": 120,
+      "phase": "NOT_RUN",
+      "reason": "",
+      "repeat": 1,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-R",
+      "hz": 120,
+      "phase": "NOT_RUN",
+      "reason": "",
+      "repeat": 2,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-R",
+      "hz": 120,
+      "phase": "NOT_RUN",
+      "reason": "",
+      "repeat": 3,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-R",
+      "hz": 60,
+      "phase": "NOT_RUN",
+      "reason": "",
+      "repeat": 1,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-R",
+      "hz": 60,
+      "phase": "NOT_RUN",
+      "reason": "",
+      "repeat": 2,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-R",
+      "hz": 60,
+      "phase": "NOT_RUN",
+      "reason": "",
+      "repeat": 3,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-M",
+      "hz": 120,
+      "phase": "NOT_RUN",
+      "reason": "",
+      "repeat": 1,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-M",
+      "hz": 120,
+      "phase": "NOT_RUN",
+      "reason": "",
+      "repeat": 2,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-M",
+      "hz": 120,
+      "phase": "NOT_RUN",
+      "reason": "",
+      "repeat": 3,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-M",
+      "hz": 60,
+      "phase": "NOT_RUN",
+      "reason": "",
+      "repeat": 1,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-M",
+      "hz": 60,
+      "phase": "NOT_RUN",
+      "reason": "",
+      "repeat": 2,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-M",
+      "hz": 60,
+      "phase": "NOT_RUN",
+      "reason": "",
+      "repeat": 3,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-F",
+      "hz": 120,
+      "phase": "NOT_RUN",
+      "reason": "",
+      "repeat": 1,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-F",
+      "hz": 120,
+      "phase": "NOT_RUN",
+      "reason": "",
+      "repeat": 2,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-F",
+      "hz": 120,
+      "phase": "NOT_RUN",
+      "reason": "",
+      "repeat": 3,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-F",
+      "hz": 60,
+      "phase": "NOT_RUN",
+      "reason": "",
+      "repeat": 1,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-F",
+      "hz": 60,
+      "phase": "NOT_RUN",
+      "reason": "",
+      "repeat": 2,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-F",
+      "hz": 60,
+      "phase": "NOT_RUN",
+      "reason": "",
+      "repeat": 3,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    }
+  ]
+}

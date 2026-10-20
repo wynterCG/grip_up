@@ -1,0 +1,21 @@
+{
+  "corrected_qualification_repeated": false,
+  "correction_commit": "d13fd0c",
+  "decision": "NO_GO_INPUT_REPLAY",
+  "direct_diagnostic": "N1_JSON_EDGE_GUARDS_120_r1_141946f2",
+  "expected_semantic_type": "integral numeric hand identifier 0 or 1",
+  "field": "button_edges[0].hand",
+  "first_bad_tape_tick": 55,
+  "historical_v132_cursor_cause": "UNPROVEN; old cursor-center/absent-pointer and contact differences unchanged historical records",
+  "no_physical_mismatch_measured": true,
+  "no_pre_post_window": "Not applicable: setup rejected before world creation. Complete rejected receipt archived.",
+  "no_world_created": true,
+  "parsed_godot_type": "float",
+  "phase": "TAPE_ADMISSION_BEFORE_WORLD",
+  "physics_tick": null,
+  "root_cause": "Godot Array membership distinguished JSON float 0.0 from integer entries [0,1]",
+  "run_id": "V0-H_120_r1_c56d2f29",
+  "serialized_value": 0,
+  "status": "INPUT_SOURCE_MISMATCH",
+  "substatus": "INPUT_BUTTON_EDGE"
+}
