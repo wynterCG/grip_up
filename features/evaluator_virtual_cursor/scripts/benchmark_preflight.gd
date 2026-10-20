@@ -1,6 +1,7 @@
 extends SceneTree
 const Probe=preload("res://features/evaluator_virtual_cursor/scripts/projection_probe.gd")
 const Camera=preload("res://features/grip_up/scripts/climbing_camera.gd")
+const Backing=preload("res://features/evaluator_virtual_cursor/scripts/benchmark_backing.gd")
 class Clock extends Node:
 	signal sample(delta:float)
 	func _physics_process(delta:float)->void:sample.emit(delta)
@@ -13,8 +14,11 @@ func run()->void:
 		if args[i]=="--output":output=args[i+1]
 		if args[i]=="--hz":hz=int(args[i+1])
 	if output.is_empty() or hz not in [60,120]:quit(2);return
+	var backing:Dictionary=Backing.initialize(root)
 	var result:Dictionary={"scope":"PREFLIGHT_ONLY_NO_GAMEPLAY_BODIES_NO_TASK_OUTCOME","gameplay_bodies_created":0,"requested_hz":hz,"engine":Engine.get_version_info(),"binary_sha256":FileAccess.get_sha256(OS.get_executable_path()),"actual_size":[root.size.x,root.size.y],"window_position":[root.position.x,root.position.y],"screen":root.current_screen,"window_mode":root.mode,"status":"ENVIRONMENT_NOT_COMPARABLE","reason":"BACKING_SIZE"}
-	if root.size==Vector2i(1024,576) and root.get_visible_rect().size==Vector2(1920,1080):
+	result["backing_initialization"]=backing
+	result.reason=backing.reason
+	if backing.reason.is_empty():
 		Engine.physics_ticks_per_second=hz
 		var clock:=Clock.new();root.add_child(clock)
 		var samples:Array=[];var streak:=0;var started:int=Time.get_ticks_msec()

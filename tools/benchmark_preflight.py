@@ -6,7 +6,7 @@ sys.path.insert(0,str(ROOT/'tools/auto_tuning'))
 from common import ENGINE,atomic_json,read_json,file_hash,source_hashes,StudyLock,utc_now
 BASE=ROOT/'builds/eval_virtual_cursor/benchmark_v133_r1'
 
-def main():
+def main(campaign_id='benchmark_v133_r1'):
     assert not (BASE/'preflight_session.json').exists()
     frozen=read_json(BASE/'source_identity.json');assert frozen['source_hashes']==source_hashes()
     cases=[(hz,mode,r,[1024,576],False) for hz in [120,60] for mode in ['headless','rendered_scripted'] for r in [1,2,3]]
@@ -17,7 +17,7 @@ def main():
             flags=['--headless','--fixed-fps','120'] if mode=='headless' else ['--screen','0','--position','80,80']
             command=[str(ENGINE),*flags,'--resolution','x'.join(map(str,size)),'--path',str(ROOT),'--script','res://features/evaluator_virtual_cursor/scripts/benchmark_preflight.gd','--','--hz',str(hz),'--output',str(d/'result.json')]
             if negative:
-                manifest={'scenario_ids':['swing_catch_train'],'campaign_id':'benchmark_v133_r1','run_id':'NEGATIVE_CANONICAL_BACKING','output_dir':str(d),'input_lane':'NEGATIVE_SETUP_ONLY','physics_hz':hz,'engine_mode':mode,'virtual_mode':'REPLAY','expected_source_hashes':frozen['source_hashes'],'engine_identity':frozen['engine_identity']}
+                manifest={'scenario_ids':['swing_catch_train'],'campaign_id':campaign_id,'run_id':'NEGATIVE_CANONICAL_BACKING','output_dir':str(d),'input_lane':'NEGATIVE_SETUP_ONLY','physics_hz':hz,'engine_mode':mode,'virtual_mode':'REPLAY','expected_source_hashes':frozen['source_hashes'],'engine_identity':frozen['engine_identity']}
                 atomic_json(d/'driver_manifest.json',manifest)
                 command=[str(ENGINE),*flags,'--resolution','1440x810','--path',str(ROOT),'--script','res://features/evaluator_virtual_cursor/scripts/benchmark_runner.gd','--','--virtual-cursor-evaluator','--benchmark-qualification','--manifest',str(d/'driver_manifest.json'),'--result',str(d/'result.json')]
             atomic_json(d/'manifest.json',{'command':command,'source':frozen,'hz':hz,'mode':mode,'repeat':r,'requested_size':size,'negative':negative,'gameplay_bodies_expected':0,'utc':utc_now()})

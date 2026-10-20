@@ -1,6 +1,8 @@
 extends "res://features/evaluator_virtual_cursor/scripts/virtual_cursor_driver.gd"
 ## V133 extends the existing clock, virtual owner, ray audit and safety monitor.
 const BCATALOG="res://features/evaluator_virtual_cursor/resources/benchmark_eval_v133.json"
+const Backing=preload("res://features/evaluator_virtual_cursor/scripts/benchmark_backing.gd")
+var backing_initialization:Dictionary={}
 var onset_certificate:Dictionary={}
 var fixture_receipt:Dictionary={}
 var preparation_log:Array=[]
@@ -21,9 +23,8 @@ func _virtual_scope(value:Dictionary)->String:
 	var ids:Array=["swing_catch_train"]
 	for d:Dictionary in _additional_qualification_scenarios():ids.append(d.id)
 	if str(value.scenario_ids[0]) not in ids:return "UNKNOWN_BENCHMARK_SCENARIO"
-	# The CLI applies the requested initial setting; no correction is made here.
-	if get_window().size!=Vector2i(1024,576):return "ENVIRONMENT_NOT_COMPARABLE:CANONICAL_BACKING"
-	if get_viewport().get_visible_rect().size!=Vector2(1920,1080):return "ENVIRONMENT_NOT_COMPARABLE:LOGICAL_VIEWPORT"
+	backing_initialization=Backing.initialize(get_window())
+	if not backing_initialization.reason.is_empty():return "ENVIRONMENT_NOT_COMPARABLE:"+backing_initialization.reason
 	return ""
 
 func _configure_virtual_fixture(definition:Dictionary)->void:
@@ -44,6 +45,7 @@ func start(value:Dictionary)->Dictionary:
 	result["input_lane"]=value.get("input_lane")
 	result["benchmark_source_catalog_sha256"]=FileAccess.get_sha256(BCATALOG)
 	result["world_creation_record"]=_world_creation.duplicate(true)
+	result["backing_initialization"]=backing_initialization.duplicate(true)
 	result["benchmark_performance"]={"pre_driver_usec":pre_driver_usec,"post_enrichment_usec":enrichment_usec,"render_cadence":_phase_costs.duplicate(true),"scope":"Pre driver includes input and projection probe; post enrichment is read/copy only; existing trace cost separate. Per-row Performance.TIME_PHYSICS_PROCESS is engine monitor of prior physics processing, not a stopwatch of this current solver tick."}
 	return result
 
