@@ -11,6 +11,8 @@ var current:Dictionary={}
 var error:=""
 var cost_usec:=0
 var started:=0
+var dispatch_tick:=-1
+var dispatch_ordinal:=0
 
 static func encode(value:Variant)->Variant:
 	match typeof(value):
@@ -64,6 +66,10 @@ func begin_pick(app:Node,hand:int)->void:
 	if app.get_window().size!=Vector2i(int(size[0]),int(size[1])) or app.get_viewport().get_visible_rect().size!=Vector2(float(frame.viewport_size_px[0]),float(frame.viewport_size_px[1])):error="INVALID_TRACE:REQUESTED_WINDOW_OR_LOGICAL_SIZE"
 	if not is_equal_approx(actual_delta,1.0/Engine.physics_ticks_per_second):error="INVALID_TRACE:ACTUAL_DELTA"
 	current={"schema":SCHEMA,"trial_id":manifest.run_id,"git_commit":manifest.code_commit,"engine_full_version":Engine.get_version_info(),"renderer":{"method":RenderingServer.get_current_rendering_method(),"driver":RenderingServer.get_current_rendering_driver_name()},"run_mode":manifest.engine_mode,"scenario_id":manifest.scenario_ids[0],"tape_sha256":manifest.virtual_tape_sha256,"tick":int(frame.tick_index),"physics_hz":Engine.physics_ticks_per_second,"physics_delta":actual_delta,"input_stage":"PRE_PICK_AFTER_V0_CAMERA_EVALUATION","is_in_physics_frame":Engine.is_in_physics_frame(),"pick_call_index":records.size(),"hand":hand,"provider_state":app.replay_input_provider.state,"focus_active":app.get_window().has_focus(),"paused":app.get_tree().paused,"requested":requested.duplicate(true),"effective":frame,"cursor":{"raw_tape":frame.aim_position_viewport_px,"space":"viewport_logical","actual_vector":app.pointer,"conversion":"Vector2 from unchanged tape components, no recenter/round"},"environment":environment(app),"rays":[],"precision":{"vector_component_16777217":Vector3(16777217.0,0,0).x,"encoding":"JSON.stringify full_precision=true plus little-endian IEEE754 binary64 promoted scalar bits"},"hand_state_before":app.controller.get_hand_state(hand)}
+	if manifest.get("pick_contract_version","")=="1.3.4":
+		if dispatch_tick!=int(frame.tick_index):dispatch_tick=int(frame.tick_index);dispatch_ordinal=0
+		current["dispatch_identity"]=preload("res://features/evaluator_virtual_cursor/scripts/pick_dispatch_contract.gd").dispatch_identity(str(manifest.run_id),dispatch_tick,hand,dispatch_ordinal)
+		current["dispatch_ordinal"]=dispatch_ordinal;dispatch_ordinal+=1
 
 func observe_ray(camera:Camera3D,point:Vector2,offset:Vector2,origin:Vector3,direction:Vector3,query:PhysicsRayQueryParameters3D,hit:Dictionary)->void:
 	if not active:return

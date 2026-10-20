@@ -1,0 +1,1087 @@
+[
+  {
+    "all_true_ticks": 58,
+    "clauses": {
+      "axis_speed_le_0_1": {
+        "false_ticks": 83,
+        "true_ticks": 305,
+        "true_time_s": 2.5416666666666665
+      },
+      "both_hand_material_supports": {
+        "false_ticks": 89,
+        "true_ticks": 299,
+        "true_time_s": 2.4916666666666667
+      },
+      "both_hands_attached": {
+        "false_ticks": 123,
+        "true_ticks": 265,
+        "true_time_s": 2.2083333333333335
+      },
+      "clearance_certified": {
+        "false_ticks": 227,
+        "true_ticks": 161,
+        "true_time_s": 1.3416666666666666
+      },
+      "full_spin_le_0_2": {
+        "false_ticks": 31,
+        "true_ticks": 357,
+        "true_time_s": 2.975
+      },
+      "hands_loaded_gt_1N": {
+        "false_ticks": 196,
+        "true_ticks": 192,
+        "true_time_s": 1.6
+      },
+      "no_hybrid_authority": {
+        "false_ticks": 0,
+        "true_ticks": 388,
+        "true_time_s": 3.2333333333333334
+      },
+      "no_native_ground_authority": {
+        "false_ticks": 136,
+        "true_ticks": 252,
+        "true_time_s": 2.1
+      },
+      "not_grounded": {
+        "false_ticks": 136,
+        "true_ticks": 252,
+        "true_time_s": 2.1
+      },
+      "required_foot_load_gt_1N": {
+        "false_ticks": 0,
+        "true_ticks": 388,
+        "true_time_s": 3.2333333333333334
+      },
+      "support_valid": {
+        "false_ticks": 88,
+        "true_ticks": 300,
+        "true_time_s": 2.5
+      }
+    },
+    "diagnostic_only": true,
+    "earliest_loss_after_first_all_true_tick": 207,
+    "first_all_true_tick": 197,
+    "longest_contiguous_quiet_s": 0.30833333333333335,
+    "native_contact_absence_certified": false,
+    "observation": {
+      "direction_world": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "end_tick": 274,
+      "interruption": {
+        "reason_code": "GROUND_CLEARANCE_NOT_CERTIFIED",
+        "tick": 275
+      },
+      "onset_tick": 268,
+      "physics_hz": 120,
+      "raw_scope": "world COM; static common support required by legacy stop contract",
+      "reason_code": "GROUND_CLEARANCE_NOT_CERTIFIED",
+      "status": "INTERRUPTED",
+      "support_frame": "COMMON_STATIC_WORLD"
+    },
+    "onset_authority": "Original driver and independent R3 metrics, not this diagnostic funnel",
+    "physics_hz": 120,
+    "scenario": "vertical_pull_clean",
+    "schema": "fixture_prerequisite_funnel_v134",
+    "source_audit_sha256": "d65a5b47bd7641a5b8d5243f8999ccf10f3f76c226425e36d83f08153ed56a31",
+    "source_run_id": "vertical_pull_clean_120_headless_r0_53e37f75",
+    "thresholds_unchanged": {
+      "axis_speed_m_s": 0.1,
+      "full_spin_rad_s": 0.2,
+      "hand_load_N": 1,
+      "quiet_duration_s": 0.25,
+      "required_foot_load_N": 1
+    },
+    "total_ticks": 388
+  },
+  {
+    "all_true_ticks": 24,
+    "clauses": {
+      "axis_speed_le_0_1": {
+        "false_ticks": 2,
+        "true_ticks": 785,
+        "true_time_s": 6.541666666666667
+      },
+      "both_hand_material_supports": {
+        "false_ticks": 89,
+        "true_ticks": 698,
+        "true_time_s": 5.816666666666666
+      },
+      "both_hands_attached": {
+        "false_ticks": 120,
+        "true_ticks": 667,
+        "true_time_s": 5.558333333333334
+      },
+      "clearance_certified": {
+        "false_ticks": 718,
+        "true_ticks": 69,
+        "true_time_s": 0.575
+      },
+      "full_spin_le_0_2": {
+        "false_ticks": 23,
+        "true_ticks": 764,
+        "true_time_s": 6.366666666666666
+      },
+      "hands_loaded_gt_1N": {
+        "false_ticks": 193,
+        "true_ticks": 594,
+        "true_time_s": 4.95
+      },
+      "no_hybrid_authority": {
+        "false_ticks": 0,
+        "true_ticks": 787,
+        "true_time_s": 6.558333333333334
+      },
+      "no_native_ground_authority": {
+        "false_ticks": 133,
+        "true_ticks": 654,
+        "true_time_s": 5.45
+      },
+      "not_grounded": {
+        "false_ticks": 133,
+        "true_ticks": 654,
+        "true_time_s": 5.45
+      },
+      "required_foot_load_gt_1N": {
+        "false_ticks": 0,
+        "true_ticks": 787,
+        "true_time_s": 6.558333333333334
+      },
+      "support_valid": {
+        "false_ticks": 88,
+        "true_ticks": 699,
+        "true_time_s": 5.825
+      }
+    },
+    "diagnostic_only": true,
+    "earliest_loss_after_first_all_true_tick": 205,
+    "first_all_true_tick": 195,
+    "longest_contiguous_quiet_s": 0.10833333333333334,
+    "native_contact_absence_certified": false,
+    "observation": {
+      "reason_code": "QUIET_ONSET_NOT_REACHED",
+      "status": "PRECONDITION_NOT_MET"
+    },
+    "onset_authority": "Original driver and independent R3 metrics, not this diagnostic funnel",
+    "physics_hz": 120,
+    "scenario": "asymmetric_pull_clean",
+    "schema": "fixture_prerequisite_funnel_v134",
+    "source_audit_sha256": "a9cb651eea183f55c22668461d3d4200242f4e5faa020ae4304bc7a0e6a3c20a",
+    "source_run_id": "asymmetric_pull_clean_120_headless_r0_2109b256",
+    "thresholds_unchanged": {
+      "axis_speed_m_s": 0.1,
+      "full_spin_rad_s": 0.2,
+      "hand_load_N": 1,
+      "quiet_duration_s": 0.25,
+      "required_foot_load_N": 1
+    },
+    "total_ticks": 787
+  },
+  {
+    "all_true_ticks": 117,
+    "clauses": {
+      "axis_speed_le_0_1": {
+        "false_ticks": 80,
+        "true_ticks": 388,
+        "true_time_s": 3.2333333333333334
+      },
+      "both_hand_material_supports": {
+        "false_ticks": 89,
+        "true_ticks": 379,
+        "true_time_s": 3.158333333333333
+      },
+      "both_hands_attached": {
+        "false_ticks": 123,
+        "true_ticks": 345,
+        "true_time_s": 2.875
+      },
+      "clearance_certified": {
+        "false_ticks": 208,
+        "true_ticks": 260,
+        "true_time_s": 2.1666666666666665
+      },
+      "full_spin_le_0_2": {
+        "false_ticks": 139,
+        "true_ticks": 329,
+        "true_time_s": 2.7416666666666667
+      },
+      "hands_loaded_gt_1N": {
+        "false_ticks": 196,
+        "true_ticks": 272,
+        "true_time_s": 2.2666666666666666
+      },
+      "no_hybrid_authority": {
+        "false_ticks": 0,
+        "true_ticks": 468,
+        "true_time_s": 3.9
+      },
+      "no_native_ground_authority": {
+        "false_ticks": 136,
+        "true_ticks": 332,
+        "true_time_s": 2.7666666666666666
+      },
+      "not_grounded": {
+        "false_ticks": 136,
+        "true_ticks": 332,
+        "true_time_s": 2.7666666666666666
+      },
+      "required_foot_load_gt_1N": {
+        "false_ticks": 0,
+        "true_ticks": 468,
+        "true_time_s": 3.9
+      },
+      "support_valid": {
+        "false_ticks": 88,
+        "true_ticks": 380,
+        "true_time_s": 3.1666666666666665
+      }
+    },
+    "diagnostic_only": true,
+    "earliest_loss_after_first_all_true_tick": 205,
+    "first_all_true_tick": 204,
+    "longest_contiguous_quiet_s": 0.575,
+    "native_contact_absence_certified": false,
+    "observation": {
+      "direction_world": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "end_tick": 468,
+      "interruption": null,
+      "onset_tick": 348,
+      "physics_hz": 120,
+      "raw_scope": "world COM; static common support required by legacy stop contract",
+      "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+      "status": "MEASURED",
+      "support_frame": "COMMON_STATIC_WORLD"
+    },
+    "onset_authority": "Original driver and independent R3 metrics, not this diagnostic funnel",
+    "physics_hz": 120,
+    "scenario": "lateral_clean_left",
+    "schema": "fixture_prerequisite_funnel_v134",
+    "source_audit_sha256": "b94660efca815941ef7f4d02759f496ac31309c582795bf0c512634a5cd9477f",
+    "source_run_id": "lateral_clean_left_120_headless_r0_8b322c99",
+    "thresholds_unchanged": {
+      "axis_speed_m_s": 0.1,
+      "full_spin_rad_s": 0.2,
+      "hand_load_N": 1,
+      "quiet_duration_s": 0.25,
+      "required_foot_load_N": 1
+    },
+    "total_ticks": 468
+  },
+  {
+    "all_true_ticks": 117,
+    "clauses": {
+      "axis_speed_le_0_1": {
+        "false_ticks": 80,
+        "true_ticks": 388,
+        "true_time_s": 3.2333333333333334
+      },
+      "both_hand_material_supports": {
+        "false_ticks": 89,
+        "true_ticks": 379,
+        "true_time_s": 3.158333333333333
+      },
+      "both_hands_attached": {
+        "false_ticks": 123,
+        "true_ticks": 345,
+        "true_time_s": 2.875
+      },
+      "clearance_certified": {
+        "false_ticks": 199,
+        "true_ticks": 269,
+        "true_time_s": 2.2416666666666667
+      },
+      "full_spin_le_0_2": {
+        "false_ticks": 141,
+        "true_ticks": 327,
+        "true_time_s": 2.725
+      },
+      "hands_loaded_gt_1N": {
+        "false_ticks": 196,
+        "true_ticks": 272,
+        "true_time_s": 2.2666666666666666
+      },
+      "no_hybrid_authority": {
+        "false_ticks": 0,
+        "true_ticks": 468,
+        "true_time_s": 3.9
+      },
+      "no_native_ground_authority": {
+        "false_ticks": 136,
+        "true_ticks": 332,
+        "true_time_s": 2.7666666666666666
+      },
+      "not_grounded": {
+        "false_ticks": 136,
+        "true_ticks": 332,
+        "true_time_s": 2.7666666666666666
+      },
+      "required_foot_load_gt_1N": {
+        "false_ticks": 0,
+        "true_ticks": 468,
+        "true_time_s": 3.9
+      },
+      "support_valid": {
+        "false_ticks": 88,
+        "true_ticks": 380,
+        "true_time_s": 3.1666666666666665
+      }
+    },
+    "diagnostic_only": true,
+    "earliest_loss_after_first_all_true_tick": 198,
+    "first_all_true_tick": 197,
+    "longest_contiguous_quiet_s": 0.39166666666666666,
+    "native_contact_absence_certified": false,
+    "observation": {
+      "direction_world": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "end_tick": 468,
+      "interruption": null,
+      "onset_tick": 348,
+      "physics_hz": 120,
+      "raw_scope": "world COM; static common support required by legacy stop contract",
+      "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+      "status": "MEASURED",
+      "support_frame": "COMMON_STATIC_WORLD"
+    },
+    "onset_authority": "Original driver and independent R3 metrics, not this diagnostic funnel",
+    "physics_hz": 120,
+    "scenario": "lateral_clean_right",
+    "schema": "fixture_prerequisite_funnel_v134",
+    "source_audit_sha256": "5aea2003cf14ed3ae1aa4ab1b78770cfa473f9e96da34f4c72dd4e3322589870",
+    "source_run_id": "lateral_clean_right_120_headless_r0_2e1d40c0",
+    "thresholds_unchanged": {
+      "axis_speed_m_s": 0.1,
+      "full_spin_rad_s": 0.2,
+      "hand_load_N": 1,
+      "quiet_duration_s": 0.25,
+      "required_foot_load_N": 1
+    },
+    "total_ticks": 468
+  },
+  {
+    "all_true_ticks": 0,
+    "clauses": {
+      "axis_speed_le_0_1": {
+        "false_ticks": 6,
+        "true_ticks": 784,
+        "true_time_s": 6.533333333333333
+      },
+      "both_hand_material_supports": {
+        "false_ticks": 89,
+        "true_ticks": 701,
+        "true_time_s": 5.841666666666667
+      },
+      "both_hands_attached": {
+        "false_ticks": 123,
+        "true_ticks": 667,
+        "true_time_s": 5.558333333333334
+      },
+      "clearance_certified": {
+        "false_ticks": 0,
+        "true_ticks": 790,
+        "true_time_s": 6.583333333333333
+      },
+      "full_spin_le_0_2": {
+        "false_ticks": 109,
+        "true_ticks": 681,
+        "true_time_s": 5.675
+      },
+      "hands_loaded_gt_1N": {
+        "false_ticks": 149,
+        "true_ticks": 641,
+        "true_time_s": 5.341666666666667
+      },
+      "no_hybrid_authority": {
+        "false_ticks": 0,
+        "true_ticks": 790,
+        "true_time_s": 6.583333333333333
+      },
+      "no_native_ground_authority": {
+        "false_ticks": 790,
+        "true_ticks": 0,
+        "true_time_s": 0.0
+      },
+      "not_grounded": {
+        "false_ticks": 790,
+        "true_ticks": 0,
+        "true_time_s": 0.0
+      },
+      "required_foot_load_gt_1N": {
+        "false_ticks": 166,
+        "true_ticks": 624,
+        "true_time_s": 5.2
+      },
+      "support_valid": {
+        "false_ticks": 88,
+        "true_ticks": 702,
+        "true_time_s": 5.85
+      }
+    },
+    "diagnostic_only": true,
+    "earliest_loss_after_first_all_true_tick": null,
+    "first_all_true_tick": null,
+    "longest_contiguous_quiet_s": 0.0,
+    "native_contact_absence_certified": false,
+    "observation": {
+      "reason_code": "QUIET_ONSET_NOT_REACHED",
+      "status": "PRECONDITION_NOT_MET"
+    },
+    "onset_authority": "Original driver and independent R3 metrics, not this diagnostic funnel",
+    "physics_hz": 120,
+    "scenario": "foot_supported_step",
+    "schema": "fixture_prerequisite_funnel_v134",
+    "source_audit_sha256": "a3205050a0daaaf3d449a8d2aa72d851a078349960a288a690421480ea9977ca",
+    "source_run_id": "foot_supported_step_120_headless_r0_d7af214e",
+    "thresholds_unchanged": {
+      "axis_speed_m_s": 0.1,
+      "full_spin_rad_s": 0.2,
+      "hand_load_N": 1,
+      "quiet_duration_s": 0.25,
+      "required_foot_load_N": 1
+    },
+    "total_ticks": 790
+  },
+  {
+    "all_true_ticks": 609,
+    "clauses": {
+      "axis_speed_le_0_1": {
+        "false_ticks": 77,
+        "true_ticks": 909,
+        "true_time_s": 7.575
+      },
+      "both_hand_material_supports": {
+        "false_ticks": 89,
+        "true_ticks": 897,
+        "true_time_s": 7.475
+      },
+      "both_hands_attached": {
+        "false_ticks": 123,
+        "true_ticks": 863,
+        "true_time_s": 7.191666666666666
+      },
+      "clearance_certified": {
+        "false_ticks": 199,
+        "true_ticks": 787,
+        "true_time_s": 6.558333333333334
+      },
+      "full_spin_le_0_2": {
+        "false_ticks": 179,
+        "true_ticks": 807,
+        "true_time_s": 6.725
+      },
+      "hands_loaded_gt_1N": {
+        "false_ticks": 196,
+        "true_ticks": 790,
+        "true_time_s": 6.583333333333333
+      },
+      "no_hybrid_authority": {
+        "false_ticks": 0,
+        "true_ticks": 986,
+        "true_time_s": 8.216666666666667
+      },
+      "no_native_ground_authority": {
+        "false_ticks": 136,
+        "true_ticks": 850,
+        "true_time_s": 7.083333333333333
+      },
+      "not_grounded": {
+        "false_ticks": 136,
+        "true_ticks": 850,
+        "true_time_s": 7.083333333333333
+      },
+      "required_foot_load_gt_1N": {
+        "false_ticks": 0,
+        "true_ticks": 986,
+        "true_time_s": 8.216666666666667
+      },
+      "support_valid": {
+        "false_ticks": 88,
+        "true_ticks": 898,
+        "true_time_s": 7.483333333333333
+      }
+    },
+    "diagnostic_only": true,
+    "earliest_loss_after_first_all_true_tick": 198,
+    "first_all_true_tick": 197,
+    "longest_contiguous_quiet_s": 4.183333333333334,
+    "native_contact_absence_certified": false,
+    "observation": {
+      "direction_world": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "end_tick": 986,
+      "interruption": null,
+      "onset_tick": 386,
+      "physics_hz": 120,
+      "raw_scope": "world COM; static common support required by legacy stop contract",
+      "reason_code": "AUTHORIZED_HORIZON_COMPLETE",
+      "status": "MEASURED",
+      "support_frame": "COMMON_STATIC_WORLD"
+    },
+    "onset_authority": "Original driver and independent R3 metrics, not this diagnostic funnel",
+    "physics_hz": 120,
+    "scenario": "two_hand_release_stop",
+    "schema": "fixture_prerequisite_funnel_v134",
+    "source_audit_sha256": "538eb151b610bfdf1079ecfd98ad3a7a2b0ce1dee5a9aa184901ef7d80bb8c1e",
+    "source_run_id": "two_hand_release_stop_120_headless_r0_bf7771fc",
+    "thresholds_unchanged": {
+      "axis_speed_m_s": 0.1,
+      "full_spin_rad_s": 0.2,
+      "hand_load_N": 1,
+      "quiet_duration_s": 0.25,
+      "required_foot_load_N": 1
+    },
+    "total_ticks": 986
+  },
+  {
+    "all_true_ticks": 0,
+    "clauses": {
+      "axis_speed_le_0_1": {
+        "false_ticks": 1,
+        "true_ticks": 395,
+        "true_time_s": 6.583333333333333
+      },
+      "both_hand_material_supports": {
+        "false_ticks": 45,
+        "true_ticks": 351,
+        "true_time_s": 5.85
+      },
+      "both_hands_attached": {
+        "false_ticks": 62,
+        "true_ticks": 334,
+        "true_time_s": 5.566666666666666
+      },
+      "clearance_certified": {
+        "false_ticks": 394,
+        "true_ticks": 2,
+        "true_time_s": 0.03333333333333333
+      },
+      "full_spin_le_0_2": {
+        "false_ticks": 7,
+        "true_ticks": 389,
+        "true_time_s": 6.483333333333333
+      },
+      "hands_loaded_gt_1N": {
+        "false_ticks": 99,
+        "true_ticks": 297,
+        "true_time_s": 4.95
+      },
+      "no_hybrid_authority": {
+        "false_ticks": 0,
+        "true_ticks": 396,
+        "true_time_s": 6.6
+      },
+      "no_native_ground_authority": {
+        "false_ticks": 69,
+        "true_ticks": 327,
+        "true_time_s": 5.45
+      },
+      "not_grounded": {
+        "false_ticks": 69,
+        "true_ticks": 327,
+        "true_time_s": 5.45
+      },
+      "required_foot_load_gt_1N": {
+        "false_ticks": 0,
+        "true_ticks": 396,
+        "true_time_s": 6.6
+      },
+      "support_valid": {
+        "false_ticks": 44,
+        "true_ticks": 352,
+        "true_time_s": 5.866666666666666
+      }
+    },
+    "diagnostic_only": true,
+    "earliest_loss_after_first_all_true_tick": null,
+    "first_all_true_tick": null,
+    "longest_contiguous_quiet_s": 0.0,
+    "native_contact_absence_certified": false,
+    "observation": {
+      "reason_code": "QUIET_ONSET_NOT_REACHED",
+      "status": "PRECONDITION_NOT_MET"
+    },
+    "onset_authority": "Original driver and independent R3 metrics, not this diagnostic funnel",
+    "physics_hz": 60,
+    "scenario": "vertical_pull_clean",
+    "schema": "fixture_prerequisite_funnel_v134",
+    "source_audit_sha256": "e7424629ea743deb86d87e69f57c126c73a13d6397f8393ae1d53d62ba24bf73",
+    "source_run_id": "vertical_pull_clean_60_headless_r0_a4d32270",
+    "thresholds_unchanged": {
+      "axis_speed_m_s": 0.1,
+      "full_spin_rad_s": 0.2,
+      "hand_load_N": 1,
+      "quiet_duration_s": 0.25,
+      "required_foot_load_N": 1
+    },
+    "total_ticks": 396
+  },
+  {
+    "all_true_ticks": 0,
+    "clauses": {
+      "axis_speed_le_0_1": {
+        "false_ticks": 1,
+        "true_ticks": 393,
+        "true_time_s": 6.55
+      },
+      "both_hand_material_supports": {
+        "false_ticks": 45,
+        "true_ticks": 349,
+        "true_time_s": 5.816666666666666
+      },
+      "both_hands_attached": {
+        "false_ticks": 60,
+        "true_ticks": 334,
+        "true_time_s": 5.566666666666666
+      },
+      "clearance_certified": {
+        "false_ticks": 392,
+        "true_ticks": 2,
+        "true_time_s": 0.03333333333333333
+      },
+      "full_spin_le_0_2": {
+        "false_ticks": 7,
+        "true_ticks": 387,
+        "true_time_s": 6.45
+      },
+      "hands_loaded_gt_1N": {
+        "false_ticks": 97,
+        "true_ticks": 297,
+        "true_time_s": 4.95
+      },
+      "no_hybrid_authority": {
+        "false_ticks": 0,
+        "true_ticks": 394,
+        "true_time_s": 6.566666666666666
+      },
+      "no_native_ground_authority": {
+        "false_ticks": 67,
+        "true_ticks": 327,
+        "true_time_s": 5.45
+      },
+      "not_grounded": {
+        "false_ticks": 67,
+        "true_ticks": 327,
+        "true_time_s": 5.45
+      },
+      "required_foot_load_gt_1N": {
+        "false_ticks": 0,
+        "true_ticks": 394,
+        "true_time_s": 6.566666666666666
+      },
+      "support_valid": {
+        "false_ticks": 44,
+        "true_ticks": 350,
+        "true_time_s": 5.833333333333333
+      }
+    },
+    "diagnostic_only": true,
+    "earliest_loss_after_first_all_true_tick": null,
+    "first_all_true_tick": null,
+    "longest_contiguous_quiet_s": 0.0,
+    "native_contact_absence_certified": false,
+    "observation": {
+      "reason_code": "QUIET_ONSET_NOT_REACHED",
+      "status": "PRECONDITION_NOT_MET"
+    },
+    "onset_authority": "Original driver and independent R3 metrics, not this diagnostic funnel",
+    "physics_hz": 60,
+    "scenario": "asymmetric_pull_clean",
+    "schema": "fixture_prerequisite_funnel_v134",
+    "source_audit_sha256": "b04692ce68fe28d4f18c609285ee015fe7f1cda14ad3092589fcfd0095ee7922",
+    "source_run_id": "asymmetric_pull_clean_60_headless_r0_6dca3152",
+    "thresholds_unchanged": {
+      "axis_speed_m_s": 0.1,
+      "full_spin_rad_s": 0.2,
+      "hand_load_N": 1,
+      "quiet_duration_s": 0.25,
+      "required_foot_load_N": 1
+    },
+    "total_ticks": 394
+  },
+  {
+    "all_true_ticks": 45,
+    "clauses": {
+      "axis_speed_le_0_1": {
+        "false_ticks": 36,
+        "true_ticks": 203,
+        "true_time_s": 3.3833333333333333
+      },
+      "both_hand_material_supports": {
+        "false_ticks": 45,
+        "true_ticks": 194,
+        "true_time_s": 3.2333333333333334
+      },
+      "both_hands_attached": {
+        "false_ticks": 62,
+        "true_ticks": 177,
+        "true_time_s": 2.95
+      },
+      "clearance_certified": {
+        "false_ticks": 114,
+        "true_ticks": 125,
+        "true_time_s": 2.0833333333333335
+      },
+      "full_spin_le_0_2": {
+        "false_ticks": 88,
+        "true_ticks": 151,
+        "true_time_s": 2.5166666666666666
+      },
+      "hands_loaded_gt_1N": {
+        "false_ticks": 98,
+        "true_ticks": 141,
+        "true_time_s": 2.35
+      },
+      "no_hybrid_authority": {
+        "false_ticks": 0,
+        "true_ticks": 239,
+        "true_time_s": 3.9833333333333334
+      },
+      "no_native_ground_authority": {
+        "false_ticks": 84,
+        "true_ticks": 155,
+        "true_time_s": 2.5833333333333335
+      },
+      "not_grounded": {
+        "false_ticks": 84,
+        "true_ticks": 155,
+        "true_time_s": 2.5833333333333335
+      },
+      "required_foot_load_gt_1N": {
+        "false_ticks": 0,
+        "true_ticks": 239,
+        "true_time_s": 3.9833333333333334
+      },
+      "support_valid": {
+        "false_ticks": 44,
+        "true_ticks": 195,
+        "true_time_s": 3.25
+      }
+    },
+    "diagnostic_only": true,
+    "earliest_loss_after_first_all_true_tick": 122,
+    "first_all_true_tick": 117,
+    "longest_contiguous_quiet_s": 0.38333333333333336,
+    "native_contact_absence_certified": false,
+    "observation": {
+      "direction_world": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "end_tick": 199,
+      "interruption": {
+        "reason_code": "NATIVE_GROUND_AUTHORITY_CHANGED_TASK",
+        "tick": 200
+      },
+      "onset_tick": 179,
+      "physics_hz": 60,
+      "raw_scope": "world COM; static common support required by legacy stop contract",
+      "reason_code": "NATIVE_GROUND_AUTHORITY_CHANGED_TASK",
+      "status": "INTERRUPTED",
+      "support_frame": "COMMON_STATIC_WORLD"
+    },
+    "onset_authority": "Original driver and independent R3 metrics, not this diagnostic funnel",
+    "physics_hz": 60,
+    "scenario": "lateral_clean_left",
+    "schema": "fixture_prerequisite_funnel_v134",
+    "source_audit_sha256": "7323155e9c1b2a749f62862f18f9d80f7d0da9c05def374c9fa54e4d4164aff2",
+    "source_run_id": "lateral_clean_left_60_headless_r0_76edb734",
+    "thresholds_unchanged": {
+      "axis_speed_m_s": 0.1,
+      "full_spin_rad_s": 0.2,
+      "hand_load_N": 1,
+      "quiet_duration_s": 0.25,
+      "required_foot_load_N": 1
+    },
+    "total_ticks": 239
+  },
+  {
+    "all_true_ticks": 44,
+    "clauses": {
+      "axis_speed_le_0_1": {
+        "false_ticks": 37,
+        "true_ticks": 202,
+        "true_time_s": 3.3666666666666667
+      },
+      "both_hand_material_supports": {
+        "false_ticks": 45,
+        "true_ticks": 194,
+        "true_time_s": 3.2333333333333334
+      },
+      "both_hands_attached": {
+        "false_ticks": 62,
+        "true_ticks": 177,
+        "true_time_s": 2.95
+      },
+      "clearance_certified": {
+        "false_ticks": 113,
+        "true_ticks": 126,
+        "true_time_s": 2.1
+      },
+      "full_spin_le_0_2": {
+        "false_ticks": 87,
+        "true_ticks": 152,
+        "true_time_s": 2.533333333333333
+      },
+      "hands_loaded_gt_1N": {
+        "false_ticks": 98,
+        "true_ticks": 141,
+        "true_time_s": 2.35
+      },
+      "no_hybrid_authority": {
+        "false_ticks": 0,
+        "true_ticks": 239,
+        "true_time_s": 3.9833333333333334
+      },
+      "no_native_ground_authority": {
+        "false_ticks": 84,
+        "true_ticks": 155,
+        "true_time_s": 2.5833333333333335
+      },
+      "not_grounded": {
+        "false_ticks": 84,
+        "true_ticks": 155,
+        "true_time_s": 2.5833333333333335
+      },
+      "required_foot_load_gt_1N": {
+        "false_ticks": 0,
+        "true_ticks": 239,
+        "true_time_s": 3.9833333333333334
+      },
+      "support_valid": {
+        "false_ticks": 44,
+        "true_ticks": 195,
+        "true_time_s": 3.25
+      }
+    },
+    "diagnostic_only": true,
+    "earliest_loss_after_first_all_true_tick": 121,
+    "first_all_true_tick": 116,
+    "longest_contiguous_quiet_s": 0.38333333333333336,
+    "native_contact_absence_certified": false,
+    "observation": {
+      "direction_world": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "end_tick": 199,
+      "interruption": {
+        "reason_code": "NATIVE_GROUND_AUTHORITY_CHANGED_TASK",
+        "tick": 200
+      },
+      "onset_tick": 179,
+      "physics_hz": 60,
+      "raw_scope": "world COM; static common support required by legacy stop contract",
+      "reason_code": "NATIVE_GROUND_AUTHORITY_CHANGED_TASK",
+      "status": "INTERRUPTED",
+      "support_frame": "COMMON_STATIC_WORLD"
+    },
+    "onset_authority": "Original driver and independent R3 metrics, not this diagnostic funnel",
+    "physics_hz": 60,
+    "scenario": "lateral_clean_right",
+    "schema": "fixture_prerequisite_funnel_v134",
+    "source_audit_sha256": "8e0d88b6fe78858844f96c4c6f027136d423397cb3393739a1ea92920dcd0ef7",
+    "source_run_id": "lateral_clean_right_60_headless_r0_c5f8fa67",
+    "thresholds_unchanged": {
+      "axis_speed_m_s": 0.1,
+      "full_spin_rad_s": 0.2,
+      "hand_load_N": 1,
+      "quiet_duration_s": 0.25,
+      "required_foot_load_N": 1
+    },
+    "total_ticks": 239
+  },
+  {
+    "all_true_ticks": 0,
+    "clauses": {
+      "axis_speed_le_0_1": {
+        "false_ticks": 4,
+        "true_ticks": 392,
+        "true_time_s": 6.533333333333333
+      },
+      "both_hand_material_supports": {
+        "false_ticks": 45,
+        "true_ticks": 351,
+        "true_time_s": 5.85
+      },
+      "both_hands_attached": {
+        "false_ticks": 62,
+        "true_ticks": 334,
+        "true_time_s": 5.566666666666666
+      },
+      "clearance_certified": {
+        "false_ticks": 0,
+        "true_ticks": 396,
+        "true_time_s": 6.6
+      },
+      "full_spin_le_0_2": {
+        "false_ticks": 47,
+        "true_ticks": 349,
+        "true_time_s": 5.816666666666666
+      },
+      "hands_loaded_gt_1N": {
+        "false_ticks": 74,
+        "true_ticks": 322,
+        "true_time_s": 5.366666666666666
+      },
+      "no_hybrid_authority": {
+        "false_ticks": 0,
+        "true_ticks": 396,
+        "true_time_s": 6.6
+      },
+      "no_native_ground_authority": {
+        "false_ticks": 396,
+        "true_ticks": 0,
+        "true_time_s": 0.0
+      },
+      "not_grounded": {
+        "false_ticks": 396,
+        "true_ticks": 0,
+        "true_time_s": 0.0
+      },
+      "required_foot_load_gt_1N": {
+        "false_ticks": 84,
+        "true_ticks": 312,
+        "true_time_s": 5.2
+      },
+      "support_valid": {
+        "false_ticks": 44,
+        "true_ticks": 352,
+        "true_time_s": 5.866666666666666
+      }
+    },
+    "diagnostic_only": true,
+    "earliest_loss_after_first_all_true_tick": null,
+    "first_all_true_tick": null,
+    "longest_contiguous_quiet_s": 0.0,
+    "native_contact_absence_certified": false,
+    "observation": {
+      "reason_code": "QUIET_ONSET_NOT_REACHED",
+      "status": "PRECONDITION_NOT_MET"
+    },
+    "onset_authority": "Original driver and independent R3 metrics, not this diagnostic funnel",
+    "physics_hz": 60,
+    "scenario": "foot_supported_step",
+    "schema": "fixture_prerequisite_funnel_v134",
+    "source_audit_sha256": "8c765829fb39e7dc54694aa1972262fe2d245be8e6951b16a09c6ec02054624c",
+    "source_run_id": "foot_supported_step_60_headless_r0_798266fe",
+    "thresholds_unchanged": {
+      "axis_speed_m_s": 0.1,
+      "full_spin_rad_s": 0.2,
+      "hand_load_N": 1,
+      "quiet_duration_s": 0.25,
+      "required_foot_load_N": 1
+    },
+    "total_ticks": 396
+  },
+  {
+    "all_true_ticks": 291,
+    "clauses": {
+      "axis_speed_le_0_1": {
+        "false_ticks": 47,
+        "true_ticks": 452,
+        "true_time_s": 7.533333333333333
+      },
+      "both_hand_material_supports": {
+        "false_ticks": 45,
+        "true_ticks": 454,
+        "true_time_s": 7.566666666666666
+      },
+      "both_hands_attached": {
+        "false_ticks": 62,
+        "true_ticks": 437,
+        "true_time_s": 7.283333333333333
+      },
+      "clearance_certified": {
+        "false_ticks": 113,
+        "true_ticks": 386,
+        "true_time_s": 6.433333333333334
+      },
+      "full_spin_le_0_2": {
+        "false_ticks": 97,
+        "true_ticks": 402,
+        "true_time_s": 6.7
+      },
+      "hands_loaded_gt_1N": {
+        "false_ticks": 98,
+        "true_ticks": 401,
+        "true_time_s": 6.683333333333334
+      },
+      "no_hybrid_authority": {
+        "false_ticks": 0,
+        "true_ticks": 499,
+        "true_time_s": 8.316666666666666
+      },
+      "no_native_ground_authority": {
+        "false_ticks": 83,
+        "true_ticks": 416,
+        "true_time_s": 6.933333333333334
+      },
+      "not_grounded": {
+        "false_ticks": 83,
+        "true_ticks": 416,
+        "true_time_s": 6.933333333333334
+      },
+      "required_foot_load_gt_1N": {
+        "false_ticks": 0,
+        "true_ticks": 499,
+        "true_time_s": 8.316666666666666
+      },
+      "support_valid": {
+        "false_ticks": 44,
+        "true_ticks": 455,
+        "true_time_s": 7.583333333333333
+      }
+    },
+    "diagnostic_only": true,
+    "earliest_loss_after_first_all_true_tick": 121,
+    "first_all_true_tick": 116,
+    "longest_contiguous_quiet_s": 4.116666666666666,
+    "native_contact_absence_certified": false,
+    "observation": {
+      "direction_world": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "end_tick": 199,
+      "interruption": {
+        "reason_code": "NATIVE_GROUND_AUTHORITY_CHANGED_TASK",
+        "tick": 200
+      },
+      "onset_tick": 199,
+      "physics_hz": 60,
+      "raw_scope": "world COM; static common support required by legacy stop contract",
+      "reason_code": "NATIVE_GROUND_AUTHORITY_CHANGED_TASK",
+      "status": "INTERRUPTED",
+      "support_frame": "COMMON_STATIC_WORLD"
+    },
+    "onset_authority": "Original driver and independent R3 metrics, not this diagnostic funnel",
+    "physics_hz": 60,
+    "scenario": "two_hand_release_stop",
+    "schema": "fixture_prerequisite_funnel_v134",
+    "source_audit_sha256": "c8263aed8fe825263ab62898fce210ad63a662a45a9d7c1511790424f2b61b4f",
+    "source_run_id": "two_hand_release_stop_60_headless_r0_b00b61a1",
+    "thresholds_unchanged": {
+      "axis_speed_m_s": 0.1,
+      "full_spin_rad_s": 0.2,
+      "hand_load_N": 1,
+      "quiet_duration_s": 0.25,
+      "required_foot_load_N": 1
+    },
+    "total_ticks": 499
+  }
+]

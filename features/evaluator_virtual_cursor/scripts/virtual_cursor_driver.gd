@@ -69,6 +69,14 @@ func start(value:Dictionary)->Dictionary:
 	if value.has("projection_config"):
 		result["projection_setup"]=projection_setup
 		result["projection_probe"]=projection_probe.write(str(value.output_dir).path_join("projection_picks.jsonl")) if projection_probe!=null else {"status":"CONTROL_WITH_PROBE_DISABLED"}
+	if value.get("pick_contract_version","")=="1.3.4":
+		var PickContract=preload("res://features/evaluator_virtual_cursor/scripts/pick_dispatch_contract.gd")
+		var ProbeEncoder=preload("res://features/evaluator_virtual_cursor/scripts/projection_probe.gd")
+		var pick_view:Dictionary=PickContract.build_view(ProbeEncoder.encode(virtual_rows),projection_probe.records if projection_probe!=null else [],str(value.run_id),result.get("status")=="completed" and _trace_integrity_reason.is_empty(),virtual_frames.size(),true)
+		var pick_path:String=str(value.output_dir).path_join("pick_dispatch_contract.json")
+		if not TraceWriter.atomic_json(pick_path,pick_view):pick_view={"status":"INVALID","reason":"PICK_CONTRACT_WRITE_FAILED"}
+		result["pick_contract"]={"status":pick_view.status,"reason":pick_view.reason,"path":pick_path,"sha256":FileAccess.get_sha256(pick_path)}
+		if pick_view.status!="PASS":result.status="invalid";result.reason="PICK_CONTRACT_FAILURE:"+str(pick_view.reason)
 	TraceWriter.atomic_json(str(value.output_dir).path_join("virtual_audit.json"),{"schema":"grip_virtual_audit_v1","environment":session_environment,"frames":virtual_frames,"ticks":virtual_rows})
 	return result
 

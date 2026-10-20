@@ -1,0 +1,346 @@
+{
+  "allocation": "A0",
+  "canonical_backing": [
+    1024,
+    576
+  ],
+  "capture_lane": "ADAPTIVE_CAPTURE_SOURCE_NEVER_COUNTED_AS_FIXED_REPLAY",
+  "feet": "B1",
+  "generalization": "NOT_TESTED",
+  "id": "fixture_feasibility_v134",
+  "logical_viewport": [
+    1920,
+    1080
+  ],
+  "optimizer": "OFF",
+  "profile": 4,
+  "qualification_lane": "FIXED_VIRTUAL_REPLAY",
+  "revision": 2,
+  "scenarios": [
+    {
+      "acquisition_order": [
+        0,
+        1
+      ],
+      "arena": 8,
+      "command": [
+        "contract"
+      ],
+      "contact_points": [
+        [
+          -0.24,
+          2.25,
+          0
+        ],
+        [
+          0.24,
+          2.25,
+          0
+        ]
+      ],
+      "direction_world": [
+        0,
+        1,
+        0
+      ],
+      "fixture": "v134_pad_clearance_r2",
+      "id": "vertical_pull_clean_v134_r2",
+      "initial_policy": "PENDING_QUALIFICATION",
+      "input_policy_revision": "v134_real_higher_regrip_r1",
+      "kind": "progress",
+      "observe_s": 1.0,
+      "onset_policy": "real dual hands/no nativeground/fullspin<=.2/abs(axisvelocity)<=.1 for elapsed .25;stop drive[.15,.5];acceptedPOST recheck;foot requires >1N compressive",
+      "physical_feet": true,
+      "require_foot_load": false,
+      "revision": 2,
+      "warmup_s": 0.45,
+      "domain_id": "vertical_pull_clean",
+      "fixture_revision": "v134_pad_clearance_r2",
+      "entry_contacts": [
+        [
+          -0.24,
+          2.1,
+          0
+        ],
+        [
+          0.24,
+          2.1,
+          0
+        ]
+      ],
+      "entry_pull_s": 1.5,
+      "scoring": "PROHIBITED"
+    },
+    {
+      "acquisition_order": [
+        0,
+        1
+      ],
+      "arena": 8,
+      "command": [
+        "contract"
+      ],
+      "contact_points": [
+        [
+          -0.24,
+          2.25,
+          0
+        ],
+        [
+          0.24,
+          2.13,
+          0
+        ]
+      ],
+      "direction_world": [
+        0,
+        1,
+        0
+      ],
+      "fixture": "v134_pad_clearance_r2",
+      "id": "asymmetric_pull_clean_v134_r2",
+      "initial_policy": "PENDING_QUALIFICATION",
+      "input_policy_revision": "v134_real_higher_regrip_r1",
+      "kind": "progress",
+      "observe_s": 1.0,
+      "onset_policy": "real dual hands/no nativeground/fullspin<=.2/abs(axisvelocity)<=.1 for elapsed .25;stop drive[.15,.5];acceptedPOST recheck;foot requires >1N compressive",
+      "physical_feet": true,
+      "require_foot_load": false,
+      "revision": 2,
+      "warmup_s": 0.45,
+      "domain_id": "asymmetric_pull_clean",
+      "fixture_revision": "v134_pad_clearance_r2",
+      "entry_contacts": [
+        [
+          -0.24,
+          2.1,
+          0
+        ],
+        [
+          0.24,
+          1.98,
+          0
+        ]
+      ],
+      "entry_pull_s": 1.5,
+      "scoring": "PROHIBITED"
+    },
+    {
+      "acquisition_order": [
+        1,
+        0
+      ],
+      "arena": 8,
+      "command": [
+        "bias_left"
+      ],
+      "contact_points": [
+        [
+          -0.24,
+          2.25,
+          0
+        ],
+        [
+          0.24,
+          2.25,
+          0
+        ]
+      ],
+      "direction_world": [
+        -1,
+        0,
+        0
+      ],
+      "fixture": "v134_pad_clearance_r2",
+      "id": "lateral_clean_left_v134_r2",
+      "initial_policy": "PENDING_QUALIFICATION",
+      "input_policy_revision": "v134_real_higher_regrip_r1",
+      "kind": "progress",
+      "observe_s": 1.0,
+      "onset_policy": "real dual hands/no nativeground/fullspin<=.2/abs(axisvelocity)<=.1 for elapsed .25;stop drive[.15,.5];acceptedPOST recheck;foot requires >1N compressive",
+      "physical_feet": true,
+      "require_foot_load": false,
+      "revision": 2,
+      "warmup_s": 0.45,
+      "domain_id": "lateral_clean_left",
+      "fixture_revision": "v134_pad_clearance_r2",
+      "entry_contacts": [
+        [
+          -0.24,
+          2.1,
+          0
+        ],
+        [
+          0.24,
+          2.1,
+          0
+        ]
+      ],
+      "entry_pull_s": 1.5,
+      "scoring": "PROHIBITED"
+    },
+    {
+      "acquisition_order": [
+        0,
+        1
+      ],
+      "arena": 8,
+      "command": [
+        "bias_right"
+      ],
+      "contact_points": [
+        [
+          -0.24,
+          2.25,
+          0
+        ],
+        [
+          0.24,
+          2.25,
+          0
+        ]
+      ],
+      "direction_world": [
+        1,
+        0,
+        0
+      ],
+      "fixture": "v134_pad_clearance_r2",
+      "id": "lateral_clean_right_v134_r2",
+      "initial_policy": "PENDING_QUALIFICATION",
+      "input_policy_revision": "v134_real_higher_regrip_r1",
+      "kind": "progress",
+      "observe_s": 1.0,
+      "onset_policy": "real dual hands/no nativeground/fullspin<=.2/abs(axisvelocity)<=.1 for elapsed .25;stop drive[.15,.5];acceptedPOST recheck;foot requires >1N compressive",
+      "physical_feet": true,
+      "require_foot_load": false,
+      "revision": 2,
+      "warmup_s": 0.45,
+      "domain_id": "lateral_clean_right",
+      "fixture_revision": "v134_pad_clearance_r2",
+      "entry_contacts": [
+        [
+          -0.24,
+          2.1,
+          0
+        ],
+        [
+          0.24,
+          2.1,
+          0
+        ]
+      ],
+      "entry_pull_s": 1.5,
+      "scoring": "PROHIBITED"
+    },
+    {
+      "acquisition_order": [
+        0,
+        1
+      ],
+      "arena": 8,
+      "command": [
+        "contract"
+      ],
+      "contact_points": [
+        [
+          -0.24,
+          2.25,
+          0
+        ],
+        [
+          0.24,
+          2.25,
+          0
+        ]
+      ],
+      "direction_world": [
+        0,
+        1,
+        0
+      ],
+      "fixture": "v134_pad_clearance_r2",
+      "id": "foot_supported_step_v134_r2",
+      "initial_policy": "PENDING_QUALIFICATION",
+      "input_policy_revision": "v134_real_higher_regrip_r1",
+      "kind": "progress",
+      "observe_s": 1.0,
+      "onset_policy": "real dual hands/no nativeground/fullspin<=.2/abs(axisvelocity)<=.1 for elapsed .25;stop drive[.15,.5];acceptedPOST recheck;foot requires >1N compressive",
+      "physical_feet": true,
+      "require_foot_load": true,
+      "revision": 2,
+      "warmup_s": 0.45,
+      "domain_id": "foot_supported_step",
+      "fixture_revision": "v134_pad_clearance_foot_lip_r2",
+      "entry_contacts": [
+        [
+          -0.24,
+          2.1,
+          0
+        ],
+        [
+          0.24,
+          2.1,
+          0
+        ]
+      ],
+      "entry_pull_s": 1.5,
+      "scoring": "PROHIBITED"
+    },
+    {
+      "acquisition_order": [
+        0,
+        1
+      ],
+      "arena": 8,
+      "command": [],
+      "contact_points": [
+        [
+          -0.24,
+          2.25,
+          0
+        ],
+        [
+          0.24,
+          2.25,
+          0
+        ]
+      ],
+      "direction_world": [
+        1,
+        0,
+        0
+      ],
+      "fixture": "v134_pad_clearance_r2",
+      "id": "two_hand_release_stop_v134_r2",
+      "initial_policy": "PENDING_QUALIFICATION",
+      "input_policy_revision": "v134_real_higher_regrip_r1",
+      "kind": "release_stop",
+      "observe_s": 5.0,
+      "onset_policy": "real dual hands/no nativeground/fullspin<=.2/abs(axisvelocity)<=.1 for elapsed .25;stop drive[.15,.5];acceptedPOST recheck;foot requires >1N compressive",
+      "physical_feet": true,
+      "require_foot_load": false,
+      "revision": 2,
+      "warmup_s": 0.45,
+      "domain_id": "two_hand_release_stop",
+      "fixture_revision": "v134_pad_clearance_r2",
+      "entry_contacts": [
+        [
+          -0.24,
+          2.1,
+          0
+        ],
+        [
+          0.24,
+          2.1,
+          0
+        ]
+      ],
+      "entry_pull_s": 1.5,
+      "scoring": "PROHIBITED"
+    }
+  ],
+  "seed": 101,
+  "scoring": "PROHIBITED",
+  "provenance": "Developmentr1 data: Vertical60measured; Asym60padEND_OVERLAP; Step60wallcontactwithoutcompression. Finalr2staticreviewedpadfront.39 andStepliptop.65/front.10; newworld/newtapes, no scorecontinuity."
+}

@@ -68,6 +68,7 @@ def execute(scenario,hz,mode,repeat,group,tape_path=None,probe=True,negative='')
     atomic_json(directory/'serialized_projection_config.json',m['projection_config'])
     flags=['--headless','--fixed-fps','120'] if mode=='headless' else ['--screen','0','--position','80,80']
     command=[str(ENGINE),*flags,'--resolution','1024x576','--path',str(ROOT),'--script',ENTRY,'--','--backing-size','1024x576','--virtual-cursor-evaluator','--benchmark-qualification','--manifest',str(directory/'manifest.json'),'--result',str(directory/'engine_result.json')]
+    if m.get('pick_contract_version')=='1.3.4':command.append('--fixture-feasibility')
     atomic_json(directory/'execution.json',{'command':command,'utc':utc_now(),'workers':1,'input_lane':lane})
     started=time.monotonic();code=None;reason='';result={};metrics={}
     with (directory/'stdout.txt').open('wb') as stdout,(directory/'stderr.txt').open('wb') as stderr:
@@ -109,7 +110,12 @@ def execute(scenario,hz,mode,repeat,group,tape_path=None,probe=True,negative='')
                 if row['canonical_input']['effective_aim_px']!=[f32(x) for x in wanted['aim_position_viewport_px']] and wanted['aim_valid']:raise ValueError('TAPE_NATIVE_VECTOR2_CURSOR')
         if probe:
             picks=load_picks(directory)
-            if len(picks)!=sum(len(t['target'].get('picks',[])) for t in ticks):raise ValueError('MISSING_REAL_PICK_RECORDS')
+            if m.get('pick_contract_version')=='1.3.4':
+                from pick_contract import validate_stream
+                view=validate_stream(ticks,picks,run_id,completed=True,expected_tick_count=len(audit['frames']),strict_new=True)
+                atomic_json(directory/'python_pick_dispatch_contract.json',view)
+                if result.get('pick_contract',{}).get('status')!='PASS':raise ValueError('GODOT_PICK_CONTRACT_NOT_PASSED')
+            elif len(picks)!=sum(len(t['target'].get('picks',[])) for t in ticks):raise ValueError('MISSING_REAL_PICK_RECORDS')
             if result['projection_probe']['error']:raise ValueError(result['projection_probe']['error'])
         s=result['scenarios'][0]
         if any(s.get('invariants',{}).values()):raise ValueError('HARD_PHYSICS_INVARIANT')

@@ -1,0 +1,168 @@
+{
+  "development_counting_note": "GateA and early reference physical launches counted within8; repeat4references on finalfrozen source under finalreference4. No free preprocessing or extra engineepisodes. Atmost3developmentfixturetrials remain after5earlygates.",
+  "development_max": 8,
+  "final_catalog_revision": 2,
+  "final_cells": [
+    {
+      "capture": 1,
+      "domain_id": "vertical_pull_clean",
+      "fixture_revision": "v134_pad_clearance_r2",
+      "headless_replay": 1,
+      "hz": 120,
+      "rendered_replay": 1,
+      "scenario_id": "vertical_pull_clean_v134_r2",
+      "score_eligible": false
+    },
+    {
+      "capture": 1,
+      "domain_id": "asymmetric_pull_clean",
+      "fixture_revision": "v134_pad_clearance_r2",
+      "headless_replay": 1,
+      "hz": 120,
+      "rendered_replay": 1,
+      "scenario_id": "asymmetric_pull_clean_v134_r2",
+      "score_eligible": false
+    },
+    {
+      "capture": 1,
+      "domain_id": "lateral_clean_left",
+      "fixture_revision": "v134_pad_clearance_r2",
+      "headless_replay": 1,
+      "hz": 120,
+      "rendered_replay": 1,
+      "scenario_id": "lateral_clean_left_v134_r2",
+      "score_eligible": false
+    },
+    {
+      "capture": 1,
+      "domain_id": "lateral_clean_right",
+      "fixture_revision": "v134_pad_clearance_r2",
+      "headless_replay": 1,
+      "hz": 120,
+      "rendered_replay": 1,
+      "scenario_id": "lateral_clean_right_v134_r2",
+      "score_eligible": false
+    },
+    {
+      "capture": 1,
+      "domain_id": "foot_supported_step",
+      "fixture_revision": "v134_pad_clearance_foot_lip_r2",
+      "headless_replay": 1,
+      "hz": 120,
+      "rendered_replay": 1,
+      "scenario_id": "foot_supported_step_v134_r2",
+      "score_eligible": false
+    },
+    {
+      "capture": 1,
+      "domain_id": "two_hand_release_stop",
+      "fixture_revision": "v134_pad_clearance_r2",
+      "headless_replay": 1,
+      "hz": 120,
+      "rendered_replay": 1,
+      "scenario_id": "two_hand_release_stop_v134_r2",
+      "score_eligible": false
+    },
+    {
+      "capture": 1,
+      "domain_id": "vertical_pull_clean",
+      "fixture_revision": "v134_pad_clearance_r2",
+      "headless_replay": 1,
+      "hz": 60,
+      "rendered_replay": 1,
+      "scenario_id": "vertical_pull_clean_v134_r2",
+      "score_eligible": false
+    },
+    {
+      "capture": 1,
+      "domain_id": "asymmetric_pull_clean",
+      "fixture_revision": "v134_pad_clearance_r2",
+      "headless_replay": 1,
+      "hz": 60,
+      "rendered_replay": 1,
+      "scenario_id": "asymmetric_pull_clean_v134_r2",
+      "score_eligible": false
+    },
+    {
+      "capture": 1,
+      "domain_id": "lateral_clean_left",
+      "fixture_revision": "v134_pad_clearance_r2",
+      "headless_replay": 1,
+      "hz": 60,
+      "rendered_replay": 1,
+      "scenario_id": "lateral_clean_left_v134_r2",
+      "score_eligible": false
+    },
+    {
+      "capture": 1,
+      "domain_id": "lateral_clean_right",
+      "fixture_revision": "v134_pad_clearance_r2",
+      "headless_replay": 1,
+      "hz": 60,
+      "rendered_replay": 1,
+      "scenario_id": "lateral_clean_right_v134_r2",
+      "score_eligible": false
+    },
+    {
+      "capture": 1,
+      "domain_id": "foot_supported_step",
+      "fixture_revision": "v134_pad_clearance_foot_lip_r2",
+      "headless_replay": 1,
+      "hz": 60,
+      "rendered_replay": 1,
+      "scenario_id": "foot_supported_step_v134_r2",
+      "score_eligible": false
+    },
+    {
+      "capture": 1,
+      "domain_id": "two_hand_release_stop",
+      "fixture_revision": "v134_pad_clearance_r2",
+      "headless_replay": 1,
+      "hz": 60,
+      "rendered_replay": 1,
+      "scenario_id": "two_hand_release_stop_v134_r2",
+      "score_eligible": false
+    }
+  ],
+  "final_fixture_candidate": "r2, separatelyreviewedafter8development:padfrontZ.39 andB1liptop.65/frontZ.10; initialsourceuntestedr2 mustcapturefreshbothHz; no r1passcredits",
+  "final_pilot_max": 48,
+  "geometry_revision_1": "Old qualification_mirror_v1 geometry remains exact; new entry/regrip inputs and newscenarioIDs; footstep now uses nongroundmirror insteadoldStart5m",
+  "id": "fixture_feasibility_v134_r1",
+  "limits": {
+    "capture": 12,
+    "development": 8,
+    "negative": 2,
+    "reference": 4,
+    "regression_separate": 34,
+    "replay": 24,
+    "reserve": 6
+  },
+  "max_qualification_attempts": 56,
+  "optimizer": "OFF",
+  "order": [
+    "pure contracts",
+    "development GateA N1120",
+    "development GateB H/R120 and H/R60 original catch",
+    "up to3developmentfixturecaptures prioritized vertical60 asymmetric60 foot60",
+    "freeze finalbytes and reviews",
+    "finalN1bothHz",
+    "fresh4finalreference",
+    "up to12finalpreparations and24fixedreplays",
+    "fresh34separate regressions and LIVE/release verification"
+  ],
+  "physics_limits_unchanged": true,
+  "private_holdout_accessed": false,
+  "quiet_thresholds_unchanged": true,
+  "reference_tapes": {
+    "120": {
+      "path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\requal_20261020_r1\\capture\\tapes\\catch_120.json",
+      "sha256": "d09f2569cbbafb4db2d3571b806dc804622fe4efda3c6ba9d8790a51bdb2991b"
+    },
+    "60": {
+      "path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\requal_20261020_r1\\capture\\tapes\\catch_60.json",
+      "sha256": "a711b9cb2792890fddd3782db0705a003fdccae4fad67fa3085f895c0a2a2e9d"
+    }
+  },
+  "score_eligible": false,
+  "source_policy": "Each candidate exactbytes archived; no sourcemutation duringrun. Finalcandidate immutable for allcountedpilotpairing; no oldR3scores reused."
+}

@@ -3,7 +3,7 @@ from pathlib import Path
 import subprocess,json,sys,hashlib
 ROOT=Path(__file__).resolve().parents[1];ENGINE=Path.home()/'WrapRush/tools/godot.exe'
 campaign=sys.argv[2] if len(sys.argv)>2 else 'benchmark_v133_r1'
-assert campaign in ['benchmark_v133_r1','benchmark_v133_r2','benchmark_v133_r3']
+assert campaign in ['benchmark_v133_r1','benchmark_v133_r2','benchmark_v133_r3','fixture_feasibility_v134_r1']
 OUT=ROOT/'builds/eval_virtual_cursor'/campaign/'safety';OUT.mkdir(parents=True,exist_ok=True)
 def run(label,command,timeout=60):
     with (OUT/f'{label}_stdout.txt').open('wb') as stdout,(OUT/f'{label}_stderr.txt').open('wb') as stderr:
@@ -49,6 +49,7 @@ func run()->void:
 	var excluded={}
 	for path in ["res://features/evaluator_virtual_cursor/scripts/projection_probe.gd","res://features/evaluator_virtual_cursor/scripts/replay_input_provider.gd","res://features/evaluator_virtual_cursor/scripts/virtual_cursor_driver.gd","res://features/evaluator_virtual_cursor/scripts/virtual_cursor_runner.gd","res://features/evaluator_qualification/scripts/qualification_driver.gd","res://features/auto_tuning_lab/scripts/optimization_trial_driver.gd"]:excluded[path]=not ResourceLoader.exists(path)
 	for path in ["res://features/evaluator_virtual_cursor/scripts/benchmark_backing.gd","res://features/evaluator_virtual_cursor/scripts/benchmark_driver.gd","res://features/evaluator_virtual_cursor/scripts/benchmark_runner.gd","res://features/evaluator_virtual_cursor/scripts/benchmark_preflight.gd","res://features/evaluator_virtual_cursor/resources/benchmark_eval_v133.json"]:excluded[path]=not ResourceLoader.exists(path)
+	for path in ["res://features/evaluator_virtual_cursor/scripts/feasibility_driver.gd","res://features/evaluator_virtual_cursor/scripts/feasibility_runner.gd","res://features/evaluator_virtual_cursor/scripts/feasibility_fixture.gd","res://features/evaluator_virtual_cursor/scripts/pick_dispatch_contract.gd","res://features/evaluator_virtual_cursor/resources/fixture_feasibility_v134.json"]:excluded[path]=not ResourceLoader.exists(path)
 	var app=load("res://features/grip_up/scenes/grip_up_lab.tscn").instantiate();root.add_child(app);current_scene=app
 	for frame in 5:await physics_frame
 	var value={"release_template":not OS.is_debug_build(),"provider_disabled":app.replay_input_provider==null,"camera_virtual":app.camera.virtual_physics_follow,"profile":app.input_profile,"excluded":excluded}
