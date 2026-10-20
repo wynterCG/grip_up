@@ -1,0 +1,38 @@
+test_actual_accepted_stream_not_tape_hash (test_contracts.ReplayContracts.test_actual_accepted_stream_not_tape_hash) ... ok
+test_clean (test_contracts.ReplayContracts.test_clean) ... ok
+test_content_address (test_contracts.ReplayContracts.test_content_address) ... ok
+test_corrupt_trace (test_contracts.ReplayContracts.test_corrupt_trace) ... ok
+test_cursor_mismatch_blocks (test_contracts.ReplayContracts.test_cursor_mismatch_blocks) ... ok
+test_dropped_tick (test_contracts.ReplayContracts.test_dropped_tick) ... ok
+test_duplicate_tick (test_contracts.ReplayContracts.test_duplicate_tick) ... ok
+test_focus_cancellation (test_contracts.ReplayContracts.test_focus_cancellation) ... ok
+test_late_mouse_up (test_contracts.ReplayContracts.test_late_mouse_up) ... ok
+test_logical_same_effective_direction_differs (test_contracts.ReplayContracts.test_logical_same_effective_direction_differs) ... ok
+test_missing_release (test_contracts.ReplayContracts.test_missing_release) ... ok
+test_native_difference_not_certification (test_contracts.ReplayContracts.test_native_difference_not_certification) ... ok
+test_nonfinite (test_contracts.ReplayContracts.test_nonfinite) ... ok
+test_observer_state (test_contracts.ReplayContracts.test_observer_state) ... ok
+test_setup_mapping (test_contracts.ReplayContracts.test_setup_mapping) ... ok
+test_stale_target_blocks (test_contracts.ReplayContracts.test_stale_target_blocks) ... ok
+test_tape_fixture_map_mismatch (test_contracts.ReplayContracts.test_tape_fixture_map_mismatch) ... ok
+test_tape_hash_changed (test_contracts.ReplayContracts.test_tape_hash_changed) ... ok
+test_wrong_camera_input (test_contracts.ReplayContracts.test_wrong_camera_input) ... ok
+test_wrong_delta (test_contracts.ReplayContracts.test_wrong_delta) ... ok
+test_wrong_hz (test_contracts.ReplayContracts.test_wrong_hz) ... ok
+test_wrong_phase (test_contracts.ReplayContracts.test_wrong_phase) ... ok
+test_angular_must_also_settle (test_metrics.Metrics.test_angular_must_also_settle) ... ok
+test_directed_brake_not_full_norm (test_metrics.Metrics.test_directed_brake_not_full_norm) ... ok
+test_elapsed_settle_start (test_metrics.Metrics.test_elapsed_settle_start) ... ok
+test_full_norm_not_lateral_only (test_metrics.Metrics.test_full_norm_not_lateral_only) ... ok
+test_ground_before_stop_interrupts (test_metrics.Metrics.test_ground_before_stop_interrupts) ... ok
+test_ground_preserves_earlier_stop (test_metrics.Metrics.test_ground_preserves_earlier_stop) ... ok
+test_late_passive_fraction_not_active_brake (test_metrics.Metrics.test_late_passive_fraction_not_active_brake) ... ok
+test_precondition_null_not_zero (test_metrics.Metrics.test_precondition_null_not_zero) ... ok
+test_short_quiet_window_not_success (test_metrics.Metrics.test_short_quiet_window_not_success) ... ok
+test_support_anchor_change_interrupts (test_metrics.Metrics.test_support_anchor_change_interrupts) ... ok
+test_sweep_uncertainty_interrupts (test_metrics.Metrics.test_sweep_uncertainty_interrupts) ... ok
+
+----------------------------------------------------------------------
+Ran 33 tests in 0.013s
+
+OK

@@ -1,0 +1,15 @@
+{
+  "command": [
+    "C:\\Users\\Wynter\\grip_up\\tools\\auto_tuning\\.venv\\Scripts\\python.exe",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tools/auto_tuning/tests",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "note": "Existing pinned research environment, synthetic optimizer tests only; no physical optimizer/search executed"
+}

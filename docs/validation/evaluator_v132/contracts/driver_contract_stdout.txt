@@ -1,0 +1,12 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS R0 catch supported
+PASS explicit A_CONTEXT before R0 catch supported
+PASS unsupported R0 control cannot fall back to A
+PASS prior episode requires explicit context
+PASS reordered context rejected
+FAIL elapsed settling reports stable interval start at 60 Hz
+PASS vertical speed cannot hide behind quiet lateral component at 60 Hz
+FAIL elapsed settling reports stable interval start at 120 Hz
+PASS vertical speed cannot hide behind quiet lateral component at 120 Hz
+QUALIFICATION DRIVER CONTRACT RESULTS: 9 checks, 2 failures

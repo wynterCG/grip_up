@@ -1,0 +1,692 @@
+{
+  "schema_version": "1.3.2",
+  "id": "benchmark_eval_v132",
+  "revision": 1,
+  "input_driver": "qualification_r0_a_v1",
+  "thresholds": {
+    "clean_lateral_speed_m_s": 0.1,
+    "clean_angular_speed_rad_s": 0.2,
+    "clean_confirmation_s": 0.25,
+    "clean_max_wait_s": 5.0,
+    "counter_velocity_interval_m_s": [
+      -0.5,
+      -0.02
+    ],
+    "motion_velocity_interval_m_s": [
+      0.15,
+      0.5
+    ],
+    "preparation_max_s": 2.0,
+    "settle_speed_m_s": 0.1,
+    "settle_angular_rad_s": 0.2,
+    "settle_confirmation_s": 0.25,
+    "reverse_speed_m_s": 0.02,
+    "reverse_confirmation_s": 0.05,
+    "retention_s": 0.6,
+    "reason": "Revision 2 measurement-validity calibration: motion minimum .15 exceeds .10 settling by .05; low-energy uses full relative speed. No force, geometry, observation window or performance goal change. Revision 1 development receipts preserved. Revision 3 corrects continuous confirmation to elapsed intervals and validates full low-energy norm again at actual accepted onset; bands unchanged.",
+    "low_energy_velocity_scope": "full_support_relative_speed_norm",
+    "clean_velocity_scope": "signed_lateral_component_absolute",
+    "confirmation_clock": "elapsed (current_tick - first_quiet_tick) / actual_requested_hz >= .25; not N sample count"
+  },
+  "scenarios": [
+    {
+      "id": "lateral_clean_left_v1",
+      "revision": 3,
+      "reliability_kind": "control",
+      "task": "clean",
+      "arena": 8,
+      "hand_count": 2,
+      "hands": [
+        0,
+        1
+      ],
+      "sign": -1,
+      "observe_s": 1.0,
+      "geometry": "existing_intent_test_level_2",
+      "scope": "Unchanged Traverse geometry, natural acquisition, B1 measured, no native ground authority"
+    },
+    {
+      "id": "lateral_clean_right_v1",
+      "revision": 3,
+      "reliability_kind": "control",
+      "task": "clean",
+      "arena": 8,
+      "hand_count": 2,
+      "hands": [
+        0,
+        1
+      ],
+      "sign": 1,
+      "observe_s": 1.0,
+      "geometry": "existing_intent_test_level_2",
+      "scope": "Unchanged Traverse geometry, natural acquisition, B1 measured, no native ground authority"
+    },
+    {
+      "id": "lateral_counter_swing_left_v1",
+      "revision": 3,
+      "reliability_kind": "control",
+      "task": "counter",
+      "arena": 8,
+      "hand_count": 2,
+      "hands": [
+        0,
+        1
+      ],
+      "sign": -1,
+      "observe_s": 2.0,
+      "geometry": "existing_intent_test_level_2",
+      "scope": "Unchanged Traverse geometry, natural acquisition, B1 measured, no native ground authority"
+    },
+    {
+      "id": "lateral_counter_swing_right_v1",
+      "revision": 3,
+      "reliability_kind": "control",
+      "task": "counter",
+      "arena": 8,
+      "hand_count": 2,
+      "hands": [
+        0,
+        1
+      ],
+      "sign": 1,
+      "observe_s": 2.0,
+      "geometry": "existing_intent_test_level_2",
+      "scope": "Unchanged Traverse geometry, natural acquisition, B1 measured, no native ground authority"
+    },
+    {
+      "id": "stop_release_v1",
+      "revision": 3,
+      "reliability_kind": "control",
+      "task": "stop_release",
+      "arena": 8,
+      "hand_count": 2,
+      "hands": [
+        0,
+        1
+      ],
+      "sign": 1,
+      "observe_s": 5.0,
+      "geometry": "existing_intent_test_level_2",
+      "scope": "Unchanged geometry; one hand does not imply arms-only suspension, B1 actual forces recorded"
+    },
+    {
+      "id": "stop_release_one_hand_v1",
+      "revision": 3,
+      "reliability_kind": "control",
+      "task": "stop_release",
+      "arena": 7,
+      "hand_count": 1,
+      "hands": [
+        0
+      ],
+      "sign": 1,
+      "observe_s": 5.0,
+      "geometry": "existing_intent_test_level_1",
+      "scope": "Unchanged geometry; one hand does not imply arms-only suspension, B1 actual forces recorded"
+    },
+    {
+      "id": "brake_counter_v1",
+      "revision": 3,
+      "reliability_kind": "control",
+      "task": "brake_counter",
+      "arena": 8,
+      "hand_count": 2,
+      "hands": [
+        0,
+        1
+      ],
+      "sign": 1,
+      "observe_s": 5.0,
+      "geometry": "existing_intent_test_level_2",
+      "scope": "Unchanged geometry; one hand does not imply arms-only suspension, B1 actual forces recorded"
+    },
+    {
+      "id": "brake_counter_one_hand_v1",
+      "revision": 3,
+      "reliability_kind": "control",
+      "task": "brake_counter",
+      "arena": 7,
+      "hand_count": 1,
+      "hands": [
+        0
+      ],
+      "sign": 1,
+      "observe_s": 5.0,
+      "geometry": "existing_intent_test_level_1",
+      "scope": "Unchanged geometry; one hand does not imply arms-only suspension, B1 actual forces recorded"
+    },
+    {
+      "id": "reverse_command_v1",
+      "revision": 3,
+      "reliability_kind": "control",
+      "task": "reverse_command",
+      "arena": 8,
+      "hand_count": 2,
+      "hands": [
+        0,
+        1
+      ],
+      "sign": 1,
+      "observe_s": 5.0,
+      "geometry": "existing_intent_test_level_2",
+      "scope": "Unchanged geometry; one hand does not imply arms-only suspension, B1 actual forces recorded"
+    },
+    {
+      "id": "reverse_command_one_hand_v1",
+      "revision": 3,
+      "reliability_kind": "control",
+      "task": "reverse_command",
+      "arena": 7,
+      "hand_count": 1,
+      "hands": [
+        0
+      ],
+      "sign": 1,
+      "observe_s": 5.0,
+      "geometry": "existing_intent_test_level_1",
+      "scope": "Unchanged geometry; one hand does not imply arms-only suspension, B1 actual forces recorded"
+    },
+    {
+      "id": "stop_low_energy_control_v1",
+      "revision": 3,
+      "reliability_kind": "control",
+      "task": "low_energy",
+      "arena": 8,
+      "hand_count": 2,
+      "hands": [
+        0,
+        1
+      ],
+      "sign": 1,
+      "observe_s": 5.0,
+      "geometry": "existing_intent_test_level_2",
+      "scope": "Unchanged geometry; one hand does not imply arms-only suspension, B1 actual forces recorded"
+    },
+    {
+      "id": "stop_low_energy_control_one_hand_v1",
+      "revision": 3,
+      "reliability_kind": "control",
+      "task": "low_energy",
+      "arena": 7,
+      "hand_count": 1,
+      "hands": [
+        0
+      ],
+      "sign": 1,
+      "observe_s": 5.0,
+      "geometry": "existing_intent_test_level_1",
+      "scope": "Unchanged geometry; one hand does not imply arms-only suspension, B1 actual forces recorded"
+    },
+    {
+      "id": "eq132_lateral_clean_left_r1",
+      "revision": 1,
+      "reliability_kind": "control",
+      "task": "clean",
+      "arena": 8,
+      "hand_count": 2,
+      "hands": [
+        0,
+        1
+      ],
+      "sign": -1,
+      "retained_hand": 0,
+      "observe_s": 1,
+      "fixture": "qualification_mirror_v1",
+      "preparation_id": "TWO_HAND_STANDARD_R1",
+      "scope": "New symmetric clearance fixture; direction and first acquisition hand reflected; actual B1 load not arm-only",
+      "qualification_group": "controls"
+    },
+    {
+      "id": "eq132_lateral_clean_right_r1",
+      "revision": 1,
+      "reliability_kind": "control",
+      "task": "clean",
+      "arena": 8,
+      "hand_count": 2,
+      "hands": [
+        1,
+        0
+      ],
+      "sign": 1,
+      "retained_hand": 1,
+      "observe_s": 1,
+      "fixture": "qualification_mirror_v1",
+      "preparation_id": "TWO_HAND_STANDARD_R1",
+      "scope": "New symmetric clearance fixture; direction and first acquisition hand reflected; actual B1 load not arm-only",
+      "qualification_group": "controls"
+    },
+    {
+      "id": "eq132_lateral_counter_left_r1",
+      "revision": 1,
+      "reliability_kind": "control",
+      "task": "counter",
+      "arena": 8,
+      "hand_count": 2,
+      "hands": [
+        0,
+        1
+      ],
+      "sign": -1,
+      "retained_hand": 0,
+      "observe_s": 2,
+      "fixture": "qualification_mirror_v1",
+      "preparation_id": "TWO_HAND_STANDARD_R1",
+      "scope": "New symmetric clearance fixture; direction and first acquisition hand reflected; actual B1 load not arm-only",
+      "qualification_group": "controls"
+    },
+    {
+      "id": "eq132_lateral_counter_right_r1",
+      "revision": 1,
+      "reliability_kind": "control",
+      "task": "counter",
+      "arena": 8,
+      "hand_count": 2,
+      "hands": [
+        1,
+        0
+      ],
+      "sign": 1,
+      "retained_hand": 1,
+      "observe_s": 2,
+      "fixture": "qualification_mirror_v1",
+      "preparation_id": "TWO_HAND_STANDARD_R1",
+      "scope": "New symmetric clearance fixture; direction and first acquisition hand reflected; actual B1 load not arm-only",
+      "qualification_group": "controls"
+    },
+    {
+      "id": "eq132_stop_release_two_hand_r1",
+      "revision": 1,
+      "reliability_kind": "control",
+      "task": "stop_release",
+      "arena": 8,
+      "hand_count": 2,
+      "hands": [
+        0,
+        1
+      ],
+      "sign": 1,
+      "retained_hand": 0,
+      "observe_s": 5,
+      "fixture": "qualification_mirror_v1",
+      "preparation_id": "TWO_HAND_STANDARD_R1",
+      "qualification_group": "controls"
+    },
+    {
+      "id": "eq132_stop_release_one_hand_left_r1",
+      "revision": 1,
+      "reliability_kind": "control",
+      "task": "stop_release",
+      "arena": 8,
+      "hand_count": 1,
+      "hands": [
+        0
+      ],
+      "sign": -1,
+      "retained_hand": 0,
+      "observe_s": 5,
+      "fixture": "qualification_onehand_v1",
+      "preparation_id": "P0_DIRECT_R1",
+      "allowed_preparation_ids": [
+        "P0_DIRECT_R1",
+        "P1_DUAL_NEUTRAL_RELEASE_R1",
+        "P2_DUAL_LOADED_RELEASE_R1"
+      ],
+      "scope": "One-hand wall/B1 condition. Freeze the prospective preparation script explicitly; preserve historical Hang missing coverage.",
+      "qualification_group": "controls"
+    },
+    {
+      "id": "eq132_stop_release_one_hand_right_r1",
+      "revision": 1,
+      "reliability_kind": "control",
+      "task": "stop_release",
+      "arena": 8,
+      "hand_count": 1,
+      "hands": [
+        1
+      ],
+      "sign": 1,
+      "retained_hand": 1,
+      "observe_s": 5,
+      "fixture": "qualification_onehand_v1",
+      "preparation_id": "P0_DIRECT_R1",
+      "allowed_preparation_ids": [
+        "P0_DIRECT_R1",
+        "P1_DUAL_NEUTRAL_RELEASE_R1",
+        "P2_DUAL_LOADED_RELEASE_R1"
+      ],
+      "scope": "One-hand wall/B1 condition. Freeze the prospective preparation script explicitly; preserve historical Hang missing coverage.",
+      "qualification_group": "controls"
+    },
+    {
+      "id": "eq132_brake_counter_two_hand_r1",
+      "revision": 1,
+      "reliability_kind": "control",
+      "task": "brake_counter",
+      "arena": 8,
+      "hand_count": 2,
+      "hands": [
+        0,
+        1
+      ],
+      "sign": 1,
+      "retained_hand": 0,
+      "observe_s": 5,
+      "fixture": "qualification_mirror_v1",
+      "preparation_id": "TWO_HAND_STANDARD_R1",
+      "qualification_group": "controls"
+    },
+    {
+      "id": "eq132_brake_counter_one_hand_left_r1",
+      "revision": 1,
+      "reliability_kind": "control",
+      "task": "brake_counter",
+      "arena": 8,
+      "hand_count": 1,
+      "hands": [
+        0
+      ],
+      "sign": -1,
+      "retained_hand": 0,
+      "observe_s": 5,
+      "fixture": "qualification_onehand_v1",
+      "preparation_id": "P0_DIRECT_R1",
+      "allowed_preparation_ids": [
+        "P0_DIRECT_R1",
+        "P1_DUAL_NEUTRAL_RELEASE_R1",
+        "P2_DUAL_LOADED_RELEASE_R1"
+      ],
+      "scope": "One-hand wall/B1 condition. Freeze the prospective preparation script explicitly; preserve historical Hang missing coverage.",
+      "qualification_group": "controls"
+    },
+    {
+      "id": "eq132_brake_counter_one_hand_right_r1",
+      "revision": 1,
+      "reliability_kind": "control",
+      "task": "brake_counter",
+      "arena": 8,
+      "hand_count": 1,
+      "hands": [
+        1
+      ],
+      "sign": 1,
+      "retained_hand": 1,
+      "observe_s": 5,
+      "fixture": "qualification_onehand_v1",
+      "preparation_id": "P0_DIRECT_R1",
+      "allowed_preparation_ids": [
+        "P0_DIRECT_R1",
+        "P1_DUAL_NEUTRAL_RELEASE_R1",
+        "P2_DUAL_LOADED_RELEASE_R1"
+      ],
+      "scope": "One-hand wall/B1 condition. Freeze the prospective preparation script explicitly; preserve historical Hang missing coverage.",
+      "qualification_group": "controls"
+    },
+    {
+      "id": "eq132_reverse_command_two_hand_r1",
+      "revision": 1,
+      "reliability_kind": "control",
+      "task": "reverse_command",
+      "arena": 8,
+      "hand_count": 2,
+      "hands": [
+        0,
+        1
+      ],
+      "sign": 1,
+      "retained_hand": 0,
+      "observe_s": 5,
+      "fixture": "qualification_mirror_v1",
+      "preparation_id": "TWO_HAND_STANDARD_R1",
+      "qualification_group": "controls"
+    },
+    {
+      "id": "eq132_reverse_command_one_hand_left_r1",
+      "revision": 1,
+      "reliability_kind": "control",
+      "task": "reverse_command",
+      "arena": 8,
+      "hand_count": 1,
+      "hands": [
+        0
+      ],
+      "sign": -1,
+      "retained_hand": 0,
+      "observe_s": 5,
+      "fixture": "qualification_onehand_v1",
+      "preparation_id": "P0_DIRECT_R1",
+      "allowed_preparation_ids": [
+        "P0_DIRECT_R1",
+        "P1_DUAL_NEUTRAL_RELEASE_R1",
+        "P2_DUAL_LOADED_RELEASE_R1"
+      ],
+      "scope": "One-hand wall/B1 condition. Freeze the prospective preparation script explicitly; preserve historical Hang missing coverage.",
+      "qualification_group": "controls"
+    },
+    {
+      "id": "eq132_reverse_command_one_hand_right_r1",
+      "revision": 1,
+      "reliability_kind": "control",
+      "task": "reverse_command",
+      "arena": 8,
+      "hand_count": 1,
+      "hands": [
+        1
+      ],
+      "sign": 1,
+      "retained_hand": 1,
+      "observe_s": 5,
+      "fixture": "qualification_onehand_v1",
+      "preparation_id": "P0_DIRECT_R1",
+      "allowed_preparation_ids": [
+        "P0_DIRECT_R1",
+        "P1_DUAL_NEUTRAL_RELEASE_R1",
+        "P2_DUAL_LOADED_RELEASE_R1"
+      ],
+      "scope": "One-hand wall/B1 condition. Freeze the prospective preparation script explicitly; preserve historical Hang missing coverage.",
+      "qualification_group": "controls"
+    },
+    {
+      "id": "eq132_low_energy_two_hand_r1",
+      "revision": 1,
+      "reliability_kind": "control",
+      "task": "low_energy",
+      "arena": 8,
+      "hand_count": 2,
+      "hands": [
+        0,
+        1
+      ],
+      "sign": 1,
+      "retained_hand": 0,
+      "observe_s": 5,
+      "fixture": "qualification_mirror_v1",
+      "preparation_id": "TWO_HAND_STANDARD_R1",
+      "qualification_group": "controls"
+    },
+    {
+      "id": "eq132_low_energy_one_hand_left_r1",
+      "revision": 1,
+      "reliability_kind": "control",
+      "task": "low_energy",
+      "arena": 8,
+      "hand_count": 1,
+      "hands": [
+        0
+      ],
+      "sign": -1,
+      "retained_hand": 0,
+      "observe_s": 5,
+      "fixture": "qualification_onehand_v1",
+      "preparation_id": "P0_DIRECT_R1",
+      "allowed_preparation_ids": [
+        "P0_DIRECT_R1",
+        "P1_DUAL_NEUTRAL_RELEASE_R1",
+        "P2_DUAL_LOADED_RELEASE_R1"
+      ],
+      "scope": "One-hand wall/B1 condition. Freeze the prospective preparation script explicitly; preserve historical Hang missing coverage.",
+      "qualification_group": "controls"
+    },
+    {
+      "id": "eq132_low_energy_one_hand_right_r1",
+      "revision": 1,
+      "reliability_kind": "control",
+      "task": "low_energy",
+      "arena": 8,
+      "hand_count": 1,
+      "hands": [
+        1
+      ],
+      "sign": 1,
+      "retained_hand": 1,
+      "observe_s": 5,
+      "fixture": "qualification_onehand_v1",
+      "preparation_id": "P0_DIRECT_R1",
+      "allowed_preparation_ids": [
+        "P0_DIRECT_R1",
+        "P1_DUAL_NEUTRAL_RELEASE_R1",
+        "P2_DUAL_LOADED_RELEASE_R1"
+      ],
+      "scope": "One-hand wall/B1 condition. Freeze the prospective preparation script explicitly; preserve historical Hang missing coverage.",
+      "qualification_group": "controls"
+    },
+    {
+      "id": "eq132_prep_0_P0_DIRECT_R1",
+      "revision": 1,
+      "reliability_kind": "control",
+      "task": "low_energy",
+      "arena": 8,
+      "hand_count": 1,
+      "hands": [
+        0
+      ],
+      "sign": -1,
+      "retained_hand": 0,
+      "observe_s": 0.25,
+      "fixture": "qualification_onehand_v1",
+      "preparation_id": "P0_DIRECT_R1",
+      "allowed_preparation_ids": [
+        "P0_DIRECT_R1",
+        "P1_DUAL_NEUTRAL_RELEASE_R1",
+        "P2_DUAL_LOADED_RELEASE_R1"
+      ],
+      "scope": "One-hand wall/B1 condition. Freeze the prospective preparation script explicitly; preserve historical Hang missing coverage.",
+      "qualification_group": "preparation"
+    },
+    {
+      "id": "eq132_prep_0_P1_DUAL_NEUTRAL_RELEASE_R1",
+      "revision": 1,
+      "reliability_kind": "control",
+      "task": "low_energy",
+      "arena": 8,
+      "hand_count": 1,
+      "hands": [
+        0
+      ],
+      "sign": -1,
+      "retained_hand": 0,
+      "observe_s": 0.25,
+      "fixture": "qualification_onehand_v1",
+      "preparation_id": "P1_DUAL_NEUTRAL_RELEASE_R1",
+      "allowed_preparation_ids": [
+        "P0_DIRECT_R1",
+        "P1_DUAL_NEUTRAL_RELEASE_R1",
+        "P2_DUAL_LOADED_RELEASE_R1"
+      ],
+      "scope": "One-hand wall/B1 condition. Freeze the prospective preparation script explicitly; preserve historical Hang missing coverage.",
+      "qualification_group": "preparation"
+    },
+    {
+      "id": "eq132_prep_0_P2_DUAL_LOADED_RELEASE_R1",
+      "revision": 1,
+      "reliability_kind": "control",
+      "task": "low_energy",
+      "arena": 8,
+      "hand_count": 1,
+      "hands": [
+        0
+      ],
+      "sign": -1,
+      "retained_hand": 0,
+      "observe_s": 0.25,
+      "fixture": "qualification_onehand_v1",
+      "preparation_id": "P2_DUAL_LOADED_RELEASE_R1",
+      "allowed_preparation_ids": [
+        "P0_DIRECT_R1",
+        "P1_DUAL_NEUTRAL_RELEASE_R1",
+        "P2_DUAL_LOADED_RELEASE_R1"
+      ],
+      "scope": "One-hand wall/B1 condition. Freeze the prospective preparation script explicitly; preserve historical Hang missing coverage.",
+      "qualification_group": "preparation"
+    },
+    {
+      "id": "eq132_prep_1_P0_DIRECT_R1",
+      "revision": 1,
+      "reliability_kind": "control",
+      "task": "low_energy",
+      "arena": 8,
+      "hand_count": 1,
+      "hands": [
+        1
+      ],
+      "sign": 1,
+      "retained_hand": 1,
+      "observe_s": 0.25,
+      "fixture": "qualification_onehand_v1",
+      "preparation_id": "P0_DIRECT_R1",
+      "allowed_preparation_ids": [
+        "P0_DIRECT_R1",
+        "P1_DUAL_NEUTRAL_RELEASE_R1",
+        "P2_DUAL_LOADED_RELEASE_R1"
+      ],
+      "scope": "One-hand wall/B1 condition. Freeze the prospective preparation script explicitly; preserve historical Hang missing coverage.",
+      "qualification_group": "preparation"
+    },
+    {
+      "id": "eq132_prep_1_P1_DUAL_NEUTRAL_RELEASE_R1",
+      "revision": 1,
+      "reliability_kind": "control",
+      "task": "low_energy",
+      "arena": 8,
+      "hand_count": 1,
+      "hands": [
+        1
+      ],
+      "sign": 1,
+      "retained_hand": 1,
+      "observe_s": 0.25,
+      "fixture": "qualification_onehand_v1",
+      "preparation_id": "P1_DUAL_NEUTRAL_RELEASE_R1",
+      "allowed_preparation_ids": [
+        "P0_DIRECT_R1",
+        "P1_DUAL_NEUTRAL_RELEASE_R1",
+        "P2_DUAL_LOADED_RELEASE_R1"
+      ],
+      "scope": "One-hand wall/B1 condition. Freeze the prospective preparation script explicitly; preserve historical Hang missing coverage.",
+      "qualification_group": "preparation"
+    },
+    {
+      "id": "eq132_prep_1_P2_DUAL_LOADED_RELEASE_R1",
+      "revision": 1,
+      "reliability_kind": "control",
+      "task": "low_energy",
+      "arena": 8,
+      "hand_count": 1,
+      "hands": [
+        1
+      ],
+      "sign": 1,
+      "retained_hand": 1,
+      "observe_s": 0.25,
+      "fixture": "qualification_onehand_v1",
+      "preparation_id": "P2_DUAL_LOADED_RELEASE_R1",
+      "allowed_preparation_ids": [
+        "P0_DIRECT_R1",
+        "P1_DUAL_NEUTRAL_RELEASE_R1",
+        "P2_DUAL_LOADED_RELEASE_R1"
+      ],
+      "scope": "One-hand wall/B1 condition. Freeze the prospective preparation script explicitly; preserve historical Hang missing coverage.",
+      "qualification_group": "preparation"
+    }
+  ],
+  "eligibility": "DIAGNOSTIC_ONLY_UNTIL_INDEPENDENT_REVIEW"
+}

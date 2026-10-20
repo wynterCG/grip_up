@@ -1,0 +1,41 @@
+{
+  "fixture": {
+    "command": [
+      "C:\\Users\\Wynter\\WrapRush\\tools\\godot.exe",
+      "--headless",
+      "--path",
+      "C:\\Users\\Wynter\\grip_up",
+      "--script",
+      "res://features/evaluator_qualification/fixtures/test_fixture_contract.gd"
+    ],
+    "exit_code": 0
+  },
+  "python_v132": {
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/auto_tuning/evaluator_qualification",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    "exit_code": 0
+  },
+  "python_existing": {
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/auto_tuning/tests",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    "exit_code": 1
+  }
+}

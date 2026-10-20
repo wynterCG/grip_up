@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.3.2",
+  "registry_id": "qualification_preparations_v132_r1",
+  "revision": 1,
+  "status": "PROSPECTIVE_UNMEASURED",
+  "scope": "Fixed bounded scripts over real input, no body/velocity/shape/force writes. All use original A0/B1 at unchanged strength/anatomy.",
+  "mapping": {
+    "retained": "definition.retained_hand (0 left, 1 right)",
+    "other": "1 - retained_hand",
+    "contact": "app.level.transfer_points[hand_id]",
+    "mirror": "left retain0/right retain1; order and A/D sign reflected, no negative-scale physics body"
+  },
+  "budget": {
+    "ordered_script_ids": [
+      "P0_DIRECT_R1",
+      "P1_DUAL_NEUTRAL_RELEASE_R1",
+      "P2_DUAL_LOADED_RELEASE_R1"
+    ],
+    "screen_repeats_per_cell": 1,
+    "max_scripts_per_retained_hand_mode_hz": 3,
+    "screen_cells": "2 retained hands x 2 physics Hz x 2 execution modes",
+    "max_screen_attempts": 24,
+    "qualification_repeats_when_entry_established": 3,
+    "selection_rule": "First valid physical onset in this declared ordering, never maximum motion score. Freeze explicit script ID before qualification/replay capture. If none qualifies, MISSING_ONE_HAND_60, retain denominator."
+  },
+  "onset_contract": {
+    "quiet_max_wait_s": 5,
+    "quiet_full_relative_speed_max_m_s": 0.1,
+    "quiet_spin_max_rad_s": 0.2,
+    "quiet_confirmation_elapsed_s": 0.25,
+    "motion_directed_speed_min_m_s": 0.15,
+    "motion_directed_speed_max_m_s": 0.5,
+    "motion_max_prep_s": 2,
+    "counter_directed_speed_min_m_s": -0.5,
+    "counter_directed_speed_max_m_s": -0.02,
+    "required": "actual retained anchor remains ATTACHED, released hand anchor absent and actual force zero, no native ground/motor authority, B1 load separately measured; all gates rechecked at accepted onset"
+  },
+  "scripts": [
+    {
+      "id": "P0_DIRECT_R1",
+      "revision": 1,
+      "steps": [
+        {
+          "op": "acquire",
+          "hand": "retained",
+          "max_wait_s": 1.5
+        },
+        {
+          "op": "hold_keys",
+          "keys": [
+            "contract"
+          ],
+          "duration_s": 1.5
+        },
+        {
+          "op": "hold_keys",
+          "keys": [],
+          "duration_s": 0.15
+        }
+      ]
+    },
+    {
+      "id": "P1_DUAL_NEUTRAL_RELEASE_R1",
+      "revision": 1,
+      "steps": [
+        {
+          "op": "acquire",
+          "hand": "retained",
+          "max_wait_s": 1.5
+        },
+        {
+          "op": "acquire",
+          "hand": "other",
+          "max_wait_s": 1.5
+        },
+        {
+          "op": "hold_keys",
+          "keys": [
+            "contract"
+          ],
+          "duration_s": 1.75
+        },
+        {
+          "op": "hold_keys",
+          "keys": [],
+          "duration_s": 0.25
+        },
+        {
+          "op": "release",
+          "hand": "other",
+          "max_wait_s": 0.3
+        },
+        {
+          "op": "hold_keys",
+          "keys": [],
+          "duration_s": 0.5
+        }
+      ]
+    },
+    {
+      "id": "P2_DUAL_LOADED_RELEASE_R1",
+      "revision": 1,
+      "steps": [
+        {
+          "op": "acquire",
+          "hand": "retained",
+          "max_wait_s": 1.5
+        },
+        {
+          "op": "acquire",
+          "hand": "other",
+          "max_wait_s": 1.5
+        },
+        {
+          "op": "hold_keys",
+          "keys": [
+            "contract"
+          ],
+          "duration_s": 2.5
+        },
+        {
+          "op": "release",
+          "hand": "other",
+          "max_wait_s": 0.3,
+          "held_keys": [
+            "contract"
+          ]
+        },
+        {
+          "op": "hold_keys",
+          "keys": [
+            "contract"
+          ],
+          "duration_s": 0.35
+        },
+        {
+          "op": "hold_keys",
+          "keys": [],
+          "duration_s": 0.25
+        }
+      ]
+    }
+  ],
+  "two_hand_standard": {
+    "id": "TWO_HAND_STANDARD_R1",
+    "revision": 1,
+    "steps": [
+      {
+        "op": "acquire",
+        "hand": "retained",
+        "max_wait_s": 1.5
+      },
+      {
+        "op": "acquire",
+        "hand": "other",
+        "max_wait_s": 1.5
+      },
+      {
+        "op": "hold_keys",
+        "keys": [
+          "contract"
+        ],
+        "duration_s": 1.5
+      },
+      {
+        "op": "hold_keys",
+        "keys": [],
+        "duration_s": 0.15
+      }
+    ]
+  }
+}

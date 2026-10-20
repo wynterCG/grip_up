@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.3.2",
+  "benchmark_id": "benchmark_eval_v132",
+  "revision": 1,
+  "score_formula_id": "DISABLED_NO_AGGREGATE_SCORE_v1",
+  "candidate_scoring_enabled": false,
+  "initial_eligibility": "DIAGNOSTIC_ONLY",
+  "lanes": ["R0_REQUESTED_INPUT", "A_ADAPTIVE_POLICY"],
+  "continuous_formula_id": "v132_full_norm_settle_directed_brake_v1",
+  "continuous_formula_scope": "Named stationary-support fixtures only; world-relative equals support-relative in COMMON_STATIC_WORLD. Moving or missing reference is INVALID_MEASUREMENT.",
+  "typed_statuses": ["MEASURED", "CENSORED_TIMEOUT", "INTERRUPTED", "PRECONDITION_NOT_MET", "INVALID_MEASUREMENT", "NOT_APPLICABLE"],
+  "metrics": {
+    "catch_real_contact_retention": "Actual destination ATTACHED, same material anchor retained at least .6 elapsed seconds with source FREE; B1/ground contributions retained separately. Mandatory safety gate even if continuous fields quarantined.",
+    "settling_time_s": "Time from accepted neutral/brake onset to first start of a full speed norm <= .10 m/s and spin norm <= .20 rad/s interval subsequently confirmed for .25 elapsed seconds.",
+    "stop_path_m": "Full 3D COM path from accepted onset through the start of the subsequently confirmed stable interval; not signed drift or onset-target accuracy.",
+    "brake_50_time_s": "First actual directed velocity <= 50% of onset directed velocity, only while accepted world intent opposes the onset axis. Onset directed speed must be >= .15 m/s.",
+    "brake_10_time_s": "Same directed criterion at 10%; passive later settling cannot satisfy active braking.",
+    "legacy_v131_diagnostics": "Nine existing typed metrics, horizons and FULL-NORM brake fractions are retained under their old formula ID only. No silent migration to directed-speed fractions. Useful progress, path, drift, excursion, reversal and settling stay distinct."
+  },
+  "identity": "Source, engine, scenario, actual fixture mapping, clock, phase, bindings, tape and accepted/effective prefixes required; equal requested tape hash alone is insufficient.",
+  "holdouts": "SEALED; no outcomes accessed",
+  "cross_version_scores": "NOT_COMPARABLE",
+  "qualification": "Final per-capability eligibility is a separately hashed report decision after independent review; this catalog supplies no search authorization."
+}

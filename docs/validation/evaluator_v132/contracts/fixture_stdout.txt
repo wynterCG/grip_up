@@ -1,0 +1,16 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS fixture identity is a new prospective revision, not a historical result
+PASS fixture preserves the existing arena8 initial body spawn
+PASS every physical solid has a reflected equal-size counterpart or lies on the symmetry plane
+PASS anchors and declared initial camera have a common left-right mirror frame
+PASS authored geometry never fabricates native swept-ground clearance
+PASS one-hand preparations are a bounded prospective 3x2x2x2 set
+PASS preparation registry contains only existing input operations, never body/force/state setters
+PASS preparations preserve qualified velocity and elapsed-time bands
+PASS new cases retain distinct IDs and explicitly require the declared geometry
+PASS sweep rotation bounds use full actual capsule/sphere/box geometry, not point feet
+PASS swept-query subdivision is finite and has declared translation/rotation bounds
+PASS fixture construction rejects absent lab
+PASS fixture replacement rejects any already-advanced controller before mutating the scene
+QUALIFICATION FIXTURE CONTRACT RESULTS: 13 checks, 0 failures
