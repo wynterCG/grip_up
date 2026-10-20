@@ -614,7 +614,10 @@ func request_hand(hand: int) -> bool:
 		return true
 	trial.attempts += 1
 	attempt_assessments[hand]={}
+	var probe:RefCounted=targeting.projection_probe if virtual_input_owned() else null
+	if probe!=null:probe.begin_pick(self,hand)
 	var hit: Dictionary = contextual.candidate(hand,controller,camera) if input_profile==2 else targeting.candidate(camera,pointer,torso)
+	if probe!=null:probe.end_pick(self,hand,hit)
 	if virtual_input_owned():input_picks.append({"hand":hand,"camera_pose":camera.global_transform,"camera_projection":camera.get_camera_projection(),"pointer":pointer,"audit":targeting.last_audit.duplicate(true)})
 	if hit.is_empty():
 		controller.record_unselected_attempt(hand,"no_surface")

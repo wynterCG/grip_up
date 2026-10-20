@@ -1,0 +1,120 @@
+{
+  "P4": "derived within-mode comparisons from P2/P3; no additional independent runs",
+  "campaign": "projection_v132b_r1",
+  "confirmation": "P2/P3 at each Hz, r2/r3 only after preliminary same-size evidence; n3 includes r1",
+  "frozen_before_runtime": "2026-10-20T13:44:09.834766+00:00",
+  "hard_stops": [
+    "invalid_tape",
+    "accepted_input_mismatch",
+    "camera_ownership_or_clock",
+    "missing_or_invalid_trace",
+    "support_face_switch",
+    "unsafe_contact",
+    "changed_gameplay_hashes"
+  ],
+  "logical_size": [
+    1920,
+    1080
+  ],
+  "max_confirmation_runs": 16,
+  "max_normal_runs": 36,
+  "max_observer_control_runs": 8,
+  "max_post_hardgate_single_runs": 4,
+  "max_preliminary_runs": 12,
+  "max_total_projection_runs": 40,
+  "numeric_branch": "strict local/world/hit/material numerical mismatch on identical shape/face/support may continue diagnostically; never PASS",
+  "observer_controls": "four SAME-mode Hz pairs,1024x576, new projection probe ON vs OFF; existing physical/audit observer remains ON; OFF is expected missing projection records and not PV1 qualification",
+  "physical_hz": [
+    120,
+    60
+  ],
+  "preliminary_pairs": [
+    {
+      "headless_size": [
+        1024,
+        576
+      ],
+      "hz": 120,
+      "id": "P1_120_r1",
+      "rendered_size": [
+        1440,
+        810
+      ]
+    },
+    {
+      "headless_size": [
+        1024,
+        576
+      ],
+      "hz": 120,
+      "id": "P2_120_r1",
+      "rendered_size": [
+        1024,
+        576
+      ]
+    },
+    {
+      "headless_size": [
+        1440,
+        810
+      ],
+      "hz": 120,
+      "id": "P3_120_r1",
+      "rendered_size": [
+        1440,
+        810
+      ]
+    },
+    {
+      "headless_size": [
+        1024,
+        576
+      ],
+      "hz": 60,
+      "id": "P1_60_r1",
+      "rendered_size": [
+        1440,
+        810
+      ]
+    },
+    {
+      "headless_size": [
+        1024,
+        576
+      ],
+      "hz": 60,
+      "id": "P2_60_r1",
+      "rendered_size": [
+        1024,
+        576
+      ]
+    },
+    {
+      "headless_size": [
+        1440,
+        810
+      ],
+      "hz": 60,
+      "id": "P3_60_r1",
+      "rendered_size": [
+        1440,
+        810
+      ]
+    }
+  ],
+  "regression_processes_separate": 34,
+  "schema": "projection_plan_v132b",
+  "seed": 101,
+  "source_compatibility": "original036 tapes immutable; explicit capture-vs-runtime source delta restricted to read-only probes/new test tooling; no recapture/rewrite",
+  "tapes": {
+    "120": {
+      "path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\requal_20261020_r1\\capture\\tapes\\catch_120.json",
+      "sha256": "d09f2569cbbafb4db2d3571b806dc804622fe4efda3c6ba9d8790a51bdb2991b"
+    },
+    "60": {
+      "path": "C:\\Users\\Wynter\\grip_up\\builds\\eval_virtual_cursor\\requal_20261020_r1\\capture\\tapes\\catch_60.json",
+      "sha256": "a711b9cb2792890fddd3782db0705a003fdccae4fad67fa3085f895c0a2a2e9d"
+    }
+  },
+  "threshold_policy": "No functional drift envelope proposed. Continuous data quarantined unless strict matched-size repeatability proven. No tuning/scoring/holdout access."
+}

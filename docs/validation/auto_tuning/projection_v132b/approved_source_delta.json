@@ -1,0 +1,41 @@
+{
+  "approved_delta": {
+    "features/evaluator_virtual_cursor/scripts/projection_probe.gd": {
+      "capture_sha256": null,
+      "runtime_sha256": "8034665b24b854c7c2b15cea21bd2ce861b020abc5a42a78e7187bc86adc6ca8"
+    },
+    "features/evaluator_virtual_cursor/scripts/virtual_cursor_driver.gd": {
+      "capture_sha256": "00f14ba07525d69434a04855dc73fdfc79aa2dc23c15e051698e7f4e46a66d73",
+      "runtime_sha256": "36cad7acbdcd21fc9d275e4b5819dca6919de274f98281d585405a2052be684b"
+    },
+    "features/evaluator_virtual_cursor/tests/test_projection_contract.gd": {
+      "capture_sha256": null,
+      "runtime_sha256": "99d3ed5f80b63cd3d7bac385af75634e2f0634de33ce6f54df585f931bab894b"
+    },
+    "features/grip_up/scripts/grip_targeting.gd": {
+      "capture_sha256": "45b4a53d2a94e04bce0a8b8e6fb33b3d657fb886821bde6f1aaaec0e5c7f2343",
+      "runtime_sha256": "7a9f7f7896f7ac53570a7c46d975c997884204d4a271dcae1c64fbff07c0407c"
+    },
+    "features/grip_up/scripts/grip_up_lab.gd": {
+      "capture_sha256": "357d7c7cc8bfda027927b754c86c4815b39ec99e57b6b53dff3e4ca9d6c03122",
+      "runtime_sha256": "4789bff5e5db866aebcb26f593e549639f7d3c4bbe5643e8bfeec813b2c88b7b"
+    },
+    "tools/auto_tuning/virtual_cursor/projection_campaign.py": {
+      "capture_sha256": null,
+      "runtime_sha256": "61ebb756df125f6ce8f83759c6f4daa97545e42b274bc5b8963b195c7f8461d7"
+    },
+    "tools/auto_tuning/virtual_cursor/projection_comparison.py": {
+      "capture_sha256": null,
+      "runtime_sha256": "baaef4094dd09dc9c173bcc706da6830d907d65eb16be3aedf3f605fb2d575a9"
+    },
+    "tools/auto_tuning/virtual_cursor/run.py": {
+      "capture_sha256": "bcd8fc0a101558e5a52920de1c1803c46c579d3789fcdcd567ebd2c20f1de863",
+      "runtime_sha256": "780b23eb2d1c271618111545e481bc0b06de249f538d4a96ad40c60bff0719ea"
+    },
+    "tools/auto_tuning/virtual_cursor/test_projection.py": {
+      "capture_sha256": null,
+      "runtime_sha256": "aadbfb66d0c6daa1be477de02225f2719f2ecad622cb077a78860ffcc5c75ffe"
+    }
+  },
+  "scope": "NEW_CAMPAIGN_READ_ONLY_TRACE_COMPATIBILITY_NOT_036_RECERTIFICATION"
+}

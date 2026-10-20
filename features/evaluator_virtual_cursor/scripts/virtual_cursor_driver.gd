@@ -14,6 +14,8 @@ var cleanup_receipt:Dictionary={}
 var last_wall_usec:=0
 var maximum_gap_usec:=0
 var negative_checks:Array[Dictionary]=[]
+var projection_probe
+var projection_setup:Dictionary={}
 
 func _negative_check(value:bool,label:String,extra:Dictionary={})->void:
 	negative_checks.append({"pass":value,"label":label,"evidence":extra})
@@ -30,6 +32,7 @@ func _metadata(phase:String)->Dictionary:
 
 func start(value:Dictionary)->Dictionary:
 	if not OS.get_cmdline_user_args().has("--virtual-cursor-evaluator"):return {"status":"BLOCKED_SETUP","reason":"TEST_FLAG_REQUIRED"}
+	if value.has("projection_config") and (not OS.get_cmdline_user_args().has("--projection-qualification") or not str(value.get("campaign_id","")).begins_with("projection_v132b_")):return {"status":"BLOCKED_SETUP","reason":"PROJECTION_FLAG_CAMPAIGN_REQUIRED"}
 	if value.get("scenario_ids",[])!=["swing_catch_train"]:return {"status":"BLOCKED_SETUP","reason":"UNSUPPORTED_REPLAY_CASE"}
 	if value.get("virtual_mode","")=="REPLAY":
 		var path:String=str(value.get("virtual_tape_path",""))
@@ -39,7 +42,7 @@ func start(value:Dictionary)->Dictionary:
 		virtual_tape=parsed
 		if virtual_tape.get("diagnostic_only",false) and value.get("negative_case","").is_empty():return {"status":"BLOCKED_SETUP","reason":"DIAGNOSTIC_TAPE_NOT_QUALIFICATION"}
 		if virtual_tape.get("engine_identity",{})!=value.engine_identity or virtual_tape.get("benchmark","")!="benchmark_eval_virtual_cursor_v1" or virtual_tape.get("camera_mode","")!="V0_PHYSICS_FOLLOW":return {"status":"BLOCKED_SETUP","reason":"TAPE_ENGINE_CAMERA_BENCHMARK"}
-		if virtual_tape.get("source_hashes",{})!=value.expected_source_hashes or int(virtual_tape.get("physics_hz",0))!=int(value.physics_hz):return {"status":"BLOCKED_SETUP","reason":"TAPE_SOURCE_HZ"}
+		if virtual_tape.get("source_hashes",{})!=value.get("projection_capture_source_hashes",value.expected_source_hashes) or int(virtual_tape.get("physics_hz",0))!=int(value.physics_hz):return {"status":"BLOCKED_SETUP","reason":"TAPE_SOURCE_HZ"}
 		if not virtual_tape.get("frames") is Array or virtual_tape.frames.is_empty() or virtual_tape.frames.size()>2048:return {"status":"BLOCKED_SETUP","reason":"TAPE_TICK_COUNT"}
 		if not virtual_tape.get("reference_ticks") is Array or virtual_tape.reference_ticks.size()!=virtual_tape.frames.size():return {"status":"BLOCKED_SETUP","reason":"MISSING_TICK:REFERENCE"}
 		var previous:Dictionary={}
@@ -51,6 +54,9 @@ func start(value:Dictionary)->Dictionary:
 	result.schema_version="1.3.2a";result["benchmark"]="benchmark_eval_virtual_cursor_v1"
 	result["virtual_input"]={"environment":session_environment,"cleanup":cleanup_receipt,"maximum_tick_wall_gap_usec":maximum_gap_usec,"provider_lifecycle":provider.lifecycle if provider!=null else [],"rejected_hardware_events":provider.rejected if provider!=null else [],"rejected_hardware_event_count":provider.rejected_count if provider!=null else 0,"rejection_counts":provider.rejection_counts if provider!=null else {},"focus_events":provider.focus_events if provider!=null else []}
 	result["negative_checks"]=negative_checks.duplicate(true)
+	if value.has("projection_config"):
+		result["projection_setup"]=projection_setup
+		result["projection_probe"]=projection_probe.write(str(value.output_dir).path_join("projection_picks.jsonl")) if projection_probe!=null else {"status":"CONTROL_WITH_PROBE_DISABLED"}
 	TraceWriter.atomic_json(str(value.output_dir).path_join("virtual_audit.json"),{"schema":"grip_virtual_audit_v1","environment":session_environment,"frames":virtual_frames,"ticks":virtual_rows})
 	return result
 
@@ -62,6 +68,13 @@ func _fresh(definition:Dictionary)->void:
 		add_child(notice)
 		await _tick(lead_in)
 		notice.queue_free()
+	if manifest.has("projection_config"):
+		var requested_size:Array=manifest.projection_config.window_size
+		get_window().size=Vector2i(int(requested_size[0]),int(requested_size[1]))
+		await post_completed
+		await post_completed
+		projection_setup={"requested_size":requested_size,"actual_size":[get_window().size.x,get_window().size.y],"before_world":not is_instance_valid(app),"clock_delta":_post_delta}
+		if get_window().size!=Vector2i(int(requested_size[0]),int(requested_size[1])):_trace_integrity_reason="ENVIRONMENT_NOT_COMPARABLE:REQUESTED_WINDOW_SIZE";return
 	await post_completed
 	_world_creation={"run_tick":_global_tick,"sample_phase":_phase_context,"actual_delta_s":_post_delta,"requested_delta_s":1.0/hz,"boundary":"post_completed_before_lab_construction","retired_worlds":_retired_worlds.duplicate(true),"old_subtrees_absent":true}
 	_reset_episode()
@@ -76,6 +89,13 @@ func _fresh(definition:Dictionary)->void:
 	app.won=true;app.settings.hide()
 	app.controller.sample_ready.connect(_sample);app.controller.transfer_event.connect(_transfer)
 	for entry:Dictionary in app.installs:_all_installs_pre_step=_all_installs_pre_step and bool(entry.before_first_step)
+	if manifest.has("projection_config"):
+		var Probe=load("res://features/evaluator_virtual_cursor/scripts/projection_probe.gd")
+		projection_setup["after_world_environment"]=Probe.environment(app)
+		if get_window().size!=Vector2i(int(manifest.projection_config.window_size[0]),int(manifest.projection_config.window_size[1])):_trace_integrity_reason="ENVIRONMENT_NOT_COMPARABLE:WORLD_WINDOW_SIZE";return
+		if manifest.projection_config.probe_enabled:
+			projection_probe=Probe.new();projection_probe.manifest=manifest
+			app.targeting.projection_probe=projection_probe
 	provider=Provider.new()
 	var checked:String=app.begin_virtual_input(provider,{"benchmark":"benchmark_eval_virtual_cursor_v1","camera_mode":"V0_PHYSICS_FOLLOW"})
 	if not checked.is_empty():_trace_integrity_reason=checked;return
@@ -126,7 +146,10 @@ func _pre_tick(delta:float)->void:
 	if manifest.get("negative_case","")=="N2" and _scenario_tick==10:
 		requested_frame.camera_orbit_delta=[20.0,-10.0];requested_frame.camera_zoom_steps=[1,-1,1]
 	var old_yaw:float=app.camera.yaw;var old_elevation:float=app.camera.elevation;var old_distance:float=app.camera.distance
+	if projection_probe!=null:
+		projection_probe.requested=requested_frame.duplicate(true);projection_probe.actual_delta=delta
 	var checked:String=app.commit_virtual_input(requested_frame,delta)
+	if projection_probe!=null and not projection_probe.error.is_empty():_invalidate_input(projection_probe.error);return
 	if not checked.is_empty():_trace_integrity_reason=checked;return
 	if manifest.get("negative_case","")=="N1" and _scenario_tick==3:
 		_negative_check(app.pointer==Vector2.ZERO and not app.input_picks.is_empty() and app.input_picks[0].has("audit"),"explicit_valid_top_left_uses_real_targeting",{"picks":app.input_picks.duplicate(true)})

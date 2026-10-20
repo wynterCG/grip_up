@@ -61,21 +61,30 @@ def compare(tape,audit):
             if diff and first_physics is None:first_physics={'tick':index+1,'phase':phase,'first':diff}
     return {'status':'PASS_PICKING_REPLAY','input_status':'PASS_INPUT_ISOLATION','ticks':len(ticks),'first_physics_divergence':first_physics,'physics_status':'PHYSICS_DIVERGENCE_AFTER_MATCHED_INPUT_AND_PICKING' if first_physics else 'NO_RECORDED_PHYSICS_DIFFERENCE','physics_scope':'diagnostic only, no approved continuous error envelope'}
 
-def execute(mode,hz,condition,repeat,output,tape_path=None,development=False,negative='',campaign_id='',human_lead_in_s=0):
+def execute(mode,hz,condition,repeat,output,tape_path=None,development=False,negative='',campaign_id='',human_lead_in_s=0,projection_config=None):
     if campaign_id and not re.fullmatch(r'[a-z0-9_]{1,64}',campaign_id):raise ValueError('CAMPAIGN_ID')
     if human_lead_in_s<0 or human_lead_in_s>30:raise ValueError('HUMAN_LEAD_IN')
-    check_budget(development,hz,tape_path is None,negative,campaign_id)
+    if projection_config is None:check_budget(development,hz,tape_path is None,negative,campaign_id)
+    else:
+        if not campaign_id.startswith('projection_v132b_') or tape_path is None or negative:raise ValueError('PROJECTION_SCOPE')
+        previous=[read_json(p) for p in (ROOT/'builds/eval_virtual_cursor').glob('**/attempts/*/manifest.json')]
+        if sum(m.get('campaign_id')==campaign_id for m in previous)>=40:raise ValueError('PROJECTION_BUDGET_EXHAUSTED')
     identity=git_identity();identity.update(source_hashes=source_hashes(ROOT),engine_identity=engine_identity())
     run_id=f'{condition}_{hz}_r{repeat}_{uuid.uuid4().hex[:8]}'
     directory=output/'attempts'/run_id;directory.mkdir(parents=True,exist_ok=False)
     manifest={'schema_version':'1.3.2a','benchmark':BENCHMARK,'run_id':run_id,'physics_hz':hz,'engine_mode':mode,'lane':'A','virtual_mode':'REPLAY' if tape_path else 'CAPTURE','scenario_ids':['swing_catch_train'],'recorder_enabled':True,'existing_observer_enabled':True,'output_dir':str(directory),'run_seed':101,'expected_source_hashes':identity['source_hashes'],'code_commit':identity['repository_commit'],'dirty_tree':identity['repository_dirty'],'engine_identity':identity['engine_identity'],'timeout_s':100,'condition':condition,'classification':'DEVELOPMENT_NOT_CERTIFIED' if development else 'QUALIFICATION','local_override_sha256':file_hash(ROOT/'override.cfg') if (ROOT/'override.cfg').exists() else 'ABSENT','negative_case':negative}
     manifest['campaign_id']=campaign_id;manifest['human_lead_in_s']=human_lead_in_s
+    if projection_config is not None:manifest['projection_config']=projection_config
     manifest['baseline_candidate']=make_candidate(baseline(parameter_resource()),['swing_catch_train'],trial_id=run_id,hz=hz,seed=101,timeout=100,provenance=identity)
     if tape_path:
         tape=read_json(tape_path)
         if tape.get('diagnostic_only') and not negative:raise ValueError('DIAGNOSTIC_TAPE_NOT_QUALIFICATION')
         manifest.update(virtual_tape_path=str(tape_path),virtual_tape_sha256=file_hash(tape_path))
-        if tape['source_hashes']!=identity['source_hashes']:raise ValueError('TAPE_SOURCE_IDENTITY')
+        if projection_config is not None:
+            from projection_comparison import compatibility
+            manifest['projection_source_compatibility']=compatibility(tape,identity['source_hashes'])
+            manifest['projection_capture_source_hashes']=tape['source_hashes']
+        elif tape['source_hashes']!=identity['source_hashes']:raise ValueError('TAPE_SOURCE_IDENTITY')
         if tape['engine_identity']!=identity['engine_identity'] or tape['benchmark']!=BENCHMARK or tape['camera_mode']!='V0_PHYSICS_FOLLOW':raise ValueError('TAPE_ENGINE_CAMERA_BENCHMARK')
         import copy
         normalized=copy.deepcopy(tape['frames'])
@@ -83,7 +92,9 @@ def execute(mode,hz,condition,repeat,output,tape_path=None,development=False,neg
         if digest(normalized)!=tape['tape_content_sha256'] or any(f['tape_sha256']!=tape['tape_content_sha256'] for f in tape['frames']):raise ValueError('TAPE_CONTENT_HASH')
     atomic_json(directory/'manifest.json',manifest)
     flags=['--headless','--fixed-fps','120'] if mode=='headless' else ['--screen','0','--position','80,80']
+    if projection_config is not None:flags+=['--resolution',','.join(map(str,projection_config['window_size']))]
     command=[str(ENGINE),*flags,'--path',str(ROOT),'--script',ENTRY,'--','--virtual-cursor-evaluator','--manifest',str(directory/'manifest.json'),'--result',str(directory/'engine_result.json')]
+    if projection_config is not None:command.append('--projection-qualification')
     atomic_json(directory/'execution.json',{'command':command,'utc':utc_now(),'workers':1})
     started=time.monotonic();code=None;result={};reason='';comparison={}
     with (directory/'stdout.txt').open('wb') as stdout,(directory/'stderr.txt').open('wb') as stderr:
@@ -106,7 +117,7 @@ def execute(mode,hz,condition,repeat,output,tape_path=None,development=False,neg
             compared_tape=tape
             if expected_abort:compared_tape={**tape,'frames':tape['frames'][:len(audit['ticks'])],'reference_ticks':tape['reference_ticks'][:len(audit['ticks'])]}
             comparison=compare(compared_tape,audit);atomic_json(directory/'comparison.json',comparison)
-            if comparison['status']!='PASS_PICKING_REPLAY':raise ValueError(comparison['status'])
+            if comparison['status']!='PASS_PICKING_REPLAY' and projection_config is None:raise ValueError(comparison['status'])
         cleanup=result['virtual_input']['cleanup']
         if not all(cleanup[k] for k in ['provider_disabled','lab_provider_removed','camera_live','router_frame_removed']) or cleanup['hand_held']!=[False,False] or cleanup['orbiting']:raise ValueError('CLEANUP_FAILED')
         if not negative:
@@ -124,7 +135,7 @@ def execute(mode,hz,condition,repeat,output,tape_path=None,development=False,neg
         audit=read_json(directory/'virtual_audit.json')
         layered=compare_layers(tape,audit)
         atomic_json(directory/'layered_comparison.json',layered)
-        if status=='completed' and layered['status']!='PASS_PICKING_REPLAY' and not negative:
+        if status=='completed' and layered['status']!='PASS_PICKING_REPLAY' and not negative and projection_config is None:
             status='failed_runtime';reason=layered['status']
     receipt={'status':status,'reason':reason,'run_id':run_id,'directory':str(directory),'exit_code':code,'elapsed_wall_s':time.monotonic()-started,'engine_result':result,'comparison':comparison}
     receipt['layered_summary']={k:v for k,v in layered.items() if k!='bounded_window'}
