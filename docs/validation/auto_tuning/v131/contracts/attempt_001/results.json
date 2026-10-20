@@ -1,0 +1,18 @@
+{
+  "scope": "Pure contracts and synthetic detector/transport tests, not gameplay performance or human evidence",
+  "runs": [
+    {
+      "name": "python",
+      "passed": true,
+      "exit_code": 0,
+      "checks": 75
+    },
+    {
+      "name": "godot_tick_contract",
+      "passed": true,
+      "exit_code": 0,
+      "checks": 30
+    }
+  ],
+  "all_passed": true
+}

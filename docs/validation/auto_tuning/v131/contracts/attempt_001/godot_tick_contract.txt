@@ -1,0 +1,33 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+PASS input and read-only probes bracket gameplay priorities
+PASS requested input does not mutate game input before a physics boundary
+PASS queued request emitted exactly at first pre-control tick
+PASS neutral request waits until next physics boundary
+PASS neutral emitted at exact next tick
+PASS post snapshot names its consistent phase and tick aliases
+PASS accepted input is measured separately, never copied from the requested command
+PASS requested tick cannot masquerade as accepted transition while routing input differs
+PASS late input acknowledgement records observed post-control tick, not prediction
+PASS derived contact chain preserves contact, attachment and admitted-load ordering
+PASS same-frame regrip identity starts a fresh contact/retention chain
+PASS new unique output opens trial-local temporary JSONL files
+PASS trace bound is explicit and does not silently discard samples
+PASS numeric Vector3 serializes without losing the named COM reference
+PASS JSONL files become final only after close/atomic rename
+PASS existing evidence cannot be overwritten
+PASS recorder OFF creates no trace authority
+PASS disabled output leaves input unchanged and records no fake trace
+PASS invalid manifest blocks before a gameplay Lab/body is constructed
+PASS prospective fixture registry and unchanged confirmation thresholds are explicit
+PASS revision 2 discloses measurement-validity calibration without changing windows
+PASS stop preparation rejects the observed revision 1 start already inside the stopped band
+PASS stop/brake/reverse starts require the explicit .15 to .50 directed speed interval
+PASS counter-swing preparation keeps its original opposing-speed interval
+PASS clean lateral may be quiet while low-energy correctly rejects vertical/depth motion
+PASS low-energy requires both full relative speed and angular norm inside the unchanged settling bands
+PASS baseline setup error is returned before any acquisition, prep or settling can hide it
+PASS stable physical initial-state identity excludes arbitrary process/run IDs
+PASS strict baseline verifies ORIGINAL Resource without duplication, assignment or override binding
+PASS baseline drift is rejected and never silently rewritten to the expected value
+RELIABILITY TICK CONTRACT RESULTS: 30 checks, 0 failures
