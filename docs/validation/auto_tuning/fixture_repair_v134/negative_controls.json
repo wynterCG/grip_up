@@ -1,0 +1,792 @@
+{
+  "development_has_no_final_credit": true,
+  "final": [
+    {
+      "checks": [
+        {
+          "evidence": {
+            "reason": "INPUT_SOURCE_MISMATCH"
+          },
+          "label": "reject_source",
+          "pass": true
+        },
+        {
+          "evidence": {
+            "reason": "ENVIRONMENT_NOT_COMPARABLE:VIEWPORT"
+          },
+          "label": "reject_viewport",
+          "pass": true
+        },
+        {
+          "evidence": {
+            "reason": "ENVIRONMENT_NOT_COMPARABLE:VIEWPORT_CAMERA_BINDINGS"
+          },
+          "label": "reject_camera",
+          "pass": true
+        },
+        {
+          "evidence": {
+            "reason": "DUPLICATE_TICK"
+          },
+          "label": "reject_duplicate",
+          "pass": true
+        },
+        {
+          "evidence": {
+            "reason": "MISSING_TICK"
+          },
+          "label": "reject_missing",
+          "pass": true
+        },
+        {
+          "evidence": {},
+          "label": "explicit_invalid_aim_can_preserve_held_semantics",
+          "pass": true
+        },
+        {
+          "evidence": {
+            "picks": [
+              {
+                "hand": 0,
+                "reason": "INVALID_AIM_NO_NEW_TARGET"
+              }
+            ]
+          },
+          "label": "initial_absent_cursor_did_not_pick",
+          "pass": true
+        },
+        {
+          "evidence": {},
+          "label": "explicit_valid_top_left_not_ambiguous",
+          "pass": true
+        },
+        {
+          "evidence": {
+            "picks": [
+              {
+                "audit": {
+                  "mask": 3,
+                  "pointer": [
+                    0.0,
+                    0.0
+                  ],
+                  "range_m": 70.0,
+                  "rays": [
+                    {
+                      "direction": [
+                        -0.778128921985626,
+                        0.40025070309639,
+                        -0.484060764312744
+                      ],
+                      "offset_px": [
+                        0.0,
+                        0.0
+                      ],
+                      "origin_m": [
+                        0.874703645706177,
+                        1.4096851348877,
+                        6.22184276580811
+                      ],
+                      "point_px": [
+                        0.0,
+                        0.0
+                      ],
+                      "reason": "MISS"
+                    },
+                    {
+                      "direction": [
+                        -0.774308145046234,
+                        0.402307838201523,
+                        -0.488462299108505
+                      ],
+                      "offset_px": [
+                        12.0,
+                        0.0
+                      ],
+                      "origin_m": [
+                        0.874703645706177,
+                        1.4096851348877,
+                        6.22184276580811
+                      ],
+                      "point_px": [
+                        12.0,
+                        0.0
+                      ],
+                      "reason": "MISS"
+                    },
+                    {
+                      "direction": [
+                        -0.781881392002106,
+                        0.398199558258057,
+                        -0.479686081409454
+                      ],
+                      "offset_px": [
+                        -12.0,
+                        0.0
+                      ],
+                      "origin_m": [
+                        0.874703645706177,
+                        1.4096851348877,
+                        6.22184276580811
+                      ],
+                      "point_px": [
+                        -12.0,
+                        0.0
+                      ],
+                      "reason": "MISS"
+                    },
+                    {
+                      "direction": [
+                        -0.78047388792038,
+                        0.393380045890808,
+                        -0.485914349555969
+                      ],
+                      "offset_px": [
+                        0.0,
+                        12.0
+                      ],
+                      "origin_m": [
+                        0.874703645706177,
+                        1.4096851348877,
+                        6.22184276580811
+                      ],
+                      "point_px": [
+                        0.0,
+                        12.0
+                      ],
+                      "reason": "MISS"
+                    },
+                    {
+                      "direction": [
+                        -0.77575409412384,
+                        0.407059460878372,
+                        -0.482190907001495
+                      ],
+                      "offset_px": [
+                        0.0,
+                        -12.0
+                      ],
+                      "origin_m": [
+                        0.874703645706177,
+                        1.4096851348877,
+                        6.22184276580811
+                      ],
+                      "point_px": [
+                        0.0,
+                        -12.0
+                      ],
+                      "reason": "MISS"
+                    },
+                    {
+                      "direction": [
+                        -0.777161657810211,
+                        0.397037476301193,
+                        -0.488242864608765
+                      ],
+                      "offset_px": [
+                        8.0,
+                        8.0
+                      ],
+                      "origin_m": [
+                        0.874703645706177,
+                        1.4096851348877,
+                        6.22184276580811
+                      ],
+                      "point_px": [
+                        8.0,
+                        8.0
+                      ],
+                      "reason": "MISS"
+                    },
+                    {
+                      "direction": [
+                        -0.779063820838928,
+                        0.403418481349945,
+                        -0.479909479618073
+                      ],
+                      "offset_px": [
+                        -8.0,
+                        -8.0
+                      ],
+                      "origin_m": [
+                        0.874703645706177,
+                        1.4096851348877,
+                        6.22184276580811
+                      ],
+                      "point_px": [
+                        -8.0,
+                        -8.0
+                      ],
+                      "reason": "MISS"
+                    }
+                  ],
+                  "winner": null
+                },
+                "camera_pose": {
+                  "basis": [
+                    [
+                      0.97133868932724,
+                      0.0,
+                      -0.237699881196022
+                    ],
+                    [
+                      0.0141885448247194,
+                      0.998216927051544,
+                      0.0579801835119724
+                    ],
+                    [
+                      0.237276032567024,
+                      -0.0596910119056702,
+                      0.969606697559357
+                    ]
+                  ],
+                  "origin": [
+                    0.874703645706177,
+                    1.4096851348877,
+                    6.22184276580811
+                  ]
+                },
+                "camera_projection": null,
+                "hand": 0,
+                "pointer": [
+                  0.0,
+                  0.0
+                ]
+              }
+            ]
+          },
+          "label": "explicit_valid_top_left_uses_real_targeting",
+          "pass": true
+        }
+      ],
+      "cleanup": {
+        "camera_live": true,
+        "hand_held": [
+          false,
+          false
+        ],
+        "hands": [
+          "RELEASED",
+          "RELEASED"
+        ],
+        "lab_provider_removed": true,
+        "orbiting": false,
+        "provider_disabled": true,
+        "router_frame_removed": true
+      },
+      "contract": {
+        "dispatch_count": 3,
+        "dispatches": [
+          {
+            "dispatch_id": "swing_catch_train_120_headless_r1_004fc576:t3:h0:d0",
+            "dispatched_world_queries": true,
+            "hand": 0,
+            "kind": "PICK_DISPATCH",
+            "ordinal": 0,
+            "original_pick_call_index": 0,
+            "outcome": "MISS_OR_INELIGIBLE",
+            "ray_count": 7,
+            "sidecar_index": 0,
+            "tick": 3,
+            "winning_offset": null
+          },
+          {
+            "dispatch_id": "swing_catch_train_120_headless_r1_004fc576:t55:h0:d0",
+            "dispatched_world_queries": true,
+            "hand": 0,
+            "kind": "PICK_DISPATCH",
+            "ordinal": 0,
+            "original_pick_call_index": 1,
+            "outcome": "SELECTED",
+            "ray_count": 1,
+            "sidecar_index": 1,
+            "tick": 55,
+            "winning_offset": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "dispatch_id": "swing_catch_train_120_headless_r1_004fc576:t282:h1:d0",
+            "dispatched_world_queries": true,
+            "hand": 1,
+            "kind": "PICK_DISPATCH",
+            "ordinal": 0,
+            "original_pick_call_index": 2,
+            "outcome": "SELECTED",
+            "ray_count": 1,
+            "sidecar_index": 2,
+            "tick": 282,
+            "winning_offset": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "events": [
+          {
+            "dispatch_id": null,
+            "dispatched_world_queries": false,
+            "event_id": "swing_catch_train_120_headless_r1_004fc576:t1:h0:e0",
+            "hand": 0,
+            "kind": "PICK_SUPPRESSED",
+            "logical_index": 0,
+            "reason": "INVALID_AIM_NO_NEW_TARGET",
+            "tick": 1
+          },
+          {
+            "dispatch_id": "swing_catch_train_120_headless_r1_004fc576:t3:h0:d0",
+            "dispatched_world_queries": true,
+            "event_id": "swing_catch_train_120_headless_r1_004fc576:t3:h0:e0",
+            "hand": 0,
+            "kind": "PICK_RESULT",
+            "logical_index": 0,
+            "outcome": "MISS_OR_INELIGIBLE",
+            "tick": 3
+          },
+          {
+            "dispatch_id": "swing_catch_train_120_headless_r1_004fc576:t55:h0:d0",
+            "dispatched_world_queries": true,
+            "event_id": "swing_catch_train_120_headless_r1_004fc576:t55:h0:e0",
+            "hand": 0,
+            "kind": "PICK_RESULT",
+            "logical_index": 0,
+            "outcome": "SELECTED",
+            "tick": 55
+          },
+          {
+            "dispatch_id": "swing_catch_train_120_headless_r1_004fc576:t282:h1:d0",
+            "dispatched_world_queries": true,
+            "event_id": "swing_catch_train_120_headless_r1_004fc576:t282:h1:e0",
+            "hand": 1,
+            "kind": "PICK_RESULT",
+            "logical_index": 0,
+            "outcome": "SELECTED",
+            "tick": 282
+          }
+        ],
+        "logical_count": 4,
+        "ray_count": 9,
+        "reason": "",
+        "schema": "grip_pick_dispatch_contract_v134",
+        "session_id": "swing_catch_train_120_headless_r1_004fc576",
+        "sidecars": [
+          {
+            "dispatch_id": "swing_catch_train_120_headless_r1_004fc576:t3:h0:d0",
+            "original_pick_call_index": 0,
+            "sidecar_index": 0
+          },
+          {
+            "dispatch_id": "swing_catch_train_120_headless_r1_004fc576:t55:h0:d0",
+            "original_pick_call_index": 1,
+            "sidecar_index": 1
+          },
+          {
+            "dispatch_id": "swing_catch_train_120_headless_r1_004fc576:t282:h1:d0",
+            "original_pick_call_index": 2,
+            "sidecar_index": 2
+          }
+        ],
+        "status": "PASS",
+        "suppressed_count": 1
+      },
+      "hz": 120,
+      "run_id": "swing_catch_train_120_headless_r1_004fc576",
+      "status": "RUN_VALID"
+    },
+    {
+      "checks": [
+        {
+          "evidence": {
+            "reason": "INPUT_SOURCE_MISMATCH"
+          },
+          "label": "reject_source",
+          "pass": true
+        },
+        {
+          "evidence": {
+            "reason": "ENVIRONMENT_NOT_COMPARABLE:VIEWPORT"
+          },
+          "label": "reject_viewport",
+          "pass": true
+        },
+        {
+          "evidence": {
+            "reason": "ENVIRONMENT_NOT_COMPARABLE:VIEWPORT_CAMERA_BINDINGS"
+          },
+          "label": "reject_camera",
+          "pass": true
+        },
+        {
+          "evidence": {
+            "reason": "DUPLICATE_TICK"
+          },
+          "label": "reject_duplicate",
+          "pass": true
+        },
+        {
+          "evidence": {
+            "reason": "MISSING_TICK"
+          },
+          "label": "reject_missing",
+          "pass": true
+        },
+        {
+          "evidence": {},
+          "label": "explicit_invalid_aim_can_preserve_held_semantics",
+          "pass": true
+        },
+        {
+          "evidence": {
+            "picks": [
+              {
+                "hand": 0,
+                "reason": "INVALID_AIM_NO_NEW_TARGET"
+              }
+            ]
+          },
+          "label": "initial_absent_cursor_did_not_pick",
+          "pass": true
+        },
+        {
+          "evidence": {},
+          "label": "explicit_valid_top_left_not_ambiguous",
+          "pass": true
+        },
+        {
+          "evidence": {
+            "picks": [
+              {
+                "audit": {
+                  "mask": 3,
+                  "pointer": [
+                    0.0,
+                    0.0
+                  ],
+                  "range_m": 70.0,
+                  "rays": [
+                    {
+                      "direction": [
+                        -0.778123497962952,
+                        0.400285631418228,
+                        -0.484040528535843
+                      ],
+                      "offset_px": [
+                        0.0,
+                        0.0
+                      ],
+                      "origin_m": [
+                        0.874515473842621,
+                        1.40923929214478,
+                        6.22109460830688
+                      ],
+                      "point_px": [
+                        0.0,
+                        0.0
+                      ],
+                      "reason": "MISS"
+                    },
+                    {
+                      "direction": [
+                        -0.77430272102356,
+                        0.402342915534973,
+                        -0.488442003726959
+                      ],
+                      "offset_px": [
+                        12.0,
+                        0.0
+                      ],
+                      "origin_m": [
+                        0.874515473842621,
+                        1.40923929214478,
+                        6.22109460830688
+                      ],
+                      "point_px": [
+                        12.0,
+                        0.0
+                      ],
+                      "reason": "MISS"
+                    },
+                    {
+                      "direction": [
+                        -0.781875967979431,
+                        0.398234277963638,
+                        -0.47966593503952
+                      ],
+                      "offset_px": [
+                        -12.0,
+                        0.0
+                      ],
+                      "origin_m": [
+                        0.874515473842621,
+                        1.40923929214478,
+                        6.22109460830688
+                      ],
+                      "point_px": [
+                        -12.0,
+                        0.0
+                      ],
+                      "reason": "MISS"
+                    },
+                    {
+                      "direction": [
+                        -0.780468583106995,
+                        0.393415093421936,
+                        -0.485894501209259
+                      ],
+                      "offset_px": [
+                        0.0,
+                        12.0
+                      ],
+                      "origin_m": [
+                        0.874515473842621,
+                        1.40923929214478,
+                        6.22109460830688
+                      ],
+                      "point_px": [
+                        0.0,
+                        12.0
+                      ],
+                      "reason": "MISS"
+                    },
+                    {
+                      "direction": [
+                        -0.775748610496521,
+                        0.407094329595566,
+                        -0.482170343399048
+                      ],
+                      "offset_px": [
+                        0.0,
+                        -12.0
+                      ],
+                      "origin_m": [
+                        0.874515473842621,
+                        1.40923929214478,
+                        6.22109460830688
+                      ],
+                      "point_px": [
+                        0.0,
+                        -12.0
+                      ],
+                      "reason": "MISS"
+                    },
+                    {
+                      "direction": [
+                        -0.777156293392181,
+                        0.397072553634644,
+                        -0.488222807645798
+                      ],
+                      "offset_px": [
+                        8.0,
+                        8.0
+                      ],
+                      "origin_m": [
+                        0.874515473842621,
+                        1.40923929214478,
+                        6.22109460830688
+                      ],
+                      "point_px": [
+                        8.0,
+                        8.0
+                      ],
+                      "reason": "MISS"
+                    },
+                    {
+                      "direction": [
+                        -0.779058456420898,
+                        0.403453171253204,
+                        -0.479889154434204
+                      ],
+                      "offset_px": [
+                        -8.0,
+                        -8.0
+                      ],
+                      "origin_m": [
+                        0.874515473842621,
+                        1.40923929214478,
+                        6.22109460830688
+                      ],
+                      "point_px": [
+                        -8.0,
+                        -8.0
+                      ],
+                      "reason": "MISS"
+                    }
+                  ],
+                  "winner": null
+                },
+                "camera_pose": {
+                  "basis": [
+                    [
+                      0.97133880853653,
+                      0.0,
+                      -0.237699210643768
+                    ],
+                    [
+                      0.0142011512070894,
+                      0.998213708400726,
+                      0.0580318719148636
+                    ],
+                    [
+                      0.237274616956711,
+                      -0.0597442127764225,
+                      0.969603717327118
+                    ]
+                  ],
+                  "origin": [
+                    0.874515473842621,
+                    1.40923929214478,
+                    6.22109460830688
+                  ]
+                },
+                "camera_projection": null,
+                "hand": 0,
+                "pointer": [
+                  0.0,
+                  0.0
+                ]
+              }
+            ]
+          },
+          "label": "explicit_valid_top_left_uses_real_targeting",
+          "pass": true
+        }
+      ],
+      "cleanup": {
+        "camera_live": true,
+        "hand_held": [
+          false,
+          false
+        ],
+        "hands": [
+          "RELEASED",
+          "RELEASED"
+        ],
+        "lab_provider_removed": true,
+        "orbiting": false,
+        "provider_disabled": true,
+        "router_frame_removed": true
+      },
+      "contract": {
+        "dispatch_count": 3,
+        "dispatches": [
+          {
+            "dispatch_id": "swing_catch_train_60_headless_r2_6fd8275c:t3:h0:d0",
+            "dispatched_world_queries": true,
+            "hand": 0,
+            "kind": "PICK_DISPATCH",
+            "ordinal": 0,
+            "original_pick_call_index": 0,
+            "outcome": "MISS_OR_INELIGIBLE",
+            "ray_count": 7,
+            "sidecar_index": 0,
+            "tick": 3,
+            "winning_offset": null
+          },
+          {
+            "dispatch_id": "swing_catch_train_60_headless_r2_6fd8275c:t28:h0:d0",
+            "dispatched_world_queries": true,
+            "hand": 0,
+            "kind": "PICK_DISPATCH",
+            "ordinal": 0,
+            "original_pick_call_index": 1,
+            "outcome": "SELECTED",
+            "ray_count": 1,
+            "sidecar_index": 1,
+            "tick": 28,
+            "winning_offset": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "dispatch_id": "swing_catch_train_60_headless_r2_6fd8275c:t142:h1:d0",
+            "dispatched_world_queries": true,
+            "hand": 1,
+            "kind": "PICK_DISPATCH",
+            "ordinal": 0,
+            "original_pick_call_index": 2,
+            "outcome": "SELECTED",
+            "ray_count": 1,
+            "sidecar_index": 2,
+            "tick": 142,
+            "winning_offset": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "events": [
+          {
+            "dispatch_id": null,
+            "dispatched_world_queries": false,
+            "event_id": "swing_catch_train_60_headless_r2_6fd8275c:t1:h0:e0",
+            "hand": 0,
+            "kind": "PICK_SUPPRESSED",
+            "logical_index": 0,
+            "reason": "INVALID_AIM_NO_NEW_TARGET",
+            "tick": 1
+          },
+          {
+            "dispatch_id": "swing_catch_train_60_headless_r2_6fd8275c:t3:h0:d0",
+            "dispatched_world_queries": true,
+            "event_id": "swing_catch_train_60_headless_r2_6fd8275c:t3:h0:e0",
+            "hand": 0,
+            "kind": "PICK_RESULT",
+            "logical_index": 0,
+            "outcome": "MISS_OR_INELIGIBLE",
+            "tick": 3
+          },
+          {
+            "dispatch_id": "swing_catch_train_60_headless_r2_6fd8275c:t28:h0:d0",
+            "dispatched_world_queries": true,
+            "event_id": "swing_catch_train_60_headless_r2_6fd8275c:t28:h0:e0",
+            "hand": 0,
+            "kind": "PICK_RESULT",
+            "logical_index": 0,
+            "outcome": "SELECTED",
+            "tick": 28
+          },
+          {
+            "dispatch_id": "swing_catch_train_60_headless_r2_6fd8275c:t142:h1:d0",
+            "dispatched_world_queries": true,
+            "event_id": "swing_catch_train_60_headless_r2_6fd8275c:t142:h1:e0",
+            "hand": 1,
+            "kind": "PICK_RESULT",
+            "logical_index": 0,
+            "outcome": "SELECTED",
+            "tick": 142
+          }
+        ],
+        "logical_count": 4,
+        "ray_count": 9,
+        "reason": "",
+        "schema": "grip_pick_dispatch_contract_v134",
+        "session_id": "swing_catch_train_60_headless_r2_6fd8275c",
+        "sidecars": [
+          {
+            "dispatch_id": "swing_catch_train_60_headless_r2_6fd8275c:t3:h0:d0",
+            "original_pick_call_index": 0,
+            "sidecar_index": 0
+          },
+          {
+            "dispatch_id": "swing_catch_train_60_headless_r2_6fd8275c:t28:h0:d0",
+            "original_pick_call_index": 1,
+            "sidecar_index": 1
+          },
+          {
+            "dispatch_id": "swing_catch_train_60_headless_r2_6fd8275c:t142:h1:d0",
+            "original_pick_call_index": 2,
+            "sidecar_index": 2
+          }
+        ],
+        "status": "PASS",
+        "suppressed_count": 1
+      },
+      "hz": 60,
+      "run_id": "swing_catch_train_60_headless_r2_6fd8275c",
+      "status": "RUN_VALID"
+    }
+  ],
+  "old_R3_N1_status": "RUN_INVALID_UNCHANGED"
+}

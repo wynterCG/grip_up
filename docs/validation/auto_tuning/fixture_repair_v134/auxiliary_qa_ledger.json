@@ -1,0 +1,30 @@
+{
+  "conservative_pilot_plus_auxiliary_worlds": 38,
+  "engine_version_queries_have_no_world": true,
+  "no_qualification_credit": true,
+  "scope": "Ordinary FR6 safety, separate from34benchmarkpilotand34regressions",
+  "tooling_without_gameplay_world": [
+    "releaseexportCLI",
+    "nativeeditor"
+  ],
+  "within48_even_if_auxiliary_counted": true,
+  "world_launches": 4,
+  "worlds": [
+    {
+      "kind": "ordinaryheadlessstartup",
+      "receipt": "safety/normal_startup_receipt.json"
+    },
+    {
+      "kind": "Windowsreleaseordinarymain",
+      "receipt": "safety/export_smoke_receipt.json"
+    },
+    {
+      "kind": "isolatedpackinspectionordinarymain",
+      "receipt": "safety/export_pack_inspection_isolated_receipt.json"
+    },
+    {
+      "kind": "MCPordinarymain",
+      "receipt": "native/play_main_response.json"
+    }
+  ]
+}

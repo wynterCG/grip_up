@@ -1,0 +1,318 @@
+[
+  {
+    "authorized_full_window": {
+      "compressive_normal_impulse_Ns": 32.982798515850064,
+      "formula": "sum F dot (v_COM + omega cross (contact_point-COM)) delta; authored static supports have zero velocity",
+      "limitation": "Discrete POST point-work proxy; no claim of exact solver energy or exclusion of unknown native contacts",
+      "positive_point_work_J": 7.072867524838938,
+      "sample_count": 121,
+      "signed_point_work_J": 7.028604518297851,
+      "status": "RAW_DIAGNOSTIC_NOT_A_SCORE",
+      "ticks_with_foot_compression_gt1N": 121
+    },
+    "hz": 120,
+    "raw_preparation": {
+      "compressive_normal_impulse_Ns": 78.65983333668456,
+      "formula": "sum F dot (v_COM + omega cross (contact_point-COM)) delta; authored static supports have zero velocity",
+      "limitation": "Discrete POST point-work proxy; no claim of exact solver energy or exclusion of unknown native contacts",
+      "positive_point_work_J": 7.743327798379735,
+      "sample_count": 486,
+      "signed_point_work_J": 5.560837336874602,
+      "status": "RAW_DIAGNOSTIC_NOT_A_SCORE",
+      "ticks_with_foot_compression_gt1N": 276
+    },
+    "run_id": "asymmetric_pull_clean_v134_r2_120_headless_r2_a1a4c2b8",
+    "scenario_id": "asymmetric_pull_clean_v134_r2",
+    "score_eligible": false,
+    "source_hash": "00b1a8cccbee79f1b8525e0878d6668e5278e658ff104b5d387be281ad65dbf1",
+    "tape_hash": "CAPTURE_SOURCE_IDENTITY"
+  },
+  {
+    "authorized_full_window": {
+      "reason": "GROUND_CLEARANCE_NOT_CERTIFIED",
+      "status": "INTERRUPTED",
+      "value": null
+    },
+    "hz": 60,
+    "raw_preparation": {
+      "compressive_normal_impulse_Ns": 15.386462393434092,
+      "formula": "sum F dot (v_COM + omega cross (contact_point-COM)) delta; authored static supports have zero velocity",
+      "limitation": "Discrete POST point-work proxy; no claim of exact solver energy or exclusion of unknown native contacts",
+      "positive_point_work_J": 0.7974836568938787,
+      "sample_count": 231,
+      "signed_point_work_J": 0.5341498064570417,
+      "status": "RAW_DIAGNOSTIC_NOT_A_SCORE",
+      "ticks_with_foot_compression_gt1N": 90
+    },
+    "run_id": "asymmetric_pull_clean_v134_r2_60_headless_r8_f1fb6be3",
+    "scenario_id": "asymmetric_pull_clean_v134_r2",
+    "score_eligible": false,
+    "source_hash": "00b1a8cccbee79f1b8525e0878d6668e5278e658ff104b5d387be281ad65dbf1",
+    "tape_hash": "CAPTURE_SOURCE_IDENTITY"
+  },
+  {
+    "authorized_full_window": {
+      "reason": "QUIET_ONSET_NOT_REACHED",
+      "status": "PRECONDITION_NOT_MET",
+      "value": null
+    },
+    "hz": 120,
+    "raw_preparation": {
+      "compressive_normal_impulse_Ns": 12.68726775287081,
+      "formula": "sum F dot (v_COM + omega cross (contact_point-COM)) delta; authored static supports have zero velocity",
+      "limitation": "Discrete POST point-work proxy; no claim of exact solver energy or exclusion of unknown native contacts",
+      "positive_point_work_J": 0.16678586401368325,
+      "sample_count": 923,
+      "signed_point_work_J": -1.5408024514339178,
+      "status": "RAW_DIAGNOSTIC_NOT_A_SCORE",
+      "ticks_with_foot_compression_gt1N": 157
+    },
+    "run_id": "foot_supported_step_v134_r2_120_headless_r5_3d8e774a",
+    "scenario_id": "foot_supported_step_v134_r2",
+    "score_eligible": false,
+    "source_hash": "00b1a8cccbee79f1b8525e0878d6668e5278e658ff104b5d387be281ad65dbf1",
+    "tape_hash": "CAPTURE_SOURCE_IDENTITY"
+  },
+  {
+    "authorized_full_window": {
+      "reason": "QUIET_ONSET_NOT_REACHED",
+      "status": "PRECONDITION_NOT_MET",
+      "value": null
+    },
+    "hz": 60,
+    "raw_preparation": {
+      "compressive_normal_impulse_Ns": 10.793974541294551,
+      "formula": "sum F dot (v_COM + omega cross (contact_point-COM)) delta; authored static supports have zero velocity",
+      "limitation": "Discrete POST point-work proxy; no claim of exact solver energy or exclusion of unknown native contacts",
+      "positive_point_work_J": 0.08342929085662623,
+      "sample_count": 465,
+      "signed_point_work_J": -1.3015607036721286,
+      "status": "RAW_DIAGNOSTIC_NOT_A_SCORE",
+      "ticks_with_foot_compression_gt1N": 45
+    },
+    "run_id": "foot_supported_step_v134_r2_60_headless_r11_d51fd4d4",
+    "scenario_id": "foot_supported_step_v134_r2",
+    "score_eligible": false,
+    "source_hash": "00b1a8cccbee79f1b8525e0878d6668e5278e658ff104b5d387be281ad65dbf1",
+    "tape_hash": "CAPTURE_SOURCE_IDENTITY"
+  },
+  {
+    "authorized_full_window": {
+      "compressive_normal_impulse_Ns": 0.005437527845303217,
+      "formula": "sum F dot (v_COM + omega cross (contact_point-COM)) delta; authored static supports have zero velocity",
+      "limitation": "Discrete POST point-work proxy; no claim of exact solver energy or exclusion of unknown native contacts",
+      "positive_point_work_J": 0.0,
+      "sample_count": 121,
+      "signed_point_work_J": -0.00019865450311641706,
+      "status": "RAW_DIAGNOSTIC_NOT_A_SCORE",
+      "ticks_with_foot_compression_gt1N": 0
+    },
+    "hz": 120,
+    "raw_preparation": {
+      "compressive_normal_impulse_Ns": 10.881896670659385,
+      "formula": "sum F dot (v_COM + omega cross (contact_point-COM)) delta; authored static supports have zero velocity",
+      "limitation": "Discrete POST point-work proxy; no claim of exact solver energy or exclusion of unknown native contacts",
+      "positive_point_work_J": 0.4342150249824137,
+      "sample_count": 426,
+      "signed_point_work_J": 0.21621936713768003,
+      "status": "RAW_DIAGNOSTIC_NOT_A_SCORE",
+      "ticks_with_foot_compression_gt1N": 139
+    },
+    "run_id": "lateral_clean_left_v134_r2_120_headless_r3_ee25c576",
+    "scenario_id": "lateral_clean_left_v134_r2",
+    "score_eligible": false,
+    "source_hash": "00b1a8cccbee79f1b8525e0878d6668e5278e658ff104b5d387be281ad65dbf1",
+    "tape_hash": "CAPTURE_SOURCE_IDENTITY"
+  },
+  {
+    "authorized_full_window": {
+      "reason": "NATIVE_GROUND_AUTHORITY_CHANGED_TASK",
+      "status": "INTERRUPTED",
+      "value": null
+    },
+    "hz": 60,
+    "raw_preparation": {
+      "compressive_normal_impulse_Ns": 42.30390186846877,
+      "formula": "sum F dot (v_COM + omega cross (contact_point-COM)) delta; authored static supports have zero velocity",
+      "limitation": "Discrete POST point-work proxy; no claim of exact solver energy or exclusion of unknown native contacts",
+      "positive_point_work_J": 2.073986163276512,
+      "sample_count": 241,
+      "signed_point_work_J": 0.7914318623975366,
+      "status": "RAW_DIAGNOSTIC_NOT_A_SCORE",
+      "ticks_with_foot_compression_gt1N": 112
+    },
+    "run_id": "lateral_clean_left_v134_r2_60_headless_r9_de81eb8a",
+    "scenario_id": "lateral_clean_left_v134_r2",
+    "score_eligible": false,
+    "source_hash": "00b1a8cccbee79f1b8525e0878d6668e5278e658ff104b5d387be281ad65dbf1",
+    "tape_hash": "CAPTURE_SOURCE_IDENTITY"
+  },
+  {
+    "authorized_full_window": {
+      "compressive_normal_impulse_Ns": 0.0,
+      "formula": "sum F dot (v_COM + omega cross (contact_point-COM)) delta; authored static supports have zero velocity",
+      "limitation": "Discrete POST point-work proxy; no claim of exact solver energy or exclusion of unknown native contacts",
+      "positive_point_work_J": 0.0,
+      "sample_count": 121,
+      "signed_point_work_J": 0.0,
+      "status": "RAW_DIAGNOSTIC_NOT_A_SCORE",
+      "ticks_with_foot_compression_gt1N": 0
+    },
+    "hz": 120,
+    "raw_preparation": {
+      "compressive_normal_impulse_Ns": 10.638653117294101,
+      "formula": "sum F dot (v_COM + omega cross (contact_point-COM)) delta; authored static supports have zero velocity",
+      "limitation": "Discrete POST point-work proxy; no claim of exact solver energy or exclusion of unknown native contacts",
+      "positive_point_work_J": 0.43275163266162886,
+      "sample_count": 424,
+      "signed_point_work_J": 0.2769948495865608,
+      "status": "RAW_DIAGNOSTIC_NOT_A_SCORE",
+      "ticks_with_foot_compression_gt1N": 135
+    },
+    "run_id": "lateral_clean_right_v134_r2_120_headless_r4_0af0d24e",
+    "scenario_id": "lateral_clean_right_v134_r2",
+    "score_eligible": false,
+    "source_hash": "00b1a8cccbee79f1b8525e0878d6668e5278e658ff104b5d387be281ad65dbf1",
+    "tape_hash": "CAPTURE_SOURCE_IDENTITY"
+  },
+  {
+    "authorized_full_window": {
+      "compressive_normal_impulse_Ns": 0.20025930379827817,
+      "formula": "sum F dot (v_COM + omega cross (contact_point-COM)) delta; authored static supports have zero velocity",
+      "limitation": "Discrete POST point-work proxy; no claim of exact solver energy or exclusion of unknown native contacts",
+      "positive_point_work_J": 0.0,
+      "sample_count": 61,
+      "signed_point_work_J": -0.009584020560513832,
+      "status": "RAW_DIAGNOSTIC_NOT_A_SCORE",
+      "ticks_with_foot_compression_gt1N": 6
+    },
+    "hz": 60,
+    "raw_preparation": {
+      "compressive_normal_impulse_Ns": 16.504312916410463,
+      "formula": "sum F dot (v_COM + omega cross (contact_point-COM)) delta; authored static supports have zero velocity",
+      "limitation": "Discrete POST point-work proxy; no claim of exact solver energy or exclusion of unknown native contacts",
+      "positive_point_work_J": 2.0071474131548435,
+      "sample_count": 235,
+      "signed_point_work_J": 1.0365660717105913,
+      "status": "RAW_DIAGNOSTIC_NOT_A_SCORE",
+      "ticks_with_foot_compression_gt1N": 76
+    },
+    "run_id": "lateral_clean_right_v134_r2_60_headless_r10_48724579",
+    "scenario_id": "lateral_clean_right_v134_r2",
+    "score_eligible": false,
+    "source_hash": "00b1a8cccbee79f1b8525e0878d6668e5278e658ff104b5d387be281ad65dbf1",
+    "tape_hash": "CAPTURE_SOURCE_IDENTITY"
+  },
+  {
+    "authorized_full_window": {
+      "compressive_normal_impulse_Ns": 0.0,
+      "formula": "sum F dot (v_COM + omega cross (contact_point-COM)) delta; authored static supports have zero velocity",
+      "limitation": "Discrete POST point-work proxy; no claim of exact solver energy or exclusion of unknown native contacts",
+      "positive_point_work_J": 0.0,
+      "sample_count": 601,
+      "signed_point_work_J": 0.0,
+      "status": "RAW_DIAGNOSTIC_NOT_A_SCORE",
+      "ticks_with_foot_compression_gt1N": 0
+    },
+    "hz": 120,
+    "raw_preparation": {
+      "compressive_normal_impulse_Ns": 10.638653117294101,
+      "formula": "sum F dot (v_COM + omega cross (contact_point-COM)) delta; authored static supports have zero velocity",
+      "limitation": "Discrete POST point-work proxy; no claim of exact solver energy or exclusion of unknown native contacts",
+      "positive_point_work_J": 0.43275163266162886,
+      "sample_count": 462,
+      "signed_point_work_J": 0.2769948495865608,
+      "status": "RAW_DIAGNOSTIC_NOT_A_SCORE",
+      "ticks_with_foot_compression_gt1N": 135
+    },
+    "run_id": "two_hand_release_stop_v134_r2_120_headless_r6_88f1f2a1",
+    "scenario_id": "two_hand_release_stop_v134_r2",
+    "score_eligible": false,
+    "source_hash": "00b1a8cccbee79f1b8525e0878d6668e5278e658ff104b5d387be281ad65dbf1",
+    "tape_hash": "CAPTURE_SOURCE_IDENTITY"
+  },
+  {
+    "authorized_full_window": {
+      "compressive_normal_impulse_Ns": 0.002903688388566176,
+      "formula": "sum F dot (v_COM + omega cross (contact_point-COM)) delta; authored static supports have zero velocity",
+      "limitation": "Discrete POST point-work proxy; no claim of exact solver energy or exclusion of unknown native contacts",
+      "positive_point_work_J": 0.0,
+      "sample_count": 301,
+      "signed_point_work_J": -6.46441594951294e-05,
+      "status": "RAW_DIAGNOSTIC_NOT_A_SCORE",
+      "ticks_with_foot_compression_gt1N": 0
+    },
+    "hz": 60,
+    "raw_preparation": {
+      "compressive_normal_impulse_Ns": 16.701797789148983,
+      "formula": "sum F dot (v_COM + omega cross (contact_point-COM)) delta; authored static supports have zero velocity",
+      "limitation": "Discrete POST point-work proxy; no claim of exact solver energy or exclusion of unknown native contacts",
+      "positive_point_work_J": 2.0071474131548435,
+      "sample_count": 257,
+      "signed_point_work_J": 1.0270465836390004,
+      "status": "RAW_DIAGNOSTIC_NOT_A_SCORE",
+      "ticks_with_foot_compression_gt1N": 82
+    },
+    "run_id": "two_hand_release_stop_v134_r2_60_headless_r12_b31198a6",
+    "scenario_id": "two_hand_release_stop_v134_r2",
+    "score_eligible": false,
+    "source_hash": "00b1a8cccbee79f1b8525e0878d6668e5278e658ff104b5d387be281ad65dbf1",
+    "tape_hash": "CAPTURE_SOURCE_IDENTITY"
+  },
+  {
+    "authorized_full_window": {
+      "compressive_normal_impulse_Ns": 0.30408763794651644,
+      "formula": "sum F dot (v_COM + omega cross (contact_point-COM)) delta; authored static supports have zero velocity",
+      "limitation": "Discrete POST point-work proxy; no claim of exact solver energy or exclusion of unknown native contacts",
+      "positive_point_work_J": 0.0472830485801293,
+      "sample_count": 121,
+      "signed_point_work_J": 0.0472830485801293,
+      "status": "RAW_DIAGNOSTIC_NOT_A_SCORE",
+      "ticks_with_foot_compression_gt1N": 10
+    },
+    "hz": 120,
+    "raw_preparation": {
+      "compressive_normal_impulse_Ns": 10.638653117294101,
+      "formula": "sum F dot (v_COM + omega cross (contact_point-COM)) delta; authored static supports have zero velocity",
+      "limitation": "Discrete POST point-work proxy; no claim of exact solver energy or exclusion of unknown native contacts",
+      "positive_point_work_J": 0.43275163266162886,
+      "sample_count": 424,
+      "signed_point_work_J": 0.2769948495865608,
+      "status": "RAW_DIAGNOSTIC_NOT_A_SCORE",
+      "ticks_with_foot_compression_gt1N": 135
+    },
+    "run_id": "vertical_pull_clean_v134_r2_120_headless_r1_af19bbe7",
+    "scenario_id": "vertical_pull_clean_v134_r2",
+    "score_eligible": false,
+    "source_hash": "00b1a8cccbee79f1b8525e0878d6668e5278e658ff104b5d387be281ad65dbf1",
+    "tape_hash": "CAPTURE_SOURCE_IDENTITY"
+  },
+  {
+    "authorized_full_window": {
+      "compressive_normal_impulse_Ns": 0.2665326531666021,
+      "formula": "sum F dot (v_COM + omega cross (contact_point-COM)) delta; authored static supports have zero velocity",
+      "limitation": "Discrete POST point-work proxy; no claim of exact solver energy or exclusion of unknown native contacts",
+      "positive_point_work_J": 0.056937171136410884,
+      "sample_count": 61,
+      "signed_point_work_J": 0.056937171136410884,
+      "status": "RAW_DIAGNOSTIC_NOT_A_SCORE",
+      "ticks_with_foot_compression_gt1N": 5
+    },
+    "hz": 60,
+    "raw_preparation": {
+      "compressive_normal_impulse_Ns": 16.504312916410463,
+      "formula": "sum F dot (v_COM + omega cross (contact_point-COM)) delta; authored static supports have zero velocity",
+      "limitation": "Discrete POST point-work proxy; no claim of exact solver energy or exclusion of unknown native contacts",
+      "positive_point_work_J": 2.0071474131548435,
+      "sample_count": 235,
+      "signed_point_work_J": 1.0365660717105913,
+      "status": "RAW_DIAGNOSTIC_NOT_A_SCORE",
+      "ticks_with_foot_compression_gt1N": 76
+    },
+    "run_id": "vertical_pull_clean_v134_r2_60_headless_r7_d262fb2e",
+    "scenario_id": "vertical_pull_clean_v134_r2",
+    "score_eligible": false,
+    "source_hash": "00b1a8cccbee79f1b8525e0878d6668e5278e658ff104b5d387be281ad65dbf1",
+    "tape_hash": "CAPTURE_SOURCE_IDENTITY"
+  }
+]

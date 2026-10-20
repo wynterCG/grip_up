@@ -1,0 +1,37 @@
+{
+  "development": {
+    "attempted": 8,
+    "limit": 8
+  },
+  "final": {
+    "attempted": 34,
+    "groups": {
+      "capture": 12,
+      "negative": 2,
+      "reference": 4,
+      "replay": 16,
+      "reserve": 0
+    },
+    "limit": 48
+  },
+  "pure": {
+    "Godot_file_JSON_cases": 49,
+    "Godot_parse_only_processes": 3,
+    "Godot_successful_assertions": 128,
+    "Godot_transport_batches_attempted": 4,
+    "Python_unittest_methods_final": 50,
+    "Python_zero_discovery_attempt_no_coverage": true,
+    "coverage_not_summed_across_repeats": true,
+    "diagnostic_window_gate_checks": 8,
+    "failed_batches_preserved": 3,
+    "new_Python_JSON_subcases": 49
+  },
+  "regression": {
+    "checks": 1146,
+    "completed": 34,
+    "passed": true,
+    "required": 34,
+    "separate": true
+  },
+  "status": "CLOSED_FEASIBILITY_NO_GO"
+}

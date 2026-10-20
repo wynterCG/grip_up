@@ -1,0 +1,127 @@
+{
+  "comparisons": {
+    "asymmetric_pull_clean_v134_r2_120.json": {
+      "sha256": "c4b7acd1019de071ca481f46bbf09740aacec3b153df17c39b47354914ad11b1",
+      "status": "STRICT_MATCH"
+    },
+    "development_reference_120.json": {
+      "sha256": "1a4cc4599661b49baa2477fa6dbefc83977c637f89a5546be2cfedff7c46220d",
+      "status": "STRICT_MATCH"
+    },
+    "development_reference_60.json": {
+      "sha256": "34e7bad0d4d91ce1c896a6dee2f80e7f8becf9dc8ec771a2aa8cda39dc42d5f9",
+      "status": "STRICT_MATCH"
+    },
+    "lateral_clean_left_v134_r2_120.json": {
+      "sha256": "9e4d5ba8ae849f4015a8dc6339e3afd61a2aa368c79aa25f5d24306ee268aada",
+      "status": "STRICT_MATCH"
+    },
+    "lateral_clean_right_v134_r2_120.json": {
+      "sha256": "253e58e2bc23b223e13d2df959c13aa8e866607b5d06d762d7238f27adb49ab0",
+      "status": "STRICT_MATCH"
+    },
+    "lateral_clean_right_v134_r2_60.json": {
+      "sha256": "c38ad8403485415e3cded8b1c3559ed4aeb0c3dfd00084bb0398dbb3037c49ce",
+      "status": "STRICT_MATCH"
+    },
+    "reference_120.json": {
+      "sha256": "d9a7a902dbcddfaff63c97b98bf23b2345156070bcc3222ec15712ea066b9d5d",
+      "status": "STRICT_MATCH"
+    },
+    "reference_60.json": {
+      "sha256": "a9e96b0e693c65d34ced868c28fd8d576a8d5fa0d23b78ee870c395cdce2c25f",
+      "status": "STRICT_MATCH"
+    },
+    "two_hand_release_stop_v134_r2_120.json": {
+      "sha256": "8915d73cc2c3410d0d93768548ca365e292f6681c864623c3cecded4bc31371c",
+      "status": "STRICT_MATCH"
+    },
+    "two_hand_release_stop_v134_r2_60.json": {
+      "sha256": "1852714bce59eb2ba683acd4330eced88440db15cd25297fabc954f934950511",
+      "status": "STRICT_MATCH"
+    },
+    "vertical_pull_clean_v134_r2_120.json": {
+      "sha256": "253e58e2bc23b223e13d2df959c13aa8e866607b5d06d762d7238f27adb49ab0",
+      "status": "STRICT_MATCH"
+    },
+    "vertical_pull_clean_v134_r2_60.json": {
+      "sha256": "c38ad8403485415e3cded8b1c3559ed4aeb0c3dfd00084bb0398dbb3037c49ce",
+      "status": "STRICT_MATCH"
+    }
+  },
+  "n3_or_statistical_qualification": false,
+  "pairs": [
+    {
+      "first_difference": null,
+      "id": "reference_120",
+      "left": "swing_catch_train_120_headless_r1_552c7360",
+      "right": "swing_catch_train_120_rendered_scripted_r2_5f171f00",
+      "status": "STRICT_MATCH"
+    },
+    {
+      "first_difference": null,
+      "id": "reference_60",
+      "left": "swing_catch_train_60_headless_r3_7c30a616",
+      "right": "swing_catch_train_60_rendered_scripted_r4_31384d3b",
+      "status": "STRICT_MATCH"
+    },
+    {
+      "first_difference": null,
+      "id": "vertical_pull_clean_v134_r2_120",
+      "left": "vertical_pull_clean_v134_r2_120_headless_r1_bf313388",
+      "right": "vertical_pull_clean_v134_r2_120_rendered_scripted_r2_3f089927",
+      "status": "STRICT_MATCH"
+    },
+    {
+      "first_difference": null,
+      "id": "asymmetric_pull_clean_v134_r2_120",
+      "left": "asymmetric_pull_clean_v134_r2_120_headless_r3_8c7812ed",
+      "right": "asymmetric_pull_clean_v134_r2_120_rendered_scripted_r4_851f01eb",
+      "status": "STRICT_MATCH"
+    },
+    {
+      "first_difference": null,
+      "id": "lateral_clean_left_v134_r2_120",
+      "left": "lateral_clean_left_v134_r2_120_headless_r5_7b8a7f82",
+      "right": "lateral_clean_left_v134_r2_120_rendered_scripted_r6_5479de46",
+      "status": "STRICT_MATCH"
+    },
+    {
+      "first_difference": null,
+      "id": "lateral_clean_right_v134_r2_120",
+      "left": "lateral_clean_right_v134_r2_120_headless_r7_58cff37f",
+      "right": "lateral_clean_right_v134_r2_120_rendered_scripted_r8_3d60af16",
+      "status": "STRICT_MATCH"
+    },
+    {
+      "first_difference": null,
+      "id": "two_hand_release_stop_v134_r2_120",
+      "left": "two_hand_release_stop_v134_r2_120_headless_r9_29c657c0",
+      "right": "two_hand_release_stop_v134_r2_120_rendered_scripted_r10_6683b86f",
+      "status": "STRICT_MATCH"
+    },
+    {
+      "first_difference": null,
+      "id": "vertical_pull_clean_v134_r2_60",
+      "left": "vertical_pull_clean_v134_r2_60_headless_r11_8796ff57",
+      "right": "vertical_pull_clean_v134_r2_60_rendered_scripted_r12_55e58d53",
+      "status": "STRICT_MATCH"
+    },
+    {
+      "first_difference": null,
+      "id": "lateral_clean_right_v134_r2_60",
+      "left": "lateral_clean_right_v134_r2_60_headless_r13_a5e68b34",
+      "right": "lateral_clean_right_v134_r2_60_rendered_scripted_r14_6d7372cd",
+      "status": "STRICT_MATCH"
+    },
+    {
+      "first_difference": null,
+      "id": "two_hand_release_stop_v134_r2_60",
+      "left": "two_hand_release_stop_v134_r2_60_headless_r15_17eb29d9",
+      "right": "two_hand_release_stop_v134_r2_60_rendered_scripted_r16_671df61c",
+      "status": "STRICT_MATCH"
+    }
+  ],
+  "same_Hz_only": true,
+  "source_snapshot": "00b1a8cccbee79f1b8525e0878d6668e5278e658ff104b5d387be281ad65dbf1"
+}

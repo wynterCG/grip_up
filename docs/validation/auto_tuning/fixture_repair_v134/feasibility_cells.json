@@ -1,0 +1,217 @@
+{
+  "cells": [
+    {
+      "capture": "vertical_pull_clean_v134_r2_120_headless_r1_af19bbe7",
+      "diagnostic_only": false,
+      "domain": "vertical_pull_clean",
+      "feasible": true,
+      "fixture_revision": "v134_pad_clearance_r2",
+      "hz": 120,
+      "measurement_status": "MEASURED",
+      "n_per_mode": 1,
+      "reason": "AUTHORIZED_HORIZON_COMPLETE",
+      "replays": [
+        "vertical_pull_clean_v134_r2_120_headless_r1_bf313388",
+        "vertical_pull_clean_v134_r2_120_rendered_scripted_r2_3f089927"
+      ],
+      "scenario_id": "vertical_pull_clean_v134_r2",
+      "score_eligible": false,
+      "strict_pair": "STRICT_MATCH"
+    },
+    {
+      "capture": "asymmetric_pull_clean_v134_r2_120_headless_r2_a1a4c2b8",
+      "diagnostic_only": false,
+      "domain": "asymmetric_pull_clean",
+      "feasible": true,
+      "fixture_revision": "v134_pad_clearance_r2",
+      "hz": 120,
+      "measurement_status": "MEASURED",
+      "n_per_mode": 1,
+      "reason": "AUTHORIZED_HORIZON_COMPLETE",
+      "replays": [
+        "asymmetric_pull_clean_v134_r2_120_headless_r3_8c7812ed",
+        "asymmetric_pull_clean_v134_r2_120_rendered_scripted_r4_851f01eb"
+      ],
+      "scenario_id": "asymmetric_pull_clean_v134_r2",
+      "score_eligible": false,
+      "strict_pair": "STRICT_MATCH"
+    },
+    {
+      "capture": "lateral_clean_left_v134_r2_120_headless_r3_ee25c576",
+      "diagnostic_only": false,
+      "domain": "lateral_clean_left",
+      "feasible": true,
+      "fixture_revision": "v134_pad_clearance_r2",
+      "hz": 120,
+      "measurement_status": "MEASURED",
+      "n_per_mode": 1,
+      "reason": "AUTHORIZED_HORIZON_COMPLETE",
+      "replays": [
+        "lateral_clean_left_v134_r2_120_headless_r5_7b8a7f82",
+        "lateral_clean_left_v134_r2_120_rendered_scripted_r6_5479de46"
+      ],
+      "scenario_id": "lateral_clean_left_v134_r2",
+      "score_eligible": false,
+      "strict_pair": "STRICT_MATCH"
+    },
+    {
+      "capture": "lateral_clean_right_v134_r2_120_headless_r4_0af0d24e",
+      "diagnostic_only": false,
+      "domain": "lateral_clean_right",
+      "feasible": true,
+      "fixture_revision": "v134_pad_clearance_r2",
+      "hz": 120,
+      "measurement_status": "MEASURED",
+      "n_per_mode": 1,
+      "reason": "AUTHORIZED_HORIZON_COMPLETE",
+      "replays": [
+        "lateral_clean_right_v134_r2_120_headless_r7_58cff37f",
+        "lateral_clean_right_v134_r2_120_rendered_scripted_r8_3d60af16"
+      ],
+      "scenario_id": "lateral_clean_right_v134_r2",
+      "score_eligible": false,
+      "strict_pair": "STRICT_MATCH"
+    },
+    {
+      "capture": "foot_supported_step_v134_r2_120_headless_r5_3d8e774a",
+      "diagnostic_only": true,
+      "domain": "foot_supported_step",
+      "feasible": false,
+      "fixture_revision": "v134_pad_clearance_foot_lip_r2",
+      "hz": 120,
+      "measurement_status": "PRECONDITION_NOT_MET",
+      "n_per_mode": 0,
+      "reason": "QUIET_ONSET_NOT_REACHED",
+      "replays": [],
+      "scenario_id": "foot_supported_step_v134_r2",
+      "score_eligible": false,
+      "strict_pair": "NOT_RUN"
+    },
+    {
+      "capture": "two_hand_release_stop_v134_r2_120_headless_r6_88f1f2a1",
+      "diagnostic_only": true,
+      "domain": "two_hand_release_stop",
+      "feasible": true,
+      "fixture_revision": "v134_pad_clearance_r2",
+      "hz": 120,
+      "measurement_status": "MEASURED",
+      "n_per_mode": 1,
+      "reason": "AUTHORIZED_HORIZON_COMPLETE",
+      "replays": [
+        "two_hand_release_stop_v134_r2_120_headless_r9_29c657c0",
+        "two_hand_release_stop_v134_r2_120_rendered_scripted_r10_6683b86f"
+      ],
+      "scenario_id": "two_hand_release_stop_v134_r2",
+      "score_eligible": false,
+      "strict_pair": "STRICT_MATCH"
+    },
+    {
+      "capture": "vertical_pull_clean_v134_r2_60_headless_r7_d262fb2e",
+      "diagnostic_only": false,
+      "domain": "vertical_pull_clean",
+      "feasible": true,
+      "fixture_revision": "v134_pad_clearance_r2",
+      "hz": 60,
+      "measurement_status": "MEASURED",
+      "n_per_mode": 1,
+      "reason": "AUTHORIZED_HORIZON_COMPLETE",
+      "replays": [
+        "vertical_pull_clean_v134_r2_60_headless_r11_8796ff57",
+        "vertical_pull_clean_v134_r2_60_rendered_scripted_r12_55e58d53"
+      ],
+      "scenario_id": "vertical_pull_clean_v134_r2",
+      "score_eligible": false,
+      "strict_pair": "STRICT_MATCH"
+    },
+    {
+      "capture": "asymmetric_pull_clean_v134_r2_60_headless_r8_f1fb6be3",
+      "diagnostic_only": false,
+      "domain": "asymmetric_pull_clean",
+      "feasible": false,
+      "fixture_revision": "v134_pad_clearance_r2",
+      "hz": 60,
+      "measurement_status": "INTERRUPTED",
+      "n_per_mode": 0,
+      "reason": "GROUND_CLEARANCE_NOT_CERTIFIED",
+      "replays": [],
+      "scenario_id": "asymmetric_pull_clean_v134_r2",
+      "score_eligible": false,
+      "strict_pair": "NOT_RUN"
+    },
+    {
+      "capture": "lateral_clean_left_v134_r2_60_headless_r9_de81eb8a",
+      "diagnostic_only": false,
+      "domain": "lateral_clean_left",
+      "feasible": false,
+      "fixture_revision": "v134_pad_clearance_r2",
+      "hz": 60,
+      "measurement_status": "INTERRUPTED",
+      "n_per_mode": 0,
+      "reason": "NATIVE_GROUND_AUTHORITY_CHANGED_TASK",
+      "replays": [],
+      "scenario_id": "lateral_clean_left_v134_r2",
+      "score_eligible": false,
+      "strict_pair": "NOT_RUN"
+    },
+    {
+      "capture": "lateral_clean_right_v134_r2_60_headless_r10_48724579",
+      "diagnostic_only": false,
+      "domain": "lateral_clean_right",
+      "feasible": true,
+      "fixture_revision": "v134_pad_clearance_r2",
+      "hz": 60,
+      "measurement_status": "MEASURED",
+      "n_per_mode": 1,
+      "reason": "AUTHORIZED_HORIZON_COMPLETE",
+      "replays": [
+        "lateral_clean_right_v134_r2_60_headless_r13_a5e68b34",
+        "lateral_clean_right_v134_r2_60_rendered_scripted_r14_6d7372cd"
+      ],
+      "scenario_id": "lateral_clean_right_v134_r2",
+      "score_eligible": false,
+      "strict_pair": "STRICT_MATCH"
+    },
+    {
+      "capture": "foot_supported_step_v134_r2_60_headless_r11_d51fd4d4",
+      "diagnostic_only": true,
+      "domain": "foot_supported_step",
+      "feasible": false,
+      "fixture_revision": "v134_pad_clearance_foot_lip_r2",
+      "hz": 60,
+      "measurement_status": "PRECONDITION_NOT_MET",
+      "n_per_mode": 0,
+      "reason": "QUIET_ONSET_NOT_REACHED",
+      "replays": [],
+      "scenario_id": "foot_supported_step_v134_r2",
+      "score_eligible": false,
+      "strict_pair": "NOT_RUN"
+    },
+    {
+      "capture": "two_hand_release_stop_v134_r2_60_headless_r12_b31198a6",
+      "diagnostic_only": true,
+      "domain": "two_hand_release_stop",
+      "feasible": true,
+      "fixture_revision": "v134_pad_clearance_r2",
+      "hz": 60,
+      "measurement_status": "MEASURED",
+      "n_per_mode": 1,
+      "reason": "AUTHORIZED_HORIZON_COMPLETE",
+      "replays": [
+        "two_hand_release_stop_v134_r2_60_headless_r15_17eb29d9",
+        "two_hand_release_stop_v134_r2_60_rendered_scripted_r16_671df61c"
+      ],
+      "scenario_id": "two_hand_release_stop_v134_r2",
+      "score_eligible": false,
+      "strict_pair": "STRICT_MATCH"
+    }
+  ],
+  "decision": "FEASIBILITY_NO_GO",
+  "diagnostic_windows_all_Hz": false,
+  "hard_stop": "",
+  "mandatory_domains_all_Hz": false,
+  "negative_pass": true,
+  "reference_pass": true,
+  "score_eligible": false,
+  "source_commit": "6cc47db32fccbc0998383c2da6fda6d17c093af6",
+  "source_snapshot": "00b1a8cccbee79f1b8525e0878d6668e5278e658ff104b5d387be281ad65dbf1"
+}

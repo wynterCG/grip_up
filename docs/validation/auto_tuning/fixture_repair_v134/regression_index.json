@@ -1,0 +1,314 @@
+{
+  "all_passed": true,
+  "checks": 1146,
+  "final_pilot_credit": 0,
+  "processes": 34,
+  "runs": [
+    {
+      "checks": 45,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_reference",
+      "hz": 120,
+      "passed": true,
+      "suite": "physics"
+    },
+    {
+      "checks": 45,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_reference",
+      "hz": 60,
+      "passed": true,
+      "suite": "physics"
+    },
+    {
+      "checks": 47,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_reference",
+      "hz": 120,
+      "passed": true,
+      "suite": "pending_contact"
+    },
+    {
+      "checks": 47,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_reference",
+      "hz": 60,
+      "passed": true,
+      "suite": "pending_contact"
+    },
+    {
+      "checks": 19,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_reference",
+      "hz": 120,
+      "passed": true,
+      "suite": "intent_integration"
+    },
+    {
+      "checks": 19,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_reference",
+      "hz": 60,
+      "passed": true,
+      "suite": "intent_integration"
+    },
+    {
+      "checks": 37,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_reference",
+      "hz": 120,
+      "passed": true,
+      "suite": "intent_reversal"
+    },
+    {
+      "checks": 37,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_reference",
+      "hz": 60,
+      "passed": true,
+      "suite": "intent_reversal"
+    },
+    {
+      "checks": 24,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_reference",
+      "hz": 120,
+      "passed": true,
+      "suite": "ground_locomotion"
+    },
+    {
+      "checks": 24,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_reference",
+      "hz": 60,
+      "passed": true,
+      "suite": "ground_locomotion"
+    },
+    {
+      "checks": 17,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_reference",
+      "hz": 120,
+      "passed": true,
+      "suite": "intent_frame_sign"
+    },
+    {
+      "checks": 17,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_reference",
+      "hz": 60,
+      "passed": true,
+      "suite": "intent_frame_sign"
+    },
+    {
+      "checks": 17,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_reference",
+      "hz": 120,
+      "passed": true,
+      "suite": "first_ascent"
+    },
+    {
+      "checks": 17,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_reference",
+      "hz": 60,
+      "passed": true,
+      "suite": "first_ascent"
+    },
+    {
+      "checks": 14,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_reference",
+      "hz": 120,
+      "passed": true,
+      "suite": "hybrid_mantle"
+    },
+    {
+      "checks": 14,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_reference",
+      "hz": 60,
+      "passed": true,
+      "suite": "hybrid_mantle"
+    },
+    {
+      "checks": 59,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_reference",
+      "hz": 120,
+      "passed": true,
+      "suite": "vault_resilience"
+    },
+    {
+      "checks": 59,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_reference",
+      "hz": 60,
+      "passed": true,
+      "suite": "vault_resilience"
+    },
+    {
+      "checks": 57,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_reference",
+      "hz": 120,
+      "passed": true,
+      "suite": "vault_restore_guard"
+    },
+    {
+      "checks": 57,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_reference",
+      "hz": 60,
+      "passed": true,
+      "suite": "vault_restore_guard"
+    },
+    {
+      "checks": 77,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_reference",
+      "hz": 120,
+      "passed": true,
+      "suite": "locomotion_allocation"
+    },
+    {
+      "checks": 77,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_reference",
+      "hz": 60,
+      "passed": true,
+      "suite": "locomotion_allocation"
+    },
+    {
+      "checks": 29,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_reference",
+      "hz": 120,
+      "passed": true,
+      "suite": "intent_feet"
+    },
+    {
+      "checks": 29,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_reference",
+      "hz": 60,
+      "passed": true,
+      "suite": "intent_feet"
+    },
+    {
+      "checks": 30,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_live_reference",
+      "hz": 120,
+      "passed": true,
+      "suite": "drag_input"
+    },
+    {
+      "checks": 30,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_live_reference",
+      "hz": 60,
+      "passed": true,
+      "suite": "drag_input"
+    },
+    {
+      "checks": 30,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_live_reference",
+      "hz": 120,
+      "passed": true,
+      "suite": "contextual_input"
+    },
+    {
+      "checks": 30,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_live_reference",
+      "hz": 60,
+      "passed": true,
+      "suite": "contextual_input"
+    },
+    {
+      "checks": 35,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_live_reference",
+      "hz": 120,
+      "passed": true,
+      "suite": "independent_input"
+    },
+    {
+      "checks": 35,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_live_reference",
+      "hz": 60,
+      "passed": true,
+      "suite": "independent_input"
+    },
+    {
+      "checks": 27,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_live_reference",
+      "hz": 120,
+      "passed": true,
+      "suite": "distant_input"
+    },
+    {
+      "checks": 27,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_live_reference",
+      "hz": 60,
+      "passed": true,
+      "suite": "distant_input"
+    },
+    {
+      "checks": 9,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_live_reference",
+      "hz": 120,
+      "passed": true,
+      "suite": "capture_input"
+    },
+    {
+      "checks": 9,
+      "exit_code": 0,
+      "failures": 0,
+      "group": "benchmark_live_reference",
+      "hz": 60,
+      "passed": true,
+      "suite": "capture_input"
+    }
+  ]
+}
