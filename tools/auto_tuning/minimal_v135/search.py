@@ -17,7 +17,7 @@ from candidate_schema import (PARAMETER_IDS, baseline, candidate_id, finite_numb
                               parameter_rows, validate_overrides)
 from common import StudyLock, digest
 
-VERSION = "minimal_v135_score_r1"
+VERSION = "minimal_v135_score_r3"
 TRAIN_IDS = ("vertical_pull_clean_v134_r2", "lateral_clean_right_v134_r2")
 PLAN = {"sensitivity": 8, "random": 6, "tpe": 4}
 PERTURBATIONS = {
@@ -93,8 +93,7 @@ def _typed(row, name):
         if not finite_number(metric.get("value")):
             raise ValueError(f"nonfinite/nonnumeric measured {name}")
     elif metric.get("value") is not None:
-        if metric["status"] not in {"INTERRUPTED", "CENSORED_TIMEOUT"} or not finite_number(metric["value"]):
-            raise ValueError(f"invalid non-measured raw value {name}")
+        raise ValueError(f"official non-measured value must be null: {name}")
     return metric
 
 
@@ -116,6 +115,9 @@ def project_score(candidate, reference, quality_contract):
     'maximize', max_worsening:finite>=0, allowed_missing:[{status,reason_code}]}}}}.
     Rules/allowances must be frozen from fresh A0 BEFORE any physical proposal.
     No quality metric is inferred from a null or renamed whole-body rotation.
+    Official non-MEASURED metric values must be null. The root adapter preserves
+    original partial-window values separately in raw_summary/evidence; such
+    archived observations are never accepted as official score values.
     """
     try:
         if (not isinstance(quality_contract, dict) or quality_contract.get("frozen") is not True

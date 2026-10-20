@@ -122,14 +122,26 @@ class ScoreTests(unittest.TestCase):
         for name in s['metrics']:s['metrics'][name]=metric(name,None,'PRECONDITION_NOT_MET','NO_ACTUAL_ONSET')
         self.assertEqual(self.score(row)['disposition'],'REJECT_CANDIDATE')
 
-    def test_real_summary_convention_retains_partial_interrupted_progress(self):
+    def test_official_projection_nulls_partial_interrupted_progress_preserves_raw_evidence(self):
         row=envelope();s=row['scenarios'][TRAIN_IDS[0]];s['task_succeeded']=False
         s['observation']['status']='INTERRUPTED'
         s['metrics']['signed_progress_m']=metric('signed_progress_m',.081,'INTERRUPTED','NATIVE_GROUND_AUTHORITY')
         s['metrics']['directional_efficiency']=metric('directional_efficiency',.72,'INTERRUPTED','NATIVE_GROUND_AUTHORITY')
+        row['raw_summary']={TRAIN_IDS[0]:copy.deepcopy(s)}
+        s['metrics']['signed_progress_m']['value']=None
+        s['metrics']['directional_efficiency']['value']=None
         result=self.score(row)
         self.assertEqual(result['disposition'],'REJECT_CANDIDATE');self.assertIsNone(result['values'])
-        self.assertEqual(result['four_dimensions']['directed_progress'][TRAIN_IDS[0]]['value'],.081)
+        self.assertIsNone(result['four_dimensions']['directed_progress'][TRAIN_IDS[0]]['value'])
+        self.assertEqual(row['raw_summary'][TRAIN_IDS[0]]['metrics']['signed_progress_m']['value'],.081)
+
+    def test_unnormalized_nonmeasured_partial_is_global_contract_error(self):
+        for status in ['INTERRUPTED','CENSORED_TIMEOUT','PRECONDITION_NOT_MET','NOT_APPLICABLE']:
+            row=envelope();s=row['scenarios'][TRAIN_IDS[0]];s['task_succeeded']=False
+            s['observation']['status']=status
+            s['metrics']['signed_progress_m']=metric('signed_progress_m',.081,status,'RAW_PARTIAL_NOT_PROJECTED')
+            result=self.score(row)
+            self.assertEqual(result['disposition'],'STOP_STUDY');self.assertIsNone(result['values'])
 
     def test_missing_baseline_or_invalid_metric_stops_whole_study(self):
         for label in ['baseline','candidate']:

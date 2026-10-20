@@ -37,6 +37,8 @@ def guard(source=None):
     if file_hash(D/'run_plan.json')!=s['run_plan_sha256']:raise ValueError('RUN_PLAN_CHANGED')
     for v in s['tapes'].values():
         if file_hash(Path(v['path']))!=v['sha256']:raise ValueError('HISTORICAL_REFERENCE_TAPE_CHANGED')
+    for v in read_json(D/'run_plan.json').get('protected_public_tapes',{}).values():
+        if file_hash(Path(v['path']))!=v['sha256']:raise ValueError('HISTORICAL_PROTECTED_TAPE_CHANGED')
     protected=read_json(D/'baseline_audit.json')
     for p,h in protected['protected_hashes'].items():
         if file_hash(ROOT/p)!=h or file_hash(DEST/p)!=h:raise ValueError('PROTECTED_GAMEPLAY_CHANGED:'+p)
@@ -90,7 +92,9 @@ def ledger():
     batches=list((B/'final_batches').glob('*/batch.json'));capabilities=list((B/'capability_first_ascent').glob('*/manifest.json'))
     out={'limits':read_json(D/'run_plan.json')['budget_limits'],'single_process_attempts':len(rows),'groups':{g:sum(m['budget_group']==g for m in rows) for g in ['preflight','baseline','negative_canary','optimizer','finalist']},'batch_processes':len(batches),'capability_processes':len(capabilities),'episodes':len(rows)+2*len(batches)+len(capabilities),'evaluation_processes':len(rows)+len(batches)+len(capabilities),'process_count_policy':'Attempt manifest written before launch; aborts and retries consume slots; final batches have two independently admitted episodes.'}
     out['groups']['finalist']+=len(batches)+len(capabilities)
-    assert out['evaluation_processes']<=128 and out['groups']['finalist']<=48
+    out['prior_physical_preflight_failures']=read_json(D/'run_plan.json').get('prior_preflight_physical',0)
+    out['cumulative_evaluation_processes']=out['evaluation_processes']+out['prior_physical_preflight_failures']
+    assert out['cumulative_evaluation_processes']<=128 and out['groups']['finalist']<=48
     atomic_json(B/'budget_ledger.json',out);return out
 
 def one(scenario,hz,mode,group,tape=None,negative='',values=None,phase=None):
@@ -152,7 +156,7 @@ def preflight():
             r=one(scenario,hz,'headless','preflight');session['runs'].append(r);save()
             if not valid_task(r):session.update(status='NO_GO',reason='CAPTURE_NOT_VALID:'+scenario+':'+r.get('reason',''));save();return
             e.capture_tape(r)
-    for scenario in ['vertical_novel_v135_r1','right_novel_v135_r1']:
+    for scenario in read_json(D/'run_plan.json').get('novel_capture_ids',['vertical_novel_v135_r1','right_novel_v135_r1']):
         r=one(scenario,120,'headless','preflight');session['runs'].append(r);save()
         if valid_task(r):e.capture_tape(r)
         # Held-out failure is disclosed; it never changes the training tapes.
@@ -201,7 +205,8 @@ def negatives():
     for hz in [120,60]:
         r=one('swing_catch_train',hz,'headless','negative_canary',n1_tape(hz),negative='N1');session['runs'].append(r);save()
         view=read_json(Path(r['directory'])/'python_pick_dispatch_contract.json') if r['status']=='RUN_VALID' else {}
-        if r['status']!='RUN_VALID' or not all(x['pass'] for x in r['engine_result'].get('negative_checks',[])) or [view.get(k) for k in ['logical_count','dispatch_count','ray_count','suppressed_count']]!=[4,3,9,1]:session.update(status='NO_GO',reason='N1_FAILED');save();return
+        checks=r['engine_result'].get('negative_checks',[])
+        if r['status']!='RUN_VALID' or len(checks)!=9 or not all(x['pass'] for x in checks) or [view.get(k) for k in ['logical_count','dispatch_count','ray_count','suppressed_count']]!=[4,3,9,1]:session.update(status='NO_GO',reason='N1_FAILED');save();return
     impaired=read_json(D/'run_plan.json')['canary_parameters'];base=read_json(B/'baseline_session.json')['runs']
     for scenario in TRAIN:
         rows=[]
@@ -214,6 +219,10 @@ def negatives():
     for scenario in ['asymmetric_pull_clean_v134_r2','lateral_clean_left_v134_r2']:
         r=one(scenario,60,'headless','negative_canary',phase='public_known_failure_diagnostic');session['runs'].append(r);save()
         if r['status']!='RUN_VALID':session.update(status='NO_GO',reason='DIAGNOSTIC_INFRASTRUCTURE_OR_SAFETY');save();return
+        observation=r['metrics'].get('observation',{})
+        expected='GROUND_CLEARANCE' if scenario=='asymmetric_pull_clean_v134_r2' else 'GROUND'
+        if observation.get('status')!='INTERRUPTED' or expected not in observation.get('reason_code','') or observation.get('interruption',{}).get('tick') is None:
+            session.update(status='NO_GO',reason='DECLARED_PHYSICAL_NEGATIVE_PATH_NOT_EXERCISED:'+scenario);save();return
     sensitive=any(x['continuous_sensitivity_demonstrated'] for x in session['canary'].values())
     # Deliberate corruption of actual captured evidence tests the real validator.
     from pick_contract import validate_stream
@@ -237,6 +246,7 @@ def gate():
     for role in ['physics','measurement']:
         p=D/f'specialist/{role}_signoff.json'
         approved=approved and p.exists() and read_json(p).get('source_snapshot_sha256')==s['snapshot_sha256'] and read_json(p).get('status')=='APPROVED_FOR_TWO_DOMAIN_SEARCH'
+        if role=='measurement':approved=approved and (D/'quality_contract.json').exists() and p.exists() and read_json(p).get('quality_contract_sha256')==file_hash(D/'quality_contract.json')
     result={'status':'GO_MINIMAL_BENCHMARK' if approved else 'NO_GO_MINIMAL_BENCHMARK','source_snapshot_sha256':s['snapshot_sha256'],'baseline_status':base['status'],'negative_status':neg['status'],'reason':neg.get('reason') or base.get('reason') or ('INDEPENDENT_REVIEW_REQUIRED' if not approved else ''),'default_promotion':False}
     atomic_json(D/'mb2_gate.json',result);print(result['status'],result['reason'],flush=True)
 
@@ -282,9 +292,8 @@ def search(stage=None,resume=False):
     qualified=read_json(D/'mb2_gate.json');assert qualified['status']=='GO_MINIMAL_BENCHMARK','MB2 GO required'
     directory=B/'optimizer';assert resume or not (directory/'study.sqlite3').exists(),'Use --resume for exact identity and ledger audit'
     refpath=B/'optimizer_reference.json';qpath=D/'quality_contract.json'
-    if refpath.exists():reference=read_json(refpath);contract=read_json(qpath)
-    else:
-        reference,contract=quality_reference();atomic_json(refpath,reference);atomic_json(qpath,contract)
+    assert refpath.exists() and qpath.exists(),'Freeze realized baseline quality contract and obtain independent sign-off BEFORE search'
+    reference=read_json(refpath);contract=read_json(qpath)
     if stage in ['random','tpe']:
         state=read_json(directory/'pilot_state.json')
         minimum=8 if stage=='random' else 14
@@ -360,6 +369,7 @@ def validate_shortlist():
     assert len(shortlist)==1,'Only one prospectively budgeted finalist'
     values=shortlist[0]['parameter_overrides'];target=B/'finalist_session.json';assert not target.exists()
     session={'status':'RUNNING','primary':[],'protected':[],'pairs':[],'reason':''}
+    protected_matched={}
     def save():atomic_json(target,session)
     save()
     for name,params in [('A0',baseline(parameter_resource())),('candidate',values)]:
@@ -395,16 +405,30 @@ def validate_shortlist():
         for scenario,hz in [('vertical_novel_v135_r1',120),('right_novel_v135_r1',120),('two_hand_release_stop_v134_r2',120),('two_hand_release_stop_v134_r2',60),('asymmetric_pull_clean_v134_r2',120),('lateral_clean_left_v134_r2',120)]:
             old=read_json(D/'run_plan.json').get('protected_public_tapes',{}).get(f'{scenario}:{hz}')
             tape=Path(old['path']) if old else B/'tapes'/f'{scenario}_{hz}.json'
-            if not tape.exists():session.update(status='CANDIDATE_VALIDATION_FAILED',reason='PROTECTED_TAPE_NOT_QUALIFIED:'+scenario);save();return
+            if not tape.exists():
+                # A new-start family with no budgeted tape cannot establish transfer.
+                if scenario=='right_novel_v135_r1':
+                    session['protected'].append({'scenario':scenario,'hz':hz,'mode':name,'status':'NOT_RUN','reason':'NOVEL_CAPTURE_BUDGET_CONSUMED_BY_PREFLIGHT_REPAIR','generalization':'NOT_TESTED'});save();continue
+                session.update(status='CANDIDATE_VALIDATION_FAILED',reason='PROMISED_PROTECTED_TAPE_MISSING:'+scenario);save();return
             row=one(scenario,hz,'headless','finalist',tape,values=params,phase='finalist_protected');session['protected'].append(row);save()
             if not valid_task(row):session.update(status='CANDIDATE_VALIDATION_FAILED',reason='PROTECTED_TASK_FAILED:'+scenario);save();return
+            key=(scenario,hz)
+            if name=='A0':protected_matched[key]=row['metrics']
+            else:
+                prior=protected_matched[key];now=row['metrics'];reasons=[]
+                checks=[('stop_path_3d_m',.005,.05),('settling_time_s',2/hz,.15),('overshoot_after_release_m',.005,.05)] if scenario=='two_hand_release_stop_v134_r2' else []
+                for metric,floor,fraction in checks:
+                    a,c=prior['metrics'][metric],now['metrics'][metric]
+                    if a['status']!='MEASURED' or c['status']!='MEASURED' or c['value']-a['value']>max(floor,fraction*abs(a['value'])):reasons.append('PROTECTED_QUALITY_REGRESSION:'+metric)
+                if not checks and now['signed_progress_m']<prior['signed_progress_m']-max(.005,.03*abs(prior['signed_progress_m'])):reasons.append('PROTECTED_PROGRESS_REGRESSION')
+                if reasons:session.update(status='CANDIDATE_VALIDATION_FAILED',reason=';'.join(reasons));save();return
         for hz in [120,60]:
             row=first_ascent_capability(params,hz,shortlist);session['protected'].append(row);save()
             if row['status']!='completed' or not row['completed']:session.update(status='CANDIDATE_VALIDATION_FAILED',reason='FIRST_ASCENT_CAPABILITY_FAILED');save();return
     session.update(status='HUMAN_REVIEW_PENDING',reason='Final primary and protected evidence require independent review and separate human agreement');save()
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('stage',nargs='?',choices=['freeze','pure','preflight','baseline','negatives','gate','search','validate']);p.add_argument('--preflight-only',action='store_true');p.add_argument('--baseline-only',action='store_true');p.add_argument('--sensitivity-only',action='store_true');p.add_argument('--random-only',action='store_true');p.add_argument('--tpe-only',action='store_true');p.add_argument('--validate-shortlist',action='store_true');p.add_argument('--resume',action='store_true');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('stage',nargs='?',choices=['freeze','pure','preflight','baseline','negatives','quality-freeze','gate','search','validate']);p.add_argument('--preflight-only',action='store_true');p.add_argument('--baseline-only',action='store_true');p.add_argument('--sensitivity-only',action='store_true');p.add_argument('--random-only',action='store_true');p.add_argument('--tpe-only',action='store_true');p.add_argument('--validate-shortlist',action='store_true');p.add_argument('--resume',action='store_true');a=p.parse_args()
     if a.preflight_only:a.stage='preflight'
     if a.baseline_only:a.stage='baseline'
     if a.validate_shortlist:a.stage='validate'
@@ -414,6 +438,9 @@ def main():
     if a.stage=='freeze':return freeze()
     with StudyLock(ROOT/'builds/eval_virtual_cursor'):
         if a.stage=='search':return search(phase,a.resume)
+        if a.stage=='quality-freeze':
+            assert not (D/'quality_contract.json').exists()
+            reference,contract=quality_reference();atomic_json(B/'optimizer_reference.json',reference);atomic_json(D/'quality_contract.json',contract);return
         return {'pure':pure,'preflight':preflight,'baseline':baseline_matrix,'negatives':negatives,'gate':gate,'validate':validate_shortlist}[a.stage]()
 
 if __name__=='__main__':main()

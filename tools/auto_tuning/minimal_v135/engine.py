@@ -9,8 +9,8 @@ from comparison import compare_required
 from metrics import summarize
 from projection_comparison import load_picks
 
-DOC=ROOT/'docs/validation/auto_tuning/minimal_v135/r2'
-BASE=ROOT/'builds/eval_virtual_cursor/minimal_v135_r2'
+DOC=ROOT/'docs/validation/auto_tuning/minimal_v135/r3'
+BASE=ROOT/'builds/eval_virtual_cursor/minimal_v135_r3'
 ENTRY='res://features/evaluator_virtual_cursor/scripts/minimal_runner.gd'
 CATALOG=ROOT/'features/evaluator_virtual_cursor/resources/benchmark_minimal_v135_r1.json'
 TRANSFER=ROOT/'features/evaluator_virtual_cursor/resources/minimal_transfer_v135.json'
@@ -63,7 +63,7 @@ def execute(scenario,hz,mode,repeat,group,tape_path=None,probe=True,negative='')
     return audit_execution(directory,scenario,hz,mode,repeat,group,source,m,tape,started,code,reason)
 
 def audit_execution(directory,scenario,hz,mode,repeat,group,source,m,tape,started,code,reason=''):
-    directory=Path(directory);lane=m['input_lane'];run_id=m['run_id'];result={};metrics={}
+    directory=Path(directory);lane=m['input_lane'];run_id=m['run_id'];result={};metrics={};probe=m['projection_config']['probe_enabled'];negative=m.get('negative_case','')
     status='RUN_INVALID'
     try:
         result=read_json(directory/'engine_result.json')
@@ -121,6 +121,13 @@ def audit_execution(directory,scenario,hz,mode,repeat,group,source,m,tape,starte
             precise=read_json(directory/'benchmark_runtime.json')[0]
             metrics=summarize(ticks,definition,precise['onset_certificate'])
             enrich_quality(metrics,ticks,definition)
+            atomic_json(directory/'scenario_metrics_raw.json',metrics)
+            # Partial-window arithmetic is evidence, never an official measured value.
+            partial={}
+            for key,metric in metrics['metrics'].items():
+                if metric['status']!='MEASURED' and metric.get('value') is not None:
+                    partial[key]=copy.deepcopy(metric);metric['value']=None
+            metrics['partial_window_evidence']=partial
             atomic_json(directory/'scenario_metrics.json',metrics)
             if metrics['observation']['status']=='INVALID_MEASUREMENT':raise ValueError('INVALID_METRIC:'+metrics['observation']['reason_code'])
             hard=metrics['metrics']['hard_physical_violations']

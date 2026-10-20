@@ -1,5 +1,6 @@
 """Synthetic callbacks and temporary SQLite only; no physical pilot evidence."""
 from pathlib import Path
+import copy
 import sys
 import tempfile
 import unittest
@@ -72,13 +73,16 @@ class SyntheticPilotTests(unittest.TestCase):
         self.assertEqual(len(list((self.path/'failures').glob('*.json'))),1)
         self.assertEqual(self.execute(lambda *a:self.fail('resumed after stop')),report)
 
-    def test_actual_interrupted_partial_rejects_only_candidate(self):
+    def test_projected_interrupted_partial_rejects_only_candidate(self):
         def callback(*args):
             row=envelope();scenario=next(iter(row['scenarios'].values()))
             scenario['task_succeeded']=False;scenario['observation']['status']='INTERRUPTED'
             for name in ['signed_progress_m','directional_efficiency']:
                 scenario['metrics'][name]['status']='INTERRUPTED'
                 scenario['metrics'][name]['reason_code']='NATIVE_GROUND_AUTHORITY'
+            row['raw_summary']=copy.deepcopy(row['scenarios'])
+            for name in ['signed_progress_m','directional_efficiency']:
+                scenario['metrics'][name]['value']=None
             return row
         report=self.execute(callback)
         self.assertFalse(report['global_stop']);self.assertEqual(report['proposal_count'],14)
