@@ -7,13 +7,13 @@ from common import ROOT,atomic_json,read_json,file_hash,source_hashes,git_identi
 from projection_comparison import load_picks,pair
 
 DOC=ROOT/'docs/validation/auto_tuning/projection_v132b'
-OUT=ROOT/'builds/eval_virtual_cursor/projection_v132b_r1'
+OUT=ROOT/'builds/eval_virtual_cursor/projection_v132b_r2'
 
 def run():
     if (OUT/'session_manifest.json').exists():raise ValueError('IMMUTABLE_SESSION')
     if git_identity()['repository_dirty']:raise ValueError('CLEAN_SOURCE_FREEZE_REQUIRED')
-    plan=read_json(DOC/'test_plan.json')
-    atomic_json(OUT/'session_manifest.json',{'plan_sha256':file_hash(DOC/'test_plan.json'),'source_hashes':source_hashes(),'identity':git_identity(),'utc':utc_now(),'optimizer':'OFF','max_runs':40})
+    plan=read_json(DOC/'test_plan_r2.json')
+    atomic_json(OUT/'session_manifest.json',{'plan_sha256':file_hash(DOC/'test_plan_r2.json'),'source_hashes':source_hashes(),'identity':git_identity(),'utc':utc_now(),'optimizer':'OFF','max_runs':40})
     rows=[];pairs=[];stopped='';bycell={}
     def state():atomic_json(OUT/'session_state.json',{'runs':rows,'pairs':pairs,'hard_stop':stopped,'optimizer':'OFF'})
     def one(mode,hz,size,condition,repeat,probe=True):

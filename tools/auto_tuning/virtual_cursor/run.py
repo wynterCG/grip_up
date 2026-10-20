@@ -68,7 +68,7 @@ def execute(mode,hz,condition,repeat,output,tape_path=None,development=False,neg
     else:
         if not campaign_id.startswith('projection_v132b_') or tape_path is None or negative:raise ValueError('PROJECTION_SCOPE')
         previous=[read_json(p) for p in (ROOT/'builds/eval_virtual_cursor').glob('**/attempts/*/manifest.json')]
-        if sum(m.get('campaign_id')==campaign_id for m in previous)>=40:raise ValueError('PROJECTION_BUDGET_EXHAUSTED')
+        if sum(str(m.get('campaign_id','')).startswith('projection_v132b_') for m in previous)>=40:raise ValueError('PROJECTION_BUDGET_EXHAUSTED')
     identity=git_identity();identity.update(source_hashes=source_hashes(ROOT),engine_identity=engine_identity())
     run_id=f'{condition}_{hz}_r{repeat}_{uuid.uuid4().hex[:8]}'
     directory=output/'attempts'/run_id;directory.mkdir(parents=True,exist_ok=False)
@@ -92,7 +92,7 @@ def execute(mode,hz,condition,repeat,output,tape_path=None,development=False,neg
         if digest(normalized)!=tape['tape_content_sha256'] or any(f['tape_sha256']!=tape['tape_content_sha256'] for f in tape['frames']):raise ValueError('TAPE_CONTENT_HASH')
     atomic_json(directory/'manifest.json',manifest)
     flags=['--headless','--fixed-fps','120'] if mode=='headless' else ['--screen','0','--position','80,80']
-    if projection_config is not None:flags+=['--resolution',','.join(map(str,projection_config['window_size']))]
+    if projection_config is not None:flags+=['--resolution','x'.join(map(str,projection_config['window_size']))]
     command=[str(ENGINE),*flags,'--path',str(ROOT),'--script',ENTRY,'--','--virtual-cursor-evaluator','--manifest',str(directory/'manifest.json'),'--result',str(directory/'engine_result.json')]
     if projection_config is not None:command.append('--projection-qualification')
     atomic_json(directory/'execution.json',{'command':command,'utc':utc_now(),'workers':1})
