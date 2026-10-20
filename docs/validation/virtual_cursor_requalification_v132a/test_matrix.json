@@ -1,0 +1,196 @@
+{
+  "campaign": "requal_20261020_r1",
+  "diagnostic_stages": [
+    "human120",
+    "quiet60",
+    "human60",
+    "mouse120"
+  ],
+  "diagnostics_fill_no_qualification_cells": true,
+  "qualification": [
+    {
+      "condition": "V0-H",
+      "hz": 120,
+      "reason": "",
+      "repeat": 1,
+      "run_id": "V0-H_120_r1_9cae6acb",
+      "status": "completed"
+    },
+    {
+      "condition": "V0-H",
+      "hz": 120,
+      "reason": "",
+      "repeat": 2,
+      "run_id": "V0-H_120_r2_5f8a96f0",
+      "status": "completed"
+    },
+    {
+      "condition": "V0-H",
+      "hz": 120,
+      "reason": "",
+      "repeat": 3,
+      "run_id": "V0-H_120_r3_60d72337",
+      "status": "completed"
+    },
+    {
+      "condition": "V0-H",
+      "hz": 60,
+      "reason": "",
+      "repeat": 1,
+      "run_id": "V0-H_60_r1_3534a8de",
+      "status": "completed"
+    },
+    {
+      "condition": "V0-H",
+      "hz": 60,
+      "reason": "",
+      "repeat": 2,
+      "run_id": "V0-H_60_r2_1ee3f3f2",
+      "status": "completed"
+    },
+    {
+      "condition": "V0-H",
+      "hz": 60,
+      "reason": "",
+      "repeat": 3,
+      "run_id": "V0-H_60_r3_cab50ffa",
+      "status": "completed"
+    },
+    {
+      "condition": "V0-R",
+      "hz": 120,
+      "reason": "CONTACT_SELECTION_DIVERGED",
+      "repeat": 1,
+      "run_id": "V0-R_120_r1_f2b1ab4d",
+      "status": "failed_runtime"
+    },
+    {
+      "condition": "V0-R",
+      "hz": 120,
+      "reason": null,
+      "repeat": 2,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-R",
+      "hz": 120,
+      "reason": null,
+      "repeat": 3,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-R",
+      "hz": 60,
+      "reason": null,
+      "repeat": 1,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-R",
+      "hz": 60,
+      "reason": null,
+      "repeat": 2,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-R",
+      "hz": 60,
+      "reason": null,
+      "repeat": 3,
+      "run_id": null,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-M",
+      "hz": 120,
+      "reason": "First rendered120 ray/material gate failed; human attempts are separate diagnostics",
+      "repeat": 1,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-M",
+      "hz": 120,
+      "reason": "First rendered120 ray/material gate failed; human attempts are separate diagnostics",
+      "repeat": 2,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-M",
+      "hz": 120,
+      "reason": "First rendered120 ray/material gate failed; human attempts are separate diagnostics",
+      "repeat": 3,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-M",
+      "hz": 60,
+      "reason": "First rendered120 ray/material gate failed; human attempts are separate diagnostics",
+      "repeat": 1,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-M",
+      "hz": 60,
+      "reason": "First rendered120 ray/material gate failed; human attempts are separate diagnostics",
+      "repeat": 2,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-M",
+      "hz": 60,
+      "reason": "First rendered120 ray/material gate failed; human attempts are separate diagnostics",
+      "repeat": 3,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-F",
+      "hz": 120,
+      "reason": "First rendered120 ray/material gate failed; human attempts are separate diagnostics",
+      "repeat": 1,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-F",
+      "hz": 120,
+      "reason": "First rendered120 ray/material gate failed; human attempts are separate diagnostics",
+      "repeat": 2,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-F",
+      "hz": 120,
+      "reason": "First rendered120 ray/material gate failed; human attempts are separate diagnostics",
+      "repeat": 3,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-F",
+      "hz": 60,
+      "reason": "First rendered120 ray/material gate failed; human attempts are separate diagnostics",
+      "repeat": 1,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-F",
+      "hz": 60,
+      "reason": "First rendered120 ray/material gate failed; human attempts are separate diagnostics",
+      "repeat": 2,
+      "status": "NOT_RUN_EARLY_STOP"
+    },
+    {
+      "condition": "V0-F",
+      "hz": 60,
+      "reason": "First rendered120 ray/material gate failed; human attempts are separate diagnostics",
+      "repeat": 3,
+      "status": "NOT_RUN_EARLY_STOP"
+    }
+  ],
+  "qualification_attempted": 7,
+  "qualification_not_run_early_stop": 17,
+  "qualification_passed": 6,
+  "qualification_rejected": 1
+}

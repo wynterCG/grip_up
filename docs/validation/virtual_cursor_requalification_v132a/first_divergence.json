@@ -1,0 +1,852 @@
+{
+  "decision": "NO_GO_INPUT_REPLAY",
+  "per_hz": [
+    {
+      "capture": {
+        "beyond_static_reach": true,
+        "contact_tick": 440,
+        "known_underside_selected": true,
+        "loaded": true,
+        "real_contact": true,
+        "request_distance_m": 0.814921319484711,
+        "request_reach_m": 0.65708,
+        "retained": true,
+        "retained_at_end": true,
+        "retained_tick": 527,
+        "scope": "actual contacts and same runtime material anchor, B1 and ground contributions retained; original beyond-static .02m policy margin",
+        "selected_destination_key": "catch",
+        "selected_local_normal": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "source_free_tick": 455
+      },
+      "causality": "first observed API ray divergence; underlying projection/cache/viewport-rounding cause not proven; no Jolt-cause attribution",
+      "environment": {
+        "headless": {
+          "bindings": {
+            "bias_left": [
+              "A - Physical"
+            ],
+            "bias_right": [
+              "D - Physical"
+            ],
+            "contract": [
+              "W - Physical"
+            ],
+            "controls_menu": [
+              "Escape"
+            ],
+            "debug_overlay": [
+              "Tab"
+            ],
+            "extend": [
+              "S - Physical"
+            ],
+            "fixed_beam": [
+              "F - Physical"
+            ],
+            "grip_left": [
+              "Left Mouse Button"
+            ],
+            "grip_right": [
+              "Right Mouse Button"
+            ],
+            "launch": [
+              "Space - Physical"
+            ],
+            "restart": [
+              "R - Physical"
+            ]
+          },
+          "camera_mode": "V0_PHYSICS_FOLLOW",
+          "canvas_transform": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "display_server": "headless",
+          "final_transform": [
+            [
+              0.533333361148834,
+              0.0
+            ],
+            [
+              0.0,
+              0.533333361148834
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "initial_camera": {
+            "basis": [
+              [
+                0.971337974071503,
+                0.0,
+                -0.237702623009682
+              ],
+              [
+                0.0142536023631692,
+                0.998200535774231,
+                0.0582453198730946
+              ],
+              [
+                0.237274900078774,
+                -0.0599640123546124,
+                0.969590127468109
+              ]
+            ],
+            "origin": [
+              0.873649299144745,
+              1.41021597385406,
+              6.21754026412964
+            ]
+          },
+          "initial_pointer": {
+            "position": [
+              0,
+              0
+            ],
+            "valid": false
+          },
+          "phase_order": [
+            "provider_pre_-100",
+            "ground_-10_previous_intent",
+            "lab_0",
+            "controller_existing",
+            "post_+100_before_next_integration"
+          ],
+          "screen": -1,
+          "screen_dpi": null,
+          "screen_scale": null,
+          "viewport_id": "GAME_ROOT",
+          "viewport_runtime_id": 60783855037,
+          "visible_rect": {
+            "position": [
+              0.0,
+              0.0
+            ],
+            "size": [
+              1920.0,
+              1080.0
+            ]
+          },
+          "window_mode": 1,
+          "window_size": [
+            1024,
+            576
+          ]
+        },
+        "rendered": {
+          "bindings": {
+            "bias_left": [
+              "A - Physical"
+            ],
+            "bias_right": [
+              "D - Physical"
+            ],
+            "contract": [
+              "W - Physical"
+            ],
+            "controls_menu": [
+              "Escape"
+            ],
+            "debug_overlay": [
+              "Tab"
+            ],
+            "extend": [
+              "S - Physical"
+            ],
+            "fixed_beam": [
+              "F - Physical"
+            ],
+            "grip_left": [
+              "Left Mouse Button"
+            ],
+            "grip_right": [
+              "Right Mouse Button"
+            ],
+            "launch": [
+              "Space - Physical"
+            ],
+            "restart": [
+              "R - Physical"
+            ]
+          },
+          "camera_mode": "V0_PHYSICS_FOLLOW",
+          "canvas_transform": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "display_server": "Windows",
+          "final_transform": [
+            [
+              0.75,
+              0.0
+            ],
+            [
+              0.0,
+              0.75
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "initial_camera": {
+            "basis": [
+              [
+                0.971337974071503,
+                0.0,
+                -0.237702623009682
+              ],
+              [
+                0.0142536023631692,
+                0.998200535774231,
+                0.0582453198730946
+              ],
+              [
+                0.237274900078774,
+                -0.0599640123546124,
+                0.969590127468109
+              ]
+            ],
+            "origin": [
+              0.873649299144745,
+              1.41021597385406,
+              6.21754026412964
+            ]
+          },
+          "initial_pointer": {
+            "position": [
+              0,
+              0
+            ],
+            "valid": false
+          },
+          "phase_order": [
+            "provider_pre_-100",
+            "ground_-10_previous_intent",
+            "lab_0",
+            "controller_existing",
+            "post_+100_before_next_integration"
+          ],
+          "screen": 1,
+          "screen_dpi": 120,
+          "screen_scale": 1.0,
+          "viewport_id": "GAME_ROOT",
+          "viewport_runtime_id": 61287171519,
+          "visible_rect": {
+            "position": [
+              0.0,
+              0.0
+            ],
+            "size": [
+              1920.0,
+              1080.0
+            ]
+          },
+          "window_mode": 0,
+          "window_size": [
+            1440,
+            810
+          ]
+        }
+      },
+      "first_by_layer": {
+        "camera": {
+          "difference": {
+            "actual": -0.0204872004687786,
+            "expected": -0.0204872023314238,
+            "field": ".source_body_pose.basis[0][1]"
+          },
+          "phase": "pre_control",
+          "tick": 443
+        },
+        "cursor": null,
+        "input": null,
+        "material_anchor": {
+          "difference": {
+            "actual": -0.11729696393013,
+            "expected": -0.117296308279037,
+            "field": "[1].material_local_point_m[0]"
+          },
+          "phase": "post_control_before_next_integration",
+          "tick": 282
+        },
+        "physics": {
+          "difference": {
+            "actual": 1.27385234832764,
+            "expected": 1.27385246753693,
+            "field": ".forces.combined_nm[1]"
+          },
+          "phase": "post_control_before_next_integration",
+          "tick": 440
+        },
+        "raycast": {
+          "difference": {
+            "actual": -0.114437118172646,
+            "expected": -0.114437021315098,
+            "field": ".picks[0].audit.rays[0].direction[0]"
+          },
+          "phase": "pre_control",
+          "tick": 282
+        }
+      },
+      "first_node_camera_transform_difference": {
+        "difference": {
+          "actual": 0.0140776131302118,
+          "expected": 0.0140776094049215,
+          "field": ".basis[1][0]"
+        },
+        "tick": 451
+      },
+      "first_ray_tick": 282,
+      "material_point_delta_m": 8.107108184818068e-07,
+      "no_tolerance_added": true,
+      "node_camera_pose_at_first_ray_exact": true,
+      "physics_hz": 120,
+      "pixel_exact": true,
+      "projection_at_first_ray_exact": true,
+      "ray_direction_delta_norm": 1.5431877404904495e-07,
+      "ray_origin_exact": true,
+      "run_id": "V0-R_120_r1_f2b1ab4d",
+      "winner": {
+        "actual": {
+          "collider_key": "catch",
+          "collider_runtime_id": 106166225931,
+          "direction": [
+            -0.114437118172646,
+            0.145538330078125,
+            -0.982711911201477
+          ],
+          "local_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "local_point_m": [
+            -0.11729696393013,
+            -0.0499999523162842,
+            -0.00592175126075745
+          ],
+          "offset_px": [
+            0.0,
+            0.0
+          ],
+          "origin_m": [
+            0.883984863758087,
+            1.3217157125473,
+            5.73686552047729
+          ],
+          "point_px": [
+            1080.12780761719,
+            450.161193847656
+          ],
+          "reason": "SELECTED",
+          "shape": 0,
+          "world_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "world_point_m": [
+            0.232703030109406,
+            2.15000009536743,
+            0.144078254699707
+          ]
+        },
+        "expected": {
+          "collider_key": "catch",
+          "collider_runtime_id": 105780349975,
+          "direction": [
+            -0.114437021315098,
+            0.145538344979286,
+            -0.982712030410767
+          ],
+          "local_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "local_point_m": [
+            -0.117296308279037,
+            -0.0499999523162842,
+            -0.00592127442359924
+          ],
+          "offset_px": [
+            0.0,
+            0.0
+          ],
+          "origin_m": [
+            0.883984863758087,
+            1.3217157125473,
+            5.73686552047729
+          ],
+          "point_px": [
+            1080.12780761719,
+            450.161193847656
+          ],
+          "reason": "SELECTED",
+          "shape": 0,
+          "world_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "world_point_m": [
+            0.232703685760498,
+            2.15000009536743,
+            0.144078731536865
+          ]
+        }
+      }
+    },
+    {
+      "capture": {
+        "beyond_static_reach": true,
+        "contact_tick": 210,
+        "known_underside_selected": true,
+        "loaded": true,
+        "real_contact": true,
+        "request_distance_m": 0.806747198104858,
+        "request_reach_m": 0.65708,
+        "retained": true,
+        "retained_at_end": true,
+        "retained_tick": 259,
+        "scope": "actual contacts and same runtime material anchor, B1 and ground contributions retained; original beyond-static .02m policy margin",
+        "selected_destination_key": "catch",
+        "selected_local_normal": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "source_free_tick": 223
+      },
+      "causality": "first observed API ray divergence; underlying projection/cache/viewport-rounding cause not proven; no Jolt-cause attribution",
+      "environment": {
+        "headless": {
+          "bindings": {
+            "bias_left": [
+              "A - Physical"
+            ],
+            "bias_right": [
+              "D - Physical"
+            ],
+            "contract": [
+              "W - Physical"
+            ],
+            "controls_menu": [
+              "Escape"
+            ],
+            "debug_overlay": [
+              "Tab"
+            ],
+            "extend": [
+              "S - Physical"
+            ],
+            "fixed_beam": [
+              "F - Physical"
+            ],
+            "grip_left": [
+              "Left Mouse Button"
+            ],
+            "grip_right": [
+              "Right Mouse Button"
+            ],
+            "launch": [
+              "Space - Physical"
+            ],
+            "restart": [
+              "R - Physical"
+            ]
+          },
+          "camera_mode": "V0_PHYSICS_FOLLOW",
+          "canvas_transform": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "display_server": "headless",
+          "final_transform": [
+            [
+              0.533333361148834,
+              0.0
+            ],
+            [
+              0.0,
+              0.533333361148834
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "initial_camera": {
+            "basis": [
+              [
+                0.971337974071503,
+                0.0,
+                -0.237702623009682
+              ],
+              [
+                0.0142536023631692,
+                0.998200535774231,
+                0.0582453198730946
+              ],
+              [
+                0.237274900078774,
+                -0.0599640123546124,
+                0.969590127468109
+              ]
+            ],
+            "origin": [
+              0.873649299144745,
+              1.41021597385406,
+              6.21754026412964
+            ]
+          },
+          "initial_pointer": {
+            "position": [
+              0,
+              0
+            ],
+            "valid": false
+          },
+          "phase_order": [
+            "provider_pre_-100",
+            "ground_-10_previous_intent",
+            "lab_0",
+            "controller_existing",
+            "post_+100_before_next_integration"
+          ],
+          "screen": -1,
+          "screen_dpi": null,
+          "screen_scale": null,
+          "viewport_id": "GAME_ROOT",
+          "viewport_runtime_id": 60783855037,
+          "visible_rect": {
+            "position": [
+              0.0,
+              0.0
+            ],
+            "size": [
+              1920.0,
+              1080.0
+            ]
+          },
+          "window_mode": 1,
+          "window_size": [
+            1024,
+            576
+          ]
+        },
+        "rendered": {
+          "bindings": {
+            "bias_left": [
+              "A - Physical"
+            ],
+            "bias_right": [
+              "D - Physical"
+            ],
+            "contract": [
+              "W - Physical"
+            ],
+            "controls_menu": [
+              "Escape"
+            ],
+            "debug_overlay": [
+              "Tab"
+            ],
+            "extend": [
+              "S - Physical"
+            ],
+            "fixed_beam": [
+              "F - Physical"
+            ],
+            "grip_left": [
+              "Left Mouse Button"
+            ],
+            "grip_right": [
+              "Right Mouse Button"
+            ],
+            "launch": [
+              "Space - Physical"
+            ],
+            "restart": [
+              "R - Physical"
+            ]
+          },
+          "camera_mode": "V0_PHYSICS_FOLLOW",
+          "canvas_transform": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "display_server": "Windows",
+          "final_transform": [
+            [
+              0.75,
+              0.0
+            ],
+            [
+              0.0,
+              0.75
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "initial_camera": {
+            "basis": [
+              [
+                0.971337974071503,
+                0.0,
+                -0.237702623009682
+              ],
+              [
+                0.0142536023631692,
+                0.998200535774231,
+                0.0582453198730946
+              ],
+              [
+                0.237274900078774,
+                -0.0599640123546124,
+                0.969590127468109
+              ]
+            ],
+            "origin": [
+              0.873649299144745,
+              1.41021597385406,
+              6.21754026412964
+            ]
+          },
+          "initial_pointer": {
+            "position": [
+              0,
+              0
+            ],
+            "valid": false
+          },
+          "phase_order": [
+            "provider_pre_-100",
+            "ground_-10_previous_intent",
+            "lab_0",
+            "controller_existing",
+            "post_+100_before_next_integration"
+          ],
+          "screen": 1,
+          "screen_dpi": 120,
+          "screen_scale": 1.0,
+          "viewport_id": "GAME_ROOT",
+          "viewport_runtime_id": 61287171519,
+          "visible_rect": {
+            "position": [
+              0.0,
+              0.0
+            ],
+            "size": [
+              1920.0,
+              1080.0
+            ]
+          },
+          "window_mode": 0,
+          "window_size": [
+            1440,
+            810
+          ]
+        }
+      },
+      "first_by_layer": {
+        "camera": {
+          "difference": {
+            "actual": 4.52383756055497e-05,
+            "expected": 4.52381391369272e-05,
+            "field": ".source_body_pose.basis[0][1]"
+          },
+          "phase": "pre_control",
+          "tick": 48
+        },
+        "cursor": null,
+        "input": null,
+        "material_anchor": {
+          "difference": {
+            "actual": -0.00194782018661499,
+            "expected": -0.00194817781448364,
+            "field": "[0].material_local_point_m[0]"
+          },
+          "phase": "post_control_before_next_integration",
+          "tick": 28
+        },
+        "physics": {
+          "difference": {
+            "actual": 0.0149341048672795,
+            "expected": 0.0149341067299247,
+            "field": ".forces.combined_nm[2]"
+          },
+          "phase": "post_control_before_next_integration",
+          "tick": 46
+        },
+        "raycast": {
+          "difference": {
+            "actual": 0.118181802332401,
+            "expected": 0.118181772530079,
+            "field": ".picks[0].audit.rays[0].direction[1]"
+          },
+          "phase": "pre_control",
+          "tick": 28
+        }
+      },
+      "first_node_camera_transform_difference": {
+        "difference": {
+          "actual": 0.0141935981810093,
+          "expected": 0.014193600974977,
+          "field": ".basis[1][0]"
+        },
+        "tick": 52
+      },
+      "first_ray_tick": 28,
+      "material_point_delta_m": 1.4745374771192367e-06,
+      "no_tolerance_added": true,
+      "node_camera_pose_at_first_ray_exact": true,
+      "physics_hz": 60,
+      "pixel_exact": true,
+      "projection_at_first_ray_exact": true,
+      "ray_direction_delta_norm": 2.9802321999117254e-08,
+      "ray_origin_exact": true,
+      "run_id": "D_RENDER_QUIET_60_r1_3cf7908d",
+      "winner": {
+        "actual": {
+          "collider_key": "source",
+          "collider_runtime_id": 106317220869,
+          "direction": [
+            -0.226813495159149,
+            0.118181802332401,
+            -0.966741323471069
+          ],
+          "local_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "local_point_m": [
+            -0.00194782018661499,
+            -0.0499999523162842,
+            -0.00829926133155823
+          ],
+          "offset_px": [
+            0.0,
+            0.0
+          ],
+          "origin_m": [
+            0.873594164848328,
+            1.4072173833847,
+            6.21775150299072
+          ],
+          "point_px": [
+            969.650329589844,
+            480.5322265625
+          ],
+          "reason": "SELECTED",
+          "shape": 0,
+          "world_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "world_point_m": [
+            -0.551947832107544,
+            2.15000009536743,
+            0.141700744628906
+          ]
+        },
+        "expected": {
+          "collider_key": "source",
+          "collider_runtime_id": 105679686673,
+          "direction": [
+            -0.226813495159149,
+            0.118181772530079,
+            -0.966741323471069
+          ],
+          "local_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "local_point_m": [
+            -0.00194817781448364,
+            -0.0499999523162842,
+            -0.00830069184303284
+          ],
+          "offset_px": [
+            0.0,
+            0.0
+          ],
+          "origin_m": [
+            0.873594164848328,
+            1.4072173833847,
+            6.21775150299072
+          ],
+          "point_px": [
+            969.650329589844,
+            480.5322265625
+          ],
+          "reason": "SELECTED",
+          "shape": 0,
+          "world_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "world_point_m": [
+            -0.551948189735413,
+            2.15000009536743,
+            0.141699314117432
+          ]
+        }
+      }
+    }
+  ],
+  "phase_note": "The API request/ray values originate in PRE and are carried into POST audit snapshots. POST is post-control before next integration, not post-solver."
+}

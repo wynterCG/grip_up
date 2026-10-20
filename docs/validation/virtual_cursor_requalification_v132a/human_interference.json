@@ -1,0 +1,92 @@
+{
+  "focus_recovery_observed": false,
+  "observations": [
+    {
+      "distinct_hardware_positions": 59,
+      "first_unfocused_post_tick": 1,
+      "focus_events": [
+        {
+          "focused": false,
+          "tick": 0,
+          "wall_usec": 10147276
+        }
+      ],
+      "focus_return_observed": false,
+      "maximum_tick_gap_usec": 20334,
+      "physics_hz": 120,
+      "rejection_counts": {},
+      "run_id": "D_MOUSE_FOCUS_120_r1_896ac6b7",
+      "runtime_reason": "",
+      "runtime_status": "completed",
+      "stage": "diagnostic_human120",
+      "synthetic_events_injected": false,
+      "ticks": 536,
+      "unfocused_post_ticks": 536
+    },
+    {
+      "distinct_hardware_positions": 202,
+      "first_unfocused_post_tick": 133,
+      "focus_events": [
+        {
+          "focused": true,
+          "tick": 0,
+          "wall_usec": 9928940
+        },
+        {
+          "focused": false,
+          "tick": 132.0,
+          "wall_usec": 12071481
+        }
+      ],
+      "focus_return_observed": false,
+      "maximum_tick_gap_usec": 34469,
+      "physics_hz": 60,
+      "rejection_counts": {
+        "InputEventKey": 1
+      },
+      "run_id": "D_MOUSE_FOCUS_60_r1_64aee090",
+      "runtime_reason": "",
+      "runtime_status": "completed",
+      "stage": "diagnostic_human60",
+      "synthetic_events_injected": false,
+      "ticks": 263,
+      "unfocused_post_ticks": 131
+    },
+    {
+      "distinct_hardware_positions": 474,
+      "first_unfocused_post_tick": null,
+      "focus_events": [
+        {
+          "focused": true,
+          "tick": 0,
+          "wall_usec": 10130353
+        }
+      ],
+      "focus_return_observed": false,
+      "maximum_tick_gap_usec": 34728,
+      "physics_hz": 120,
+      "rejection_counts": {
+        "InputEventMouseButton": 2,
+        "InputEventMouseMotion": 220
+      },
+      "run_id": "D_MOUSE_FOCUS_120_r1_8afaa588",
+      "runtime_reason": "",
+      "runtime_status": "completed",
+      "stage": "diagnostic_mouse120",
+      "synthetic_events_injected": false,
+      "ticks": 536,
+      "unfocused_post_ticks": 0
+    }
+  ],
+  "outside_click_attribution": "Not independently confirmed; clicks delivered to game and separate focus loss were measured.",
+  "runtime_suspension_observed": false,
+  "user_attestation": {
+    "interpretation": "User was ready to perform physical interaction and explicitly did not return focus before the replay ended. No claim of focus recovery. No independent proof attributing the focus loss specifically to an outside click versus Alt+Tab.",
+    "messages": [
+      "estou pronto",
+      "n voltei a tempo"
+    ],
+    "source": "explicit user messages in this session",
+    "synthetic_input_used_in_human_diagnostics": false
+  }
+}
