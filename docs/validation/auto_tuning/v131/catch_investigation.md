@@ -33,6 +33,14 @@ Separadamente, as fixtures novas passam à revisão 3: a preparação quieta exi
 
 Estas alterações corrigem defeitos demonstrados do harness. Como também mudam a fase de emissão/leitura e a criação de mundo, uma melhoria de repetibilidade não identifica uma causa histórica única. A decisão final e a matriz da nova revisão são apresentadas no relatório principal.
 
+## Segunda matriz completa
+
+`catch_002` mediu o commit `24b18d760604fffe3455c5b4c9b8b72f37577b4d`. As 32 execuções terminaram sem bloqueios de integridade: 3 isoladas + 3 em sequência + 1 trace OFF + 1 observer antigo OFF em cada combinação de modo/frequência. Todas produziram contacto real e retenção na mesma âncora. A auditoria encontrou 6836 amostras de mãos pendentes com força admitida exatamente nula. A preparação e o teardown ficaram documentados, sem corpos antigos no espaço físico na criação seguinte.
+
+Isto fecha o gate estreito de repetição do outcome binário novo. Não fecha equivalência de pontuação: em dois ensaios renderizados de 120 Hz, o feedback escolheu W+D no tick 419 onde o headless escolheu W+A. O contacto atrasou 438→478 e o progresso caiu para cerca de 0,4506 m, contra 0,5342 m. Não se elimina esta diferença com uma tolerância espacial. A [comparação entre modos](cross_mode_report.md) e a [revisão física independente](physical_review.md) documentam o mecanismo observado e os limites causais.
+
+O novo driver torna possível localizar a divergência efetiva de comando e a sua consequência, que o registo histórico não conseguia resolver. Não demonstra que os fails históricos tinham uma única causa, nem valida os scores de `stage1_r1` para comparação com a revisão nova.
+
 ## Limites físicos da captura
 
 `destination_alone` significa que a mão fonte foi largada. Não significa suspensão exclusivamente pela mão de destino: existe contribuição B1 dos pés e contacto transitório com chão em parte dos rastos de 120 Hz. Uma âncora real retida continua a ser uma observação válida, mas o cenário não certifica uma captura sem chão/pés. Uma pega pendente tem de manter carga admitida nula; só contacto real pode admitir carga.

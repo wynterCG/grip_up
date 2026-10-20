@@ -1,5 +1,7 @@
 # GRIP UP — Fiabilidade do avaliador v1.3.1
 
+**Revisão concluída: `EVALUATOR_NOT_READY` / `NO_GO` para nova pesquisa.** Ver o [relatório final](report.md), a [decisão](decision.md) e os [arquivos de evidência](evidence/README.md). A física jogável original foi preservada.
+
 Revisão de diagnóstico anterior a qualquer nova afinação. A0/B1, física, geometria, pegas e arranque normal ficam preservados. A [spec arquivada](../../../specs/grip_up_v1.3.1.md) define os gates ER0–ER7; um resultado `EVALUATOR_NOT_READY` é permitido quando os dados não sustentam uma certificação.
 
 ## Identidade
@@ -9,6 +11,8 @@ O [manifesto de preservação](baseline_manifest.json) congela 594 ficheiros his
 ## Comandos de diagnóstico
 
 Da raiz da cópia de trabalho, com os caminhos locais de `tools/project_config.py`:
+
+Os nomes seguintes identificam os recibos já executados. Para reproduzir, escolher diretórios novos num checkout isolado da revisão medida; o runner recusa sobrescrever uma sessão existente. A qualificação exige Git limpo e paridade pública C:/E:. Ver os snapshots de bytes brutos no índice de evidência, incluindo as diferenças de fim de linha e a configuração local do editor.
 
 ```powershell
 uv run --frozen --project tools/auto_tuning python tools/auto_tuning/reliability.py --suite baseline --output builds/auto_tuning/reliability_v131/baseline_001

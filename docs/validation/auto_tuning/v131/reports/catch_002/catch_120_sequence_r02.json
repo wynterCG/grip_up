@@ -1,0 +1,61 @@
+{
+  "differences": [
+    {
+      "absolute_difference": 1.01327896200043e-06,
+      "classification": "TARGET_DIVERGENCE",
+      "field": "target.material_local_point_m[0]",
+      "left": -0.120785146951675,
+      "left_physics_time_s": 2.35,
+      "left_tick": 282,
+      "relative_tick": 282,
+      "right": -0.120786160230637,
+      "right_physics_time_s": 2.35,
+      "right_tick": 282,
+      "sample_phase": "post_control",
+      "scenario_id": "swing_catch_train"
+    }
+  ],
+  "first_behavioral_difference": {
+    "absolute_difference": 1.01327896200043e-06,
+    "classification": "TARGET_DIVERGENCE",
+    "field": "target.material_local_point_m[0]",
+    "left": -0.120785146951675,
+    "left_physics_time_s": 2.35,
+    "left_tick": 282,
+    "relative_tick": 282,
+    "right": -0.120786160230637,
+    "right_physics_time_s": 2.35,
+    "right_tick": 282,
+    "sample_phase": "post_control",
+    "scenario_id": "swing_catch_train"
+  },
+  "first_observed_state_difference": {
+    "absolute_difference": 2.026557920142835e-06,
+    "field": "body.angular_velocity_rad_s[1]",
+    "left": 1.36717998981476,
+    "left_physics_time_s": 0.783333333333333,
+    "left_tick": 94,
+    "relative_tick": 94,
+    "right": 1.36717796325684,
+    "right_physics_time_s": 0.783333333333333,
+    "right_tick": 94,
+    "sample_phase": "pre_control",
+    "scenario_id": "swing_catch_train"
+  },
+  "human_sessions": 0,
+  "identity_mismatches": [],
+  "interpretation": "State-difference detector, not a calibrated physical-equivalence or game-feel score",
+  "peak_vector_difference": {
+    "angular_velocity_rad_s": 0.0010988345061691666,
+    "com_m": 6.928767564043426e-06,
+    "linear_velocity_m_s": 0.0001332596659557535
+  },
+  "physical_equivalence_certified": false,
+  "reason": "Same manifest policy and sample phases; physical acceptance requires separately calibrated envelope",
+  "schema_version": "1.3.1",
+  "status": "ALIGNED_DIAGNOSTIC",
+  "unpaired_sample_counts": {
+    "left": 0,
+    "right": 0
+  }
+}

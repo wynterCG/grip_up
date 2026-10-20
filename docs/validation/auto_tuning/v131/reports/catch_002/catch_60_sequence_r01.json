@@ -1,0 +1,61 @@
+{
+  "differences": [
+    {
+      "absolute_difference": 2.5033950809966177e-06,
+      "classification": "TARGET_DIVERGENCE",
+      "field": "target.material_local_point_m[0]",
+      "left": -0.120786041021347,
+      "left_physics_time_s": 2.36666666666667,
+      "left_tick": 142,
+      "relative_tick": 142,
+      "right": -0.120788544416428,
+      "right_physics_time_s": 2.36666666666667,
+      "right_tick": 142,
+      "sample_phase": "post_control",
+      "scenario_id": "swing_catch_train"
+    }
+  ],
+  "first_behavioral_difference": {
+    "absolute_difference": 2.5033950809966177e-06,
+    "classification": "TARGET_DIVERGENCE",
+    "field": "target.material_local_point_m[0]",
+    "left": -0.120786041021347,
+    "left_physics_time_s": 2.36666666666667,
+    "left_tick": 142,
+    "relative_tick": 142,
+    "right": -0.120788544416428,
+    "right_physics_time_s": 2.36666666666667,
+    "right_tick": 142,
+    "sample_phase": "post_control",
+    "scenario_id": "swing_catch_train"
+  },
+  "first_observed_state_difference": {
+    "absolute_difference": 1.1920928999487046e-06,
+    "field": "body.angular_velocity_rad_s[1]",
+    "left": 1.38799118995667,
+    "left_physics_time_s": 0.8,
+    "left_tick": 48,
+    "relative_tick": 48,
+    "right": 1.38798999786377,
+    "right_physics_time_s": 0.8,
+    "right_tick": 48,
+    "sample_phase": "pre_control",
+    "scenario_id": "swing_catch_train"
+  },
+  "human_sessions": 0,
+  "identity_mismatches": [],
+  "interpretation": "State-difference detector, not a calibrated physical-equivalence or game-feel score",
+  "peak_vector_difference": {
+    "angular_velocity_rad_s": 0.09439842526771454,
+    "com_m": 0.0009806892964740464,
+    "linear_velocity_m_s": 0.05883121989197999
+  },
+  "physical_equivalence_certified": false,
+  "reason": "Same manifest policy and sample phases; physical acceptance requires separately calibrated envelope",
+  "schema_version": "1.3.1",
+  "status": "ALIGNED_DIAGNOSTIC",
+  "unpaired_sample_counts": {
+    "left": 0,
+    "right": 0
+  }
+}

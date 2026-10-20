@@ -1,6 +1,9 @@
 # v1.3.1 — contrato prospetivo de métricas de movimento
 
-Estado: implementação Python e testes sintéticos; **não demonstra travagem do jogo**.
+Estado: implementação, 27 testes sintéticos e auditoria da matriz real
+`lateral_stop_001`, com 12 execuções e 144 episódios. Os resultados distinguem
+medições válidas, interrupções e preparação falhada; **não certificam tuning,
+equivalência entre modos nem travagem universal do jogo**.
 Versão da fórmula: `benchmark_eval_v131_stop_v1`. Não é equivalente aos scores ou
 ao `overshoot_m` histórico de v1.3. Não executa Optuna, não escreve no jogo e não
 abre holdouts.
@@ -168,9 +171,9 @@ chatter, settling temporário e sustentado, bandas angulares, zero medido legít
 frações de brake, reversão persistente, censura, interrupções e pré-condições,
 frame móvel explícito, ausência de frame, NaN/Inf, relógio/delta/ticks/fase,
 horizontes e tempos de confirmação a 60/120 Hz. São construções sintéticas com
-valores conhecidos, não jogadores nem resultados do Godot. O controlo físico de
-baixa energia e os episódios reais nas duas frequências ainda têm de validar o
-pipeline antes de afirmar ER4 concluído.
+valores conhecidos, não jogadores nem resultados do Godot. A validação real
+subsequente e as suas limitações estão registadas abaixo; os testes sintéticos
+de censura não devem ser contados como episódios físicos censurados.
 
 ## Auditoria da integração em desenvolvimento
 
@@ -206,3 +209,76 @@ Na revisão 2, o alvo espacial de overshoot é o COM no onset aceite, declarado
 como referência de medição com progresso zero. Não representa um alvo pedido
 pelo jogador nem uma alteração do controlador. Valores de overshoot têm de
 manter esta definição explícita ao serem comparados.
+
+## Matriz real de revisão 3 concluída
+
+`lateral_stop_001` contém três repetições por célula headless/rendered-scripted
+e 60/120 Hz: 12 execuções, 144 episódios. Fonte congelada `24b18d7`, catálogo e
+contrato de revisão 3. A contagem independente dos ficheiros tipados coincide
+com [control_summary.json](reports/control_analysis_002/control_summary.json).
+São 84 episódios `valid_observation`, 36 `interrupted` e 24
+`precondition_not_met`. `completed` descreve a conclusão/validade da observação
+de acordo com o respetivo contrato, não uma avaliação humana de jogabilidade.
+
+| Família de saídas | MEASURED | NOT_APPLICABLE | INTERRUPTED | PRECONDITION_NOT_MET |
+| --- | ---: | ---: | ---: | ---: |
+| Métricas principais, 1296 objetos | 462 | 600 | 90 | 144 |
+| Brake, 576 objetos de tempo/distância | 24 | 480 | 48 | 24 |
+| Horizontes fixos, 648 objetos | 462 | 0 | 66 | 120 |
+
+Não houve `CENSORED_TIMEOUT` nem `INVALID_MEASUREMENT` nessas saídas reais.
+O fallback `observation.unconfirmed_metric_terminal_status` pode conter
+`CENSORED_TIMEOUT` mesmo quando uma métrica foi medida: só o `status` de cada
+objeto tipado entra nas contagens. Os denominadores acima contam objetos de
+métrica, não episódios independentes nem sucessos físicos adicionais.
+
+Os dois controlos de baixa energia a 120 Hz e o controlo de duas mãos a 60 Hz
+produzem 18 resultados medidos de settling: início 0,0 s, confirmação 0,25 s.
+Isto não é uma paragem instantânea inferida sem observar: os registos incluem a
+janela de confirmação inteira. A auditoria direta dos três controlos renderizados
+de duas mãos a 60 Hz encontrou 16 amostras por janela, 15 intervalos, duração
+0,25 s, suporte válido e ausência de chão/híbrido. Máximos de velocidade linear
+até 0,03650 m/s e angular até 0,11671 rad/s respeitam as bandas originais.
+
+Os quatro casos de uma mão a 60 Hz falham a preparação em todas as seis
+execuções dessa frequência: 24 episódios sem transição aceite. Incluem as seis
+tentativas de controlo de baixa energia com uma mão; essa combinação permanece
+sem calibração física válida. Um estado final de preparação, incluindo repouso
+no chão, não é um onset aceite e não pode substituir essa medição. Os campos
+tipados permanecem `PRECONDITION_NOT_MET`/null, com os horizontes pedidos
+explícitos. Não se excluem esses episódios para apresentar uma taxa melhor.
+A montagem final `control_analysis_002` explicita
+`accepted_transition_observed=false` nestes episódios e deixa os campos de
+onset aceite em null; a última observação da preparação tem campos próprios.
+`control_analysis_001` foi preservada como versão anterior com esses campos
+inicialmente rotulados como onset. A correção de apresentação não mudou
+fórmulas, traces, resultados tipados ou contagens.
+
+As três repetições headless de cada frequência têm resultados tipados
+exatamente iguais entre si. O modo renderizado tem variação real. No release
+com uma mão a 120 Hz, settling varia entre 1,3167 e 2,1167 s e caminho de stop
+entre 0,28605 e 0,36554 m. O deslocamento final próximo não elimina esta
+diferença de percurso/tempo. As amostras que começam com movimento de stop
+válido cumprem o mínimo declarado de 0,15 m/s; os controlos de baixa energia
+usam a norma completa da velocidade, sem mudar as bandas para obter sucesso.
+
+Nos brakes de duas mãos, a fração de 50% é medida nas 12 execuções; a fração de
+10% não é atingida durante a janela ativa e fica interrompida. Settling depois
+do comando neutral não demonstra travagem ativa até essa fração. Nos brakes
+de uma mão a 120 Hz, a observação é interrompida por mudança de contacto; os
+restantes casos de uma mão a 60 Hz nem satisfazem a preparação. Não existe
+evidência de travagem completa em todos os cenários.
+
+ER3 dispõe de medições reais com sinal para os controlos laterais nas duas
+frequências, incluindo reversões confirmadas e interrupções por chão;
+interrupção posterior não apaga uma reversão anterior nem valida a tarefa
+completa. ER4 dispõe de contratos e estados observáveis sem null inexplicado,
+mas a cobertura física de uma mão a 60 Hz permanece incompleta. Esta auditoria
+recomenda conservar essa limitação em vez de atribuir um sucesso global ou
+alterar a preparação para melhorar a taxa. Os pés B1 continuam a contribuir;
+nenhum resultado de uma mão prova suspensão apenas pelos braços.
+
+Os resultados permitem examinar o avaliador. Não definem um score, um envelope
+universal de tolerância ou autorização de nova pesquisa. A divergência de
+trajetória/política do catch exige a investigação própria de ER5; o sucesso
+binário de contacto/retenção não resolve sozinho a equivalência física.

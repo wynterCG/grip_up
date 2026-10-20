@@ -1,0 +1,44 @@
+{
+  "archives": [
+    {
+      "file": "baseline_002.zip",
+      "sha256": "6c1e0df28397c3684fc8c7e0d2dca6d49eb1aabcf67d552fae4255337d27943f",
+      "bytes": 15645,
+      "members": {
+        "baseline_002/baseline_audit.json": "f71ae31e3e59d819f7605c08c45e91a1164c01f59dfee4a5a2df47ffb8106b0b",
+        "baseline_002/session_manifest.json": "06f635dee7c7f9f3ecdbf2adc59f15bd241d0864d7c450e9749f2a3940c83121",
+        "baseline_002/session_state.json": "e6bab629956d5cd23feeeb2a3bf86bee76f85b777c7feab5d4fc4d5c74848003"
+      },
+      "verified_archive_retrieval": true
+    },
+    {
+      "file": "native_mcp_001.zip",
+      "sha256": "7dc6d5e01e66af657c40b9ca69bd222e704a024b61ba9474240aad768b4a9dd5",
+      "bytes": 995433,
+      "members": {
+        "native_mcp_001/attempts/native_mcp_120_catch_9a8d5f69/checksums.json": "95daba11bd20d51a8ef9b4bfaaaec292dddce5f61b7d7c5151c68f7ec20d657e",
+        "native_mcp_001/attempts/native_mcp_120_catch_9a8d5f69/diagnostics.json": "c0f5a66124abeb9485297b9d8b5ea89a1e331717f532a5db6da5ba2e05e9e4f3",
+        "native_mcp_001/attempts/native_mcp_120_catch_9a8d5f69/editor_stdout.txt": "35c1aad7ac5b5d98419a7271986f13eb0afabecc36471b29e0989554aef8e1bf",
+        "native_mcp_001/attempts/native_mcp_120_catch_9a8d5f69/engine_result.json": "0449e9328e4666b032a1751df8f4ce1349a764a8342f7f0f705a6788f50d00f4",
+        "native_mcp_001/attempts/native_mcp_120_catch_9a8d5f69/events.jsonl.gz": "520966d307064a9ca3803532e84c94f0477a09518df22a88fd78558a98b6ccd9",
+        "native_mcp_001/attempts/native_mcp_120_catch_9a8d5f69/execution.json": "a4f6d6b5be0acbc77c2043f720033a7deddca04ebe7614a68527bf31d223908e",
+        "native_mcp_001/attempts/native_mcp_120_catch_9a8d5f69/initial_state.json": "dfbae4672263f309634a2364501d6c3c9546d2473cefb1c9e3857cd59ff1dcd7",
+        "native_mcp_001/attempts/native_mcp_120_catch_9a8d5f69/manifest.json": "99f4862595bf38b36b28e98f9c34afedf1b7ddca19f56842fae6ac9705dc1f34",
+        "native_mcp_001/attempts/native_mcp_120_catch_9a8d5f69/mcp_errors.txt": "679b4c2fd0e0da7cb81eea2aa3db401bea235196490e3fca8ff36f641a7b6d45",
+        "native_mcp_001/attempts/native_mcp_120_catch_9a8d5f69/mcp_play.txt": "4fdf8cc8b7c1021a7d0b2c960ca12ff67fa856c4b168165b0aeefc81b3e564fc",
+        "native_mcp_001/attempts/native_mcp_120_catch_9a8d5f69/mcp_stop.txt": "dc8799b4ebbf1325dc1157e696aa54ba15418c83b0e2c51e3c881367865bcb42",
+        "native_mcp_001/attempts/native_mcp_120_catch_9a8d5f69/result.json": "e52806dbe9b4a34704c8aae5ca3622509b5544aa546623e690c5e675daaf9c12",
+        "native_mcp_001/attempts/native_mcp_120_catch_9a8d5f69/runtime_provenance.json": "67c3537424a3fb7dfb9826bfe7f69e177914d1dd691c1581d338a1075d16c594",
+        "native_mcp_001/attempts/native_mcp_120_catch_9a8d5f69/screenshot_index.json": "179d19425840b1272980ad79ae2ef1f512595c293911b1c18ade3718babc849c",
+        "native_mcp_001/attempts/native_mcp_120_catch_9a8d5f69/screenshots/frame_01.png": "76dd58af1593a611e66c77cc57130cf92fe97f65a9b521f58adef6518b7b0a6e",
+        "native_mcp_001/attempts/native_mcp_120_catch_9a8d5f69/screenshots/frame_02.png": "af590106ea2dee92a6b32ebfdd6165338b9b414d15253108237d1d5275b0fdaf",
+        "native_mcp_001/attempts/native_mcp_120_catch_9a8d5f69/trace.jsonl.gz": "95d38b969254f4ff72af936607a1e8d6f142d74de0a66836032c17dbeb58ddc4",
+        "native_mcp_001/attempts/native_mcp_120_catch_9a8d5f69/typed_metrics.json": "a585f5faf1e0c07f0f207e8501d324182f681414dadd29a77ab8a15642175b1c",
+        "native_mcp_001/session_manifest.json": "eb9c6904a91d4f7e4aaf3be45bdfc52bbcc819d5d760b942a0e8e9cb3de50530",
+        "native_mcp_001/session_state.json": "159bf155925e37992e466228cfbcc9507594d4b7ef60fe46f49b69c39443d5da"
+      },
+      "verified_archive_retrieval": true
+    }
+  ],
+  "scope": "Final baseline audit and supplemental MCP demonstration; native config differs only by temporary editor plugin setup, not part of44-run cross-mode qualification"
+}

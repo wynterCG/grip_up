@@ -1,0 +1,1891 @@
+{
+  "automatic_GO_permitted": false,
+  "catch_pairs": [
+    {
+      "comparison": "catch_120_isolated_r01.json",
+      "context": "isolated",
+      "first_behavioral_difference": {
+        "absolute_difference": 1.430511474609375e-06,
+        "classification": "TARGET_DIVERGENCE",
+        "field": "target.material_local_point_m[2]",
+        "left": -0.00818386673927307,
+        "left_physics_time_s": 0.458333333333333,
+        "left_tick": 55,
+        "relative_tick": 55,
+        "right": -0.00818243622779846,
+        "right_physics_time_s": 0.458333333333333,
+        "right_tick": 55,
+        "sample_phase": "post_control",
+        "scenario_id": "swing_catch_train"
+      },
+      "first_observed_state_difference": {
+        "absolute_difference": 1.4305114750534642e-06,
+        "field": "body.angular_velocity_rad_s[1]",
+        "left": 0.649238705635071,
+        "left_physics_time_s": 0.766666666666667,
+        "left_tick": 92,
+        "relative_tick": 92,
+        "right": 0.649237275123596,
+        "right_physics_time_s": 0.766666666666667,
+        "right_tick": 92,
+        "sample_phase": "pre_control",
+        "scenario_id": "swing_catch_train"
+      },
+      "hz": 120,
+      "left": "catch_headless_120_isolated_r1_trace_e07871f3",
+      "repeat": 1,
+      "right": "catch_rendered_scripted_120_isolated_r1_trace_6d9d6acc",
+      "status": "ALIGNED_DIAGNOSTIC"
+    },
+    {
+      "comparison": "catch_120_isolated_r02.json",
+      "context": "isolated",
+      "first_behavioral_difference": {
+        "absolute_difference": 3.814697265619796e-06,
+        "classification": "TARGET_DIVERGENCE",
+        "field": "target.material_local_point_m[2]",
+        "left": -0.00677385926246643,
+        "left_physics_time_s": 2.35,
+        "left_tick": 282,
+        "relative_tick": 282,
+        "right": -0.00677004456520081,
+        "right_physics_time_s": 2.35,
+        "right_tick": 282,
+        "sample_phase": "post_control",
+        "scenario_id": "swing_catch_train"
+      },
+      "first_observed_state_difference": {
+        "absolute_difference": 1.4305114750534642e-06,
+        "field": "body.angular_velocity_rad_s[1]",
+        "left": 0.649238705635071,
+        "left_physics_time_s": 0.766666666666667,
+        "left_tick": 92,
+        "relative_tick": 92,
+        "right": 0.649237275123596,
+        "right_physics_time_s": 0.766666666666667,
+        "right_tick": 92,
+        "sample_phase": "pre_control",
+        "scenario_id": "swing_catch_train"
+      },
+      "hz": 120,
+      "left": "catch_headless_120_isolated_r2_trace_da8d14d5",
+      "repeat": 2,
+      "right": "catch_rendered_scripted_120_isolated_r2_trace_519d27e7",
+      "status": "ALIGNED_DIAGNOSTIC"
+    },
+    {
+      "comparison": "catch_120_isolated_r03.json",
+      "context": "isolated",
+      "first_behavioral_difference": {
+        "absolute_difference": 3.516674041997847e-06,
+        "classification": "TARGET_DIVERGENCE",
+        "field": "target.material_local_point_m[0]",
+        "left": -0.120785146951675,
+        "left_physics_time_s": 2.35,
+        "left_tick": 282,
+        "relative_tick": 282,
+        "right": -0.120788663625717,
+        "right_physics_time_s": 2.35,
+        "right_tick": 282,
+        "sample_phase": "post_control",
+        "scenario_id": "swing_catch_train"
+      },
+      "first_observed_state_difference": {
+        "absolute_difference": 1.4305114750534642e-06,
+        "field": "body.angular_velocity_rad_s[1]",
+        "left": 0.649238705635071,
+        "left_physics_time_s": 0.766666666666667,
+        "left_tick": 92,
+        "relative_tick": 92,
+        "right": 0.649237275123596,
+        "right_physics_time_s": 0.766666666666667,
+        "right_tick": 92,
+        "sample_phase": "pre_control",
+        "scenario_id": "swing_catch_train"
+      },
+      "hz": 120,
+      "left": "catch_headless_120_isolated_r3_trace_c86934a0",
+      "repeat": 3,
+      "right": "catch_rendered_scripted_120_isolated_r3_trace_6a6386fc",
+      "status": "ALIGNED_DIAGNOSTIC"
+    },
+    {
+      "comparison": "catch_120_sequence_r01.json",
+      "context": "sequence",
+      "first_behavioral_difference": {
+        "absolute_difference": 1.1324882507300366e-06,
+        "classification": "TARGET_DIVERGENCE",
+        "field": "target.material_local_point_m[0]",
+        "left": -0.00192028284072876,
+        "left_physics_time_s": 0.458333333333333,
+        "left_tick": 55,
+        "relative_tick": 55,
+        "right": -0.00191915035247803,
+        "right_physics_time_s": 0.458333333333333,
+        "right_tick": 55,
+        "sample_phase": "post_control",
+        "scenario_id": "swing_catch_train"
+      },
+      "first_observed_state_difference": {
+        "absolute_difference": 3.576278690076151e-06,
+        "field": "body.angular_velocity_rad_s[1]",
+        "left": 1.36717998981476,
+        "left_physics_time_s": 0.783333333333333,
+        "left_tick": 94,
+        "relative_tick": 94,
+        "right": 1.36717641353607,
+        "right_physics_time_s": 0.783333333333333,
+        "right_tick": 94,
+        "sample_phase": "pre_control",
+        "scenario_id": "swing_catch_train"
+      },
+      "hz": 120,
+      "left": "catch_headless_120_sequence_r1_trace_643100a5",
+      "repeat": 1,
+      "right": "catch_rendered_scripted_120_sequence_r1_trace_43632514",
+      "status": "ALIGNED_DIAGNOSTIC"
+    },
+    {
+      "comparison": "catch_120_sequence_r02.json",
+      "context": "sequence",
+      "first_behavioral_difference": {
+        "absolute_difference": 1.01327896200043e-06,
+        "classification": "TARGET_DIVERGENCE",
+        "field": "target.material_local_point_m[0]",
+        "left": -0.120785146951675,
+        "left_physics_time_s": 2.35,
+        "left_tick": 282,
+        "relative_tick": 282,
+        "right": -0.120786160230637,
+        "right_physics_time_s": 2.35,
+        "right_tick": 282,
+        "sample_phase": "post_control",
+        "scenario_id": "swing_catch_train"
+      },
+      "first_observed_state_difference": {
+        "absolute_difference": 2.026557920142835e-06,
+        "field": "body.angular_velocity_rad_s[1]",
+        "left": 1.36717998981476,
+        "left_physics_time_s": 0.783333333333333,
+        "left_tick": 94,
+        "relative_tick": 94,
+        "right": 1.36717796325684,
+        "right_physics_time_s": 0.783333333333333,
+        "right_tick": 94,
+        "sample_phase": "pre_control",
+        "scenario_id": "swing_catch_train"
+      },
+      "hz": 120,
+      "left": "catch_headless_120_sequence_r2_trace_a19cacd7",
+      "repeat": 2,
+      "right": "catch_rendered_scripted_120_sequence_r2_trace_ffa09bfd",
+      "status": "ALIGNED_DIAGNOSTIC"
+    },
+    {
+      "comparison": "catch_120_sequence_r03.json",
+      "context": "sequence",
+      "first_behavioral_difference": {
+        "absolute_difference": 2.384185791020829e-06,
+        "classification": "TARGET_DIVERGENCE",
+        "field": "target.material_local_point_m[2]",
+        "left": -0.00818386673927307,
+        "left_physics_time_s": 0.458333333333333,
+        "left_tick": 55,
+        "relative_tick": 55,
+        "right": -0.00818625092506409,
+        "right_physics_time_s": 0.458333333333333,
+        "right_tick": 55,
+        "sample_phase": "post_control",
+        "scenario_id": "swing_catch_train"
+      },
+      "first_observed_state_difference": {
+        "absolute_difference": 1.311302189943575e-06,
+        "field": "body.angular_velocity_rad_s[1]",
+        "left": 1.08857822418213,
+        "left_physics_time_s": 0.775,
+        "left_tick": 93,
+        "relative_tick": 93,
+        "right": 1.08857691287994,
+        "right_physics_time_s": 0.775,
+        "right_tick": 93,
+        "sample_phase": "pre_control",
+        "scenario_id": "swing_catch_train"
+      },
+      "hz": 120,
+      "left": "catch_headless_120_sequence_r3_trace_426e8820",
+      "repeat": 3,
+      "right": "catch_rendered_scripted_120_sequence_r3_trace_83166991",
+      "status": "ALIGNED_DIAGNOSTIC"
+    },
+    {
+      "comparison": "catch_60_isolated_r01.json",
+      "context": "isolated",
+      "first_behavioral_difference": {
+        "absolute_difference": 1.9073486328090306e-06,
+        "classification": "TARGET_DIVERGENCE",
+        "field": "target.material_local_point_m[2]",
+        "left": -0.00818243622779846,
+        "left_physics_time_s": 0.466666666666667,
+        "left_tick": 28,
+        "relative_tick": 28,
+        "right": -0.00818434357643127,
+        "right_physics_time_s": 0.466666666666667,
+        "right_tick": 28,
+        "sample_phase": "post_control",
+        "scenario_id": "swing_catch_train"
+      },
+      "first_observed_state_difference": {
+        "absolute_difference": 2.1457672101377057e-06,
+        "field": "body.angular_velocity_rad_s[1]",
+        "left": 1.38799118995667,
+        "left_physics_time_s": 0.8,
+        "left_tick": 48,
+        "relative_tick": 48,
+        "right": 1.38799333572388,
+        "right_physics_time_s": 0.8,
+        "right_tick": 48,
+        "sample_phase": "pre_control",
+        "scenario_id": "swing_catch_train"
+      },
+      "hz": 60,
+      "left": "catch_headless_60_isolated_r1_trace_f9df5081",
+      "repeat": 1,
+      "right": "catch_rendered_scripted_60_isolated_r1_trace_8155908e",
+      "status": "ALIGNED_DIAGNOSTIC"
+    },
+    {
+      "comparison": "catch_60_isolated_r02.json",
+      "context": "isolated",
+      "first_behavioral_difference": {
+        "absolute_difference": 2.4437904359991824e-06,
+        "classification": "TARGET_DIVERGENCE",
+        "field": "target.material_local_point_m[0]",
+        "left": -0.120786041021347,
+        "left_physics_time_s": 2.36666666666667,
+        "left_tick": 142,
+        "relative_tick": 142,
+        "right": -0.120788484811783,
+        "right_physics_time_s": 2.36666666666667,
+        "right_tick": 142,
+        "sample_phase": "post_control",
+        "scenario_id": "swing_catch_train"
+      },
+      "first_observed_state_difference": {
+        "absolute_difference": 2.1457672101377057e-06,
+        "field": "body.angular_velocity_rad_s[1]",
+        "left": 1.38799118995667,
+        "left_physics_time_s": 0.8,
+        "left_tick": 48,
+        "relative_tick": 48,
+        "right": 1.38799333572388,
+        "right_physics_time_s": 0.8,
+        "right_tick": 48,
+        "sample_phase": "pre_control",
+        "scenario_id": "swing_catch_train"
+      },
+      "hz": 60,
+      "left": "catch_headless_60_isolated_r2_trace_0c099154",
+      "repeat": 2,
+      "right": "catch_rendered_scripted_60_isolated_r2_trace_e23fe6ed",
+      "status": "ALIGNED_DIAGNOSTIC"
+    },
+    {
+      "comparison": "catch_60_isolated_r03.json",
+      "context": "isolated",
+      "first_behavioral_difference": {
+        "absolute_difference": 2.086162566999894e-06,
+        "classification": "TARGET_DIVERGENCE",
+        "field": "target.material_local_point_m[0]",
+        "left": -0.120786041021347,
+        "left_physics_time_s": 2.36666666666667,
+        "left_tick": 142,
+        "relative_tick": 142,
+        "right": -0.120788127183914,
+        "right_physics_time_s": 2.36666666666667,
+        "right_tick": 142,
+        "sample_phase": "post_control",
+        "scenario_id": "swing_catch_train"
+      },
+      "first_observed_state_difference": {
+        "absolute_difference": 2.3841857901274466e-06,
+        "field": "body.angular_velocity_rad_s[1]",
+        "left": 1.38799118995667,
+        "left_physics_time_s": 0.8,
+        "left_tick": 48,
+        "relative_tick": 48,
+        "right": 1.38799357414246,
+        "right_physics_time_s": 0.8,
+        "right_tick": 48,
+        "sample_phase": "pre_control",
+        "scenario_id": "swing_catch_train"
+      },
+      "hz": 60,
+      "left": "catch_headless_60_isolated_r3_trace_f6512e42",
+      "repeat": 3,
+      "right": "catch_rendered_scripted_60_isolated_r3_trace_cfdd5d23",
+      "status": "ALIGNED_DIAGNOSTIC"
+    },
+    {
+      "comparison": "catch_60_sequence_r01.json",
+      "context": "sequence",
+      "first_behavioral_difference": {
+        "absolute_difference": 2.5033950809966177e-06,
+        "classification": "TARGET_DIVERGENCE",
+        "field": "target.material_local_point_m[0]",
+        "left": -0.120786041021347,
+        "left_physics_time_s": 2.36666666666667,
+        "left_tick": 142,
+        "relative_tick": 142,
+        "right": -0.120788544416428,
+        "right_physics_time_s": 2.36666666666667,
+        "right_tick": 142,
+        "sample_phase": "post_control",
+        "scenario_id": "swing_catch_train"
+      },
+      "first_observed_state_difference": {
+        "absolute_difference": 1.1920928999487046e-06,
+        "field": "body.angular_velocity_rad_s[1]",
+        "left": 1.38799118995667,
+        "left_physics_time_s": 0.8,
+        "left_tick": 48,
+        "relative_tick": 48,
+        "right": 1.38798999786377,
+        "right_physics_time_s": 0.8,
+        "right_tick": 48,
+        "sample_phase": "pre_control",
+        "scenario_id": "swing_catch_train"
+      },
+      "hz": 60,
+      "left": "catch_headless_60_sequence_r1_trace_9470d485",
+      "repeat": 1,
+      "right": "catch_rendered_scripted_60_sequence_r1_trace_bbb6376f",
+      "status": "ALIGNED_DIAGNOSTIC"
+    },
+    {
+      "comparison": "catch_60_sequence_r02.json",
+      "context": "sequence",
+      "first_behavioral_difference": {
+        "absolute_difference": 2.3841857910190944e-06,
+        "classification": "TARGET_DIVERGENCE",
+        "field": "target.material_local_point_m[2]",
+        "left": -0.00818243622779846,
+        "left_physics_time_s": 0.466666666666667,
+        "left_tick": 28,
+        "relative_tick": 28,
+        "right": -0.00818482041358948,
+        "right_physics_time_s": 0.466666666666667,
+        "right_tick": 28,
+        "sample_phase": "post_control",
+        "scenario_id": "swing_catch_train"
+      },
+      "first_observed_state_difference": {
+        "absolute_difference": 1.0728836001838715e-06,
+        "field": "body.angular_velocity_rad_s[1]",
+        "left": 1.58474683761597,
+        "left_physics_time_s": 0.833333333333333,
+        "left_tick": 50,
+        "relative_tick": 50,
+        "right": 1.58474791049957,
+        "right_physics_time_s": 0.833333333333333,
+        "right_tick": 50,
+        "sample_phase": "pre_control",
+        "scenario_id": "swing_catch_train"
+      },
+      "hz": 60,
+      "left": "catch_headless_60_sequence_r2_trace_cdc430f9",
+      "repeat": 2,
+      "right": "catch_rendered_scripted_60_sequence_r2_trace_d06f9334",
+      "status": "ALIGNED_DIAGNOSTIC"
+    },
+    {
+      "comparison": "catch_60_sequence_r03.json",
+      "context": "sequence",
+      "first_behavioral_difference": {
+        "absolute_difference": 1.668930054002371e-06,
+        "classification": "TARGET_DIVERGENCE",
+        "field": "target.material_local_point_m[0]",
+        "left": -0.120786041021347,
+        "left_physics_time_s": 2.36666666666667,
+        "left_tick": 142,
+        "relative_tick": 142,
+        "right": -0.120787709951401,
+        "right_physics_time_s": 2.36666666666667,
+        "right_tick": 142,
+        "sample_phase": "post_control",
+        "scenario_id": "swing_catch_train"
+      },
+      "first_observed_state_difference": {
+        "absolute_difference": 3.6954879700790144e-06,
+        "field": "body.angular_velocity_rad_s[1]",
+        "left": 1.38799118995667,
+        "left_physics_time_s": 0.8,
+        "left_tick": 48,
+        "relative_tick": 48,
+        "right": 1.38799488544464,
+        "right_physics_time_s": 0.8,
+        "right_tick": 48,
+        "sample_phase": "pre_control",
+        "scenario_id": "swing_catch_train"
+      },
+      "hz": 60,
+      "left": "catch_headless_60_sequence_r3_trace_384b2de0",
+      "repeat": 3,
+      "right": "catch_rendered_scripted_60_sequence_r3_trace_73f13be6",
+      "status": "ALIGNED_DIAGNOSTIC"
+    }
+  ],
+  "decision": "EVALUATOR_NOT_READY_PENDING_SPECIALIST_REVIEW",
+  "evaluation_statuses": {
+    "completed": 32
+  },
+  "evaluations": 32,
+  "groups": [
+    {
+      "attempts": 3,
+      "completed": 3,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 9.278384899999764,
+        "mean": 9.160938533333288,
+        "min": 9.101021800000126,
+        "n": 3,
+        "sample_sd": 0.10171853982421034
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 60,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 997.2277777777778,
+        "mean": 988.290329218107,
+        "min": 980.179012345679,
+        "n": 3,
+        "sample_sd": 8.554353912668184
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "headless",
+      "reason_counts": {
+        "": 3
+      },
+      "recorder": true,
+      "scenario": "asymmetric_pull_train",
+      "signed_progress_m": {
+        "max": 0.170990467071533,
+        "mean": 0.170990467071533,
+        "min": 0.170990467071533,
+        "n": 3,
+        "sample_sd": 0.0
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 3,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 15.076958500000273,
+        "mean": 14.953170766666517,
+        "min": 14.812276299999667,
+        "n": 3,
+        "sample_sd": 0.13316774006225193
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 120,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 986.5747764415664,
+        "mean": 977.928872443211,
+        "min": 973.0659882824546,
+        "n": 3,
+        "sample_sd": 7.507014633040936
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "headless",
+      "reason_counts": {
+        "": 3
+      },
+      "recorder": true,
+      "scenario": "asymmetric_pull_train",
+      "signed_progress_m": {
+        "max": 0.178732633590698,
+        "mean": 0.178732633590698,
+        "min": 0.178732633590698,
+        "n": 3,
+        "sample_sd": 0.0
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 3,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 30.17408320000004,
+        "mean": 29.32737640000005,
+        "min": 27.662393300000076,
+        "n": 3,
+        "sample_sd": 1.441987730806577
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 60,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 1023.9360544217687,
+        "mean": 1015.455022255816,
+        "min": 1007.9685185185185,
+        "n": 3,
+        "sample_sd": 8.030091269839287
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "rendered_scripted",
+      "reason_counts": {
+        "": 3
+      },
+      "recorder": true,
+      "scenario": "asymmetric_pull_train",
+      "signed_progress_m": {
+        "max": 0.170992732048035,
+        "mean": 0.170629103978475,
+        "min": 0.169963836669922,
+        "n": 3,
+        "sample_sd": 0.0005769714877277518
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 3,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 31.016362200000003,
+        "mean": 30.716668133333314,
+        "min": 30.561856199999966,
+        "n": 3,
+        "sample_sd": 0.25959015857390144
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 120,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 1024.5662503807494,
+        "mean": 1007.888205363837,
+        "min": 988.1412272587111,
+        "n": 3,
+        "sample_sd": 18.405416053031917
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "rendered_scripted",
+      "reason_counts": {
+        "": 3
+      },
+      "recorder": true,
+      "scenario": "asymmetric_pull_train",
+      "signed_progress_m": {
+        "max": 0.178918957710266,
+        "mean": 0.17879219849904399,
+        "min": 0.17857038974762,
+        "n": 3,
+        "sample_sd": 0.00019274521385823442
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 3,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 9.278384899999764,
+        "mean": 9.160938533333288,
+        "min": 9.101021800000126,
+        "n": 3,
+        "sample_sd": 0.10171853982421034
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 60,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 997.2277777777778,
+        "mean": 988.290329218107,
+        "min": 980.179012345679,
+        "n": 3,
+        "sample_sd": 8.554353912668184
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "headless",
+      "reason_counts": {
+        "": 3
+      },
+      "recorder": true,
+      "scenario": "foot_supported_step_train",
+      "signed_progress_m": {
+        "max": 0.250579118728638,
+        "mean": 0.250579118728638,
+        "min": 0.250579118728638,
+        "n": 3,
+        "sample_sd": 0.0
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 3,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 15.076958500000273,
+        "mean": 14.953170766666517,
+        "min": 14.812276299999667,
+        "n": 3,
+        "sample_sd": 0.13316774006225193
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 120,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 986.5747764415664,
+        "mean": 977.928872443211,
+        "min": 973.0659882824546,
+        "n": 3,
+        "sample_sd": 7.507014633040936
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "headless",
+      "reason_counts": {
+        "": 3
+      },
+      "recorder": true,
+      "scenario": "foot_supported_step_train",
+      "signed_progress_m": {
+        "max": 0.254721641540527,
+        "mean": 0.254721641540527,
+        "min": 0.254721641540527,
+        "n": 3,
+        "sample_sd": 0.0
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 2,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 30.17408320000004,
+        "mean": 29.32737640000005,
+        "min": 27.662393300000076,
+        "n": 3,
+        "sample_sd": 1.441987730806577
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 60,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 1023.9360544217687,
+        "mean": 1015.455022255816,
+        "min": 1007.9685185185185,
+        "n": 3,
+        "sample_sd": 8.030091269839287
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "rendered_scripted",
+      "reason_counts": {
+        "": 2,
+        "MISSED_REPLAY_TARGET": 1
+      },
+      "recorder": true,
+      "scenario": "foot_supported_step_train",
+      "signed_progress_m": {
+        "max": 0.250595688819885,
+        "mean": 0.16705842812856034,
+        "min": 0.0,
+        "n": 3,
+        "sample_sd": 0.14467684289939847
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 3,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 31.016362200000003,
+        "mean": 30.716668133333314,
+        "min": 30.561856199999966,
+        "n": 3,
+        "sample_sd": 0.25959015857390144
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 120,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 1024.5662503807494,
+        "mean": 1007.888205363837,
+        "min": 988.1412272587111,
+        "n": 3,
+        "sample_sd": 18.405416053031917
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "rendered_scripted",
+      "reason_counts": {
+        "": 3
+      },
+      "recorder": true,
+      "scenario": "foot_supported_step_train",
+      "signed_progress_m": {
+        "max": 0.254712462425232,
+        "mean": 0.2546526590983073,
+        "min": 0.254592418670654,
+        "n": 3,
+        "sample_sd": 6.0023070948421154e-05
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 3,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 9.278384899999764,
+        "mean": 9.160938533333288,
+        "min": 9.101021800000126,
+        "n": 3,
+        "sample_sd": 0.10171853982421034
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 60,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 997.2277777777778,
+        "mean": 988.290329218107,
+        "min": 980.179012345679,
+        "n": 3,
+        "sample_sd": 8.554353912668184
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "headless",
+      "reason_counts": {
+        "": 3
+      },
+      "recorder": true,
+      "scenario": "ground_grip_transition_train",
+      "signed_progress_m": {
+        "max": 0.23819363117218,
+        "mean": 0.23819363117218,
+        "min": 0.23819363117218,
+        "n": 3,
+        "sample_sd": 0.0
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 3,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 15.076958500000273,
+        "mean": 14.953170766666517,
+        "min": 14.812276299999667,
+        "n": 3,
+        "sample_sd": 0.13316774006225193
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 120,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 986.5747764415664,
+        "mean": 977.928872443211,
+        "min": 973.0659882824546,
+        "n": 3,
+        "sample_sd": 7.507014633040936
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "headless",
+      "reason_counts": {
+        "": 3
+      },
+      "recorder": true,
+      "scenario": "ground_grip_transition_train",
+      "signed_progress_m": {
+        "max": 0.208092451095581,
+        "mean": 0.208092451095581,
+        "min": 0.208092451095581,
+        "n": 3,
+        "sample_sd": 0.0
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 3,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 30.17408320000004,
+        "mean": 29.32737640000005,
+        "min": 27.662393300000076,
+        "n": 3,
+        "sample_sd": 1.441987730806577
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 60,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 1023.9360544217687,
+        "mean": 1015.455022255816,
+        "min": 1007.9685185185185,
+        "n": 3,
+        "sample_sd": 8.030091269839287
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "rendered_scripted",
+      "reason_counts": {
+        "": 3
+      },
+      "recorder": true,
+      "scenario": "ground_grip_transition_train",
+      "signed_progress_m": {
+        "max": 0.238660097122192,
+        "mean": 0.23828899860382066,
+        "min": 0.238072276115417,
+        "n": 3,
+        "sample_sd": 0.0003228890722414145
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 3,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 31.016362200000003,
+        "mean": 30.716668133333314,
+        "min": 30.561856199999966,
+        "n": 3,
+        "sample_sd": 0.25959015857390144
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 120,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 1024.5662503807494,
+        "mean": 1007.888205363837,
+        "min": 988.1412272587111,
+        "n": 3,
+        "sample_sd": 18.405416053031917
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "rendered_scripted",
+      "reason_counts": {
+        "": 3
+      },
+      "recorder": true,
+      "scenario": "ground_grip_transition_train",
+      "signed_progress_m": {
+        "max": 0.209784626960754,
+        "mean": 0.20863993962605767,
+        "min": 0.208047032356262,
+        "n": 3,
+        "sample_sd": 0.0009915415686728732
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 0,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 9.278384899999764,
+        "mean": 9.160938533333288,
+        "min": 9.101021800000126,
+        "n": 3,
+        "sample_sd": 0.10171853982421034
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 60,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 997.2277777777778,
+        "mean": 988.290329218107,
+        "min": 980.179012345679,
+        "n": 3,
+        "sample_sd": 8.554353912668184
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "headless",
+      "reason_counts": {
+        "GOAL_NOT_REACHED": 3
+      },
+      "recorder": true,
+      "scenario": "lateral_traverse_train",
+      "signed_progress_m": {
+        "max": -0.0642670691013336,
+        "mean": -0.0642670691013336,
+        "min": -0.0642670691013336,
+        "n": 3,
+        "sample_sd": 0.0
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 0,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 15.076958500000273,
+        "mean": 14.953170766666517,
+        "min": 14.812276299999667,
+        "n": 3,
+        "sample_sd": 0.13316774006225193
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 120,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 986.5747764415664,
+        "mean": 977.928872443211,
+        "min": 973.0659882824546,
+        "n": 3,
+        "sample_sd": 7.507014633040936
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "headless",
+      "reason_counts": {
+        "GOAL_NOT_REACHED": 3
+      },
+      "recorder": true,
+      "scenario": "lateral_traverse_train",
+      "signed_progress_m": {
+        "max": -0.066809356212616,
+        "mean": -0.066809356212616,
+        "min": -0.066809356212616,
+        "n": 3,
+        "sample_sd": 0.0
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 0,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 30.17408320000004,
+        "mean": 29.32737640000005,
+        "min": 27.662393300000076,
+        "n": 3,
+        "sample_sd": 1.441987730806577
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 60,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 1023.9360544217687,
+        "mean": 1015.455022255816,
+        "min": 1007.9685185185185,
+        "n": 3,
+        "sample_sd": 8.030091269839287
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "rendered_scripted",
+      "reason_counts": {
+        "GOAL_NOT_REACHED": 3
+      },
+      "recorder": true,
+      "scenario": "lateral_traverse_train",
+      "signed_progress_m": {
+        "max": -0.0634239614009857,
+        "mean": -0.0662300537029902,
+        "min": -0.068952813744545,
+        "n": 3,
+        "sample_sd": 0.0027653680150106627
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 0,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 31.016362200000003,
+        "mean": 30.716668133333314,
+        "min": 30.561856199999966,
+        "n": 3,
+        "sample_sd": 0.25959015857390144
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 120,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 1024.5662503807494,
+        "mean": 1007.888205363837,
+        "min": 988.1412272587111,
+        "n": 3,
+        "sample_sd": 18.405416053031917
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "rendered_scripted",
+      "reason_counts": {
+        "GOAL_NOT_REACHED": 3
+      },
+      "recorder": true,
+      "scenario": "lateral_traverse_train",
+      "signed_progress_m": {
+        "max": -0.0666852295398712,
+        "mean": -0.06681578358014423,
+        "min": -0.0669198632240295,
+        "n": 3,
+        "sample_sd": 0.00011953623585965993
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 3,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 9.278384899999764,
+        "mean": 9.160938533333288,
+        "min": 9.101021800000126,
+        "n": 3,
+        "sample_sd": 0.10171853982421034
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 60,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 997.2277777777778,
+        "mean": 988.290329218107,
+        "min": 980.179012345679,
+        "n": 3,
+        "sample_sd": 8.554353912668184
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "headless",
+      "reason_counts": {
+        "": 3
+      },
+      "recorder": true,
+      "scenario": "one_hand_hang_train",
+      "signed_progress_m": {
+        "max": 0.100614339113235,
+        "mean": 0.100614339113235,
+        "min": 0.100614339113235,
+        "n": 3,
+        "sample_sd": 0.0
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 3,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 15.076958500000273,
+        "mean": 14.953170766666517,
+        "min": 14.812276299999667,
+        "n": 3,
+        "sample_sd": 0.13316774006225193
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 120,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 986.5747764415664,
+        "mean": 977.928872443211,
+        "min": 973.0659882824546,
+        "n": 3,
+        "sample_sd": 7.507014633040936
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "headless",
+      "reason_counts": {
+        "": 3
+      },
+      "recorder": true,
+      "scenario": "one_hand_hang_train",
+      "signed_progress_m": {
+        "max": 0.0286939740180969,
+        "mean": 0.0286939740180969,
+        "min": 0.0286939740180969,
+        "n": 3,
+        "sample_sd": 0.0
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 3,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 30.17408320000004,
+        "mean": 29.32737640000005,
+        "min": 27.662393300000076,
+        "n": 3,
+        "sample_sd": 1.441987730806577
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 60,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 1023.9360544217687,
+        "mean": 1015.455022255816,
+        "min": 1007.9685185185185,
+        "n": 3,
+        "sample_sd": 8.030091269839287
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "rendered_scripted",
+      "reason_counts": {
+        "": 3
+      },
+      "recorder": true,
+      "scenario": "one_hand_hang_train",
+      "signed_progress_m": {
+        "max": 0.100669205188751,
+        "mean": 0.100579967101415,
+        "min": 0.100488811731339,
+        "n": 3,
+        "sample_sd": 9.021201055897386e-05
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 3,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 31.016362200000003,
+        "mean": 30.716668133333314,
+        "min": 30.561856199999966,
+        "n": 3,
+        "sample_sd": 0.25959015857390144
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 120,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 1024.5662503807494,
+        "mean": 1007.888205363837,
+        "min": 988.1412272587111,
+        "n": 3,
+        "sample_sd": 18.405416053031917
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "rendered_scripted",
+      "reason_counts": {
+        "": 3
+      },
+      "recorder": true,
+      "scenario": "one_hand_hang_train",
+      "signed_progress_m": {
+        "max": -0.00573450326919556,
+        "mean": -0.00578097502390544,
+        "min": -0.0058073103427887,
+        "n": 3,
+        "sample_sd": 4.036489225984511e-05
+      }
+    },
+    {
+      "attempts": 1,
+      "completed": 1,
+      "context": "isolated",
+      "elapsed_wall_s": {
+        "max": 2.8070889000000534,
+        "mean": 2.8070889000000534,
+        "min": 2.8070889000000534,
+        "n": 1,
+        "sample_sd": null
+      },
+      "existing_observer": false,
+      "historical_driver": false,
+      "hz": 60,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 269.11494252873564,
+        "mean": 269.11494252873564,
+        "min": 269.11494252873564,
+        "n": 1,
+        "sample_sd": null
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "headless",
+      "reason_counts": {
+        "": 1
+      },
+      "recorder": false,
+      "scenario": "swing_catch_train",
+      "signed_progress_m": {
+        "max": 0.634390473365784,
+        "mean": 0.634390473365784,
+        "min": 0.634390473365784,
+        "n": 1,
+        "sample_sd": null
+      }
+    },
+    {
+      "attempts": 1,
+      "completed": 1,
+      "context": "isolated",
+      "elapsed_wall_s": {
+        "max": 2.991115400000126,
+        "mean": 2.991115400000126,
+        "min": 2.991115400000126,
+        "n": 1,
+        "sample_sd": null
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 60,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 274.8888888888889,
+        "mean": 274.8888888888889,
+        "min": 274.8888888888889,
+        "n": 1,
+        "sample_sd": null
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "headless",
+      "reason_counts": {
+        "": 1
+      },
+      "recorder": false,
+      "scenario": "swing_catch_train",
+      "signed_progress_m": {
+        "max": 0.634390473365784,
+        "mean": 0.634390473365784,
+        "min": 0.634390473365784,
+        "n": 1,
+        "sample_sd": null
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 3,
+      "context": "isolated",
+      "elapsed_wall_s": {
+        "max": 3.629706900000201,
+        "mean": 3.625433900000189,
+        "min": 3.622240099999999,
+        "n": 3,
+        "sample_sd": 0.0038486075456541416
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 60,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 1196.0766283524904,
+        "mean": 1189.6730523627075,
+        "min": 1183.6858237547892,
+        "n": 3,
+        "sample_sd": 6.205885795065215
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "headless",
+      "reason_counts": {
+        "": 3
+      },
+      "recorder": true,
+      "scenario": "swing_catch_train",
+      "signed_progress_m": {
+        "max": 0.634390473365784,
+        "mean": 0.634390473365784,
+        "min": 0.634390473365784,
+        "n": 3,
+        "sample_sd": 0.0
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 3,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 9.278384899999764,
+        "mean": 9.160938533333288,
+        "min": 9.101021800000126,
+        "n": 3,
+        "sample_sd": 0.10171853982421034
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 60,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 997.2277777777778,
+        "mean": 988.290329218107,
+        "min": 980.179012345679,
+        "n": 3,
+        "sample_sd": 8.554353912668184
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "headless",
+      "reason_counts": {
+        "": 3
+      },
+      "recorder": true,
+      "scenario": "swing_catch_train",
+      "signed_progress_m": {
+        "max": 0.634390473365784,
+        "mean": 0.634390473365784,
+        "min": 0.634390473365784,
+        "n": 3,
+        "sample_sd": 0.0
+      }
+    },
+    {
+      "attempts": 1,
+      "completed": 1,
+      "context": "isolated",
+      "elapsed_wall_s": {
+        "max": 3.089173099999698,
+        "mean": 3.089173099999698,
+        "min": 3.089173099999698,
+        "n": 1,
+        "sample_sd": null
+      },
+      "existing_observer": false,
+      "historical_driver": false,
+      "hz": 120,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 267.55992509363296,
+        "mean": 267.55992509363296,
+        "min": 267.55992509363296,
+        "n": 1,
+        "sample_sd": null
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "headless",
+      "reason_counts": {
+        "": 1
+      },
+      "recorder": false,
+      "scenario": "swing_catch_train",
+      "signed_progress_m": {
+        "max": 0.53419017791748,
+        "mean": 0.53419017791748,
+        "min": 0.53419017791748,
+        "n": 1,
+        "sample_sd": null
+      }
+    },
+    {
+      "attempts": 1,
+      "completed": 1,
+      "context": "isolated",
+      "elapsed_wall_s": {
+        "max": 3.5383764999996856,
+        "mean": 3.5383764999996856,
+        "min": 3.5383764999996856,
+        "n": 1,
+        "sample_sd": null
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 120,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 267.77340823970036,
+        "mean": 267.77340823970036,
+        "min": 267.77340823970036,
+        "n": 1,
+        "sample_sd": null
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "headless",
+      "reason_counts": {
+        "": 1
+      },
+      "recorder": false,
+      "scenario": "swing_catch_train",
+      "signed_progress_m": {
+        "max": 0.53419017791748,
+        "mean": 0.53419017791748,
+        "min": 0.53419017791748,
+        "n": 1,
+        "sample_sd": null
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 3,
+      "context": "isolated",
+      "elapsed_wall_s": {
+        "max": 4.9236165000002075,
+        "mean": 4.749883633333259,
+        "min": 4.611257999999907,
+        "n": 3,
+        "sample_sd": 0.15911111370631548
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 120,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 1183.0543071161048,
+        "mean": 1169.7902621722847,
+        "min": 1162.0430711610486,
+        "n": 3,
+        "sample_sd": 11.541003729089812
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "headless",
+      "reason_counts": {
+        "": 3
+      },
+      "recorder": true,
+      "scenario": "swing_catch_train",
+      "signed_progress_m": {
+        "max": 0.53419017791748,
+        "mean": 0.53419017791748,
+        "min": 0.53419017791748,
+        "n": 3,
+        "sample_sd": 0.0
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 3,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 15.076958500000273,
+        "mean": 14.953170766666517,
+        "min": 14.812276299999667,
+        "n": 3,
+        "sample_sd": 0.13316774006225193
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 120,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 986.5747764415664,
+        "mean": 977.928872443211,
+        "min": 973.0659882824546,
+        "n": 3,
+        "sample_sd": 7.507014633040936
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "headless",
+      "reason_counts": {
+        "": 3
+      },
+      "recorder": true,
+      "scenario": "swing_catch_train",
+      "signed_progress_m": {
+        "max": 0.53419017791748,
+        "mean": 0.53419017791748,
+        "min": 0.53419017791748,
+        "n": 3,
+        "sample_sd": 0.0
+      }
+    },
+    {
+      "attempts": 1,
+      "completed": 1,
+      "context": "isolated",
+      "elapsed_wall_s": {
+        "max": 7.014034199999969,
+        "mean": 7.014034199999969,
+        "min": 7.014034199999969,
+        "n": 1,
+        "sample_sd": null
+      },
+      "existing_observer": false,
+      "historical_driver": false,
+      "hz": 60,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 323.07662835249045,
+        "mean": 323.07662835249045,
+        "min": 323.07662835249045,
+        "n": 1,
+        "sample_sd": null
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "rendered_scripted",
+      "reason_counts": {
+        "": 1
+      },
+      "recorder": false,
+      "scenario": "swing_catch_train",
+      "signed_progress_m": {
+        "max": 0.634363174438477,
+        "mean": 0.634363174438477,
+        "min": 0.634363174438477,
+        "n": 1,
+        "sample_sd": null
+      }
+    },
+    {
+      "attempts": 1,
+      "completed": 1,
+      "context": "isolated",
+      "elapsed_wall_s": {
+        "max": 7.050755099999606,
+        "mean": 7.050755099999606,
+        "min": 7.050755099999606,
+        "n": 1,
+        "sample_sd": null
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 60,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 310.0344827586207,
+        "mean": 310.0344827586207,
+        "min": 310.0344827586207,
+        "n": 1,
+        "sample_sd": null
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "rendered_scripted",
+      "reason_counts": {
+        "": 1
+      },
+      "recorder": false,
+      "scenario": "swing_catch_train",
+      "signed_progress_m": {
+        "max": 0.634555160999298,
+        "mean": 0.634555160999298,
+        "min": 0.634555160999298,
+        "n": 1,
+        "sample_sd": null
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 3,
+      "context": "isolated",
+      "elapsed_wall_s": {
+        "max": 7.128040699999929,
+        "mean": 7.0932337333333635,
+        "min": 7.07537769999999,
+        "n": 3,
+        "sample_sd": 0.030147114254901984
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 60,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 1194.7931034482758,
+        "mean": 1192.8033205619413,
+        "min": 1190.4252873563219,
+        "n": 3,
+        "sample_sd": 2.209639809132139
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "rendered_scripted",
+      "reason_counts": {
+        "": 3
+      },
+      "recorder": true,
+      "scenario": "swing_catch_train",
+      "signed_progress_m": {
+        "max": 0.634675562381744,
+        "mean": 0.6345305442810056,
+        "min": 0.634367108345032,
+        "n": 3,
+        "sample_sd": 0.00015504962328900725
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 3,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 30.17408320000004,
+        "mean": 29.32737640000005,
+        "min": 27.662393300000076,
+        "n": 3,
+        "sample_sd": 1.441987730806577
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 60,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 1023.9360544217687,
+        "mean": 1015.455022255816,
+        "min": 1007.9685185185185,
+        "n": 3,
+        "sample_sd": 8.030091269839287
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "rendered_scripted",
+      "reason_counts": {
+        "": 3
+      },
+      "recorder": true,
+      "scenario": "swing_catch_train",
+      "signed_progress_m": {
+        "max": 0.634594738483429,
+        "mean": 0.6344907879829407,
+        "min": 0.6343594789505,
+        "n": 3,
+        "sample_sd": 0.00011999220354432648
+      }
+    },
+    {
+      "attempts": 1,
+      "completed": 1,
+      "context": "isolated",
+      "elapsed_wall_s": {
+        "max": 7.294193999999607,
+        "mean": 7.294193999999607,
+        "min": 7.294193999999607,
+        "n": 1,
+        "sample_sd": null
+      },
+      "existing_observer": false,
+      "historical_driver": false,
+      "hz": 120,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 306.45981308411217,
+        "mean": 306.45981308411217,
+        "min": 306.45981308411217,
+        "n": 1,
+        "sample_sd": null
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "rendered_scripted",
+      "reason_counts": {
+        "": 1
+      },
+      "recorder": false,
+      "scenario": "swing_catch_train",
+      "signed_progress_m": {
+        "max": 0.534034550189972,
+        "mean": 0.534034550189972,
+        "min": 0.534034550189972,
+        "n": 1,
+        "sample_sd": null
+      }
+    },
+    {
+      "attempts": 1,
+      "completed": 1,
+      "context": "isolated",
+      "elapsed_wall_s": {
+        "max": 7.331722099999752,
+        "mean": 7.331722099999752,
+        "min": 7.331722099999752,
+        "n": 1,
+        "sample_sd": null
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 120,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 301.7322097378277,
+        "mean": 301.7322097378277,
+        "min": 301.7322097378277,
+        "n": 1,
+        "sample_sd": null
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "rendered_scripted",
+      "reason_counts": {
+        "": 1
+      },
+      "recorder": false,
+      "scenario": "swing_catch_train",
+      "signed_progress_m": {
+        "max": 0.534465849399567,
+        "mean": 0.534465849399567,
+        "min": 0.534465849399567,
+        "n": 1,
+        "sample_sd": null
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 3,
+      "context": "isolated",
+      "elapsed_wall_s": {
+        "max": 7.700649400000202,
+        "mean": 7.517313700000007,
+        "min": 7.420832899999823,
+        "n": 3,
+        "sample_sd": 0.15884630514627787
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 120,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 1223.027985074627,
+        "mean": 1194.2510775654282,
+        "min": 1175.1573033707866,
+        "n": 3,
+        "sample_sd": 25.36183835584899
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "rendered_scripted",
+      "reason_counts": {
+        "": 3
+      },
+      "recorder": true,
+      "scenario": "swing_catch_train",
+      "signed_progress_m": {
+        "max": 0.534427404403687,
+        "mean": 0.505606363217036,
+        "min": 0.45063903927803,
+        "n": 3,
+        "sample_sd": 0.0476218816189803
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 3,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 31.016362200000003,
+        "mean": 30.716668133333314,
+        "min": 30.561856199999966,
+        "n": 3,
+        "sample_sd": 0.25959015857390144
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 120,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 1024.5662503807494,
+        "mean": 1007.888205363837,
+        "min": 988.1412272587111,
+        "n": 3,
+        "sample_sd": 18.405416053031917
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "rendered_scripted",
+      "reason_counts": {
+        "": 3
+      },
+      "recorder": true,
+      "scenario": "swing_catch_train",
+      "signed_progress_m": {
+        "max": 0.534455180168152,
+        "mean": 0.5064696768919627,
+        "min": 0.450768321752548,
+        "n": 3,
+        "sample_sd": 0.04823897699212251
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 3,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 9.278384899999764,
+        "mean": 9.160938533333288,
+        "min": 9.101021800000126,
+        "n": 3,
+        "sample_sd": 0.10171853982421034
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 60,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 997.2277777777778,
+        "mean": 988.290329218107,
+        "min": 980.179012345679,
+        "n": 3,
+        "sample_sd": 8.554353912668184
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "headless",
+      "reason_counts": {
+        "": 3
+      },
+      "recorder": true,
+      "scenario": "vertical_pull_train",
+      "signed_progress_m": {
+        "max": 0.188091278076172,
+        "mean": 0.188091278076172,
+        "min": 0.188091278076172,
+        "n": 3,
+        "sample_sd": 0.0
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 3,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 15.076958500000273,
+        "mean": 14.953170766666517,
+        "min": 14.812276299999667,
+        "n": 3,
+        "sample_sd": 0.13316774006225193
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 120,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 986.5747764415664,
+        "mean": 977.928872443211,
+        "min": 973.0659882824546,
+        "n": 3,
+        "sample_sd": 7.507014633040936
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "headless",
+      "reason_counts": {
+        "": 3
+      },
+      "recorder": true,
+      "scenario": "vertical_pull_train",
+      "signed_progress_m": {
+        "max": 0.197991013526917,
+        "mean": 0.197991013526917,
+        "min": 0.197991013526917,
+        "n": 3,
+        "sample_sd": 0.0
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 3,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 30.17408320000004,
+        "mean": 29.32737640000005,
+        "min": 27.662393300000076,
+        "n": 3,
+        "sample_sd": 1.441987730806577
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 60,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 1023.9360544217687,
+        "mean": 1015.455022255816,
+        "min": 1007.9685185185185,
+        "n": 3,
+        "sample_sd": 8.030091269839287
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "rendered_scripted",
+      "reason_counts": {
+        "": 3
+      },
+      "recorder": true,
+      "scenario": "vertical_pull_train",
+      "signed_progress_m": {
+        "max": 0.188498139381409,
+        "mean": 0.18843396504720067,
+        "min": 0.188345193862915,
+        "n": 3,
+        "sample_sd": 7.938410849876368e-05
+      }
+    },
+    {
+      "attempts": 3,
+      "completed": 3,
+      "context": "sequence",
+      "elapsed_wall_s": {
+        "max": 31.016362200000003,
+        "mean": 30.716668133333314,
+        "min": 30.561856199999966,
+        "n": 3,
+        "sample_sd": 0.25959015857390144
+      },
+      "existing_observer": true,
+      "historical_driver": false,
+      "hz": 120,
+      "instrumentation_post_probe_usec_per_call": {
+        "max": 1024.5662503807494,
+        "mean": 1007.888205363837,
+        "min": 988.1412272587111,
+        "n": 3,
+        "sample_sd": 18.405416053031917
+      },
+      "meaning": "catch/task goal for legacy episodes; valid observation for new control fixtures",
+      "mode": "rendered_scripted",
+      "reason_counts": {
+        "": 3
+      },
+      "recorder": true,
+      "scenario": "vertical_pull_train",
+      "signed_progress_m": {
+        "max": 0.19824206829071,
+        "mean": 0.19819374879201268,
+        "min": 0.198133230209351,
+        "n": 3,
+        "sample_sd": 5.543505412330638e-05
+      }
+    }
+  ],
+  "human_sessions": 0,
+  "new_optimizer_trials": 0,
+  "private_holdout_outcomes_accessed": false,
+  "scenario_observations": 104,
+  "schema_version": "1.3.1",
+  "typed_metric_statuses": {}
+}

@@ -1,0 +1,45 @@
+{
+	"frames": [
+		{
+			"file": "screenshots/frame_01.png",
+			"image_phase": "frame_post_draw; latest preceding observed tick, not post-solver",
+			"observed_com_m": [
+				-0.50767582654953,
+				1.07517778873444,
+				-0.207498788833618
+			],
+			"observed_hand_states": [
+				"ATTACHED",
+				"FREE"
+			],
+			"observed_tick": 281,
+			"physics_time_s": 2.34166666666667,
+			"readback_and_save_usec": 45797,
+			"render_frame": 343,
+			"sample_phase": "post_control",
+			"save_error": 0,
+			"scenario_id": "swing_catch_train"
+		},
+		{
+			"file": "screenshots/frame_02.png",
+			"image_phase": "frame_post_draw; latest preceding observed tick, not post-solver",
+			"observed_com_m": [
+				-0.280783832073212,
+				1.13556289672852,
+				-0.0951495692133904
+			],
+			"observed_hand_states": [
+				"ATTACHED",
+				"ATTACHED"
+			],
+			"observed_tick": 438,
+			"physics_time_s": 3.65,
+			"readback_and_save_usec": 41467,
+			"render_frame": 540,
+			"sample_phase": "post_control",
+			"save_error": 0,
+			"scenario_id": "swing_catch_train"
+		}
+	],
+	"schema_version": "1.3.1"
+}

@@ -1,0 +1,61 @@
+{
+  "differences": [
+    {
+      "absolute_difference": 2.3841857910190944e-06,
+      "classification": "TARGET_DIVERGENCE",
+      "field": "target.material_local_point_m[2]",
+      "left": -0.00818243622779846,
+      "left_physics_time_s": 0.466666666666667,
+      "left_tick": 28,
+      "relative_tick": 28,
+      "right": -0.00818482041358948,
+      "right_physics_time_s": 0.466666666666667,
+      "right_tick": 28,
+      "sample_phase": "post_control",
+      "scenario_id": "swing_catch_train"
+    }
+  ],
+  "first_behavioral_difference": {
+    "absolute_difference": 2.3841857910190944e-06,
+    "classification": "TARGET_DIVERGENCE",
+    "field": "target.material_local_point_m[2]",
+    "left": -0.00818243622779846,
+    "left_physics_time_s": 0.466666666666667,
+    "left_tick": 28,
+    "relative_tick": 28,
+    "right": -0.00818482041358948,
+    "right_physics_time_s": 0.466666666666667,
+    "right_tick": 28,
+    "sample_phase": "post_control",
+    "scenario_id": "swing_catch_train"
+  },
+  "first_observed_state_difference": {
+    "absolute_difference": 1.0728836001838715e-06,
+    "field": "body.angular_velocity_rad_s[1]",
+    "left": 1.58474683761597,
+    "left_physics_time_s": 0.833333333333333,
+    "left_tick": 50,
+    "relative_tick": 50,
+    "right": 1.58474791049957,
+    "right_physics_time_s": 0.833333333333333,
+    "right_tick": 50,
+    "sample_phase": "pre_control",
+    "scenario_id": "swing_catch_train"
+  },
+  "human_sessions": 0,
+  "identity_mismatches": [],
+  "interpretation": "State-difference detector, not a calibrated physical-equivalence or game-feel score",
+  "peak_vector_difference": {
+    "angular_velocity_rad_s": 0.015209117827242838,
+    "com_m": 0.0007287762227920745,
+    "linear_velocity_m_s": 0.006876146415805823
+  },
+  "physical_equivalence_certified": false,
+  "reason": "Same manifest policy and sample phases; physical acceptance requires separately calibrated envelope",
+  "schema_version": "1.3.1",
+  "status": "ALIGNED_DIAGNOSTIC",
+  "unpaired_sample_counts": {
+    "left": 0,
+    "right": 0
+  }
+}

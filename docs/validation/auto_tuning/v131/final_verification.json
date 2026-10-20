@@ -1,0 +1,129 @@
+{
+  "E_project_sha256": "6ae2782544aa70dfb6a099260ead68de0b0bb7007093ef846bbb2dabfc6a86c9",
+  "all_archive_retrievals_verified": true,
+  "all_qualified_source_restoration_invariants_and_trace_limits_pass": true,
+  "archives": {
+    "baseline_001.zip": {
+      "bytes": 15333,
+      "retrieved_members_verified": 3,
+      "sha256": "a25f705475fb268192dd0e212e9ee85eacf0c03cba734637d31e61164e67354b"
+    },
+    "baseline_002.zip": {
+      "bytes": 15645,
+      "retrieved_members_verified": 3,
+      "sha256": "6c1e0df28397c3684fc8c7e0d2dca6d49eb1aabcf67d552fae4255337d27943f"
+    },
+    "catch_001.zip": {
+      "bytes": 34075475,
+      "retrieved_members_verified": 307,
+      "sha256": "67f3b2929668231bd47306cfdaafcd0e785981ff5421de3b19786da106e87ca2"
+    },
+    "catch_002.zip": {
+      "bytes": 41531590,
+      "retrieved_members_verified": 394,
+      "sha256": "6dc2c61c82ce1f7ad122b2421978d39ee511b44e05bbcb1ef69aaa218a21e748"
+    },
+    "development_catch_001.zip": {
+      "bytes": 4417432,
+      "retrieved_members_verified": 26,
+      "sha256": "afed28bbbf57808b5c6c25397a6739f5f36f6b1a3f6ed6135221bdc647845588"
+    },
+    "development_catch_002.zip": {
+      "bytes": 4598493,
+      "retrieved_members_verified": 48,
+      "sha256": "8adc9118079ad98fb8e00820c39416d0ff5a0c1e91b93fc9e33343a4d1c11b89"
+    },
+    "development_lateral_stop_001.zip": {
+      "bytes": 10984462,
+      "retrieved_members_verified": 15,
+      "sha256": "854a8be210067409b5dba24b4f7cf02d76f7850e53840ff0a6bd98f45c4194bd"
+    },
+    "historical_001.zip": {
+      "bytes": 1398193,
+      "retrieved_members_verified": 110,
+      "sha256": "377e2255c7645f3593bb6c448c51617d94f68b902159c6e1a838eaa0a098a274"
+    },
+    "lateral_stop_001_headless_120.zip": {
+      "bytes": 34195353,
+      "retrieved_members_verified": 41,
+      "sha256": "66ca3ce238a7880251faf4681d8fe6765f2bce3bea487817a966b0b456169a7c"
+    },
+    "lateral_stop_001_headless_60.zip": {
+      "bytes": 14671065,
+      "retrieved_members_verified": 41,
+      "sha256": "f21d35ef9a84a717e773401d2e2402a88b68d332181f729f1690c5ae81487f63"
+    },
+    "lateral_stop_001_rendered_scripted_120.zip": {
+      "bytes": 32564835,
+      "retrieved_members_verified": 41,
+      "sha256": "e12114baf445a234add3ba3d4598d35536a80acede4885c362de40dedb5ace59"
+    },
+    "lateral_stop_001_rendered_scripted_60.zip": {
+      "bytes": 14715643,
+      "retrieved_members_verified": 41,
+      "sha256": "4155f58708cca82e4d0121ac2be1c5ea7698f19838e83be738663f9f9d307e9f"
+    },
+    "native_mcp_001.zip": {
+      "bytes": 995433,
+      "retrieved_members_verified": 20,
+      "sha256": "7dc6d5e01e66af657c40b9ca69bd222e704a024b61ba9474240aad768b4a9dd5"
+    },
+    "source_1b0a862.zip": {
+      "bytes": 601933,
+      "retrieved_members_verified": 240,
+      "sha256": "8e16e500164d69e0c95479ce752f7bbe36a85e3edf8fbab45aa5f9a4c4633487"
+    },
+    "source_24b18d7.zip": {
+      "bytes": 650523,
+      "retrieved_members_verified": 255,
+      "sha256": "02fc412a8735bcbc1c3251d75e57eb40e6a6ae54a862c5c3ffa561aba4df7204"
+    },
+    "source_e13a846.zip": {
+      "bytes": 647035,
+      "retrieved_members_verified": 255,
+      "sha256": "3abc9161da6c499b1fca3f142182fbada0691585f8016c5a0b7708a6636da541"
+    }
+  },
+  "baseline_audit": {
+    "engine_janga_rollback_unchanged": true,
+    "historical_files_unchanged": 594,
+    "normal_project_settings_unchanged": true,
+    "public_source_copies_equal": true,
+    "scope": "File/configuration audit; runtime physics verified separately by trials"
+  },
+  "control_raw_statuses": {
+    "interrupted": 36,
+    "precondition_not_met": 24,
+    "valid_observation": 84
+  },
+  "decision": "EVALUATOR_NOT_READY",
+  "export_audit": {
+    "all_present": true,
+    "required_exclusions": [
+      "features/auto_tuning_lab/*",
+      "features/evaluator_reliability/*",
+      "tools/*",
+      "builds/*",
+      "docs/*",
+      "addons/*",
+      "override.cfg"
+    ],
+    "scope": "Static presets only; no new executable exported"
+  },
+  "future_search": "NO_GO",
+  "handoff_note": "Later handoff commit contains documentation/ignore changes only; measured public source bytes remain identical to24b18d7",
+  "human_playtests": 0,
+  "measured_code_commit": "24b18d760604fffe3455c5b4c9b8b72f37577b4d",
+  "native_MCP_demonstration": "completed_supplemental_with_temporary_local_editor_activation",
+  "new_optimizer_trials": 0,
+  "normal_project_sha256": "6ae2782544aa70dfb6a099260ead68de0b0bb7007093ef846bbb2dabfc6a86c9",
+  "normal_startup_restored": true,
+  "private_holdout_outcomes_accessed": false,
+  "production_references_new_lab": [],
+  "public_source_files": 254,
+  "public_sources_match_qualified_run": true,
+  "qualified_evaluations": 44,
+  "qualified_scenario_rows": 248,
+  "schema_version": "1.3.1",
+  "total_archive_bytes": 196078443
+}

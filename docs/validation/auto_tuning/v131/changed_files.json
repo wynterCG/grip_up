@@ -1,0 +1,909 @@
+{
+  "base_historical_report_commit": "afa04c9c322864dd75a32a1fcc6a87e6c9225864",
+  "measured_code_commit": "24b18d760604fffe3455c5b4c9b8b72f37577b4d",
+  "scope": "All branch changes relative to frozen v1.3 report, including pending final docs; local ignored editor IDs/addon/builds excluded",
+  "changed_protected_historical_files": [],
+  "files_total": 225,
+  "files": [
+    {
+      "path": ".gitignore",
+      "status": "M"
+    },
+    {
+      "path": "README.md",
+      "status": "M"
+    },
+    {
+      "path": "docs/specs/grip_up_v1.3.1.md",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/README.md",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/analyze_controls.py",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/baseline_manifest.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/catch_investigation.md",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/changed_files.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/contracts/attempt_001/godot_tick_contract.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/contracts/attempt_001/python.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/contracts/attempt_001/results.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/contracts/attempt_002/godot_tick_contract.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/contracts/attempt_002/python.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/contracts/attempt_002/results.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/contracts/attempt_003/godot_tick_contract.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/contracts/attempt_003/results.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/cross_mode_report.md",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/decision.md",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/development/analysis_001/catch_headless_120_isolated_r1_trace_87d0b799_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/development/analysis_001/catch_headless_120_sequence_r1_trace_e88e3fe1_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/development/analysis_001/comparison.md",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/development/analysis_001/lateral-stop_headless_120_isolated_r1_trace_992d326b_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/development/analysis_001/scenarios.csv",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/development/analysis_001/summary.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/development/analyze_controls_r1.py",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/development/benchmark_eval_v131_r1.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/development/benchmark_eval_v131_r2.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/development/early_contract_receipts/historical_import.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/development/early_contract_receipts/scope.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/development/mcp_activation/activation.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/development/mcp_activation/activation_preflight.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/development/mcp_activation/editor_autosaved_project.godot",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/development/mcp_activation/plugin_unavailable_after_editor.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/development/mcp_activation/project_after_mcp_before_restore.godot",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/development/mcp_activation/restoration.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/development/mcp_unavailable_initial.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/development/reliability_config_r2.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/evidence/README.md",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/evidence/archive_index_controls.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/evidence/archive_index_final_smoke.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/evidence/archive_index_initial.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/evidence/baseline_001.zip",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/evidence/baseline_002.zip",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/evidence/catch_001.zip",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/evidence/catch_002.archive.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/evidence/catch_002.zip",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/evidence/development_catch_001.zip",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/evidence/development_catch_002.zip",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/evidence/development_lateral_stop_001.zip",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/evidence/historical_001.zip",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/evidence/lateral_stop_001_headless_120.zip",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/evidence/lateral_stop_001_headless_60.zip",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/evidence/lateral_stop_001_rendered_scripted_120.zip",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/evidence/lateral_stop_001_rendered_scripted_60.zip",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/evidence/native_mcp_001.zip",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/evidence/source_1b0a862.archive.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/evidence/source_1b0a862.zip",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/evidence/source_24b18d7.archive.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/evidence/source_24b18d7.zip",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/evidence/source_e13a846.archive.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/evidence/source_e13a846.zip",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/final_verification.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/migration_from_v13.md",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/movement_metrics.md",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/native/attempt_001/engine_result.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/native/attempt_001/screenshot_index.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/native/attempt_001/screenshots/frame_01.png",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/native/attempt_001/screenshots/frame_02.png",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/native_mcp_report.md",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/normal_startup_mcp/attempt_001/diagnostic_request.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/normal_startup_mcp/attempt_001/errors_response.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/normal_startup_mcp/attempt_001/post_restore_cli.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/normal_startup_mcp/attempt_001/post_restore_cli.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/normal_startup_mcp/attempt_001/runtime.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/normal_startup_mcp/attempt_001/runtime_request.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/normal_startup_mcp/attempt_001/runtime_response.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/normal_startup_mcp/attempt_001/stop_response.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/physical_review.md",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/first_ascent_120hz.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/first_ascent_120hz.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/first_ascent_60hz.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/first_ascent_60hz.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/ground_locomotion_120hz.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/ground_locomotion_60hz.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/hybrid_mantle_120hz.json.gz",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/hybrid_mantle_120hz.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/hybrid_mantle_60hz.json.gz",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/hybrid_mantle_60hz.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/intent_feet_120hz.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/intent_feet_120hz.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/intent_feet_60hz.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/intent_feet_60hz.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/intent_frame_sign_120hz.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/intent_frame_sign_120hz.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/intent_frame_sign_60hz.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/intent_frame_sign_60hz.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/intent_integration_120hz.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/intent_integration_120hz.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/intent_integration_60hz.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/intent_integration_60hz.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/intent_reversal_120hz.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/intent_reversal_120hz.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/intent_reversal_60hz.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/intent_reversal_60hz.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/locomotion_allocation_120hz.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/locomotion_allocation_120hz.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/locomotion_allocation_60hz.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/locomotion_allocation_60hz.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/pending_contact_120hz.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/pending_contact_60hz.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/physics_120hz.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/physics_60hz.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/results.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/vault_resilience_120hz.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/vault_resilience_120hz.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/vault_resilience_60hz.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/vault_resilience_60hz.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/vault_restore_guard_120hz.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/vault_restore_guard_120hz.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/vault_restore_guard_60hz.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reliability_regression/attempt_001/vault_restore_guard_60hz.txt",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/report.md",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_120_isolated.png",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_120_isolated_r01.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_120_isolated_r02.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_120_isolated_r03.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_120_sequence.png",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_120_sequence_r01.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_120_sequence_r02.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_120_sequence_r03.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_60_isolated.png",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_60_isolated_r01.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_60_isolated_r02.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_60_isolated_r03.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_60_sequence.png",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_60_sequence_r01.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_60_sequence_r02.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_60_sequence_r03.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_headless_120_isolated_r1_trace_e07871f3_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_headless_120_isolated_r2_trace_da8d14d5_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_headless_120_isolated_r3_trace_c86934a0_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_headless_120_sequence_r1_trace_643100a5_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_headless_120_sequence_r2_trace_a19cacd7_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_headless_120_sequence_r3_trace_426e8820_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_headless_60_isolated_r1_trace_f9df5081_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_headless_60_isolated_r2_trace_0c099154_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_headless_60_isolated_r3_trace_f6512e42_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_headless_60_sequence_r1_trace_9470d485_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_headless_60_sequence_r2_trace_cdc430f9_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_headless_60_sequence_r3_trace_384b2de0_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_rendered_scripted_120_isolated_r1_trace_6d9d6acc_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_rendered_scripted_120_isolated_r2_trace_519d27e7_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_rendered_scripted_120_isolated_r3_trace_6a6386fc_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_rendered_scripted_120_sequence_r1_trace_43632514_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_rendered_scripted_120_sequence_r2_trace_ffa09bfd_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_rendered_scripted_120_sequence_r3_trace_83166991_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_rendered_scripted_60_isolated_r1_trace_8155908e_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_rendered_scripted_60_isolated_r2_trace_e23fe6ed_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_rendered_scripted_60_isolated_r3_trace_cfdd5d23_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_rendered_scripted_60_sequence_r1_trace_bbb6376f_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_rendered_scripted_60_sequence_r2_trace_d06f9334_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/catch_rendered_scripted_60_sequence_r3_trace_73f13be6_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/comparison.md",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/scenarios.csv",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/catch_002/summary.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/control_analysis_001/control_summary.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/control_analysis_001/controls.md",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/control_analysis_001/lateral_120.png",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/control_analysis_001/lateral_60.png",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/control_analysis_002/control_summary.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/control_analysis_002/controls.md",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/control_analysis_002/lateral_120.png",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/control_analysis_002/lateral_60.png",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/lateral_stop_001/comparison.md",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/lateral_stop_001/scenarios.csv",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/lateral_stop_001/summary.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/catch_120_isolated.png",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/catch_120_isolated_r01.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/catch_120_isolated_r02.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/catch_120_isolated_r03.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/catch_120_sequence.png",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/catch_120_sequence_r01.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/catch_120_sequence_r02.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/catch_120_sequence_r03.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/catch_headless_120_isolated_r1_trace_fb8c2b9d_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/catch_headless_120_isolated_r2_trace_7f24673a_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/catch_headless_120_isolated_r3_trace_6eac24e2_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/catch_headless_120_sequence_r1_trace_cfb18a5e_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/catch_headless_120_sequence_r2_trace_bc6cb997_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/catch_headless_120_sequence_r3_trace_b09477c4_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/catch_headless_60_isolated_r1_trace_edd073f2_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/catch_headless_60_isolated_r2_trace_bffb6898_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/catch_headless_60_isolated_r3_trace_fe63d13a_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/catch_headless_60_sequence_r1_trace_b2eca855_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/catch_headless_60_sequence_r2_trace_bea7d389_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/catch_headless_60_sequence_r3_trace_a7409a02_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/catch_rendered_scripted_120_isolated_r1_trace_ee2fe47f_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/catch_rendered_scripted_120_isolated_r2_trace_1210b0c3_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/catch_rendered_scripted_120_isolated_r3_trace_3c16792a_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/catch_rendered_scripted_120_sequence_r1_trace_9a10392c_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/catch_rendered_scripted_120_sequence_r2_trace_4a666246_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/catch_rendered_scripted_120_sequence_r3_trace_0d4bb799_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/catch_rendered_scripted_60_isolated_r1_trace_2b0c9960_catch.json",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/comparison.md",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/scenarios.csv",
+      "status": "A"
+    },
+    {
+      "path": "docs/validation/auto_tuning/v131/reports/phase_startup_001/summary.json",
+      "status": "A"
+    },
+    {
+      "path": "export_presets.cfg",
+      "status": "M"
+    },
+    {
+      "path": "features/evaluator_reliability/resources/benchmark_eval_v131.json",
+      "status": "A"
+    },
+    {
+      "path": "features/evaluator_reliability/scenes/reliability_review.tscn",
+      "status": "A"
+    },
+    {
+      "path": "features/evaluator_reliability/scripts/baseline_lab.gd",
+      "status": "A"
+    },
+    {
+      "path": "features/evaluator_reliability/scripts/physics_snapshot.gd",
+      "status": "A"
+    },
+    {
+      "path": "features/evaluator_reliability/scripts/reliability_driver.gd",
+      "status": "A"
+    },
+    {
+      "path": "features/evaluator_reliability/scripts/reliability_review.gd",
+      "status": "A"
+    },
+    {
+      "path": "features/evaluator_reliability/scripts/reliability_runner.gd",
+      "status": "A"
+    },
+    {
+      "path": "features/evaluator_reliability/scripts/reliability_trace.gd",
+      "status": "A"
+    },
+    {
+      "path": "features/evaluator_reliability/scripts/tick_probe.gd",
+      "status": "A"
+    },
+    {
+      "path": "features/evaluator_reliability/tests/test_tick_contract.gd",
+      "status": "A"
+    },
+    {
+      "path": "tools/auto_tuning/compare_traces.py",
+      "status": "A"
+    },
+    {
+      "path": "tools/auto_tuning/configs/reliability_v131.json",
+      "status": "A"
+    },
+    {
+      "path": "tools/auto_tuning/metric_contracts.py",
+      "status": "A"
+    },
+    {
+      "path": "tools/auto_tuning/reliability.py",
+      "status": "A"
+    },
+    {
+      "path": "tools/auto_tuning/reliability_report.py",
+      "status": "A"
+    },
+    {
+      "path": "tools/auto_tuning/tests/test_metric_status.py",
+      "status": "A"
+    },
+    {
+      "path": "tools/auto_tuning/tests/test_reliability.py",
+      "status": "A"
+    },
+    {
+      "path": "tools/auto_tuning/tests/test_trace_alignment.py",
+      "status": "A"
+    }
+  ]
+}

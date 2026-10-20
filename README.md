@@ -1,5 +1,7 @@
 # GRIP UP / physics climbing lab
 
+Evaluator reliability: see the [v1.3.1 final report](docs/validation/auto_tuning/v131/report.md). Decision: `EVALUATOR_NOT_READY` for a new automated search; playable physics remains unchanged.
+
 Open `project.godot` in Godot 4.7.2, or launch the preserved normal Windows build
 `builds/GripUp-v1.2-pre-v1.3.exe`.
 PC mouse and keyboard. Resizable 1920x1080 reference canvas; initial window 1440x810.

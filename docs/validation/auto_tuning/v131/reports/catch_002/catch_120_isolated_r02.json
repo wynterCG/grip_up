@@ -1,0 +1,61 @@
+{
+  "differences": [
+    {
+      "absolute_difference": 3.814697265619796e-06,
+      "classification": "TARGET_DIVERGENCE",
+      "field": "target.material_local_point_m[2]",
+      "left": -0.00677385926246643,
+      "left_physics_time_s": 2.35,
+      "left_tick": 282,
+      "relative_tick": 282,
+      "right": -0.00677004456520081,
+      "right_physics_time_s": 2.35,
+      "right_tick": 282,
+      "sample_phase": "post_control",
+      "scenario_id": "swing_catch_train"
+    }
+  ],
+  "first_behavioral_difference": {
+    "absolute_difference": 3.814697265619796e-06,
+    "classification": "TARGET_DIVERGENCE",
+    "field": "target.material_local_point_m[2]",
+    "left": -0.00677385926246643,
+    "left_physics_time_s": 2.35,
+    "left_tick": 282,
+    "relative_tick": 282,
+    "right": -0.00677004456520081,
+    "right_physics_time_s": 2.35,
+    "right_tick": 282,
+    "sample_phase": "post_control",
+    "scenario_id": "swing_catch_train"
+  },
+  "first_observed_state_difference": {
+    "absolute_difference": 1.4305114750534642e-06,
+    "field": "body.angular_velocity_rad_s[1]",
+    "left": 0.649238705635071,
+    "left_physics_time_s": 0.766666666666667,
+    "left_tick": 92,
+    "relative_tick": 92,
+    "right": 0.649237275123596,
+    "right_physics_time_s": 0.766666666666667,
+    "right_tick": 92,
+    "sample_phase": "pre_control",
+    "scenario_id": "swing_catch_train"
+  },
+  "human_sessions": 0,
+  "identity_mismatches": [],
+  "interpretation": "State-difference detector, not a calibrated physical-equivalence or game-feel score",
+  "peak_vector_difference": {
+    "angular_velocity_rad_s": 0.11216950604315923,
+    "com_m": 0.0007891869092260911,
+    "linear_velocity_m_s": 0.031505835796342196
+  },
+  "physical_equivalence_certified": false,
+  "reason": "Same manifest policy and sample phases; physical acceptance requires separately calibrated envelope",
+  "schema_version": "1.3.1",
+  "status": "ALIGNED_DIAGNOSTIC",
+  "unpaired_sample_counts": {
+    "left": 0,
+    "right": 0
+  }
+}

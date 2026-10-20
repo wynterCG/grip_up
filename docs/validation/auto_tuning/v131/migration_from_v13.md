@@ -20,3 +20,15 @@ Os ficheiros antigos, incluindo JSON/CSV/PNG/SQLite e falhas, estão protegidos 
 O manifesto do processo é escrito antes da execução. O estado físico inicial só existe depois de criar o mundo: os seus campos reais ficam no recibo de runtime, ligado pelo SHA256 ao manifesto anterior. O hash do setup declarado não deve ser apresentado como hash de um estado físico já observado.
 
 Os inputs automatizados são classificados como `automated_headless` ou `automated_rendered_scripted`. Observar uma demonstração no monitor não a transforma num playtest humano.
+
+## Revisões internas do novo benchmark
+
+| Revisão / código | Utilização | Limite |
+|---|---|---|
+| Catálogo 1, desenvolvimento | Identificar falhas de preparação e testar integração dos estados tipados | Stop podia começar dentro da banda de paragem; baixa energia de uma mão podia ocultar velocidade vertical |
+| Catálogo 2, commit `e13a846` | Mínimo dirigido de 0,15 m/s; baixa energia pela norma completa; primeira matriz de captura | `catch_001` interrompida por delta de arranque inválido em renderizado 60 Hz; não constitui qualificação completa |
+| Catálogo 3, commit `24b18d7` | Preparação com 0,25 s decorridos e verificação da baixa energia no comando aceite; relógio confirmado em mundo vazio e cleanup síncrono | Resultados próprios em `catch_002` e `lateral_stop_001`; não reprocessar ou substituir recibos de revisões anteriores |
+
+As mudanças de relógio, fase de input, identidade do Resource e lifecycle do mundo são mudanças do avaliador. Mesmo com quatro valores de afinação iguais, os scores antigos não podem ser usados como controlo numérico para afirmar melhoria da locomoção. O novo `completed` de uma fixture de controlo significa observação válida, enquanto o `completed` dos sete episódios históricos significa objetivo cumprido.
+
+Nos hashes de estado inicial preservam-se os campos reais. Nomes automáticos de nós e IDs de processo podem diferir sem constituir mudança física; a revisão física tem de justificar qualquer exclusão desses identificadores e continuar a comparar dimensões, transforms, propriedades e alvos materiais. Nenhuma diferença discreta de contacto pode ser apagada com uma tolerância numérica.

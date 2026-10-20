@@ -1,0 +1,61 @@
+{
+  "differences": [
+    {
+      "absolute_difference": 1.9073486328090306e-06,
+      "classification": "TARGET_DIVERGENCE",
+      "field": "target.material_local_point_m[2]",
+      "left": -0.00818243622779846,
+      "left_physics_time_s": 0.466666666666667,
+      "left_tick": 28,
+      "relative_tick": 28,
+      "right": -0.00818434357643127,
+      "right_physics_time_s": 0.466666666666667,
+      "right_tick": 28,
+      "sample_phase": "post_control",
+      "scenario_id": "swing_catch_train"
+    }
+  ],
+  "first_behavioral_difference": {
+    "absolute_difference": 1.9073486328090306e-06,
+    "classification": "TARGET_DIVERGENCE",
+    "field": "target.material_local_point_m[2]",
+    "left": -0.00818243622779846,
+    "left_physics_time_s": 0.466666666666667,
+    "left_tick": 28,
+    "relative_tick": 28,
+    "right": -0.00818434357643127,
+    "right_physics_time_s": 0.466666666666667,
+    "right_tick": 28,
+    "sample_phase": "post_control",
+    "scenario_id": "swing_catch_train"
+  },
+  "first_observed_state_difference": {
+    "absolute_difference": 2.1457672101377057e-06,
+    "field": "body.angular_velocity_rad_s[1]",
+    "left": 1.38799118995667,
+    "left_physics_time_s": 0.8,
+    "left_tick": 48,
+    "relative_tick": 48,
+    "right": 1.38799333572388,
+    "right_physics_time_s": 0.8,
+    "right_tick": 48,
+    "sample_phase": "pre_control",
+    "scenario_id": "swing_catch_train"
+  },
+  "human_sessions": 0,
+  "identity_mismatches": [],
+  "interpretation": "State-difference detector, not a calibrated physical-equivalence or game-feel score",
+  "peak_vector_difference": {
+    "angular_velocity_rad_s": 0.09440070880016896,
+    "com_m": 0.000980831166271416,
+    "linear_velocity_m_s": 0.058835134910592286
+  },
+  "physical_equivalence_certified": false,
+  "reason": "Same manifest policy and sample phases; physical acceptance requires separately calibrated envelope",
+  "schema_version": "1.3.1",
+  "status": "ALIGNED_DIAGNOSTIC",
+  "unpaired_sample_counts": {
+    "left": 0,
+    "right": 0
+  }
+}
