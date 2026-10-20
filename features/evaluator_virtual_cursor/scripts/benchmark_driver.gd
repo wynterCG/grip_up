@@ -23,7 +23,12 @@ func _virtual_scope(value:Dictionary)->String:
 	var ids:Array=["swing_catch_train"]
 	for d:Dictionary in _additional_qualification_scenarios():ids.append(d.id)
 	if str(value.scenario_ids[0]) not in ids:return "UNKNOWN_BENCHMARK_SCENARIO"
-	if value.has("projection_config") and value.projection_config.window_size!=[1024,576]:return "ENVIRONMENT_NOT_COMPARABLE:CANONICAL_BACKING"
+	if value.has("projection_config"):
+		var config:Variant=value.projection_config
+		if not config is Dictionary or not config.get("window_size") is Array:return "ENVIRONMENT_NOT_COMPARABLE:CANONICAL_BACKING"
+		var size:Array=config.window_size
+		# JSON uses floats; compare exact scalar values without rounding dimensions.
+		if size.size()!=2 or size[0]!=1024.0 or size[1]!=576.0:return "ENVIRONMENT_NOT_COMPARABLE:CANONICAL_BACKING"
 	backing_initialization=Backing.initialize(get_window())
 	if not backing_initialization.reason.is_empty():return "ENVIRONMENT_NOT_COMPARABLE:"+backing_initialization.reason
 	return ""

@@ -56,6 +56,7 @@ def main(attempt):
                      'run_id':directory.name,'output_dir':str(directory),'input_lane':'ADMISSION_ONLY',
                      'physics_hz':hz,'engine_mode':mode,'virtual_mode':'REPLAY',
                      'expected_source_hashes':hashes,'engine_identity':frozen['engine_identity']}
+                m['projection_config']={'window_size':[1024,576],'probe_enabled':False}
                 atomic_json(directory / 'manifest.json', m)
                 flags = ['--headless','--fixed-fps','120'] if mode=='headless' else ['--screen','0','--position','80,80']
                 if resolution: flags += ['--resolution', resolution]
